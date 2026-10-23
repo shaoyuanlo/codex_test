@@ -6,7 +6,21 @@ Built with [Eleventy](https://www.11ty.dev/) and deployed as static HTML to GitH
 
 ## 網站預覽
 
-預覽圖片與程式碼一起保存在這個儲存庫，可直接在 GitHub 查看：
+代理預覽需要儲存庫允許公開讀取。**若未登入 GitHub 時開啟 `codex_test` 會得到 404，這個代理網址尚無法使用**；必須先由擁有者決定是否將儲存庫改為 Public。請勿為了測試而公開包含機密的儲存庫。
+
+公開讀取開通後，預覽網址為：
+
+**https://raw.githack.com/shaoyuanlo/codex_test/site-preview/index.html**
+
+這套預覽提供實際的多頁網站：可以點擊導覽、閱讀文章、開啟 CV，並使用手機瀏覽。由 raw.githack 代理提供公開儲存庫 `site-preview` 分支中的靜態網頁，不需要先開啟 GitHub Pages，也不會取代原本的正式網站。工作流程會在儲存庫改為公開時執行，亦可在 Actions 手動執行；維持私有時會跳過公開代理發布。
+
+更新方式：修改 **`main` 分支**的 `src/` 內容並提交 → 等待 **Update interactive website preview** 工作流程成功 → 重新整理上方預覽網址。這是提交後的自動建置預覽，不是逐字即時更新；第三方代理可能有短暫快取。請勿手動編輯 `site-preview` 分支，因為它會被自動產生的檔案更新。
+
+預覽狀態可在 [Actions](https://github.com/shaoyuanlo/codex_test/actions/workflows/preview.yml) 查看。若 Actions 被停用，或儲存庫政策不允許工作流程寫入分支，自動更新會失敗；請啟用 Actions 並確認此工作流程獲允許使用 `contents: write`。此預覽使用公開檔案，不需要新增個人存取權杖。
+
+工作流程也會實際請求代理上的首頁、Lab 與樣式檔，並將檢查結果存為 `site-preview` 分支中的 `preview-health.json`。這可區分「已產生檔案」與「外部代理確實可讀取」。
+
+預覽圖片也與程式碼一起保存在這個儲存庫：
 
 - [桌機版完整預覽](docs/preview/home-desktop.png)
 - [手機版完整預覽](docs/preview/home-mobile.png)
@@ -130,6 +144,15 @@ npm run build
 ```
 
 The final command restores the root-path build. `SITE_URL` optionally overrides the canonical/social URL origin; its default is `https://shaoyuanlo.github.io`.
+
+Build and check the raw-file proxy preview separately:
+
+```sh
+npm run build:preview
+node scripts/check-site.mjs _preview
+```
+
+`_preview/` is generated output. Preview links use explicit `index.html` filenames and the proxy path, so all pages work without a directory-index server. `_site/` and the production URL configuration are not modified by this preview build.
 
 ## 保留 https://shaoyuanlo.github.io/
 

@@ -18,7 +18,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addGlobalData("siteOrigin", process.env.SITE_URL || "https://shaoyuanlo.github.io");
   return {
     pathPrefix: process.env.PATH_PREFIX || "/",
-    dir: { input: "src", output: "_site" },
+    dir: { input: "src", output: process.env.ELEVENTY_OUTPUT || "_site" },
     markdownTemplateEngine: "njk",
     htmlTemplateEngine: "njk"
   };

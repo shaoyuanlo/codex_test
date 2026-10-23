@@ -3,7 +3,7 @@ import { readFile, readdir, stat } from 'node:fs/promises';
 import path from 'node:path';
 
 // Check the built result, including every generated blog post and asset link.
-const output = path.resolve('_site');
+const output = path.resolve(process.argv[2] || '_site');
 async function walk(dir) {
   const children = await readdir(dir, { withFileTypes: true });
   return (await Promise.all(children.map(item => item.isDirectory()
@@ -13,6 +13,7 @@ const files = (await walk(output)).filter(file => file.endsWith('.html'));
 const home = await readFile(path.join(output, 'index.html'), 'utf8');
 const canonical = home.match(/rel="canonical" href="([^"]+)"/)[1];
 const base = new URL(canonical);
+const prefix = new URL('.', base).pathname;
 let links = 0;
 for (const file of files) {
   const html = await readFile(file, 'utf8');
@@ -26,8 +27,8 @@ for (const file of files) {
   for (const match of html.matchAll(/(?:href|src)="([^"]+)"/g)) {
     const href = match[1].replaceAll('&amp;', '&');
     if (/^(https?:|mailto:|tel:|data:|#)/.test(href)) continue;
-    assert.ok(href.startsWith(base.pathname), `${file}: URL missing base path: ${href}`);
-    const relative = decodeURIComponent(href.slice(base.pathname.length).split('#')[0].split('?')[0]);
+    assert.ok(href.startsWith(prefix), `${file}: URL missing base path: ${href}`);
+    const relative = decodeURIComponent(href.slice(prefix.length).split('#')[0].split('?')[0]);
     let target = path.join(output, relative);
     if ((await stat(target)).isDirectory()) target = path.join(target, 'index.html');
     await stat(target);
@@ -37,4 +38,4 @@ for (const file of files) {
 for (const page of ['index.html', 'lab/index.html', 'publication/index.html', 'teaching/index.html', 'blog/index.html', '404.html']) {
   await stat(path.join(output, page));
 }
-console.log(`Validated ${files.length} pages and ${links} local links/assets at ${base.pathname}`);
+console.log(`Validated ${files.length} pages and ${links} local links/assets at ${prefix}`);

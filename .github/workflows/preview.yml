@@ -1,0 +1,50 @@
+name: Update interactive website preview
+
+on:
+  push:
+    branches: [main]
+  public:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: website-proxy-preview
+  cancel-in-progress: true
+
+jobs:
+  preview:
+    # A raw-file proxy can only read a public repository.
+    if: github.event.repository.private == false
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm run build:preview
+      - run: node scripts/check-site.mjs _preview
+      - name: Publish generated preview files
+        id: publish
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: site-preview
+          publish_dir: _preview
+          commit_message: Update interactive website preview
+      - name: Verify the public proxy serves pages and styles
+        id: verify
+        run: node scripts/check-proxy-preview.mjs
+      - name: Save public availability check with the preview
+        if: always() && steps.publish.outcome == 'success' && steps.verify.outcome != 'skipped'
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: site-preview
+          publish_dir: _preview
+          commit_message: Record proxy preview availability
