@@ -1,0 +1,29 @@
+---
+layout: layouts/base.njk
+---
+<section class="hero" aria-labelledby="home-title">
+  <div class="hero-copy">
+    <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> {{ site.institution }}</p>
+    <h1 id="home-title">{{ site.name }}<span class="chinese-name" lang="zh-Hant">{{ site.nameChinese }}</span></h1>
+    <p class="hero-role">{{ site.role }}</p>
+    <p class="hero-description">{% for line in site.tagline %}{{ line }}{% if not loop.last %}<br>{% endif %}{% endfor %}</p>
+    <div class="hero-actions">
+      <a class="button" href="mailto:{{ site.email }}">Email me {% include 'partials/arrow.njk' %}</a>
+      <a class="text-link" href="{{ '/files/SYLo_CV.pdf' | url }}">Curriculum vitae <span class="file-label">PDF</span></a>
+    </div>
+    <div class="social-links" aria-label="Academic and professional profiles">
+      {% for link in site.social %}<a href="{{ link.url }}">{{ link.label }} {% include 'partials/arrow.njk' %}</a>{% endfor %}
+    </div>
+  </div>
+  <figure class="portrait">
+    <img src="{{ '/assets/portrait.webp' | url }}" alt="Portrait of {{ site.name }}" width="600" height="720" fetchpriority="high">
+    <figcaption><span>Research · Teaching · Discovery</span>{% include 'partials/arrow.njk' %}</figcaption>
+  </figure>
+</section>
+<div class="home-content prose">
+  {{ content | safe }}
+</div>
+<section class="home-bottom" aria-label="Explore more">
+  <a class="explore-link" href="{{ '/lab/' | url }}"><span class="eyebrow">The group</span><span class="explore-title">Research is a team effort. {% include 'partials/arrow.njk' %}</span><span>Explore our research and opportunities.</span></a>
+  <a class="explore-link" href="{{ '/blog/' | url }}"><span class="eyebrow">Beyond the papers</span><span class="explore-title">Notes & perspectives. {% include 'partials/arrow.njk' %}</span><span>Ideas, questions, and work in progress.</span></a>
+</section>

@@ -1,1 +1,158 @@
-# codex_test
+# Shao-Yuan Lo · Academic website
+
+A small, English-first academic website with five separate pages, a sticky navigation bar, and a mobile layout. Content is plain **Markdown**. There is no CMS, database, or client-side JavaScript; pages and navigation also work with JavaScript disabled.
+
+Built with [Eleventy](https://www.11ty.dev/) and deployed as static HTML to GitHub Pages. No paid service, API key, or custom domain is required.
+
+## 網站預覽
+
+預覽圖片與程式碼一起保存在這個儲存庫，可直接在 GitHub 查看：
+
+- [桌機版完整預覽](docs/preview/home-desktop.png)
+- [手機版完整預覽](docs/preview/home-mobile.png)
+
+<a href="docs/preview/home-desktop.png"><img src="docs/preview/home-desktop.png" width="640" alt="Desktop homepage preview"></a>
+
+<details>
+<summary>展開手機版預覽</summary>
+
+<img src="docs/preview/home-mobile.png" width="280" alt="Mobile homepage preview">
+
+</details>
+
+## 日常更新：只需修改文字
+
+不需要修改版型，也不需要在電腦安裝軟體。網站部署完成後，在 GitHub 開啟以下檔案 → 按鉛筆編輯 → Commit 到 `main`，GitHub Actions 就會自動重新發布。建置失敗時不會覆蓋上一次成功發布的網站。
+
+| 要更新的內容 | 修改的檔案 |
+| --- | --- |
+| Home 簡介、研究方向、最新消息 | [`src/index.md`](src/index.md) |
+| Lab 介紹、成員、招生資訊 | [`src/lab.md`](src/lab.md) |
+| 論文清單 | [`src/publication.md`](src/publication.md) |
+| 課程與教材 | [`src/teaching.md`](src/teaching.md) |
+| 新增文章 | 在 [`src/posts/`](src/posts/) 新增 `.md` 檔案 |
+| 姓名、職稱、學校、Email、社群連結、首頁標語 | [`src/_data/site.json`](src/_data/site.json) |
+| 首頁按鈕文字 | [`src/_includes/layouts/home.njk`](src/_includes/layouts/home.njk) |
+| 各頁標題下方的簡介 | 各頁頂端 `intro:` 欄位 |
+| 個人照片 | 替換 `src/assets/portrait.webp`（建議 5:6 比例） |
+| CV | 替換 `files/SYLo_CV.pdf`，檔名保留即可 |
+| 配色、字體、間距 | [`src/assets/style.css`](src/assets/style.css) 開頭的變數 |
+
+這份版本帶入原網站的簡介、照片、CV、三篇代表論文與部分消息。Lab 成員、課程內容保留待填；Blog 目前有一篇明確標示 Example 的示範文章，正式上線前可替換或刪除。沒有虛構學生、課程或研究成果。研究方向的簡短介紹是依原網站主題撰寫，可自由修改。
+
+### Markdown 基本格式
+
+```md
+## Section heading
+### Paper or course title
+
+Normal text, **bold text**, and *italic text*.
+
+[Link label](https://example.com)
+
+- A list item
+- Another item
+```
+
+頁面頂端兩條 `---` 之間是設定欄位（front matter）。請保留 `layout`、`section` 和 `permalink`；主要文字直接寫在第二條 `---` 下面。標題或簡介含冒號時請加雙引號，例如 `title: "Research: new directions"`。JSON 檔案請保留雙引號與逗號格式。
+
+站內連結請使用下列格式，讓主網址與測試子路徑皆可運作：
+
+```njk
+[Lab]({{ '/lab/' | url }})
+[A PDF]({{ '/files/filename.pdf' | url }})
+```
+
+### 新增論文
+
+在 `src/publication.md` 相應年份下方複製這個區塊，不需要修改 HTML：
+
+```md
+### Paper title
+
+First Author, **Shao-Yuan Lo**, Last Author
+
+*Conference or Journal, Year*
+
+[Paper ↗](https://example.com/paper) · [Code ↗](https://github.com/example/project)
+
+---
+```
+
+### 新增 Blog 文章
+
+在 `src/posts/` 新增 `your-article-title.md`：
+
+```md
+---
+title: Your article title
+date: 2026-10-23
+description: A short summary shown in the Blog list.
+category: Research notes
+published: true
+---
+
+Your article starts here.
+
+## A section
+
+More text.
+```
+
+文章會自動出現在 Blog，按日期由新到舊排列，網址為 `/blog/your-article-title/`。將 `published` 改為 `false` 可保留草稿：不產生文章頁，也不顯示於清單。日期請換成實際發布日期；未來日期不會自動排程，而是依 `published` 決定是否發布。沒有文章時，Blog 會自動顯示簡短空白狀態。
+
+`src/posts/research-notes.md` 是現成範例。正式使用時請刪除 `example: true` 並替換內容。已發布文章的檔名決定網址，請盡量不要變更，以免既有連結失效。
+
+## Local development
+
+Requires Node.js 22 or newer. Use the existing checkout; a Git worktree is unnecessary.
+
+```sh
+npm ci
+npm run dev
+```
+
+The development server reports its local address. Editing Markdown, templates, or CSS rebuilds the site automatically. Stop with Ctrl+C.
+
+```sh
+npm run build
+npm run check
+```
+
+`_site/` contains the generated website; do not edit it. The check validates all generated pages, the main navigation, and local links/assets. It does not check external services. Production uses the same pinned dependencies through `package-lock.json`.
+
+To test a project-site subpath:
+
+```sh
+PATH_PREFIX=/codex_test/ npm run build
+npm run check
+npm run build
+```
+
+The final command restores the root-path build. `SITE_URL` optionally overrides the canonical/social URL origin; its default is `https://shaoyuanlo.github.io`.
+
+## 保留 https://shaoyuanlo.github.io/
+
+**這次的實作位於 `codex_test` 儲存庫，尚未修改或發布目前的正式網站。** 正式網址對應的是 `shaoyuanlo/shaoyuanlo.github.io`；僅發布到 `codex_test` 不會取代原網址，而會是 `/codex_test/` 的測試網站。
+
+確認版面後，在原本的 **`shaoyuanlo.github.io` 儲存庫**使用這份框架：
+
+1. 先保留原網站的 Git 歷史或建立備份分支。把這份專案的 `src/`、`files/SYLo_CV.pdf`、`scripts/`、`eleventy.config.js`、`package.json`、`package-lock.json`、`.gitignore`、`.github/workflows/pages.yml` 和這份說明加入正式儲存庫。**不要複製 `.git`、`node_modules` 或 `_site`。** 若正式儲存庫已有相同檔案或部署 workflow，先合併並確認只有一個發布流程。
+2. **保留原本的 `papers/`、`talks/` 和 `files/` 檔案**，避免舊的論文、投影片、照片與 CV 連結失效。這份測試專案只包含一份 CV，沒有搬入所有舊檔案。確認同名 CV 的版本再替換。
+3. 建置會自動將存在的 `files/`、`papers/`、`talks/` 與 `CNAME` 複製至 `_site`。若原網站另有其他公開資源目錄，請在 `eleventy.config.js` 的 `addPassthroughCopy` 中加入，再確認舊連結仍可開啟。
+4. 到正式儲存庫 **Settings → Pages → Build and deployment → Source** 選擇 **GitHub Actions**。
+5. 把變更合併至 `main`（若預設分支不同，先修改 workflow 的兩個分支設定），查看 Actions 中的 **Deploy website to GitHub Pages** 是否成功。
+
+Workflow 會自動辨識個人網站並使用 `/` 作為根路徑，因此 **Home 就是原本主網址**。其他頁面是 `/lab/`、`/publication/`、`/teaching/`、`/blog/`，不是首頁錨點。正式網址不需更換。若正式網站有既有 `CNAME`，請保留並設定對應的 `SITE_URL`，不要意外換掉自訂網域。
+
+程式碼與預覽圖片保存在此儲存庫。這與正式網站的發布是兩件事；`shaoyuanlo.github.io` 的原網站尚未被這份框架取代。GitHub Actions 工作流程需在目標儲存庫上實際執行成功後，才算完成正式發布。
+
+## Design & accessibility
+
+- Warm off-white, deep green, serif headings, and system fonts; no external font requests.
+- All five navigation links remain visible on mobile, in a sticky two-row header.
+- Semantic headings, a keyboard skip link, visible focus indicators, and active-page announcements.
+- Responsive images, print styles, canonical URLs, social metadata, and a custom 404 page.
+- Shared layouts keep changes consistent across all pages; content remains in Markdown.
+
+The profile photo, CV, biography, links, news, and selected publication details were sourced from the existing `shaoyuanlo.github.io` repository. The design takes cues from the restrained academic presentation and warm palette in the accessible Shih-Hsin Wang reference source. The other two reference sites were inaccessible from this environment; their layouts were not verified.

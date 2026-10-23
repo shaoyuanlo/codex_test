@@ -1,0 +1,12 @@
+---
+layout: layouts/base.njk
+---
+<article class="post">
+  <a class="back-link" href="{{ '/blog/' | url }}"><span aria-hidden="true">←</span> All writing</a>
+  <header class="page-heading">
+    <p class="eyebrow">{{ category or 'Research notes' }}{% if example %} · Example post{% endif %}</p>
+    <h1>{{ title }}</h1>
+    <p class="post-meta"><time datetime="{{ page.date | isoDate }}">{{ page.date | dateLabel }}</time> · {{ site.name }}</p>
+  </header>
+  <div class="prose post-content">{{ content | safe }}</div>
+</article>

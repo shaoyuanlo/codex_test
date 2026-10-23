@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if section != 'home' %}{{ title }} · {% endif %}{{ site.name }}</title>
+  <meta name="description" content="{{ description or site.description }}">
+  <meta name="theme-color" content="#f9f8f5">
+  <link rel="canonical" href="{{ siteOrigin }}{{ page.url | url }}">
+  <meta property="og:type" content="{% if section == 'blog' and page.url != '/blog/' %}article{% else %}website{% endif %}">
+  <meta property="og:title" content="{{ title }} · {{ site.name }}">
+  <meta property="og:description" content="{{ description or site.description }}">
+  <meta property="og:url" content="{{ siteOrigin }}{{ page.url | url }}">
+  <meta property="og:image" content="{{ siteOrigin }}{{ '/assets/portrait.webp' | url }}">
+  <link rel="icon" type="image/svg+xml" href="{{ '/assets/favicon.svg' | url }}">
+  <link rel="stylesheet" href="{{ '/assets/style.css' | url }}">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="wordmark" href="{{ '/' | url }}" aria-label="{{ site.name }} — Home">{{ site.name }}<span class="wordmark-dot" aria-hidden="true">.</span></a>
+      <nav aria-label="Main navigation">
+        {% for item in site.navigation %}
+        <a href="{{ item.url | url }}"{% if section == item.key %} aria-current="page"{% endif %}>{{ item.label }}</a>
+        {% endfor %}
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="site-main" tabindex="-1">
+    {{ content | safe }}
+  </main>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div><a class="footer-name" href="{{ '/' | url }}">{{ site.name }}</a><p>{{ site.institution }} · Taipei, Taiwan</p></div>
+      <div class="footer-right"><a href="mailto:{{ site.email }}">Get in touch {% include 'partials/arrow.njk' %}</a><p>© {{ '' | year }} {{ site.name }}</p></div>
+    </div>
+  </footer>
+</body>
+</html>

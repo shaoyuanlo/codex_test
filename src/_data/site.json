@@ -1,0 +1,23 @@
+{
+  "name": "Shao-Yuan Lo",
+  "nameChinese": "羅紹元",
+  "role": "Assistant Professor",
+  "tagline": ["Building trustworthy AI.", "Understanding multimodal intelligence."],
+  "institution": "National Taiwan University",
+  "institutionUrl": "https://www.ntu.edu.tw/english/",
+  "email": "sylo@csie.ntu.edu.tw",
+  "description": "Shao-Yuan Lo is an Assistant Professor at National Taiwan University, working on trustworthy AI, machine learning, and multimodal models.",
+  "social": [
+    { "label": "Google Scholar", "url": "https://scholar.google.com/citations?hl=en&user=vL35nH4AAAAJ" },
+    { "label": "GitHub", "url": "https://github.com/shaoyuanlo" },
+    { "label": "LinkedIn", "url": "https://www.linkedin.com/in/shaoyuanlo/" },
+    { "label": "X / Twitter", "url": "https://x.com/shaoyuanlo" }
+  ],
+  "navigation": [
+    { "label": "Home", "url": "/", "key": "home" },
+    { "label": "Lab", "url": "/lab/", "key": "lab" },
+    { "label": "Publication", "url": "/publication/", "key": "publication" },
+    { "label": "Teaching", "url": "/teaching/", "key": "teaching" },
+    { "label": "Blog", "url": "/blog/", "key": "blog" }
+  ]
+}
