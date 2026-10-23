@@ -53,7 +53,7 @@ Built with [Eleventy](https://www.11ty.dev/) and deployed as static HTML to GitH
 | CV | 替換 `files/SYLo_CV.pdf`，檔名保留即可 |
 | 配色、字體、間距 | [`src/assets/style.css`](src/assets/style.css) 開頭的變數 |
 
-深綠主色在 `style.css` 頂端的 `--accent: #214f49`；按鈕滑過時的顏色為 `--accent-hover: #173c37`，淺綠提示背景為 `--accent-light: #eaf0e9`。修改這些變數即可調整連結、按鈕與導覽等共用配色。
+深藍主色在 `style.css` 頂端的 `--accent: #002d72`；按鈕滑過時使用較深的 `--accent-hover: #00245b`，提示背景使用淺藍的 `--accent-light: #eaf0f8`。修改這些變數即可調整連結、按鈕與導覽等共用配色，文字反白也會沿用這組配色。
 
 這份版本帶入原網站的簡介、照片、CV、三篇代表論文與部分消息。Lab 成員、課程內容保留待填；Blog 目前有一篇明確標示 Example 的示範文章，正式上線前可替換或刪除。沒有虛構學生、課程或研究成果。研究方向的簡短介紹是依原網站主題撰寫，可自由修改。
 
@@ -175,7 +175,7 @@ Workflow 會自動辨識個人網站並使用 `/` 作為根路徑，因此 **Hom
 
 ## Design & accessibility
 
-- Warm off-white, deep green, serif headings, and system fonts; no external font requests.
+- Warm off-white, deep navy blue, serif headings, and system fonts; no external font requests.
 - All five navigation links remain visible on mobile, in a sticky two-row header.
 - Semantic headings, a keyboard skip link, visible focus indicators, and active-page announcements.
 - Responsive images, print styles, canonical URLs, social metadata, and a custom 404 page.
