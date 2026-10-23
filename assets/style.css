@@ -13,9 +13,8 @@
   --font-size-sm: 14px;
   --font-size-base: 16px;
   --font-size-md: 18px;
-  --font-size-lg: 20px;
   --font-size-xl: 28px;
-  --font-size-2xl: 32px;
+  --font-size-2xl: 36px;
 
   --font: "Inter", "Noto Sans TC", system-ui, sans-serif;
 }
@@ -39,10 +38,10 @@ h1 { letter-spacing: -.045em; }
 .site-header { position: sticky; top: 0; z-index: 10; background: var(--accent); border-bottom: 1px solid var(--border); }
 .site-header a:focus-visible { outline-color: var(--white); }
 .header-inner { max-width: 1120px; padding: 0 40px; min-height: 50px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
-.wordmark { font-size: var(--font-size-lg); color: var(--white); letter-spacing: -.65px; white-space: nowrap; text-decoration: none; }
+.wordmark { font-size: var(--font-size-md); color: var(--white); letter-spacing: -.65px; white-space: nowrap; text-decoration: none; }
 .wordmark-dot { color: inherit; padding-left: 1px; }
 nav { display: flex; gap: 28px; align-self: stretch; }
-nav a { font-size: var(--font-size-md); display: flex; align-items: center; position: relative; color: var(--white); text-decoration: none; white-space: nowrap; }
+nav a { font-size: var(--font-size-base); display: flex; align-items: center; position: relative; color: var(--white); text-decoration: none; white-space: nowrap; }
 nav a:hover { text-decoration: underline; text-underline-offset: 6px; }
 nav a[aria-current] { font-weight: 600; }
 nav a[aria-current]::after { content: ""; position: absolute; bottom: -1px; left: 0; right: 0; height: 2px; background: var(--white); }
@@ -103,7 +102,7 @@ nav a[aria-current]::after { content: ""; position: absolute; bottom: -1px; left
 .page-content { max-width: 810px; }
 .page-content > h2:first-child { margin-top: 0; }
 .page-content > h2 { padding-bottom: 13px; border-bottom: 1px solid var(--border); }
-.page-publication .page-content h3 { font-size: var(--font-size-lg); }
+.page-publication .page-content h3 { font-size: var(--font-size-md); }
 .page-content h3 + p { color: var(--black); }
 .post-preview { padding: 0 0 34px; margin-bottom: 34px; border-bottom: 1px solid var(--border); }
 .post-preview-meta { display: flex; flex-wrap: wrap; gap: 6px 22px; color: var(--black); }
