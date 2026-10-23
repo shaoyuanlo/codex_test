@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="{{ '/assets/fonts/fonts.css' | url }}">
   <link rel="stylesheet" href="{{ '/assets/style.css' | url }}">
 </head>
-<body>
+<body{% if section %} class="page-{{ section }}"{% endif %}>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="header-inner">
