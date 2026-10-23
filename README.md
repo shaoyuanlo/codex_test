@@ -53,25 +53,20 @@ Built with [Eleventy](https://www.11ty.dev/) and deployed as static HTML to GitH
 | CV | 替換 `files/SYLo_CV.pdf`，檔名保留即可 |
 | 配色、字體、間距 | [`src/assets/style.css`](src/assets/style.css) 開頭的變數 |
 
-深藍主色在 `style.css` 頂端的 `--accent: #002d72`；按鈕滑過時使用較深的 `--accent-hover: #00245b`，提示背景使用淺藍的 `--accent-light: #eaf0f8`。文字反白使用獨立的 `--selection-bg: #afc7e8`，讓選取範圍在淺藍提示框內仍然可見，反白文字則沿用深藍主色。
+配色維持純白背景、純黑一般文字、深藍互動元素。頁面、導覽橫幅、提示框及程式碼區塊都使用白底，文字不區分主要與次要灰階；連結保留深藍，深藍按鈕使用白字。分隔線與邊框統一使用原本提示背景的淺藍色。文字反白保留較深的藍底，搭配黑字。
 
 介面配色集中在 `style.css` 開頭的 `:root`：
 
 | 設定 | 色碼 | 用途 |
 | --- | --- | --- |
-| `--accent` | `#002D72` | 連結、按鈕底色、導覽選取狀態、反白文字 |
+| `--white` | `#FFFFFF` | 所有頁面、橫幅、提示框背景，以及深藍按鈕的白字 |
+| `--black` | `#000000` | 所有一般文字、標題、日期、圖片說明、反白文字 |
+| `--accent` | `#002D72` | 連結、按鈕底色、導覽選取狀態及焦點標示 |
 | `--accent-hover` | `#00245B` | 按鈕滑過時的底色 |
-| `--accent-light` | `#EAF0F8` | 提示框與程式碼區塊底色 |
+| `--border` | `#EAF0F8` | 分隔線與所有邊框，沿用原本提示背景色 |
 | `--selection-bg` | `#AFC7E8` | 滑鼠或觸控選取文字時的反白底色 |
-| `--paper` | `#F9F8F5` | 網頁整體米白背景 |
-| `--surface` | `#FFFFFF` | 鍵盤操作「Skip to content」連結的浮層底色 |
-| `--on-accent` | `#FFFFFF` | 深藍按鈕上的白色文字與箭頭 |
-| `--ink` | `#202C2B` | 主要文字與標題 |
-| `--muted` | `#626B67` | 次要文字、日期、圖片說明 |
-| `--rule` | `#DEDFD7` | 分隔線、細邊框 |
-| `--header-bg` | `rgba(249, 248, 245, .97)` | 固定導覽橫幅背景，97% 不透明的米白色 |
 
-另有兩個獨立設定：`src/_includes/layouts/base.njk` 的 `theme-color`（目前為 `#F9F8F5`，供支援的瀏覽器工具列使用），以及列印樣式的固定白底。照片與校徽的顏色來自圖片檔本身，不由這些 CSS 變數控制。
+只保留上述 **6 個色彩變數**，共用顏色不再另設分類。瀏覽器工具列的 `theme-color` 也統一為純白，列印背景沿用 `--white`。照片與校徽的顏色來自圖片檔本身，不由這些 CSS 變數控制。
 
 這份版本帶入原網站的簡介、照片、CV、三篇代表論文與部分消息。Lab 成員、課程內容保留待填；Blog 目前有一篇明確標示 Example 的示範文章，正式上線前可替換或刪除。沒有虛構學生、課程或研究成果。研究方向的簡短介紹是依原網站主題撰寫，可自由修改。
 
@@ -193,7 +188,7 @@ Workflow 會自動辨識個人網站並使用 `/` 作為根路徑，因此 **Hom
 
 ## Design & accessibility
 
-- Warm off-white, deep navy blue, serif headings, and system fonts; no external font requests.
+- Pure white backgrounds, black text, navy links and buttons, serif headings, and system fonts; no external font requests.
 - All five navigation links remain visible on mobile, in a sticky two-row header.
 - Semantic headings, a keyboard skip link, visible focus indicators, and active-page announcements.
 - Responsive images, print styles, canonical URLs, social metadata, and a custom 404 page.

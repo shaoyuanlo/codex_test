@@ -7,7 +7,7 @@ const checks = [];
 for (const [relative, marker] of [
   ['index.html', '<h1 id="home-title">'],
   ['lab/index.html', '<h1>Lab</h1>'],
-  ['assets/style.css', '--paper: #f9f8f5']
+  ['assets/style.css', '.site-header {']
 ]) {
   const url = new URL(relative, manifest.url).href;
   try {
