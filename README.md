@@ -49,8 +49,11 @@ Built with [Eleventy](https://www.11ty.dev/) and deployed as static HTML to GitH
 | 首頁按鈕文字 | [`src/_includes/layouts/home.njk`](src/_includes/layouts/home.njk) |
 | 各頁標題下方的簡介 | 各頁頂端 `intro:` 欄位 |
 | 個人照片 | 替換 `src/assets/portrait.webp`（建議 5:6 比例） |
+| 瀏覽器分頁圖示／台大校徽 | [`src/assets/ntu-emblem.png`](src/assets/ntu-emblem.png) |
 | CV | 替換 `files/SYLo_CV.pdf`，檔名保留即可 |
 | 配色、字體、間距 | [`src/assets/style.css`](src/assets/style.css) 開頭的變數 |
+
+深綠主色在 `style.css` 頂端的 `--accent: #214f49`；按鈕滑過時的顏色為 `--accent-hover: #173c37`，淺綠提示背景為 `--accent-light: #eaf0e9`。修改這些變數即可調整連結、按鈕與導覽等共用配色。
 
 這份版本帶入原網站的簡介、照片、CV、三篇代表論文與部分消息。Lab 成員、課程內容保留待填；Blog 目前有一篇明確標示 Example 的示範文章，正式上線前可替換或刪除。沒有虛構學生、課程或研究成果。研究方向的簡短介紹是依原網站主題撰寫，可自由修改。
 
@@ -179,3 +182,5 @@ Workflow 會自動辨識個人網站並使用 `/` 作為根路徑，因此 **Hom
 - Shared layouts keep changes consistent across all pages; content remains in Markdown.
 
 The profile photo, CV, biography, links, news, and selected publication details were sourced from the existing `shaoyuanlo.github.io` repository. The design takes cues from the restrained academic presentation and warm palette in the accessible Shih-Hsin Wang reference source. The other two reference sites were inaccessible from this environment; their layouts were not verified.
+
+The favicon is the original NTU emblem image from [National Taiwan University's official website](https://www.ntu.edu.tw/images/favicon/apple-touch-icon.png), copied without modification. Its source is recorded in `src/assets/ntu-emblem-source.json`. The **Refresh official NTU favicon** workflow can refresh the source asset; the university emblem is independent of the site's CSS accent color.
