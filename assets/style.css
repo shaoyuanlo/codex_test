@@ -27,7 +27,7 @@ h1 { font-family: var(--serif); font-weight: 400; letter-spacing: -.045em; }
 .skip-link:focus { top: 12px; }
 .site-header { position: sticky; top: 0; z-index: 10; background: var(--accent); border-bottom: 1px solid var(--border); }
 .site-header a:focus-visible { outline-color: var(--white); }
-.header-inner { max-width: 1120px; padding: 0 40px; min-height: 88px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+.header-inner { max-width: 1120px; padding: 0 40px; min-height: 50px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
 .wordmark { color: var(--white); font-size: 19px; font-weight: 500; letter-spacing: -.65px; white-space: nowrap; text-decoration: none; }
 .wordmark > span:first-child { font-weight: 700; }
 .wordmark-dot { color: inherit; padding-left: 1px; }
