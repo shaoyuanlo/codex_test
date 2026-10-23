@@ -53,7 +53,7 @@ Built with [Eleventy](https://www.11ty.dev/) and deployed as static HTML to GitH
 | CV | 替換 `files/SYLo_CV.pdf`，檔名保留即可 |
 | 配色、字體、間距 | [`src/assets/style.css`](src/assets/style.css) 開頭的變數 |
 
-導覽列尺寸也在 `src/assets/style.css`：`.header-inner` 的 `min-height` 設定最低高度（桌機 `88px`、手機 `100px`）；`nav a` 的 `font-size` 設定選單文字大小（桌機 `14px`、手機 `12px`）。左側姓名使用 `.wordmark` 的 `font-size`（桌機 `19px`、手機 `18px`）。手機版設定位於 `@media (max-width: 600px)`，會覆蓋桌機設定；實際高度也會受內距及內容影響。
+導覽列尺寸也在 `src/assets/style.css`：`.header-inner` 的 `min-height` 設定最低高度（桌機 `50px`、手機 `100px`）；`nav a` 的 `font-size` 設定選單文字大小（桌機 `14px`、手機 `12px`）。左側姓名使用 `.wordmark` 的 `font-size`（桌機 `19px`、手機 `18px`）。手機版設定位於 `@media (max-width: 600px)`，會覆蓋桌機設定；實際高度也會受內距及內容影響。
 
 配色維持白色頁面背景、黑色一般文字、主藍互動與少量強調文字。導覽橫幅使用主藍底、白字，深藍按鈕也使用白字；首頁職稱、提示框標籤、研究編號及消息日期沿用主藍。提示框與程式碼區塊恢復淺藍背景，分隔線與邊框共用這個淺藍色。文字反白使用較深的藍底，搭配黑字。介面文字僅使用黑、白、主藍三色。
 
@@ -69,7 +69,7 @@ Built with [Eleventy](https://www.11ty.dev/) and deployed as static HTML to GitH
 | `--border` | `#EAF0F8` | 分隔線與邊框；透過 `var(--accent-light)` 共用淺藍色 |
 | `--selection-bg` | `#AFC7E8` | 滑鼠或觸控選取文字時的反白底色 |
 
-共 **7 個色彩變數、6 種實際顏色**；邊框與提示背景共用色碼，文字不設主要／次要灰階。瀏覽器工具列的 `theme-color` 配合導覽使用主藍色，列印背景沿用 `--white`。照片與校徽的顏色來自圖片檔本身，不由這些 CSS 變數控制。
+共 **7 個色彩變數、6 種實際顏色**；邊框與提示背景共用色碼，文字不設主要／次要灰階。網站不設定 `theme-color`，讓手機瀏覽器自行決定工具列顏色；網站內的導覽列仍為主藍色。列印背景沿用 `--white`。照片與校徽的顏色來自圖片檔本身，不由這些 CSS 變數控制。
 
 這份版本帶入原網站的簡介、照片、CV、三篇代表論文與部分消息。Lab 成員、課程內容保留待填；Blog 目前有一篇明確標示 Example 的示範文章，正式上線前可替換或刪除。沒有虛構學生、課程或研究成果。研究方向的簡短介紹是依原網站主題撰寫，可自由修改。
 
