@@ -5,9 +5,9 @@
   --surface: #ffffff;
   --ink: #202c2b;
   --muted: #626b67;
-  --accent: #214f49;
-  --accent-hover: #173c37;
-  --accent-light: #eaf0e9;
+  --accent: #002d72;
+  --accent-hover: #00245b;
+  --accent-light: #eaf0f8;
   --rule: #dedfd7;
   --serif: Georgia, "Times New Roman", serif;
   --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
@@ -15,7 +15,7 @@
 * { box-sizing: border-box; }
 html { scroll-padding-top: 110px; }
 body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); font-size: 16px; line-height: 1.75; -webkit-font-smoothing: antialiased; }
-::selection { background: #d7e5d8; color: #162e28; }
+::selection { background: var(--accent-light); color: var(--accent); }
 a { color: var(--accent); text-underline-offset: 4px; text-decoration-thickness: 1px; }
 a:hover { text-decoration-color: currentColor; }
 a:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; border-radius: 2px; }
