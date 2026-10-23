@@ -8,12 +8,12 @@
   --accent-light: #eaf0f8;
   --border: var(--accent-light);
   --selection-bg: #afc7e8;
-  --serif: Georgia, "Times New Roman", serif;
-  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --font: "Inter", "Noto Sans TC", system-ui, sans-serif;
 }
 * { box-sizing: border-box; }
 html { scroll-padding-top: 110px; }
-body { margin: 0; background: var(--white); color: var(--black); font-family: var(--sans); font-size: 16px; line-height: 1.75; -webkit-font-smoothing: antialiased; }
+body { margin: 0; background: var(--white); color: var(--black); font-family: var(--font); font-size: 16px; line-height: 1.75; -webkit-font-smoothing: antialiased; }
+button, input, select, textarea, pre, code, kbd, samp { font-family: inherit; }
 ::selection { background: var(--selection-bg); color: var(--black); }
 a { color: var(--accent); text-underline-offset: 4px; text-decoration-thickness: 1px; }
 a:hover { text-decoration-color: currentColor; }
@@ -22,7 +22,7 @@ img { display: block; max-width: 100%; height: auto; }
 .arrow-icon { display: inline-block; flex-shrink: 0; vertical-align: -.1em; }
 p { margin: 0 0 1.25em; }
 h1, h2, h3 { line-height: 1.2; }
-h1 { font-family: var(--serif); font-weight: 400; letter-spacing: -.045em; }
+h1 { font-weight: 400; letter-spacing: -.045em; }
 .skip-link { position: fixed; left: 20px; top: -100px; padding: 10px 18px; z-index: 20; background: var(--white); border: 1px solid var(--border); }
 .skip-link:focus { top: 12px; }
 .site-header { position: sticky; top: 0; z-index: 10; background: var(--accent); border-bottom: 1px solid var(--border); }
@@ -43,7 +43,7 @@ nav a[aria-current]::after { content: ""; position: absolute; bottom: -1px; left
 .hero .eyebrow { display: flex; align-items: center; gap: 9px; margin-bottom: 23px; }
 .status-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
 .hero h1 { font-size: clamp(42px, 5.2vw, 62px); margin: 0 0 8px; }
-.chinese-name { font-size: 19px; font-family: var(--sans); font-weight: 400; letter-spacing: .12em; color: var(--black); display: inline-block; margin-left: 20px; vertical-align: middle; }
+.chinese-name { font-size: 19px; font-weight: 400; letter-spacing: .12em; color: var(--black); display: inline-block; margin-left: 20px; vertical-align: middle; }
 .hero-role { color: var(--accent); font-size: 17px; margin-bottom: 23px; }
 .hero-description { color: var(--black); font-size: 18px; line-height: 1.7; margin-bottom: 27px; }
 .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 23px; }
@@ -58,7 +58,7 @@ nav a[aria-current]::after { content: ""; position: absolute; bottom: -1px; left
 .portrait { margin: 0; padding: 0; }
 .portrait img { width: 100%; aspect-ratio: 5 / 6; object-fit: cover; border-radius: 3px; filter: saturate(.82); }
 .prose { overflow-wrap: break-word; }
-.prose h2 { font-family: var(--serif); font-weight: 400; letter-spacing: -.025em; font-size: 30px; margin: 49px 0 21px; }
+.prose h2 { font-weight: 400; letter-spacing: -.025em; font-size: 30px; margin: 49px 0 21px; }
 .prose h3 { font-size: 19px; font-weight: 600; margin: 28px 0 13px; line-height: 1.45; }
 .prose p { max-width: 77ch; }
 .prose ul, .prose ol { padding-left: 22px; }
@@ -85,7 +85,7 @@ nav a[aria-current]::after { content: ""; position: absolute; bottom: -1px; left
 .home-bottom { margin-top: 56px; display: grid; grid-template-columns: 1fr 1fr; gap: 42px; }
 .explore-link { display: flex; flex-direction: column; color: var(--black); font-size: 13px; text-decoration: none; }
 .explore-link > .eyebrow { margin-bottom: 12px; }
-.explore-title { font-family: var(--serif); font-size: 24px; color: var(--black); margin-bottom: 8px; line-height: 1.4; }
+.explore-title { font-size: 24px; color: var(--black); margin-bottom: 8px; line-height: 1.4; }
 .explore-title > .arrow-icon { width: 18px; height: 18px; margin-left: 4px; color: var(--accent); }
 .explore-link:hover .explore-title { color: var(--accent); }
 .page-heading { padding: 70px 0 35px; border-bottom: 1px solid var(--border); margin-bottom: 35px; }
