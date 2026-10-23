@@ -53,6 +53,8 @@ Built with [Eleventy](https://www.11ty.dev/) and deployed as static HTML to GitH
 | CV | 替換 `files/SYLo_CV.pdf`，檔名保留即可 |
 | 配色、字體、間距 | [`src/assets/style.css`](src/assets/style.css) 開頭的變數 |
 
+導覽列尺寸也在 `src/assets/style.css`：`.header-inner` 的 `min-height` 設定最低高度（桌機 `88px`、手機 `100px`）；`nav a` 的 `font-size` 設定選單文字大小（桌機 `14px`、手機 `12px`）。左側姓名使用 `.wordmark` 的 `font-size`（桌機 `19px`、手機 `18px`）。手機版設定位於 `@media (max-width: 600px)`，會覆蓋桌機設定；實際高度也會受內距及內容影響。
+
 配色維持白色頁面背景、黑色一般文字、主藍互動與少量強調文字。導覽橫幅使用主藍底、白字，深藍按鈕也使用白字；首頁職稱、提示框標籤、研究編號及消息日期沿用主藍。提示框與程式碼區塊恢復淺藍背景，分隔線與邊框共用這個淺藍色。文字反白使用較深的藍底，搭配黑字。介面文字僅使用黑、白、主藍三色。
 
 介面配色集中在 `style.css` 開頭的 `:root`：
