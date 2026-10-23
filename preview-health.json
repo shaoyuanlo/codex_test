@@ -1,0 +1,22 @@
+{
+  "sourceCommit": "adb2cad983af939931ee60bbf1598d36960ab9fc",
+  "checkedAt": "2026-10-23T14:07:30.118Z",
+  "passed": true,
+  "checks": [
+    {
+      "url": "https://raw.githack.com/shaoyuanlo/codex_test/site-preview/index.html",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "url": "https://raw.githack.com/shaoyuanlo/codex_test/site-preview/lab/index.html",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "url": "https://raw.githack.com/shaoyuanlo/codex_test/site-preview/assets/style.css",
+      "status": 200,
+      "passed": true
+    }
+  ]
+}
