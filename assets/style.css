@@ -9,7 +9,7 @@
   --border: var(--accent-light);
   --selection-bg: #afc7e8;
 
-  /* Font size options — shared by desktop and mobile. */
+  /* Desktop font size options; mobile overrides are directly below. */
   --font-size-sm: 14px;
   --font-size-base: 16px;
   --font-size-lg: 18px;
@@ -17,6 +17,15 @@
   --font-size-2xl: 36px;
 
   --font: "Inter", "Noto Sans TC", system-ui, sans-serif;
+}
+@media (max-width: 600px) {
+  :root {
+    --font-size-sm: 12px;
+    --font-size-base: 15px;
+    --font-size-lg: 16px;
+    --font-size-xl: 24px;
+    --font-size-2xl: 32px;
+  }
 }
 * { box-sizing: border-box; }
 html { scroll-padding-top: 110px; }
@@ -37,7 +46,7 @@ h1 { letter-spacing: -.045em; }
 .skip-link:focus { top: 12px; }
 .site-header { position: sticky; top: 0; z-index: 10; background: var(--accent); }
 .site-header a:focus-visible { outline-color: var(--white); }
-.header-inner { max-width: 1120px; padding: 0 40px; min-height: 60px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+.header-inner { max-width: 1120px; padding: 0 40px; min-height: 50px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
 .wordmark { font-size: var(--font-size-lg); color: var(--white); letter-spacing: -.65px; white-space: nowrap; text-decoration: none; }
 .wordmark-dot { color: inherit; padding-left: 1px; }
 nav { display: flex; gap: 28px; align-self: stretch; }
@@ -68,7 +77,6 @@ nav a[aria-current] { font-weight: 600; }
 .prose { overflow-wrap: break-word; }
 .prose h2 { font-size: var(--font-size-xl); letter-spacing: -.025em; margin: 49px 0 21px; }
 .prose h3 { font-weight: 600; margin: 28px 0 13px; line-height: 1.45; }
-.prose p { max-width: 77ch; }
 .prose ul, .prose ol { padding-left: 22px; }
 .prose li { padding-left: 5px; margin: 14px 0; }
 .prose a:hover { text-decoration-thickness: 2px; }
@@ -97,8 +105,7 @@ nav a[aria-current] { font-weight: 600; }
 .page-heading { padding: 70px 0 35px; border-bottom: 1px solid var(--border); margin-bottom: 35px; }
 .page-heading .eyebrow { margin-bottom: 19px; }
 .page-heading h1 { font-size: var(--font-size-2xl); margin: 0 0 18px; }
-.page-intro { color: var(--black); max-width: 650px; margin-bottom: 0; }
-.page-content { max-width: 810px; }
+.page-intro { color: var(--black); margin-bottom: 0; }
 .page-content > h2:first-child { margin-top: 0; }
 .page-content > h2 { padding-bottom: 13px; border-bottom: 1px solid var(--border); }
 .page-publication .page-content h3 { font-size: var(--font-size-lg); }
@@ -110,7 +117,6 @@ nav a[aria-current] { font-weight: 600; }
 .post-preview h2 a:hover { color: var(--accent); }
 .post-preview h2 .arrow-icon { color: var(--accent); width: 20px; height: 20px; }
 .post-preview p { color: var(--black); }
-.post { max-width: 770px; margin: auto; }
 .back-link { display: inline-block; margin-top: 38px; text-decoration: none; }
 .post .page-heading { padding-top: 38px; }
 .post .page-heading h1 { line-height: 1.15; }
@@ -121,7 +127,6 @@ nav a[aria-current] { font-weight: 600; }
 .footer-inner p { color: var(--black); margin: 4px 0 0; }
 .footer-right { text-align: right; }
 .footer-right > a { text-decoration: none; }
-@media (min-width: 900px) { .home-content { max-width: 900px; } }
 @media (max-width: 800px) {
   .header-inner { padding: 0 26px; gap: 20px; }
   nav { gap: 19px; }
