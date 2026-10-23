@@ -5,7 +5,8 @@
   --black: #000000;
   --accent: #002d72;
   --accent-hover: #00245b;
-  --border: #eaf0f8;
+  --accent-light: #eaf0f8;
+  --border: var(--accent-light);
   --selection-bg: #afc7e8;
   --serif: Georgia, "Times New Roman", serif;
   --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
@@ -24,16 +25,17 @@ h1, h2, h3 { line-height: 1.2; }
 h1 { font-family: var(--serif); font-weight: 400; letter-spacing: -.045em; }
 .skip-link { position: fixed; left: 20px; top: -100px; padding: 10px 18px; z-index: 20; background: var(--white); border: 1px solid var(--border); }
 .skip-link:focus { top: 12px; }
-.site-header { position: sticky; top: 0; z-index: 10; background: var(--white); border-bottom: 1px solid var(--border); }
+.site-header { position: sticky; top: 0; z-index: 10; background: var(--accent); border-bottom: 1px solid var(--border); }
+.site-header a:focus-visible { outline-color: var(--white); }
 .header-inner { max-width: 1120px; padding: 0 40px; min-height: 88px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
-.wordmark { color: var(--black); font-size: 19px; font-weight: 500; letter-spacing: -.65px; white-space: nowrap; text-decoration: none; }
+.wordmark { color: var(--white); font-size: 19px; font-weight: 500; letter-spacing: -.65px; white-space: nowrap; text-decoration: none; }
 .wordmark > span:first-child { font-weight: 700; }
-.wordmark-dot { color: var(--accent); padding-left: 1px; }
+.wordmark-dot { color: inherit; padding-left: 1px; }
 nav { display: flex; gap: 28px; align-self: stretch; }
-nav a { display: flex; align-items: center; position: relative; color: var(--black); font-size: 14px; text-decoration: none; white-space: nowrap; }
-nav a:hover, nav a[aria-current] { color: var(--accent); }
+nav a { display: flex; align-items: center; position: relative; color: var(--white); font-size: 14px; text-decoration: none; white-space: nowrap; }
+nav a:hover { text-decoration: underline; text-underline-offset: 6px; }
 nav a[aria-current] { font-weight: 600; }
-nav a[aria-current]::after { content: ""; position: absolute; bottom: -1px; left: 0; right: 0; height: 2px; background: var(--accent); }
+nav a[aria-current]::after { content: ""; position: absolute; bottom: -1px; left: 0; right: 0; height: 2px; background: var(--white); }
 .site-main { max-width: 1120px; padding: 0 40px 96px; margin: 0 auto; min-height: calc(100vh - 270px); }
 .site-main:focus { outline: none; }
 .eyebrow { font-size: 11px; text-transform: uppercase; letter-spacing: .16em; font-weight: 600; color: var(--black); }
@@ -42,7 +44,7 @@ nav a[aria-current]::after { content: ""; position: absolute; bottom: -1px; left
 .status-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
 .hero h1 { font-size: clamp(42px, 5.2vw, 62px); margin: 0 0 8px; }
 .chinese-name { font-size: 19px; font-family: var(--sans); font-weight: 400; letter-spacing: .12em; color: var(--black); display: inline-block; margin-left: 20px; vertical-align: middle; }
-.hero-role { color: var(--black); font-size: 17px; margin-bottom: 23px; }
+.hero-role { color: var(--accent); font-size: 17px; margin-bottom: 23px; }
 .hero-description { color: var(--black); font-size: 18px; line-height: 1.7; margin-bottom: 27px; }
 .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 23px; }
 .button { display: inline-flex; align-items: center; gap: 24px; background: var(--accent); color: var(--white); border: 1px solid var(--border); border-radius: 3px; padding: 10px 18px; text-decoration: none; font-size: 14px; font-weight: 500; min-height: 44px; }
@@ -66,21 +68,21 @@ nav a[aria-current]::after { content: ""; position: absolute; bottom: -1px; left
 .prose a:hover { text-decoration-thickness: 2px; }
 .prose hr { border: 0; border-top: 1px solid var(--border); margin: 31px 0; }
 .prose blockquote { border-left: 2px solid var(--border); padding-left: 22px; color: var(--black); margin: 28px 0; }
-.prose pre { background: var(--white); padding: 18px; border-radius: 3px; overflow-x: auto; }
+.prose pre { background: var(--accent-light); padding: 18px; border-radius: 3px; overflow-x: auto; }
 .prose code { font-size: .9em; }
 .prose table { display: block; max-width: 100%; overflow-x: auto; border-collapse: collapse; }
 .prose th, .prose td { text-align: left; padding: 12px 16px; border-bottom: 1px solid var(--border); }
-.callout { border-left: 2px solid var(--border); background: var(--white); margin: 30px 0 40px; padding: 20px 25px; border-radius: 0 3px 3px 0; }
-.callout .callout-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--black); margin: 0 0 8px; }
+.callout { border-left: 2px solid var(--border); background: var(--accent-light); margin: 30px 0 40px; padding: 20px 25px; border-radius: 0 3px 3px 0; }
+.callout .callout-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--accent); margin: 0 0 8px; }
 .callout p { font-size: 14px; line-height: 1.8; margin-bottom: 0; }
 .research-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin: 28px 0 40px; }
 .research-grid > div { padding-top: 16px; border-top: 1px solid var(--border); }
-.research-number { font-size: 11px; color: var(--black); font-variant-numeric: tabular-nums; }
+.research-number { font-size: 11px; color: var(--accent); font-variant-numeric: tabular-nums; }
 .research-grid h3 { font-size: 16px; margin: 13px 0 9px; }
 .research-grid p { font-size: 14px; color: var(--black); line-height: 1.7; }
 .home-content > ul { list-style: none; padding: 0; margin: 0; }
 .home-content > ul > li { padding: 16px 0; margin: 0; border-bottom: 1px solid var(--border); font-size: 14px; }
-.home-content > ul strong { color: var(--black); }
+.home-content > ul strong { color: var(--accent); }
 .home-bottom { margin-top: 56px; display: grid; grid-template-columns: 1fr 1fr; gap: 42px; }
 .explore-link { display: flex; flex-direction: column; color: var(--black); font-size: 13px; text-decoration: none; }
 .explore-link > .eyebrow { margin-bottom: 12px; }
