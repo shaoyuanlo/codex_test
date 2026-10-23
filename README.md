@@ -53,7 +53,7 @@ Built with [Eleventy](https://www.11ty.dev/) and deployed as static HTML to GitH
 | CV | 替換 `files/SYLo_CV.pdf`，檔名保留即可 |
 | 配色、字體、間距 | [`src/assets/style.css`](src/assets/style.css) 開頭的變數 |
 
-導覽列尺寸也在 `src/assets/style.css`：`.header-inner` 的 `min-height` 設定最低高度（桌機 `50px`、手機 `100px`）。選單固定使用 `16px`，左側姓名固定使用 `18px`，桌機與手機一致。手機區塊僅調整版面與間距，不再覆寫字級；窄螢幕時選單可自動換行，實際高度也會受內距及內容影響。
+導覽列尺寸也在 `src/assets/style.css`：`.header-inner` 的 `min-height` 設定最低高度（桌機 `60px`、手機 `80px`）。選單固定使用 `16px`，左側姓名固定使用 `18px`，桌機與手機一致。手機區塊僅調整版面與間距，不再覆寫字級；窄螢幕時選單可自動換行，實際高度也會受內距及內容影響。
 
 字級選項集中在 CSS 上方 `:root` 的顏色設定之後，各元素透過 `var(...)` 使用，避免另寫零散字級：
 
@@ -61,7 +61,7 @@ Built with [Eleventy](https://www.11ty.dev/) and deployed as static HTML to GitH
 | --- | --- | --- |
 | `--font-size-sm` | `14px` | 頁尾資訊 |
 | `--font-size-base` | `16px` | 一般內文、導覽選單，以及未特別指定的項目 |
-| `--font-size-md` | `18px` | 導覽列左側姓名、論文標題 |
+| `--font-size-lg` | `18px` | 導覽列左側姓名、論文標題 |
 | `--font-size-xl` | `28px` | 區塊標題（內容中的 `h2`） |
 | `--font-size-2xl` | `36px` | 首頁英文姓名、各分頁及 Blog 文章主標題 |
 
