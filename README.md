@@ -53,22 +53,21 @@ Built with [Eleventy](https://www.11ty.dev/) and deployed as static HTML to GitH
 | CV | 替換 `files/SYLo_CV.pdf`，檔名保留即可 |
 | 配色、字體、間距 | [`src/assets/style.css`](src/assets/style.css) 開頭的變數 |
 
-導覽列尺寸也在 `src/assets/style.css`：`.header-inner` 的 `min-height` 設定最低高度（桌機 `50px`、手機 `100px`）。選單固定使用 `18px`，左側姓名固定使用 `20px`，桌機與手機一致。手機區塊僅調整版面與間距，不再覆寫字級；窄螢幕時選單可自動換行，實際高度也會受內距及內容影響。
+導覽列尺寸也在 `src/assets/style.css`：`.header-inner` 的 `min-height` 設定最低高度（桌機 `50px`、手機 `100px`）。選單固定使用 `16px`，左側姓名固定使用 `18px`，桌機與手機一致。手機區塊僅調整版面與間距，不再覆寫字級；窄螢幕時選單可自動換行，實際高度也會受內距及內容影響。
 
 字級選項集中在 CSS 上方 `:root` 的顏色設定之後，各元素透過 `var(...)` 使用，避免另寫零散字級：
 
 | 字級變數 | 大小 | 使用位置（桌機、手機相同） |
 | --- | --- | --- |
 | `--font-size-sm` | `14px` | 頁尾資訊 |
-| `--font-size-base` | `16px` | 一般內文，以及未特別指定的項目 |
-| `--font-size-md` | `18px` | 導覽選單 |
-| `--font-size-lg` | `20px` | 導覽列左側姓名、論文標題 |
+| `--font-size-base` | `16px` | 一般內文、導覽選單，以及未特別指定的項目 |
+| `--font-size-md` | `18px` | 導覽列左側姓名、論文標題 |
 | `--font-size-xl` | `28px` | 區塊標題（內容中的 `h2`） |
-| `--font-size-2xl` | `32px` | 首頁英文姓名、各分頁及 Blog 文章主標題 |
+| `--font-size-2xl` | `36px` | 首頁英文姓名、各分頁及 Blog 文章主標題 |
 
 字重只使用 **400（一般）**與 **600（粗體）**，預設 400。Markdown 的 `**粗體文字**`、HTML 的 `strong`／`b`、目前導覽頁面的強調狀態等使用 600。正文、提示框、程式碼、中文姓名、社群連結等未指定項目皆使用 16px；只有頁尾統一繼承 14px。
 
-全站字型統一由 `style.css` 的 `--font: "Inter", "Noto Sans TC", system-ui, sans-serif` 設定：英文優先使用 Inter，中文使用 Noto Sans TC，載入失敗或缺字時使用系統預設字型。標題、內文、導覽、中文姓名與程式碼都沿用這一組字型；字級限用上述六項，字重限用 400／600。原本的 `--serif`、`--sans` 已移除。字型檔存於 `src/assets/fonts/`，以分段 WOFF2 按需載入，採 `font-display: swap`，不依賴外部字型 CDN；來源版本及授權分別保存在 `sources.json` 與各字型目錄的 `LICENSE.txt`。
+全站字型統一由 `style.css` 的 `--font: "Inter", "Noto Sans TC", system-ui, sans-serif` 設定：英文優先使用 Inter，中文使用 Noto Sans TC，載入失敗或缺字時使用系統預設字型。標題、內文、導覽、中文姓名與程式碼都沿用這一組字型；字級限用上述五項，字重限用 400／600。原本的 `--serif`、`--sans` 已移除。字型檔存於 `src/assets/fonts/`，以分段 WOFF2 按需載入，採 `font-display: swap`，不依賴外部字型 CDN；來源版本及授權分別保存在 `sources.json` 與各字型目錄的 `LICENSE.txt`。
 
 配色維持白色頁面背景、黑色一般文字、主藍互動與少量強調文字。導覽橫幅使用主藍底、白字，深藍按鈕也使用白字；首頁職稱、提示框標籤、研究編號及消息日期沿用主藍。提示框與程式碼區塊恢復淺藍背景，分隔線與邊框共用這個淺藍色。文字反白使用較深的藍底，搭配黑字。介面文字僅使用黑、白、主藍三色。
 
