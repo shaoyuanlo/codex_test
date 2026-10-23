@@ -18,7 +18,7 @@ Built with [Eleventy](https://www.11ty.dev/) and deployed as static HTML to GitH
 
 預覽狀態可在 [Actions](https://github.com/shaoyuanlo/codex_test/actions/workflows/preview.yml) 查看。若 Actions 被停用，或儲存庫政策不允許工作流程寫入分支，自動更新會失敗；請啟用 Actions 並確認此工作流程獲允許使用 `contents: write`。此預覽使用公開檔案，不需要新增個人存取權杖。
 
-工作流程也會實際請求代理上的首頁、Lab 與樣式檔，並將檢查結果存為 `site-preview` 分支中的 `preview-health.json`。這可區分「已產生檔案」與「外部代理確實可讀取」。
+工作流程也會實際請求代理上的首頁、Lab、樣式檔與英文字／中文字型，並將檢查結果存為 `site-preview` 分支中的 `preview-health.json`。這可區分「已產生檔案」與「外部代理確實可讀取」。
 
 預覽圖片也與程式碼一起保存在這個儲存庫：
 
@@ -54,6 +54,8 @@ Built with [Eleventy](https://www.11ty.dev/) and deployed as static HTML to GitH
 | 配色、字體、間距 | [`src/assets/style.css`](src/assets/style.css) 開頭的變數 |
 
 導覽列尺寸也在 `src/assets/style.css`：`.header-inner` 的 `min-height` 設定最低高度（桌機 `50px`、手機 `100px`）；`nav a` 的 `font-size` 設定選單文字大小（桌機 `14px`、手機 `12px`）。左側姓名使用 `.wordmark` 的 `font-size`（桌機 `19px`、手機 `18px`）。手機版設定位於 `@media (max-width: 600px)`，會覆蓋桌機設定；實際高度也會受內距及內容影響。
+
+全站字型統一由 `style.css` 的 `--font: "Inter", "Noto Sans TC", system-ui, sans-serif` 設定：英文優先使用 Inter，中文使用 Noto Sans TC，載入失敗或缺字時使用系統預設字型。標題、內文、導覽、中文姓名與程式碼都沿用這一組字型；字級、粗細與斜體仍可依用途不同。原本的 `--serif`、`--sans` 已移除。字型檔存於 `src/assets/fonts/`，以分段 WOFF2 按需載入，採 `font-display: swap`，不依賴外部字型 CDN；來源版本及授權分別保存在 `sources.json` 與各字型目錄的 `LICENSE.txt`。
 
 配色維持白色頁面背景、黑色一般文字、主藍互動與少量強調文字。導覽橫幅使用主藍底、白字，深藍按鈕也使用白字；首頁職稱、提示框標籤、研究編號及消息日期沿用主藍。提示框與程式碼區塊恢復淺藍背景，分隔線與邊框共用這個淺藍色。文字反白使用較深的藍底，搭配黑字。介面文字僅使用黑、白、主藍三色。
 
@@ -191,7 +193,7 @@ Workflow 會自動辨識個人網站並使用 `/` 作為根路徑，因此 **Hom
 
 ## Design & accessibility
 
-- Pure white backgrounds, black text, navy links and buttons, serif headings, and system fonts; no external font requests.
+- Pure white backgrounds, black text, navy links and buttons, and one shared Inter / Noto Sans TC font stack with system fallbacks. Fonts are self-hosted; no external font CDN is required.
 - All five navigation links remain visible on mobile, in a sticky two-row header.
 - Semantic headings, a keyboard skip link, visible focus indicators, and active-page announcements.
 - Responsive images, print styles, canonical URLs, social metadata, and a custom 404 page.

@@ -7,13 +7,18 @@ const checks = [];
 for (const [relative, marker] of [
   ['index.html', '<h1 id="home-title">'],
   ['lab/index.html', '<h1>Lab</h1>'],
-  ['assets/style.css', '.site-header {']
+  ['assets/style.css', '.site-header {'],
+  ['assets/fonts/fonts.css', "font-family: 'Noto Sans TC';"],
+  ['assets/fonts/inter/files/inter-latin-wght-normal.woff2', null],
+  ['assets/fonts/noto-sans-tc/files/noto-sans-tc-0-wght-normal.woff2', null]
 ]) {
   const url = new URL(relative, manifest.url).href;
   try {
     const response = await fetch(url, { signal: AbortSignal.timeout(20000) });
-    const body = await response.text();
-    checks.push({ url, status: response.status, passed: response.ok && body.includes(marker) });
+    const matches = marker === null
+      ? Buffer.from(await response.arrayBuffer()).subarray(0, 4).toString('ascii') === 'wOF2'
+      : (await response.text()).includes(marker);
+    checks.push({ url, status: response.status, passed: response.ok && matches });
   } catch (error) {
     checks.push({ url, passed: false, error: error.message });
   }
