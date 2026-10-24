@@ -30,6 +30,8 @@ Yu-Ling Liao, Tzu-Chin Chiu, Zong-You Chen, Chi-Lei Tsai, **Shao-Yuan Lo**
 
 [Paper](https://arxiv.org/pdf/2609.29287) / [arXiv](https://arxiv.org/abs/2609.29287)
 
+---
+
 ## 2027
 
 ### Spatiotemporal Dynamics-Aware Industrial Anomaly Detection and Reasoning
@@ -39,6 +41,8 @@ S-Wei Chen, Siangyu Yang, Yi-Chen Jan, Chun-Yi Lee, **Shao-Yuan Lo**
 *IEEE/CVF Winter Conference on Applications of Computer Vision (**WACV**), 2027*
 
 Paper / arXiv
+
+---
 
 ## 2026
 
