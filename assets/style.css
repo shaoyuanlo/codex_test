@@ -7,6 +7,7 @@
   --accent-hover: #00245b;
   --accent-light: #eaf0f8;
   --selection-bg: #afc7e8;
+  --highlight: #900c26;
 
   /* Desktop font size options; mobile overrides are directly below. */
   --font-size-sm: 14px;
@@ -122,6 +123,7 @@ nav a[aria-current] { font-weight: 600; }
 .page-content > h2 { padding-bottom: var(--space-md); border-bottom: 1px solid var(--accent-light); }
 .page-publications .page-content h3 { font-size: var(--font-size-lg); line-height: var(--line-height-compact); }
 .page-publications .page-content h3 ~ p { line-height: var(--line-height-compact); margin-bottom: var(--space-sm); }
+.publication-note { color: var(--highlight); }
 .post-preview { padding: 0 0 var(--space-xl); margin-bottom: var(--space-xl); border-bottom: 1px solid var(--accent-light); }
 .post-preview-meta { display: flex; flex-wrap: wrap; gap: var(--space-sm) var(--space-md); }
 .post-preview h2 a { color: var(--black); text-decoration-line: none; }
