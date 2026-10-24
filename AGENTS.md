@@ -56,6 +56,7 @@
 | 建置、檢查、部署 | `eleventy.config.js`、`scripts/`、`.github/workflows/` |
 
 - Blog 與其他分頁一樣，直接以 `src/blog.md` 編輯，使用共用 `layouts/page.njk`；不新增獨立文章集合、自動列表、文章版型或專用樣式。
+- 首頁 News 使用 Markdown 清單與原生 details／summary 展開收起，按鈕沿用共用文字式按鈕；不為此加入 JavaScript 或額外依賴。
 - 五個導覽項目是獨立頁面，Home 來源為 `src/home.md`，透過 permalink 保持根網址；導覽列保持 sticky。全站共用資料集中於首頁 front matter 的 `website:`，由建置設定讀取，不另建獨立資料檔或重複維護。
 - Publications 的檔名、`section`、導覽 key、CSS 類別及網址統一使用 `publications`。舊 `/publication/` 只保留於失效路徑的檢查與說明。
 - 論文依年份由新到舊排列。同年份論文之間只留 Markdown 空行；每個年份最後一篇之後才加 `---`，最後一個年份亦同。

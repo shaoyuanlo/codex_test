@@ -53,9 +53,42 @@ Previously, I was a Research Scientist at [Honda Research Institute USA](https:/
 <p>I am looking for motivated undergraduate, master's, and Ph.D. students. Interested in working together? <a href="mailto:{{ site.email }}">Send me an email</a> with your résumé and transcripts.</p>
 </aside>
 
-## Recent news
+## News
 
-<!-- Add a new bullet at the top. Keep a few recent items here. -->
+<!-- Keep the latest three items here; move older items into the details block below. -->
 - **May 2026** — One paper accepted to ICML 2026. Serving as an Area Chair for NeurIPS 2026.
 - **March 2026** — Serving as an Area Chair for ICML 2026. Invited talk at the Surgical Data Science Symposium, National Taiwan University Hospital.
+- **December 2025** — Invited talk at the Advanced AI Safety Forum, Taiwan AI Center of Excellence.
+
+<details class="news-more">
+<summary class="button"><span class="show-more">Show more <span aria-hidden="true">↓</span></span><span class="show-less">Show less <span aria-hidden="true">↑</span></span></summary>
+
+<!-- Older news: edit these Markdown bullets directly. Original source dates are preserved. -->
+- **November 2025** — 1 paper accepted to WACV 2026. Serving as an Associate Editor for ICRA 2026. Invited talk at NVIDIA Research Taiwan.
+- **October 2025** — Serving as an Area Chair for ICLR 2026 and ICASSP 2026. Invited talk at Australian National University (remote).
 - **August 2025** — Joined National Taiwan University as an Assistant Professor. Awarded a Yushan Young Fellowship.
+- **June 2025** — 1 paper accepted to IJCV. Serving as an Area Chair for BMVC 2025. Invited talk at ProtagoLabs (remote).
+- **May 2025** — 1 paper accepted to ICML 2025 (Spotlight!). Recognized as an Outstanding Reviewer for CVPR 2025!
+- **April 2025** — 1 paper accepted to CVIU. Invited talks at UC Santa Cruz and CSIG Wuhan Center (virtual).
+- **March 2025** — 1 paper accepted to IEEE T-MI. Invited talks at UC Riverside and WACV 2025 COOOL Workshop.
+- **February 2025** — 2 papers accepted to CVPR 2025 (both are Highlight!). Serving as a Tutorial Chair for AVSS 2025.
+- **January 2025** — 1 paper accepted to ICLR 2025.
+- **November 2024** — Invited talk at National Taiwan University. Serving as an Associate Editor for ICRA 2025.
+- **September 2024** — Invited talk at Jilin University (remote).
+- **July 2023** — 1 paper accepted to ECCV 2024.
+- **February 2024** — 2 papers accepted to CVPR 2024. Won the Best Student Paper Award at SPIE Medical Imaging 2024!!
+- **January 2024** — Invited talks at Academia Sinica and National Yang Ming Chiao Tung University.
+- **July 2023** — Joined Honda Research Institute USA as a Research Scientist. See you in San Jose, CA!!
+- **March 2023** — Defended my PhD dissertation!!
+- **February 2023** — 1 paper accepted to CVPR 2023.
+- **September 2022** — Accepted to the Google CS Research Mentorship Program.
+- **July 2022** — 1 paper accepted to IEEE T-PAMI, and 1 paper accepted to IROS 2022.
+- **May 2022** — Joined Amazon (Just Walk Out team) as an Applied Scientist Intern. See you in Seattle, WA!!
+- **January 2022** — Invited talks at Academia Sinica and National Yang Ming Chiao Tung University.
+- **December 2021** — 1 paper accepted to IEEE T-IP.
+- **June 2021** — Invited talk at CVPR 2021 Tutorial on Adversarial Machine Learning in Computer Vision.
+- **May 2021** — Joined Amazon (Astro team) as an Applied Scientist Intern. See you in Bellevue, WA!!
+- **December 2019** — Won the Best Paper Award at ACM Multimedia Asia 2019!!
+- **August 2019** — Joined Johns Hopkins University as a PhD student. See you in Baltimore, MD!!
+
+</details>
