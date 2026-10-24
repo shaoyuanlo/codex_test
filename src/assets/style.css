@@ -69,6 +69,7 @@ h4, h5, h6 { margin-bottom: var(--space-sm); }
 }
 /* Markdown dividers — shared by desktop and mobile. */
 .prose hr { border: 0; border-top: 1px solid var(--accent-light); margin: var(--space-lg) 0; }
+.page-heading { padding: var(--space-lg) 0 var(--space-md); margin-bottom: var(--space-xl); }
 
 
 /* Shared rectangular corners. */
@@ -123,7 +124,6 @@ nav a[aria-current] { font-weight: 600; }
 .home-content > ul { list-style: none; padding: 0; margin: 0; }
 .home-content > ul > li { padding: var(--space-md) 0; margin: 0; }
 .home-content > ul strong { color: var(--accent); }
-.page-heading { padding: calc(var(--space-xl) * 2) 0 var(--space-xl); margin-bottom: var(--space-xl); }
 .page-intro { margin-bottom: 0; }
 .page-publications .page-content h3 ~ p { line-height: var(--line-height-compact); margin-bottom: var(--space-xs); }
 .publication-note { color: var(--highlight); }

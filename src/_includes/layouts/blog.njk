@@ -1,10 +1,7 @@
 ---
 layout: layouts/page.njk
-section: blog
-permalink: /blog/index.html
-title: Blog
-intro: Stay tuned.
 ---
+{{ content | safe }}
 <div class="post-list">
   {% for post in collections.writing %}
   <article class="post-preview">

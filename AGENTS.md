@@ -27,7 +27,7 @@
 - 網站應簡潔專業、手機閱讀良好，且方便使用者長期手動更新。
 - **變數和選項盡量精簡、統一管理；優先共用及繼承，不把每個數字都新增成變數。**
 - 設計值以 `src/assets/style.css` 為唯一設定來源；本檔記錄原則，不重複抄錄所有數值。README 說明使用方式，修改設定時同步檢查相關說明。
-- CSS 最上方集中內容容器設定，其後依序為顏色與字級、行高與共用間距、各級標題設定、Markdown 分隔線設定。
+- CSS 最上方集中內容容器設定，其後依序為顏色與字級、行高與共用間距、各級標題設定、Markdown 分隔線設定、主標題區內距。
 - 新樣式先使用既有顏色、字級、字重、行高與間距選項。新增選項或局部例外前，確認既有設定確實無法表達需求。
 - 內文、導覽、頁尾及各分頁共用容器寬度與對應左右內距；不要另設個別頁面或段落的窄版寬度。
 - 維持單一螢幕寬度 breakpoint；目前位置與數值以 CSS 為準。手機只保留必要的字級、容器留白及排列調整，避免元件各自加覆寫。
@@ -45,7 +45,7 @@
 | 本共用工作規則 | `AGENTS.md` |
 | 人工維護、預覽、發布說明 | `README.md` |
 | Home、Lab、Publications、Teaching | `src/index.md`、`src/lab.md`、`src/publications.md`、`src/teaching.md` |
-| Blog 列表與文章 | `src/blog.njk`、`src/posts/` |
+| Blog 列表與文章 | `src/blog.md`、`src/posts/` |
 | 姓名、聯絡資訊、導覽 | `src/_data/site.json` |
 | 共用版型與元件 | `src/_includes/` |
 | 設計變數與樣式 | `src/assets/style.css` |
@@ -53,6 +53,7 @@
 | CV、論文與演講資源 | `files/`、`papers/`、`talks/` |
 | 建置、檢查、部署 | `eleventy.config.js`、`scripts/`、`.github/workflows/` |
 
+- Blog 首頁內容用 `src/blog.md` 編輯，自動文章列表由 `src/_includes/layouts/blog.njk` 提供；不要將使用者需編輯的首頁內容改回 HTML／Nunjucks 迴圈。
 - 五個導覽項目是獨立頁面，Home 使用根網址；導覽列保持 sticky。
 - Publications 的檔名、`section`、導覽 key、CSS 類別及網址統一使用 `publications`。舊 `/publication/` 只保留於失效路徑的檢查與說明。
 - 論文依年份由新到舊排列。同年份論文之間只留 Markdown 空行；每個年份最後一篇之後才加 `---`，最後一個年份亦同。

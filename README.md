@@ -60,6 +60,7 @@ https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/<提交版�
 | Lab 介紹、成員、招生資訊 | [`src/lab.md`](src/lab.md) |
 | 論文清單 | [`src/publications.md`](src/publications.md) |
 | 課程與教材 | [`src/teaching.md`](src/teaching.md) |
+| Blog 首頁文字與簡介 | [`src/blog.md`](src/blog.md) |
 | 新增文章 | 在 [`src/posts/`](src/posts/) 新增 `.md` 檔案 |
 | 姓名、職稱、Email、社群連結、首頁標語 | [`src/_data/site.json`](src/_data/site.json) |
 | 首頁按鈕文字 | [`src/_includes/layouts/home.njk`](src/_includes/layouts/home.njk) |
@@ -97,6 +98,8 @@ https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/<提交版�
 標題設定集中在間距變數之後。H3 統一引用 `--font-size-lg`、字重 600、`--line-height-compact`，上外距 24px、下外距 8px；論文標題只獨立覆寫下外距為 4px，其餘字級、字重、行高與上外距均沿用共用 H3。Blog 標題與文章主標題區沿用共用設定，不另設字級、行高、連結顏色或標題區內距。標題、正文列表與頁尾不自動附加分隔線；需要時在 Markdown 中另起一段寫 `---`。
 
 全部 H1～H6 的上外距統一為 `var(--space-lg)`（24px），不保留首頁、分頁主標題或正文第一個 H2 的上外距例外。下外距為一般 H3、首頁姓名 H1、H4～H6 各 8px，論文標題 4px，分頁／文章 H1 與 H2 各 16px；桌機、手機一致。
+
+主標題區 `.page-heading` 的內距設定緊接在分隔線規則之後：上方 24px、左右 0、下方 16px，下外距維持 32px；各分頁與 Blog 文章共用，桌機與手機相同。
 
 Markdown 分隔線 `.prose hr` 的設定緊接在標題設定之後，上下外距均引用 `var(--space-lg)`（24px），線條為 1px、顏色 `var(--accent-light)`。相鄰區塊的上下外距可能合併，實際距離不一定相加。
 
@@ -178,6 +181,10 @@ PDF 連結的來源與實際查核結果保存在 [publication-pdf-check.json](d
 尚未提供網址時，可直接寫純文字 `Paper / arXiv`，不加方括號、不建立空連結。
 
 若這篇是該年份最後一篇，在其後另起一段加入 `---`。
+
+### 編輯 Blog 首頁
+
+Blog 首頁與其他分頁一樣，直接修改 `src/blog.md` 的 `title`、`intro` 與 Markdown 正文。文章列表由共用版型 `src/_includes/layouts/blog.njk` 自動產生，不需在 `.md` 中編輯 HTML 或迴圈；網址仍為 `/blog/`。
 
 ### 新增 Blog 文章
 
