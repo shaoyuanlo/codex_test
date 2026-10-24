@@ -1,188 +1,130 @@
-# Shao-Yuan Lo · Academic website
+# Shao-Yuan Lo · 學術個人網站
 
-A small, English-first academic website with five separate pages, a sticky navigation bar, and a mobile layout. Content is plain **Markdown**. There is no CMS, database, or client-side JavaScript; pages and navigation also work with JavaScript disabled.
+以英文為主、簡潔專業、手機閱讀良好，並方便長期自行手動更新的學術網站。採用 Eleventy、Markdown、Nunjucks 與原生 CSS；沒有 CMS、資料庫、前端框架或客戶端 JavaScript。
 
-Built with [Eleventy](https://www.11ty.dev/) and deployed as static HTML to GitHub Pages. No paid service, API key, or custom domain is required.
+目前開發與代理預覽位於 `shaoyuanlo/codex_test`。正式網站為 https://shaoyuanlo.github.io/ ，對應另一個儲存庫 `shaoyuanlo/shaoyuanlo.github.io`；本專案尚未取代原網站。
 
-## Codex 長期維護
+本文件是日常使用指南；Codex 的共用工作規則見 [AGENTS.md](AGENTS.md)。設計值以 [style.css](src/assets/style.css) 為準，以下表格是目前設定的說明，修改樣式時需同步核對。
 
-使用 **Codex 網頁版 + 同一個 GitHub 儲存庫 + 自由開啟的聊天／雲端任務 + 一份根目錄 [AGENTS.md](AGENTS.md)**。共同來源是 `shaoyuanlo/codex_test`，日常維護分支是 `main`。
+- [日常更新](#日常更新)：內容、首頁資料、News 與論文。
+- [設計設定](#設計設定)：色彩、字型、字級、行高、間距與版面。
+- [預覽與發布](#預覽與發布)：固定預覽、版本預覽、快取及正式遷移。
+- [開發與驗證](#開發與驗證)：建置、檢查與工作流程。
+- [Codex 協作](#codex-協作)：網頁版、GitHub 雲端任務與自由聊天。
 
-Threads 就是聊天視窗：你可以依需要自行開新視窗，不預設分類、功能或命名；同一視窗也可以自由切換內容、設計、部署等話題。Thread 不等於 Git 分支，不需要為每個聊天建立永久分支。
+## 日常更新
 
-每次開新聊天／雲端任務：
+在 GitHub 開啟來源檔 → 按鉛筆編輯 → Commit 到 `main`，GitHub Actions 會自動建置。日常編輯不需要在自己的電腦安裝軟體。
 
-1. 在 Codex 網頁版選擇 `shaoyuanlo/codex_test` 及對應的雲端環境。
-2. 以 `main` 為工作基準，確認前一次要保留的成果已推送或合併回 `main`。
-3. 直接描述這次需求；可用以下開場提醒讀取共用規則：
+| 分頁 | 來源檔 | 網址 | 版型 |
+| --- | --- | --- | --- |
+| Home | [src/home.md](src/home.md) | `/` | `layouts/home.njk` |
+| Lab | [src/lab.md](src/lab.md) | `/lab/` | `layouts/page.njk` |
+| Publications | [src/publications.md](src/publications.md) | `/publications/` | `layouts/page.njk` |
+| Teaching | [src/teaching.md](src/teaching.md) | `/teaching/` | `layouts/page.njk` |
+| Blog | [src/blog.md](src/blog.md) | `/blog/` | `layouts/page.njk` |
 
-```text
-請先讀取根目錄 AGENTS.md，確認 main 的最新內容，再幫我……
-```
+五個選單連至獨立頁面；Home 就是根網址。Blog 與其他一般分頁相同，直接編輯 Markdown，沒有文章集合、自動列表、日期排序、草稿旗標或獨立文章版型。
 
-這個流程不需要另外建立介面 Project、設定 Project 共用指示欄、搬移聊天、安裝電腦 App 或在本機 clone。既有雲端環境可持續使用，不必為每個聊天重建環境。
-
-共用規則以 `AGENTS.md` 為準，README 負責人工操作說明，設計數值以 `src/assets/style.css` 為唯一設定來源。新聊天不必貼回整段歷史，但不要假設它會讀到其他聊天或尚未提交的變更；程式碼與長期規則必須保存到 GitHub。多個雲端任務可能從不同版本開始，同時修改同一檔案時應依序整合，或由 Codex 在必要時使用獨立分支／worktree 隔離，保留你在 GitHub 的手動修改。
-
-## 網站預覽
-
-目前使用 raw.githack 提供可操作的多頁網站預覽，可點擊導覽、閱讀文章、開啟 CV，並以手機瀏覽。預覽來自公開的 `codex_test` 儲存庫，不會取代正式網站 `https://shaoyuanlo.github.io/`。
-
-**固定預覽網址（持續更新，可加入書籤）：**
-
-https://raw.githack.com/shaoyuanlo/codex_test/site-preview/index.html
-
-每次發布都會更新固定網址的頁面及資源，並透過 raw.githack 官方 `/purge` 介面清除五個固定分頁的代理快取；導覽使用固定路徑，不依賴可能被移除的版本目錄。代理與瀏覽器快取可能使更新延後出現；若要立即確認當次修改，請使用以下快速版本預覽。
-
-**快速版本預覽（每次發布產生新網址）：**
-
-```text
-https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/<提交版本>/index.html
-```
-
-開啟 [`site-preview` 分支的 `preview.json`](https://github.com/shaoyuanlo/codex_test/blob/site-preview/preview.json)，複製 `url` 即可取得最新快速預覽；`stableUrl` 則是固定入口。也可在 [Update interactive website preview 工作流程](https://github.com/shaoyuanlo/codex_test/actions/workflows/preview.yml) 的建置輸出中找到 `Fixed preview:` 與 `Interactive preview:` 兩個網址。
-
-快速預覽的頁面、導覽與圖片指向同一版本目錄，以避開舊快取；CSS 內嵌於頁面，字型檔則共用固定路徑。發布目錄只保留當次版本；舊版本目錄會在下次發布時移除，舊網址可能暫時因快取仍可讀取，快取到期後通常回傳 404，不會自動切換到新版。固定網址持續保留及更新。舊版本仍可留存在 Git 提交歷史中。
-
-更新流程：修改 **`main` 分支**並提交 → 等待上述工作流程成功 → 開啟固定網址，或從 `preview.json` 取得最新快速預覽。這是提交後的自動建置預覽，不是逐字即時更新。`main` 是手動維護的原始碼，`site-preview` 是自動產生的網站，請勿手動編輯或將其合併回 `main`。
-
-預覽頁會內嵌網站及字型 CSS，降低代理請求數；字型檔共用固定路徑，避免每次版本更新都重新下載。正式網站仍使用原有外部 CSS 檔。代理回傳 429 或暫時性伺服器錯誤時，檢查會間隔重試並參考 `Retry-After`；仍失敗時如實記錄，不視為通過。
-
-工作流程會檢查固定入口可讀取、快速預覽來源版本、導覽連結、樣式與字型，並確認舊的 `/publication/` 路徑回傳 404；結果保存在 [`preview-health.json`](https://github.com/shaoyuanlo/codex_test/blob/site-preview/preview-health.json)。固定入口的 `currentVersion` 可辨識是否仍命中舊快取；若仍為舊版，檢查會間隔重試，首頁版本更新才算整體通過。`purges` 記錄各固定分頁的清除快取結果。代理預覽需要儲存庫維持公開，且 GitHub Actions 具有 `contents: write` 權限，不需要另外設定個人存取權杖。
-
-歷史預覽圖片原檔保留在 `docs/preview/`，作為歷史紀錄，不代表目前網站樣式；此處不再嵌入或連結圖片。
-
-## 日常更新：只需修改文字
-
-不需要修改版型，也不需要在電腦安裝軟體。網站部署完成後，在 GitHub 開啟以下檔案 → 按鉛筆編輯 → Commit 到 `main`，GitHub Actions 就會自動重新發布。建置失敗時不會覆蓋上一次成功發布的網站。
-
-| 要更新的內容 | 修改的檔案 |
+| 要更新的項目 | 編輯位置 |
 | --- | --- |
-| Home 簡介、研究方向、最新消息 | [`src/home.md`](src/home.md) |
-| Lab 介紹、成員、招生資訊 | [`src/lab.md`](src/lab.md) |
-| 論文清單 | [`src/publications.md`](src/publications.md) |
-| 課程與教材 | [`src/teaching.md`](src/teaching.md) |
-| Blog 文字與簡介 | [`src/blog.md`](src/blog.md) |
-| 姓名、職稱與所屬單位、Email、CV 與社群連結 | [`src/home.md`](src/home.md) 的 `website:` 欄位 |
-| 首頁連結文字、順序與網址 | `src/home.md` 的 `website.social` 清單 |
-| 各頁標題下方的簡介 | 各頁頂端 `intro:` 欄位 |
-| 個人照片 | 替換 `src/assets/portrait.jpg`（建議 5:6 比例） |
-| 瀏覽器分頁圖示／台大校徽 | [`src/assets/ntu-emblem.png`](src/assets/ntu-emblem.png) |
-| CV | 替換 `files/SYLo_CV.pdf`，檔名保留即可 |
-| 配色、字體、間距 | [`src/assets/style.css`](src/assets/style.css) 開頭的變數 |
+| 姓名、職稱、所屬單位、聯絡／社群連結、導覽 | `src/home.md` 上方的 `website:` |
+| 首頁簡介、招募訊息與 News | `src/home.md` 正文 |
+| 各分頁標題與簡介 | 該 `.md` 的 `title`、可選的 `intro` |
+| 頭像原檔 | [src/assets/portrait.jpg](src/assets/portrait.jpg) |
+| 頭像路徑、圖片尺寸資訊與首頁結構 | [layouts/home.njk](src/_includes/layouts/home.njk) |
+| 頁尾文字、網頁 metadata、校徽路徑與共用導覽結構 | [layouts/base.njk](src/_includes/layouts/base.njk) |
+| 校徽原檔 | [src/assets/ntu-emblem.png](src/assets/ntu-emblem.png) |
+| CV | [files/SYLo_CV.pdf](files/SYLo_CV.pdf) |
+| 配色、字體、間距、容器與元件外觀 | [src/assets/style.css](src/assets/style.css) |
+| 資料讀取、Markdown 顯示轉換與資源複製 | [eleventy.config.js](eleventy.config.js) |
 
-導覽列尺寸也在 `src/assets/style.css`：`.header-inner` 的 `min-height` 設定最低高度（桌機 `50px`、手機 `80px`）。選單使用一般內文字級（桌機 `16px`、手機 `15px`），左側姓名使用大一級文字（桌機 `18px`、手機 `16px`）；窄螢幕時選單可自動換行，實際高度也會受內距及內容影響。
+### Markdown 與頁面設定
 
-字級選項集中在 CSS 上方 `:root` 的顏色設定之後，緊接著的手機 `:root` 在螢幕寬度不超過 `767px` 時覆寫同一組變數。各元素透過 `var(...)` 使用，避免另寫零散字級：
+檔案開頭兩條 `---` 之間是 YAML front matter。先列運作設定，再列可編輯內容：
 
-| 字級變數 | 桌機 | 手機（≤767px） | 使用位置 |
-| --- | --- | --- | --- |
-| `--font-size-sm` | `14px` | `12px` | 頁尾資訊 |
-| `--font-size-base` | `16px` | `15px` | 一般內文、導覽選單，以及未特別指定的項目 |
-| `--font-size-lg` | `18px` | `16px` | 導覽列左側姓名、全部 H3（含論文標題） |
-| `--font-size-xl` | `28px` | `24px` | 區塊標題（內容中的 `h2`） |
-| `--font-size-2xl` | `36px` | `32px` | 首頁英文姓名、各分頁主標題 |
+```yaml
+---
+layout: layouts/page.njk
+section: lab
+permalink: /lab/index.html
+title: Lab
+intro: A short introduction.
+---
+```
 
-CSS 前段集中顏色與字級、行高與共用間距；手機沿用同一組變數，在第 43 行開始的 `@media (max-width: 767px)` 統一覆寫：
-
-| 變數 | 桌機 >767px | 手機 ≤767px | 用途 |
-| --- | --- | --- | --- |
-| `--line-height-compact` | `1.3` | `1.2` | 全部標題、職稱資訊、論文相關資訊、導覽列 |
-| `--line-height-body` | `1.7` | `1.5` | 一般內文、Blog、提示框 |
-| `--space-xs` | `4px` | `4px` | 論文標題、作者、會議與資源連結段落下外距 |
-| `--space-sm` | `8px` | `8px` | 標題緊接內容、清單項目 |
-| `--space-md` | `16px` | `12px` | 段落之間、一般標題下方、欄間距 |
-| `--space-lg` | `24px` | `16px` | 標題上外距、分隔線上下外距、手機容器與頁尾內距 |
-| `--space-xl` | `32px` | `24px` | 區塊之間、桌機頁尾上下內距 |
-| `--space-2xl` | `40px` | `32px` | 桌機容器左右內距、手機正文下方內距 |
-
-標題設定集中在間距變數之後。H3 統一引用 `--font-size-lg`、字重 600、`--line-height-compact`，上外距桌機 24px／手機 16px，下外距 8px；論文標題只獨立覆寫下外距為 4px，其餘字級、字重、行高與上外距均沿用共用 H3。Blog 與其他分頁的主標題區沿用共用設定，不另設字級、行高、連結顏色或標題區內距。標題、正文列表與頁尾不自動附加分隔線；需要時在 Markdown 中另起一段寫 `---`。
-
-H1～H6 的上外距統一為 `var(--space-lg)`（桌機 24px／手機 16px），首頁姓名 H1 也沿用共用設定。下外距為一般 H3、H4～H6 各 8px，論文標題 4px，首頁姓名 H1、分頁／文章 H1 與 H2 桌機各 16px／手機各 12px。
-
-主標題區 `.page-heading` 與首頁 `.hero` 共用同一條內外距規則：上內距桌機 24px／手機 16px、左右內距 0、下內距桌機 16px／手機 12px；上／左右外距 0、下外距桌機 16px／手機 12px。各分頁共用，列印時共用移除上內距的規則。
-
-Markdown 分隔線 `.prose hr` 的設定緊接在標題設定之後，上下外距均引用 `var(--space-lg)`（桌機 24px／手機 16px），線條為 1px、顏色 `var(--accent-light)`。相鄰區塊的上下外距可能合併，實際距離不一定相加。
-
-所有非零固定 `margin` 均使用上述間距變數；`0` 保留給不需留白的元素，`auto` 用於容器置中。手機在共用變數區統一覆寫行高與間距，不另為各元件重複指定數字。`padding`（內距）與 `gap`（排列間隔）也共用這六個變數，大區塊可用 `calc(var(--space-xl) * 2)`，例如桌機為 64px。容器左右內距也引用對應的間距變數；照片寬度、導覽列高度等具有明確用途的尺寸另行保留。
-
-其他共用樣式：矩形元件圓角統一 `6px`，`Shared rectangular corners` 規則集中在共用間距設定之後，連結底線距離統一 `4px`、粗細 `1px`。這些共用規則直接集中設定，不另外增加變數。全站字距及單字間距使用預設 `normal`。
-
-文字式按鈕設定集中在 Markdown 分隔線規則之後：無底色、邊框、內距或最低高度，使用黑字、600 字重；滑鼠移入時改為主藍並顯示底線。首頁 Email、CV、Google Scholar、GitHub、LinkedIn 與 X / Twitter 共用 `.button`，同列排列，水平間隔桌機 16px／手機 12px、換行間隔 8px，空間不足時自動換行；不顯示箭頭或額外 PDF 標示。
-
-整頁使用垂直 Flex 排版，`body` 最低高度 `100vh`，正文 `.site-main` 使用 `flex: 1` 撐滿剩餘空間，短頁面的頁尾自然位於視窗底部，不再用固定數字扣除導覽與頁尾高度。手機共用字級、行高與間距覆寫，並保留導覽排列及照片欄位等必要調整。
-
-字重只使用 **400（一般）**與 **600（粗體）**，預設 400。Markdown 的 `**粗體文字**`、HTML 的 `strong`／`b`、目前導覽頁面的強調狀態等使用 600。正文、提示框、程式碼、社群連結等未指定項目皆使用一般內文字級（桌機 16px／手機 15px）；頁尾繼承小字級（桌機 14px／手機 12px）。
-
-各分頁（含首頁與 Blog）共用置中的 `.site-main` 內容容器，與導覽列、頁尾統一最大外寬 `980px`（含左右內距）；正文、標題簡介與段落不再另設較窄的最大寬度，文字可使用完整的容器寬度。桌機左右內距各 `40px`；≤767px 時左右內距統一各 `16px`。正文下方內距為桌機 `64px`、手機 `32px`；頁尾上下內距為桌機各 `32px`、手機各 `16px`。容器設定集中在 CSS 的 `Shared containers` 區塊。只有 `767px` 一個螢幕寬度斷點，原有 `800px` 規則已移除。首頁照片旁的文字仍依原有欄位排列。首頁上方設定集中在 CSS 的 `Homepage profile` 註解區塊（含手機與列印規則）：區塊內外距與 `.page-heading` 共用同一條規則；照片頂端與姓名標題頂端對齊；姓名內外距沿用共用 H1，內距為 0、上外距桌機 24px／手機 16px、下外距桌機 16px／手機 12px、左右外距 0，同一職稱組內不加段落外距，沿用 `--line-height-compact`（桌機 1.3／手機 1.2）自然行距；不同職稱組間隔維持 8px。中文姓名使用 `--font-size-xl`（桌機 28px、手機 24px）；頭像不套用色彩濾鏡，呈現原始照片色彩。
-
-全站字型統一由 `style.css` 的 `--font: "Inter", "Noto Sans TC", system-ui, sans-serif` 設定：英文優先使用 Inter，中文使用 Noto Sans TC，載入失敗或缺字時使用系統預設字型。標題、內文、導覽、中文姓名與程式碼都沿用這一組字型；字級限用上述五項，字重限用 400／600。原本的 `--serif`、`--sans` 已移除。字型檔存於 `src/assets/fonts/`，以分段 WOFF2 按需載入，採 `font-display: swap`，不依賴外部字型 CDN；來源版本及授權分別保存在 `sources.json` 與各字型目錄的 `LICENSE.txt`。
-
-配色維持白色頁面背景、黑色一般文字、主藍互動與少量強調文字。導覽橫幅使用主藍底、白字，深藍按鈕也使用白字；首頁職稱、提示框標籤及消息日期沿用主藍。提示框與程式碼區塊恢復淺藍背景，分隔線與邊框共用這個淺藍色。文字反白使用較深的藍底，搭配黑字。介面文字使用黑、白、主藍，論文標記另使用暗紅色 `--highlight`。
-
-介面配色集中在 `style.css` 開頭的 `:root`：
-
-| 設定 | 色碼 | 用途 |
-| --- | --- | --- |
-| `--white` | `#FFFFFF` | 頁面背景、導覽白字、導覽選取底線及鍵盤焦點標示 |
-| `--black` | `#000000` | 大多數一般文字、標題、日期、圖片說明、反白文字 |
-| `--accent` | `#002D72` | 連結、導覽背景、文字式按鈕滑過顏色、少量強調文字及頁面鍵盤焦點標示 |
-| `--accent-light` | `#EAF0F8` | 提示框與程式碼區塊背景、分隔線與邊框 |
-| `--selection-bg` | `#AFC7E8` | 滑鼠或觸控選取文字時的反白底色 |
-| `--highlight` | `#900C26` | 論文的 Oral、Highlight、Spotlight、獎項等標記 |
-
-共 **6 個色彩變數、6 種實際顏色**；邊框與提示背景共用色碼，文字不設主要／次要灰階。網站不設定 `theme-color`，讓手機瀏覽器自行決定工具列顏色；網站內的導覽列仍為主藍色。列印背景沿用 `--white`。照片與校徽的顏色來自圖片檔本身，不由這些 CSS 變數控制。
-
-這份版本帶入原網站的簡介、照片、CV、Publications 區塊的全部 29 篇論文（2018–2026 年）與原網站全部 29 則 News。Lab 成員、課程內容保留待填；Blog 保留待填，直接以 Markdown 手動編輯，沒有自動文章列表。沒有虛構學生、課程或研究成果。原網站論文使用的 20 個本地資源檔（海報與投影片）也已帶入 `papers/`、`talks/`，不依賴舊網站的檔案路徑。
-
-### Markdown 基本格式
+`layout` 決定版型，`section` 對應導覽識別與頁面 CSS 類別，`permalink` 決定網址；一般編輯保留這些欄位，主要修改 `title`、`intro` 與下方正文。`intro` 可省略；標題或文字含冒號時，可加雙引號。首頁使用 `permalink: /index.html`，來源檔名不會產生 `/home/` 頁面。404 頁另有 `eleventyExcludeFromCollections` 運作設定。
 
 ```md
 ## Section heading
-### Paper or course title
 
 Normal text, **bold text**, and *italic text*.
 
-[Link label](https://example.com)
+### A subsection
 
 - A list item
 - Another item
+
+---
 ```
 
-頁面頂端兩條 `---` 之間是設定欄位（front matter）。保留欄位依「運作設定在前、可編輯內容在後」排列：`layout`、`section`、`permalink`，以及有使用的 `eleventyExcludeFromCollections` 放在前面；`title`、`intro` 放在後面。請保留既有運作設定；主要文字直接寫在第二條 `---` 下面。標題或簡介含冒號時請加雙引號，例如 `title: "Research: new directions"`。首頁的姓名、多組職稱與所屬單位、聯絡／社群連結及導覽統一放在 `src/home.md` 的 `website:` 欄位，使用 YAML 編輯；保留縮排與清單前的 `-`。建置時會將此欄位提供給全站共用，不需另建資料檔。首頁透過 `permalink: /index.html` 保持根網址 `/`，不會產生 `/home/` 分頁。
+正文從 `##` 開始，頁面主標題由版型產生。標題與頁尾不自帶分隔線；需要時在正文另起一段寫 `---`。目前沒有 `eyebrow`、`description` 或首頁標語欄位。
 
-站內連結請使用下列格式，讓主網址與測試子路徑皆可運作：
+站內連結使用 `url` filter，支援正式根網址、GitHub Pages 子路徑與代理預覽：
 
 ```njk
 [Lab]({{ '/lab/' | url }})
-[A PDF]({{ '/files/filename.pdf' | url }})
+[CV]({{ '/files/SYLo_CV.pdf' | url }})
 ```
 
-### 編輯 News
+不要把當次 `revisions/<版本>/` 預覽網址寫進內容，避免下一次發布後連結失效。
 
-在 `src/home.md` 的 `## News` 下方修改 Markdown 清單。目前收起時顯示 6 則，其餘消息放在 `<details class="news-more">` 區塊內；新增消息時在頂端加入，並視需要將較舊消息移入展開區。顯示數量由 Markdown 內容的位置決定，沒有獨立數量設定。
+### 首頁資料與職稱
 
-每筆消息維持 `- **Oct 2025** — Message text.` 格式；月份直接在 Markdown 寫成三個英文字母，沒有月份轉換設定。首頁版型會將日期與內容分成兩欄，內文的連結、粗體與斜體仍可照常使用。News 樣式集中在 CSS 的 `News` 註解區塊，後面保留三個空白行；列間距 8px、日期欄寬 6em、欄間距桌機 16px／手機 12px。
-
-點選 **Show more ↓** 可展開，按鈕會變為 **Show less ↑**，再次點選即可收起。這是原生 `<details>`／`<summary>` 功能，不需要 JavaScript；按鈕沿用 Email 的 `.button` 外觀，支援滑鼠、觸控與鍵盤操作。保留 `summary` 與結尾 `</details>`，只需手動維護兩段 Markdown 清單。已匯入原網站共 29 則消息，日期沿用原文。
-
-### 編輯首頁職稱與連結
-
-`website.roles` 可新增多組職稱，每組包含 `role` 和 `affiliations` 清單；職稱及每個所屬單位各自成行。第二組標示 `(layout test)` 的內容僅供排版測試，可直接刪除或替換。
+全站共用資料集中在 `src/home.md` 的 `website:`。建置設定會讀取它，提供版型使用的 `site` 資料；沒有獨立 `site.json`。以下為部分欄位範例，編輯時保留原有其他項目。
 
 ```yaml
+website:
+  name: Shao-Yuan Lo
+  nameChinese: 羅紹元
   roles:
   - role: Assistant Professor
     affiliations:
     - Department of Computer Science and Information Engineering
+    - AI Center of Research Excellence
     - National Taiwan University
+  social:
+  - label: Email
+    url: mailto:sylo@csie.ntu.edu.tw
+  - label: CV
+    url: /files/SYLo_CV.pdf
 ```
 
-Email、CV 和社群連結都由 `website.social` 清單控制，依清單順序顯示。修改 `label` 可改文字，修改 `url` 可改網址；CV 使用 `/files/SYLo_CV.pdf`，建置時會自動套用預覽路徑。Email 使用 `mailto:你的信箱`，其他頁面的聯絡連結也會自動沿用此信箱，不需重複設定。首頁不再提供 tagline 欄位。
+保留 YAML 縮排及清單前的 `-`。每組職稱由 `role` 與一到多個 `affiliations` 組成；複製整組即可增加職稱。職稱及每個所屬單位各自成行。
 
-### 新增論文
+Email、CV、Google Scholar 等都由 `social` 清單控制，依清單順序顯示。`label` 是文字，`url` 是網址；內部檔案寫 `/files/...`，版型會自動處理路徑。其他頁面的聯絡信箱取自第一個 `mailto:` 連結，因此修改信箱只需改這一處，並保留此連結供聯絡文字使用。
 
-在 `src/publications.md` 相應年份下方複製這個區塊，不需要修改 HTML。論文標題後的作者、會議與連結段落統一使用 compact 行高（桌機 `1.3`／手機 `1.2`）、`4px` 下方外距；第一篇論文標題之前的頁面說明維持一般內文設定。同年份的論文只以 Markdown 空行分開，只有該年份最後一篇的連結下方才加 `---`（最後一個年份也一樣）。資源連結用 ` / ` 分隔，前兩項固定為 `Paper`、`arXiv`。PDF 優先使用可公開開啟的正式出版版本，找不到時使用該篇的 arXiv PDF：
+`navigation` 中的 `label` 是選單文字；`url`、`key` 分別對應頁面路徑與 `section`，更改頁面識別時需一起核對。
+
+### News
+
+News 仍以普通 Markdown 清單編輯：
+
+```md
+- **Oct 2025** — Message text with **bold text** or [a link](https://example.com).
+```
+
+月份直接寫三個英文字母，不另設月份轉換選項。首頁版型透過 `newsColumns` filter 將日期與內容分組，再由 CSS 排成兩欄；長文字換行留在右欄，連結、粗體與斜體仍可使用。
+
+`<details class="news-more">` 外面的消息一直顯示，裡面的消息可展開收起。**顯示數量由消息放置的位置決定，沒有自動截斷的數量參數。** 新增消息時放在清單頂端，再視需要將較舊的項目移入展開區。
+
+點選 **Show more ↓** 會展開並變為 **Show less ↑**，再次點選收起。這是原生 `details`／`summary` 功能，不需要 JavaScript；文字與箭頭在 `home.md` 的 `summary` 中，外觀沿用 Email 的 `.button`。編輯時保留 `summary` 與結尾 `</details>`。
+
+News 相關 CSS 集中在 `News` 註解區塊，與後續設定保留三個空白行。目前列間距為 8px、日期欄寬 6em、欄間距為桌機 16px／手機 12px。
+
+### Publications
+
+在 `src/publications.md` 對應年份下新增：
 
 ```md
 ### Paper title
@@ -194,41 +136,184 @@ First Author, **Shao-Yuan Lo**, Last Author
 [Paper](https://arxiv.org/pdf/0000.00000) / [arXiv](https://arxiv.org/abs/0000.00000) / [Code](https://github.com/example/project)
 ```
 
-PDF 連結的來源與實際查核結果保存在 [publication-pdf-check.json](docs/publication-pdf-check.json)。首次匯入的論文中，26 篇已核對 PDF 檔頭與標題；當時兩篇 SPIE 出版社 PDF 遇到存取限制、CBCT 的 NIH 作者稿 PDF 遇到瀏覽器驗證，這三篇未列為已驗證可直接下載。`Paper` 指向 PDF、`arXiv` 保留原有論文網頁網址，原本指向出版社的網頁網址也保留。這份報告是當時查核的歷史紀錄，後續手動新增的論文需另行查核。
+- 年份由新到舊排列；同年份論文之間只留 Markdown 空行，在該年份最後一篇下方才加 `---`，最後一個年份亦同。Preprints 亦以區塊處理。
+- 標題使用 H3。會議／期刊名稱斜體，括號內簡稱粗體，年份在斜體之外。
+- 標記寫成 `· **Oral**`、`· **Spotlight**` 等；建置時只有粗體標記文字套用 `--highlight`，前方的 `·` 維持一般文字顏色。
+- 連結用 ` / ` 分隔，順序為 `Paper`、`arXiv`，再接 Code、Poster 等。`Paper` 優先使用正式出版 PDF，找不到時用該篇 arXiv PDF；`arXiv` 保留原有論文頁面網址，既有出版社頁面也可能使用此標籤。
+- 沒有網址時寫純文字 `Paper / arXiv`，不建立空連結。不加入 BibTeX 欄位、連結或 `.bib` 檔案。
+- 新增或更換來源時核對標題、作者、年份與實際 PDF；不要把投影片當作論文 PDF。
 
-如需重新檢查資源網址，可在 GitHub Actions 手動執行 **Check publication resource links**；結果保存在 [publication-link-check.json](docs/publication-link-check.json)。檢查會辨識 PDF 檔頭及明顯的瀏覽器／存取限制頁面。HTTP 成功不代表一定免登入，工作流程完成也不代表每個連結均已通過，請查看報告中的個別結果。
+[publication-pdf-check.json](docs/publication-pdf-check.json) 是首次匯入時的 PDF 來源與查核紀錄，包含公開 PDF、機構權限及瀏覽器驗證等結果，不能代表後續新增內容已查核。[publication-link-check.json](docs/publication-link-check.json) 是資源連結檢查報告；可在 Actions 手動執行 **Check publication resource links** 更新。此流程也會在相關檢查腳本／workflow 變更時觸發，並可能由 bot 回寫報告到 `main`；單改論文內容不會自動觸發它。
 
-會議或期刊名稱括號內的簡稱用 Markdown 粗體，例如 `(**ICML**)`、`(**T-PAMI**)`；會議／期刊名稱保留斜體，年份放在斜體標記之外，以一般正體顯示。
+## 設計設定
 
-論文標記直接寫成 `· **Oral**`、`· **Highlight**`、`· **Spotlight**` 或 `· **Best Paper Award**`，建置時會只在粗體標記文字上套用 `--highlight` 的顏色，前方的 `·` 保持一般文字顏色，不需手動寫 HTML；沒有標記則省略。
+原則是**變數與選項盡量精簡、統一管理，優先共用及繼承**。內容放 Markdown、結構放版型、外觀放 CSS。新增元件先用既有選項，不為每個數字新增變數，也不為每個分頁複製樣式。
 
-尚未提供網址時，可直接寫純文字 `Paper / arXiv`，不加方括號、不建立空連結。
+用 CSS 的英文分類註解定位設定；行號會隨編輯移動。順序為色彩／字級、行高／間距與手機覆寫、共用圓角、標題與分隔線、容器、首頁、文字式按鈕、News，以及其餘共用樣式。
 
-若這篇是該年份最後一篇，在其後另起一段加入 `---`。
+### 色彩
 
-### 編輯 Blog
+| 變數 | 色碼 | 用途 |
+| --- | --- | --- |
+| `--white` | `#FFFFFF` | 頁面背景、導覽白字 |
+| `--black` | `#000000` | 一般文字、標題、文字式按鈕 |
+| `--accent` | `#002D72` | 連結、導覽背景、職稱、News 日期、少量強調與互動 |
+| `--accent-light` | `#EAF0F8` | 提示框、程式碼背景、分隔線與邊框 |
+| `--selection-bg` | `#AFC7E8` | 文字選取背景 |
+| `--highlight` | `#900C26` | 論文的 Oral、Highlight、Spotlight 等標記 |
 
-Blog 與其他一般分頁完全相同，使用共用版型 `src/_includes/layouts/page.njk`。直接修改 `src/blog.md` 的 `title`、`intro` 與 Markdown 正文；網址仍為 `/blog/`。沒有自動文章列表、日期排序、草稿旗標、文章網址產生器或 Blog 專用樣式；標題、段落、連結與分隔線都自行寫在同一份 Markdown 中。
+共六個色彩變數。一般文字用黑色、主藍背景上的導覽用白字，少部分文字用主藍；不設主要／次要灰階。頁面底色全白，提示框與程式碼區塊共用淺藍。網站不設定 `theme-color`，手機瀏覽器工具列顏色由瀏覽器決定。照片與校徽保留圖片自身色彩。
 
-## Local development
+### 字型與字級
 
-Requires Node.js 22 or newer. Use the existing checkout for routine work; use a separate branch/worktree only when concurrent changes need isolation.
+全站字型為 `Inter`、`Noto Sans TC`、`system-ui`、`sans-serif`。英文優先 Inter，中文使用 Noto Sans TC，備援為系統字型。字型檔與授權位於 [src/assets/fonts/](src/assets/fonts/)，透過本地檔案載入並使用 `font-display: swap`。
+
+字重只有 **400** 與 **600**；一般文字 400，Markdown 粗體、H3、文字式按鈕與目前選取的導覽項目為 600。字距與單字間距沿用 `normal`，沒有額外選項。
+
+| 變數 | 桌機 >767px | 手機 ≤767px | 使用位置 |
+| --- | --- | --- | --- |
+| `--font-size-sm` | 14px | 12px | 頁尾 |
+| `--font-size-base` | 16px | 15px | 內文、導覽選單及未另指定的項目 |
+| `--font-size-lg` | 18px | 16px | 導覽列姓名、H3／論文標題 |
+| `--font-size-xl` | 28px | 24px | 正文 H2、中文姓名 |
+| `--font-size-2xl` | 36px | 32px | 首頁英文姓名、分頁主標題 |
+
+### 行高與間距
+
+全站只有 **767px** 一個螢幕寬度斷點。手機在共用變數區集中覆寫，不為各元件另加一套數字。
+
+| 變數 | 桌機 | 手機 | 用途 |
+| --- | --- | --- | --- |
+| `--line-height-compact` | 1.3 | 1.2 | 標題、職稱與所屬單位、論文相關資訊、導覽 |
+| `--line-height-body` | 1.7 | 1.5 | 一般內文、News、Blog、提示框 |
+| `--space-xs` | 4px | 4px | 論文標題與相關資訊的下外距 |
+| `--space-sm` | 8px | 8px | 職稱組間距、News 列間距、部分標題下外距 |
+| `--space-md` | 16px | 12px | 段落、欄間距、一般標題下方 |
+| `--space-lg` | 24px | 16px | 標題上方、分隔線、手機容器留白 |
+| `--space-xl` | 32px | 24px | 共用大間距 |
+| `--space-2xl` | 40px | 32px | 桌機容器左右內距、手機正文下內距 |
+
+`margin`、`padding`、`gap` 共用上述間距；`0` 表示不留白，`auto` 用於置中。必要的大尺寸可由既有變數計算，例如桌機正文下內距為 `calc(var(--space-xl) * 2)`。容器寬度、照片寬度、導覽高度等功能尺寸依用途直接設定。
+
+### 標題與分隔線
+
+所有標題使用 compact 行高，上外距均為 `--space-lg`。首頁姓名沿用共用 H1 的內外距，不另設間距例外。
+
+| 元素 | 字級變數 | 字重 | 下外距 |
+| --- | --- | --- | --- |
+| 首頁姓名／分頁主標題 H1 | `--font-size-2xl` | 400 | `--space-md` |
+| 正文 H2 | `--font-size-xl` | 400 | `--space-md` |
+| H3 | `--font-size-lg` | 600 | `--space-sm` |
+| 論文 H3 | 沿用 H3 | 600 | `--space-xs` |
+| H4～H6 | `--font-size-base` | 400 | `--space-sm` |
+
+正文若另寫 H1，預設為 base 字級；一般內容請從 H2 開始，以保持每頁只有一個主標題。論文標題只獨立覆寫下外距，其他設定沿用 H3；作者、會議與資源連結段落使用 compact 行高及 `--space-xs` 下外距。
+
+`.page-heading` 與首頁 `.hero` 共用：上內距 `--space-lg`、左右 0、下內距 `--space-md`；上／左右外距 0、下外距 `--space-md`。列印時共用移除上內距。
+
+Markdown 分隔線 `.prose hr` 為 1px 淺藍線，上下外距 `--space-lg`。相鄰區塊的垂直外距可能合併，實際距離不一定相加。
+
+### 容器與首頁元件
+
+| 項目 | 桌機 | 手機 |
+| --- | --- | --- |
+| 共用容器最大外寬 | 980px，含左右內距 | 相同上限 |
+| 容器左右內距 | 各 40px | 各 16px |
+| 正文下內距 | 64px | 32px |
+| 頁尾上下內距 | 各 32px | 各 16px |
+| 導覽列最低高度 | 50px | 80px，內容可撐高 |
+| 頭像顯示寬度 | 200px | 100px |
+
+`.header-inner`、`.site-main`、`.footer-inner` 共用容器；各分頁正文使用完整寬度。頁面採垂直 Flex，短頁面頁尾自然位於視窗底部。導覽列使用 sticky，選取與滑入均使用連結底線，選取項目另用粗體。
+
+首頁桌機版為文字與照片兩欄；手機為姓名與照片並排，職稱與聯絡連結各自占滿整列。照片頂端與姓名標題頂端對齊，維持 5:6 比例、`object-fit: cover`，不套用飽和度濾鏡。修改頭像檔名時需核對首頁圖片與共用 metadata 的路徑。
+
+職稱組內段落外距為 0、使用 compact 自然行距；組間距為 `--space-sm`。中文姓名使用 xl 字級，左外距 `--space-md`；桌機同行、手機另起一行。
+
+`.button` 是共用文字式連結外觀：黑色、600 字重，滑入時主藍加底線；沒有底色、邊框、內距或最低高度。Email、CV 與所有社群連結共用此樣式。News 控制也沿用它，另提供上下箭頭。聯絡連結可自動換行，水平間距 `--space-md`、換行間距 `--space-sm`。
+
+`Shared rectangular corners` 規則緊接間距設定，目前圓角 6px；連結底線距離 4px、粗細 1px。頁尾只有置中的 `© 2026 Shao-Yuan Lo（羅紹元）`；姓名取自首頁資料，年份文字在 `base.njk` 手動維護。
+
+## 預覽與發布
+
+### 固定與快速預覽
+
+**固定入口，持續更新，可加入書籤：**
+
+https://raw.githack.com/shaoyuanlo/codex_test/site-preview/index.html
+
+**當次版本入口：**
+
+```text
+https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/<提交版本>/index.html
+```
+
+從 [`site-preview/preview.json`](https://github.com/shaoyuanlo/codex_test/blob/site-preview/preview.json) 取得 `stableUrl`、`url`、`sourceCommit`。快速路徑使用來源提交的前 12 碼，不要自行猜測當次網址或把它當作永久入口。
+
+修改 `main` 後，[Update interactive website preview](https://github.com/shaoyuanlo/codex_test/actions/workflows/preview.yml) 會建置、檢查、發布檔案，再檢查公共代理。這是提交後的可操作網站預覽，不是逐字即時更新，也不以圖片代替網站。
+
+| 項目 | 職責 |
+| --- | --- |
+| `main` | 人工維護的原始碼 |
+| `site-preview` | Actions 產生的網站；不手改、不合併回 `main` |
+| `_site/` | 一般建置輸出 |
+| `_preview/` | 代理預覽建置輸出 |
+
+兩個分支的提交歷史會自然不同，不需為了 ahead／behind 狀態互相合併。固定版導覽指向固定路徑。快速版的頁面、導覽與圖片指向當次版本；每次發布只保留最新版本目錄，舊路徑移除後仍可能因第三方快取暫時可讀取。舊程式碼仍可留在 Git 歷史中。
+
+代理預覽內嵌網站與字型 CSS，字型檔共用固定路徑，以減少請求及版本更新時的重複下載；一般／正式建置使用外部 CSS。預覽加入 `noindex, nofollow`，但這不限制公開存取。儲存庫及其中的公開資源仍可被其他人讀取。
+
+### 快取與線上檢查
+
+發布後會透過 raw.githack 官方 `/purge` 介面清除五個固定分頁的快取。若固定首頁仍讀到舊版，流程會等待後再次清除、重試；遇到 429 或暫時性伺服器錯誤時也會間隔重試並參考 `Retry-After`。
+
+結果見 [`preview-health.json`](https://github.com/shaoyuanlo/codex_test/blob/site-preview/preview-health.json)：
+
+| 欄位 | 意義 |
+| --- | --- |
+| `sourceCommit` | 本次檢查對應的來源提交，需與 `preview.json` 相符 |
+| `checks` | 固定首頁、快速版五個分頁、兩個字型檔及舊路徑的個別結果 |
+| 固定首頁的 `currentVersion` | 是否已讀到該次來源版本；200 仍可能是舊快取 |
+| `purges` | 固定分頁清除快取的請求結果 |
+| `passed` | 所有檢查通過，且固定首頁確實為本次版本 |
+
+清除快取成功不代表每個瀏覽器已刷新；檔案已發布也不代表全部代理檢查通過。重試後仍可能限流或讀到舊版，應查看個別結果。若固定入口尚未更新，可先用已驗證的快速入口；若快速入口限流而固定首頁已驗證為新版，則使用固定入口。
+
+暫時預覽需要儲存庫公開及 Actions 的 `contents: write` 權限，使用工作流程內建權杖，不需另填個人存取權杖。歷史圖片保留在 [docs/preview/](docs/preview/)，不在 README 嵌入或連結圖片作為目前預覽。
+
+### 正式遷移與結束暫時預覽
+
+正式發布需另行在 `shaoyuanlo/shaoyuanlo.github.io` 執行：
+
+1. 保留原網站 Git 歷史與既有 `files/`、`papers/`、`talks/` 及 `CNAME`。將本專案的來源、設定、腳本、依賴鎖檔及 Pages workflow 合併到正式儲存庫，避免覆寫既有資源或重複部署流程。
+2. 核對所有舊連結、資源目錄、主分支名稱與自訂網域；建置設定只會複製已列出的資源目錄及存在的 `CNAME`。
+3. 在正式儲存庫 **Settings → Pages → Source** 選擇 **GitHub Actions**，確認 **Deploy website to GitHub Pages** 成功。
+
+Pages workflow 會為個人網站儲存庫使用 `/`，其他專案儲存庫使用 `/儲存庫名稱/`。預設分支不是 `main` 時，需一併修改 workflow 觸發分支。正式遷移以該儲存庫實際部署結果為準；保留原網址並不需要保留 `codex_test` 預覽。
+
+結束暫時預覽時，可停用預覽 workflow，再刪除產物分支 `site-preview`；若另有啟用本測試儲存庫的 GitHub Pages，也需取消發布。第三方快取與 Git 歷史不會因此立即消失。本段為操作說明，不代表已執行遷移或移除。
+
+## 開發與驗證
+
+需要 Node.js 22 以上；一般使用者可直接在 GitHub 編輯，以下供開發與雲端任務使用：
 
 ```sh
 npm ci
 npm run dev
 ```
 
-The development server reports its local address. Editing Markdown, templates, or CSS rebuilds the site automatically. Stop with Ctrl+C.
+開發伺服器會顯示本機網址；修改 Markdown、版型或 CSS 後自動重建，Ctrl+C 結束。
 
 ```sh
 npm run build
 npm run check
+npm run build:preview
+node scripts/check-site.mjs _preview
 ```
 
-`_site/` contains the generated website; do not edit it. The check validates all generated pages, the main navigation, and local links/assets. It does not check external services. Production uses the same pinned dependencies through `package-lock.json`.
+一般建置會先清除 `_site/`，避免刪除的頁面殘留。`check-site.mjs` 檢查 HTML、每頁單一 H1、導覽選取狀態及本地連結／資源，不查核外部網站。代理檢查另由 Actions 中的 `check-proxy-preview.mjs` 執行。
 
-To test a project-site subpath:
+`PATH_PREFIX` 可測試子路徑，`SITE_URL` 控制 canonical／社群 metadata 的網址來源；一般建置預設為 `/` 與 `https://shaoyuanlo.github.io`。例如：
 
 ```sh
 PATH_PREFIX=/codex_test/ npm run build
@@ -236,41 +321,33 @@ npm run check
 npm run build
 ```
 
-The final command restores the root-path build. `SITE_URL` optionally overrides the canonical/social URL origin; its default is `https://shaoyuanlo.github.io`.
+最後一個指令恢復根路徑的一般建置。`build:preview` 另產生 `_preview/`、明確的 `index.html` 連結及預覽 metadata，不覆寫 `_site/`。`node_modules/`、`_site/`、`_preview/`、`artifacts/` 是依賴或產物，不編輯、不提交。
 
-Build and check the raw-file proxy preview separately:
+| 工作流程 | 位置與用途 |
+| --- | --- |
+| Deploy website to GitHub Pages | [pages.yml](.github/workflows/pages.yml)：推送 `main` 建置並部署；PR 執行建置與檢查 |
+| Update interactive website preview | [preview.yml](.github/workflows/preview.yml)：發布公開代理預覽與線上檢查結果 |
+| Check publication resource links | [publication-links.yml](.github/workflows/publication-links.yml)：論文資源網址查核與報告回寫 |
+| Refresh official NTU favicon | [ntu-favicon.yml](.github/workflows/ntu-favicon.yml)：需要更新校徽時，從官方來源取得圖片 |
 
-```sh
-npm run build:preview
-node scripts/check-site.mjs _preview
+校徽工作流程也會在自身腳本／workflow 修改時觸發，可能由 bot 更新圖片。無關修改保留現有校徽；圖片顏色不受 CSS 色盤控制。
+
+## Codex 協作
+
+使用 **Codex 網頁版 + GitHub 雲端任務 + 同一份 AGENTS.md + 自由開啟的聊天視窗**。不需要預先建立功能固定的 Threads、額外介面 Project、安裝電腦 App 或在使用者電腦 clone。
+
+每次在 Codex 選擇本儲存庫與環境，以 `main` 為基準；可用以下文字開始：
+
+```text
+請先讀取根目錄 AGENTS.md、README 與 main 最新內容，再幫我……
 ```
 
-`_preview/` is generated output. Preview links use explicit `index.html` filenames and the proxy path, so all pages work without a directory-index server. `_site/` and the production URL configuration are not modified by this preview build.
+新聊天不假設能讀到其他聊天或前次未提交的檔案。使用者可能直接在 GitHub 編輯內容與 CSS，因此每次以遠端最新程式碼、文件及 Git 紀錄核對；避免並行工作覆蓋彼此的修改。
 
-## 保留 https://shaoyuanlo.github.io/
+溝通、README 與 AGENTS.md 使用繁體中文；網站內容以英文為主，程式碼註解使用簡短英文。每次修改交付時顯示代表性 diff、完整提交或比較連結，以及實際驗證結果。純文件整理不需等待無關的網站部署檢查。
 
-**這次的實作位於 `codex_test` 儲存庫，尚未修改或發布目前的正式網站。** 正式網址對應的是 `shaoyuanlo/shaoyuanlo.github.io`；僅發布到 `codex_test` 不會取代原網址，而會是 `/codex_test/` 的測試網站。
+## 來源與歷史紀錄
 
-確認版面後，在原本的 **`shaoyuanlo.github.io` 儲存庫**使用這份框架：
+原網站提供簡介、照片、CV、論文、News 與相關本地資源；後續內容持續由使用者手動更新，實際筆數與內容以來源檔為準。PDF／連結查核 JSON 與 `docs/preview/` 圖片是當時的紀錄，不能當作目前網站已完整驗證的證明。
 
-1. 先保留原網站的 Git 歷史或建立備份分支。把這份專案的 `src/`、`files/SYLo_CV.pdf`、`scripts/`、`eleventy.config.js`、`package.json`、`package-lock.json`、`.gitignore`、`AGENTS.md`、`.github/workflows/pages.yml` 和這份說明加入正式儲存庫。**不要複製 `.git`、`node_modules` 或 `_site`。** 若正式儲存庫已有相同檔案或部署 workflow，先合併並確認只有一個發布流程。
-2. **保留原本的 `papers/`、`talks/` 和 `files/` 檔案**，避免舊的論文、投影片、照片與 CV 連結失效。這份測試專案已包含 CV 與目前論文連結使用的海報、投影片，但沒有搬入原網站的所有歷史檔案。確認同名 CV 的版本再替換。
-3. 建置會自動將存在的 `files/`、`papers/`、`talks/` 與 `CNAME` 複製至 `_site`。若原網站另有其他公開資源目錄，請在 `eleventy.config.js` 的 `addPassthroughCopy` 中加入，再確認舊連結仍可開啟。
-4. 到正式儲存庫 **Settings → Pages → Build and deployment → Source** 選擇 **GitHub Actions**。
-5. 把變更合併至 `main`（若預設分支不同，先修改 workflow 的兩個分支設定），查看 Actions 中的 **Deploy website to GitHub Pages** 是否成功。
-
-Workflow 會自動辨識個人網站並使用 `/` 作為根路徑，因此 **Home 就是原本主網址**。其他頁面是 `/lab/`、`/publications/`、`/teaching/`、`/blog/`，不是首頁錨點。正式網址不需更換。若正式網站有既有 `CNAME`，請保留並設定對應的 `SITE_URL`，不要意外換掉自訂網域。
-
-程式碼與預覽圖片保存在此儲存庫。這與正式網站的發布是兩件事；`shaoyuanlo.github.io` 的原網站尚未被這份框架取代。GitHub Actions 工作流程需在目標儲存庫上實際執行成功後，才算完成正式發布。
-
-## Design & accessibility
-
-- Pure white backgrounds, black text, navy links, text-style buttons with navy hover text, and one shared Inter / Noto Sans TC font stack with system fallbacks. Fonts are self-hosted; no external font CDN is required.
-- All five navigation links remain visible on mobile, in a sticky header with wrapping navigation.
-- Semantic headings, a keyboard skip link, visible focus indicators, and active-page announcements.
-- Responsive images, print styles, canonical URLs, social metadata, and a custom 404 page.
-- Shared layouts keep changes consistent across all pages; content remains in Markdown.
-
-The profile photo, CV, biography, links, news, and all 29 publication entries and their linked local resources were sourced from the existing `shaoyuanlo.github.io` repository. The design takes cues from the restrained academic presentation and warm palette in the accessible Shih-Hsin Wang reference source. The other two reference sites were inaccessible from this environment; their layouts were not verified.
-
-The favicon is the NTU emblem stored at `src/assets/ntu-emblem.png`; retain the current image when making unrelated changes. The **Refresh official NTU favicon** workflow can fetch the university's official source asset when requested. The emblem's colors are independent of the site's CSS palette.
+最初參考包含 [Shih-Hsin Wang](https://shihhsinwang0214.github.io/personal_website/)、[Yaoyao Liu](https://yaoyaoliu.web.illinois.edu/)、[Maria Antoniak](https://maria-antoniak.github.io/) 的學術網站；目前外觀依使用者後續決定的色彩、字型、留白與共用設計規則維護。
