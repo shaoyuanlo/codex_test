@@ -6,11 +6,10 @@ layout: layouts/base.njk
     <h1 id="home-title">{{ site.name }}<span class="chinese-name" lang="zh-Hant">{{ site.nameChinese }}</span></h1>
     <p class="hero-role">{{ site.role }}</p>
     <p class="hero-tagline">{% for line in site.tagline %}{{ line }}{% if not loop.last %}<br>{% endif %}{% endfor %}</p>
-    <div class="hero-actions">
-      <a class="button" href="mailto:{{ site.email }}">Email me</a>
-      <a class="button" href="{{ '/files/SYLo_CV.pdf' | url }}">Curriculum vitae <strong>PDF</strong></a>
-    </div>
-    <div class="social-links" aria-label="Academic and professional profiles">
+    <div class="hero-actions" aria-label="Contact and professional profiles">
+      <a class="button" href="mailto:{{ site.email }}">Email</a>
+      <a class="button" href="{{ '/files/SYLo_CV.pdf' | url }}">CV</a>
+
       {% for link in site.social %}<a class="button" href="{{ link.url }}">{{ link.label }}</a>{% endfor %}
     </div>
   </div>
