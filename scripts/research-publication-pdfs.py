@@ -46,33 +46,43 @@ def validate_pdf(url,title):
     except Exception as e:result['error']=str(e)[:180]
     return result
 
-import xml.etree.ElementTree as ET
-D=json.loads(OUT.read_text());p=D['papers'][8]
-# A similar limited-angle CBCT paper is not the original single-projection paper.
-p['rejectedArxivCandidate']={'url':'https://arxiv.org/pdf/2506.13545','reason':'Different title and reconstruction task; not the DOI-linked publication.'}
-p['selected']=None
-log=[];candidates=[]
-for url in [
- 'https://pmc-oa-opendata.s3.amazonaws.com/?list-type=2&max-keys=5',
- 'https://pmc-oa-opendata.s3.amazonaws.com/?list-type=2&prefix=PMC12310287&max-keys=50',
- 'https://pmc-oa-opendata.s3.amazonaws.com/?list-type=2&prefix=oa_comm/&max-keys=5',
- 'https://pmc-oa-opendata.s3.amazonaws.com/?list-type=2&prefix=oa_noncomm/&max-keys=5',
- 'https://pmc-oa-opendata.s3.amazonaws.com/?list-type=2&prefix=manuscript/&max-keys=5']:
-    try:
-        r=get(url);log.append({'url':url,'status':r.status_code,'text':r.text[:12000]})
-        if 's3.amazonaws' in url:
-            xml=ET.fromstring(r.text)
-            for el in xml.iter():
-                if el.tag.endswith('Key') and el.text.endswith('.pdf') and '12310287' in el.text:
-                    candidates.append('https://pmc-oa-opendata.s3.amazonaws.com/'+el.text)
-        else:
-            for u in re.findall(r'(?:href|href)=["\']([^"\']+\.pdf)["\']',r.text):candidates.append(urljoin(url,u))
-    except Exception as e:log.append({'url':url,'error':str(e)})
-for url in dict.fromkeys(candidates):
-    verdict=validate_pdf(url,p['title']);verdict.update(kind='author-manuscript',source='https://pmc.ncbi.nlm.nih.gov/articles/PMC12310287/')
-    p.setdefault('phase4Checks',[]).append(verdict)
-    if verdict.get('passed'):p['selected']=verdict;break
-p['publicArchiveDiscovery']=log
-D['phase']=5;D['selected']=sum(bool(x['selected']) for x in D['papers']);D['checkedAt']=datetime.now(timezone.utc).isoformat()
+from playwright.sync_api import sync_playwright
+import shutil
+D=json.loads(OUT.read_text());paper=D['papers'][8]
+pdf='https://pmc.ncbi.nlm.nih.gov/articles/PMC12310287/pdf/nihms-2095081.pdf'
+status={}
+try:
+    with sync_playwright() as pw:
+        chrome=shutil.which('google-chrome') or shutil.which('chromium')
+        browser=pw.chromium.launch(executable_path=chrome,args=['--no-sandbox'])
+        context=browser.new_context(accept_downloads=True);page=context.new_page()
+        response=page.goto('https://pmc.ncbi.nlm.nih.gov/articles/PMC12310287/',wait_until='domcontentloaded',timeout=40000)
+        page.wait_for_timeout(1500)
+        text=page.locator('body').inner_text(timeout=10000)
+        status.update(articleStatus=response.status if response else None,articleTitle=page.title(),articleText=text[:900])
+        # Do not interact with CAPTCHA or human-verification challenges.
+        blocked=any(s in text.lower() for s in ['verify you are human','captcha','pardon our interruption','access denied'])
+        if not blocked:
+            links=page.locator('a[href*="/pdf/"]')
+            if links.count():
+                href=links.first.get_attribute('href');pdf=urljoin(page.url,href)
+            try:
+                with page.expect_download(timeout=20000) as pending:
+                    page.goto(pdf,wait_until='domcontentloaded',timeout=20000)
+                download=pending.value;path=download.path();blob=Path(path).read_bytes()
+                reader=PdfReader(BytesIO(blob));first=' '.join(x.extract_text() or '' for x in list(reader.pages)[:2])
+                title=normalized(paper['title']);coverage=len(set(title.split())&set(normalized(first).split()))/len(set(title.split()))
+                status.update(pdf=pdf,isPdf=b'%PDF-' in blob[:1024],titleCoverage=coverage,downloadedBytes=len(blob))
+                if b'%PDF-' in blob[:1024] and coverage>=.9:
+                    paper['selected']={'url':pdf,'finalUrl':pdf,'kind':'author-manuscript','source':'https://pmc.ncbi.nlm.nih.gov/articles/PMC12310287/','passed':True,'isPdf':True,'titleMatches':True,'titleCoverage':coverage,'browserDownload':True}
+            except Exception as e:
+                status['downloadError']=str(e)[:1200]
+                try:status['pdfPageText']=page.locator('body').inner_text(timeout=5000)[:1000]
+                except Exception:pass
+        else:status['blockedByHumanVerification']=True
+        browser.close()
+except Exception as e:status['error']=str(e)[:1500]
+paper['browserCheck']=status
+D['phase']=6;D['selected']=sum(bool(x['selected']) for x in D['papers']);D['checkedAt']=datetime.now(timezone.utc).isoformat()
 OUT.write_text(json.dumps(D,ensure_ascii=False,indent=2)+'\n')
-print('Selected',D['selected'],'of',D['count'],flush=True)
+print(json.dumps(status),flush=True)

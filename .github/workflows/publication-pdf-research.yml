@@ -17,7 +17,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: pip install requests beautifulsoup4 pypdf
+      - run: pip install requests beautifulsoup4 pypdf playwright
       - run: python scripts/research-publication-pdfs.py
       - name: Save source research for review
         if: always()
