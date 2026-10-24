@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-24T15:41:48.280290+00:00",
+  "checkedAt": "2026-10-24T15:43:43.247230+00:00",
   "count": 29,
   "selected": 26,
   "indexCounts": {
@@ -979,7 +979,14 @@
           "status": 200,
           "text": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<ListBucketResult xmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\"><Name>pmc-oa-opendata</Name><Prefix>manuscript/</Prefix><KeyCount>0</KeyCount><MaxKeys>5</MaxKeys><IsTruncated>false</IsTruncated></ListBucketResult>"
         }
-      ]
+      ],
+      "browserCheck": {
+        "articleStatus": 203,
+        "articleTitle": "CBCT Reconstruction using Single X-ray Projection with Cycle-domain Geometry-integrated Denoising Diffusion Probabilistic Models - PMC",
+        "articleText": "Skip to main content\n\nAn official website of the United States government\n\nHere's how you know\nNIH Websites Are Changing\nGet the Latest Updates and FAQs on the transition\nPer Executive Order 14434, federal agencies are now using \"Super Intelligence\" (SI) in place of \"Artificial Intelligence\" (AI). You may see both terms across NIH content during this transition.\n \nSearch\nLog in\n\nPrimary site navigation\n\nSearch PMC Full-Text Archive\nSearch in PMC\nJournal List \nUser Guide\nAs a library, NLM provides access to scientific literature. Inclusion in an NLM database does not imply endorsement of, or agreement with, the contents by NLM or the National Institutes of Health.\nLearn more: PMC Disclaimer | PMC Copyright Notice\nIEEE Trans Med Imaging. Author manuscript; available in PMC: 2026 Jul 1.\nPublished in final edited form as: IEEE Trans Med Imaging. 2025 Jul;44(7):2933–2947. doi: 10.1109/TMI.202",
+        "downloadError": "Timeout 20000ms exceeded while waiting for event \"download\"\n=========================== logs ===========================\nwaiting for event \"download\"\n============================================================",
+        "pdfPageText": "Checking your browser before accessing pmc.ncbi.nlm.nih.gov ...\nClick here if you are not automatically redirected after 5 seconds."
+      }
     },
     {
       "title": "TTT-Vnet: A 3D Vision Test-Time Training Model for Medical Image Analysis",
@@ -2802,5 +2809,5 @@
       }
     }
   ],
-  "phase": 5
+  "phase": 6
 }
