@@ -29,19 +29,19 @@
 }
 /* Shared centered containers — all pages, navigation and footer. */
 .header-inner, .site-main, .footer-inner {
-  max-width: 964px;
+  max-width: 980px;
   margin: 0 auto;
-  padding-left: 32px;
-  padding-right: 32px;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 .header-inner { padding-top: 0; padding-bottom: 0; min-height: 50px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
 .site-main { padding-top: 0; padding-bottom: 64px; min-height: calc(100vh - 270px); }
-.footer-inner { padding-top: 32px; padding-bottom: 36px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.footer-inner { padding-top: 32px; padding-bottom: 32px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
 @media (max-width: 767px) {
-  .header-inner, .site-main, .footer-inner { padding-left: 22px; padding-right: 22px; }
-  .header-inner { display: block; padding-top: 13px; min-height: 80px; }
+  .header-inner, .site-main, .footer-inner { padding-left: 24px; padding-right: 24px; }
+  .header-inner { display: block; padding-top: 12px; min-height: 80px; }
   .site-main { padding-bottom: 40px; }
-  .footer-inner { align-items: start; padding-top: 22px; padding-bottom: 22px; }
+  .footer-inner { align-items: start; padding-top: 24px; padding-bottom: 24px; }
 }
 * { box-sizing: border-box; }
 html { scroll-padding-top: 110px; }
