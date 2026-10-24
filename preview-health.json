@@ -1,0 +1,53 @@
+{
+  "sourceCommit": "0ad1aefbe2659a8304d0c4b65465ce5787624f48",
+  "checkedAt": "2026-10-24T13:23:56.269Z",
+  "passed": true,
+  "checks": [
+    {
+      "url": "https://raw.githack.com/shaoyuanlo/codex_test/site-preview/index.html",
+      "status": 200,
+      "passed": true,
+      "currentVersion": false
+    },
+    {
+      "url": "https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/0ad1aefbe265/index.html",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "url": "https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/0ad1aefbe265/lab/index.html",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "url": "https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/0ad1aefbe265/publications/index.html",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "url": "https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/0ad1aefbe265/assets/style.css",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "url": "https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/0ad1aefbe265/assets/fonts/fonts.css",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "url": "https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/0ad1aefbe265/assets/fonts/inter/files/inter-latin-wght-normal.woff2",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "url": "https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/0ad1aefbe265/assets/fonts/noto-sans-tc/files/noto-sans-tc-0-wght-normal.woff2",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "url": "https://raw.githack.com/shaoyuanlo/codex_test/site-preview/publication/index.html?v=0ad1aefbe265",
+      "status": 404,
+      "passed": true
+    }
+  ]
+}
