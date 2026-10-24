@@ -42,9 +42,11 @@ https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/<提交版�
 
 開啟 [`site-preview` 分支的 `preview.json`](https://github.com/shaoyuanlo/codex_test/blob/site-preview/preview.json)，複製 `url` 即可取得最新快速預覽；`stableUrl` 則是固定入口。也可在 [Update interactive website preview 工作流程](https://github.com/shaoyuanlo/codex_test/actions/workflows/preview.yml) 的建置輸出中找到 `Fixed preview:` 與 `Interactive preview:` 兩個網址。
 
-快速預覽的頁面、導覽與資源都指向同一版本目錄，以避開舊快取。發布目錄只保留當次版本；舊版本目錄會在下次發布時移除，舊網址可能暫時因快取仍可讀取，快取到期後通常回傳 404，不會自動切換到新版。固定網址持續保留及更新。舊版本仍可留存在 Git 提交歷史中。
+快速預覽的頁面、導覽與圖片指向同一版本目錄，以避開舊快取；CSS 內嵌於頁面，字型檔則共用固定路徑。發布目錄只保留當次版本；舊版本目錄會在下次發布時移除，舊網址可能暫時因快取仍可讀取，快取到期後通常回傳 404，不會自動切換到新版。固定網址持續保留及更新。舊版本仍可留存在 Git 提交歷史中。
 
 更新流程：修改 **`main` 分支**並提交 → 等待上述工作流程成功 → 開啟固定網址，或從 `preview.json` 取得最新快速預覽。這是提交後的自動建置預覽，不是逐字即時更新。`main` 是手動維護的原始碼，`site-preview` 是自動產生的網站，請勿手動編輯或將其合併回 `main`。
+
+預覽頁會內嵌網站及字型 CSS，降低代理請求數；字型檔共用固定路徑，避免每次版本更新都重新下載。正式網站仍使用原有外部 CSS 檔。代理回傳 429 或暫時性伺服器錯誤時，檢查會間隔重試並參考 `Retry-After`；仍失敗時如實記錄，不視為通過。
 
 工作流程會檢查固定入口可讀取、快速預覽來源版本、導覽連結、樣式與字型，並確認舊的 `/publication/` 路徑回傳 404；結果保存在 [`preview-health.json`](https://github.com/shaoyuanlo/codex_test/blob/site-preview/preview-health.json)。固定入口的 `currentVersion` 可辨識是否仍命中舊快取。代理預覽需要儲存庫維持公開，且 GitHub Actions 具有 `contents: write` 權限，不需要另外設定個人存取權杖。
 

@@ -20,6 +20,11 @@ process.env.ELEVENTY_OUTPUT = output;
 await rm(output, { recursive: true, force: true });
 await new Eleventy('src', output).write();
 
+// Keep the page styled even when the proxy throttles separate CSS requests.
+const stylesheet = await readFile('src/assets/style.css', 'utf8');
+const fontStylesheet = (await readFile('src/assets/fonts/fonts.css', 'utf8'))
+  .replaceAll('url(./', `url(${stablePrefix}assets/fonts/`);
+
 async function rewrite(dir) {
   for (const file of await readdir(dir, { withFileTypes: true })) {
     const filename = path.join(dir, file.name);
@@ -28,7 +33,12 @@ async function rewrite(dir) {
     } else if (filename.endsWith('.html')) {
       const html = await readFile(filename, 'utf8');
       // A raw-file proxy needs explicit filenames; it cannot resolve /lab/.
-      const rewritten = html.replace(/(href|src|content)="([^"]*)"/g, (match, attr, value) => {
+      const rewritten = html
+        .replace(`<link rel="stylesheet" href="${prefix}assets/style.css">`,
+          `<style data-preview-style="site">${stylesheet}</style>`)
+        .replace(`<link rel="stylesheet" href="${prefix}assets/fonts/fonts.css">`,
+          `<style data-preview-style="fonts">${fontStylesheet}</style>`)
+        .replace(/(href|src|content)="([^"]*)"/g, (match, attr, value) => {
         if (value.startsWith(prefix) || value.startsWith(origin + prefix)) {
           const url = new URL(value, origin);
           if (url.pathname.endsWith('/')) url.pathname += 'index.html';

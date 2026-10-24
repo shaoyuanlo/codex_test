@@ -75,7 +75,7 @@
 - `main` 是人工維護的原始碼；`site-preview` 是 GitHub Actions 自動產生的網站。不要手動編輯該分支、從它開發，或合併回 `main`。
 - `node_modules/`、`_site/`、`_preview/`、`artifacts/` 是依賴或產物，不編輯或提交。
 - 固定預覽入口：`https://raw.githack.com/shaoyuanlo/codex_test/site-preview/index.html`。持續更新，固定版導覽必須指向固定路徑。
-- 快速預覽使用 `site-preview/revisions/<提交版本>/`；頁面、導覽與資源必須指向同一版本。每次發布只保留最新版本目錄。
+- 快速預覽使用 `site-preview/revisions/<提交版本>/`；頁面、導覽與圖片必須指向同一版本；CSS 內嵌於預覽頁，字型檔共用固定路徑以減少代理請求。每次發布只保留最新版本目錄。
 - 不把舊快速網址當作永久入口。代理快取可能讓固定頁面延後更新，也可能讓已刪除的舊版本暫時仍可讀取；不能保證立即清除第三方快取。
 - 從最新 `preview.json` 取得 `stableUrl`、`url` 和 `sourceCommit`。核對 `preview-health.json` 的版本與檢查結果後，才宣稱線上部署通過；固定入口的 `currentVersion` 用於辨識快取。
 - 正式網站是 `https://shaoyuanlo.github.io/`，對應另一個儲存庫。本測試儲存庫的更新不代表已遷移正式網站；正式遷移依當次明確任務處理。

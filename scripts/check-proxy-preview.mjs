@@ -1,12 +1,29 @@
 import { readFile, writeFile } from 'node:fs/promises';
+import { setTimeout as pause } from 'node:timers/promises';
 
 // Runs in GitHub Actions, where the public proxy can be checked independently
 // of cloud-workspace egress restrictions. The result is saved with the preview.
 const manifest = JSON.parse(await readFile('_preview/preview.json', 'utf8'));
 const checks = [];
+// Pace requests and respect temporary rate limits instead of failing immediately.
+async function fetchPreview(url) {
+  for (let attempt = 0; attempt < 4; attempt++) {
+    await pause(1500);
+    const response = await fetch(url, { signal: AbortSignal.timeout(20000) });
+    if ((response.status !== 429 && response.status < 500) || attempt === 3) return response;
+    const header = response.headers.get('retry-after');
+    const retryAfter = header === null ? 0 : /^\d+$/.test(header)
+      ? Number(header) * 1000 : Math.max(0, Date.parse(header) - Date.now()) || 0;
+    await response.arrayBuffer();
+    const delay = Math.max(10000 * 2 ** attempt, retryAfter);
+    console.log(`Proxy returned ${response.status}; retrying in ${Math.ceil(delay / 1000)}s: ${url}`);
+    await pause(delay);
+  }
+}
+
 // Fixed URLs can be cached; report freshness separately from availability.
 try {
-  const response = await fetch(manifest.stableUrl, { signal: AbortSignal.timeout(20000) });
+  const response = await fetchPreview(manifest.stableUrl);
   const text = await response.text();
   checks.push({
     url: manifest.stableUrl,
@@ -21,15 +38,17 @@ for (const [relative, marker] of [
   ['index.html', '<h1 id="home-title">'],
   ['lab/index.html', '<h1>Lab</h1>'],
   ['publications/index.html', '<h1>Publications</h1>'],
-  ['assets/style.css', '.site-header {'],
-  ['assets/fonts/fonts.css', "font-family: 'Noto Sans TC';"],
+  ['teaching/index.html', '<h1>Teaching</h1>'],
+  ['blog/index.html', '<h1>Blog</h1>'],
   ['assets/fonts/inter/files/inter-latin-wght-normal.woff2', null],
   ['assets/fonts/noto-sans-tc/files/noto-sans-tc-0-wght-normal.woff2', null]
 ]) {
   const target = new URL(relative, manifest.url);
-  const url = target.href;
+  // Font files are shared across revisions, matching the inline font declarations.
+  const url = relative.startsWith('assets/fonts/')
+    ? new URL(relative, manifest.stableUrl).href : target.href;
   try {
-    const response = await fetch(url, { signal: AbortSignal.timeout(20000) });
+    const response = await fetchPreview(url);
     let matches;
     if (marker === null) {
       matches = Buffer.from(await response.arrayBuffer()).subarray(0, 4).toString('ascii') === 'wOF2';
@@ -39,7 +58,11 @@ for (const [relative, marker] of [
       if (relative.endsWith('.html')) {
         matches &&= text.includes(`name="preview-source" content="${manifest.sourceCommit}"`)
           && text.includes(`/revisions/${manifest.sourceCommit.slice(0, 12)}/publications/index.html`)
-          && !text.includes('/publication/');
+          && !text.includes('/publication/')
+          && text.includes('<style data-preview-style="site">')
+          && text.includes('.site-header {')
+          && text.includes('<style data-preview-style="fonts">')
+          && text.includes("font-family: 'Noto Sans TC';");
       }
     }
     checks.push({ url, status: response.status, passed: response.ok && matches });
@@ -50,7 +73,7 @@ for (const [relative, marker] of [
 const removed = new URL(manifest.url.replace(/revisions\/[^/]+\/index\.html$/, 'publication/index.html'));
 removed.searchParams.set('v', manifest.sourceCommit.slice(0, 12));
 try {
-  const response = await fetch(removed, { signal: AbortSignal.timeout(20000) });
+  const response = await fetchPreview(removed);
   checks.push({ url: removed.href, status: response.status, passed: response.status === 404 });
 } catch (error) {
   checks.push({ url: removed.href, passed: false, error: error.message });
