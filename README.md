@@ -61,8 +61,8 @@ https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/<提交版�
 | 論文清單 | [`src/publications.md`](src/publications.md) |
 | 課程與教材 | [`src/teaching.md`](src/teaching.md) |
 | Blog 文字與簡介 | [`src/blog.md`](src/blog.md) |
-| 姓名、職稱、Email、社群連結、首頁標語 | [`src/home.md`](src/home.md) 的 `website:` 欄位 |
-| 首頁按鈕文字 | [`src/_includes/layouts/home.njk`](src/_includes/layouts/home.njk) |
+| 姓名、職稱與所屬單位、Email、CV 與社群連結 | [`src/home.md`](src/home.md) 的 `website:` 欄位 |
+| 首頁連結文字、順序與網址 | `src/home.md` 的 `website.social` 清單 |
 | 各頁標題下方的簡介 | 各頁頂端 `intro:` 欄位 |
 | 個人照片 | 替換 `src/assets/portrait.jpg`（建議 5:6 比例） |
 | 瀏覽器分頁圖示／台大校徽 | [`src/assets/ntu-emblem.png`](src/assets/ntu-emblem.png) |
@@ -147,7 +147,7 @@ Normal text, **bold text**, and *italic text*.
 - Another item
 ```
 
-頁面頂端兩條 `---` 之間是設定欄位（front matter）。保留欄位依「運作設定在前、可編輯內容在後」排列：`layout`、`section`、`permalink`，以及有使用的 `eleventyExcludeFromCollections` 放在前面；`title`、`intro` 放在後面。請保留既有運作設定；主要文字直接寫在第二條 `---` 下面。標題或簡介含冒號時請加雙引號，例如 `title: "Research: new directions"`。首頁的姓名、職稱、Email、標語、社群連結及導覽統一放在 `src/home.md` 的 `website:` 欄位，使用 YAML 編輯；保留縮排與清單前的 `-`。建置時會將此欄位提供給全站共用，不需另建資料檔。首頁透過 `permalink: /index.html` 保持根網址 `/`，不會產生 `/home/` 分頁。
+頁面頂端兩條 `---` 之間是設定欄位（front matter）。保留欄位依「運作設定在前、可編輯內容在後」排列：`layout`、`section`、`permalink`，以及有使用的 `eleventyExcludeFromCollections` 放在前面；`title`、`intro` 放在後面。請保留既有運作設定；主要文字直接寫在第二條 `---` 下面。標題或簡介含冒號時請加雙引號，例如 `title: "Research: new directions"`。首頁的姓名、多組職稱與所屬單位、聯絡／社群連結及導覽統一放在 `src/home.md` 的 `website:` 欄位，使用 YAML 編輯；保留縮排與清單前的 `-`。建置時會將此欄位提供給全站共用，不需另建資料檔。首頁透過 `permalink: /index.html` 保持根網址 `/`，不會產生 `/home/` 分頁。
 
 站內連結請使用下列格式，讓主網址與測試子路徑皆可運作：
 
@@ -155,6 +155,20 @@ Normal text, **bold text**, and *italic text*.
 [Lab]({{ '/lab/' | url }})
 [A PDF]({{ '/files/filename.pdf' | url }})
 ```
+
+### 編輯首頁職稱與連結
+
+`website.roles` 可新增多組職稱，每組包含 `role` 和 `affiliations` 清單；職稱及每個所屬單位各自成行。第二組標示 `(layout test)` 的內容僅供排版測試，可直接刪除或替換。
+
+```yaml
+  roles:
+  - role: Assistant Professor
+    affiliations:
+    - Department of Computer Science and Information Engineering
+    - National Taiwan University
+```
+
+Email、CV 和社群連結都由 `website.social` 清單控制，依清單順序顯示。修改 `label` 可改文字，修改 `url` 可改網址；CV 使用 `/files/SYLo_CV.pdf`，建置時會自動套用預覽路徑。Email 使用 `mailto:你的信箱`，其他頁面的聯絡連結也會自動沿用此信箱，不需重複設定。首頁不再提供 tagline 欄位。
 
 ### 新增論文
 

@@ -6,7 +6,10 @@ export default function (eleventyConfig) {
   // Share the homepage front matter across all pages; read again on each build.
   eleventyConfig.addGlobalData("site", async () => {
     const source = await readFile(new URL("./src/home.md", import.meta.url), "utf8");
-    return matter(source).data.website;
+    const website = matter(source).data.website;
+    // Reuse the social Email address in contact links elsewhere on the site.
+    const email = website.social.find(link => link.url.startsWith("mailto:"))?.url.slice(7);
+    return { ...website, email };
   });
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
   // Keep existing paper, slide, and file URLs when migrating the old website.

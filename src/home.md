@@ -6,12 +6,20 @@ title: Home
 website:
   name: Shao-Yuan Lo
   nameChinese: 羅紹元
-  role: Assistant Professor
-  tagline:
-  - Building trustworthy AI.
-  - Understanding multimodal intelligence.
-  email: sylo@csie.ntu.edu.tw
+  roles:
+  - role: Assistant Professor
+    affiliations:
+    - Department of Computer Science and Information Engineering
+    - National Taiwan University
+  - role: Example Role (layout test)
+    affiliations:
+    - Example Department (layout test)
+    - Example University (layout test)
   social:
+  - label: Email
+    url: mailto:sylo@csie.ntu.edu.tw
+  - label: CV
+    url: /files/SYLo_CV.pdf
   - label: Google Scholar
     url: https://scholar.google.com/citations?hl=en&user=vL35nH4AAAAJ
   - label: GitHub
