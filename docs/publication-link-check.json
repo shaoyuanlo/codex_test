@@ -1,11 +1,78 @@
 {
-  "sourceCommit": "ad2abdc89925a987781b3416eb7f933195014bd5",
-  "checkedAt": "2026-10-24T15:46:44.219595+00:00",
+  "sourceCommit": "df094b8aab7fc29fcc9fe4a0d66e8ed41f59f3e7",
+  "checkedAt": "2026-10-24T16:37:37.710833+00:00",
   "passed": false,
-  "count": 94,
-  "verifiedCount": 89,
-  "expectedRestrictions": 3,
+  "count": 100,
+  "verifiedCount": 99,
+  "expectedRestrictions": 0,
   "checks": [
+    {
+      "title": "Industrial Anomaly Detection via Defect-Grounded Reasoning in Visual Latent Space",
+      "label": "Paper",
+      "url": "https://arxiv.org/pdf/2609.29457",
+      "status": 200,
+      "finalUrl": "https://arxiv.org/pdf/2609.29457",
+      "contentType": "application/pdf",
+      "passed": true,
+      "isPdf": true
+    },
+    {
+      "title": "Industrial Anomaly Detection via Defect-Grounded Reasoning in Visual Latent Space",
+      "label": "arXiv",
+      "url": "https://arxiv.org/abs/2609.29457",
+      "status": 200,
+      "finalUrl": "https://arxiv.org/abs/2609.29457",
+      "contentType": "text/html; charset=utf-8",
+      "passed": true
+    },
+    {
+      "title": "AEGIS: Audio Endogenous Guarding via Internal Signals Against Large Audio-Language Model Jailbreaks",
+      "label": "Paper",
+      "url": "https://arxiv.org/pdf/2609.29287",
+      "status": 200,
+      "finalUrl": "https://arxiv.org/pdf/2609.29287",
+      "contentType": "application/pdf",
+      "passed": true,
+      "isPdf": true
+    },
+    {
+      "title": "AEGIS: Audio Endogenous Guarding via Internal Signals Against Large Audio-Language Model Jailbreaks",
+      "label": "arXiv",
+      "url": "https://arxiv.org/abs/2609.29287",
+      "status": 200,
+      "finalUrl": "https://arxiv.org/abs/2609.29287",
+      "contentType": "text/html; charset=utf-8",
+      "passed": true
+    },
+    {
+      "title": "When Demonstrations Fail: Diagnosing the Limits of In-Context Learning in Large Audio-Language Models with Progressive Cue Removal",
+      "label": "Paper",
+      "url": "https://arxiv.org/pdf/2603.20433",
+      "status": 200,
+      "finalUrl": "https://arxiv.org/pdf/2603.20433",
+      "contentType": "application/pdf",
+      "passed": true,
+      "isPdf": true
+    },
+    {
+      "title": "When Demonstrations Fail: Diagnosing the Limits of In-Context Learning in Large Audio-Language Models with Progressive Cue Removal",
+      "label": "arXiv",
+      "url": "https://arxiv.org/abs/2603.20433",
+      "status": 200,
+      "finalUrl": "https://arxiv.org/abs/2603.20433",
+      "contentType": "text/html; charset=utf-8",
+      "passed": true
+    },
+    {
+      "title": "From Shortcuts to Reasoning: Robust Post-Training of Theory of Mind with Reinforcement Learning",
+      "label": "Paper",
+      "url": "https://arxiv.org/pdf/2606.09092",
+      "status": 200,
+      "finalUrl": "https://arxiv.org/pdf/2606.09092",
+      "contentType": "application/pdf",
+      "passed": true,
+      "isPdf": true
+    },
     {
       "title": "From Shortcuts to Reasoning: Robust Post-Training of Theory of Mind with Reinforcement Learning",
       "label": "arXiv",
@@ -14,16 +81,6 @@
       "finalUrl": "https://arxiv.org/abs/2606.09092",
       "contentType": "text/html; charset=utf-8",
       "passed": true
-    },
-    {
-      "title": "From Shortcuts to Reasoning: Robust Post-Training of Theory of Mind with Reinforcement Learning",
-      "label": "PDF",
-      "url": "https://arxiv.org/pdf/2606.09092",
-      "status": 200,
-      "finalUrl": "https://arxiv.org/pdf/2606.09092",
-      "contentType": "application/pdf",
-      "passed": true,
-      "isPdf": true
     },
     {
       "title": "From Shortcuts to Reasoning: Robust Post-Training of Theory of Mind with Reinforcement Learning",
@@ -50,6 +107,35 @@
       "isPdf": true
     },
     {
+      "title": "ProSGNeRF: Progressive Dynamic Neural Scene Graph with Frequency Modulated Foundation Model in Urban Scenes",
+      "label": "Paper",
+      "url": "https://arxiv.org/pdf/2312.09076",
+      "status": 200,
+      "finalUrl": "https://arxiv.org/pdf/2312.09076",
+      "contentType": "application/pdf",
+      "passed": true,
+      "isPdf": true
+    },
+    {
+      "title": "ProSGNeRF: Progressive Dynamic Neural Scene Graph with Frequency Modulated Foundation Model in Urban Scenes",
+      "label": "arXiv",
+      "url": "https://arxiv.org/abs/2312.09076",
+      "status": 200,
+      "finalUrl": "https://arxiv.org/abs/2312.09076",
+      "contentType": "text/html; charset=utf-8",
+      "passed": true
+    },
+    {
+      "title": "CSGaussian: Progressive Rate-Distortion Compression and Segmentation for 3D Gaussian Splatting",
+      "label": "Paper",
+      "url": "https://openaccess.thecvf.com/content/WACV2026/papers/Tseng_CSGaussian_Progressive_Rate-Distortion_Compression_and_Segmentation_for_3D_Gaussian_Splatting_WACV_2026_paper.pdf",
+      "status": 200,
+      "finalUrl": "https://openaccess.thecvf.com/content/WACV2026/papers/Tseng_CSGaussian_Progressive_Rate-Distortion_Compression_and_Segmentation_for_3D_Gaussian_Splatting_WACV_2026_paper.pdf",
+      "contentType": "application/pdf",
+      "passed": true,
+      "isPdf": true
+    },
+    {
       "title": "CSGaussian: Progressive Rate-Distortion Compression and Segmentation for 3D Gaussian Splatting",
       "label": "arXiv",
       "url": "https://arxiv.org/abs/2601.12814",
@@ -60,11 +146,20 @@
     },
     {
       "title": "CSGaussian: Progressive Rate-Distortion Compression and Segmentation for 3D Gaussian Splatting",
-      "label": "PDF",
-      "url": "https://openaccess.thecvf.com/content/WACV2026/papers/Tseng_CSGaussian_Progressive_Rate-Distortion_Compression_and_Segmentation_for_3D_Gaussian_Splatting_WACV_2026_paper.pdf",
+      "label": "Code",
+      "url": "https://github.com/dtc111111/prosgnerf",
       "status": 200,
-      "finalUrl": "https://openaccess.thecvf.com/content/WACV2026/papers/Tseng_CSGaussian_Progressive_Rate-Distortion_Compression_and_Segmentation_for_3D_Gaussian_Splatting_WACV_2026_paper.pdf",
-      "contentType": "application/pdf",
+      "finalUrl": "https://github.com/dtc111111/prosgnerf",
+      "contentType": "text/html; charset=utf-8",
+      "passed": true
+    },
+    {
+      "title": "Overcoming Multi-step Complexity in Multimodal Theory-of-Mind Reasoning: A Scalable Bayesian Planner",
+      "label": "Paper",
+      "url": "https://raw.githubusercontent.com/mlresearch/v267/main/assets/zhang25bk/zhang25bk.pdf",
+      "status": 200,
+      "finalUrl": "https://raw.githubusercontent.com/mlresearch/v267/main/assets/zhang25bk/zhang25bk.pdf",
+      "contentType": "application/octet-stream",
       "passed": true,
       "isPdf": true
     },
@@ -76,16 +171,6 @@
       "finalUrl": "https://arxiv.org/abs/2506.01301",
       "contentType": "text/html; charset=utf-8",
       "passed": true
-    },
-    {
-      "title": "Overcoming Multi-step Complexity in Multimodal Theory-of-Mind Reasoning: A Scalable Bayesian Planner",
-      "label": "PDF",
-      "url": "https://raw.githubusercontent.com/mlresearch/v267/main/assets/zhang25bk/zhang25bk.pdf",
-      "status": 200,
-      "finalUrl": "https://raw.githubusercontent.com/mlresearch/v267/main/assets/zhang25bk/zhang25bk.pdf",
-      "contentType": "application/octet-stream",
-      "passed": true,
-      "isPdf": true
     },
     {
       "title": "Overcoming Multi-step Complexity in Multimodal Theory-of-Mind Reasoning: A Scalable Bayesian Planner",
@@ -105,22 +190,22 @@
     },
     {
       "title": "Filter Images First, Generate Instructions Later: Pre-Instruction Data Selection for Visual Instruction Tuning",
-      "label": "arXiv",
-      "url": "https://arxiv.org/abs/2503.07591",
-      "status": 200,
-      "finalUrl": "https://arxiv.org/abs/2503.07591",
-      "contentType": "text/html; charset=utf-8",
-      "passed": true
-    },
-    {
-      "title": "Filter Images First, Generate Instructions Later: Pre-Instruction Data Selection for Visual Instruction Tuning",
-      "label": "PDF",
+      "label": "Paper",
       "url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Safaei_Filter_Images_First_Generate_Instructions_Later_Pre-Instruction_Data_Selection_for_CVPR_2025_paper.pdf",
       "status": 200,
       "finalUrl": "https://openaccess.thecvf.com/content/CVPR2025/papers/Safaei_Filter_Images_First_Generate_Instructions_Later_Pre-Instruction_Data_Selection_for_CVPR_2025_paper.pdf",
       "contentType": "application/pdf",
       "passed": true,
       "isPdf": true
+    },
+    {
+      "title": "Filter Images First, Generate Instructions Later: Pre-Instruction Data Selection for Visual Instruction Tuning",
+      "label": "arXiv",
+      "url": "https://arxiv.org/abs/2503.07591",
+      "status": 200,
+      "finalUrl": "https://arxiv.org/abs/2503.07591",
+      "contentType": "text/html; charset=utf-8",
+      "passed": true
     },
     {
       "title": "Filter Images First, Generate Instructions Later: Pre-Instruction Data Selection for Visual Instruction Tuning",
@@ -151,22 +236,22 @@
     },
     {
       "title": "Towards Zero-Shot Anomaly Detection and Reasoning with Multimodal Large Language Models",
-      "label": "arXiv",
-      "url": "https://arxiv.org/abs/2502.07601",
-      "status": 200,
-      "finalUrl": "https://arxiv.org/abs/2502.07601",
-      "contentType": "text/html; charset=utf-8",
-      "passed": true
-    },
-    {
-      "title": "Towards Zero-Shot Anomaly Detection and Reasoning with Multimodal Large Language Models",
-      "label": "PDF",
+      "label": "Paper",
       "url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Xu_Towards_Zero-Shot_Anomaly_Detection_and_Reasoning_with_Multimodal_Large_Language_CVPR_2025_paper.pdf",
       "status": 200,
       "finalUrl": "https://openaccess.thecvf.com/content/CVPR2025/papers/Xu_Towards_Zero-Shot_Anomaly_Detection_and_Reasoning_with_Multimodal_Large_Language_CVPR_2025_paper.pdf",
       "contentType": "application/pdf",
       "passed": true,
       "isPdf": true
+    },
+    {
+      "title": "Towards Zero-Shot Anomaly Detection and Reasoning with Multimodal Large Language Models",
+      "label": "arXiv",
+      "url": "https://arxiv.org/abs/2502.07601",
+      "status": 200,
+      "finalUrl": "https://arxiv.org/abs/2502.07601",
+      "contentType": "text/html; charset=utf-8",
+      "passed": true
     },
     {
       "title": "Towards Zero-Shot Anomaly Detection and Reasoning with Multimodal Large Language Models",
@@ -196,22 +281,22 @@
     },
     {
       "title": "Bridging Compressed Image Latents and Multimodal Large Language Models",
-      "label": "arXiv",
-      "url": "https://arxiv.org/abs/2407.19651",
-      "status": 200,
-      "finalUrl": "https://arxiv.org/abs/2407.19651",
-      "contentType": "text/html; charset=utf-8",
-      "passed": true
-    },
-    {
-      "title": "Bridging Compressed Image Latents and Multimodal Large Language Models",
-      "label": "PDF",
+      "label": "Paper",
       "url": "https://arxiv.org/pdf/2407.19651",
       "status": 200,
       "finalUrl": "https://arxiv.org/pdf/2407.19651",
       "contentType": "application/pdf",
       "passed": true,
       "isPdf": true
+    },
+    {
+      "title": "Bridging Compressed Image Latents and Multimodal Large Language Models",
+      "label": "arXiv",
+      "url": "https://arxiv.org/abs/2407.19651",
+      "status": 200,
+      "finalUrl": "https://arxiv.org/abs/2407.19651",
+      "contentType": "text/html; charset=utf-8",
+      "passed": true
     },
     {
       "title": "Bridging Compressed Image Latents and Multimodal Large Language Models",
@@ -241,22 +326,22 @@
     },
     {
       "title": "StimuVAR: Spatiotemporal Stimuli-aware Video Affective Reasoning with Multimodal Large Language Models",
-      "label": "arXiv",
-      "url": "https://arxiv.org/abs/2409.00304",
-      "status": 200,
-      "finalUrl": "https://arxiv.org/abs/2409.00304",
-      "contentType": "text/html; charset=utf-8",
-      "passed": true
-    },
-    {
-      "title": "StimuVAR: Spatiotemporal Stimuli-aware Video Affective Reasoning with Multimodal Large Language Models",
-      "label": "PDF",
+      "label": "Paper",
       "url": "https://arxiv.org/pdf/2409.00304",
       "status": 200,
       "finalUrl": "https://arxiv.org/pdf/2409.00304",
       "contentType": "application/pdf",
       "passed": true,
       "isPdf": true
+    },
+    {
+      "title": "StimuVAR: Spatiotemporal Stimuli-aware Video Affective Reasoning with Multimodal Large Language Models",
+      "label": "arXiv",
+      "url": "https://arxiv.org/abs/2409.00304",
+      "status": 200,
+      "finalUrl": "https://arxiv.org/abs/2409.00304",
+      "contentType": "text/html; charset=utf-8",
+      "passed": true
     },
     {
       "title": "StimuVAR: Spatiotemporal Stimuli-aware Video Affective Reasoning with Multimodal Large Language Models",
@@ -269,16 +354,7 @@
     },
     {
       "title": "Egocentric and Exocentric Methods: A Short Survey",
-      "label": "arXiv",
-      "url": "https://arxiv.org/abs/2410.20621",
-      "status": 200,
-      "finalUrl": "https://arxiv.org/abs/2410.20621",
-      "contentType": "text/html; charset=utf-8",
-      "passed": true
-    },
-    {
-      "title": "Egocentric and Exocentric Methods: A Short Survey",
-      "label": "PDF",
+      "label": "Paper",
       "url": "https://arxiv.org/pdf/2410.20621",
       "status": 200,
       "finalUrl": "https://arxiv.org/pdf/2410.20621",
@@ -287,8 +363,17 @@
       "isPdf": true
     },
     {
-      "title": "CBCT Reconstruction using Single X-ray Projection with Cycle-domain Geometry-integrated Denoising Diffusion Probabilistic Models",
+      "title": "Egocentric and Exocentric Methods: A Short Survey",
       "label": "arXiv",
+      "url": "https://arxiv.org/abs/2410.20621",
+      "status": 200,
+      "finalUrl": "https://arxiv.org/abs/2410.20621",
+      "contentType": "text/html; charset=utf-8",
+      "passed": true
+    },
+    {
+      "title": "CBCT Reconstruction using Single X-ray Projection with Cycle-domain Geometry-integrated Denoising Diffusion Probabilistic Models",
+      "label": "Paper",
       "url": "https://ieeexplore.ieee.org/document/10946202",
       "status": 202,
       "finalUrl": "https://ieeexplore.ieee.org/document/10946202",
@@ -296,20 +381,8 @@
       "passed": false
     },
     {
-      "title": "CBCT Reconstruction using Single X-ray Projection with Cycle-domain Geometry-integrated Denoising Diffusion Probabilistic Models",
-      "label": "PDF",
-      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12310287/pdf/nihms-2095081.pdf",
-      "expectedRestriction": "browser-verification",
-      "status": 200,
-      "finalUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12310287/pdf/nihms-2095081.pdf",
-      "contentType": "text/html; charset=utf-8",
-      "passed": false,
-      "isPdf": false,
-      "reason": "browser-verification"
-    },
-    {
       "title": "TTT-Vnet: A 3D Vision Test-Time Training Model for Medical Image Analysis",
-      "label": "arXiv",
+      "label": "Paper",
       "url": "https://spie.org/medical-imaging/presentation/TTT-Vnet--A-3D-vision-test-time-training-model/13406-108",
       "status": 200,
       "finalUrl": "https://www.spiedigitallibrary.org/conference-proceedings-of-spie/13406/134062Y/TTT-Vnet--a-3D-vision-test-time-training-model/10.1117/12.3047499.full",
@@ -317,16 +390,14 @@
       "passed": true
     },
     {
-      "title": "TTT-Vnet: A 3D Vision Test-Time Training Model for Medical Image Analysis",
-      "label": "PDF",
-      "url": "https://www.spiedigitallibrary.org/conference-proceedings-of-spie/13406/134062Y/TTT-Vnet--a-3D-vision-test-time-training-model/10.1117/12.3047499.pdf",
-      "expectedRestriction": "institutional-access",
+      "title": "Follow the Rules: Reasoning for Video Anomaly Detection with Large Language Models",
+      "label": "Paper",
+      "url": "https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/10568.pdf",
       "status": 200,
-      "finalUrl": "https://www.spiedigitallibrary.org/conference-proceedings-of-spie/13406/134062Y/TTT-Vnet--a-3D-vision-test-time-training-model/10.1117/12.3047499.short",
-      "contentType": "text/html; charset=UTF-8",
-      "passed": false,
-      "isPdf": false,
-      "reason": "institutional-access"
+      "finalUrl": "https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/10568.pdf",
+      "contentType": "application/pdf",
+      "passed": true,
+      "isPdf": true
     },
     {
       "title": "Follow the Rules: Reasoning for Video Anomaly Detection with Large Language Models",
@@ -336,16 +407,6 @@
       "finalUrl": "https://arxiv.org/abs/2407.10299",
       "contentType": "text/html; charset=utf-8",
       "passed": true
-    },
-    {
-      "title": "Follow the Rules: Reasoning for Video Anomaly Detection with Large Language Models",
-      "label": "PDF",
-      "url": "https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/10568.pdf",
-      "status": 200,
-      "finalUrl": "https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/10568.pdf",
-      "contentType": "application/pdf",
-      "passed": true,
-      "isPdf": true
     },
     {
       "title": "Follow the Rules: Reasoning for Video Anomaly Detection with Large Language Models",
@@ -367,6 +428,16 @@
     },
     {
       "title": "Uncertainty-aware Action Decoupling Transformer for Action Anticipation",
+      "label": "Paper",
+      "url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Guo_Uncertainty-aware_Action_Decoupling_Transformer_for_Action_Anticipation_CVPR_2024_paper.pdf",
+      "status": 200,
+      "finalUrl": "https://openaccess.thecvf.com/content/CVPR2024/papers/Guo_Uncertainty-aware_Action_Decoupling_Transformer_for_Action_Anticipation_CVPR_2024_paper.pdf",
+      "contentType": "application/pdf",
+      "passed": true,
+      "isPdf": true
+    },
+    {
+      "title": "Uncertainty-aware Action Decoupling Transformer for Action Anticipation",
       "label": "arXiv",
       "url": "https://openaccess.thecvf.com/content/CVPR2024/html/Guo_Uncertainty-aware_Action_Decoupling_Transformer_for_Action_Anticipation_CVPR_2024_paper.html",
       "status": 200,
@@ -375,11 +446,11 @@
       "passed": true
     },
     {
-      "title": "Uncertainty-aware Action Decoupling Transformer for Action Anticipation",
-      "label": "PDF",
-      "url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Guo_Uncertainty-aware_Action_Decoupling_Transformer_for_Action_Anticipation_CVPR_2024_paper.pdf",
+      "title": "Can’t Make an Omelette without Breaking Some Eggs: Plausible Action Anticipation using Large Video-Language Models",
+      "label": "Paper",
+      "url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Mittal_Cant_Make_an_Omelette_Without_Breaking_Some_Eggs_Plausible_Action_CVPR_2024_paper.pdf",
       "status": 200,
-      "finalUrl": "https://openaccess.thecvf.com/content/CVPR2024/papers/Guo_Uncertainty-aware_Action_Decoupling_Transformer_for_Action_Anticipation_CVPR_2024_paper.pdf",
+      "finalUrl": "https://openaccess.thecvf.com/content/CVPR2024/papers/Mittal_Cant_Make_an_Omelette_Without_Breaking_Some_Eggs_Plausible_Action_CVPR_2024_paper.pdf",
       "contentType": "application/pdf",
       "passed": true,
       "isPdf": true
@@ -394,36 +465,23 @@
       "passed": true
     },
     {
-      "title": "Can’t Make an Omelette without Breaking Some Eggs: Plausible Action Anticipation using Large Video-Language Models",
-      "label": "PDF",
-      "url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Mittal_Cant_Make_an_Omelette_Without_Breaking_Some_Eggs_Plausible_Action_CVPR_2024_paper.pdf",
-      "status": 200,
-      "finalUrl": "https://openaccess.thecvf.com/content/CVPR2024/papers/Mittal_Cant_Make_an_Omelette_Without_Breaking_Some_Eggs_Plausible_Action_CVPR_2024_paper.pdf",
-      "contentType": "application/pdf",
-      "passed": true,
-      "isPdf": true
-    },
-    {
       "title": "Patient-specific 3D Volumetric CBCT Image Reconstruction with Single X-ray Projection Using Denoising Diffusion Probabilistic Model",
-      "label": "arXiv",
+      "label": "Paper",
       "url": "https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12931/129310P/Patient-specific-3D-volumetric-CBCT-image-reconstruction-with-single-x/10.1117/12.3006561.short",
       "status": 200,
       "finalUrl": "https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12931/129310P/Patient-specific-3D-volumetric-CBCT-image-reconstruction-with-single-x/10.1117/12.3006561.short",
-      "contentType": "text/html; charset=UTF-8",
-      "passed": false,
-      "reason": "browser-verification"
+      "contentType": "text/html; charset=utf-8",
+      "passed": true
     },
     {
-      "title": "Patient-specific 3D Volumetric CBCT Image Reconstruction with Single X-ray Projection Using Denoising Diffusion Probabilistic Model",
-      "label": "PDF",
-      "url": "https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12931/129310P/Patient-specific-3D-volumetric-CBCT-image-reconstruction-with-single-x/10.1117/12.3006561.pdf",
-      "expectedRestriction": "institutional-access",
+      "title": "Adaptive Batch Normalization Networks for Adversarial Robustness",
+      "label": "Paper",
+      "url": "https://arxiv.org/pdf/2405.11708",
       "status": 200,
-      "finalUrl": "https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12931/129310P/Patient-specific-3D-volumetric-CBCT-image-reconstruction-with-single-x/10.1117/12.3006561.pdf",
-      "contentType": "text/html; charset=UTF-8",
-      "passed": false,
-      "isPdf": false,
-      "reason": "institutional-access"
+      "finalUrl": "https://arxiv.org/pdf/2405.11708",
+      "contentType": "application/pdf",
+      "passed": true,
+      "isPdf": true
     },
     {
       "title": "Adaptive Batch Normalization Networks for Adversarial Robustness",
@@ -433,16 +491,6 @@
       "finalUrl": "https://arxiv.org/abs/2405.11708",
       "contentType": "text/html; charset=utf-8",
       "passed": true
-    },
-    {
-      "title": "Adaptive Batch Normalization Networks for Adversarial Robustness",
-      "label": "PDF",
-      "url": "https://arxiv.org/pdf/2405.11708",
-      "status": 200,
-      "finalUrl": "https://arxiv.org/pdf/2405.11708",
-      "contentType": "application/pdf",
-      "passed": true,
-      "isPdf": true
     },
     {
       "title": "Adaptive Batch Normalization Networks for Adversarial Robustness",
@@ -462,22 +510,22 @@
     },
     {
       "title": "Spatio-Temporal Pixel-Level Contrastive Learning-based Source-Free Domain Adaptation for Video Semantic Segmentation",
-      "label": "arXiv",
-      "url": "https://arxiv.org/abs/2303.14361",
-      "status": 200,
-      "finalUrl": "https://arxiv.org/abs/2303.14361",
-      "contentType": "text/html; charset=utf-8",
-      "passed": true
-    },
-    {
-      "title": "Spatio-Temporal Pixel-Level Contrastive Learning-based Source-Free Domain Adaptation for Video Semantic Segmentation",
-      "label": "PDF",
+      "label": "Paper",
       "url": "https://openaccess.thecvf.com/content/CVPR2023/papers/Lo_Spatio-Temporal_Pixel-Level_Contrastive_Learning-Based_Source-Free_Domain_Adaptation_for_Video_Semantic_CVPR_2023_paper.pdf",
       "status": 200,
       "finalUrl": "https://openaccess.thecvf.com/content/CVPR2023/papers/Lo_Spatio-Temporal_Pixel-Level_Contrastive_Learning-Based_Source-Free_Domain_Adaptation_for_Video_Semantic_CVPR_2023_paper.pdf",
       "contentType": "application/pdf",
       "passed": true,
       "isPdf": true
+    },
+    {
+      "title": "Spatio-Temporal Pixel-Level Contrastive Learning-based Source-Free Domain Adaptation for Video Semantic Segmentation",
+      "label": "arXiv",
+      "url": "https://arxiv.org/abs/2303.14361",
+      "status": 200,
+      "finalUrl": "https://arxiv.org/abs/2303.14361",
+      "contentType": "text/html; charset=utf-8",
+      "passed": true
     },
     {
       "title": "Spatio-Temporal Pixel-Level Contrastive Learning-based Source-Free Domain Adaptation for Video Semantic Segmentation",
@@ -497,6 +545,16 @@
     },
     {
       "title": "Deep Learning-based Multi-Organ CT Segmentation with Adversarial Data Augmentation",
+      "label": "Paper",
+      "url": "https://arxiv.org/pdf/2302.13172",
+      "status": 200,
+      "finalUrl": "https://arxiv.org/pdf/2302.13172",
+      "contentType": "application/pdf",
+      "passed": true,
+      "isPdf": true
+    },
+    {
+      "title": "Deep Learning-based Multi-Organ CT Segmentation with Adversarial Data Augmentation",
       "label": "arXiv",
       "url": "https://arxiv.org/abs/2302.13172",
       "status": 200,
@@ -505,11 +563,11 @@
       "passed": true
     },
     {
-      "title": "Deep Learning-based Multi-Organ CT Segmentation with Adversarial Data Augmentation",
-      "label": "PDF",
-      "url": "https://arxiv.org/pdf/2302.13172",
+      "title": "Adversarially Robust One-class Novelty Detection",
+      "label": "Paper",
+      "url": "https://arxiv.org/pdf/2108.11168",
       "status": 200,
-      "finalUrl": "https://arxiv.org/pdf/2302.13172",
+      "finalUrl": "https://arxiv.org/pdf/2108.11168",
       "contentType": "application/pdf",
       "passed": true,
       "isPdf": true
@@ -522,16 +580,6 @@
       "finalUrl": "https://arxiv.org/abs/2108.11168",
       "contentType": "text/html; charset=utf-8",
       "passed": true
-    },
-    {
-      "title": "Adversarially Robust One-class Novelty Detection",
-      "label": "PDF",
-      "url": "https://arxiv.org/pdf/2108.11168",
-      "status": 200,
-      "finalUrl": "https://arxiv.org/pdf/2108.11168",
-      "contentType": "application/pdf",
-      "passed": true,
-      "isPdf": true
     },
     {
       "title": "Adversarially Robust One-class Novelty Detection",
@@ -552,22 +600,22 @@
     },
     {
       "title": "Learning Feature Decomposition for Domain Adaptive Monocular Depth Estimation",
-      "label": "arXiv",
-      "url": "https://arxiv.org/abs/2208.00160",
-      "status": 200,
-      "finalUrl": "https://arxiv.org/abs/2208.00160",
-      "contentType": "text/html; charset=utf-8",
-      "passed": true
-    },
-    {
-      "title": "Learning Feature Decomposition for Domain Adaptive Monocular Depth Estimation",
-      "label": "PDF",
+      "label": "Paper",
       "url": "https://arxiv.org/pdf/2208.00160",
       "status": 200,
       "finalUrl": "https://arxiv.org/pdf/2208.00160",
       "contentType": "application/pdf",
       "passed": true,
       "isPdf": true
+    },
+    {
+      "title": "Learning Feature Decomposition for Domain Adaptive Monocular Depth Estimation",
+      "label": "arXiv",
+      "url": "https://arxiv.org/abs/2208.00160",
+      "status": 200,
+      "finalUrl": "https://arxiv.org/abs/2208.00160",
+      "contentType": "text/html; charset=utf-8",
+      "passed": true
     },
     {
       "title": "Learning Feature Decomposition for Domain Adaptive Monocular Depth Estimation",
@@ -580,16 +628,7 @@
     },
     {
       "title": "Exploring Adversarially Robust Training for Unsupervised Domain Adaptation",
-      "label": "arXiv",
-      "url": "https://arxiv.org/abs/2202.09300",
-      "status": 200,
-      "finalUrl": "https://arxiv.org/abs/2202.09300",
-      "contentType": "text/html; charset=utf-8",
-      "passed": true
-    },
-    {
-      "title": "Exploring Adversarially Robust Training for Unsupervised Domain Adaptation",
-      "label": "PDF",
+      "label": "Paper",
       "url": "https://openaccess.thecvf.com/content/ACCV2022/papers/Lo_Exploring_Adversarially_Robust_Training_for_Unsupervised_Domain_Adaptation_ACCV_2022_paper.pdf",
       "status": 200,
       "finalUrl": "https://openaccess.thecvf.com/content/ACCV2022/papers/Lo_Exploring_Adversarially_Robust_Training_for_Unsupervised_Domain_Adaptation_ACCV_2022_paper.pdf",
@@ -599,9 +638,28 @@
     },
     {
       "title": "Exploring Adversarially Robust Training for Unsupervised Domain Adaptation",
+      "label": "arXiv",
+      "url": "https://arxiv.org/abs/2202.09300",
+      "status": 200,
+      "finalUrl": "https://arxiv.org/abs/2202.09300",
+      "contentType": "text/html; charset=utf-8",
+      "passed": true
+    },
+    {
+      "title": "Exploring Adversarially Robust Training for Unsupervised Domain Adaptation",
       "label": "Slides",
       "url": "{{ '/papers/ARTUDA.pdf' | url }}",
       "localPath": "papers/ARTUDA.pdf",
+      "passed": true,
+      "isPdf": true
+    },
+    {
+      "title": "Defending Against Multiple and Unforeseen Adversarial Videos",
+      "label": "Paper",
+      "url": "https://arxiv.org/pdf/2009.05244",
+      "status": 200,
+      "finalUrl": "https://arxiv.org/pdf/2009.05244",
+      "contentType": "application/pdf",
       "passed": true,
       "isPdf": true
     },
@@ -616,19 +674,19 @@
     },
     {
       "title": "Defending Against Multiple and Unforeseen Adversarial Videos",
-      "label": "PDF",
-      "url": "https://arxiv.org/pdf/2009.05244",
-      "status": 200,
-      "finalUrl": "https://arxiv.org/pdf/2009.05244",
-      "contentType": "application/pdf",
+      "label": "Slides",
+      "url": "{{ '/papers/MultiBN.pdf' | url }}",
+      "localPath": "papers/MultiBN.pdf",
       "passed": true,
       "isPdf": true
     },
     {
-      "title": "Defending Against Multiple and Unforeseen Adversarial Videos",
-      "label": "Slides",
-      "url": "{{ '/papers/MultiBN.pdf' | url }}",
-      "localPath": "papers/MultiBN.pdf",
+      "title": "Error Diffusion Halftoning Against Adversarial Examples",
+      "label": "Paper",
+      "url": "https://arxiv.org/pdf/2101.09451",
+      "status": 200,
+      "finalUrl": "https://arxiv.org/pdf/2101.09451",
+      "contentType": "application/pdf",
       "passed": true,
       "isPdf": true
     },
@@ -643,19 +701,19 @@
     },
     {
       "title": "Error Diffusion Halftoning Against Adversarial Examples",
-      "label": "PDF",
-      "url": "https://arxiv.org/pdf/2101.09451",
-      "status": 200,
-      "finalUrl": "https://arxiv.org/pdf/2101.09451",
-      "contentType": "application/pdf",
+      "label": "Slides",
+      "url": "{{ '/papers/Halftone.pdf' | url }}",
+      "localPath": "papers/Halftone.pdf",
       "passed": true,
       "isPdf": true
     },
     {
-      "title": "Error Diffusion Halftoning Against Adversarial Examples",
-      "label": "Slides",
-      "url": "{{ '/papers/Halftone.pdf' | url }}",
-      "localPath": "papers/Halftone.pdf",
+      "title": "Overcomplete Representations Against Adversarial Videos",
+      "label": "Paper",
+      "url": "https://arxiv.org/pdf/2012.04262",
+      "status": 200,
+      "finalUrl": "https://arxiv.org/pdf/2012.04262",
+      "contentType": "application/pdf",
       "passed": true,
       "isPdf": true
     },
@@ -670,19 +728,19 @@
     },
     {
       "title": "Overcomplete Representations Against Adversarial Videos",
-      "label": "PDF",
-      "url": "https://arxiv.org/pdf/2012.04262",
-      "status": 200,
-      "finalUrl": "https://arxiv.org/pdf/2012.04262",
-      "contentType": "application/pdf",
+      "label": "Slides",
+      "url": "{{ '/papers/OUDefend.pdf' | url }}",
+      "localPath": "papers/OUDefend.pdf",
       "passed": true,
       "isPdf": true
     },
     {
-      "title": "Overcomplete Representations Against Adversarial Videos",
-      "label": "Slides",
-      "url": "{{ '/papers/OUDefend.pdf' | url }}",
-      "localPath": "papers/OUDefend.pdf",
+      "title": "MultAV: Multiplicative Adversarial Videos",
+      "label": "Paper",
+      "url": "https://arxiv.org/pdf/2009.08058",
+      "status": 200,
+      "finalUrl": "https://arxiv.org/pdf/2009.08058",
+      "contentType": "application/pdf",
       "passed": true,
       "isPdf": true
     },
@@ -697,19 +755,19 @@
     },
     {
       "title": "MultAV: Multiplicative Adversarial Videos",
-      "label": "PDF",
-      "url": "https://arxiv.org/pdf/2009.08058",
-      "status": 200,
-      "finalUrl": "https://arxiv.org/pdf/2009.08058",
-      "contentType": "application/pdf",
+      "label": "Slides",
+      "url": "{{ '/papers/MultAV.pdf' | url }}",
+      "localPath": "papers/MultAV.pdf",
       "passed": true,
       "isPdf": true
     },
     {
-      "title": "MultAV: Multiplicative Adversarial Videos",
-      "label": "Slides",
-      "url": "{{ '/papers/MultAV.pdf' | url }}",
-      "localPath": "papers/MultAV.pdf",
+      "title": "Efficient Dense Modules of Asymmetric Convolution for Real-Time Semantic Segmentation",
+      "label": "Paper",
+      "url": "https://arxiv.org/pdf/1809.06323",
+      "status": 200,
+      "finalUrl": "https://arxiv.org/pdf/1809.06323",
+      "contentType": "application/pdf",
       "passed": true,
       "isPdf": true
     },
@@ -721,16 +779,6 @@
       "finalUrl": "https://arxiv.org/abs/1809.06323",
       "contentType": "text/html; charset=utf-8",
       "passed": true
-    },
-    {
-      "title": "Efficient Dense Modules of Asymmetric Convolution for Real-Time Semantic Segmentation",
-      "label": "PDF",
-      "url": "https://arxiv.org/pdf/1809.06323",
-      "status": 200,
-      "finalUrl": "https://arxiv.org/pdf/1809.06323",
-      "contentType": "application/pdf",
-      "passed": true,
-      "isPdf": true
     },
     {
       "title": "Efficient Dense Modules of Asymmetric Convolution for Real-Time Semantic Segmentation",
@@ -751,16 +799,7 @@
     },
     {
       "title": "Exploring Semantic Segmentation on the DCT Representation",
-      "label": "arXiv",
-      "url": "https://arxiv.org/abs/1907.10015",
-      "status": 200,
-      "finalUrl": "https://arxiv.org/abs/1907.10015",
-      "contentType": "text/html; charset=utf-8",
-      "passed": true
-    },
-    {
-      "title": "Exploring Semantic Segmentation on the DCT Representation",
-      "label": "PDF",
+      "label": "Paper",
       "url": "https://arxiv.org/pdf/1907.10015",
       "status": 200,
       "finalUrl": "https://arxiv.org/pdf/1907.10015",
@@ -770,9 +809,28 @@
     },
     {
       "title": "Exploring Semantic Segmentation on the DCT Representation",
+      "label": "arXiv",
+      "url": "https://arxiv.org/abs/1907.10015",
+      "status": 200,
+      "finalUrl": "https://arxiv.org/abs/1907.10015",
+      "contentType": "text/html; charset=utf-8",
+      "passed": true
+    },
+    {
+      "title": "Exploring Semantic Segmentation on the DCT Representation",
       "label": "Slides",
       "url": "{{ '/papers/DCT.pdf' | url }}",
       "localPath": "papers/DCT.pdf",
+      "passed": true,
+      "isPdf": true
+    },
+    {
+      "title": "Multi-Class Lane Semantic Segmentation using Efficient Convolutional Networks",
+      "label": "Paper",
+      "url": "https://arxiv.org/pdf/1907.09438",
+      "status": 200,
+      "finalUrl": "https://arxiv.org/pdf/1907.09438",
+      "contentType": "application/pdf",
       "passed": true,
       "isPdf": true
     },
@@ -787,19 +845,19 @@
     },
     {
       "title": "Multi-Class Lane Semantic Segmentation using Efficient Convolutional Networks",
-      "label": "PDF",
-      "url": "https://arxiv.org/pdf/1907.09438",
-      "status": 200,
-      "finalUrl": "https://arxiv.org/pdf/1907.09438",
-      "contentType": "application/pdf",
+      "label": "Slides",
+      "url": "{{ '/papers/MultiClass.pdf' | url }}",
+      "localPath": "papers/MultiClass.pdf",
       "passed": true,
       "isPdf": true
     },
     {
-      "title": "Multi-Class Lane Semantic Segmentation using Efficient Convolutional Networks",
-      "label": "Slides",
-      "url": "{{ '/papers/MultiClass.pdf' | url }}",
-      "localPath": "papers/MultiClass.pdf",
+      "title": "Incorporating Luminance, Depth and Color Information by a Fusion-based Network for Semantic Segmentation",
+      "label": "Paper",
+      "url": "https://arxiv.org/pdf/1809.09077",
+      "status": 200,
+      "finalUrl": "https://arxiv.org/pdf/1809.09077",
+      "contentType": "application/pdf",
       "passed": true,
       "isPdf": true
     },
@@ -814,17 +872,7 @@
     },
     {
       "title": "Incorporating Luminance, Depth and Color Information by a Fusion-based Network for Semantic Segmentation",
-      "label": "PDF",
-      "url": "https://arxiv.org/pdf/1809.09077",
-      "status": 200,
-      "finalUrl": "https://arxiv.org/pdf/1809.09077",
-      "contentType": "application/pdf",
-      "passed": true,
-      "isPdf": true
-    },
-    {
-      "title": "Incorporating Luminance, Depth and Color Information by a Fusion-based Network for Semantic Segmentation",
-      "label": "Project",
+      "label": "Code",
       "url": "https://github.com/shangweihung/LDFNet",
       "status": 200,
       "finalUrl": "https://github.com/shangweihung/LDFNet",
@@ -841,22 +889,22 @@
     },
     {
       "title": "Efficient Road Lane Marking Detection with Deep Learning",
-      "label": "arXiv",
-      "url": "https://arxiv.org/abs/1809.03994",
-      "status": 200,
-      "finalUrl": "https://arxiv.org/abs/1809.03994",
-      "contentType": "text/html; charset=utf-8",
-      "passed": true
-    },
-    {
-      "title": "Efficient Road Lane Marking Detection with Deep Learning",
-      "label": "PDF",
+      "label": "Paper",
       "url": "https://arxiv.org/pdf/1809.03994",
       "status": 200,
       "finalUrl": "https://arxiv.org/pdf/1809.03994",
       "contentType": "application/pdf",
       "passed": true,
       "isPdf": true
+    },
+    {
+      "title": "Efficient Road Lane Marking Detection with Deep Learning",
+      "label": "arXiv",
+      "url": "https://arxiv.org/abs/1809.03994",
+      "status": 200,
+      "finalUrl": "https://arxiv.org/abs/1809.03994",
+      "contentType": "text/html; charset=utf-8",
+      "passed": true
     },
     {
       "title": "Efficient Road Lane Marking Detection with Deep Learning",
