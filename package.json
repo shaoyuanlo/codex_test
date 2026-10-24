@@ -9,6 +9,11 @@
     "build:preview": "node scripts/build-preview.mjs",
     "check": "node scripts/check-site.mjs"
   },
-  "engines": { "node": ">=22" },
-  "devDependencies": { "@11ty/eleventy": "3.1.7" }
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "3.1.7",
+    "gray-matter": "npm:@11ty/gray-matter@1.0.0"
+  }
 }

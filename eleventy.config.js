@@ -1,6 +1,13 @@
 import { existsSync } from "node:fs";
+import { readFile } from "node:fs/promises";
+import matter from "gray-matter";
 
 export default function (eleventyConfig) {
+  // Share the homepage front matter across all pages; read again on each build.
+  eleventyConfig.addGlobalData("site", async () => {
+    const source = await readFile(new URL("./src/home.md", import.meta.url), "utf8");
+    return matter(source).data.website;
+  });
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
   // Keep existing paper, slide, and file URLs when migrating the old website.
   for (const directory of ["files", "papers", "talks"]) {

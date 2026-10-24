@@ -44,9 +44,9 @@
 | --- | --- |
 | 本共用工作規則 | `AGENTS.md` |
 | 人工維護、預覽、發布說明 | `README.md` |
-| Home、Lab、Publications、Teaching | `src/index.md`、`src/lab.md`、`src/publications.md`、`src/teaching.md` |
+| Home、Lab、Publications、Teaching | `src/home.md`、`src/lab.md`、`src/publications.md`、`src/teaching.md` |
 | Blog | `src/blog.md` |
-| 姓名、聯絡資訊、導覽 | `src/_data/site.json` |
+| 姓名、聯絡資訊、導覽 | `src/home.md` 的 `website:` 欄位 |
 | 共用版型與元件 | `src/_includes/` |
 | 設計變數與樣式 | `src/assets/style.css` |
 | 照片、校徽、字型 | `src/assets/` |
@@ -54,7 +54,7 @@
 | 建置、檢查、部署 | `eleventy.config.js`、`scripts/`、`.github/workflows/` |
 
 - Blog 與其他分頁一樣，直接以 `src/blog.md` 編輯，使用共用 `layouts/page.njk`；不新增獨立文章集合、自動列表、文章版型或專用樣式。
-- 五個導覽項目是獨立頁面，Home 使用根網址；導覽列保持 sticky。
+- 五個導覽項目是獨立頁面，Home 來源為 `src/home.md`，透過 permalink 保持根網址；導覽列保持 sticky。全站共用資料集中於首頁 front matter 的 `website:`，由建置設定讀取，不另建獨立資料檔或重複維護。
 - Publications 的檔名、`section`、導覽 key、CSS 類別及網址統一使用 `publications`。舊 `/publication/` 只保留於失效路徑的檢查與說明。
 - 論文依年份由新到舊排列。同年份論文之間只留 Markdown 空行；每個年份最後一篇之後才加 `---`，最後一個年份亦同。
 - 論文資源連結用 ` / ` 分隔，不加入 BibTeX 連結或 `.bib` 檔案。

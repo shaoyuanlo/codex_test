@@ -56,12 +56,12 @@ https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/<提交版�
 
 | 要更新的內容 | 修改的檔案 |
 | --- | --- |
-| Home 簡介、研究方向、最新消息 | [`src/index.md`](src/index.md) |
+| Home 簡介、研究方向、最新消息 | [`src/home.md`](src/home.md) |
 | Lab 介紹、成員、招生資訊 | [`src/lab.md`](src/lab.md) |
 | 論文清單 | [`src/publications.md`](src/publications.md) |
 | 課程與教材 | [`src/teaching.md`](src/teaching.md) |
 | Blog 文字與簡介 | [`src/blog.md`](src/blog.md) |
-| 姓名、職稱、Email、社群連結、首頁標語 | [`src/_data/site.json`](src/_data/site.json) |
+| 姓名、職稱、Email、社群連結、首頁標語 | [`src/home.md`](src/home.md) 的 `website:` 欄位 |
 | 首頁按鈕文字 | [`src/_includes/layouts/home.njk`](src/_includes/layouts/home.njk) |
 | 各頁標題下方的簡介 | 各頁頂端 `intro:` 欄位 |
 | 個人照片 | 替換 `src/assets/portrait.jpg`（建議 5:6 比例） |
@@ -147,7 +147,7 @@ Normal text, **bold text**, and *italic text*.
 - Another item
 ```
 
-頁面頂端兩條 `---` 之間是設定欄位（front matter）。保留欄位依「運作設定在前、可編輯內容在後」排列：`layout`、`section`、`permalink`，以及有使用的 `eleventyExcludeFromCollections` 放在前面；`title`、`intro` 放在後面。請保留既有運作設定；主要文字直接寫在第二條 `---` 下面。標題或簡介含冒號時請加雙引號，例如 `title: "Research: new directions"`。JSON 檔案請保留雙引號與逗號格式。
+頁面頂端兩條 `---` 之間是設定欄位（front matter）。保留欄位依「運作設定在前、可編輯內容在後」排列：`layout`、`section`、`permalink`，以及有使用的 `eleventyExcludeFromCollections` 放在前面；`title`、`intro` 放在後面。請保留既有運作設定；主要文字直接寫在第二條 `---` 下面。標題或簡介含冒號時請加雙引號，例如 `title: "Research: new directions"`。首頁的姓名、職稱、Email、標語、社群連結及導覽統一放在 `src/home.md` 的 `website:` 欄位，使用 YAML 編輯；保留縮排與清單前的 `-`。建置時會將此欄位提供給全站共用，不需另建資料檔。首頁透過 `permalink: /index.html` 保持根網址 `/`，不會產生 `/home/` 分頁。
 
 站內連結請使用下列格式，讓主網址與測試子路徑皆可運作：
 
