@@ -32,7 +32,7 @@ Threads 就是聊天視窗：你可以依需要自行開新視窗，不預設分
 
 https://raw.githack.com/shaoyuanlo/codex_test/site-preview/index.html
 
-每次發布都會更新固定網址的頁面及資源；導覽使用固定路徑，不依賴可能被移除的版本目錄。代理與瀏覽器快取可能使更新延後出現；若要立即確認當次修改，請使用以下快速版本預覽。
+每次發布都會更新固定網址的頁面及資源，並透過 raw.githack 官方 `/purge` 介面清除五個固定分頁的代理快取；導覽使用固定路徑，不依賴可能被移除的版本目錄。代理與瀏覽器快取可能使更新延後出現；若要立即確認當次修改，請使用以下快速版本預覽。
 
 **快速版本預覽（每次發布產生新網址）：**
 
@@ -48,7 +48,7 @@ https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/<提交版�
 
 預覽頁會內嵌網站及字型 CSS，降低代理請求數；字型檔共用固定路徑，避免每次版本更新都重新下載。正式網站仍使用原有外部 CSS 檔。代理回傳 429 或暫時性伺服器錯誤時，檢查會間隔重試並參考 `Retry-After`；仍失敗時如實記錄，不視為通過。
 
-工作流程會檢查固定入口可讀取、快速預覽來源版本、導覽連結、樣式與字型，並確認舊的 `/publication/` 路徑回傳 404；結果保存在 [`preview-health.json`](https://github.com/shaoyuanlo/codex_test/blob/site-preview/preview-health.json)。固定入口的 `currentVersion` 可辨識是否仍命中舊快取。代理預覽需要儲存庫維持公開，且 GitHub Actions 具有 `contents: write` 權限，不需要另外設定個人存取權杖。
+工作流程會檢查固定入口可讀取、快速預覽來源版本、導覽連結、樣式與字型，並確認舊的 `/publication/` 路徑回傳 404；結果保存在 [`preview-health.json`](https://github.com/shaoyuanlo/codex_test/blob/site-preview/preview-health.json)。固定入口的 `currentVersion` 可辨識是否仍命中舊快取；若仍為舊版，檢查會間隔重試，首頁版本更新才算整體通過。`purges` 記錄各固定分頁的清除快取結果。代理預覽需要儲存庫維持公開，且 GitHub Actions 具有 `contents: write` 權限，不需要另外設定個人存取權杖。
 
 歷史預覽圖片原檔保留在 `docs/preview/`，作為歷史紀錄，不代表目前網站樣式；此處不再嵌入或連結圖片。
 

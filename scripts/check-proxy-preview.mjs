@@ -6,10 +6,10 @@ import { setTimeout as pause } from 'node:timers/promises';
 const manifest = JSON.parse(await readFile('_preview/preview.json', 'utf8'));
 const checks = [];
 // Pace requests and respect temporary rate limits instead of failing immediately.
-async function fetchPreview(url) {
+async function fetchPreview(url, options = {}) {
   for (let attempt = 0; attempt < 4; attempt++) {
     await pause(1500);
-    const response = await fetch(url, { signal: AbortSignal.timeout(20000) });
+    const response = await fetch(url, { ...options, signal: AbortSignal.timeout(20000) });
     if ((response.status !== 429 && response.status < 500) || attempt === 3) return response;
     const header = response.headers.get('retry-after');
     const retryAfter = header === null ? 0 : /^\d+$/.test(header)
@@ -21,15 +21,36 @@ async function fetchPreview(url) {
   }
 }
 
-// Fixed URLs can be cached; report freshness separately from availability.
+// Invalidate fixed HTML through the official proxy endpoint after publishing.
+const purges = [];
+for (const relative of ['index.html', 'lab/index.html', 'publications/index.html', 'teaching/index.html', 'blog/index.html']) {
+  const url = new URL(relative, manifest.stableUrl).href;
+  try {
+    const endpoint = new URL('/purge', manifest.stableUrl);
+    endpoint.searchParams.set('url', url);
+    const response = await fetchPreview(endpoint, { method: 'DELETE' });
+    await response.arrayBuffer();
+    purges.push({ url, status: response.status, passed: response.ok });
+  } catch (error) {
+    purges.push({ url, passed: false, error: error.message });
+  }
+}
+// The origin may briefly serve old content while its background cache refreshes.
 try {
-  const response = await fetchPreview(manifest.stableUrl);
-  const text = await response.text();
+  let response, text, currentVersion;
+  for (let attempt = 0; attempt < 4; attempt++) {
+    response = await fetchPreview(manifest.stableUrl);
+    text = await response.text();
+    currentVersion = text.includes(`name="preview-source" content="${manifest.sourceCommit}"`);
+    if (!response.ok || currentVersion || attempt === 3) break;
+    console.log('Fixed preview is cached; checking again in 20s.');
+    await pause(20000);
+  }
   checks.push({
     url: manifest.stableUrl,
     status: response.status,
     passed: response.ok && text.includes('<h1 id="home-title">'),
-    currentVersion: text.includes(`name="preview-source" content="${manifest.sourceCommit}"`)
+    currentVersion
   });
 } catch (error) {
   checks.push({ url: manifest.stableUrl, passed: false, error: error.message });
@@ -81,7 +102,8 @@ try {
 const result = {
   sourceCommit: manifest.sourceCommit,
   checkedAt: new Date().toISOString(),
-  passed: checks.every(check => check.passed),
+  passed: checks.every(check => check.passed) && checks[0]?.currentVersion === true,
+  purges,
   checks
 };
 await writeFile('_preview/preview-health.json', JSON.stringify(result, null, 2) + '\n');
