@@ -70,7 +70,7 @@ nav a:hover, nav a[aria-current] { text-decoration: underline; text-underline-of
 nav a[aria-current] { font-weight: 600; }
 .site-main:focus { outline: none; }
 .eyebrow { text-transform: uppercase; letter-spacing: .16em; font-weight: 600; color: var(--black); }
-.hero { padding: 76px 0 58px; display: grid; grid-template-columns: minmax(0, 1fr) 160px; gap: 80px; align-items: center; border-bottom: 1px solid var(--border); }
+.hero { padding: 76px 0 58px; display: grid; grid-template-columns: minmax(0, 1fr) 200px; gap: 80px; align-items: center; border-bottom: 1px solid var(--border); }
 .hero .eyebrow { display: flex; align-items: center; gap: 9px; margin-bottom: 23px; }
 .status-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
 .hero h1 { font-size: var(--font-size-2xl); margin: 0 0 8px; }
@@ -142,7 +142,7 @@ nav a[aria-current] { font-weight: 600; }
   .wordmark { display: inline-block; line-height: 1.7; }
   nav { margin-top: 7px; flex-wrap: wrap; justify-content: space-between; gap: 0 12px; }
   nav a { min-height: 44px; }
-  .hero { padding: 37px 0 35px; grid-template-columns: minmax(0, 1fr) 90px; gap: 16px; align-items: start; }
+  .hero { padding: 37px 0 35px; grid-template-columns: minmax(0, 1fr) 100px; gap: 16px; align-items: start; }
   .hero-copy { display: contents; }
   .hero .eyebrow { grid-column: 1 / -1; margin: 0 0 2px; letter-spacing: .1em; }
   .hero h1 { grid-column: 1; margin: 0; align-self: end; }
