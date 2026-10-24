@@ -87,16 +87,16 @@ https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/<提交版�
 | --- | --- | --- |
 | `--line-height-compact` | `1.3` | 全部標題、論文相關資訊（作者、會議、連結）、導覽列 |
 | `--line-height-body` | `1.7` | 一般內文、Blog、提示框 |
-| `--space-xs` | `4px` | H3 下外距、論文作者、會議與資源連結段落下外距 |
+| `--space-xs` | `4px` | 論文標題、作者、會議與資源連結段落下外距 |
 | `--space-sm` | `8px` | 標題緊接內容、清單項目 |
 | `--space-md` | `16px` | 段落之間、一般標題下方 |
 | `--space-lg` | `24px` | 全部標題上外距、分隔線上下外距、手機容器左右內距與頁尾上下內距 |
 | `--space-xl` | `32px` | 區塊之間、桌機頁尾上下內距 |
 | `--space-2xl` | `40px` | 桌機容器左右內距、手機正文下方內距 |
 
-標題設定集中在間距變數之後。H3 統一引用 `--font-size-lg`、字重 600、`--line-height-compact`，上外距 24px、下外距 4px；論文標題直接沿用共用 H3，沒有獨立的標題尺寸或行高規則。Blog 標題與文章主標題區沿用共用設定，不另設字級、行高、連結顏色或標題區內距。標題、正文列表與頁尾不自動附加分隔線；需要時在 Markdown 中另起一段寫 `---`。
+標題設定集中在間距變數之後。H3 統一引用 `--font-size-lg`、字重 600、`--line-height-compact`，上外距 24px、下外距 8px；論文標題只獨立覆寫下外距為 4px，其餘字級、字重、行高與上外距均沿用共用 H3。Blog 標題與文章主標題區沿用共用設定，不另設字級、行高、連結顏色或標題區內距。標題、正文列表與頁尾不自動附加分隔線；需要時在 Markdown 中另起一段寫 `---`。
 
-全部 H1～H6 的上外距統一為 `var(--space-lg)`（24px），不保留首頁、分頁主標題或正文第一個 H2 的上外距例外。下外距為 H3 4px，首頁姓名 H1、H4～H6 各 8px，分頁／文章 H1 與 H2 各 16px；桌機、手機一致。
+全部 H1～H6 的上外距統一為 `var(--space-lg)`（24px），不保留首頁、分頁主標題或正文第一個 H2 的上外距例外。下外距為一般 H3、首頁姓名 H1、H4～H6 各 8px，論文標題 4px，分頁／文章 H1 與 H2 各 16px；桌機、手機一致。
 
 Markdown 分隔線 `.prose hr` 的設定緊接在標題設定之後，上下外距均引用 `var(--space-lg)`（24px），線條為 1px、顏色 `var(--accent-light)`。相鄰區塊的上下外距可能合併，實際距離不一定相加。
 
@@ -162,7 +162,7 @@ Normal text, **bold text**, and *italic text*.
 
 First Author, **Shao-Yuan Lo**, Last Author
 
-*Conference or Journal (**ABC**), Year* [**Oral**]
+*Conference or Journal (**ABC**), Year* · **Oral**
 
 [Paper](https://arxiv.org/pdf/0000.00000) / [arXiv](https://arxiv.org/abs/0000.00000) / [Code](https://github.com/example/project)
 ```
@@ -173,7 +173,9 @@ PDF 連結的來源與實際查核結果保存在 [publication-pdf-check.json](d
 
 會議或期刊名稱括號內的簡稱用 Markdown 粗體，例如 `(**ICML**)`、`(**T-PAMI**)`；仍沿用整行斜體樣式。
 
-論文標記直接寫成 `[**Oral**]`、`[**Highlight**]`、`[**Spotlight**]` 或 `[**Best Paper Award**]`，建置時會自動套用 `--highlight` 的顏色，不需手動寫 HTML；沒有標記則省略。
+論文標記直接寫成 `· **Oral**`、`· **Highlight**`、`· **Spotlight**` 或 `· **Best Paper Award**`，建置時會只在粗體標記文字上套用 `--highlight` 的顏色，前方的 `·` 保持一般文字顏色，不需手動寫 HTML；沒有標記則省略。
+
+尚未提供網址時，可直接寫純文字 `Paper / arXiv`，不加方括號、不建立空連結。
 
 若這篇是該年份最後一篇，在其後另起一段加入 `---`。
 
