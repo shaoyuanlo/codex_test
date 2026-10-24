@@ -4,6 +4,27 @@ A small, English-first academic website with five separate pages, a sticky navig
 
 Built with [Eleventy](https://www.11ty.dev/) and deployed as static HTML to GitHub Pages. No paid service, API key, or custom domain is required.
 
+## Codex 長期維護
+
+採用 **一個 Codex Project + 自由開啟的 Threads + 一份根目錄 [AGENTS.md](AGENTS.md)**。Project 建議命名為 **Academic Website**，連結同一個儲存庫 `shaoyuanlo/codex_test`。
+
+Threads 就是聊天視窗：你可以依需要自行開新視窗，不預設分類、功能或命名；同一視窗也可以自由切換內容、設計、部署等話題。Thread 不等於 Git 分支，不需要為每個聊天建立永久分支。
+
+在 Codex 介面建立或選擇這個 Project，將儲存庫及之後的網站聊天放在同一個 Project。此儲存庫內的文件不會自行建立介面的 Project，也不會自動搬移既有聊天。
+
+若介面提供 Project 共用指示欄位，可貼上以下說明：
+
+```text
+這是 Shao-Yuan Lo 的長期學術個人網站專案，儲存庫為 shaoyuanlo/codex_test。
+開始工作前，先讀取根目錄 AGENTS.md，並以最新原始碼與 README 為依據。
+變數與選項盡量精簡、統一管理；網站內容以英文為主，溝通使用繁體中文。
+Threads 是我自由開啟的聊天視窗，不預設用途、分類或命名，也不要自行建立。
+不要假設能讀取其他 Thread 的對話；長期規則請落實於 AGENTS.md。
+修改完成後顯示代表性 diff、完整改動連結與實際驗證結果。
+```
+
+共用規則以 `AGENTS.md` 為準，README 負責人工操作說明，設計數值以 `src/assets/style.css` 為唯一設定來源。新聊天不必貼回整段歷史；若它未載入儲存庫，先連結或開啟同一份原始碼，再要求讀取 `AGENTS.md`。多個聊天同時修改同一檔案時，應依序整合或以必要的分支／worktree 隔離，保留你在 GitHub 的手動修改。
+
 ## 網站預覽
 
 目前使用 raw.githack 提供可操作的多頁網站預覽，可點擊導覽、閱讀文章、開啟 CV，並以手機瀏覽。預覽來自公開的 `codex_test` 儲存庫，不會取代正式網站 `https://shaoyuanlo.github.io/`。
@@ -171,7 +192,7 @@ More text.
 
 ## Local development
 
-Requires Node.js 22 or newer. Use the existing checkout; a Git worktree is unnecessary.
+Requires Node.js 22 or newer. Use the existing checkout for routine work; use a separate branch/worktree only when concurrent changes need isolation.
 
 ```sh
 npm ci
@@ -212,8 +233,8 @@ node scripts/check-site.mjs _preview
 
 確認版面後，在原本的 **`shaoyuanlo.github.io` 儲存庫**使用這份框架：
 
-1. 先保留原網站的 Git 歷史或建立備份分支。把這份專案的 `src/`、`files/SYLo_CV.pdf`、`scripts/`、`eleventy.config.js`、`package.json`、`package-lock.json`、`.gitignore`、`.github/workflows/pages.yml` 和這份說明加入正式儲存庫。**不要複製 `.git`、`node_modules` 或 `_site`。** 若正式儲存庫已有相同檔案或部署 workflow，先合併並確認只有一個發布流程。
-2. **保留原本的 `papers/`、`talks/` 和 `files/` 檔案**，避免舊的論文、投影片、照片與 CV 連結失效。這份測試專案只包含一份 CV，沒有搬入所有舊檔案。確認同名 CV 的版本再替換。
+1. 先保留原網站的 Git 歷史或建立備份分支。把這份專案的 `src/`、`files/SYLo_CV.pdf`、`scripts/`、`eleventy.config.js`、`package.json`、`package-lock.json`、`.gitignore`、`AGENTS.md`、`.github/workflows/pages.yml` 和這份說明加入正式儲存庫。**不要複製 `.git`、`node_modules` 或 `_site`。** 若正式儲存庫已有相同檔案或部署 workflow，先合併並確認只有一個發布流程。
+2. **保留原本的 `papers/`、`talks/` 和 `files/` 檔案**，避免舊的論文、投影片、照片與 CV 連結失效。這份測試專案已包含 CV 與目前論文連結使用的海報、投影片，但沒有搬入原網站的所有歷史檔案。確認同名 CV 的版本再替換。
 3. 建置會自動將存在的 `files/`、`papers/`、`talks/` 與 `CNAME` 複製至 `_site`。若原網站另有其他公開資源目錄，請在 `eleventy.config.js` 的 `addPassthroughCopy` 中加入，再確認舊連結仍可開啟。
 4. 到正式儲存庫 **Settings → Pages → Build and deployment → Source** 選擇 **GitHub Actions**。
 5. 把變更合併至 `main`（若預設分支不同，先修改 workflow 的兩個分支設定），查看 Actions 中的 **Deploy website to GitHub Pages** 是否成功。
@@ -225,11 +246,11 @@ Workflow 會自動辨識個人網站並使用 `/` 作為根路徑，因此 **Hom
 ## Design & accessibility
 
 - Pure white backgrounds, black text, navy links and buttons, and one shared Inter / Noto Sans TC font stack with system fallbacks. Fonts are self-hosted; no external font CDN is required.
-- All five navigation links remain visible on mobile, in a sticky two-row header.
+- All five navigation links remain visible on mobile, in a sticky header with wrapping navigation.
 - Semantic headings, a keyboard skip link, visible focus indicators, and active-page announcements.
 - Responsive images, print styles, canonical URLs, social metadata, and a custom 404 page.
 - Shared layouts keep changes consistent across all pages; content remains in Markdown.
 
 The profile photo, CV, biography, links, news, and all 29 publication entries and their linked local resources were sourced from the existing `shaoyuanlo.github.io` repository. The design takes cues from the restrained academic presentation and warm palette in the accessible Shih-Hsin Wang reference source. The other two reference sites were inaccessible from this environment; their layouts were not verified.
 
-The favicon is the original NTU emblem image from [National Taiwan University's official website](https://www.ntu.edu.tw/images/favicon/apple-touch-icon.png), copied without modification. Its source is recorded in `src/assets/ntu-emblem-source.json`. The **Refresh official NTU favicon** workflow can refresh the source asset; the university emblem is independent of the site's CSS accent color.
+The favicon is the NTU emblem stored at `src/assets/ntu-emblem.png`; retain the current image when making unrelated changes. The **Refresh official NTU favicon** workflow can fetch the university's official source asset when requested. The emblem's colors are independent of the site's CSS palette.
