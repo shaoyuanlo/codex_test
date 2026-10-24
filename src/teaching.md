@@ -3,23 +3,12 @@ layout: layouts/page.njk
 section: teaching
 permalink: /teaching/index.html
 title: Teaching
-intro: Connecting foundational ideas with the questions shaping AI today.
 ---
-## Courses
 
-Course announcements, syllabi, and materials will be shared here.
+### CSIE5412 - Multimodal Artificial Intelligence（多模態人工智慧）
 
-<!-- Replace the example below with a real course, then remove the comment markers.
-## Fall 2026
+Fall 2025 (114-1), Fall 2026 (115-1)
 
-### Course title
-Course code · National Taiwan University
+### CSIE7411 - Generative Artificial Intelligence Safety（生成式人工智慧安全）
 
-A short description of the course and its intended audience.
-
-[Course website](https://example.com) · [Syllabus]({{ '/files/syllabus.pdf' | url }})
--->
-
-## For students
-
-If you are interested in research opportunities, please visit the [Lab page]({{ '/lab/' | url }}). For teaching inquiries, [get in touch](mailto:{{ site.email }}).
+Spring 2026 (114-2)
