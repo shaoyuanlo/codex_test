@@ -46,68 +46,50 @@ def validate_pdf(url,title):
     except Exception as e:result['error']=str(e)[:180]
     return result
 
-data=json.loads(OUT.read_text());papers=data['papers'];tasks=[]
-def add(i,url,kind,source):
-    if (i,url) not in [(x['index'],x['url']) for x in tasks]:tasks.append({'index':i,'url':url,'kind':kind,'source':source})
-# Directly associated PDF after the ECVA title, without collecting unrelated papers.
-url='https://www.ecva.net/papers.php';doc=html(url)
-if doc:
-    for text in doc.find_all(string=lambda t:t and 'follow the rules' in t.casefold()):
-        parent=text.parent
-        if parent.name=='a' and '.pdf' in parent.get('href',''):add(10,urljoin(url,parent['href']),'proceedings',url)
-        a=text.find_next('a',href=lambda u:u and u.endswith('.pdf') and '-supp' not in u)
-        if a:add(10,urljoin(url,a['href']),'proceedings',url)
-# OpenReview provides the same proceedings PDF through its API.
-for ident in ['GSUNPIw7Ad','cw274Eokxt']:
-    try:
-        r=get('https://api2.openreview.net/notes?id='+ident)
-        notes=r.json().get('notes',[])
-        if notes:papers[5].setdefault('openReviewDetails',[]).append({k:notes[0].get(k) for k in ['id','content','invitations']})
-    except Exception:pass
-    add(5,'https://api2.openreview.net/pdf?id='+ident,'proceedings','https://openreview.net/forum?id='+ident)
-# Canonical public manuscript and OA-service metadata; no authentication is used.
+import xml.etree.ElementTree as ET
+D=json.loads(OUT.read_text());p=D['papers'][8]
+# A similar limited-angle CBCT paper is not the original single-projection paper.
+p['rejectedArxivCandidate']={'url':'https://arxiv.org/pdf/2506.13545','reason':'Different title and reconstruction task; not the DOI-linked publication.'}
+p['selected']=None
+log=[];candidates=[]
 for url in [
- 'https://pmc.ncbi.nlm.nih.gov/articles/instance/12310287/bin/nihms-2095081.pdf',
- 'https://pmc.ncbi.nlm.nih.gov/articles/PMC12310287/bin/nihms-2095081.pdf',
- 'https://pmc.ncbi.nlm.nih.gov/articles/PMC12310287/pdf/nihms-2095081.pdf?download=1',
- 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12310287/pdf/nihms-2095081.pdf',
- 'https://europepmc.org/articles/PMC12310287/bin/nihms-2095081.pdf']:
-    add(8,url,'manuscript','https://pmc.ncbi.nlm.nih.gov/articles/PMC12310287/')
-try:
-    r=get('https://www.ncbi.nlm.nih.gov/pmc/utils/oa/oa.fcgi?id=PMC12310287')
-    papers[8]['oaPackage']=r.text[:3000]
-except Exception:pass
-# Short, distinctive searches avoid requiring every word in a long title.
-queries={8:['"Cycle-domain" "CBCT"','"CG-DDPM"','"3556402"'],9:['"TTT-Vnet"','"3047499"'],13:['"Patient-specific" "volumetric" "diffusion"','"3006561"']}
-for i,terms in queries.items():
-    for term in terms:
-        url='https://arxiv.org/search/?searchtype=all&query='+quote(term)
-        doc=html(url)
-        if not doc:continue
+ 'https://pmc.ncbi.nlm.nih.gov/utils/oa/oa.fcgi?id=PMC12310287',
+ 'https://ftp.ncbi.nlm.nih.gov/pub/pmc/manuscript/',
+ 'https://pmc-oa-opendata.s3.amazonaws.com/?list-type=2&prefix=author_manuscript/PMC12310287&max-keys=40',
+ 'https://pmc-oa-opendata.s3.amazonaws.com/?list-type=2&prefix=author_manuscript/&max-keys=5']:
+    try:
+        r=get(url);log.append({'url':url,'status':r.status_code,'text':r.text[:12000]})
+        if 's3.amazonaws' in url:
+            xml=ET.fromstring(r.text)
+            for el in xml.iter():
+                if el.tag.endswith('Key') and el.text.endswith('.pdf') and '12310287' in el.text:
+                    candidates.append('https://pmc-oa-opendata.s3.amazonaws.com/'+el.text)
+        else:
+            for u in re.findall(r'(?:href|href)=["\']([^"\']+\.pdf)["\']',r.text):candidates.append(urljoin(url,u))
+    except Exception as e:log.append({'url':url,'error':str(e)})
+# Public file lists provide the exact PDF path without guessing another paper.
+for listurl in [
+ 'https://ftp.ncbi.nlm.nih.gov/pub/pmc/manuscript/filelist.csv',
+ 'https://ftp.ncbi.nlm.nih.gov/pub/pmc/manuscript/author_manuscript_pdf.csv',
+ 'https://ftp.ncbi.nlm.nih.gov/pub/pmc/manuscript/pdf/filelist.csv']:
+    try:
+        r=get(listurl,stream=True)
+        if not r.ok:log.append({'url':listurl,'status':r.status_code});continue
         found=[]
-        for row in doc.select('li.arxiv-result'):
-            title=row.select_one('p.title');a=row.select_one('p.list-title a')
-            if not title or not a:continue
-            if similarity(title.get_text(' ',strip=True),papers[i]['title'])<.55:continue
-            ident=a['href'].split('/abs/')[-1]
-            add(i,'https://arxiv.org/pdf/'+ident,'arxiv',a['href'])
-            found.append({'title':title.get_text(' ',strip=True),'id':ident})
-        papers[i].setdefault('shortSearches',[]).append({'url':url,'found':found})
-# Exact DOI-linked proceedings PDF destinations (can still require subscription).
-add(9,'https://www.spiedigitallibrary.org/conference-proceedings-of-spie/13406/134062Y/TTT-Vnet--a-3D-vision-test-time-training-model/10.1117/12.3047499.pdf','publisher','https://doi.org/10.1117/12.3047499')
-add(13,'https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12931/129310P/Patient-specific-3D-volumetric-CBCT-image-reconstruction-with-single-x/10.1117/12.3006561.pdf','publisher','https://doi.org/10.1117/12.3006561')
-for c in tasks:
-    i=c['index']
-    # Once a new matching PDF has passed, preserve it rather than repeatedly fetching.
-    if papers[i].get('phase3Selected'):continue
-    verdict=validate_pdf(c['url'],papers[i]['title']);verdict.update(kind=c['kind'],source=c['source'])
-    papers[i].setdefault('phase3Checks',[]).append(verdict)
-    print(json.dumps({'index':i,**verdict}),flush=True)
-    if verdict.get('passed'):papers[i]['selected']=verdict;papers[i]['phase3Selected']=True
-# Keep the research record reviewable; omit the unrelated whole-index candidates.
-for p in papers:
-    if len(p.get('supplementCandidates',[]))>30:p['supplementCandidatesOmitted']=len(p.pop('supplementCandidates'))
-    p.pop('europePmc',None)
-data['phase']=3;data['selected']=sum(bool(x['selected']) for x in papers);data['checkedAt']=datetime.now(timezone.utc).isoformat()
-OUT.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n')
-print('Selected',data['selected'],'of',len(papers),flush=True)
+        for line in r.iter_lines(decode_unicode=True):
+            if isinstance(line,bytes):line=line.decode(errors='replace')
+            if '12310287' in line or '2095081' in line:
+                found.append(line)
+                path=line.split(',')[0].strip('"')
+                if path.endswith('.pdf'):candidates.append(urljoin('https://ftp.ncbi.nlm.nih.gov/pub/pmc/manuscript/',path))
+                if len(found)>3:break
+        r.close();log.append({'url':listurl,'found':found})
+    except Exception as e:log.append({'url':listurl,'error':str(e)})
+for url in dict.fromkeys(candidates):
+    verdict=validate_pdf(url,p['title']);verdict.update(kind='author-manuscript',source='https://pmc.ncbi.nlm.nih.gov/articles/PMC12310287/')
+    p.setdefault('phase4Checks',[]).append(verdict)
+    if verdict.get('passed'):p['selected']=verdict;break
+p['publicArchiveDiscovery']=log
+D['phase']=4;D['selected']=sum(bool(x['selected']) for x in D['papers']);D['checkedAt']=datetime.now(timezone.utc).isoformat()
+OUT.write_text(json.dumps(D,ensure_ascii=False,indent=2)+'\n')
+print('Selected',D['selected'],'of',D['count'],flush=True)
