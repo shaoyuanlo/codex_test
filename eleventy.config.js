@@ -23,6 +23,11 @@ export default function (eleventyConfig) {
     ? html.replace(/·\s*<strong>([^<]+)<\/strong>/g,
       '· <strong class="publication-note">$1</strong>')
     : html);
+  // Preserve ordinary Markdown editing while grouping each news date and body.
+  eleventyConfig.addFilter("newsColumns", html => html.replace(
+    /<li><strong>([^<]+)<\/strong>\s*—\s*([\s\S]*?)<\/li>/g,
+    '<li><strong>$1</strong><span>$2</span></li>'
+  ));
   eleventyConfig.addGlobalData("siteOrigin", process.env.SITE_URL || "https://shaoyuanlo.github.io");
   return {
     pathPrefix: process.env.PATH_PREFIX || "/",

@@ -160,7 +160,9 @@ Normal text, **bold text**, and *italic text*.
 
 ### 編輯 News
 
-在 `src/home.md` 的 `## News` 下方修改 Markdown 清單。預設顯示最新 3 則，其餘消息放在 `<details class="news-more">` 區塊內；新增消息時，在頂端加入一筆，並把原本第三筆移入展開區頂端即可。
+在 `src/home.md` 的 `## News` 下方修改 Markdown 清單。目前收起時顯示 6 則，其餘消息放在 `<details class="news-more">` 區塊內；新增消息時在頂端加入，並視需要將較舊消息移入展開區。顯示數量由 Markdown 內容的位置決定，沒有獨立數量設定。
+
+每筆消息維持 `- **Oct 2025** — Message text.` 格式；月份直接在 Markdown 寫成三個英文字母，沒有月份轉換設定。首頁版型會將日期與內容分成兩欄，內文的連結、粗體與斜體仍可照常使用。News 樣式集中在 CSS 第 111 行開始，後面保留三個空白行；列間距 8px、日期欄寬 6em、欄間距 16px，桌機與手機一致。
 
 點選 **Show more ↓** 可展開，按鈕會變為 **Show less ↑**，再次點選即可收起。這是原生 `<details>`／`<summary>` 功能，不需要 JavaScript；按鈕沿用 Email 的 `.button` 外觀，支援滑鼠、觸控與鍵盤操作。保留 `summary` 與結尾 `</details>`，只需手動維護兩段 Markdown 清單。已匯入原網站共 29 則消息，日期沿用原文。
 
