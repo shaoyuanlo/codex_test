@@ -1276,7 +1276,7 @@
   --space-2xl: 40px;
 }
 /* Shared rectangular corners. */
-a:focus-visible, .skip-link, .portrait img, .prose pre, .callout { border-radius: 6px; }
+a:focus-visible, .button:focus-visible, .skip-link, .portrait img, .prose pre, .callout { border-radius: 6px; }
 
 /* Shared headings: H1–H6 size, weight, line height and margins, including publication title spacing. */
 h1, h2, h3, h4, h5, h6 { font-size: var(--font-size-base); font-weight: 400; margin: var(--space-lg) 0 var(--space-md); line-height: var(--line-height-compact); }
@@ -1353,7 +1353,7 @@ small, sub, sup { font-size: inherit; }
 strong, b, th { font-weight: 600; }
 ::selection { background: var(--selection-bg); color: var(--black); }
 a { color: var(--accent); text-underline-offset: 4px; text-decoration-thickness: 1px; }
-a:focus-visible { outline: 2px solid var(--accent); outline-offset: var(--space-sm); }
+a:focus-visible, .button:focus-visible { outline: 2px solid var(--accent); outline-offset: var(--space-sm); }
 img { display: block; max-width: 100%; height: auto; }
 p { margin: 0 0 var(--space-md); }
 .skip-link { position: fixed; left: var(--space-md); top: -100px; padding: var(--space-sm) var(--space-md); z-index: 20; background: var(--white); border: 1px solid var(--accent-light); }
@@ -1377,9 +1377,14 @@ nav a[aria-current] { font-weight: 600; }
 .callout { border-left: 2px solid var(--accent-light); background: var(--accent-light); margin: var(--space-xl) 0; padding: var(--space-md); }
 .callout .callout-label { font-weight: 600; text-transform: uppercase; color: var(--accent); margin: 0 0 var(--space-sm); }
 .callout p { margin-bottom: 0; }
-.home-content > ul { list-style: none; padding: 0; margin: 0; }
-.home-content > ul > li { padding: var(--space-md) 0; margin: 0; }
-.home-content > ul strong { color: var(--accent); }
+.home-content > ul, .news-more > ul { list-style: none; padding: 0; margin: 0; }
+.home-content > ul > li, .news-more > ul > li { padding: var(--space-md) 0; margin: 0; }
+.home-content > ul strong, .news-more > ul strong { color: var(--accent); }
+/* News disclosure: share the contact-link style and switch labels with native open state. */
+.news-more > summary { list-style: none; cursor: pointer; }
+.news-more > summary::-webkit-details-marker { display: none; }
+.news-more .show-less, .news-more[open] .show-more { display: none; }
+.news-more[open] .show-less { display: inline; }
 .page-intro { margin-bottom: 0; }
 .page-publications .page-content h3 ~ p { line-height: var(--line-height-compact); margin-bottom: var(--space-xs); }
 .publication-note { color: var(--highlight); }
@@ -1400,7 +1405,7 @@ nav a[aria-current] { font-weight: 600; }
   .callout { break-inside: avoid; }
 }
 </style>
-  <meta name="preview-source" content="e44b9cb91ae51d1f7cfb4c537e42dc2daaf41100">
+  <meta name="preview-source" content="b2b62e7c629a53ff17cd0baaf23d97b0e108f9c9">
   <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="page-home">
@@ -1451,13 +1456,45 @@ nav a[aria-current] { font-weight: 600; }
 <p class="callout-label">Join the group</p>
 <p>I am looking for motivated undergraduate, master's, and Ph.D. students. Interested in working together? <a href="mailto:sylo@csie.ntu.edu.tw">Send me an email</a> with your résumé and transcripts.</p>
 </aside>
-<h2>Recent news</h2>
-<!-- Add a new bullet at the top. Keep a few recent items here. -->
+<h2>News</h2>
+<!-- Keep the latest three items here; move older items into the details block below. -->
 <ul>
 <li><strong>May 2026</strong> — One paper accepted to ICML 2026. Serving as an Area Chair for NeurIPS 2026.</li>
 <li><strong>March 2026</strong> — Serving as an Area Chair for ICML 2026. Invited talk at the Surgical Data Science Symposium, National Taiwan University Hospital.</li>
-<li><strong>August 2025</strong> — Joined National Taiwan University as an Assistant Professor. Awarded a Yushan Young Fellowship.</li>
+<li><strong>December 2025</strong> — Invited talk at the Advanced AI Safety Forum, Taiwan AI Center of Excellence.</li>
 </ul>
+<details class="news-more">
+<summary class="button"><span class="show-more">Show more <span aria-hidden="true">↓</span></span><span class="show-less">Show less <span aria-hidden="true">↑</span></span></summary>
+<!-- Older news: edit these Markdown bullets directly. Original source dates are preserved. -->
+<ul>
+<li><strong>November 2025</strong> — 1 paper accepted to WACV 2026. Serving as an Associate Editor for ICRA 2026. Invited talk at NVIDIA Research Taiwan.</li>
+<li><strong>October 2025</strong> — Serving as an Area Chair for ICLR 2026 and ICASSP 2026. Invited talk at Australian National University (remote).</li>
+<li><strong>August 2025</strong> — Joined National Taiwan University as an Assistant Professor. Awarded a Yushan Young Fellowship.</li>
+<li><strong>June 2025</strong> — 1 paper accepted to IJCV. Serving as an Area Chair for BMVC 2025. Invited talk at ProtagoLabs (remote).</li>
+<li><strong>May 2025</strong> — 1 paper accepted to ICML 2025 (Spotlight!). Recognized as an Outstanding Reviewer for CVPR 2025!</li>
+<li><strong>April 2025</strong> — 1 paper accepted to CVIU. Invited talks at UC Santa Cruz and CSIG Wuhan Center (virtual).</li>
+<li><strong>March 2025</strong> — 1 paper accepted to IEEE T-MI. Invited talks at UC Riverside and WACV 2025 COOOL Workshop.</li>
+<li><strong>February 2025</strong> — 2 papers accepted to CVPR 2025 (both are Highlight!). Serving as a Tutorial Chair for AVSS 2025.</li>
+<li><strong>January 2025</strong> — 1 paper accepted to ICLR 2025.</li>
+<li><strong>November 2024</strong> — Invited talk at National Taiwan University. Serving as an Associate Editor for ICRA 2025.</li>
+<li><strong>September 2024</strong> — Invited talk at Jilin University (remote).</li>
+<li><strong>July 2023</strong> — 1 paper accepted to ECCV 2024.</li>
+<li><strong>February 2024</strong> — 2 papers accepted to CVPR 2024. Won the Best Student Paper Award at SPIE Medical Imaging 2024!!</li>
+<li><strong>January 2024</strong> — Invited talks at Academia Sinica and National Yang Ming Chiao Tung University.</li>
+<li><strong>July 2023</strong> — Joined Honda Research Institute USA as a Research Scientist. See you in San Jose, CA!!</li>
+<li><strong>March 2023</strong> — Defended my PhD dissertation!!</li>
+<li><strong>February 2023</strong> — 1 paper accepted to CVPR 2023.</li>
+<li><strong>September 2022</strong> — Accepted to the Google CS Research Mentorship Program.</li>
+<li><strong>July 2022</strong> — 1 paper accepted to IEEE T-PAMI, and 1 paper accepted to IROS 2022.</li>
+<li><strong>May 2022</strong> — Joined Amazon (Just Walk Out team) as an Applied Scientist Intern. See you in Seattle, WA!!</li>
+<li><strong>January 2022</strong> — Invited talks at Academia Sinica and National Yang Ming Chiao Tung University.</li>
+<li><strong>December 2021</strong> — 1 paper accepted to IEEE T-IP.</li>
+<li><strong>June 2021</strong> — Invited talk at CVPR 2021 Tutorial on Adversarial Machine Learning in Computer Vision.</li>
+<li><strong>May 2021</strong> — Joined Amazon (Astro team) as an Applied Scientist Intern. See you in Bellevue, WA!!</li>
+<li><strong>December 2019</strong> — Won the Best Paper Award at ACM Multimedia Asia 2019!!</li>
+<li><strong>August 2019</strong> — Joined Johns Hopkins University as a PhD student. See you in Baltimore, MD!!</li>
+</ul>
+</details>
 
 </div>
 
