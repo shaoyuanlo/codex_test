@@ -1,4 +1,22 @@
 /* Shared design. Content lives in src/*.md; change the palette here. */
+/* Shared centered containers — all pages, navigation and footer. */
+.header-inner, .site-main, .footer-inner {
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+  padding-left: var(--space-2xl);
+  padding-right: var(--space-2xl);
+}
+.header-inner { padding-top: 0; padding-bottom: 0; min-height: 50px; display: flex; align-items: center; justify-content: space-between; gap: var(--space-xl); }
+.site-main { padding-top: 0; padding-bottom: calc(var(--space-xl) * 2); flex: 1; min-width: 0; }
+.footer-inner { padding-top: var(--space-xl); padding-bottom: var(--space-xl); text-align: center; }
+@media (max-width: 767px) {
+  .header-inner, .site-main, .footer-inner { padding-left: var(--space-lg); padding-right: var(--space-lg); }
+  .header-inner { display: block; padding-top: var(--space-sm); min-height: 80px; }
+  .site-main { padding-bottom: var(--space-2xl); }
+  .footer-inner { padding-top: var(--space-lg); padding-bottom: var(--space-lg); }
+}
+
 :root {
   color-scheme: light;
   --white: #ffffff;
@@ -29,8 +47,7 @@
 }
 /* Shared line heights and spacing — identical on desktop and mobile. */
 :root {
-  --line-height-heading: 1.3;
-  --line-height-compact: 1.5;
+  --line-height-compact: 1.3;
   --line-height-body: 1.7;
   --space-sm: 8px;
   --space-md: 16px;
@@ -38,25 +55,26 @@
   --space-xl: 32px;
   --space-2xl: 40px;
 }
+/* Shared heading levels and variants. */
+h1, h2, h3, h4, h5, h6 { font-size: var(--font-size-base); font-weight: 400; margin: var(--space-xl) 0 var(--space-md); line-height: var(--line-height-compact); }
+.hero h1 { font-size: var(--font-size-2xl); margin: 0 0 var(--space-sm); }
+.prose h2 { font-size: var(--font-size-xl); }
+h3 { font-size: var(--font-size-lg); font-weight: 600; margin: var(--space-xl) 0 var(--space-sm); }
+.page-heading h1 { font-size: var(--font-size-2xl); margin: 0 0 var(--space-md); }
+.page-content > h2:first-child { margin-top: 0; }
+.page-content > h2 { padding-bottom: var(--space-md); border-bottom: 1px solid var(--accent-light); }
+.post-preview h2 a { color: var(--black); text-decoration-line: none; }
+.post-preview h2 a:hover { color: var(--accent); }
+.post-preview h2 .arrow-icon { color: var(--accent); }
+@media (max-width: 767px) {
+  .hero h1 { grid-column: 1; align-self: end; }
+}
+@media print {
+  h2, h3 { break-after: avoid; }
+}
+
 /* Shared rectangular corners; the status dot remains circular. */
 a:focus-visible, .skip-link, .button, .file-label, .portrait img, .prose pre, .callout { border-radius: 3px; }
-/* Shared centered containers — all pages, navigation and footer. */
-.header-inner, .site-main, .footer-inner {
-  width: 100%;
-  max-width: 980px;
-  margin: 0 auto;
-  padding-left: var(--space-2xl);
-  padding-right: var(--space-2xl);
-}
-.header-inner { padding-top: 0; padding-bottom: 0; min-height: 50px; display: flex; align-items: center; justify-content: space-between; gap: var(--space-xl); }
-.site-main { padding-top: 0; padding-bottom: calc(var(--space-xl) * 2); flex: 1; min-width: 0; }
-.footer-inner { padding-top: var(--space-xl); padding-bottom: var(--space-xl); text-align: center; }
-@media (max-width: 767px) {
-  .header-inner, .site-main, .footer-inner { padding-left: var(--space-lg); padding-right: var(--space-lg); }
-  .header-inner { display: block; padding-top: var(--space-sm); min-height: 80px; }
-  .site-main { padding-bottom: var(--space-2xl); }
-  .footer-inner { padding-top: var(--space-lg); padding-bottom: var(--space-lg); }
-}
 * { box-sizing: border-box; }
 html { scroll-padding-top: 110px; }
 body { min-height: 100vh; display: flex; flex-direction: column; margin: 0; background: var(--white); color: var(--black); font-family: var(--font); font-size: var(--font-size-base); font-weight: 400; line-height: var(--line-height-body); -webkit-font-smoothing: antialiased; }
@@ -69,7 +87,6 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: var(--space-
 img { display: block; max-width: 100%; height: auto; }
 .arrow-icon { width: 1em; height: 1em; display: inline-block; flex-shrink: 0; vertical-align: -.1em; }
 p { margin: 0 0 var(--space-md); }
-h1, h2, h3, h4, h5, h6 { font-size: var(--font-size-base); font-weight: 400; margin: var(--space-xl) 0 var(--space-md); line-height: var(--line-height-heading); }
 .skip-link { position: fixed; left: var(--space-md); top: -100px; padding: var(--space-sm) var(--space-md); z-index: 20; background: var(--white); border: 1px solid var(--accent-light); }
 .skip-link:focus { top: var(--space-sm); }
 .site-header, .site-footer { flex-shrink: 0; }
@@ -85,7 +102,6 @@ nav a[aria-current] { font-weight: 600; }
 .hero { padding: calc(var(--space-xl) * 2) 0 var(--space-xl); display: grid; grid-template-columns: minmax(0, 1fr) 200px; gap: var(--space-md); align-items: center; border-bottom: 1px solid var(--accent-light); }
 .hero .eyebrow { display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-sm); }
 .status-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
-.hero h1 { font-size: var(--font-size-2xl); margin: 0 0 var(--space-sm); }
 .chinese-name { font-size: var(--font-size-base); display: inline-block; margin-left: var(--space-md); vertical-align: middle; }
 .hero-role { color: var(--accent); margin-bottom: var(--space-sm); }
 .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-md); }
@@ -100,8 +116,6 @@ nav a[aria-current] { font-weight: 600; }
 .portrait { margin: 0; padding: 0; }
 .portrait img { width: 100%; aspect-ratio: 5 / 6; object-fit: cover; filter: saturate(.82); }
 .prose { overflow-wrap: break-word; }
-.prose h2 { font-size: var(--font-size-xl); }
-.prose h3 { font-weight: 600; margin: var(--space-xl) 0 var(--space-sm); }
 .prose ul, .prose ol { margin: 0 0 var(--space-md); padding-left: var(--space-xl); }
 .prose li { margin: var(--space-sm) 0; }
 .prose hr { border: 0; border-top: 1px solid var(--accent-light); margin: var(--space-xl) 0; }
@@ -117,18 +131,11 @@ nav a[aria-current] { font-weight: 600; }
 .home-content > ul strong { color: var(--accent); }
 .page-heading { padding: calc(var(--space-xl) * 2) 0 var(--space-xl); border-bottom: 1px solid var(--accent-light); margin-bottom: var(--space-xl); }
 .page-heading .eyebrow { margin-bottom: var(--space-sm); }
-.page-heading h1 { font-size: var(--font-size-2xl); margin: 0 0 var(--space-md); }
 .page-intro { margin-bottom: 0; }
-.page-content > h2:first-child { margin-top: 0; }
-.page-content > h2 { padding-bottom: var(--space-md); border-bottom: 1px solid var(--accent-light); }
-.page-publications .page-content h3 { font-size: var(--font-size-lg); line-height: var(--line-height-compact); }
 .page-publications .page-content h3 ~ p { line-height: var(--line-height-compact); margin-bottom: var(--space-sm); }
 .publication-note { color: var(--highlight); }
 .post-preview { padding: 0 0 var(--space-xl); margin-bottom: var(--space-xl); border-bottom: 1px solid var(--accent-light); }
 .post-preview-meta { display: flex; flex-wrap: wrap; gap: var(--space-sm) var(--space-md); }
-.post-preview h2 a { color: var(--black); text-decoration-line: none; }
-.post-preview h2 a:hover { color: var(--accent); }
-.post-preview h2 .arrow-icon { color: var(--accent); }
 .back-link { display: inline-block; margin-top: var(--space-xl); text-decoration-line: none; }
 .post .page-heading { padding-top: var(--space-xl); }
 .post-meta { margin: 0; }
@@ -141,7 +148,6 @@ nav a[aria-current] { font-weight: 600; }
   .hero { grid-template-columns: minmax(0, 1fr) 100px; align-items: start; }
   .hero-copy { display: contents; }
   .hero .eyebrow { grid-column: 1 / -1; }
-  .hero h1 { grid-column: 1; align-self: end; }
   .chinese-name { display: block; }
   .hero-role { grid-column: 1; grid-row: 3; }
   .portrait { grid-column: 2; grid-row: 2 / 4; }
@@ -155,6 +161,5 @@ nav a[aria-current] { font-weight: 600; }
   .site-main { padding: 0; }
   .hero { padding-top: 0; }
   .page-heading { padding-top: 0; }
-  h2, h3 { break-after: avoid; }
   .callout { break-inside: avoid; }
 }
