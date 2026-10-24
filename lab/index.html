@@ -1284,13 +1284,13 @@ h1, h2, h3, h4, h5, h6 { font-size: var(--font-size-base); font-weight: 400; mar
 h3 { font-size: var(--font-size-lg); font-weight: 600; margin-bottom: var(--space-sm); }
 .page-publications .page-content h3 { margin-bottom: var(--space-xs); }
 h4, h5, h6 { margin-bottom: var(--space-sm); }
-.page-heading h1 { font-size: var(--font-size-2xl); }
+.page-heading h1, .hero h1 { font-size: var(--font-size-2xl); }
 /* Print headings: avoid a page break between a heading and its following content. */
 @media print {
   h2, h3 { break-after: avoid; }
 }
-/* Page heading area: spacing around the title and introduction. */
-.page-heading { padding: var(--space-lg) 0 var(--space-md); margin-bottom: var(--space-md); }
+/* Page heading and homepage profile: shared padding and outer spacing. */
+.page-heading, .hero { padding: var(--space-lg) 0 var(--space-md); margin: 0 0 var(--space-md); }
 /* Markdown dividers: add with ---; shared line color and vertical margins. */
 .prose hr { border: 0; border-top: 1px solid var(--accent-light); margin: var(--space-lg) 0; }
 
@@ -1313,8 +1313,7 @@ h4, h5, h6 { margin-bottom: var(--space-sm); }
 }
 
 /* Homepage profile: layout for names, roles, affiliations, contact links and portrait. */
-.hero { padding: var(--space-lg) 0 var(--space-md); display: grid; grid-template-columns: minmax(0, 1fr) 200px; gap: var(--space-md); align-items: start; }
-.hero h1 { font-size: var(--font-size-2xl); margin-top: var(--space-sm); margin-bottom: var(--space-md); }
+.hero { display: grid; grid-template-columns: minmax(0, 1fr) 200px; gap: var(--space-md); align-items: start; }
 .chinese-name { font-size: var(--font-size-xl); display: inline-block; margin-left: var(--space-md); vertical-align: middle; }
 /* Role information: group spacing, paragraph margins and role color. */
 .hero-roles { margin-bottom: var(--space-md); line-height: var(--line-height-compact); }
@@ -1324,7 +1323,7 @@ h4, h5, h6 { margin-bottom: var(--space-sm); }
 /* Contact links: horizontal layout, spacing and wrapping. */
 .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-sm) var(--space-md); }
 /* Portrait: fill the column, keep a 5:6 aspect ratio and preserve original colors. */
-.portrait { margin: var(--space-sm) 0 0; padding: 0; }
+.portrait { margin: var(--space-lg) 0 0; padding: 0; }
 .portrait img { width: 100%; aspect-ratio: 5 / 6; object-fit: cover; }
 /* Mobile profile: names beside the portrait; roles and contact links span the full width. */
 @media (max-width: 767px) {
@@ -1335,10 +1334,6 @@ h4, h5, h6 { margin-bottom: var(--space-sm); }
   .hero-roles { grid-column: 1 / -1; }
   .portrait { grid-column: 2; grid-row: 1; }
   .hero-actions { grid-column: 1 / -1; }
-}
-/* Print profile: remove top padding. */
-@media print {
-  .hero { padding-top: 0; }
 }
 /* Shared text-style buttons: bold black text; navy and underlined on hover. */
 .button {
@@ -1401,11 +1396,11 @@ nav a[aria-current] { font-weight: 600; }
   body { display: block; min-height: 0; }
   .site-header, .site-footer, .skip-link, .hero-actions { display: none; }
   .site-main { padding: 0; }
-  .page-heading { padding-top: 0; }
+  .page-heading, .hero { padding-top: 0; }
   .callout { break-inside: avoid; }
 }
 </style>
-  <meta name="preview-source" content="c534fbef01cd5d01fee4adc785495de7ac992f95">
+  <meta name="preview-source" content="dfb1737613a4e38e4c34ba7661cf5c374b6bc165">
   <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="page-lab">
