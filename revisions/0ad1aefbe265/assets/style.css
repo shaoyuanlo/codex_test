@@ -120,8 +120,8 @@ nav a[aria-current] { font-weight: 600; }
 .page-intro { margin-bottom: 0; }
 .page-content > h2:first-child { margin-top: 0; }
 .page-content > h2 { padding-bottom: var(--space-md); border-bottom: 1px solid var(--accent-light); }
-.page-publication .page-content h3 { font-size: var(--font-size-lg); line-height: var(--line-height-compact); }
-.page-publication .page-content h3 + p { line-height: var(--line-height-compact); margin-bottom: var(--space-sm); }
+.page-publications .page-content h3 { font-size: var(--font-size-lg); line-height: var(--line-height-compact); }
+.page-publications .page-content h3 + p { line-height: var(--line-height-compact); margin-bottom: var(--space-sm); }
 .post-preview { padding: 0 0 var(--space-xl); margin-bottom: var(--space-xl); border-bottom: 1px solid var(--accent-light); }
 .post-preview-meta { display: flex; flex-wrap: wrap; gap: var(--space-sm) var(--space-md); }
 .post-preview h2 a { color: var(--black); text-decoration-line: none; }
