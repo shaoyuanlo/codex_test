@@ -1,0 +1,1911 @@
+{
+  "checkedAt": "2026-10-24T15:25:43.022668+00:00",
+  "count": 29,
+  "selected": 26,
+  "indexCounts": {
+    "CVPR2025": 28036,
+    "CVPR2024": 25008,
+    "CVPR2023": 20881,
+    "WACV2026": 6649,
+    "ACCV2022": 2108,
+    "ICML2025": 11914,
+    "ECCV2024": 22294
+  },
+  "papers": [
+    {
+      "title": "From Shortcuts to Reasoning: Robust Post-Training of Theory of Mind with Reinforcement Learning",
+      "year": "2026",
+      "paper": "https://arxiv.org/abs/2606.09092",
+      "venue": "*International Conference on Machine Learning (ICML), 2026*",
+      "crossref": [],
+      "arxivSearch": [
+        {
+          "id": "2606.09092",
+          "title": "From Shortcuts to Reasoning: Robust Post-Training of Theory of Mind with Reinforcement Learning",
+          "score": 1
+        }
+      ],
+      "candidates": [],
+      "checks": [
+        {
+          "url": "https://arxiv.org/pdf/2606.09092",
+          "status": 200,
+          "finalUrl": "https://arxiv.org/pdf/2606.09092",
+          "contentType": "application/pdf",
+          "isPdf": true,
+          "titleCoverage": 1.0,
+          "pages": 22,
+          "bytes": 3427947,
+          "titleMatches": true,
+          "passed": true,
+          "kind": "arxiv",
+          "source": "https://arxiv.org/abs/2606.09092"
+        }
+      ],
+      "selected": {
+        "url": "https://arxiv.org/pdf/2606.09092",
+        "status": 200,
+        "finalUrl": "https://arxiv.org/pdf/2606.09092",
+        "contentType": "application/pdf",
+        "isPdf": true,
+        "titleCoverage": 1.0,
+        "pages": 22,
+        "bytes": 3427947,
+        "titleMatches": true,
+        "passed": true,
+        "kind": "arxiv",
+        "source": "https://arxiv.org/abs/2606.09092"
+      }
+    },
+    {
+      "title": "CSGaussian: Progressive Rate-Distortion Compression and Segmentation for 3D Gaussian Splatting",
+      "year": "2026",
+      "paper": "https://arxiv.org/abs/2601.12814",
+      "venue": "*IEEE/CVF Winter Conference on Applications of Computer Vision (WACV), 2026*",
+      "crossref": [
+        {
+          "title": "CSGaussian: Progressive Rate-Distortion Compression and Segmentation for 3D Gaussian Splatting",
+          "doi": "10.1109/wacv61042.2026.00665",
+          "url": "https://doi.org/10.1109/wacv61042.2026.00665",
+          "links": [
+            {
+              "URL": "http://xplorestaging.ieee.org/ielx8/11491838/11491925/11492520.pdf?arnumber=11492520",
+              "content-type": "unspecified",
+              "content-version": "vor",
+              "intended-application": "similarity-checking"
+            }
+          ],
+          "score": 1.0
+        }
+      ],
+      "arxivSearch": [],
+      "candidates": [
+        {
+          "url": "https://openaccess.thecvf.com/content/WACV2026/papers/Tseng_CSGaussian_Progressive_Rate-Distortion_Compression_and_Segmentation_for_3D_Gaussian_Splatting_WACV_2026_paper.pdf",
+          "kind": "proceedings",
+          "source": "https://openaccess.thecvf.com/content/WACV2026/html/Tseng_CSGaussian_Progressive_Rate-Distortion_Compression_and_Segmentation_for_3D_Gaussian_Splatting_WACV_2026_paper.html"
+        },
+        {
+          "url": "http://xplorestaging.ieee.org/ielx8/11491838/11491925/11492520.pdf?arnumber=11492520",
+          "kind": "publisher",
+          "source": "https://doi.org/10.1109/wacv61042.2026.00665"
+        }
+      ],
+      "checks": [
+        {
+          "url": "https://openaccess.thecvf.com/content/WACV2026/papers/Tseng_CSGaussian_Progressive_Rate-Distortion_Compression_and_Segmentation_for_3D_Gaussian_Splatting_WACV_2026_paper.pdf",
+          "status": 200,
+          "finalUrl": "https://openaccess.thecvf.com/content/WACV2026/papers/Tseng_CSGaussian_Progressive_Rate-Distortion_Compression_and_Segmentation_for_3D_Gaussian_Splatting_WACV_2026_paper.pdf",
+          "contentType": "application/pdf",
+          "isPdf": true,
+          "titleCoverage": 1.0,
+          "pages": 10,
+          "bytes": 19368338,
+          "titleMatches": true,
+          "passed": true,
+          "kind": "proceedings",
+          "source": "https://openaccess.thecvf.com/content/WACV2026/html/Tseng_CSGaussian_Progressive_Rate-Distortion_Compression_and_Segmentation_for_3D_Gaussian_Splatting_WACV_2026_paper.html"
+        }
+      ],
+      "selected": {
+        "url": "https://openaccess.thecvf.com/content/WACV2026/papers/Tseng_CSGaussian_Progressive_Rate-Distortion_Compression_and_Segmentation_for_3D_Gaussian_Splatting_WACV_2026_paper.pdf",
+        "status": 200,
+        "finalUrl": "https://openaccess.thecvf.com/content/WACV2026/papers/Tseng_CSGaussian_Progressive_Rate-Distortion_Compression_and_Segmentation_for_3D_Gaussian_Splatting_WACV_2026_paper.pdf",
+        "contentType": "application/pdf",
+        "isPdf": true,
+        "titleCoverage": 1.0,
+        "pages": 10,
+        "bytes": 19368338,
+        "titleMatches": true,
+        "passed": true,
+        "kind": "proceedings",
+        "source": "https://openaccess.thecvf.com/content/WACV2026/html/Tseng_CSGaussian_Progressive_Rate-Distortion_Compression_and_Segmentation_for_3D_Gaussian_Splatting_WACV_2026_paper.html"
+      }
+    },
+    {
+      "title": "Overcoming Multi-step Complexity in Multimodal Theory-of-Mind Reasoning: A Scalable Bayesian Planner",
+      "year": "2025",
+      "paper": "https://arxiv.org/abs/2506.01301",
+      "venue": "*International Conference on Machine Learning (ICML), 2025* [**Spotlight**]",
+      "crossref": [],
+      "arxivSearch": [
+        {
+          "id": "2506.01301",
+          "title": "Overcoming Multi-step Complexity in Multimodal Theory-of-Mind Reasoning: A Scalable Bayesian Planner",
+          "score": 1
+        }
+      ],
+      "candidates": [],
+      "checks": [
+        {
+          "url": "https://arxiv.org/pdf/2506.01301",
+          "status": 200,
+          "finalUrl": "https://arxiv.org/pdf/2506.01301",
+          "contentType": "application/pdf",
+          "isPdf": true,
+          "titleCoverage": 1.0,
+          "pages": 23,
+          "bytes": 4939804,
+          "titleMatches": true,
+          "passed": true,
+          "kind": "arxiv",
+          "source": "https://arxiv.org/abs/2506.01301"
+        }
+      ],
+      "selected": {
+        "url": "https://arxiv.org/pdf/2506.01301",
+        "status": 200,
+        "finalUrl": "https://arxiv.org/pdf/2506.01301",
+        "contentType": "application/pdf",
+        "isPdf": true,
+        "titleCoverage": 1.0,
+        "pages": 23,
+        "bytes": 4939804,
+        "titleMatches": true,
+        "passed": true,
+        "kind": "arxiv",
+        "source": "https://arxiv.org/abs/2506.01301"
+      }
+    },
+    {
+      "title": "Filter Images First, Generate Instructions Later: Pre-Instruction Data Selection for Visual Instruction Tuning",
+      "year": "2025",
+      "paper": "https://arxiv.org/abs/2503.07591",
+      "venue": "*IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2025* [**Highlight**]",
+      "crossref": [
+        {
+          "error": "429 Client Error: Too Many Requests for url: https://api.crossref.org/works?query.title=Filter+Images+First%2C+Generate+Instructions+Later%3A+Pre-Inst"
+        }
+      ],
+      "arxivSearch": [],
+      "candidates": [
+        {
+          "url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Safaei_Filter_Images_First_Generate_Instructions_Later_Pre-Instruction_Data_Selection_for_CVPR_2025_paper.pdf",
+          "kind": "proceedings",
+          "source": "https://openaccess.thecvf.com/content/CVPR2025/html/Safaei_Filter_Images_First_Generate_Instructions_Later_Pre-Instruction_Data_Selection_for_CVPR_2025_paper.html"
+        }
+      ],
+      "checks": [
+        {
+          "url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Safaei_Filter_Images_First_Generate_Instructions_Later_Pre-Instruction_Data_Selection_for_CVPR_2025_paper.pdf",
+          "status": 200,
+          "finalUrl": "https://openaccess.thecvf.com/content/CVPR2025/papers/Safaei_Filter_Images_First_Generate_Instructions_Later_Pre-Instruction_Data_Selection_for_CVPR_2025_paper.pdf",
+          "contentType": "application/pdf",
+          "isPdf": true,
+          "titleCoverage": 1.0,
+          "pages": 10,
+          "bytes": 1096008,
+          "titleMatches": true,
+          "passed": true,
+          "kind": "proceedings",
+          "source": "https://openaccess.thecvf.com/content/CVPR2025/html/Safaei_Filter_Images_First_Generate_Instructions_Later_Pre-Instruction_Data_Selection_for_CVPR_2025_paper.html"
+        }
+      ],
+      "selected": {
+        "url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Safaei_Filter_Images_First_Generate_Instructions_Later_Pre-Instruction_Data_Selection_for_CVPR_2025_paper.pdf",
+        "status": 200,
+        "finalUrl": "https://openaccess.thecvf.com/content/CVPR2025/papers/Safaei_Filter_Images_First_Generate_Instructions_Later_Pre-Instruction_Data_Selection_for_CVPR_2025_paper.pdf",
+        "contentType": "application/pdf",
+        "isPdf": true,
+        "titleCoverage": 1.0,
+        "pages": 10,
+        "bytes": 1096008,
+        "titleMatches": true,
+        "passed": true,
+        "kind": "proceedings",
+        "source": "https://openaccess.thecvf.com/content/CVPR2025/html/Safaei_Filter_Images_First_Generate_Instructions_Later_Pre-Instruction_Data_Selection_for_CVPR_2025_paper.html"
+      }
+    },
+    {
+      "title": "Towards Zero-Shot Anomaly Detection and Reasoning with Multimodal Large Language Models",
+      "year": "2025",
+      "paper": "https://arxiv.org/abs/2502.07601",
+      "venue": "*IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2025* [**Highlight**]",
+      "crossref": [
+        {
+          "title": "Towards Zero-Shot Anomaly Detection and Reasoning with Multimodal Large Language Models",
+          "doi": "10.1109/cvpr52734.2025.01897",
+          "url": "https://doi.org/10.1109/cvpr52734.2025.01897",
+          "links": [
+            {
+              "URL": "http://xplorestaging.ieee.org/ielx8/11091818/11091608/11093352.pdf?arnumber=11093352",
+              "content-type": "unspecified",
+              "content-version": "vor",
+              "intended-application": "similarity-checking"
+            }
+          ],
+          "score": 1.0
+        },
+        {
+          "title": "Low-shot Visual Anomaly Detection with Multimodal Large Language Models",
+          "doi": "10.1016/j.procs.2024.09.439",
+          "url": "https://doi.org/10.1016/j.procs.2024.09.439",
+          "links": [
+            {
+              "URL": "https://api.elsevier.com/content/article/PII:S1877050924024803?httpAccept=text/xml",
+              "content-type": "text/xml",
+              "content-version": "vor",
+              "intended-application": "text-mining"
+            },
+            {
+              "URL": "https://api.elsevier.com/content/article/PII:S1877050924024803?httpAccept=text/plain",
+              "content-type": "text/plain",
+              "content-version": "vor",
+              "intended-application": "text-mining"
+            }
+          ],
+          "score": 0.797
+        }
+      ],
+      "arxivSearch": [],
+      "candidates": [
+        {
+          "url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Xu_Towards_Zero-Shot_Anomaly_Detection_and_Reasoning_with_Multimodal_Large_Language_CVPR_2025_paper.pdf",
+          "kind": "proceedings",
+          "source": "https://openaccess.thecvf.com/content/CVPR2025/html/Xu_Towards_Zero-Shot_Anomaly_Detection_and_Reasoning_with_Multimodal_Large_Language_CVPR_2025_paper.html"
+        },
+        {
+          "url": "http://xplorestaging.ieee.org/ielx8/11091818/11091608/11093352.pdf?arnumber=11093352",
+          "kind": "publisher",
+          "source": "https://doi.org/10.1109/cvpr52734.2025.01897"
+        }
+      ],
+      "checks": [
+        {
+          "url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Xu_Towards_Zero-Shot_Anomaly_Detection_and_Reasoning_with_Multimodal_Large_Language_CVPR_2025_paper.pdf",
+          "status": 200,
+          "finalUrl": "https://openaccess.thecvf.com/content/CVPR2025/papers/Xu_Towards_Zero-Shot_Anomaly_Detection_and_Reasoning_with_Multimodal_Large_Language_CVPR_2025_paper.pdf",
+          "contentType": "application/pdf",
+          "isPdf": true,
+          "titleCoverage": 1.0,
+          "pages": 13,
+          "bytes": 5700949,
+          "titleMatches": true,
+          "passed": true,
+          "kind": "proceedings",
+          "source": "https://openaccess.thecvf.com/content/CVPR2025/html/Xu_Towards_Zero-Shot_Anomaly_Detection_and_Reasoning_with_Multimodal_Large_Language_CVPR_2025_paper.html"
+        }
+      ],
+      "selected": {
+        "url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Xu_Towards_Zero-Shot_Anomaly_Detection_and_Reasoning_with_Multimodal_Large_Language_CVPR_2025_paper.pdf",
+        "status": 200,
+        "finalUrl": "https://openaccess.thecvf.com/content/CVPR2025/papers/Xu_Towards_Zero-Shot_Anomaly_Detection_and_Reasoning_with_Multimodal_Large_Language_CVPR_2025_paper.pdf",
+        "contentType": "application/pdf",
+        "isPdf": true,
+        "titleCoverage": 1.0,
+        "pages": 13,
+        "bytes": 5700949,
+        "titleMatches": true,
+        "passed": true,
+        "kind": "proceedings",
+        "source": "https://openaccess.thecvf.com/content/CVPR2025/html/Xu_Towards_Zero-Shot_Anomaly_Detection_and_Reasoning_with_Multimodal_Large_Language_CVPR_2025_paper.html"
+      }
+    },
+    {
+      "title": "Bridging Compressed Image Latents and Multimodal Large Language Models",
+      "year": "2025",
+      "paper": "https://arxiv.org/abs/2407.19651",
+      "venue": "*International Conference on Learning Representations (ICLR), 2025*",
+      "crossref": [],
+      "arxivSearch": [
+        {
+          "id": "2407.19651",
+          "title": "Bridging Compressed Image Latents and Multimodal Large Language Models",
+          "score": 1
+        }
+      ],
+      "candidates": [],
+      "checks": [
+        {
+          "url": "https://arxiv.org/pdf/2407.19651",
+          "status": 200,
+          "finalUrl": "https://arxiv.org/pdf/2407.19651",
+          "contentType": "application/pdf",
+          "isPdf": true,
+          "titleCoverage": 1.0,
+          "pages": 21,
+          "bytes": 25819514,
+          "titleMatches": true,
+          "passed": true,
+          "kind": "arxiv",
+          "source": "https://arxiv.org/abs/2407.19651"
+        }
+      ],
+      "selected": {
+        "url": "https://arxiv.org/pdf/2407.19651",
+        "status": 200,
+        "finalUrl": "https://arxiv.org/pdf/2407.19651",
+        "contentType": "application/pdf",
+        "isPdf": true,
+        "titleCoverage": 1.0,
+        "pages": 21,
+        "bytes": 25819514,
+        "titleMatches": true,
+        "passed": true,
+        "kind": "arxiv",
+        "source": "https://arxiv.org/abs/2407.19651"
+      }
+    },
+    {
+      "title": "StimuVAR: Spatiotemporal Stimuli-aware Video Affective Reasoning with Multimodal Large Language Models",
+      "year": "2025",
+      "paper": "https://arxiv.org/abs/2409.00304",
+      "venue": "*International Journal of Computer Vision (IJCV), 2025*",
+      "crossref": [
+        {
+          "title": "StimuVAR: Spatiotemporal Stimuli-Aware Video Affective Reasoning with Multimodal Large Language Models",
+          "doi": "10.1007/s11263-025-02495-3",
+          "url": "https://doi.org/10.1007/s11263-025-02495-3",
+          "links": [
+            {
+              "URL": "https://link.springer.com/content/pdf/10.1007/s11263-025-02495-3.pdf",
+              "content-type": "application/pdf",
+              "content-version": "vor",
+              "intended-application": "text-mining"
+            },
+            {
+              "URL": "https://link.springer.com/article/10.1007/s11263-025-02495-3/fulltext.html",
+              "content-type": "text/html",
+              "content-version": "vor",
+              "intended-application": "text-mining"
+            },
+            {
+              "URL": "https://link.springer.com/content/pdf/10.1007/s11263-025-02495-3.pdf",
+              "content-type": "application/pdf",
+              "content-version": "vor",
+              "intended-application": "similarity-checking"
+            }
+          ],
+          "score": 1.0
+        }
+      ],
+      "arxivSearch": [
+        {
+          "id": "2409.00304",
+          "title": "StimuVAR: Spatiotemporal Stimuli-aware Video Affective Reasoning with Multimodal Large Language Models",
+          "score": 1
+        }
+      ],
+      "candidates": [
+        {
+          "url": "https://link.springer.com/content/pdf/10.1007/s11263-025-02495-3.pdf",
+          "kind": "publisher",
+          "source": "https://doi.org/10.1007/s11263-025-02495-3"
+        }
+      ],
+      "checks": [
+        {
+          "url": "https://link.springer.com/content/pdf/10.1007/s11263-025-02495-3.pdf",
+          "status": 200,
+          "finalUrl": "https://link.springer.com/article/10.1007/s11263-025-02495-3",
+          "contentType": "text/html; charset=utf-8",
+          "isPdf": false,
+          "kind": "publisher",
+          "source": "https://doi.org/10.1007/s11263-025-02495-3"
+        },
+        {
+          "url": "https://arxiv.org/pdf/2409.00304",
+          "status": 200,
+          "finalUrl": "https://arxiv.org/pdf/2409.00304",
+          "contentType": "application/pdf",
+          "isPdf": true,
+          "titleCoverage": 0.917,
+          "pages": 36,
+          "bytes": 25472043,
+          "titleMatches": true,
+          "passed": true,
+          "kind": "arxiv",
+          "source": "https://arxiv.org/abs/2409.00304"
+        }
+      ],
+      "selected": {
+        "url": "https://arxiv.org/pdf/2409.00304",
+        "status": 200,
+        "finalUrl": "https://arxiv.org/pdf/2409.00304",
+        "contentType": "application/pdf",
+        "isPdf": true,
+        "titleCoverage": 0.917,
+        "pages": 36,
+        "bytes": 25472043,
+        "titleMatches": true,
+        "passed": true,
+        "kind": "arxiv",
+        "source": "https://arxiv.org/abs/2409.00304"
+      }
+    },
+    {
+      "title": "Egocentric and Exocentric Methods: A Short Survey",
+      "year": "2025",
+      "paper": "https://arxiv.org/abs/2410.20621",
+      "venue": "*Computer Vision and Image Understanding (CVIU), 2025*",
+      "crossref": [
+        {
+          "title": "Egocentric and exocentric methods: A short survey",
+          "doi": "10.1016/j.cviu.2025.104371",
+          "url": "https://doi.org/10.1016/j.cviu.2025.104371",
+          "links": [
+            {
+              "URL": "https://api.elsevier.com/content/article/PII:S1077314225000943?httpAccept=text/xml",
+              "content-type": "text/xml",
+              "content-version": "vor",
+              "intended-application": "text-mining"
+            },
+            {
+              "URL": "https://api.elsevier.com/content/article/PII:S1077314225000943?httpAccept=text/plain",
+              "content-type": "text/plain",
+              "content-version": "vor",
+              "intended-application": "text-mining"
+            }
+          ],
+          "score": 1.0
+        }
+      ],
+      "arxivSearch": [
+        {
+          "id": "2410.20621",
+          "title": "Egocentric and Exocentric Methods: A Short Survey",
+          "score": 1
+        }
+      ],
+      "candidates": [],
+      "checks": [
+        {
+          "url": "https://arxiv.org/pdf/2410.20621",
+          "status": 200,
+          "finalUrl": "https://arxiv.org/pdf/2410.20621",
+          "contentType": "application/pdf",
+          "isPdf": true,
+          "titleCoverage": 1.0,
+          "pages": 31,
+          "bytes": 4876139,
+          "titleMatches": true,
+          "passed": true,
+          "kind": "arxiv",
+          "source": "https://arxiv.org/abs/2410.20621"
+        }
+      ],
+      "selected": {
+        "url": "https://arxiv.org/pdf/2410.20621",
+        "status": 200,
+        "finalUrl": "https://arxiv.org/pdf/2410.20621",
+        "contentType": "application/pdf",
+        "isPdf": true,
+        "titleCoverage": 1.0,
+        "pages": 31,
+        "bytes": 4876139,
+        "titleMatches": true,
+        "passed": true,
+        "kind": "arxiv",
+        "source": "https://arxiv.org/abs/2410.20621"
+      }
+    },
+    {
+      "title": "CBCT Reconstruction using Single X-ray Projection with Cycle-domain Geometry-integrated Denoising Diffusion Probabilistic Models",
+      "year": "2025",
+      "paper": "https://ieeexplore.ieee.org/document/10946202",
+      "venue": "*IEEE Transactions on Medical Imaging (T-MI), 2025*",
+      "crossref": [
+        {
+          "title": "CBCT Reconstruction Using Single X-Ray Projection With Cycle-Domain Geometry-Integrated Denoising Diffusion Probabilistic Models",
+          "doi": "10.1109/tmi.2025.3556402",
+          "url": "https://doi.org/10.1109/tmi.2025.3556402",
+          "links": [
+            {
+              "URL": "http://xplorestaging.ieee.org/ielx8/42/11068959/10946202.pdf?arnumber=10946202",
+              "content-type": "unspecified",
+              "content-version": "vor",
+              "intended-application": "similarity-checking"
+            }
+          ],
+          "score": 1.0
+        },
+        {
+          "title": "CBCT Reconstruction using Single X-ray Projection with Cycle-domain Geometry-integrated Denoising Diffusion Probabilistic Models_supp1-3556402.docx",
+          "doi": "10.1109/tmi.2025.3556402/mm1",
+          "url": "https://doi.org/10.1109/tmi.2025.3556402/mm1",
+          "links": [],
+          "score": 0.931
+        }
+      ],
+      "arxivSearch": [],
+      "candidates": [
+        {
+          "url": "http://xplorestaging.ieee.org/ielx8/42/11068959/10946202.pdf?arnumber=10946202",
+          "kind": "publisher",
+          "source": "https://doi.org/10.1109/tmi.2025.3556402"
+        },
+        {
+          "url": "https://ieeexplore.ieee.org/stampPDF/getPDF.jsp?tp=&arnumber=10946202",
+          "kind": "publisher",
+          "source": "https://ieeexplore.ieee.org/document/10946202"
+        }
+      ],
+      "checks": [
+        {
+          "url": "http://xplorestaging.ieee.org/ielx8/42/11068959/10946202.pdf?arnumber=10946202",
+          "status": 200,
+          "finalUrl": "https://xplorestaging.ieee.org/document/10946202/;jsessionid=8FE80E493308385542AE7BC7AF4DAE4D",
+          "contentType": "text/html;charset=UTF-8",
+          "isPdf": false,
+          "kind": "publisher",
+          "source": "https://doi.org/10.1109/tmi.2025.3556402"
+        },
+        {
+          "url": "https://ieeexplore.ieee.org/stampPDF/getPDF.jsp?tp=&arnumber=10946202",
+          "status": 418,
+          "finalUrl": "https://ieeexplore.ieee.org/stampPDF/getPDF.jsp?tp=&arnumber=10946202",
+          "contentType": "text/html",
+          "kind": "publisher",
+          "source": "https://ieeexplore.ieee.org/document/10946202"
+        }
+      ],
+      "selected": null
+    },
+    {
+      "title": "TTT-Vnet: A 3D Vision Test-Time Training Model for Medical Image Analysis",
+      "year": "2025",
+      "paper": "https://spie.org/medical-imaging/presentation/TTT-Vnet--A-3D-vision-test-time-training-model/13406-108",
+      "venue": "*SPIE Medical Imaging (SPIE MI), 2025*",
+      "crossref": [
+        {
+          "title": "TTT-Vnet: a 3D vision test-time training model for medical image analysis",
+          "doi": "10.1117/12.3047499",
+          "url": "https://doi.org/10.1117/12.3047499",
+          "links": [],
+          "score": 1.0
+        }
+      ],
+      "arxivSearch": [],
+      "candidates": [
+        {
+          "url": "https://www.spiedigitallibrary.org/conference-proceedings-of-spie/10.1117/12.3047499/pdf",
+          "kind": "publisher",
+          "source": "https://doi.org/10.1117/12.3047499"
+        }
+      ],
+      "checks": [
+        {
+          "url": "https://www.spiedigitallibrary.org/conference-proceedings-of-spie/10.1117/12.3047499/pdf",
+          "status": 200,
+          "finalUrl": "https://www.spiedigitallibrary.org/conference-proceedings-of-spie/10.1117/12.3047499/pdf",
+          "contentType": "text/html; charset=utf-8",
+          "isPdf": false,
+          "kind": "publisher",
+          "source": "https://doi.org/10.1117/12.3047499"
+        }
+      ],
+      "selected": null
+    },
+    {
+      "title": "Follow the Rules: Reasoning for Video Anomaly Detection with Large Language Models",
+      "year": "2024",
+      "paper": "https://arxiv.org/abs/2407.10299",
+      "venue": "*European Conference on Computer Vision (ECCV), 2024*",
+      "crossref": [
+        {
+          "title": "Follow the Rules: Reasoning for Video Anomaly Detection with Large Language Models",
+          "doi": "10.1007/978-3-031-73004-7_18",
+          "url": "https://doi.org/10.1007/978-3-031-73004-7_18",
+          "links": [
+            {
+              "URL": "https://link.springer.com/content/pdf/10.1007/978-3-031-73004-7_18",
+              "content-type": "unspecified",
+              "content-version": "vor",
+              "intended-application": "similarity-checking"
+            }
+          ],
+          "score": 1.0
+        }
+      ],
+      "arxivSearch": [
+        {
+          "id": "2407.10299",
+          "title": "Follow the Rules: Reasoning for Video Anomaly Detection with Large Language Models",
+          "score": 1
+        }
+      ],
+      "candidates": [
+        {
+          "url": "https://link.springer.com/content/pdf/10.1007/978-3-031-73004-7_18",
+          "kind": "publisher",
+          "source": "https://doi.org/10.1007/978-3-031-73004-7_18"
+        },
+        {
+          "url": "https://link.springer.com/content/pdf/10.1007/978-3-031-73004-7_18.pdf",
+          "kind": "publisher",
+          "source": "https://doi.org/10.1007/978-3-031-73004-7_18"
+        }
+      ],
+      "checks": [
+        {
+          "url": "https://link.springer.com/content/pdf/10.1007/978-3-031-73004-7_18",
+          "status": 200,
+          "finalUrl": "https://link.springer.com/chapter/10.1007/978-3-031-73004-7_18",
+          "contentType": "text/html; charset=utf-8",
+          "isPdf": false,
+          "kind": "publisher",
+          "source": "https://doi.org/10.1007/978-3-031-73004-7_18"
+        },
+        {
+          "url": "https://link.springer.com/content/pdf/10.1007/978-3-031-73004-7_18.pdf",
+          "status": 200,
+          "finalUrl": "https://link.springer.com/chapter/10.1007/978-3-031-73004-7_18",
+          "contentType": "text/html; charset=utf-8",
+          "isPdf": false,
+          "kind": "publisher",
+          "source": "https://doi.org/10.1007/978-3-031-73004-7_18"
+        },
+        {
+          "url": "https://arxiv.org/pdf/2407.10299",
+          "status": 200,
+          "finalUrl": "https://arxiv.org/pdf/2407.10299",
+          "contentType": "application/pdf",
+          "isPdf": true,
+          "titleCoverage": 1.0,
+          "pages": 27,
+          "bytes": 2667385,
+          "titleMatches": true,
+          "passed": true,
+          "kind": "arxiv",
+          "source": "https://arxiv.org/abs/2407.10299"
+        }
+      ],
+      "selected": {
+        "url": "https://arxiv.org/pdf/2407.10299",
+        "status": 200,
+        "finalUrl": "https://arxiv.org/pdf/2407.10299",
+        "contentType": "application/pdf",
+        "isPdf": true,
+        "titleCoverage": 1.0,
+        "pages": 27,
+        "bytes": 2667385,
+        "titleMatches": true,
+        "passed": true,
+        "kind": "arxiv",
+        "source": "https://arxiv.org/abs/2407.10299"
+      }
+    },
+    {
+      "title": "Uncertainty-aware Action Decoupling Transformer for Action Anticipation",
+      "year": "2024",
+      "paper": "https://openaccess.thecvf.com/content/CVPR2024/html/Guo_Uncertainty-aware_Action_Decoupling_Transformer_for_Action_Anticipation_CVPR_2024_paper.html",
+      "venue": "*IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2024* [**Highlight**]",
+      "crossref": [
+        {
+          "title": "Uncertainty-aware Action Decoupling Transformer for Action Anticipation",
+          "doi": "10.1109/cvpr52733.2024.01764",
+          "url": "https://doi.org/10.1109/cvpr52733.2024.01764",
+          "links": [
+            {
+              "URL": "http://xplorestaging.ieee.org/ielx8/10654794/10654797/10654840.pdf?arnumber=10654840",
+              "content-type": "unspecified",
+              "content-version": "vor",
+              "intended-application": "similarity-checking"
+            }
+          ],
+          "score": 1.0
+        }
+      ],
+      "arxivSearch": [],
+      "candidates": [
+        {
+          "url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Guo_Uncertainty-aware_Action_Decoupling_Transformer_for_Action_Anticipation_CVPR_2024_paper.pdf",
+          "kind": "proceedings",
+          "source": "https://openaccess.thecvf.com/content/CVPR2024/html/Guo_Uncertainty-aware_Action_Decoupling_Transformer_for_Action_Anticipation_CVPR_2024_paper.html"
+        },
+        {
+          "url": "http://xplorestaging.ieee.org/ielx8/10654794/10654797/10654840.pdf?arnumber=10654840",
+          "kind": "publisher",
+          "source": "https://doi.org/10.1109/cvpr52733.2024.01764"
+        }
+      ],
+      "checks": [
+        {
+          "url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Guo_Uncertainty-aware_Action_Decoupling_Transformer_for_Action_Anticipation_CVPR_2024_paper.pdf",
+          "status": 200,
+          "finalUrl": "https://openaccess.thecvf.com/content/CVPR2024/papers/Guo_Uncertainty-aware_Action_Decoupling_Transformer_for_Action_Anticipation_CVPR_2024_paper.pdf",
+          "contentType": "application/pdf",
+          "isPdf": true,
+          "titleCoverage": 1.0,
+          "pages": 11,
+          "bytes": 1085667,
+          "titleMatches": true,
+          "passed": true,
+          "kind": "proceedings",
+          "source": "https://openaccess.thecvf.com/content/CVPR2024/html/Guo_Uncertainty-aware_Action_Decoupling_Transformer_for_Action_Anticipation_CVPR_2024_paper.html"
+        }
+      ],
+      "selected": {
+        "url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Guo_Uncertainty-aware_Action_Decoupling_Transformer_for_Action_Anticipation_CVPR_2024_paper.pdf",
+        "status": 200,
+        "finalUrl": "https://openaccess.thecvf.com/content/CVPR2024/papers/Guo_Uncertainty-aware_Action_Decoupling_Transformer_for_Action_Anticipation_CVPR_2024_paper.pdf",
+        "contentType": "application/pdf",
+        "isPdf": true,
+        "titleCoverage": 1.0,
+        "pages": 11,
+        "bytes": 1085667,
+        "titleMatches": true,
+        "passed": true,
+        "kind": "proceedings",
+        "source": "https://openaccess.thecvf.com/content/CVPR2024/html/Guo_Uncertainty-aware_Action_Decoupling_Transformer_for_Action_Anticipation_CVPR_2024_paper.html"
+      }
+    },
+    {
+      "title": "Can’t Make an Omelette without Breaking Some Eggs: Plausible Action Anticipation using Large Video-Language Models",
+      "year": "2024",
+      "paper": "https://arxiv.org/abs/2405.20305",
+      "venue": "*IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2024*",
+      "crossref": [
+        {
+          "title": "Can't make an Omelette without Breaking some Eggs: Plausible Action Anticipation using Large Video-Language Models",
+          "doi": "10.1109/cvpr52733.2024.01758",
+          "url": "https://doi.org/10.1109/cvpr52733.2024.01758",
+          "links": [
+            {
+              "URL": "http://xplorestaging.ieee.org/ielx8/10654794/10654797/10655568.pdf?arnumber=10655568",
+              "content-type": "unspecified",
+              "content-version": "vor",
+              "intended-application": "similarity-checking"
+            }
+          ],
+          "score": 1.0
+        }
+      ],
+      "arxivSearch": [],
+      "candidates": [
+        {
+          "url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Mittal_Cant_Make_an_Omelette_Without_Breaking_Some_Eggs_Plausible_Action_CVPR_2024_paper.pdf",
+          "kind": "proceedings",
+          "source": "https://openaccess.thecvf.com/content/CVPR2024/html/Mittal_Cant_Make_an_Omelette_Without_Breaking_Some_Eggs_Plausible_Action_CVPR_2024_paper.html"
+        },
+        {
+          "url": "http://xplorestaging.ieee.org/ielx8/10654794/10654797/10655568.pdf?arnumber=10655568",
+          "kind": "publisher",
+          "source": "https://doi.org/10.1109/cvpr52733.2024.01758"
+        }
+      ],
+      "checks": [
+        {
+          "url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Mittal_Cant_Make_an_Omelette_Without_Breaking_Some_Eggs_Plausible_Action_CVPR_2024_paper.pdf",
+          "status": 200,
+          "finalUrl": "https://openaccess.thecvf.com/content/CVPR2024/papers/Mittal_Cant_Make_an_Omelette_Without_Breaking_Some_Eggs_Plausible_Action_CVPR_2024_paper.pdf",
+          "contentType": "application/pdf",
+          "isPdf": true,
+          "titleCoverage": 1.0,
+          "pages": 11,
+          "bytes": 2557271,
+          "titleMatches": true,
+          "passed": true,
+          "kind": "proceedings",
+          "source": "https://openaccess.thecvf.com/content/CVPR2024/html/Mittal_Cant_Make_an_Omelette_Without_Breaking_Some_Eggs_Plausible_Action_CVPR_2024_paper.html"
+        }
+      ],
+      "selected": {
+        "url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Mittal_Cant_Make_an_Omelette_Without_Breaking_Some_Eggs_Plausible_Action_CVPR_2024_paper.pdf",
+        "status": 200,
+        "finalUrl": "https://openaccess.thecvf.com/content/CVPR2024/papers/Mittal_Cant_Make_an_Omelette_Without_Breaking_Some_Eggs_Plausible_Action_CVPR_2024_paper.pdf",
+        "contentType": "application/pdf",
+        "isPdf": true,
+        "titleCoverage": 1.0,
+        "pages": 11,
+        "bytes": 2557271,
+        "titleMatches": true,
+        "passed": true,
+        "kind": "proceedings",
+        "source": "https://openaccess.thecvf.com/content/CVPR2024/html/Mittal_Cant_Make_an_Omelette_Without_Breaking_Some_Eggs_Plausible_Action_CVPR_2024_paper.html"
+      }
+    },
+    {
+      "title": "Patient-specific 3D Volumetric CBCT Image Reconstruction with Single X-ray Projection Using Denoising Diffusion Probabilistic Model",
+      "year": "2024",
+      "paper": "https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12931/129310P/Patient-specific-3D-volumetric-CBCT-image-reconstruction-with-single-x/10.1117/12.3006561.short",
+      "venue": "*SPIE Medical Imaging (SPIE MI), 2024* [**Best Student Paper Award**]",
+      "crossref": [
+        {
+          "title": "Patient-specific 3D volumetric CBCT image reconstruction with single x-ray projection using denoising diffusion probabilistic model",
+          "doi": "10.1117/12.3006561",
+          "url": "https://doi.org/10.1117/12.3006561",
+          "links": [],
+          "score": 1.0
+        }
+      ],
+      "arxivSearch": [],
+      "candidates": [
+        {
+          "url": "https://www.spiedigitallibrary.org/conference-proceedings-of-spie/10.1117/12.3006561/pdf",
+          "kind": "publisher",
+          "source": "https://doi.org/10.1117/12.3006561"
+        }
+      ],
+      "checks": [
+        {
+          "url": "https://www.spiedigitallibrary.org/conference-proceedings-of-spie/10.1117/12.3006561/pdf",
+          "status": 200,
+          "finalUrl": "https://www.spiedigitallibrary.org/conference-proceedings-of-spie/10.1117/12.3006561/pdf",
+          "contentType": "text/html; charset=utf-8",
+          "isPdf": false,
+          "kind": "publisher",
+          "source": "https://doi.org/10.1117/12.3006561"
+        }
+      ],
+      "selected": null
+    },
+    {
+      "title": "Adaptive Batch Normalization Networks for Adversarial Robustness",
+      "year": "2024",
+      "paper": "https://arxiv.org/abs/2405.11708",
+      "venue": "*IEEE International Conference on Advanced Video and Signal-based Surveillance (AVSS), 2024* [**Oral**]",
+      "crossref": [
+        {
+          "title": "Adaptive Batch Normalization Networks for Adversarial Robustness",
+          "doi": "10.1109/avss61716.2024.10672619",
+          "url": "https://doi.org/10.1109/avss61716.2024.10672619",
+          "links": [
+            {
+              "URL": "http://xplorestaging.ieee.org/ielx8/10672516/10672563/10672619.pdf?arnumber=10672619",
+              "content-type": "unspecified",
+              "content-version": "vor",
+              "intended-application": "similarity-checking"
+            }
+          ],
+          "score": 1.0
+        }
+      ],
+      "arxivSearch": [
+        {
+          "id": "2405.11708",
+          "title": "Adaptive Batch Normalization Networks for Adversarial Robustness",
+          "score": 1
+        }
+      ],
+      "candidates": [
+        {
+          "url": "http://xplorestaging.ieee.org/ielx8/10672516/10672563/10672619.pdf?arnumber=10672619",
+          "kind": "publisher",
+          "source": "https://doi.org/10.1109/avss61716.2024.10672619"
+        }
+      ],
+      "checks": [
+        {
+          "url": "http://xplorestaging.ieee.org/ielx8/10672516/10672563/10672619.pdf?arnumber=10672619",
+          "status": 200,
+          "finalUrl": "https://xplorestaging.ieee.org/document/10672619/;jsessionid=079C634038E3FC1D722B63478DFA0D2C",
+          "contentType": "text/html;charset=UTF-8",
+          "isPdf": false,
+          "kind": "publisher",
+          "source": "https://doi.org/10.1109/avss61716.2024.10672619"
+        },
+        {
+          "url": "https://arxiv.org/pdf/2405.11708",
+          "status": 200,
+          "finalUrl": "https://arxiv.org/pdf/2405.11708",
+          "contentType": "application/pdf",
+          "isPdf": true,
+          "titleCoverage": 1.0,
+          "pages": 6,
+          "bytes": 538453,
+          "titleMatches": true,
+          "passed": true,
+          "kind": "arxiv",
+          "source": "https://arxiv.org/abs/2405.11708"
+        }
+      ],
+      "selected": {
+        "url": "https://arxiv.org/pdf/2405.11708",
+        "status": 200,
+        "finalUrl": "https://arxiv.org/pdf/2405.11708",
+        "contentType": "application/pdf",
+        "isPdf": true,
+        "titleCoverage": 1.0,
+        "pages": 6,
+        "bytes": 538453,
+        "titleMatches": true,
+        "passed": true,
+        "kind": "arxiv",
+        "source": "https://arxiv.org/abs/2405.11708"
+      }
+    },
+    {
+      "title": "Spatio-Temporal Pixel-Level Contrastive Learning-based Source-Free Domain Adaptation for Video Semantic Segmentation",
+      "year": "2023",
+      "paper": "https://arxiv.org/abs/2303.14361",
+      "venue": "*IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2023*",
+      "crossref": [
+        {
+          "title": "Spatio-Temporal Pixel-Level Contrastive Learning-based Source-Free Domain Adaptation for Video Semantic Segmentation",
+          "doi": "10.1109/cvpr52729.2023.01015",
+          "url": "https://doi.org/10.1109/cvpr52729.2023.01015",
+          "links": [
+            {
+              "URL": "http://xplorestaging.ieee.org/ielx7/10203037/10203050/10203741.pdf?arnumber=10203741",
+              "content-type": "unspecified",
+              "content-version": "vor",
+              "intended-application": "similarity-checking"
+            }
+          ],
+          "score": 1.0
+        }
+      ],
+      "arxivSearch": [],
+      "candidates": [
+        {
+          "url": "https://openaccess.thecvf.com/content/CVPR2023/papers/Lo_Spatio-Temporal_Pixel-Level_Contrastive_Learning-Based_Source-Free_Domain_Adaptation_for_Video_Semantic_CVPR_2023_paper.pdf",
+          "kind": "proceedings",
+          "source": "https://openaccess.thecvf.com/content/CVPR2023/html/Lo_Spatio-Temporal_Pixel-Level_Contrastive_Learning-Based_Source-Free_Domain_Adaptation_for_Video_Semantic_CVPR_2023_paper.html"
+        },
+        {
+          "url": "http://xplorestaging.ieee.org/ielx7/10203037/10203050/10203741.pdf?arnumber=10203741",
+          "kind": "publisher",
+          "source": "https://doi.org/10.1109/cvpr52729.2023.01015"
+        }
+      ],
+      "checks": [
+        {
+          "url": "https://openaccess.thecvf.com/content/CVPR2023/papers/Lo_Spatio-Temporal_Pixel-Level_Contrastive_Learning-Based_Source-Free_Domain_Adaptation_for_Video_Semantic_CVPR_2023_paper.pdf",
+          "status": 200,
+          "finalUrl": "https://openaccess.thecvf.com/content/CVPR2023/papers/Lo_Spatio-Temporal_Pixel-Level_Contrastive_Learning-Based_Source-Free_Domain_Adaptation_for_Video_Semantic_CVPR_2023_paper.pdf",
+          "contentType": "application/pdf",
+          "isPdf": true,
+          "titleCoverage": 1.0,
+          "pages": 10,
+          "bytes": 3065794,
+          "titleMatches": true,
+          "passed": true,
+          "kind": "proceedings",
+          "source": "https://openaccess.thecvf.com/content/CVPR2023/html/Lo_Spatio-Temporal_Pixel-Level_Contrastive_Learning-Based_Source-Free_Domain_Adaptation_for_Video_Semantic_CVPR_2023_paper.html"
+        }
+      ],
+      "selected": {
+        "url": "https://openaccess.thecvf.com/content/CVPR2023/papers/Lo_Spatio-Temporal_Pixel-Level_Contrastive_Learning-Based_Source-Free_Domain_Adaptation_for_Video_Semantic_CVPR_2023_paper.pdf",
+        "status": 200,
+        "finalUrl": "https://openaccess.thecvf.com/content/CVPR2023/papers/Lo_Spatio-Temporal_Pixel-Level_Contrastive_Learning-Based_Source-Free_Domain_Adaptation_for_Video_Semantic_CVPR_2023_paper.pdf",
+        "contentType": "application/pdf",
+        "isPdf": true,
+        "titleCoverage": 1.0,
+        "pages": 10,
+        "bytes": 3065794,
+        "titleMatches": true,
+        "passed": true,
+        "kind": "proceedings",
+        "source": "https://openaccess.thecvf.com/content/CVPR2023/html/Lo_Spatio-Temporal_Pixel-Level_Contrastive_Learning-Based_Source-Free_Domain_Adaptation_for_Video_Semantic_CVPR_2023_paper.html"
+      }
+    },
+    {
+      "title": "Deep Learning-based Multi-Organ CT Segmentation with Adversarial Data Augmentation",
+      "year": "2023",
+      "paper": "https://arxiv.org/abs/2302.13172",
+      "venue": "*SPIE Medical Imaging (SPIE MI), 2023*",
+      "crossref": [
+        {
+          "title": "Deep learning-based multi-organ CT segmentation with adversarial data augmentation",
+          "doi": "10.1117/12.2653970",
+          "url": "https://doi.org/10.1117/12.2653970",
+          "links": [],
+          "score": 1.0
+        }
+      ],
+      "arxivSearch": [
+        {
+          "id": "2302.13172",
+          "title": "Deep Learning-based Multi-Organ CT Segmentation with Adversarial Data Augmentation",
+          "score": 1
+        }
+      ],
+      "candidates": [
+        {
+          "url": "https://www.spiedigitallibrary.org/conference-proceedings-of-spie/10.1117/12.2653970/pdf",
+          "kind": "publisher",
+          "source": "https://doi.org/10.1117/12.2653970"
+        }
+      ],
+      "checks": [
+        {
+          "url": "https://www.spiedigitallibrary.org/conference-proceedings-of-spie/10.1117/12.2653970/pdf",
+          "status": 200,
+          "finalUrl": "https://www.spiedigitallibrary.org/conference-proceedings-of-spie/10.1117/12.2653970/pdf",
+          "contentType": "text/html; charset=UTF-8",
+          "isPdf": false,
+          "kind": "publisher",
+          "source": "https://doi.org/10.1117/12.2653970"
+        },
+        {
+          "url": "https://arxiv.org/pdf/2302.13172",
+          "status": 200,
+          "finalUrl": "https://arxiv.org/pdf/2302.13172",
+          "contentType": "application/pdf",
+          "isPdf": true,
+          "titleCoverage": 1.0,
+          "pages": 8,
+          "bytes": 732036,
+          "titleMatches": true,
+          "passed": true,
+          "kind": "arxiv",
+          "source": "https://arxiv.org/abs/2302.13172"
+        }
+      ],
+      "selected": {
+        "url": "https://arxiv.org/pdf/2302.13172",
+        "status": 200,
+        "finalUrl": "https://arxiv.org/pdf/2302.13172",
+        "contentType": "application/pdf",
+        "isPdf": true,
+        "titleCoverage": 1.0,
+        "pages": 8,
+        "bytes": 732036,
+        "titleMatches": true,
+        "passed": true,
+        "kind": "arxiv",
+        "source": "https://arxiv.org/abs/2302.13172"
+      }
+    },
+    {
+      "title": "Adversarially Robust One-class Novelty Detection",
+      "year": "2022",
+      "paper": "https://arxiv.org/abs/2108.11168",
+      "venue": "*IEEE Transactions on Pattern Analysis and Machine Intelligence (T-PAMI), 2022* [**Featured in IEEE CTSoc News on Consumer Technology, April 2024**]",
+      "crossref": [
+        {
+          "title": "Adversarially Robust One-class Novelty Detection",
+          "doi": "10.1109/tpami.2022.3189638",
+          "url": "https://doi.org/10.1109/tpami.2022.3189638",
+          "links": [
+            {
+              "URL": "http://xplorestaging.ieee.org/ielx7/34/4359286/09826427.pdf?arnumber=9826427",
+              "content-type": "unspecified",
+              "content-version": "vor",
+              "intended-application": "similarity-checking"
+            }
+          ],
+          "score": 1.0
+        }
+      ],
+      "arxivSearch": [
+        {
+          "id": "2108.11168",
+          "title": "Adversarially Robust One-class Novelty Detection",
+          "score": 1
+        }
+      ],
+      "candidates": [
+        {
+          "url": "http://xplorestaging.ieee.org/ielx7/34/4359286/09826427.pdf?arnumber=9826427",
+          "kind": "publisher",
+          "source": "https://doi.org/10.1109/tpami.2022.3189638"
+        }
+      ],
+      "checks": [
+        {
+          "url": "http://xplorestaging.ieee.org/ielx7/34/4359286/09826427.pdf?arnumber=9826427",
+          "status": 200,
+          "finalUrl": "https://xplorestaging.ieee.org/document/9826427/;jsessionid=72669126830CC71D4081728A4207FC74",
+          "contentType": "text/html;charset=UTF-8",
+          "isPdf": false,
+          "kind": "publisher",
+          "source": "https://doi.org/10.1109/tpami.2022.3189638"
+        },
+        {
+          "url": "https://arxiv.org/pdf/2108.11168",
+          "status": 200,
+          "finalUrl": "https://arxiv.org/pdf/2108.11168",
+          "contentType": "application/pdf",
+          "isPdf": true,
+          "titleCoverage": 1.0,
+          "pages": 16,
+          "bytes": 5907380,
+          "titleMatches": true,
+          "passed": true,
+          "kind": "arxiv",
+          "source": "https://arxiv.org/abs/2108.11168"
+        }
+      ],
+      "selected": {
+        "url": "https://arxiv.org/pdf/2108.11168",
+        "status": 200,
+        "finalUrl": "https://arxiv.org/pdf/2108.11168",
+        "contentType": "application/pdf",
+        "isPdf": true,
+        "titleCoverage": 1.0,
+        "pages": 16,
+        "bytes": 5907380,
+        "titleMatches": true,
+        "passed": true,
+        "kind": "arxiv",
+        "source": "https://arxiv.org/abs/2108.11168"
+      }
+    },
+    {
+      "title": "Learning Feature Decomposition for Domain Adaptive Monocular Depth Estimation",
+      "year": "2022",
+      "paper": "https://arxiv.org/abs/2208.00160",
+      "venue": "*IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), 2022*",
+      "crossref": [
+        {
+          "title": "Learning Feature Decomposition for Domain Adaptive Monocular Depth Estimation",
+          "doi": "10.1109/iros47612.2022.9981342",
+          "url": "https://doi.org/10.1109/iros47612.2022.9981342",
+          "links": [
+            {
+              "URL": "http://xplorestaging.ieee.org/ielx7/9981026/9981028/09981342.pdf?arnumber=9981342",
+              "content-type": "unspecified",
+              "content-version": "vor",
+              "intended-application": "similarity-checking"
+            }
+          ],
+          "score": 1.0
+        }
+      ],
+      "arxivSearch": [
+        {
+          "id": "2208.00160",
+          "title": "Learning Feature Decomposition for Domain Adaptive Monocular Depth Estimation",
+          "score": 1
+        }
+      ],
+      "candidates": [
+        {
+          "url": "http://xplorestaging.ieee.org/ielx7/9981026/9981028/09981342.pdf?arnumber=9981342",
+          "kind": "publisher",
+          "source": "https://doi.org/10.1109/iros47612.2022.9981342"
+        }
+      ],
+      "checks": [
+        {
+          "url": "http://xplorestaging.ieee.org/ielx7/9981026/9981028/09981342.pdf?arnumber=9981342",
+          "status": 200,
+          "finalUrl": "https://xplorestaging.ieee.org/document/9981342/;jsessionid=8D44DCABAF1A89E13C98BFC031AA0D7F",
+          "contentType": "text/html;charset=UTF-8",
+          "isPdf": false,
+          "kind": "publisher",
+          "source": "https://doi.org/10.1109/iros47612.2022.9981342"
+        },
+        {
+          "url": "https://arxiv.org/pdf/2208.00160",
+          "status": 200,
+          "finalUrl": "https://arxiv.org/pdf/2208.00160",
+          "contentType": "application/pdf",
+          "isPdf": true,
+          "titleCoverage": 1.0,
+          "pages": 7,
+          "bytes": 2807872,
+          "titleMatches": true,
+          "passed": true,
+          "kind": "arxiv",
+          "source": "https://arxiv.org/abs/2208.00160"
+        }
+      ],
+      "selected": {
+        "url": "https://arxiv.org/pdf/2208.00160",
+        "status": 200,
+        "finalUrl": "https://arxiv.org/pdf/2208.00160",
+        "contentType": "application/pdf",
+        "isPdf": true,
+        "titleCoverage": 1.0,
+        "pages": 7,
+        "bytes": 2807872,
+        "titleMatches": true,
+        "passed": true,
+        "kind": "arxiv",
+        "source": "https://arxiv.org/abs/2208.00160"
+      }
+    },
+    {
+      "title": "Exploring Adversarially Robust Training for Unsupervised Domain Adaptation",
+      "year": "2022",
+      "paper": "https://arxiv.org/abs/2202.09300",
+      "venue": "*Asian Conference on Computer Vision (ACCV), 2022*",
+      "crossref": [
+        {
+          "title": "Exploring Adversarially Robust Training for Unsupervised Domain Adaptation",
+          "doi": "10.1007/978-3-031-26351-4_34",
+          "url": "https://doi.org/10.1007/978-3-031-26351-4_34",
+          "links": [
+            {
+              "URL": "https://link.springer.com/content/pdf/10.1007/978-3-031-26351-4_34",
+              "content-type": "unspecified",
+              "content-version": "vor",
+              "intended-application": "similarity-checking"
+            }
+          ],
+          "score": 1.0
+        },
+        {
+          "title": "Adversarially robust unsupervised domain adaptation",
+          "doi": "10.1016/j.artint.2025.104383",
+          "url": "https://doi.org/10.1016/j.artint.2025.104383",
+          "links": [
+            {
+              "URL": "https://api.elsevier.com/content/article/PII:S000437022500102X?httpAccept=text/xml",
+              "content-type": "text/xml",
+              "content-version": "vor",
+              "intended-application": "text-mining"
+            },
+            {
+              "URL": "https://api.elsevier.com/content/article/PII:S000437022500102X?httpAccept=text/plain",
+              "content-type": "text/plain",
+              "content-version": "vor",
+              "intended-application": "text-mining"
+            }
+          ],
+          "score": 0.816
+        }
+      ],
+      "arxivSearch": [],
+      "candidates": [
+        {
+          "url": "https://openaccess.thecvf.com/content/ACCV2022/papers/Lo_Exploring_Adversarially_Robust_Training_for_Unsupervised_Domain_Adaptation_ACCV_2022_paper.pdf",
+          "kind": "proceedings",
+          "source": "https://openaccess.thecvf.com/content/ACCV2022/html/Lo_Exploring_Adversarially_Robust_Training_for_Unsupervised_Domain_Adaptation_ACCV_2022_paper.html"
+        },
+        {
+          "url": "https://link.springer.com/content/pdf/10.1007/978-3-031-26351-4_34",
+          "kind": "publisher",
+          "source": "https://doi.org/10.1007/978-3-031-26351-4_34"
+        },
+        {
+          "url": "https://link.springer.com/content/pdf/10.1007/978-3-031-26351-4_34.pdf",
+          "kind": "publisher",
+          "source": "https://doi.org/10.1007/978-3-031-26351-4_34"
+        }
+      ],
+      "checks": [
+        {
+          "url": "https://openaccess.thecvf.com/content/ACCV2022/papers/Lo_Exploring_Adversarially_Robust_Training_for_Unsupervised_Domain_Adaptation_ACCV_2022_paper.pdf",
+          "status": 200,
+          "finalUrl": "https://openaccess.thecvf.com/content/ACCV2022/papers/Lo_Exploring_Adversarially_Robust_Training_for_Unsupervised_Domain_Adaptation_ACCV_2022_paper.pdf",
+          "contentType": "application/pdf",
+          "isPdf": true,
+          "titleCoverage": 1.0,
+          "pages": 17,
+          "bytes": 955068,
+          "titleMatches": true,
+          "passed": true,
+          "kind": "proceedings",
+          "source": "https://openaccess.thecvf.com/content/ACCV2022/html/Lo_Exploring_Adversarially_Robust_Training_for_Unsupervised_Domain_Adaptation_ACCV_2022_paper.html"
+        }
+      ],
+      "selected": {
+        "url": "https://openaccess.thecvf.com/content/ACCV2022/papers/Lo_Exploring_Adversarially_Robust_Training_for_Unsupervised_Domain_Adaptation_ACCV_2022_paper.pdf",
+        "status": 200,
+        "finalUrl": "https://openaccess.thecvf.com/content/ACCV2022/papers/Lo_Exploring_Adversarially_Robust_Training_for_Unsupervised_Domain_Adaptation_ACCV_2022_paper.pdf",
+        "contentType": "application/pdf",
+        "isPdf": true,
+        "titleCoverage": 1.0,
+        "pages": 17,
+        "bytes": 955068,
+        "titleMatches": true,
+        "passed": true,
+        "kind": "proceedings",
+        "source": "https://openaccess.thecvf.com/content/ACCV2022/html/Lo_Exploring_Adversarially_Robust_Training_for_Unsupervised_Domain_Adaptation_ACCV_2022_paper.html"
+      }
+    },
+    {
+      "title": "Defending Against Multiple and Unforeseen Adversarial Videos",
+      "year": "2021",
+      "paper": "https://arxiv.org/abs/2009.05244",
+      "venue": "*IEEE Transactions on Image Processing (T-IP), 2021* [**Journal presentation at ICIP 2022**]",
+      "crossref": [
+        {
+          "error": "429 Client Error: Too Many Requests for url: https://api.crossref.org/works?query.title=Defending+Against+Multiple+and+Unforeseen+Adversarial+Videos&r"
+        }
+      ],
+      "arxivSearch": [
+        {
+          "id": "2009.05244",
+          "title": "Defending Against Multiple and Unforeseen Adversarial Videos",
+          "score": 1
+        }
+      ],
+      "candidates": [],
+      "checks": [
+        {
+          "url": "https://arxiv.org/pdf/2009.05244",
+          "status": 200,
+          "finalUrl": "https://arxiv.org/pdf/2009.05244",
+          "contentType": "application/pdf",
+          "isPdf": true,
+          "titleCoverage": 1.0,
+          "pages": 13,
+          "bytes": 4035069,
+          "titleMatches": true,
+          "passed": true,
+          "kind": "arxiv",
+          "source": "https://arxiv.org/abs/2009.05244"
+        }
+      ],
+      "selected": {
+        "url": "https://arxiv.org/pdf/2009.05244",
+        "status": 200,
+        "finalUrl": "https://arxiv.org/pdf/2009.05244",
+        "contentType": "application/pdf",
+        "isPdf": true,
+        "titleCoverage": 1.0,
+        "pages": 13,
+        "bytes": 4035069,
+        "titleMatches": true,
+        "passed": true,
+        "kind": "arxiv",
+        "source": "https://arxiv.org/abs/2009.05244"
+      }
+    },
+    {
+      "title": "Error Diffusion Halftoning Against Adversarial Examples",
+      "year": "2021",
+      "paper": "https://arxiv.org/abs/2101.09451",
+      "venue": "*IEEE International Conference on Image Processing (ICIP), 2021*",
+      "crossref": [
+        {
+          "error": "429 Client Error: Too Many Requests for url: https://api.crossref.org/works?query.title=Error+Diffusion+Halftoning+Against+Adversarial+Examples&rows=3"
+        }
+      ],
+      "arxivSearch": [
+        {
+          "id": "2101.09451",
+          "title": "Error Diffusion Halftoning Against Adversarial Examples",
+          "score": 1
+        }
+      ],
+      "candidates": [],
+      "checks": [
+        {
+          "url": "https://arxiv.org/pdf/2101.09451",
+          "status": 200,
+          "finalUrl": "https://arxiv.org/pdf/2101.09451",
+          "contentType": "application/pdf",
+          "isPdf": true,
+          "titleCoverage": 1.0,
+          "pages": 5,
+          "bytes": 1768312,
+          "titleMatches": true,
+          "passed": true,
+          "kind": "arxiv",
+          "source": "https://arxiv.org/abs/2101.09451"
+        }
+      ],
+      "selected": {
+        "url": "https://arxiv.org/pdf/2101.09451",
+        "status": 200,
+        "finalUrl": "https://arxiv.org/pdf/2101.09451",
+        "contentType": "application/pdf",
+        "isPdf": true,
+        "titleCoverage": 1.0,
+        "pages": 5,
+        "bytes": 1768312,
+        "titleMatches": true,
+        "passed": true,
+        "kind": "arxiv",
+        "source": "https://arxiv.org/abs/2101.09451"
+      }
+    },
+    {
+      "title": "Overcomplete Representations Against Adversarial Videos",
+      "year": "2021",
+      "paper": "https://arxiv.org/abs/2012.04262",
+      "venue": "*IEEE International Conference on Image Processing (ICIP), 2021*",
+      "crossref": [
+        {
+          "title": "Overcomplete Representations Against Adversarial Videos",
+          "doi": "10.1109/icip42928.2021.9506537",
+          "url": "https://doi.org/10.1109/icip42928.2021.9506537",
+          "links": [
+            {
+              "URL": "http://xplorestaging.ieee.org/ielx7/9506008/9506009/09506537.pdf?arnumber=9506537",
+              "content-type": "unspecified",
+              "content-version": "vor",
+              "intended-application": "similarity-checking"
+            }
+          ],
+          "score": 1.0
+        }
+      ],
+      "arxivSearch": [
+        {
+          "id": "2012.04262",
+          "title": "Overcomplete Representations Against Adversarial Videos",
+          "score": 1
+        }
+      ],
+      "candidates": [
+        {
+          "url": "http://xplorestaging.ieee.org/ielx7/9506008/9506009/09506537.pdf?arnumber=9506537",
+          "kind": "publisher",
+          "source": "https://doi.org/10.1109/icip42928.2021.9506537"
+        }
+      ],
+      "checks": [
+        {
+          "url": "http://xplorestaging.ieee.org/ielx7/9506008/9506009/09506537.pdf?arnumber=9506537",
+          "status": 200,
+          "finalUrl": "https://xplorestaging.ieee.org/document/9506537/;jsessionid=21009BC9733FA3A5FAF4ED01BD95DDAC",
+          "contentType": "text/html;charset=UTF-8",
+          "isPdf": false,
+          "kind": "publisher",
+          "source": "https://doi.org/10.1109/icip42928.2021.9506537"
+        },
+        {
+          "url": "https://arxiv.org/pdf/2012.04262",
+          "status": 200,
+          "finalUrl": "https://arxiv.org/pdf/2012.04262",
+          "contentType": "application/pdf",
+          "isPdf": true,
+          "titleCoverage": 1.0,
+          "pages": 5,
+          "bytes": 611055,
+          "titleMatches": true,
+          "passed": true,
+          "kind": "arxiv",
+          "source": "https://arxiv.org/abs/2012.04262"
+        }
+      ],
+      "selected": {
+        "url": "https://arxiv.org/pdf/2012.04262",
+        "status": 200,
+        "finalUrl": "https://arxiv.org/pdf/2012.04262",
+        "contentType": "application/pdf",
+        "isPdf": true,
+        "titleCoverage": 1.0,
+        "pages": 5,
+        "bytes": 611055,
+        "titleMatches": true,
+        "passed": true,
+        "kind": "arxiv",
+        "source": "https://arxiv.org/abs/2012.04262"
+      }
+    },
+    {
+      "title": "MultAV: Multiplicative Adversarial Videos",
+      "year": "2021",
+      "paper": "https://arxiv.org/abs/2009.08058",
+      "venue": "*IEEE International Conference on Advanced Video and Signal-based Surveillance (AVSS), 2021*",
+      "crossref": [
+        {
+          "title": "MultAV: Multiplicative Adversarial Videos",
+          "doi": "10.1109/avss52988.2021.9663769",
+          "url": "https://doi.org/10.1109/avss52988.2021.9663769",
+          "links": [
+            {
+              "URL": "http://xplorestaging.ieee.org/ielx7/9663572/9663735/09663769.pdf?arnumber=9663769",
+              "content-type": "unspecified",
+              "content-version": "vor",
+              "intended-application": "similarity-checking"
+            }
+          ],
+          "score": 1.0
+        }
+      ],
+      "arxivSearch": [
+        {
+          "id": "2009.08058",
+          "title": "MultAV: Multiplicative Adversarial Videos",
+          "score": 1
+        }
+      ],
+      "candidates": [
+        {
+          "url": "http://xplorestaging.ieee.org/ielx7/9663572/9663735/09663769.pdf?arnumber=9663769",
+          "kind": "publisher",
+          "source": "https://doi.org/10.1109/avss52988.2021.9663769"
+        }
+      ],
+      "checks": [
+        {
+          "url": "http://xplorestaging.ieee.org/ielx7/9663572/9663735/09663769.pdf?arnumber=9663769",
+          "status": 200,
+          "finalUrl": "https://xplorestaging.ieee.org/document/9663769/;jsessionid=93BD487B35EDB3553747F1108CA91846",
+          "contentType": "text/html;charset=UTF-8",
+          "isPdf": false,
+          "kind": "publisher",
+          "source": "https://doi.org/10.1109/avss52988.2021.9663769"
+        },
+        {
+          "url": "https://arxiv.org/pdf/2009.08058",
+          "status": 200,
+          "finalUrl": "https://arxiv.org/pdf/2009.08058",
+          "contentType": "application/pdf",
+          "isPdf": true,
+          "titleCoverage": 1.0,
+          "pages": 6,
+          "bytes": 2270321,
+          "titleMatches": true,
+          "passed": true,
+          "kind": "arxiv",
+          "source": "https://arxiv.org/abs/2009.08058"
+        }
+      ],
+      "selected": {
+        "url": "https://arxiv.org/pdf/2009.08058",
+        "status": 200,
+        "finalUrl": "https://arxiv.org/pdf/2009.08058",
+        "contentType": "application/pdf",
+        "isPdf": true,
+        "titleCoverage": 1.0,
+        "pages": 6,
+        "bytes": 2270321,
+        "titleMatches": true,
+        "passed": true,
+        "kind": "arxiv",
+        "source": "https://arxiv.org/abs/2009.08058"
+      }
+    },
+    {
+      "title": "Efficient Dense Modules of Asymmetric Convolution for Real-Time Semantic Segmentation",
+      "year": "2019",
+      "paper": "https://arxiv.org/abs/1809.06323",
+      "venue": "*ACM International Conference on Multimedia in Asia (ACM MM Asia), 2019* [**Best Paper Award**]",
+      "crossref": [
+        {
+          "error": "429 Client Error: Too Many Requests for url: https://api.crossref.org/works?query.title=Efficient+Dense+Modules+of+Asymmetric+Convolution+for+Real-Tim"
+        }
+      ],
+      "arxivSearch": [
+        {
+          "id": "1809.06323",
+          "title": "Efficient Dense Modules of Asymmetric Convolution for Real-Time Semantic Segmentation",
+          "score": 1
+        }
+      ],
+      "candidates": [],
+      "checks": [
+        {
+          "url": "https://arxiv.org/pdf/1809.06323",
+          "status": 200,
+          "finalUrl": "https://arxiv.org/pdf/1809.06323",
+          "contentType": "application/pdf",
+          "isPdf": true,
+          "titleCoverage": 1.0,
+          "pages": 14,
+          "bytes": 1403188,
+          "titleMatches": true,
+          "passed": true,
+          "kind": "arxiv",
+          "source": "https://arxiv.org/abs/1809.06323"
+        }
+      ],
+      "selected": {
+        "url": "https://arxiv.org/pdf/1809.06323",
+        "status": 200,
+        "finalUrl": "https://arxiv.org/pdf/1809.06323",
+        "contentType": "application/pdf",
+        "isPdf": true,
+        "titleCoverage": 1.0,
+        "pages": 14,
+        "bytes": 1403188,
+        "titleMatches": true,
+        "passed": true,
+        "kind": "arxiv",
+        "source": "https://arxiv.org/abs/1809.06323"
+      }
+    },
+    {
+      "title": "Exploring Semantic Segmentation on the DCT Representation",
+      "year": "2019",
+      "paper": "https://arxiv.org/abs/1907.10015",
+      "venue": "*ACM International Conference on Multimedia in Asia (ACM MM Asia), 2019* [**Oral**]",
+      "crossref": [
+        {
+          "title": "Exploring Semantic Segmentation on the DCT Representation",
+          "doi": "10.1145/3338533.3366557",
+          "url": "https://doi.org/10.1145/3338533.3366557",
+          "links": [
+            {
+              "URL": "https://dl.acm.org/doi/10.1145/3338533.3366557",
+              "content-type": "unspecified",
+              "content-version": "vor",
+              "intended-application": "text-mining"
+            },
+            {
+              "URL": "https://dl.acm.org/doi/pdf/10.1145/3338533.3366557",
+              "content-type": "unspecified",
+              "content-version": "vor",
+              "intended-application": "similarity-checking"
+            }
+          ],
+          "score": 1.0
+        }
+      ],
+      "arxivSearch": [
+        {
+          "id": "1907.10015",
+          "title": "Exploring Semantic Segmentation on the DCT Representation",
+          "score": 1
+        }
+      ],
+      "candidates": [
+        {
+          "url": "https://dl.acm.org/doi/pdf/10.1145/3338533.3366557",
+          "kind": "publisher",
+          "source": "https://doi.org/10.1145/3338533.3366557"
+        }
+      ],
+      "checks": [
+        {
+          "url": "https://dl.acm.org/doi/pdf/10.1145/3338533.3366557",
+          "status": 403,
+          "finalUrl": "https://dl.acm.org/doi/pdf/10.1145/3338533.3366557",
+          "contentType": "text/html; charset=UTF-8",
+          "kind": "publisher",
+          "source": "https://doi.org/10.1145/3338533.3366557"
+        },
+        {
+          "url": "https://arxiv.org/pdf/1907.10015",
+          "status": 200,
+          "finalUrl": "https://arxiv.org/pdf/1907.10015",
+          "contentType": "application/pdf",
+          "isPdf": true,
+          "titleCoverage": 1.0,
+          "pages": 6,
+          "bytes": 897588,
+          "titleMatches": true,
+          "passed": true,
+          "kind": "arxiv",
+          "source": "https://arxiv.org/abs/1907.10015"
+        }
+      ],
+      "selected": {
+        "url": "https://arxiv.org/pdf/1907.10015",
+        "status": 200,
+        "finalUrl": "https://arxiv.org/pdf/1907.10015",
+        "contentType": "application/pdf",
+        "isPdf": true,
+        "titleCoverage": 1.0,
+        "pages": 6,
+        "bytes": 897588,
+        "titleMatches": true,
+        "passed": true,
+        "kind": "arxiv",
+        "source": "https://arxiv.org/abs/1907.10015"
+      }
+    },
+    {
+      "title": "Multi-Class Lane Semantic Segmentation using Efficient Convolutional Networks",
+      "year": "2019",
+      "paper": "https://arxiv.org/abs/1907.09438",
+      "venue": "*IEEE International Workshop on Multimedia Signal Processing (MMSP), 2019*",
+      "crossref": [
+        {
+          "title": "Multi-Class Lane Semantic Segmentation using Efficient Convolutional Networks",
+          "doi": "10.1109/mmsp.2019.8901686",
+          "url": "https://doi.org/10.1109/mmsp.2019.8901686",
+          "links": [
+            {
+              "URL": "http://xplorestaging.ieee.org/ielx7/8891847/8901684/08901686.pdf?arnumber=8901686",
+              "content-type": "unspecified",
+              "content-version": "vor",
+              "intended-application": "similarity-checking"
+            }
+          ],
+          "score": 1.0
+        }
+      ],
+      "arxivSearch": [
+        {
+          "id": "1907.09438",
+          "title": "Multi-Class Lane Semantic Segmentation using Efficient Convolutional Networks",
+          "score": 1
+        }
+      ],
+      "candidates": [
+        {
+          "url": "http://xplorestaging.ieee.org/ielx7/8891847/8901684/08901686.pdf?arnumber=8901686",
+          "kind": "publisher",
+          "source": "https://doi.org/10.1109/mmsp.2019.8901686"
+        }
+      ],
+      "checks": [
+        {
+          "url": "http://xplorestaging.ieee.org/ielx7/8891847/8901684/08901686.pdf?arnumber=8901686",
+          "status": 200,
+          "finalUrl": "https://xplorestaging.ieee.org/document/8901686/;jsessionid=DD7000E060A6FDB71F349088F4AF0B10",
+          "contentType": "text/html;charset=UTF-8",
+          "isPdf": false,
+          "kind": "publisher",
+          "source": "https://doi.org/10.1109/mmsp.2019.8901686"
+        },
+        {
+          "url": "https://arxiv.org/pdf/1907.09438",
+          "status": 200,
+          "finalUrl": "https://arxiv.org/pdf/1907.09438",
+          "contentType": "application/pdf",
+          "isPdf": true,
+          "titleCoverage": 1.0,
+          "pages": 6,
+          "bytes": 954563,
+          "titleMatches": true,
+          "passed": true,
+          "kind": "arxiv",
+          "source": "https://arxiv.org/abs/1907.09438"
+        }
+      ],
+      "selected": {
+        "url": "https://arxiv.org/pdf/1907.09438",
+        "status": 200,
+        "finalUrl": "https://arxiv.org/pdf/1907.09438",
+        "contentType": "application/pdf",
+        "isPdf": true,
+        "titleCoverage": 1.0,
+        "pages": 6,
+        "bytes": 954563,
+        "titleMatches": true,
+        "passed": true,
+        "kind": "arxiv",
+        "source": "https://arxiv.org/abs/1907.09438"
+      }
+    },
+    {
+      "title": "Incorporating Luminance, Depth and Color Information by a Fusion-based Network for Semantic Segmentation",
+      "year": "2019",
+      "paper": "https://arxiv.org/abs/1809.09077",
+      "venue": "*IEEE International Conference on Image Processing (ICIP), 2019* [**Oral**]",
+      "crossref": [
+        {
+          "title": "Incorporating Luminance, Depth and Color Information by a Fusion-Based Network for Semantic Segmentation",
+          "doi": "10.1109/icip.2019.8803360",
+          "url": "https://doi.org/10.1109/icip.2019.8803360",
+          "links": [
+            {
+              "URL": "http://xplorestaging.ieee.org/ielx7/8791230/8799366/08803360.pdf?arnumber=8803360",
+              "content-type": "unspecified",
+              "content-version": "vor",
+              "intended-application": "similarity-checking"
+            }
+          ],
+          "score": 1.0
+        }
+      ],
+      "arxivSearch": [
+        {
+          "id": "1809.09077",
+          "title": "Incorporating Luminance, Depth and Color Information by a Fusion-based Network for Semantic Segmentation",
+          "score": 1
+        }
+      ],
+      "candidates": [
+        {
+          "url": "http://xplorestaging.ieee.org/ielx7/8791230/8799366/08803360.pdf?arnumber=8803360",
+          "kind": "publisher",
+          "source": "https://doi.org/10.1109/icip.2019.8803360"
+        }
+      ],
+      "checks": [
+        {
+          "url": "http://xplorestaging.ieee.org/ielx7/8791230/8799366/08803360.pdf?arnumber=8803360",
+          "status": 200,
+          "finalUrl": "https://xplorestaging.ieee.org/document/8803360/;jsessionid=62CDFFA5230F5830A6F8CA8790730196",
+          "contentType": "text/html;charset=UTF-8",
+          "isPdf": false,
+          "kind": "publisher",
+          "source": "https://doi.org/10.1109/icip.2019.8803360"
+        },
+        {
+          "url": "https://arxiv.org/pdf/1809.09077",
+          "status": 200,
+          "finalUrl": "https://arxiv.org/pdf/1809.09077",
+          "contentType": "application/pdf",
+          "isPdf": true,
+          "titleCoverage": 1.0,
+          "pages": 5,
+          "bytes": 494123,
+          "titleMatches": true,
+          "passed": true,
+          "kind": "arxiv",
+          "source": "https://arxiv.org/abs/1809.09077"
+        }
+      ],
+      "selected": {
+        "url": "https://arxiv.org/pdf/1809.09077",
+        "status": 200,
+        "finalUrl": "https://arxiv.org/pdf/1809.09077",
+        "contentType": "application/pdf",
+        "isPdf": true,
+        "titleCoverage": 1.0,
+        "pages": 5,
+        "bytes": 494123,
+        "titleMatches": true,
+        "passed": true,
+        "kind": "arxiv",
+        "source": "https://arxiv.org/abs/1809.09077"
+      }
+    },
+    {
+      "title": "Efficient Road Lane Marking Detection with Deep Learning",
+      "year": "2018",
+      "paper": "https://arxiv.org/abs/1809.03994",
+      "venue": "*IEEE International Conference on Digital Signal Processing (DSP), 2018*",
+      "crossref": [
+        {
+          "title": "Efficient Road Lane Marking Detection with Deep Learning",
+          "doi": "10.1109/icdsp.2018.8631673",
+          "url": "https://doi.org/10.1109/icdsp.2018.8631673",
+          "links": [
+            {
+              "URL": "http://xplorestaging.ieee.org/ielx7/8627367/8631538/08631673.pdf?arnumber=8631673",
+              "content-type": "unspecified",
+              "content-version": "vor",
+              "intended-application": "similarity-checking"
+            }
+          ],
+          "score": 1.0
+        },
+        {
+          "title": "Road Lane Marking Detection with Deep Learning",
+          "doi": "10.22214/ijraset.2021.37463",
+          "url": "https://doi.org/10.22214/ijraset.2021.37463",
+          "links": [],
+          "score": 0.902
+        }
+      ],
+      "arxivSearch": [
+        {
+          "id": "1809.03994",
+          "title": "Efficient Road Lane Marking Detection with Deep Learning",
+          "score": 1
+        }
+      ],
+      "candidates": [
+        {
+          "url": "http://xplorestaging.ieee.org/ielx7/8627367/8631538/08631673.pdf?arnumber=8631673",
+          "kind": "publisher",
+          "source": "https://doi.org/10.1109/icdsp.2018.8631673"
+        }
+      ],
+      "checks": [
+        {
+          "url": "http://xplorestaging.ieee.org/ielx7/8627367/8631538/08631673.pdf?arnumber=8631673",
+          "status": 200,
+          "finalUrl": "https://xplorestaging.ieee.org/document/8631673/;jsessionid=0D71F60C8B3A63A8F0C52F3FB5CAD778",
+          "contentType": "text/html;charset=UTF-8",
+          "isPdf": false,
+          "kind": "publisher",
+          "source": "https://doi.org/10.1109/icdsp.2018.8631673"
+        },
+        {
+          "url": "https://arxiv.org/pdf/1809.03994",
+          "status": 200,
+          "finalUrl": "https://arxiv.org/pdf/1809.03994",
+          "contentType": "application/pdf",
+          "isPdf": true,
+          "titleCoverage": 1.0,
+          "pages": 5,
+          "bytes": 1172769,
+          "titleMatches": true,
+          "passed": true,
+          "kind": "arxiv",
+          "source": "https://arxiv.org/abs/1809.03994"
+        }
+      ],
+      "selected": {
+        "url": "https://arxiv.org/pdf/1809.03994",
+        "status": 200,
+        "finalUrl": "https://arxiv.org/pdf/1809.03994",
+        "contentType": "application/pdf",
+        "isPdf": true,
+        "titleCoverage": 1.0,
+        "pages": 5,
+        "bytes": 1172769,
+        "titleMatches": true,
+        "passed": true,
+        "kind": "arxiv",
+        "source": "https://arxiv.org/abs/1809.03994"
+      }
+    }
+  ]
+}
