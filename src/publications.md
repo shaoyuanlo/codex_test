@@ -1,7 +1,7 @@
 ---
 layout: layouts/page.njk
 title: Publications
-section: publication
+section: publications
 permalink: /publications/index.html
 eyebrow: Research output
 intro: Selected work on trustworthy AI, multimodal learning, and reasoning.

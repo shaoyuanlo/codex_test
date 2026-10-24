@@ -38,7 +38,7 @@ https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/<提交版�
 | --- | --- |
 | Home 簡介、研究方向、最新消息 | [`src/index.md`](src/index.md) |
 | Lab 介紹、成員、招生資訊 | [`src/lab.md`](src/lab.md) |
-| 論文清單 | [`src/publication.md`](src/publication.md) |
+| 論文清單 | [`src/publications.md`](src/publications.md) |
 | 課程與教材 | [`src/teaching.md`](src/teaching.md) |
 | 新增文章 | 在 [`src/posts/`](src/posts/) 新增 `.md` 檔案 |
 | 姓名、職稱、學校、Email、社群連結、首頁標語 | [`src/_data/site.json`](src/_data/site.json) |
@@ -128,7 +128,7 @@ Normal text, **bold text**, and *italic text*.
 
 ### 新增論文
 
-在 `src/publication.md` 相應年份下方複製這個區塊，不需要修改 HTML：
+在 `src/publications.md` 相應年份下方複製這個區塊，不需要修改 HTML：
 
 ```md
 ### Paper title
