@@ -1,61 +1,32 @@
-"""One-off source discovery; the final publication content remains manual Markdown."""
+"""Supplement PDF discovery using article metadata and official proceedings."""
 from pathlib import Path
 from urllib.parse import urljoin, urlparse, quote
 from concurrent.futures import ThreadPoolExecutor
-from collections import Counter
-from difflib import SequenceMatcher
 from datetime import datetime, timezone
+from difflib import SequenceMatcher
 from io import BytesIO
-import requests, re, json, unicodedata, time, xml.etree.ElementTree as ET
+import requests, re, json, unicodedata, time
 from bs4 import BeautifulSoup
 from pypdf import PdfReader
-
 OUT=Path('docs/publication-pdf-research.json')
 HEADERS={'User-Agent':'AcademicWebsiteLinkCheck/1.0 (+https://github.com/shaoyuanlo/codex_test)'}
 def normalized(s):
     s=unicodedata.normalize('NFKD',s).casefold()
     return re.sub(r'[^a-z0-9]+',' ',s).strip()
+
 def similarity(a,b):
     a,b=normalized(a),normalized(b)
     if a==b:return 1.0
     return max(SequenceMatcher(None,a,b).ratio(),len(set(a.split())&set(b.split()))/max(len(set(a.split())),len(set(b.split())),1))
+
 def get(url,**kw):
     return requests.get(url,headers=HEADERS,timeout=(12,35),**kw)
+
 def html(url):
     try:
         r=get(url);r.raise_for_status()
         return BeautifulSoup(r.text,'html.parser')
     except Exception:return None
-
-def read_records():
-    text=Path('src/publications.md').read_text().split('---',2)[2]
-    records=[];year=None
-    for block in re.split(r'(?=^##(?:#)? )',text,flags=re.M):
-        if block.startswith('## '):year=re.search(r'## (\d+)',block).group(1)
-        if not block.startswith('### '):continue
-        lines=block.splitlines();title=lines[0][4:]
-        resource=next(x for x in lines if x.startswith('[Paper](') or x.startswith('[arXiv]('))
-        paper=re.search(r'\[(?:Paper|arXiv)\]\((https?://[^)]+)\)',resource).group(1)
-        records.append({'title':title,'year':year,'paper':paper,'venue':next(x for x in lines if x.startswith('*') and not x.startswith('**'))})
-    return records
-records=read_records()
-
-# Official, openly readable proceedings index pages are the strongest source.
-indexes={}
-def index_one(item):
-    key,url=item;doc=html(url)
-    return key,[(a.get_text(' ',strip=True),urljoin(url,a.get('href',''))) for a in doc.find_all('a',href=True)] if doc else []
-index_urls={
- 'CVPR2025':'https://openaccess.thecvf.com/CVPR2025?day=all',
- 'CVPR2024':'https://openaccess.thecvf.com/CVPR2024?day=all',
- 'CVPR2023':'https://openaccess.thecvf.com/CVPR2023?day=all',
- 'WACV2026':'https://openaccess.thecvf.com/WACV2026?day=all',
- 'ACCV2022':'https://openaccess.thecvf.com/ACCV2022?day=all',
- 'ICML2025':'https://proceedings.mlr.press/v267/',
- 'ECCV2024':'https://www.ecva.net/papers.php',
-}
-with ThreadPoolExecutor(max_workers=5) as pool:
-    indexes=dict(pool.map(index_one,index_urls.items()))
 
 def validate_pdf(url,title):
     result={'url':url}
@@ -75,89 +46,122 @@ def validate_pdf(url,title):
     except Exception as e:result['error']=str(e)[:180]
     return result
 
-def crossref(title):
+data=json.loads(OUT.read_text())
+papers=data['papers'];supplement=[]
+def add_candidate(index,url,kind,source):
+    if url and url.startswith(('https://','http://')):
+        supplement.append({'index':index,'url':url.replace('http://arxiv.org','https://arxiv.org'),'kind':kind,'source':source})
+
+def pdf_metadata(index,url):
+    doc=html(url)
+    if not doc:return
+    title=doc.find('meta',attrs={'name':'citation_title'})
+    for meta in doc.find_all('meta'):
+        name=(meta.get('name','') or meta.get('property','')).lower()
+        value=meta.get('content','')
+        if name in ['citation_pdf_url','eprints.document_url','wkhealth_pdf_url']:
+            add_candidate(index,urljoin(url,value),'publisher',url)
+    for a in doc.find_all('a',href=True):
+        u=urljoin(url,a['href'])
+        if 'arxiv.org/abs/' in u:add_candidate(index,u.replace('/abs/','/pdf/'),'arxiv',url)
+        elif '.pdf' in u or 'openreview.net/pdf?' in u:
+            if 'supp' not in a.get_text(' ',strip=True).lower():add_candidate(index,u,'publisher',url)
+    data['papers'][index].setdefault('landingPages',[]).append({'url':url,'title':str(title) if title else doc.title and doc.title.get_text(),'text':doc.get_text(' ',strip=True)[:1800]})
+
+# A proceedings title can be plain text, with PDF links in adjacent elements.
+for index,url,keyword in [
+ (2,'https://proceedings.mlr.press/v267/','Overcoming Multi-step'),
+ (10,'https://www.ecva.net/papers.php','Follow the Rules')]:
+    doc=html(url)
+    if not doc:continue
+    for text in doc.find_all(string=lambda t: t and keyword.casefold() in t.casefold()):
+        parent=text.parent
+        for _ in range(4):
+            for a in parent.find_all('a',href=True):
+                u=urljoin(url,a['href'])
+                if '.pdf' in u:add_candidate(index,u,'proceedings',url)
+                elif u.endswith('.html') and ('mlr.press' in u or 'ecva.net' in u):pdf_metadata(index,u)
+            if parent.name in ['div','tr']:break
+            parent=parent.parent
+        # ECVA associates each title <dt> with subsequent <dd> resources.
+        dt=text.find_parent('dt')
+        if dt:
+            for sibling in dt.find_next_siblings():
+                if sibling.name=='dt':break
+                for a in sibling.find_all('a',href=True):
+                    u=urljoin(url,a['href'])
+                    if '.pdf' in u:add_candidate(index,u,'proceedings',url)
+
+# OpenReview's final paper title can differ from its original arXiv title.
+for term in ['ComNeck','Bridging Compressed Image Latents']:
+    url='https://api2.openreview.net/notes/search?term='+quote(term)+'&limit=20'
     try:
-        r=get('https://api.crossref.org/works',params={'query.title':title,'rows':3});r.raise_for_status()
-        return [{'title':x.get('title',[''])[0],'doi':x.get('DOI'),'url':x.get('URL'),'links':x.get('link',[]),'score':round(similarity(title,x.get('title',[''])[0]),3)} for x in r.json()['message']['items'] if similarity(title,x.get('title',[''])[0])>=.78]
-    except Exception as e:return [{'error':str(e)[:150]}]
+        r=get(url);notes=r.json().get('notes',[])
+        for note in notes:
+            raw=note.get('content',{}).get('title',{})
+            title=raw.get('value','') if isinstance(raw,dict) else raw
+            if similarity(title,papers[5]['title'])>=.55:
+                add_candidate(5,'https://openreview.net/pdf?id='+note['id'],'proceedings',url)
+                papers[5].setdefault('openReview',[]).append({'title':title,'id':note['id']})
+    except Exception as e:papers[5].setdefault('searchErrors',[]).append(str(e))
 
-def arxiv_search(title):
-    terms=title.split(':')[0] if ':' in title else ' '.join(title.split()[:9])
-    for host in ['https://export.arxiv.org/api/query','https://arxiv.org/api/query']:
-        try:
-            r=get(host,params={'search_query':'ti:"'+terms+'"','max_results':6});r.raise_for_status()
-            root=ET.fromstring(r.text);ns={'a':'http://www.w3.org/2005/Atom'}
-            found=[]
-            for entry in root.findall('a:entry',ns):
-                candidate=entry.findtext('a:title','',ns);ident=entry.findtext('a:id','',ns)
-                if '/abs/' in ident and similarity(title,candidate)>=.65:found.append({'title':candidate,'id':ident.split('/abs/')[-1],'score':similarity(title,candidate)})
-            if found:return sorted(found,key=lambda x:x['score'],reverse=True)
-        except Exception:pass
-    return []
-
-def discover(record):
-    title=record['title'];candidates=[];sources=[]
-    def add(url,kind,source):
-        if url and url not in [x['url'] for x in candidates]:candidates.append({'url':url,'kind':kind,'source':source})
-    for key,links in indexes.items():
-        for label,url in links:
-            if similarity(title,label)<.83:continue
-            if 'thecvf.com' in url and '/html/' in url:
-                add(url.replace('/html/','/papers/').replace('_paper.html','_paper.pdf'),'proceedings',url)
-            elif 'mlr.press' in url and url.endswith('.html'):
-                doc=html(url)
-                if doc:
-                    for a in doc.find_all('a',href=True):
-                        if '.pdf' in a['href']:add(urljoin(url,a['href']),'proceedings',url)
-            elif 'ecva.net' in url and url.endswith('.pdf'):add(url,'proceedings',url)
-    # Project pages can supply an official OpenReview or proceedings PDF.
-    text=Path('src/publications.md').read_text()
-    section=text.split('### '+title,1)[1].split('\n### ',1)[0].split('\n## ',1)[0]
-    for project in re.findall(r'\[(?:Project|Code)\]\((https?://[^)]+)\)',section):
-        if 'github.com/' in project and 'github.io/' not in project:continue
-        doc=html(project)
+for index,doi in [(8,'10.1109/TMI.2025.3556402'),(9,'10.1117/12.3047499'),(13,'10.1117/12.3006561')]:
+    title=papers[index]['title']
+    pdf_metadata(index,'https://doi.org/'+doi)
+    pdf_metadata(index,papers[index]['paper'])
+    try:
+        url='https://api.openalex.org/works/https://doi.org/'+doi
+        r=get(url);r.raise_for_status();work=r.json()
+        papers[index]['openAlex']={'title':work.get('title'),'locations':work.get('locations'),'ids':work.get('ids')}
+        for loc in work.get('locations',[]):
+            u=loc.get('pdf_url')
+            if u:add_candidate(index,u,'arxiv' if 'arxiv' in u else 'publisher',url)
+            landing=loc.get('landing_page_url')
+            if landing and any(host in landing for host in ['pmc.ncbi.nlm.nih.gov','arxiv.org','europepmc.org']):pdf_metadata(index,landing)
+    except Exception as e:papers[index].setdefault('searchErrors',[]).append('OpenAlex: '+str(e))
+    try:
+        url='https://api.semanticscholar.org/graph/v1/paper/DOI:'+doi+'?fields=title,openAccessPdf,externalIds'
+        r=get(url);r.raise_for_status();work=r.json();papers[index]['semanticScholar']=work
+        u=(work.get('openAccessPdf') or {}).get('url')
+        if u:add_candidate(index,u,'arxiv' if 'arxiv' in u else 'publisher',url)
+        ident=work.get('externalIds',{}).get('ArXiv')
+        if ident:add_candidate(index,'https://arxiv.org/pdf/'+ident,'arxiv',url)
+    except Exception as e:papers[index].setdefault('searchErrors',[]).append('SemanticScholar: '+str(e))
+    try:
+        url='https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:'+doi+'&format=json&resultType=core'
+        r=get(url);r.raise_for_status();work=r.json();papers[index]['europePmc']=work
+        for result in work.get('resultList',{}).get('result',[]):
+            for link in result.get('fullTextUrlList',{}).get('fullTextUrl',[]):
+                if link.get('documentStyle')=='pdf':add_candidate(index,link.get('url'),'publisher',url)
+            if result.get('pmcid'):pdf_metadata(index,'https://pmc.ncbi.nlm.nih.gov/articles/'+result['pmcid']+'/')
+    except Exception as e:papers[index].setdefault('searchErrors',[]).append('EuropePMC: '+str(e))
+    # Search pages also expose arXiv IDs when the API is unavailable.
+    for endpoint in ['https://arxiv.org/search/?searchtype=all&query=','https://www.google.com/search?q=','https://www.bing.com/search?q=']:
+        url=endpoint+quote(title+' arxiv' if 'arxiv.org/search' not in endpoint else title)
+        doc=html(url)
         if not doc:continue
-        for a in doc.find_all('a',href=True):
-            u=urljoin(project,a['href'])
-            if 'openreview.net/forum?id=' in u:u=u.replace('/forum?','/pdf?')
-            if ('openreview.net/pdf?' in u or ('thecvf.com' in u and '.pdf' in u) or ('mlr.press' in u and '.pdf' in u)):add(u,'proceedings',project)
-    works=crossref(title)
-    for work in works:
-        if 'error' in work:continue
-        for link in work['links']:
-            u=link.get('URL','')
-            if link.get('content-type')=='application/pdf' or '.pdf' in u or '/pdf/' in u:add(u,'publisher',work['url'])
-        doi=work.get('doi','')
-        if doi.startswith('10.1007/'):
-            add('https://link.springer.com/content/pdf/'+doi+'.pdf','publisher',work['url'])
-        if doi.startswith('10.1145/'):
-            add('https://dl.acm.org/doi/pdf/'+doi,'publisher',work['url'])
-        if doi.startswith('10.1117/'):
-            add('https://www.spiedigitallibrary.org/conference-proceedings-of-spie/'+doi+'/pdf','publisher',work['url'])
-    if 'ieeexplore.ieee.org/document/' in record['paper']:
-        ident=record['paper'].rstrip('/').split('/')[-1]
-        add('https://ieeexplore.ieee.org/stampPDF/getPDF.jsp?tp=&arnumber='+ident,'publisher',record['paper'])
-    # Prefer verified published versions, then a verified arXiv PDF.
-    checked=[];selected=None
-    for c in candidates[:8]:
-        verdict=validate_pdf(c['url'],title);verdict.update(kind=c['kind'],source=c['source']);checked.append(verdict)
-        if verdict.get('passed'):selected=verdict;break
-    arxiv=[]
-    if not selected:
-        m=re.search(r'arxiv.org/abs/([^?#]+)',record['paper'])
-        arxiv=[{'id':m.group(1),'title':title,'score':1}] if m else arxiv_search(title)
-        for item in arxiv:
-            u='https://arxiv.org/pdf/'+item['id']
-            verdict=validate_pdf(u,title);verdict.update(kind='arxiv',source='https://arxiv.org/abs/'+item['id']);checked.append(verdict)
-            if verdict.get('passed'):selected=verdict;break
-    result={**record,'crossref':works,'arxivSearch':arxiv,'candidates':candidates,'checks':checked,'selected':selected}
-    print(json.dumps({'title':title,'selected':selected and selected['url'],'kind':selected and selected['kind'],'checked':len(checked)}),flush=True)
-    return result
+        for match in re.findall(r'https?://(?:www\.)?arxiv\.org/(?:abs|pdf)/(\d{4}\.\d{4,5}(?:v\d+)?)',str(doc)):
+            add_candidate(index,'https://arxiv.org/pdf/'+match,'arxiv',url)
+        papers[index].setdefault('searchPages',[]).append({'url':url,'text':doc.get_text(' ',strip=True)[:2500]})
+    time.sleep(1)
 
-results=[]
-with ThreadPoolExecutor(max_workers=4) as pool:
-    for result in pool.map(discover,records):
-        results.append(result)
-OUT.parent.mkdir(exist_ok=True)
-OUT.write_text(json.dumps({'checkedAt':datetime.now(timezone.utc).isoformat(),'count':len(results),'selected':sum(bool(x['selected']) for x in results),'indexCounts':{k:len(v) for k,v in indexes.items()},'papers':results},ensure_ascii=False,indent=2)+'\n')
-print('Selected',sum(bool(x['selected']) for x in results),'of',len(results),flush=True)
+# Validated arXiv fallback for the original SPIE proceedings entry (if metadata provides it).
+seen=set();selected_by={}
+for candidate in supplement:
+    key=(candidate['index'],candidate['url'])
+    if key not in seen:seen.add(key);selected_by.setdefault(candidate['index'],[]).append(candidate)
+for index,candidates in selected_by.items():
+    # Check publisher/proceedings before preprint repositories.
+    candidates.sort(key=lambda x:x['kind']=='arxiv')
+    for c in candidates[:16]:
+        verdict=validate_pdf(c['url'],papers[index]['title']);verdict.update(kind=c['kind'],source=c['source'])
+        papers[index].setdefault('supplementChecks',[]).append(verdict)
+        print(json.dumps({'index':index,**verdict}),flush=True)
+        if verdict.get('passed'):
+            papers[index]['selected']=verdict;break
+    papers[index]['supplementCandidates']=candidates
+
+data['checkedAt']=datetime.now(timezone.utc).isoformat();data['phase']=2
+data['selected']=sum(bool(x['selected']) for x in papers)
+OUT.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n')
+print('Selected',data['selected'],'of',len(papers),flush=True)
