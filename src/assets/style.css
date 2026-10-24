@@ -16,7 +16,6 @@
   .site-main { padding-bottom: var(--space-2xl); }
   .footer-inner { padding-top: var(--space-lg); padding-bottom: var(--space-lg); }
 }
-
 :root {
   color-scheme: light;
   --white: #ffffff;
@@ -26,14 +25,12 @@
   --accent-light: #eaf0f8;
   --selection-bg: #afc7e8;
   --highlight: #900c26;
-
   /* Desktop font size options; mobile overrides are directly below. */
   --font-size-sm: 14px;
   --font-size-base: 16px;
   --font-size-lg: 18px;
   --font-size-xl: 28px;
   --font-size-2xl: 36px;
-
   --font: "Inter", "Noto Sans TC", system-ui, sans-serif;
 }
 @media (max-width: 767px) {
@@ -70,9 +67,9 @@ h4, h5, h6 { margin-bottom: var(--space-sm); }
 @media print {
   h2, h3 { break-after: avoid; }
 }
-
 /* Markdown dividers — shared by desktop and mobile. */
 .prose hr { border: 0; border-top: 1px solid var(--accent-light); margin: var(--space-lg) 0; }
+
 
 /* Shared rectangular corners; the status dot remains circular. */
 a:focus-visible, .skip-link, .button, .file-label, .portrait img, .prose pre, .callout { border-radius: 3px; }
