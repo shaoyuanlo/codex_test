@@ -101,7 +101,7 @@ https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/<提交版�
 
 共 **6 個色彩變數、6 種實際顏色**；邊框與提示背景共用色碼，文字不設主要／次要灰階。網站不設定 `theme-color`，讓手機瀏覽器自行決定工具列顏色；網站內的導覽列仍為主藍色。列印背景沿用 `--white`。照片與校徽的顏色來自圖片檔本身，不由這些 CSS 變數控制。
 
-這份版本帶入原網站的簡介、照片、CV、三篇代表論文與部分消息。Lab 成員、課程內容保留待填；Blog 目前有一篇明確標示 Example 的示範文章，正式上線前可替換或刪除。沒有虛構學生、課程或研究成果。研究方向的簡短介紹是依原網站主題撰寫，可自由修改。
+這份版本帶入原網站的簡介、照片、CV、Publications 區塊的全部 29 篇論文（2018–2026 年）與部分消息。Lab 成員、課程內容保留待填；Blog 目前有一篇明確標示 Example 的示範文章，正式上線前可替換或刪除。沒有虛構學生、課程或研究成果。原網站論文使用的 49 個本地資源檔（BibTeX、海報與投影片）也已帶入 `papers/`、`talks/`，不依賴舊網站的檔案路徑。
 
 ### Markdown 基本格式
 
@@ -128,7 +128,7 @@ Normal text, **bold text**, and *italic text*.
 
 ### 新增論文
 
-在 `src/publications.md` 相應年份下方複製這個區塊，不需要修改 HTML。論文標題後的作者、會議與連結段落統一使用 `1.5` 行高、`8px` 下方外距；第一篇論文標題之前的頁面說明維持一般內文設定：
+在 `src/publications.md` 相應年份下方複製這個區塊，不需要修改 HTML。論文標題後的作者、會議與連結段落統一使用 `1.5` 行高、`8px` 下方外距；第一篇論文標題之前的頁面說明維持一般內文設定。同年份的論文只以 Markdown 空行分開，只有該年份最後一篇的連結下方才加 `---`（最後一個年份也一樣）。資源連結用 ` / ` 分隔：
 
 ```md
 ### Paper title
@@ -137,10 +137,10 @@ First Author, **Shao-Yuan Lo**, Last Author
 
 *Conference or Journal, Year*
 
-[Paper ↗](https://example.com/paper) · [Code ↗](https://github.com/example/project)
-
----
+[Paper](https://example.com/paper) / [Code](https://github.com/example/project)
 ```
+
+若這篇是該年份最後一篇，在其後另起一段加入 `---`。
 
 ### 新增 Blog 文章
 
@@ -227,6 +227,6 @@ Workflow 會自動辨識個人網站並使用 `/` 作為根路徑，因此 **Hom
 - Responsive images, print styles, canonical URLs, social metadata, and a custom 404 page.
 - Shared layouts keep changes consistent across all pages; content remains in Markdown.
 
-The profile photo, CV, biography, links, news, and selected publication details were sourced from the existing `shaoyuanlo.github.io` repository. The design takes cues from the restrained academic presentation and warm palette in the accessible Shih-Hsin Wang reference source. The other two reference sites were inaccessible from this environment; their layouts were not verified.
+The profile photo, CV, biography, links, news, and all 29 publication entries and their linked local resources were sourced from the existing `shaoyuanlo.github.io` repository. The design takes cues from the restrained academic presentation and warm palette in the accessible Shih-Hsin Wang reference source. The other two reference sites were inaccessible from this environment; their layouts were not verified.
 
 The favicon is the original NTU emblem image from [National Taiwan University's official website](https://www.ntu.edu.tw/images/favicon/apple-touch-icon.png), copied without modification. Its source is recorded in `src/assets/ntu-emblem-source.json`. The **Refresh official NTU favicon** workflow can refresh the source asset; the university emblem is independent of the site's CSS accent color.
