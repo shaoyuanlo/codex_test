@@ -36,12 +36,12 @@
 }
 .header-inner { padding-top: 0; padding-bottom: 0; min-height: 50px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
 .site-main { padding-top: 0; padding-bottom: 64px; min-height: calc(100vh - 270px); }
-.footer-inner { padding-top: 32px; padding-bottom: 32px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.footer-inner { padding-top: 32px; padding-bottom: 32px; text-align: center; }
 @media (max-width: 767px) {
   .header-inner, .site-main, .footer-inner { padding-left: 24px; padding-right: 24px; }
   .header-inner { display: block; padding-top: 12px; min-height: 80px; }
   .site-main { padding-bottom: 40px; }
-  .footer-inner { align-items: start; padding-top: 24px; padding-bottom: 24px; }
+  .footer-inner { padding-top: 24px; padding-bottom: 24px; }
 }
 * { box-sizing: border-box; }
 html { scroll-padding-top: 110px; }
@@ -136,10 +136,7 @@ nav a[aria-current] { font-weight: 600; }
 .post .page-heading h1 { line-height: 1.15; }
 .post-meta { color: var(--black); margin: 0; }
 .site-footer { font-size: var(--font-size-sm); border-top: 1px solid var(--border); }
-.footer-name { color: var(--black); text-decoration: none; font-weight: 600; }
-.footer-inner p { color: var(--black); margin: 4px 0 0; }
-.footer-right { text-align: right; }
-.footer-right > a { text-decoration: none; }
+.footer-inner p { margin: 0; }
 @media (max-width: 767px) {
   html { scroll-padding-top: 170px; }
   .wordmark { display: inline-block; line-height: 1.7; }
@@ -166,9 +163,6 @@ nav a[aria-current] { font-weight: 600; }
   .research-grid p { margin-bottom: 6px; }
   .home-bottom { grid-template-columns: 1fr; gap: 29px; margin-top: 35px; }
   .page-heading { padding-top: 40px; padding-bottom: 27px; margin-bottom: 28px; }
-  .footer-inner p { max-width: 180px; }
-  .footer-right { flex-shrink: 0; }
-  .footer-right p { max-width: 130px; }
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; } }
 @media print {
