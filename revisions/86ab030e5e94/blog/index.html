@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Lab · Shao-Yuan Lo</title>
-  <link rel="canonical" href="https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/d3e6ed02b6b6/lab/index.html">
+  <title>Blog · Shao-Yuan Lo</title>
+  <link rel="canonical" href="https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/86ab030e5e94/blog/index.html">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Lab · Shao-Yuan Lo">
-  <meta property="og:url" content="https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/d3e6ed02b6b6/lab/index.html">
-  <meta property="og:image" content="https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/d3e6ed02b6b6/assets/portrait.jpg">
-  <link rel="icon" type="image/png" sizes="180x180" href="/shaoyuanlo/codex_test/site-preview/revisions/d3e6ed02b6b6/assets/ntu-emblem.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/shaoyuanlo/codex_test/site-preview/revisions/d3e6ed02b6b6/assets/ntu-emblem.png">
+  <meta property="og:title" content="Blog · Shao-Yuan Lo">
+  <meta property="og:url" content="https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/86ab030e5e94/blog/index.html">
+  <meta property="og:image" content="https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/86ab030e5e94/assets/portrait.jpg">
+  <link rel="icon" type="image/png" sizes="180x180" href="/shaoyuanlo/codex_test/site-preview/revisions/86ab030e5e94/assets/ntu-emblem.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/shaoyuanlo/codex_test/site-preview/revisions/86ab030e5e94/assets/ntu-emblem.png">
   <style data-preview-style="fonts">/* Self-hosted font faces. Original font binaries are unchanged; licenses are alongside each family. */
 
 /* @fontsource-variable/inter@5.3.0 — index.css */
@@ -1262,7 +1262,7 @@
     --font-size-2xl: 32px;
   }
 }
-/* Shared line heights and spacing: identical options on desktop and mobile. */
+/* Shared line heights and spacing: desktop defaults with mobile overrides below. */
 :root {
   /* Line heights: headings and compact information, then body text. */
   --line-height-compact: 1.3;
@@ -1274,6 +1274,18 @@
   --space-lg: 24px;
   --space-xl: 32px;
   --space-2xl: 40px;
+}
+@media (max-width: 767px) {
+  :root {
+    /* Line heights: headings and compact information, then body text. */
+    --line-height-compact: 1.2;
+    --line-height-body: 1.5;
+    /* Spacing options shared by margin, padding and gap. */
+    --space-md: 12px;
+    --space-lg: 16px;
+    --space-xl: 24px;
+    --space-2xl: 32px;
+  }
 }
 /* Shared rectangular corners. */
 a:focus-visible, .button:focus-visible, .skip-link, .portrait img, .prose pre, .callout { border-radius: 6px; }
@@ -1406,52 +1418,36 @@ nav a[aria-current] { font-weight: 600; }
   .callout { break-inside: avoid; }
 }
 </style>
-  <meta name="preview-source" content="d3e6ed02b6b692034437a18a69cbd6998e879bfa">
+  <meta name="preview-source" content="86ab030e5e941d72d8789f65812c0f08d2b13d59">
   <meta name="robots" content="noindex, nofollow">
 </head>
-<body class="page-lab">
+<body class="page-blog">
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="header-inner">
-      <a class="wordmark" href="/shaoyuanlo/codex_test/site-preview/revisions/d3e6ed02b6b6/index.html" aria-label="Shao-Yuan Lo — Home">Shao-Yuan Lo<span aria-hidden="true">.</span></a>
+      <a class="wordmark" href="/shaoyuanlo/codex_test/site-preview/revisions/86ab030e5e94/index.html" aria-label="Shao-Yuan Lo — Home">Shao-Yuan Lo<span aria-hidden="true">.</span></a>
       <nav aria-label="Main navigation">
         
-        <a href="/shaoyuanlo/codex_test/site-preview/revisions/d3e6ed02b6b6/index.html">Home</a>
+        <a href="/shaoyuanlo/codex_test/site-preview/revisions/86ab030e5e94/index.html">Home</a>
         
-        <a href="/shaoyuanlo/codex_test/site-preview/revisions/d3e6ed02b6b6/lab/index.html" aria-current="page">Lab</a>
+        <a href="/shaoyuanlo/codex_test/site-preview/revisions/86ab030e5e94/lab/index.html">Lab</a>
         
-        <a href="/shaoyuanlo/codex_test/site-preview/revisions/d3e6ed02b6b6/publications/index.html">Publications</a>
+        <a href="/shaoyuanlo/codex_test/site-preview/revisions/86ab030e5e94/publications/index.html">Publications</a>
         
-        <a href="/shaoyuanlo/codex_test/site-preview/revisions/d3e6ed02b6b6/teaching/index.html">Teaching</a>
+        <a href="/shaoyuanlo/codex_test/site-preview/revisions/86ab030e5e94/teaching/index.html">Teaching</a>
         
-        <a href="/shaoyuanlo/codex_test/site-preview/revisions/d3e6ed02b6b6/blog/index.html">Blog</a>
+        <a href="/shaoyuanlo/codex_test/site-preview/revisions/86ab030e5e94/blog/index.html" aria-current="page">Blog</a>
         
       </nav>
     </div>
   </header>
   <main id="main" class="site-main" tabindex="-1">
     <header class="page-heading">
-  <h1>Lab</h1>
-  <p class="page-intro">A space for curious minds and thoughtful collaboration.</p>
+  <h1>Blog</h1>
+  <p class="page-intro">Stay tuned.</p>
 </header>
 <div class="prose page-content">
-<h2>Our research</h2>
-<p>We are interested in trustworthy AI, machine learning, and multimodal models. Our work explores how learning systems can become more reliable and how multimodal models can reason about the world.</p>
-<!-- Replace this section with your lab name, mission, and ongoing projects. -->
-<h2>People</h2>
-<p><strong>Principal investigator</strong><br>
-<a href="/shaoyuanlo/codex_test/site-preview/revisions/d3e6ed02b6b6/index.html">Shao-Yuan Lo</a> · Assistant Professor, National Taiwan University</p>
-<p><strong>Students &amp; collaborators</strong><br>
-Our group page is taking shape. Member profiles and current projects will be added here.</p>
-<!-- To add a person, copy:
-### Full Name
-Ph.D. student · Research interests
-[Website](https://example.com)
--->
-<aside class="callout">
-<p class="callout-label">Open opportunities</p>
-<p>I welcome inquiries from undergraduate, master's, and Ph.D. students interested in our research. Please <a href="mailto:sylo@csie.ntu.edu.tw">email me</a> with your research interests, résumé, and transcripts.</p>
-</aside>
+<!-- Edit this page directly in Markdown, just like the other pages. -->
 
 </div>
 
