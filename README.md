@@ -104,7 +104,9 @@ Markdown 分隔線 `.prose hr` 的設定緊接在標題設定之後，上下外�
 
 所有非零固定 `margin` 均使用上述間距變數；`0` 保留給不需留白的元素，`auto` 用於容器置中。手機不再個別覆寫外距與行高。`padding`（內距）與 `gap`（排列間隔）也共用這六個變數，大區塊可用 `calc(var(--space-xl) * 2)` 取得 64px。容器左右內距也引用對應的間距變數；照片寬度、導覽列高度等具有明確用途的尺寸另行保留。
 
-其他共用樣式：矩形元件圓角統一 `3px`，連結底線距離統一 `4px`、粗細 `1px`，箭頭尺寸統一 `1em` 並隨字級縮放。這些共用規則直接集中設定，不另外增加變數。全站字距及單字間距使用預設 `normal`。
+其他共用樣式：矩形元件圓角統一 `6px`，連結底線距離統一 `4px`、粗細 `1px`。這些共用規則直接集中設定，不另外增加變數。全站字距及單字間距使用預設 `normal`。
+
+按鈕設定集中在 Markdown 分隔線規則之後：四邊內距皆引用 `--space-xs`（4px），不設最低高度，隨文字字級與行高調整。背景為 `--accent-light`、文字為黑色；滑鼠移入時改為 `--accent` 背景與白字。首頁 Email、CV（含 PDF 標示）及所有社群連結共用 `.button`，不顯示箭頭。
 
 整頁使用垂直 Flex 排版，`body` 最低高度 `100vh`，正文 `.site-main` 使用 `flex: 1` 撐滿剩餘空間，短頁面的頁尾自然位於視窗底部，不再用固定數字扣除導覽與頁尾高度。手機只保留字級、容器左右內距、導覽排列及照片欄位等必要調整。
 
@@ -123,12 +125,11 @@ Markdown 分隔線 `.prose hr` 的設定緊接在標題設定之後，上下外�
 | `--white` | `#FFFFFF` | 頁面背景、導覽與按鈕白字、導覽選取底線及鍵盤焦點標示 |
 | `--black` | `#000000` | 大多數一般文字、標題、日期、圖片說明、反白文字 |
 | `--accent` | `#002D72` | 連結、導覽背景、按鈕底色、少量強調文字及頁面鍵盤焦點標示 |
-| `--accent-hover` | `#00245B` | 按鈕滑過時的底色 |
-| `--accent-light` | `#EAF0F8` | 提示框與程式碼區塊背景、分隔線與邊框 |
+| `--accent-light` | `#EAF0F8` | 按鈕、提示框與程式碼區塊背景、分隔線與邊框 |
 | `--selection-bg` | `#AFC7E8` | 滑鼠或觸控選取文字時的反白底色 |
 | `--highlight` | `#900C26` | 論文的 Oral、Highlight、Spotlight、獎項等標記 |
 
-共 **7 個色彩變數、7 種實際顏色**；邊框與提示背景共用色碼，文字不設主要／次要灰階。網站不設定 `theme-color`，讓手機瀏覽器自行決定工具列顏色；網站內的導覽列仍為主藍色。列印背景沿用 `--white`。照片與校徽的顏色來自圖片檔本身，不由這些 CSS 變數控制。
+共 **6 個色彩變數、6 種實際顏色**；邊框與提示背景共用色碼，文字不設主要／次要灰階。網站不設定 `theme-color`，讓手機瀏覽器自行決定工具列顏色；網站內的導覽列仍為主藍色。列印背景沿用 `--white`。照片與校徽的顏色來自圖片檔本身，不由這些 CSS 變數控制。
 
 這份版本帶入原網站的簡介、照片、CV、Publications 區塊的全部 29 篇論文（2018–2026 年）與部分消息。Lab 成員、課程內容保留待填；Blog 保留待填，直接以 Markdown 手動編輯，沒有自動文章列表。沒有虛構學生、課程或研究成果。原網站論文使用的 20 個本地資源檔（海報與投影片）也已帶入 `papers/`、`talks/`，不依賴舊網站的檔案路徑。
 
@@ -240,7 +241,7 @@ Workflow 會自動辨識個人網站並使用 `/` 作為根路徑，因此 **Hom
 
 ## Design & accessibility
 
-- Pure white backgrounds, black text, navy links and buttons, and one shared Inter / Noto Sans TC font stack with system fallbacks. Fonts are self-hosted; no external font CDN is required.
+- Pure white backgrounds, black text, navy links, light blue buttons with navy hover backgrounds, and one shared Inter / Noto Sans TC font stack with system fallbacks. Fonts are self-hosted; no external font CDN is required.
 - All five navigation links remain visible on mobile, in a sticky header with wrapping navigation.
 - Semantic headings, a keyboard skip link, visible focus indicators, and active-page announcements.
 - Responsive images, print styles, canonical URLs, social metadata, and a custom 404 page.
