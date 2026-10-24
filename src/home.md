@@ -55,18 +55,18 @@ Previously, I was a Research Scientist at [Honda Research Institute USA](https:/
 
 ## News
 
-<!-- Keep the latest three items here; move older items into the details block below. -->
+<!-- Keep the latest  items here; move older items into the details block below. -->
 - **May 2026** — One paper accepted to ICML 2026. Serving as an Area Chair for NeurIPS 2026.
 - **March 2026** — Serving as an Area Chair for ICML 2026. Invited talk at the Surgical Data Science Symposium, National Taiwan University Hospital.
 - **December 2025** — Invited talk at the Advanced AI Safety Forum, Taiwan AI Center of Excellence.
+- **November 2025** — 1 paper accepted to WACV 2026. Serving as an Associate Editor for ICRA 2026. Invited talk at NVIDIA Research Taiwan.
+- **October 2025** — Serving as an Area Chair for ICLR 2026 and ICASSP 2026. Invited talk at Australian National University (remote).
+- **August 2025** — Joined National Taiwan University as an Assistant Professor. Awarded a Yushan Young Fellowship.
 
 <details class="news-more">
 <summary class="button"><span class="show-more">Show more <span aria-hidden="true">↓</span></span><span class="show-less">Show less <span aria-hidden="true">↑</span></span></summary>
 
 <!-- Older news: edit these Markdown bullets directly. Original source dates are preserved. -->
-- **November 2025** — 1 paper accepted to WACV 2026. Serving as an Associate Editor for ICRA 2026. Invited talk at NVIDIA Research Taiwan.
-- **October 2025** — Serving as an Area Chair for ICLR 2026 and ICASSP 2026. Invited talk at Australian National University (remote).
-- **August 2025** — Joined National Taiwan University as an Assistant Professor. Awarded a Yushan Young Fellowship.
 - **June 2025** — 1 paper accepted to IJCV. Serving as an Area Chair for BMVC 2025. Invited talk at ProtagoLabs (remote).
 - **May 2025** — 1 paper accepted to ICML 2025 (Spotlight!). Recognized as an Outstanding Reviewer for CVPR 2025!
 - **April 2025** — 1 paper accepted to CVIU. Invited talks at UC Santa Cruz and CSIG Wuhan Center (virtual).
