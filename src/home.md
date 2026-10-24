@@ -10,11 +10,8 @@ website:
   - role: Assistant Professor
     affiliations:
     - Department of Computer Science and Information Engineering
+    - AI Center of Research Excellence
     - National Taiwan University
-  - role: Example Role (layout test)
-    affiliations:
-    - Example Department (layout test)
-    - Example University (layout test)
   social:
   - label: Email
     url: mailto:sylo@csie.ntu.edu.tw
