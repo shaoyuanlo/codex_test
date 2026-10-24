@@ -82,10 +82,9 @@ h4, h5, h6 { margin-bottom: var(--space-sm); }
 .hero h1 { font-size: var(--font-size-2xl); margin-top: var(--space-sm); margin-bottom: var(--space-sm); }
 .chinese-name { font-size: var(--font-size-xl); display: inline-block; margin-left: var(--space-md); vertical-align: middle; }
 /* Role information: group spacing, paragraph margins and role color. */
-.hero-roles { margin-bottom: var(--space-md); }
+.hero-roles { margin-bottom: var(--space-md); line-height: var(--line-height-compact); }
 .hero-position + .hero-position { margin-top: var(--space-sm); }
 .hero-position p { margin: 0; }
-.hero-position p + p { margin-top: var(--space-xs); }
 .hero-role { color: var(--accent); }
 /* Contact links: horizontal layout, spacing and wrapping. */
 .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-sm) var(--space-md); }
