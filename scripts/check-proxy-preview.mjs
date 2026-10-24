@@ -23,8 +23,7 @@ async function fetchPreview(url, options = {}) {
 
 // Invalidate fixed HTML through the official proxy endpoint after publishing.
 const purges = [];
-for (const relative of ['index.html', 'lab/index.html', 'publications/index.html', 'teaching/index.html', 'blog/index.html']) {
-  const url = new URL(relative, manifest.stableUrl).href;
+async function purgeFixedPage(url) {
   try {
     const endpoint = new URL('/purge', manifest.stableUrl);
     endpoint.searchParams.set('url', url);
@@ -34,6 +33,9 @@ for (const relative of ['index.html', 'lab/index.html', 'publications/index.html
   } catch (error) {
     purges.push({ url, passed: false, error: error.message });
   }
+}
+for (const relative of ['index.html', 'lab/index.html', 'publications/index.html', 'teaching/index.html', 'blog/index.html']) {
+  await purgeFixedPage(new URL(relative, manifest.stableUrl).href);
 }
 // The origin may briefly serve old content while its background cache refreshes.
 try {
@@ -45,6 +47,7 @@ try {
     if (!response.ok || currentVersion || attempt === 3) break;
     console.log('Fixed preview is cached; checking again in 20s.');
     await pause(20000);
+    await purgeFixedPage(manifest.stableUrl);
   }
   checks.push({
     url: manifest.stableUrl,
