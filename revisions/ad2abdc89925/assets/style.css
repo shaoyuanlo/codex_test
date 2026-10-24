@@ -49,6 +49,7 @@
 :root {
   --line-height-compact: 1.3;
   --line-height-body: 1.7;
+  --space-xs: 4px;
   --space-sm: 8px;
   --space-md: 16px;
   --space-lg: 24px;
@@ -130,7 +131,7 @@ nav a[aria-current] { font-weight: 600; }
 .page-heading { padding: calc(var(--space-xl) * 2) 0 var(--space-xl); margin-bottom: var(--space-xl); }
 .page-heading .eyebrow { margin-bottom: var(--space-sm); }
 .page-intro { margin-bottom: 0; }
-.page-publications .page-content h3 ~ p { line-height: var(--line-height-compact); margin-bottom: var(--space-sm); }
+.page-publications .page-content h3 ~ p { line-height: var(--line-height-compact); margin-bottom: var(--space-xs); }
 .publication-note { color: var(--highlight); }
 .post-preview { padding: 0 0 var(--space-xl); margin-bottom: var(--space-xl); }
 .post-preview-meta { display: flex; flex-wrap: wrap; gap: var(--space-sm) var(--space-md); }
