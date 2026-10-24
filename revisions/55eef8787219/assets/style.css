@@ -1,5 +1,5 @@
-/* 全站設計設定；頁面文字請至 src/*.md 編輯。 */
-/* 共用容器：頁面、導覽列及頁尾的寬度、置中與留白。 */
+/* Shared design settings; edit page content in src/*.md. */
+/* Shared containers: page, navigation and footer width, centering and spacing. */
 .header-inner, .site-main, .footer-inner {
   width: 100%;
   max-width: 980px;
@@ -10,14 +10,14 @@
 .header-inner { padding-top: 0; padding-bottom: 0; min-height: 50px; display: flex; align-items: center; justify-content: space-between; gap: var(--space-xl); }
 .site-main { padding-top: 0; padding-bottom: calc(var(--space-xl) * 2); flex: 1; min-width: 0; }
 .footer-inner { padding-top: var(--space-xl); padding-bottom: var(--space-xl); text-align: center; }
-/* 手機容器：767px 以下的左右留白、導覽高度與頁尾間距。 */
+/* Mobile containers: side padding, navigation height and footer spacing at 767px and below. */
 @media (max-width: 767px) {
   .header-inner, .site-main, .footer-inner { padding-left: var(--space-lg); padding-right: var(--space-lg); }
   .header-inner { display: block; padding-top: var(--space-sm); min-height: 80px; }
   .site-main { padding-bottom: var(--space-2xl); }
   .footer-inner { padding-top: var(--space-lg); padding-bottom: var(--space-lg); }
 }
-/* 共用顏色：背景、文字、主藍、淺藍、反白與論文標記。 */
+/* Shared colors: backgrounds, text, navy, light blue, selection and publication notes. */
 :root {
   color-scheme: light;
   --white: #ffffff;
@@ -26,16 +26,16 @@
   --accent-light: #eaf0f8;
   --selection-bg: #afc7e8;
   --highlight: #900c26;
-  /* 桌機字級：全站共用的五種大小。 */
+  /* Desktop font sizes: five shared size options. */
   --font-size-sm: 14px;
   --font-size-base: 16px;
   --font-size-lg: 18px;
   --font-size-xl: 28px;
   --font-size-2xl: 36px;
-  /* 共用字型：英文 Inter、中文 Noto Sans TC，備援為系統字型。 */
+  /* Shared font stack: Inter for English, Noto Sans TC for Chinese, then system fallbacks. */
   --font: "Inter", "Noto Sans TC", system-ui, sans-serif;
 }
-/* 手機字級：767px 以下覆寫同一組五種大小。 */
+/* Mobile font sizes: override the same five options at 767px and below. */
 @media (max-width: 767px) {
   :root {
     --font-size-sm: 12px;
@@ -45,12 +45,12 @@
     --font-size-2xl: 32px;
   }
 }
-/* 共用行高與間距：桌機、手機使用相同級距。 */
+/* Shared line heights and spacing: identical options on desktop and mobile. */
 :root {
-  /* 行高：標題與精簡資訊、一般內文。 */
+  /* Line heights: headings and compact information, then body text. */
   --line-height-compact: 1.3;
   --line-height-body: 1.7;
-  /* 間距：供 margin、padding 與 gap 共用。 */
+  /* Spacing options shared by margin, padding and gap. */
   --space-xs: 4px;
   --space-sm: 8px;
   --space-md: 16px;
@@ -58,44 +58,44 @@
   --space-xl: 32px;
   --space-2xl: 40px;
 }
-/* 共用標題：H1～H6 的字級、字重、行高與外距；含論文標題例外。 */
+/* Shared headings: H1–H6 size, weight, line height and margins, including publication title spacing. */
 h1, h2, h3, h4, h5, h6 { font-size: var(--font-size-base); font-weight: 400; margin: var(--space-lg) 0 var(--space-md); line-height: var(--line-height-compact); }
 .prose h2 { font-size: var(--font-size-xl); }
 h3 { font-size: var(--font-size-lg); font-weight: 600; margin-bottom: var(--space-sm); }
 .page-publications .page-content h3 { margin-bottom: var(--space-xs); }
 h4, h5, h6 { margin-bottom: var(--space-sm); }
 .page-heading h1 { font-size: var(--font-size-2xl); }
-/* 列印標題：避免標題與緊接內容分在不同頁。 */
+/* Print headings: avoid a page break between a heading and its following content. */
 @media print {
   h2, h3 { break-after: avoid; }
 }
-/* 分頁主標題區：控制標題與簡介周圍的留白。 */
+/* Page heading area: spacing around the title and introduction. */
 .page-heading { padding: var(--space-lg) 0 var(--space-md); margin-bottom: var(--space-md); }
-/* Markdown 分隔線：以 --- 加入，統一線色與上下外距。 */
+/* Markdown dividers: add with ---; shared line color and vertical margins. */
 .prose hr { border: 0; border-top: 1px solid var(--accent-light); margin: var(--space-lg) 0; }
 
-/* 共用文字式按鈕：黑色粗體，滑入時改主藍並顯示底線。 */
+/* Shared text-style buttons: bold black text; navy and underlined on hover. */
 .button {
   display: inline-block;
   color: var(--black); font-weight: 600;
   white-space: nowrap; text-decoration-line: none;
 }
 .button:hover { color: var(--accent); text-decoration-line: underline; }
-/* 首頁上方：姓名、職稱／所屬單位、聯絡連結與照片的排列。 */
+/* Homepage profile: layout for names, roles, affiliations, contact links and portrait. */
 .hero { padding: var(--space-lg) 0 var(--space-md); display: grid; grid-template-columns: minmax(0, 1fr) 200px; gap: var(--space-md); align-items: center; }
 .hero h1 { font-size: var(--font-size-2xl); margin-top: var(--space-sm); margin-bottom: var(--space-sm); }
 .chinese-name { font-size: var(--font-size-xl); display: inline-block; margin-left: var(--space-md); vertical-align: middle; }
-/* 職稱資訊：組間留白、段落外距與職稱顏色。 */
+/* Role information: group spacing, paragraph margins and role color. */
 .hero-roles { margin-bottom: var(--space-md); }
 .hero-position + .hero-position { margin-top: var(--space-sm); }
 .hero-position p { margin: 0; }
 .hero-role { color: var(--accent); }
-/* 聯絡連結：水平排列、間隔與自動換行。 */
+/* Contact links: horizontal layout, spacing and wrapping. */
 .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-sm) var(--space-md); }
-/* 頭像：尺寸隨欄寬調整，保持 5:6 比例並呈現原圖色彩。 */
+/* Portrait: fill the column, keep a 5:6 aspect ratio and preserve original colors. */
 .portrait { margin: 0; padding: 0; }
 .portrait img { width: 100%; aspect-ratio: 5 / 6; object-fit: cover; }
-/* 首頁手機排列：姓名與照片並排，職稱和連結各自占滿整列。 */
+/* Mobile profile: names beside the portrait; roles and contact links span the full width. */
 @media (max-width: 767px) {
   .hero h1 { grid-column: 1; align-self: end; }
   .hero { grid-template-columns: minmax(0, 1fr) 100px; align-items: start; }
@@ -105,7 +105,7 @@ h4, h5, h6 { margin-bottom: var(--space-sm); }
   .portrait { grid-column: 2; grid-row: 1; }
   .hero-actions { grid-column: 1 / -1; }
 }
-/* 首頁列印：移除上方內距。 */
+/* Print profile: remove top padding. */
 @media print {
   .hero { padding-top: 0; }
 }
