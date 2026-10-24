@@ -87,16 +87,16 @@ https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/<提交版�
 | --- | --- | --- |
 | `--line-height-compact` | `1.3` | 全部標題、論文相關資訊（作者、會議、連結）、導覽列 |
 | `--line-height-body` | `1.7` | 一般內文、Blog、提示框 |
-| `--space-xs` | `4px` | 論文作者、會議與資源連結段落下外距 |
+| `--space-xs` | `4px` | H3 下外距、論文作者、會議與資源連結段落下外距 |
 | `--space-sm` | `8px` | 標題緊接內容、清單項目 |
 | `--space-md` | `16px` | 段落之間、一般標題下方 |
 | `--space-lg` | `24px` | 全部標題上外距、分隔線上下外距、手機容器左右內距與頁尾上下內距 |
 | `--space-xl` | `32px` | 區塊之間、桌機頁尾上下內距 |
 | `--space-2xl` | `40px` | 桌機容器左右內距、手機正文下方內距 |
 
-標題設定集中在間距變數之後。H3 統一引用 `--font-size-lg`、字重 600、`--line-height-compact`，上外距 24px、下外距 8px；論文標題直接沿用共用 H3，沒有獨立的標題尺寸或行高規則。Blog 標題與文章主標題區沿用共用設定，不另設字級、行高、連結顏色或標題區內距。標題、正文列表與頁尾不自動附加分隔線；需要時在 Markdown 中另起一段寫 `---`。
+標題設定集中在間距變數之後。H3 統一引用 `--font-size-lg`、字重 600、`--line-height-compact`，上外距 24px、下外距 4px；論文標題直接沿用共用 H3，沒有獨立的標題尺寸或行高規則。Blog 標題與文章主標題區沿用共用設定，不另設字級、行高、連結顏色或標題區內距。標題、正文列表與頁尾不自動附加分隔線；需要時在 Markdown 中另起一段寫 `---`。
 
-全部 H1～H6 的上外距統一為 `var(--space-lg)`（24px），不保留首頁、分頁主標題或正文第一個 H2 的上外距例外。下外距為首頁姓名 H1、H3、H4～H6 各 8px，分頁／文章 H1 與 H2 各 16px；桌機、手機一致。
+全部 H1～H6 的上外距統一為 `var(--space-lg)`（24px），不保留首頁、分頁主標題或正文第一個 H2 的上外距例外。下外距為 H3 4px，首頁姓名 H1、H4～H6 各 8px，分頁／文章 H1 與 H2 各 16px；桌機、手機一致。
 
 Markdown 分隔線 `.prose hr` 的設定緊接在標題設定之後，上下外距均引用 `var(--space-lg)`（24px），線條為 1px、顏色 `var(--accent-light)`。相鄰區塊的上下外距可能合併，實際距離不一定相加。
 
@@ -155,21 +155,23 @@ Normal text, **bold text**, and *italic text*.
 
 ### 新增論文
 
-在 `src/publications.md` 相應年份下方複製這個區塊，不需要修改 HTML。論文標題後的作者、會議與連結段落統一使用 `1.3` 行高、`4px` 下方外距；第一篇論文標題之前的頁面說明維持一般內文設定。同年份的論文只以 Markdown 空行分開，只有該年份最後一篇的連結下方才加 `---`（最後一個年份也一樣）。資源連結用 ` / ` 分隔，前兩項固定為 `arXiv`、`PDF`。PDF 優先使用可公開開啟的正式出版版本，找不到時使用該篇的 arXiv PDF：
+在 `src/publications.md` 相應年份下方複製這個區塊，不需要修改 HTML。論文標題後的作者、會議與連結段落統一使用 `1.3` 行高、`4px` 下方外距；第一篇論文標題之前的頁面說明維持一般內文設定。同年份的論文只以 Markdown 空行分開，只有該年份最後一篇的連結下方才加 `---`（最後一個年份也一樣）。資源連結用 ` / ` 分隔，前兩項固定為 `Paper`、`arXiv`。PDF 優先使用可公開開啟的正式出版版本，找不到時使用該篇的 arXiv PDF：
 
 ```md
 ### Paper title
 
 First Author, **Shao-Yuan Lo**, Last Author
 
-*Conference or Journal, Year* [**Oral**]
+*Conference or Journal (**ABC**), Year* [**Oral**]
 
-[arXiv](https://arxiv.org/abs/0000.00000) / [PDF](https://arxiv.org/pdf/0000.00000) / [Code](https://github.com/example/project)
+[Paper](https://arxiv.org/pdf/0000.00000) / [arXiv](https://arxiv.org/abs/0000.00000) / [Code](https://github.com/example/project)
 ```
 
-PDF 連結的來源與實際查核結果保存在 [publication-pdf-check.json](docs/publication-pdf-check.json)。目前 26 篇已核對 PDF 檔頭與標題；兩篇 SPIE 使用出版社 PDF 並標示機構權限，CBCT 的 NIH 作者稿 PDF 標示可能需要瀏覽器驗證，這三篇未列為已驗證可直接下載。原有第一個資源只改標籤為 `arXiv`，網址保持不變；原本指向出版社的網址也保留。
+PDF 連結的來源與實際查核結果保存在 [publication-pdf-check.json](docs/publication-pdf-check.json)。首次匯入的論文中，26 篇已核對 PDF 檔頭與標題；當時兩篇 SPIE 出版社 PDF 遇到存取限制、CBCT 的 NIH 作者稿 PDF 遇到瀏覽器驗證，這三篇未列為已驗證可直接下載。`Paper` 指向 PDF、`arXiv` 保留原有論文網頁網址，原本指向出版社的網頁網址也保留。這份報告是當時查核的歷史紀錄，後續手動新增的論文需另行查核。
 
 如需重新檢查資源網址，可在 GitHub Actions 手動執行 **Check publication resource links**；結果保存在 [publication-link-check.json](docs/publication-link-check.json)。檢查會辨識 PDF 檔頭及明顯的瀏覽器／存取限制頁面。HTTP 成功不代表一定免登入，工作流程完成也不代表每個連結均已通過，請查看報告中的個別結果。
+
+會議或期刊名稱括號內的簡稱用 Markdown 粗體，例如 `(**ICML**)`、`(**T-PAMI**)`；仍沿用整行斜體樣式。
 
 論文標記直接寫成 `[**Oral**]`、`[**Highlight**]`、`[**Spotlight**]` 或 `[**Best Paper Award**]`，建置時會自動套用 `--highlight` 的顏色，不需手動寫 HTML；沒有標記則省略。
 
