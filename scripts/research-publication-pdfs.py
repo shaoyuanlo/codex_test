@@ -46,122 +46,68 @@ def validate_pdf(url,title):
     except Exception as e:result['error']=str(e)[:180]
     return result
 
-data=json.loads(OUT.read_text())
-papers=data['papers'];supplement=[]
-def add_candidate(index,url,kind,source):
-    if url and url.startswith(('https://','http://')):
-        supplement.append({'index':index,'url':url.replace('http://arxiv.org','https://arxiv.org'),'kind':kind,'source':source})
-
-def pdf_metadata(index,url):
-    doc=html(url)
-    if not doc:return
-    title=doc.find('meta',attrs={'name':'citation_title'})
-    for meta in doc.find_all('meta'):
-        name=(meta.get('name','') or meta.get('property','')).lower()
-        value=meta.get('content','')
-        if name in ['citation_pdf_url','eprints.document_url','wkhealth_pdf_url']:
-            add_candidate(index,urljoin(url,value),'publisher',url)
-    for a in doc.find_all('a',href=True):
-        u=urljoin(url,a['href'])
-        if 'arxiv.org/abs/' in u:add_candidate(index,u.replace('/abs/','/pdf/'),'arxiv',url)
-        elif '.pdf' in u or 'openreview.net/pdf?' in u:
-            if 'supp' not in a.get_text(' ',strip=True).lower():add_candidate(index,u,'publisher',url)
-    data['papers'][index].setdefault('landingPages',[]).append({'url':url,'title':str(title) if title else doc.title and doc.title.get_text(),'text':doc.get_text(' ',strip=True)[:1800]})
-
-# A proceedings title can be plain text, with PDF links in adjacent elements.
-for index,url,keyword in [
- (2,'https://proceedings.mlr.press/v267/','Overcoming Multi-step'),
- (10,'https://www.ecva.net/papers.php','Follow the Rules')]:
-    doc=html(url)
-    if not doc:continue
-    for text in doc.find_all(string=lambda t: t and keyword.casefold() in t.casefold()):
+data=json.loads(OUT.read_text());papers=data['papers'];tasks=[]
+def add(i,url,kind,source):
+    if (i,url) not in [(x['index'],x['url']) for x in tasks]:tasks.append({'index':i,'url':url,'kind':kind,'source':source})
+# Directly associated PDF after the ECVA title, without collecting unrelated papers.
+url='https://www.ecva.net/papers.php';doc=html(url)
+if doc:
+    for text in doc.find_all(string=lambda t:t and 'follow the rules' in t.casefold()):
         parent=text.parent
-        for _ in range(4):
-            for a in parent.find_all('a',href=True):
-                u=urljoin(url,a['href'])
-                if '.pdf' in u:add_candidate(index,u,'proceedings',url)
-                elif u.endswith('.html') and ('mlr.press' in u or 'ecva.net' in u):pdf_metadata(index,u)
-            if parent.name in ['div','tr']:break
-            parent=parent.parent
-        # ECVA associates each title <dt> with subsequent <dd> resources.
-        dt=text.find_parent('dt')
-        if dt:
-            for sibling in dt.find_next_siblings():
-                if sibling.name=='dt':break
-                for a in sibling.find_all('a',href=True):
-                    u=urljoin(url,a['href'])
-                    if '.pdf' in u:add_candidate(index,u,'proceedings',url)
-
-# OpenReview's final paper title can differ from its original arXiv title.
-for term in ['ComNeck','Bridging Compressed Image Latents']:
-    url='https://api2.openreview.net/notes/search?term='+quote(term)+'&limit=20'
+        if parent.name=='a' and '.pdf' in parent.get('href',''):add(10,urljoin(url,parent['href']),'proceedings',url)
+        a=text.find_next('a',href=lambda u:u and u.endswith('.pdf') and '-supp' not in u)
+        if a:add(10,urljoin(url,a['href']),'proceedings',url)
+# OpenReview provides the same proceedings PDF through its API.
+for ident in ['GSUNPIw7Ad','cw274Eokxt']:
     try:
-        r=get(url);notes=r.json().get('notes',[])
-        for note in notes:
-            raw=note.get('content',{}).get('title',{})
-            title=raw.get('value','') if isinstance(raw,dict) else raw
-            if similarity(title,papers[5]['title'])>=.55:
-                add_candidate(5,'https://openreview.net/pdf?id='+note['id'],'proceedings',url)
-                papers[5].setdefault('openReview',[]).append({'title':title,'id':note['id']})
-    except Exception as e:papers[5].setdefault('searchErrors',[]).append(str(e))
-
-for index,doi in [(8,'10.1109/TMI.2025.3556402'),(9,'10.1117/12.3047499'),(13,'10.1117/12.3006561')]:
-    title=papers[index]['title']
-    pdf_metadata(index,'https://doi.org/'+doi)
-    pdf_metadata(index,papers[index]['paper'])
-    try:
-        url='https://api.openalex.org/works/https://doi.org/'+doi
-        r=get(url);r.raise_for_status();work=r.json()
-        papers[index]['openAlex']={'title':work.get('title'),'locations':work.get('locations'),'ids':work.get('ids')}
-        for loc in work.get('locations',[]):
-            u=loc.get('pdf_url')
-            if u:add_candidate(index,u,'arxiv' if 'arxiv' in u else 'publisher',url)
-            landing=loc.get('landing_page_url')
-            if landing and any(host in landing for host in ['pmc.ncbi.nlm.nih.gov','arxiv.org','europepmc.org']):pdf_metadata(index,landing)
-    except Exception as e:papers[index].setdefault('searchErrors',[]).append('OpenAlex: '+str(e))
-    try:
-        url='https://api.semanticscholar.org/graph/v1/paper/DOI:'+doi+'?fields=title,openAccessPdf,externalIds'
-        r=get(url);r.raise_for_status();work=r.json();papers[index]['semanticScholar']=work
-        u=(work.get('openAccessPdf') or {}).get('url')
-        if u:add_candidate(index,u,'arxiv' if 'arxiv' in u else 'publisher',url)
-        ident=work.get('externalIds',{}).get('ArXiv')
-        if ident:add_candidate(index,'https://arxiv.org/pdf/'+ident,'arxiv',url)
-    except Exception as e:papers[index].setdefault('searchErrors',[]).append('SemanticScholar: '+str(e))
-    try:
-        url='https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:'+doi+'&format=json&resultType=core'
-        r=get(url);r.raise_for_status();work=r.json();papers[index]['europePmc']=work
-        for result in work.get('resultList',{}).get('result',[]):
-            for link in result.get('fullTextUrlList',{}).get('fullTextUrl',[]):
-                if link.get('documentStyle')=='pdf':add_candidate(index,link.get('url'),'publisher',url)
-            if result.get('pmcid'):pdf_metadata(index,'https://pmc.ncbi.nlm.nih.gov/articles/'+result['pmcid']+'/')
-    except Exception as e:papers[index].setdefault('searchErrors',[]).append('EuropePMC: '+str(e))
-    # Search pages also expose arXiv IDs when the API is unavailable.
-    for endpoint in ['https://arxiv.org/search/?searchtype=all&query=','https://www.google.com/search?q=','https://www.bing.com/search?q=']:
-        url=endpoint+quote(title+' arxiv' if 'arxiv.org/search' not in endpoint else title)
+        r=get('https://api2.openreview.net/notes?id='+ident)
+        notes=r.json().get('notes',[])
+        if notes:papers[5].setdefault('openReviewDetails',[]).append({k:notes[0].get(k) for k in ['id','content','invitations']})
+    except Exception:pass
+    add(5,'https://api2.openreview.net/pdf?id='+ident,'proceedings','https://openreview.net/forum?id='+ident)
+# Canonical public manuscript and OA-service metadata; no authentication is used.
+for url in [
+ 'https://pmc.ncbi.nlm.nih.gov/articles/instance/12310287/bin/nihms-2095081.pdf',
+ 'https://pmc.ncbi.nlm.nih.gov/articles/PMC12310287/bin/nihms-2095081.pdf',
+ 'https://pmc.ncbi.nlm.nih.gov/articles/PMC12310287/pdf/nihms-2095081.pdf?download=1',
+ 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12310287/pdf/nihms-2095081.pdf',
+ 'https://europepmc.org/articles/PMC12310287/bin/nihms-2095081.pdf']:
+    add(8,url,'manuscript','https://pmc.ncbi.nlm.nih.gov/articles/PMC12310287/')
+try:
+    r=get('https://www.ncbi.nlm.nih.gov/pmc/utils/oa/oa.fcgi?id=PMC12310287')
+    papers[8]['oaPackage']=r.text[:3000]
+except Exception:pass
+# Short, distinctive searches avoid requiring every word in a long title.
+queries={8:['"Cycle-domain" "CBCT"','"CG-DDPM"','"3556402"'],9:['"TTT-Vnet"','"3047499"'],13:['"Patient-specific" "volumetric" "diffusion"','"3006561"']}
+for i,terms in queries.items():
+    for term in terms:
+        url='https://arxiv.org/search/?searchtype=all&query='+quote(term)
         doc=html(url)
         if not doc:continue
-        for match in re.findall(r'https?://(?:www\.)?arxiv\.org/(?:abs|pdf)/(\d{4}\.\d{4,5}(?:v\d+)?)',str(doc)):
-            add_candidate(index,'https://arxiv.org/pdf/'+match,'arxiv',url)
-        papers[index].setdefault('searchPages',[]).append({'url':url,'text':doc.get_text(' ',strip=True)[:2500]})
-    time.sleep(1)
-
-# Validated arXiv fallback for the original SPIE proceedings entry (if metadata provides it).
-seen=set();selected_by={}
-for candidate in supplement:
-    key=(candidate['index'],candidate['url'])
-    if key not in seen:seen.add(key);selected_by.setdefault(candidate['index'],[]).append(candidate)
-for index,candidates in selected_by.items():
-    # Check publisher/proceedings before preprint repositories.
-    candidates.sort(key=lambda x:x['kind']=='arxiv')
-    for c in candidates[:16]:
-        verdict=validate_pdf(c['url'],papers[index]['title']);verdict.update(kind=c['kind'],source=c['source'])
-        papers[index].setdefault('supplementChecks',[]).append(verdict)
-        print(json.dumps({'index':index,**verdict}),flush=True)
-        if verdict.get('passed'):
-            papers[index]['selected']=verdict;break
-    papers[index]['supplementCandidates']=candidates
-
-data['checkedAt']=datetime.now(timezone.utc).isoformat();data['phase']=2
-data['selected']=sum(bool(x['selected']) for x in papers)
+        found=[]
+        for row in doc.select('li.arxiv-result'):
+            title=row.select_one('p.title');a=row.select_one('p.list-title a')
+            if not title or not a:continue
+            if similarity(title.get_text(' ',strip=True),papers[i]['title'])<.55:continue
+            ident=a['href'].split('/abs/')[-1]
+            add(i,'https://arxiv.org/pdf/'+ident,'arxiv',a['href'])
+            found.append({'title':title.get_text(' ',strip=True),'id':ident})
+        papers[i].setdefault('shortSearches',[]).append({'url':url,'found':found})
+# Exact DOI-linked proceedings PDF destinations (can still require subscription).
+add(9,'https://www.spiedigitallibrary.org/conference-proceedings-of-spie/13406/134062Y/TTT-Vnet--a-3D-vision-test-time-training-model/10.1117/12.3047499.pdf','publisher','https://doi.org/10.1117/12.3047499')
+add(13,'https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12931/129310P/Patient-specific-3D-volumetric-CBCT-image-reconstruction-with-single-x/10.1117/12.3006561.pdf','publisher','https://doi.org/10.1117/12.3006561')
+for c in tasks:
+    i=c['index']
+    # Once a new matching PDF has passed, preserve it rather than repeatedly fetching.
+    if papers[i].get('phase3Selected'):continue
+    verdict=validate_pdf(c['url'],papers[i]['title']);verdict.update(kind=c['kind'],source=c['source'])
+    papers[i].setdefault('phase3Checks',[]).append(verdict)
+    print(json.dumps({'index':i,**verdict}),flush=True)
+    if verdict.get('passed'):papers[i]['selected']=verdict;papers[i]['phase3Selected']=True
+# Keep the research record reviewable; omit the unrelated whole-index candidates.
+for p in papers:
+    if len(p.get('supplementCandidates',[]))>30:p['supplementCandidatesOmitted']=len(p.pop('supplementCandidates'))
+    p.pop('europePmc',None)
+data['phase']=3;data['selected']=sum(bool(x['selected']) for x in papers);data['checkedAt']=datetime.now(timezone.utc).isoformat()
 OUT.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n')
 print('Selected',data['selected'],'of',len(papers),flush=True)
