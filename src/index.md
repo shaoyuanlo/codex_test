@@ -14,14 +14,6 @@ Previously, I was a Research Scientist at [Honda Research Institute USA](https:/
 <p>I am looking for motivated undergraduate, master's, and Ph.D. students. Interested in working together? <a href="mailto:{{ site.email }}">Send me an email</a> with your résumé and transcripts.</p>
 </aside>
 
-## Research interests
-
-<div class="research-grid">
-<div><span class="research-number">01</span><h3>Trustworthy AI</h3><p>Reliable and robust learning systems for the real world.</p></div>
-<div><span class="research-number">02</span><h3>Multimodal learning</h3><p>Learning across vision, language, and their connections.</p></div>
-<div><span class="research-number">03</span><h3>Reasoning</h3><p>Understanding and advancing reasoning in multimodal models.</p></div>
-</div>
-
 ## Recent news
 
 <!-- Add a new bullet at the top. Keep a few recent items here. -->
