@@ -8,19 +8,25 @@ Built with [Eleventy](https://www.11ty.dev/) and deployed as static HTML to GitH
 
 目前使用 raw.githack 提供可操作的多頁網站預覽，可點擊導覽、閱讀文章、開啟 CV，並以手機瀏覽。預覽來自公開的 `codex_test` 儲存庫，不會取代正式網站 `https://shaoyuanlo.github.io/`。
 
-**取得最新預覽網址：** 開啟 [`site-preview` 分支的 `preview.json`](https://github.com/shaoyuanlo/codex_test/blob/site-preview/preview.json)，複製其中的 `url` 到瀏覽器。也可在 [Update interactive website preview 工作流程](https://github.com/shaoyuanlo/codex_test/actions/workflows/preview.yml) 的建置輸出中找到 `Interactive preview:` 網址。
+**固定預覽網址（持續更新，可加入書籤）：**
 
-網址格式如下；`<提交版本>` 由建置自動填入，不需手動修改：
+https://raw.githack.com/shaoyuanlo/codex_test/site-preview/index.html
+
+每次發布都會更新固定網址的頁面及資源；導覽使用固定路徑，不依賴可能被移除的版本目錄。代理與瀏覽器快取可能使更新延後出現；若要立即確認當次修改，請使用以下快速版本預覽。
+
+**快速版本預覽（每次發布產生新網址）：**
 
 ```text
 https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/<提交版本>/index.html
 ```
 
-每次發布會建立新的版本網址，頁面、導覽與資源都指向同一版本目錄，以避開代理的舊快取。**更新後請開啟新的預覽網址，重新整理舊網址不會自動切換到新版。** 發布目錄只保留當次版本；舊網址可能暫時因快取仍可讀取，快取到期後通常回傳 404。舊版本仍可留存在 Git 提交歷史中。
+開啟 [`site-preview` 分支的 `preview.json`](https://github.com/shaoyuanlo/codex_test/blob/site-preview/preview.json)，複製 `url` 即可取得最新快速預覽；`stableUrl` 則是固定入口。也可在 [Update interactive website preview 工作流程](https://github.com/shaoyuanlo/codex_test/actions/workflows/preview.yml) 的建置輸出中找到 `Fixed preview:` 與 `Interactive preview:` 兩個網址。
 
-更新流程：修改 **`main` 分支**並提交 → 等待上述工作流程成功 → 從 `preview.json` 取得最新網址。這是提交後的自動建置預覽，不是逐字即時更新。`main` 是手動維護的原始碼，`site-preview` 是自動產生的網站，請勿手動編輯或將其合併回 `main`。
+快速預覽的頁面、導覽與資源都指向同一版本目錄，以避開舊快取。發布目錄只保留當次版本；舊版本目錄會在下次發布時移除，舊網址可能暫時因快取仍可讀取，快取到期後通常回傳 404，不會自動切換到新版。固定網址持續保留及更新。舊版本仍可留存在 Git 提交歷史中。
 
-工作流程會檢查公開頁面、來源版本、導覽連結、樣式與字型，並確認舊的 `/publication/` 路徑回傳 404；結果保存在 [`preview-health.json`](https://github.com/shaoyuanlo/codex_test/blob/site-preview/preview-health.json)。代理預覽需要儲存庫維持公開，且 GitHub Actions 具有 `contents: write` 權限，不需要另外設定個人存取權杖。
+更新流程：修改 **`main` 分支**並提交 → 等待上述工作流程成功 → 開啟固定網址，或從 `preview.json` 取得最新快速預覽。這是提交後的自動建置預覽，不是逐字即時更新。`main` 是手動維護的原始碼，`site-preview` 是自動產生的網站，請勿手動編輯或將其合併回 `main`。
+
+工作流程會檢查固定入口可讀取、快速預覽來源版本、導覽連結、樣式與字型，並確認舊的 `/publication/` 路徑回傳 404；結果保存在 [`preview-health.json`](https://github.com/shaoyuanlo/codex_test/blob/site-preview/preview-health.json)。固定入口的 `currentVersion` 可辨識是否仍命中舊快取。代理預覽需要儲存庫維持公開，且 GitHub Actions 具有 `contents: write` 權限，不需要另外設定個人存取權杖。
 
 歷史預覽圖片原檔保留在 `docs/preview/`，作為歷史紀錄，不代表目前網站樣式；此處不再嵌入或連結圖片。
 

@@ -11,7 +11,8 @@ const origin = 'https://raw.githack.com';
 const output = '_preview';
 const sourceCommit = process.env.GITHUB_SHA || execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim();
 const version = sourceCommit.slice(0, 12);
-const prefix = `/${repository}/site-preview/revisions/${version}/`;
+const stablePrefix = `/${repository}/site-preview/`;
+const prefix = `${stablePrefix}revisions/${version}/`;
 process.env.PATH_PREFIX = prefix;
 process.env.SITE_URL = origin;
 process.env.ELEVENTY_OUTPUT = output;
@@ -44,14 +45,30 @@ await writeFile(path.join(output, '.nojekyll'), '');
 await writeFile(path.join(output, 'preview.json'), JSON.stringify({
   sourceCommit,
   generatedAt: new Date().toISOString(),
+  stableUrl: `${origin}${stablePrefix}index.html`,
   url: `${origin}${prefix}index.html`
 }, null, 2) + '\n');
 // A new directory bypasses proxies that ignore query strings in cache keys.
-// Keep root files as an entry point, with all links targeting this snapshot.
+// Snapshot pages link only to this revision; old revisions are removed on publish.
 const entries = await readdir(output);
 const snapshot = path.join(output, 'revisions', version);
 await mkdir(snapshot, { recursive: true });
 for (const entry of entries) {
   await cp(path.join(output, entry), path.join(snapshot, entry), { recursive: true });
 }
+// Fixed pages must link to fixed paths, so deleting an old revision cannot
+// break their navigation. Proxy caches may delay when these pages refresh.
+async function writeStablePages(dir) {
+  for (const entry of await readdir(dir, { withFileTypes: true })) {
+    if (entry.name === 'revisions') continue;
+    const filename = path.join(dir, entry.name);
+    if (entry.isDirectory()) await writeStablePages(filename);
+    else if (filename.endsWith('.html')) {
+      const html = await readFile(filename, 'utf8');
+      await writeFile(filename, html.replaceAll(prefix, stablePrefix));
+    }
+  }
+}
+await writeStablePages(output);
+console.log(`Fixed preview: ${origin}${stablePrefix}index.html`);
 console.log(`Interactive preview: ${origin}${prefix}index.html`);

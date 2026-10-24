@@ -4,6 +4,19 @@ import { readFile, writeFile } from 'node:fs/promises';
 // of cloud-workspace egress restrictions. The result is saved with the preview.
 const manifest = JSON.parse(await readFile('_preview/preview.json', 'utf8'));
 const checks = [];
+// Fixed URLs can be cached; report freshness separately from availability.
+try {
+  const response = await fetch(manifest.stableUrl, { signal: AbortSignal.timeout(20000) });
+  const text = await response.text();
+  checks.push({
+    url: manifest.stableUrl,
+    status: response.status,
+    passed: response.ok && text.includes('<h1 id="home-title">'),
+    currentVersion: text.includes(`name="preview-source" content="${manifest.sourceCommit}"`)
+  });
+} catch (error) {
+  checks.push({ url: manifest.stableUrl, passed: false, error: error.message });
+}
 for (const [relative, marker] of [
   ['index.html', '<h1 id="home-title">'],
   ['lab/index.html', '<h1>Lab</h1>'],
