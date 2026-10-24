@@ -67,9 +67,8 @@ h4, h5, h6 { margin-bottom: var(--space-sm); }
 @media print {
   h2, h3 { break-after: avoid; }
 }
-/* Markdown dividers — shared by desktop and mobile. */
+.page-heading { padding: var(--space-lg) 0 var(--space-md); margin-bottom: var(--space-md); }
 .prose hr { border: 0; border-top: 1px solid var(--accent-light); margin: var(--space-lg) 0; }
-.page-heading { padding: var(--space-lg) 0 var(--space-md); margin-bottom: var(--space-xl); }
 
 
 /* Shared rectangular corners. */
