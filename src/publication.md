@@ -2,7 +2,7 @@
 layout: layouts/page.njk
 title: Publications
 section: publication
-permalink: /publication/index.html
+permalink: /publications/index.html
 eyebrow: Research output
 intro: Selected work on trustworthy AI, multimodal learning, and reasoning.
 description: Selected publications by Shao-Yuan Lo.

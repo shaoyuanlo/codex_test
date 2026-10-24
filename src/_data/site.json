@@ -16,7 +16,7 @@
   "navigation": [
     { "label": "Home", "url": "/", "key": "home" },
     { "label": "Lab", "url": "/lab/", "key": "lab" },
-    { "label": "Publications", "url": "/publication/", "key": "publication" },
+    { "label": "Publications", "url": "/publications/", "key": "publication" },
     { "label": "Teaching", "url": "/teaching/", "key": "teaching" },
     { "label": "Blog", "url": "/blog/", "key": "blog" }
   ]
