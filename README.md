@@ -48,7 +48,7 @@ Built with [Eleventy](https://www.11ty.dev/) and deployed as static HTML to GitH
 | 姓名、職稱、學校、Email、社群連結、首頁標語 | [`src/_data/site.json`](src/_data/site.json) |
 | 首頁按鈕文字 | [`src/_includes/layouts/home.njk`](src/_includes/layouts/home.njk) |
 | 各頁標題下方的簡介 | 各頁頂端 `intro:` 欄位 |
-| 個人照片 | 替換 `src/assets/portrait.webp`（建議 5:6 比例） |
+| 個人照片 | 替換 `src/assets/portrait.jpg`（建議 5:6 比例） |
 | 瀏覽器分頁圖示／台大校徽 | [`src/assets/ntu-emblem.png`](src/assets/ntu-emblem.png) |
 | CV | 替換 `files/SYLo_CV.pdf`，檔名保留即可 |
 | 配色、字體、間距 | [`src/assets/style.css`](src/assets/style.css) 開頭的變數 |
