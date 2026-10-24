@@ -53,10 +53,11 @@ p['rejectedArxivCandidate']={'url':'https://arxiv.org/pdf/2506.13545','reason':'
 p['selected']=None
 log=[];candidates=[]
 for url in [
- 'https://pmc.ncbi.nlm.nih.gov/utils/oa/oa.fcgi?id=PMC12310287',
- 'https://ftp.ncbi.nlm.nih.gov/pub/pmc/manuscript/',
- 'https://pmc-oa-opendata.s3.amazonaws.com/?list-type=2&prefix=author_manuscript/PMC12310287&max-keys=40',
- 'https://pmc-oa-opendata.s3.amazonaws.com/?list-type=2&prefix=author_manuscript/&max-keys=5']:
+ 'https://pmc-oa-opendata.s3.amazonaws.com/?list-type=2&max-keys=5',
+ 'https://pmc-oa-opendata.s3.amazonaws.com/?list-type=2&prefix=PMC12310287&max-keys=50',
+ 'https://pmc-oa-opendata.s3.amazonaws.com/?list-type=2&prefix=oa_comm/&max-keys=5',
+ 'https://pmc-oa-opendata.s3.amazonaws.com/?list-type=2&prefix=oa_noncomm/&max-keys=5',
+ 'https://pmc-oa-opendata.s3.amazonaws.com/?list-type=2&prefix=manuscript/&max-keys=5']:
     try:
         r=get(url);log.append({'url':url,'status':r.status_code,'text':r.text[:12000]})
         if 's3.amazonaws' in url:
@@ -67,29 +68,11 @@ for url in [
         else:
             for u in re.findall(r'(?:href|href)=["\']([^"\']+\.pdf)["\']',r.text):candidates.append(urljoin(url,u))
     except Exception as e:log.append({'url':url,'error':str(e)})
-# Public file lists provide the exact PDF path without guessing another paper.
-for listurl in [
- 'https://ftp.ncbi.nlm.nih.gov/pub/pmc/manuscript/filelist.csv',
- 'https://ftp.ncbi.nlm.nih.gov/pub/pmc/manuscript/author_manuscript_pdf.csv',
- 'https://ftp.ncbi.nlm.nih.gov/pub/pmc/manuscript/pdf/filelist.csv']:
-    try:
-        r=get(listurl,stream=True)
-        if not r.ok:log.append({'url':listurl,'status':r.status_code});continue
-        found=[]
-        for line in r.iter_lines(decode_unicode=True):
-            if isinstance(line,bytes):line=line.decode(errors='replace')
-            if '12310287' in line or '2095081' in line:
-                found.append(line)
-                path=line.split(',')[0].strip('"')
-                if path.endswith('.pdf'):candidates.append(urljoin('https://ftp.ncbi.nlm.nih.gov/pub/pmc/manuscript/',path))
-                if len(found)>3:break
-        r.close();log.append({'url':listurl,'found':found})
-    except Exception as e:log.append({'url':listurl,'error':str(e)})
 for url in dict.fromkeys(candidates):
     verdict=validate_pdf(url,p['title']);verdict.update(kind='author-manuscript',source='https://pmc.ncbi.nlm.nih.gov/articles/PMC12310287/')
     p.setdefault('phase4Checks',[]).append(verdict)
     if verdict.get('passed'):p['selected']=verdict;break
 p['publicArchiveDiscovery']=log
-D['phase']=4;D['selected']=sum(bool(x['selected']) for x in D['papers']);D['checkedAt']=datetime.now(timezone.utc).isoformat()
+D['phase']=5;D['selected']=sum(bool(x['selected']) for x in D['papers']);D['checkedAt']=datetime.now(timezone.utc).isoformat()
 OUT.write_text(json.dumps(D,ensure_ascii=False,indent=2)+'\n')
 print('Selected',D['selected'],'of',D['count'],flush=True)
