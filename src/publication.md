@@ -1,6 +1,6 @@
 ---
 layout: layouts/page.njk
-title: Publication
+title: Publications
 section: publication
 permalink: /publication/index.html
 eyebrow: Research output
