@@ -78,8 +78,8 @@ h4, h5, h6 { margin-bottom: var(--space-sm); }
 }
 
 /* Homepage profile: layout for names, roles, affiliations, contact links and portrait. */
-.hero { padding: var(--space-lg) 0 var(--space-md); display: grid; grid-template-columns: minmax(0, 1fr) 200px; gap: var(--space-md); align-items: center; }
-.hero h1 { font-size: var(--font-size-2xl); margin-top: var(--space-sm); margin-bottom: var(--space-sm); }
+.hero { padding: var(--space-lg) 0 var(--space-md); display: grid; grid-template-columns: minmax(0, 1fr) 200px; gap: var(--space-md); align-items: start; }
+.hero h1 { font-size: var(--font-size-2xl); margin-top: var(--space-sm); margin-bottom: var(--space-md); }
 .chinese-name { font-size: var(--font-size-xl); display: inline-block; margin-left: var(--space-md); vertical-align: middle; }
 /* Role information: group spacing, paragraph margins and role color. */
 .hero-roles { margin-bottom: var(--space-md); line-height: var(--line-height-compact); }
@@ -89,12 +89,12 @@ h4, h5, h6 { margin-bottom: var(--space-sm); }
 /* Contact links: horizontal layout, spacing and wrapping. */
 .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-sm) var(--space-md); }
 /* Portrait: fill the column, keep a 5:6 aspect ratio and preserve original colors. */
-.portrait { margin: 0; padding: 0; }
+.portrait { margin: var(--space-sm) 0 0; padding: 0; }
 .portrait img { width: 100%; aspect-ratio: 5 / 6; object-fit: cover; }
 /* Mobile profile: names beside the portrait; roles and contact links span the full width. */
 @media (max-width: 767px) {
-  .hero h1 { grid-column: 1; align-self: end; }
-  .hero { grid-template-columns: minmax(0, 1fr) 100px; align-items: start; }
+  .hero h1 { grid-column: 1; }
+  .hero { grid-template-columns: minmax(0, 1fr) 100px; }
   .hero-copy { display: contents; }
   .chinese-name { display: block; }
   .hero-roles { grid-column: 1 / -1; }
