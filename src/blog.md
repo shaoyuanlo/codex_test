@@ -1,8 +1,8 @@
 ---
-layout: layouts/blog.njk
+layout: layouts/page.njk
 section: blog
 permalink: /blog/index.html
 title: Blog
 intro: Stay tuned.
 ---
-<!-- Add Blog page content here in Markdown. The post list is generated automatically. -->
+<!-- Edit this page directly in Markdown, just like the other pages. -->

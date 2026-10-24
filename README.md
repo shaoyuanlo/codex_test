@@ -60,8 +60,7 @@ https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/<提交版�
 | Lab 介紹、成員、招生資訊 | [`src/lab.md`](src/lab.md) |
 | 論文清單 | [`src/publications.md`](src/publications.md) |
 | 課程與教材 | [`src/teaching.md`](src/teaching.md) |
-| Blog 首頁文字與簡介 | [`src/blog.md`](src/blog.md) |
-| 新增文章 | 在 [`src/posts/`](src/posts/) 新增 `.md` 檔案 |
+| Blog 文字與簡介 | [`src/blog.md`](src/blog.md) |
 | 姓名、職稱、Email、社群連結、首頁標語 | [`src/_data/site.json`](src/_data/site.json) |
 | 首頁按鈕文字 | [`src/_includes/layouts/home.njk`](src/_includes/layouts/home.njk) |
 | 各頁標題下方的簡介 | 各頁頂端 `intro:` 欄位 |
@@ -80,7 +79,7 @@ https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/<提交版�
 | `--font-size-base` | `16px` | `15px` | 一般內文、導覽選單，以及未特別指定的項目 |
 | `--font-size-lg` | `18px` | `16px` | 導覽列左側姓名、全部 H3（含論文標題） |
 | `--font-size-xl` | `28px` | `24px` | 區塊標題（內容中的 `h2`） |
-| `--font-size-2xl` | `36px` | `32px` | 首頁英文姓名、各分頁及 Blog 文章主標題 |
+| `--font-size-2xl` | `36px` | `32px` | 首頁英文姓名、各分頁主標題 |
 
 內容容器設定放在 CSS 最上方，其後依序為顏色與字級、行高與共用間距、各級標題、Markdown 分隔線設定。行高與共用間距變數桌機、手機共用：
 
@@ -95,11 +94,11 @@ https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/<提交版�
 | `--space-xl` | `32px` | 區塊之間、桌機頁尾上下內距 |
 | `--space-2xl` | `40px` | 桌機容器左右內距、手機正文下方內距 |
 
-標題設定集中在間距變數之後。H3 統一引用 `--font-size-lg`、字重 600、`--line-height-compact`，上外距 24px、下外距 8px；論文標題只獨立覆寫下外距為 4px，其餘字級、字重、行高與上外距均沿用共用 H3。Blog 標題與文章主標題區沿用共用設定，不另設字級、行高、連結顏色或標題區內距。標題、正文列表與頁尾不自動附加分隔線；需要時在 Markdown 中另起一段寫 `---`。
+標題設定集中在間距變數之後。H3 統一引用 `--font-size-lg`、字重 600、`--line-height-compact`，上外距 24px、下外距 8px；論文標題只獨立覆寫下外距為 4px，其餘字級、字重、行高與上外距均沿用共用 H3。Blog 與其他分頁的主標題區沿用共用設定，不另設字級、行高、連結顏色或標題區內距。標題、正文列表與頁尾不自動附加分隔線；需要時在 Markdown 中另起一段寫 `---`。
 
 全部 H1～H6 的上外距統一為 `var(--space-lg)`（24px），不保留首頁、分頁主標題或正文第一個 H2 的上外距例外。下外距為一般 H3、首頁姓名 H1、H4～H6 各 8px，論文標題 4px，分頁／文章 H1 與 H2 各 16px；桌機、手機一致。
 
-主標題區 `.page-heading` 的內距設定緊接在分隔線規則之後：上方 24px、左右 0、下方 16px，下外距維持 32px；各分頁與 Blog 文章共用，桌機與手機相同。
+主標題區 `.page-heading` 的內距設定緊接在分隔線規則之後：上方 24px、左右 0、下方 16px，下外距維持 32px；各分頁共用，桌機與手機相同。
 
 Markdown 分隔線 `.prose hr` 的設定緊接在標題設定之後，上下外距均引用 `var(--space-lg)`（24px），線條為 1px、顏色 `var(--accent-light)`。相鄰區塊的上下外距可能合併，實際距離不一定相加。
 
@@ -111,7 +110,7 @@ Markdown 分隔線 `.prose hr` 的設定緊接在標題設定之後，上下外�
 
 字重只使用 **400（一般）**與 **600（粗體）**，預設 400。Markdown 的 `**粗體文字**`、HTML 的 `strong`／`b`、目前導覽頁面的強調狀態等使用 600。正文、提示框、程式碼、中文姓名、社群連結等未指定項目皆使用一般內文字級（桌機 16px／手機 15px）；頁尾繼承小字級（桌機 14px／手機 12px）。
 
-各分頁（含首頁與 Blog 文章）共用置中的 `.site-main` 內容容器，與導覽列、頁尾統一最大外寬 `980px`（含左右內距）；正文、標題簡介與段落不再另設較窄的最大寬度，文字可使用完整的容器寬度。桌機左右內距各 `40px`；≤767px 時左右內距統一各 `24px`。正文下方內距為桌機 `64px`、手機 `40px`；頁尾上下內距為桌機各 `32px`、手機各 `24px`。容器設定集中在 CSS 最上方。只有 `767px` 一個螢幕寬度斷點，原有 `800px` 規則已移除。首頁照片旁的文字仍依原有欄位排列。
+各分頁（含首頁與 Blog）共用置中的 `.site-main` 內容容器，與導覽列、頁尾統一最大外寬 `980px`（含左右內距）；正文、標題簡介與段落不再另設較窄的最大寬度，文字可使用完整的容器寬度。桌機左右內距各 `40px`；≤767px 時左右內距統一各 `24px`。正文下方內距為桌機 `64px`、手機 `40px`；頁尾上下內距為桌機各 `32px`、手機各 `24px`。容器設定集中在 CSS 最上方。只有 `767px` 一個螢幕寬度斷點，原有 `800px` 規則已移除。首頁照片旁的文字仍依原有欄位排列。
 
 全站字型統一由 `style.css` 的 `--font: "Inter", "Noto Sans TC", system-ui, sans-serif` 設定：英文優先使用 Inter，中文使用 Noto Sans TC，載入失敗或缺字時使用系統預設字型。標題、內文、導覽、中文姓名與程式碼都沿用這一組字型；字級限用上述五項，字重限用 400／600。原本的 `--serif`、`--sans` 已移除。字型檔存於 `src/assets/fonts/`，以分段 WOFF2 按需載入，採 `font-display: swap`，不依賴外部字型 CDN；來源版本及授權分別保存在 `sources.json` 與各字型目錄的 `LICENSE.txt`。
 
@@ -131,7 +130,7 @@ Markdown 分隔線 `.prose hr` 的設定緊接在標題設定之後，上下外�
 
 共 **7 個色彩變數、7 種實際顏色**；邊框與提示背景共用色碼，文字不設主要／次要灰階。網站不設定 `theme-color`，讓手機瀏覽器自行決定工具列顏色；網站內的導覽列仍為主藍色。列印背景沿用 `--white`。照片與校徽的顏色來自圖片檔本身，不由這些 CSS 變數控制。
 
-這份版本帶入原網站的簡介、照片、CV、Publications 區塊的全部 29 篇論文（2018–2026 年）與部分消息。Lab 成員、課程內容保留待填；Blog 目前有一篇明確標示 Example 的示範文章，正式上線前可替換或刪除。沒有虛構學生、課程或研究成果。原網站論文使用的 20 個本地資源檔（海報與投影片）也已帶入 `papers/`、`talks/`，不依賴舊網站的檔案路徑。
+這份版本帶入原網站的簡介、照片、CV、Publications 區塊的全部 29 篇論文（2018–2026 年）與部分消息。Lab 成員、課程內容保留待填；Blog 保留待填，直接以 Markdown 手動編輯，沒有自動文章列表。沒有虛構學生、課程或研究成果。原網站論文使用的 20 個本地資源檔（海報與投影片）也已帶入 `papers/`、`talks/`，不依賴舊網站的檔案路徑。
 
 ### Markdown 基本格式
 
@@ -147,7 +146,7 @@ Normal text, **bold text**, and *italic text*.
 - Another item
 ```
 
-頁面頂端兩條 `---` 之間是設定欄位（front matter）。保留欄位依「運作設定在前、可編輯內容在後」排列：`layout`、`section`、`permalink`，以及有使用的 `tags`、`eleventyExcludeFromCollections`、`published`、`example` 放在前面；`title`、`intro`、文章的 `date` 與 `category` 放在後面。Blog 文章的版型、section 與網址由 `src/posts/posts.11tydata.js` 繼承，不必在每篇重複填寫。請保留既有運作設定；主要文字直接寫在第二條 `---` 下面。標題或簡介含冒號時請加雙引號，例如 `title: "Research: new directions"`。JSON 檔案請保留雙引號與逗號格式。
+頁面頂端兩條 `---` 之間是設定欄位（front matter）。保留欄位依「運作設定在前、可編輯內容在後」排列：`layout`、`section`、`permalink`，以及有使用的 `eleventyExcludeFromCollections` 放在前面；`title`、`intro` 放在後面。請保留既有運作設定；主要文字直接寫在第二條 `---` 下面。標題或簡介含冒號時請加雙引號，例如 `title: "Research: new directions"`。JSON 檔案請保留雙引號與逗號格式。
 
 站內連結請使用下列格式，讓主網址與測試子路徑皆可運作：
 
@@ -182,32 +181,9 @@ PDF 連結的來源與實際查核結果保存在 [publication-pdf-check.json](d
 
 若這篇是該年份最後一篇，在其後另起一段加入 `---`。
 
-### 編輯 Blog 首頁
+### 編輯 Blog
 
-Blog 首頁與其他分頁一樣，直接修改 `src/blog.md` 的 `title`、`intro` 與 Markdown 正文。文章列表由共用版型 `src/_includes/layouts/blog.njk` 自動產生，不需在 `.md` 中編輯 HTML 或迴圈；網址仍為 `/blog/`。
-
-### 新增 Blog 文章
-
-在 `src/posts/` 新增 `your-article-title.md`：
-
-```md
----
-published: true
-title: Your article title
-date: 2026-10-23
-category: Research notes
----
-
-Your article starts here.
-
-## A section
-
-More text.
-```
-
-文章會自動出現在 Blog，按日期由新到舊排列，網址為 `/blog/your-article-title/`。將 `published` 改為 `false` 可保留草稿：不產生文章頁，也不顯示於清單。日期請換成實際發布日期；未來日期不會自動排程，而是依 `published` 決定是否發布。沒有文章時，Blog 會自動顯示簡短空白狀態。
-
-`src/posts/research-notes.md` 是現成範例。正式使用時請刪除 `example: true` 並替換內容。已發布文章的檔名決定網址，請盡量不要變更，以免既有連結失效。
+Blog 與其他一般分頁完全相同，使用共用版型 `src/_includes/layouts/page.njk`。直接修改 `src/blog.md` 的 `title`、`intro` 與 Markdown 正文；網址仍為 `/blog/`。沒有自動文章列表、日期排序、草稿旗標、文章網址產生器或 Blog 專用樣式；標題、段落、連結與分隔線都自行寫在同一份 Markdown 中。
 
 ## Local development
 

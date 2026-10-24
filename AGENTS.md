@@ -33,7 +33,7 @@
 - 維持單一螢幕寬度 breakpoint；目前位置與數值以 CSS 為準。手機只保留必要的字級、容器留白及排列調整，避免元件各自加覆寫。
 - 全站使用共用字型；字重只有一般與粗體兩級，Markdown 粗體也沿用共用粗體。字距與單字間距使用預設 `normal`，不新增相關選項。
 - H3 與論文標題共用字級、字重、行高與上外距；論文標題只允許下外距的獨立覆寫，不另加尺寸或行高；標題、論文相關資訊與導覽沿用 compact 行高，內文沿用 body 行高。
-- Blog 標題與文章主標題區沿用共用標題設定，不另加 Blog 專屬的標題外觀或內距。標題、正文列表與頁尾不自帶分隔線；內容分隔線由 Markdown 的 `---` 明確加入。
+- Blog 與其他分頁的主標題區沿用共用標題設定，不另加 Blog 專屬的標題外觀或內距。標題、正文列表與頁尾不自帶分隔線；內容分隔線由 Markdown 的 `---` 明確加入。
 - 圓角、底線、箭頭尺寸使用共用規則；容器、照片、導覽高度等功能尺寸依用途處理。
 - 保持 Eleventy、Markdown、Nunjucks 與原生 CSS 的簡單架構。不為一般編輯導入 CMS、前端框架、額外套件或客戶端 JavaScript。
 - 保留語意標題、鍵盤操作、可見焦點、跳至內容、行動版導覽、列印樣式及本地字型等既有功能。
@@ -45,7 +45,7 @@
 | 本共用工作規則 | `AGENTS.md` |
 | 人工維護、預覽、發布說明 | `README.md` |
 | Home、Lab、Publications、Teaching | `src/index.md`、`src/lab.md`、`src/publications.md`、`src/teaching.md` |
-| Blog 列表與文章 | `src/blog.md`、`src/posts/` |
+| Blog | `src/blog.md` |
 | 姓名、聯絡資訊、導覽 | `src/_data/site.json` |
 | 共用版型與元件 | `src/_includes/` |
 | 設計變數與樣式 | `src/assets/style.css` |
@@ -53,7 +53,7 @@
 | CV、論文與演講資源 | `files/`、`papers/`、`talks/` |
 | 建置、檢查、部署 | `eleventy.config.js`、`scripts/`、`.github/workflows/` |
 
-- Blog 首頁內容用 `src/blog.md` 編輯，自動文章列表由 `src/_includes/layouts/blog.njk` 提供；不要將使用者需編輯的首頁內容改回 HTML／Nunjucks 迴圈。
+- Blog 與其他分頁一樣，直接以 `src/blog.md` 編輯，使用共用 `layouts/page.njk`；不新增獨立文章集合、自動列表、文章版型或專用樣式。
 - 五個導覽項目是獨立頁面，Home 使用根網址；導覽列保持 sticky。
 - Publications 的檔名、`section`、導覽 key、CSS 類別及網址統一使用 `publications`。舊 `/publication/` 只保留於失效路徑的檢查與說明。
 - 論文依年份由新到舊排列。同年份論文之間只留 Markdown 空行；每個年份最後一篇之後才加 `---`，最後一個年份亦同。
@@ -62,7 +62,7 @@
 - 會議或期刊名稱括號內的簡稱使用 Markdown 粗體，例如 `(**ICML**)`；保留原本的斜體與作者、標題等內容。
 - Oral、Highlight、Spotlight、獎項等標記寫成 `· **Oral**`，沿用共用轉換；只有粗體文字套用標記顏色，前方的 `·` 保持一般文字顏色，不手寫個別顏色或 HTML。
 - 作者順序、標題、年份、會議／期刊、獎項與連結需有來源；不補造論文、學生、課程或成果。
-- front matter 先列運作欄位（版型、分頁識別、網址、集合／發布旗標），再列可編輯內容；Blog 已繼承的設定不在每篇重複新增。不重新加入 `eyebrow`、`description` 欄位或其顯示與描述 metadata。
+- front matter 先列運作欄位（版型、分頁識別、網址等），再列可編輯內容。不重新加入 `eyebrow`、`description` 欄位或其顯示與描述 metadata。
 - 論文會議／期刊名稱保留斜體，括號內簡稱保留粗體；年份放在斜體之外。
 - 內容保持一般 Markdown 可編輯；站內資源連結依 README 使用 Eleventy 的 `url` filter，支援根網址、子路徑與預覽。
 - 已發布內容改名時，檢查檔案、導覽、front matter、CSS、站內連結、腳本與 README，避免只改顯示文字。

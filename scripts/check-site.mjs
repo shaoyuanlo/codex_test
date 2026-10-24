@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import { readFile, readdir, stat } from 'node:fs/promises';
 import path from 'node:path';
 
-// Check the built result, including every generated blog post and asset link.
+// Check the built result, including every generated page and asset link.
 const output = path.resolve(process.argv[2] || '_site');
 async function walk(dir) {
   const children = await readdir(dir, { withFileTypes: true });
