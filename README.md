@@ -66,7 +66,7 @@ https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/<提交版�
 | 變數 | 數值 | 用途 |
 | --- | --- | --- |
 | `--line-height-heading` | `1.3` | 一般標題（H1、H2、H3 等） |
-| `--line-height-compact` | `1.5` | 論文標題、作者、導覽列 |
+| `--line-height-compact` | `1.5` | 論文標題及相關資訊（作者、會議、連結）、導覽列 |
 | `--line-height-body` | `1.7` | 一般內文、Blog、提示框 |
 | `--space-sm` | `8px` | 標題緊接內容、相關資訊、清單項目 |
 | `--space-md` | `16px` | 段落之間、一般標題下方 |
@@ -128,7 +128,7 @@ Normal text, **bold text**, and *italic text*.
 
 ### 新增論文
 
-在 `src/publications.md` 相應年份下方複製這個區塊，不需要修改 HTML：
+在 `src/publications.md` 相應年份下方複製這個區塊，不需要修改 HTML。論文標題後的作者、會議與連結段落統一使用 `1.5` 行高、`8px` 下方外距；第一篇論文標題之前的頁面說明維持一般內文設定：
 
 ```md
 ### Paper title
