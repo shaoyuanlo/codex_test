@@ -14,7 +14,6 @@ for (const [relative, marker] of [
   ['assets/fonts/noto-sans-tc/files/noto-sans-tc-0-wght-normal.woff2', null]
 ]) {
   const target = new URL(relative, manifest.url);
-  target.searchParams.set('v', manifest.sourceCommit.slice(0, 12));
   const url = target.href;
   try {
     const response = await fetch(url, { signal: AbortSignal.timeout(20000) });
@@ -26,7 +25,7 @@ for (const [relative, marker] of [
       matches = text.includes(marker);
       if (relative.endsWith('.html')) {
         matches &&= text.includes(`name="preview-source" content="${manifest.sourceCommit}"`)
-          && text.includes(`/publications/index.html?v=${manifest.sourceCommit.slice(0, 12)}`)
+          && text.includes(`/revisions/${manifest.sourceCommit.slice(0, 12)}/publications/index.html`)
           && !text.includes('/publication/');
       }
     }
@@ -35,7 +34,7 @@ for (const [relative, marker] of [
     checks.push({ url, passed: false, error: error.message });
   }
 }
-const removed = new URL('publication/index.html', manifest.url);
+const removed = new URL(manifest.url.replace(/revisions\/[^/]+\/index\.html$/, 'publication/index.html'));
 removed.searchParams.set('v', manifest.sourceCommit.slice(0, 12));
 try {
   const response = await fetch(removed, { signal: AbortSignal.timeout(20000) });

@@ -14,7 +14,7 @@ Built with [Eleventy](https://www.11ty.dev/) and deployed as static HTML to GitH
 
 這套預覽提供實際的多頁網站：可以點擊導覽、閱讀文章、開啟 CV，並使用手機瀏覽。由 raw.githack 代理提供公開儲存庫 `site-preview` 分支中的靜態網頁，不需要先開啟 GitHub Pages，也不會取代原本的正式網站。工作流程會在儲存庫改為公開時執行，亦可在 Actions 手動執行；維持私有時會跳過公開代理發布。
 
-更新方式：修改 **`main` 分支**的 `src/` 內容並提交 → 等待 **Update interactive website preview** 工作流程成功 → 重新整理上方預覽網址。這是提交後的自動建置預覽，不是逐字即時更新；第三方代理可能有短暫快取。預覽建置會替頁面、導覽與資源連結加上 `?v=提交版本`，避免沿用舊版快取；最新帶版本的入口可從 `site-preview/preview.json` 的 `url` 取得，亦會顯示在工作流程的建置輸出中。舊的不帶版本網址仍可能暫時命中代理快取。請勿手動編輯 `site-preview` 分支，因為它會被自動產生的檔案更新。
+更新方式：修改 **`main` 分支**的 `src/` 內容並提交 → 等待 **Update interactive website preview** 工作流程成功 → 重新整理上方預覽網址。這是提交後的自動建置預覽，不是逐字即時更新；第三方代理可能有短暫快取。預覽建置會將頁面、導覽與資源放在 `revisions/提交版本/` 目錄，避免代理忽略查詢參數而沿用舊快取；最新帶版本的入口可從 `site-preview/preview.json` 的 `url` 取得，亦會顯示在工作流程的建置輸出中。舊的不帶版本網址仍可能暫時命中代理快取；每次更新請使用最新入口，版本目錄只保留當次建置。請勿手動編輯 `site-preview` 分支，因為它會被自動產生的檔案更新。
 
 預覽狀態可在 [Actions](https://github.com/shaoyuanlo/codex_test/actions/workflows/preview.yml) 查看。若 Actions 被停用，或儲存庫政策不允許工作流程寫入分支，自動更新會失敗；請啟用 Actions 並確認此工作流程獲允許使用 `contents: write`。此預覽使用公開檔案，不需要新增個人存取權杖。
 

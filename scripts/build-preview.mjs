@@ -1,17 +1,17 @@
 import Eleventy from '@11ty/eleventy';
 import { execFileSync } from 'node:child_process';
-import { readdir, readFile, rm, writeFile } from 'node:fs/promises';
+import { cp, mkdir, readdir, readFile, rm, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 
 // This output is served from the generated site-preview branch by raw.githack.
 // The normal GitHub Pages build and production URLs stay independent.
 const repository = process.env.GITHUB_REPOSITORY || 'shaoyuanlo/codex_test';
 if (!/^[\w.-]+\/[\w.-]+$/.test(repository)) throw new Error('Invalid GitHub repository');
-const prefix = `/${repository}/site-preview/`;
 const origin = 'https://raw.githack.com';
 const output = '_preview';
 const sourceCommit = process.env.GITHUB_SHA || execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim();
 const version = sourceCommit.slice(0, 12);
+const prefix = `/${repository}/site-preview/revisions/${version}/`;
 process.env.PATH_PREFIX = prefix;
 process.env.SITE_URL = origin;
 process.env.ELEVENTY_OUTPUT = output;
@@ -31,8 +31,6 @@ async function rewrite(dir) {
         if (value.startsWith(prefix) || value.startsWith(origin + prefix)) {
           const url = new URL(value, origin);
           if (url.pathname.endsWith('/')) url.pathname += 'index.html';
-          // Version navigation and assets together, but keep canonical metadata clean.
-          if (attr === 'href' || attr === 'src') url.searchParams.set('v', version);
           return `${attr}="${value.startsWith(origin) ? url.href : url.pathname + url.search + url.hash}"`;
         }
         return match;
@@ -46,6 +44,14 @@ await writeFile(path.join(output, '.nojekyll'), '');
 await writeFile(path.join(output, 'preview.json'), JSON.stringify({
   sourceCommit,
   generatedAt: new Date().toISOString(),
-  url: `${origin}${prefix}index.html?v=${version}`
+  url: `${origin}${prefix}index.html`
 }, null, 2) + '\n');
-console.log(`Interactive preview: ${origin}${prefix}index.html?v=${version}`);
+// A new directory bypasses proxies that ignore query strings in cache keys.
+// Keep root files as an entry point, with all links targeting this snapshot.
+const entries = await readdir(output);
+const snapshot = path.join(output, 'revisions', version);
+await mkdir(snapshot, { recursive: true });
+for (const entry of entries) {
+  await cp(path.join(output, entry), path.join(snapshot, entry), { recursive: true });
+}
+console.log(`Interactive preview: ${origin}${prefix}index.html`);
