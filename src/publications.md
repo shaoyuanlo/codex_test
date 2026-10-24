@@ -12,7 +12,51 @@ For the latest updates, see [Google Scholar](https://scholar.google.com/citation
 
 <!-- Add papers under their year heading. Separate papers with blank lines; place --- only at the end of each year. -->
 
+## Preprints
+
+### Industrial Anomaly Detection via Defect-Grounded Reasoning in Visual Latent Space
+
+Jaron Yeh, Yen-Wei Chang, Jiang Liu, **Shao-Yuan Lo**
+
+*arXiv preprint arXiv:2609.29457*
+
+[arXiv](https://arxiv.org/abs/2609.29457) / [PDF](https://arxiv.org/pdf/2609.29457)
+
+### AEGIS: Audio Endogenous Guarding via Internal Signals Against Large Audio-Language Model Jailbreaks
+
+Yu-Ling Liao, Tzu-Chin Chiu, Zong-You Chen, Chi-Lei Tsai, **Shao-Yuan Lo**
+
+*arXiv preprint arXiv:2609.29287*
+
+[arXiv](https://arxiv.org/abs/2609.29287) / [PDF](https://arxiv.org/pdf/2609.29287)
+
+## 2027
+
+### Spatiotemporal Dynamics-Aware Industrial Anomaly Detection and Reasoning
+
+S-Wei Chen, Siangyu Yang, Yi-Chen Jan, Chun-Yi Lee, **Shao-Yuan Lo**
+
+*IEEE/CVF Winter Conference on Applications of Computer Vision (WACV), 2027*
+
+[PDF]
+
 ## 2026
+
+### DRAMA: Dissecting Attention Redundancy for Accelerating Multimodal Diffusion Large Language Models
+
+Yi-Hsin Hung, Fangfu Liu, **Shao-Yuan Lo**, Chu-song Chen
+
+*Annual Conference on Neural Information Processing Systems (NeurIPS), 2026*
+
+[PDF]
+
+### When Demonstrations Fail: Diagnosing the Limits of In-Context Learning in Large Audio-Language Models with Progressive Cue Removal
+
+Yen-Ting Piao, Jay Chiehen Liao, Wei-Tang Chien, Toshiki Ogimoto, Shang-Tse Chen, Yun-Nung Chen, Chun-Yi Lee, **Shao-Yuan Lo**
+
+*IEEE Spoken Language Technology Workshop (SLT), 2026*
+
+[arXiv](https://arxiv.org/abs/2603.20433) / [PDF](https://arxiv.org/pdf/2603.20433)
 
 ### From Shortcuts to Reasoning: Robust Post-Training of Theory of Mind with Reinforcement Learning
 
@@ -22,13 +66,21 @@ Jike Zhong, Yuxiang Lai, Ming Li, Yuheng Li, Wuao Liu, Behzad Dariush, Konstanti
 
 [arXiv](https://arxiv.org/abs/2606.09092) / [PDF](https://arxiv.org/pdf/2606.09092) / [Code](https://github.com/jkz-338/Robust-ToM-RL) / [Poster]({{ '/papers/ToM-SC_poster.png' | url }}) / [Slides]({{ '/papers/ToM-SC.pdf' | url }})
 
+### ProSGNeRF: Progressive Dynamic Neural Scene Graph with Frequency Modulated Foundation Model in Urban Scenes
+
+Tianchen Deng, Yanbo Wang, Yejia Liu, Chenpeng Su, Jingchuan Wang, Hesheng Wang, Danwei Wang, **Shao-Yuan Lo**, Weidong Chen
+
+*International Journal of Computer Vision (IJCV), 2026*
+
+[arXiv](https://arxiv.org/abs/2312.09076) / [PDF](https://arxiv.org/pdf/2312.09076)
+
 ### CSGaussian: Progressive Rate-Distortion Compression and Segmentation for 3D Gaussian Splatting
 
 Yu-Jen Tseng, Chia-Hao Kao, Jing-Zhong Chen, Alessandro Gnutti, **Shao-Yuan Lo**, Yen-Yu Lin, Wen-Hsiao Peng
 
 *IEEE/CVF Winter Conference on Applications of Computer Vision (WACV), 2026*
 
-[arXiv](https://arxiv.org/abs/2601.12814) / [PDF](https://openaccess.thecvf.com/content/WACV2026/papers/Tseng_CSGaussian_Progressive_Rate-Distortion_Compression_and_Segmentation_for_3D_Gaussian_Splatting_WACV_2026_paper.pdf)
+[arXiv](https://arxiv.org/abs/2601.12814) / [PDF](https://openaccess.thecvf.com/content/WACV2026/papers/Tseng_CSGaussian_Progressive_Rate-Distortion_Compression_and_Segmentation_for_3D_Gaussian_Splatting_WACV_2026_paper.pdf) / [Code](https://github.com/dtc111111/prosgnerf)
 
 ---
 
@@ -88,7 +140,7 @@ Shaoyan Pan, Junbo Peng, Yuan Gao, **Shao-Yuan Lo**, Tianyu Luan, Junyuan Li, To
 
 *IEEE Transactions on Medical Imaging (T-MI), 2025*
 
-[arXiv](https://ieeexplore.ieee.org/document/10946202) / [PDF](https://pmc.ncbi.nlm.nih.gov/articles/PMC12310287/pdf/nihms-2095081.pdf) [**Browser verification may be required**]
+[Paper](https://ieeexplore.ieee.org/document/10946202)
 
 ### TTT-Vnet: A 3D Vision Test-Time Training Model for Medical Image Analysis
 
@@ -96,7 +148,7 @@ Shaoyan Pan, Vanessa Su, **Shao-Yuan Lo**, Mingzhe Hu, Yuheng Li, Chih-Wei Chang
 
 *SPIE Medical Imaging (SPIE MI), 2025*
 
-[arXiv](https://spie.org/medical-imaging/presentation/TTT-Vnet--A-3D-vision-test-time-training-model/13406-108) / [PDF](https://www.spiedigitallibrary.org/conference-proceedings-of-spie/13406/134062Y/TTT-Vnet--a-3D-vision-test-time-training-model/10.1117/12.3047499.pdf) [**Institutional access may be required**]
+[Paper](https://spie.org/medical-imaging/presentation/TTT-Vnet--A-3D-vision-test-time-training-model/13406-108)
 
 ---
 
@@ -132,7 +184,7 @@ Shaoyan Pan, **Shao-Yuan Lo**, Chih-Wei Chang, Ella Salari, Tonghe Wang, Justin 
 
 *SPIE Medical Imaging (SPIE MI), 2024* [**Best Student Paper Award**]
 
-[arXiv](https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12931/129310P/Patient-specific-3D-volumetric-CBCT-image-reconstruction-with-single-x/10.1117/12.3006561.short) / [PDF](https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12931/129310P/Patient-specific-3D-volumetric-CBCT-image-reconstruction-with-single-x/10.1117/12.3006561.pdf) [**Institutional access may be required**]
+[Paper](https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12931/129310P/Patient-specific-3D-volumetric-CBCT-image-reconstruction-with-single-x/10.1117/12.3006561.short)
 
 ### Adaptive Batch Normalization Networks for Adversarial Robustness
 
@@ -260,7 +312,7 @@ Shang-Wei Hung, **Shao-Yuan Lo**, Hsueh-Ming Hang
 
 *IEEE International Conference on Image Processing (ICIP), 2019* [**Oral**]
 
-[arXiv](https://arxiv.org/abs/1809.09077) / [PDF](https://arxiv.org/pdf/1809.09077) / [Project](https://github.com/shangweihung/LDFNet) / [Slides]({{ '/papers/LDFNet.pdf' | url }})
+[arXiv](https://arxiv.org/abs/1809.09077) / [PDF](https://arxiv.org/pdf/1809.09077) / [Code](https://github.com/shangweihung/LDFNet) / [Slides]({{ '/papers/LDFNet.pdf' | url }})
 
 ---
 
