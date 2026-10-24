@@ -7,5 +7,5 @@ layout: layouts/base.njk
   {% if intro %}<p class="page-intro">{{ intro }}</p>{% endif %}
 </header>
 <div class="prose page-content">
-{{ content | safe }}
+{{ content | publicationNotes(section) | safe }}
 </div>

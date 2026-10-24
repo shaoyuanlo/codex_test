@@ -86,7 +86,7 @@ https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/<提交版�
 
 全站字型統一由 `style.css` 的 `--font: "Inter", "Noto Sans TC", system-ui, sans-serif` 設定：英文優先使用 Inter，中文使用 Noto Sans TC，載入失敗或缺字時使用系統預設字型。標題、內文、導覽、中文姓名與程式碼都沿用這一組字型；字級限用上述五項，字重限用 400／600。原本的 `--serif`、`--sans` 已移除。字型檔存於 `src/assets/fonts/`，以分段 WOFF2 按需載入，採 `font-display: swap`，不依賴外部字型 CDN；來源版本及授權分別保存在 `sources.json` 與各字型目錄的 `LICENSE.txt`。
 
-配色維持白色頁面背景、黑色一般文字、主藍互動與少量強調文字。導覽橫幅使用主藍底、白字，深藍按鈕也使用白字；首頁職稱、提示框標籤及消息日期沿用主藍。提示框與程式碼區塊恢復淺藍背景，分隔線與邊框共用這個淺藍色。文字反白使用較深的藍底，搭配黑字。介面文字僅使用黑、白、主藍三色。
+配色維持白色頁面背景、黑色一般文字、主藍互動與少量強調文字。導覽橫幅使用主藍底、白字，深藍按鈕也使用白字；首頁職稱、提示框標籤及消息日期沿用主藍。提示框與程式碼區塊恢復淺藍背景，分隔線與邊框共用這個淺藍色。文字反白使用較深的藍底，搭配黑字。介面文字使用黑、白、主藍，論文標記另使用暗紅色 `--highlight`。
 
 介面配色集中在 `style.css` 開頭的 `:root`：
 
@@ -98,10 +98,11 @@ https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/<提交版�
 | `--accent-hover` | `#00245B` | 按鈕滑過時的底色 |
 | `--accent-light` | `#EAF0F8` | 提示框與程式碼區塊背景、分隔線與邊框 |
 | `--selection-bg` | `#AFC7E8` | 滑鼠或觸控選取文字時的反白底色 |
+| `--highlight` | `#900C26` | 論文的 Oral、Highlight、Spotlight、獎項等標記 |
 
-共 **6 個色彩變數、6 種實際顏色**；邊框與提示背景共用色碼，文字不設主要／次要灰階。網站不設定 `theme-color`，讓手機瀏覽器自行決定工具列顏色；網站內的導覽列仍為主藍色。列印背景沿用 `--white`。照片與校徽的顏色來自圖片檔本身，不由這些 CSS 變數控制。
+共 **7 個色彩變數、7 種實際顏色**；邊框與提示背景共用色碼，文字不設主要／次要灰階。網站不設定 `theme-color`，讓手機瀏覽器自行決定工具列顏色；網站內的導覽列仍為主藍色。列印背景沿用 `--white`。照片與校徽的顏色來自圖片檔本身，不由這些 CSS 變數控制。
 
-這份版本帶入原網站的簡介、照片、CV、Publications 區塊的全部 29 篇論文（2018–2026 年）與部分消息。Lab 成員、課程內容保留待填；Blog 目前有一篇明確標示 Example 的示範文章，正式上線前可替換或刪除。沒有虛構學生、課程或研究成果。原網站論文使用的 49 個本地資源檔（BibTeX、海報與投影片）也已帶入 `papers/`、`talks/`，不依賴舊網站的檔案路徑。
+這份版本帶入原網站的簡介、照片、CV、Publications 區塊的全部 29 篇論文（2018–2026 年）與部分消息。Lab 成員、課程內容保留待填；Blog 目前有一篇明確標示 Example 的示範文章，正式上線前可替換或刪除。沒有虛構學生、課程或研究成果。原網站論文使用的 20 個本地資源檔（海報與投影片）也已帶入 `papers/`、`talks/`，不依賴舊網站的檔案路徑。
 
 ### Markdown 基本格式
 
@@ -135,10 +136,12 @@ Normal text, **bold text**, and *italic text*.
 
 First Author, **Shao-Yuan Lo**, Last Author
 
-*Conference or Journal, Year*
+*Conference or Journal, Year* [**Oral**]
 
 [Paper](https://example.com/paper) / [Code](https://github.com/example/project)
 ```
+
+論文標記直接寫成 `[**Oral**]`、`[**Highlight**]`、`[**Spotlight**]` 或 `[**Best Paper Award**]`，建置時會自動套用 `--highlight` 的顏色，不需手動寫 HTML；沒有標記則省略。
 
 若這篇是該年份最後一篇，在其後另起一段加入 `---`。
 

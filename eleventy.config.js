@@ -8,6 +8,11 @@ export default function (eleventyConfig) {
   }
   if (existsSync("CNAME")) eleventyConfig.addPassthroughCopy("CNAME");
   eleventyConfig.addFilter("year", () => new Date().getUTCFullYear());
+  // Keep publication notes editable as [**Oral**] in ordinary Markdown.
+  eleventyConfig.addFilter("publicationNotes", (html, section) => section === "publications"
+    ? html.replace(/\[<strong>([^<]+)<\/strong>\]/g,
+      '<span class="publication-note">[<strong>$1</strong>]</span>')
+    : html);
   eleventyConfig.addFilter("dateLabel", date => new Intl.DateTimeFormat("en", {
     year: "numeric", month: "long", day: "numeric", timeZone: "UTC"
   }).format(new Date(date)));
