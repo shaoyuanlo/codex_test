@@ -40,6 +40,9 @@
   --space-xl: 32px;
   --space-2xl: 40px;
 }
+/* Shared rectangular corners. */
+a:focus-visible, .skip-link, .portrait img, .prose pre, .callout { border-radius: 6px; }
+
 /* Shared headings: H1–H6 size, weight, line height and margins, including publication title spacing. */
 h1, h2, h3, h4, h5, h6 { font-size: var(--font-size-base); font-weight: 400; margin: var(--space-lg) 0 var(--space-md); line-height: var(--line-height-compact); }
 .prose h2 { font-size: var(--font-size-xl); }
@@ -82,6 +85,7 @@ h4, h5, h6 { margin-bottom: var(--space-sm); }
 .hero-roles { margin-bottom: var(--space-md); }
 .hero-position + .hero-position { margin-top: var(--space-sm); }
 .hero-position p { margin: 0; }
+.hero-position p + p { margin-top: var(--space-xs); }
 .hero-role { color: var(--accent); }
 /* Contact links: horizontal layout, spacing and wrapping. */
 .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-sm) var(--space-md); }
@@ -112,8 +116,6 @@ h4, h5, h6 { margin-bottom: var(--space-sm); }
 
 
 
-/* Shared rectangular corners. */
-a:focus-visible, .skip-link, .portrait img, .prose pre, .callout { border-radius: 6px; }
 * { box-sizing: border-box; }
 html { scroll-padding-top: 110px; }
 body { min-height: 100vh; display: flex; flex-direction: column; margin: 0; background: var(--white); color: var(--black); font-family: var(--font); font-size: var(--font-size-base); font-weight: 400; line-height: var(--line-height-body); -webkit-font-smoothing: antialiased; }
