@@ -1,7 +1,7 @@
 {
-  "checkedAt": "2026-10-24T15:36:13.268445+00:00",
+  "checkedAt": "2026-10-24T15:39:49.220085+00:00",
   "count": 29,
-  "selected": 27,
+  "selected": 26,
   "indexCounts": {
     "CVPR2025": 28036,
     "CVPR2024": 25008,
@@ -654,20 +654,7 @@
           "source": "https://ieeexplore.ieee.org/document/10946202"
         }
       ],
-      "selected": {
-        "url": "https://arxiv.org/pdf/2506.13545",
-        "status": 200,
-        "finalUrl": "https://arxiv.org/pdf/2506.13545",
-        "contentType": "application/pdf",
-        "isPdf": true,
-        "titleCoverage": 0.812,
-        "pages": 18,
-        "bytes": 996351,
-        "titleMatches": true,
-        "passed": true,
-        "kind": "arxiv",
-        "source": "https://arxiv.org/abs/2506.13545"
-      },
+      "selected": null,
       "landingPages": [
         {
           "url": "https://doi.org/10.1109/TMI.2025.3556402",
@@ -961,7 +948,45 @@
           "source": "https://arxiv.org/abs/2506.13545"
         }
       ],
-      "phase3Selected": true
+      "phase3Selected": true,
+      "rejectedArxivCandidate": {
+        "url": "https://arxiv.org/pdf/2506.13545",
+        "reason": "Different title and reconstruction task; not the DOI-linked publication."
+      },
+      "publicArchiveDiscovery": [
+        {
+          "url": "https://pmc.ncbi.nlm.nih.gov/utils/oa/oa.fcgi?id=PMC12310287",
+          "status": 404,
+          "text": "\n\n<!DOCTYPE html>\n<html lang=\"en\" >\n    <head >\n\n        <meta charset=\"UTF-8\" />\n        <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" />\n        <meta name=\"HandheldFriendly\" content=\"True\" />\n        <meta name=\"MobileOptimized\" content=\"320\" />\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n\n        \n        \n\n        \n        \n  <link  rel=\"stylesheet\" href=\"https://cdn.ncbi.nlm.nih.gov/pmc/pd-medc-pmc-cloudpmc-viewer/production/9b1d9d87/var/data/static/assets/base_style-BxRs1iOp.css\" />\n<script type=\"module\" crossorigin=\"\" src=\"https://cdn.ncbi.nlm.nih.gov/pmc/pd-medc-pmc-cloudpmc-viewer/production/9b1d9d87/var/data/static/assets/base_style-D-jH62-1.js\"></script>\n\n    <link  rel=\"stylesheet\" href=\"https://cdn.ncbi.nlm.nih.gov/pmc/pd-medc-pmc-cloudpmc-viewer/production/9b1d9d87/var/data/static/assets/exception_style-DfB_Czfm.css\" />\n<script type=\"module\" crossorigin=\"\" src=\"https://cdn.ncbi.nlm.nih.gov/pmc/pd-medc-pmc-cloudpmc-viewer/production/9b1d9d87/var/data/static/assets/exception_style-BwXPOLgr.js\"></script>\n\n\n        \n            <link rel=\"apple-touch-icon\"\n                  sizes=\"180x180\"\n                  href=\"https://cdn.ncbi.nlm.nih.gov/pmc/pd-medc-pmc-cloudpmc-viewer/production/9b1d9d87/var/data/static/img/favicons/apple-touch-icon.png\" />\n            <link rel=\"icon\"\n                  type=\"image/png\"\n                  sizes=\"48x48\"\n                  href=\"https://cdn.ncbi.nlm.nih.gov/pmc/pd-medc-pmc-cloudpmc-viewer/production/9b1d9d87/var/data/static/img/favicons/favicon-48x48.png\" />\n            <link rel=\"icon\"\n                  type=\"image/png\"\n                  sizes=\"32x32\"\n                  href=\"https://cdn.ncbi.nlm.nih.gov/pmc/pd-medc-pmc-cloudpmc-viewer/production/9b1d9d87/var/data/static/img/favicons/favicon-32x32.png\" />\n            <link rel=\"icon\"\n                  type=\"image/png\"\n                  sizes=\"16x16\"\n                  href=\"https://cdn.ncbi.nlm.nih.gov/pmc/pd-medc-pmc-cloudpmc-viewer/production/9b1d9d87/var/data/static/img/favicons/favicon-16x16.png\" />\n            <link rel=\"manifest\" href=\"https://cdn.ncbi.nlm.nih.gov/pmc/pd-medc-pmc-cloudpmc-viewer/production/9b1d9d87/var/data/static/img/favicons/site.webmanifest\" />\n            <link rel=\"mask-icon\"\n                  href=\"https://cdn.ncbi.nlm.nih.gov/pmc/pd-medc-pmc-cloudpmc-viewer/production/9b1d9d87/var/data/static/img/favicons/safari-pinned-tab.svg\"\n                  color=\"#0071bc\" />\n            <meta name=\"msapplication-config\"\n                  content=\"https://cdn.ncbi.nlm.nih.gov/pmc/pd-medc-pmc-cloudpmc-viewer/production/9b1d9d87/var/data/static/img/favicons/browserconfig.xml\" />\n            <meta name=\"theme-color\" content=\"#ffffff\" />\n        \n\n        <title>\n            HTTP 404 [Not Found]\n        </title>\n\n        \n        \n  \n  <!-- Logging params: Pinger defaults -->\n<meta name=\"ncbi_app\" content=\"cloudpmc-viewer\" />\n<meta name=\"ncbi_db\" content=\"pmc\" />\n<meta name=\"ncbi_phid\" content=\"96390B79ADCCD523110B790034A2A56E.m_1\" />\n<meta name=\"ncbi_pinger_stat_url\" content=\"https://pmc.ncbi.nlm.nih.gov/stat\" />\n<!-- Logging params: Pinger custom -->\n<meta name=\"ncbi_pdid\" content=\"exception\" />\n  \n    <link rel=\"preconnect\" href=\"https://www.google-analytics.com\" />\n\n    \n        <link rel=\"preconnect\" href=\"https://cdn.ncbi.nlm.nih.gov\" />\n    \n\n    <!-- Include USWDS Init Script -->\n    <script src=\"https://cdn.ncbi.nlm.nih.gov/pmc/pd-medc-pmc-cloudpmc-viewer/production/9b1d9d87/var/data/static/assets/uswds-init.js\"></script>\n\n\n    </head>\n    <body >\n        \n    <a class=\"usa-skipnav \" href=\"#main-content\">\n      Skip to main content\n    </a>\n\n\n        \n            \n\n<section class=\"usa-banner \" aria-label=\"Official website of the United States government\" >\n    <div class=\"usa-accordion\">\n        <header class=\"usa-banner__header\">\n            <div class=\"usa-banner__inner\">\n                <div class=\"grid-col-auto\">\n                    <img aria-hidden=\"true\"\n                         class=\"usa-banner__header-flag\"\n                         src=\"https://cdn.ncbi.nlm.nih.gov/pmc/pd-medc-pmc-cloudpmc-viewer/production/9b1d9d87/var/data/static/img/us_flag.svg\"\n                         alt=\"\" />\n                </div>\n\n                <div class=\"grid-col-fill tablet:grid-col-auto\" aria-hidden=\"true\">\n                    <p class=\"usa-banner__header-text\">\n                        An official website of the United States government\n                    </p>\n                    <span class=\"usa-banner__header-action\">Here's how you know</span>\n                </div>\n\n                \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    \n        <button\n            type=\"button\"\n        \n    \n    class=\"usa-accordion__button usa-banner__button\n           \n\n           \n               \n               \n               \n               \n            \n\n           \n           \n           \n           \"\n    aria-expanded=\"false\"\n    aria-controls=\"gov-banner-default\"\n    \n    data-testid=\"storybook-django-banner\"\n    \n    >\n    \n        \n\n        \n                    <span class=\"usa-banner__button-text\">Here's how you know</span>\n                \n\n        \n    \n        \n            </button>\n        \n\n\n            </div>\n        </header>\n\n        <div class=\"usa-banner__content usa-accordion__content\"\n             id=\"gov-banner-default\"\n             hidden>\n            <div class=\"grid-row grid-gap-lg\">\n                <div class=\"usa-banner__guidance tablet:grid-col-6\">\n                    <img class=\"usa-banner__icon usa-media-block__img\"\n                         src=\"https://cdn.ncbi.nlm.nih.gov/pmc/pd-medc-pmc-cloudpmc-viewer/production/9b1d9d87/var/data/static/img/icon-dot-gov.svg\"\n                         alt=\"\"\n                         aria-hidden=\"true\" />\n                    <div class=\"usa-media-block__body\">\n                        <p>\n                            <strong>Official websites use .gov</strong>\n                            <br />\n                            A\n                            <strong>.gov</strong> website belongs to an official\n                            government organization in the United States.\n                        </p>\n                    </div>\n                </div>\n\n                <div class=\"usa-banner__guidance tablet:grid-col-6\">\n                    <img class=\"usa-banner__icon usa-media-block__img\"\n                         src=\"https://cdn.ncbi.nlm.nih.gov/pmc/pd-medc-pmc-cloudpmc-viewer/production/9b1d9d87/var/data/static/img/icon-https.svg\"\n                         alt=\"\"\n                         aria-hidden=\"true\" />\n\n                    <div class=\"usa-media-block__body\">\n                        <p>\n                            <strong>Secure .gov websites use HTTPS</strong>\n                            <br />\n                            A <strong>lock</strong> (\n                            <span class=\"icon-lock\">\n                                <svg xmlns=\"http://www.w3.org/2000/svg\"\n                                     width=\"52\"\n                                     height=\"64\"\n                                     viewBox=\"0 0 52 64\"\n                                     class=\"usa-banner__lock-image\"\n                                     role=\"graphics-symbol\"\n                                     aria-labelledby=\"banner-lock-description\"\n                                     focusable=\"false\">\n                                    <title id=\"banner-lock-title\">Lock</title>\n                                    <desc id=\"banner-lock-description\">\n                                    Locked padlock icon\n                                    </desc>\n                                    <path fill=\"#000000\"\n                                          fill-rule=\"evenodd\"\n                                          d=\"M26 0c10.493 0 19 8.507 19 19v9h3a4 4 0 0 1 4 4v28a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V32a4 4 0 0 1 4-4h3v-9C7 8.507 15.507 0 26 0zm0 8c-5.979 0-10.843 4.77-10.996 10.712L15 19v9h22v-9c0-6.075-4.925-11-11-11z\" />\n                                </svg>\n</span>) or <strong>https://</strong> means you've safely\n                                connected to the .gov website. Share sensitive\n                                information only on official, secure websites.\n                            </p>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </section>\n\n        \n\n        \n    \n    \n    \n\n<div class=\"usa-overlay\">\n</div>\n\n\n\n<header class=\"usa-header usa-header--extended usa-header--wide\" data-header data-testid=\"header\"    >\n    <div class=\"ncbi-header\">\n        <div class=\"ncbi-header__container\">\n            <a class=\"ncbi-header__logo-container\"\n               href=\"https://www.ncbi.nlm.nih.gov/\">\n                <img alt=\"NCBI home page\"\n                     class=\"ncbi-header__logo-image\"\n                     src=\"https://cdn.ncbi.nlm.nih.gov/pmc/pd-medc-pmc-cloudpmc-viewer/production/9b1d9d87/var/data/static/img/ncbi-logos/nih-nlm-ncbi--white.svg\"\n                     width=\"410\"\n                     height=\"100\" />\n            </a>\n\n            <!-- Mobile menu hamburger button -->\n            \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    \n        <button\n            type=\"button\"\n        \n    \n    class=\"usa-menu-btn ncbi-header__hamburger-button\n           \n\n           \n               \n               \n               \n               \n            \n\n           \n           \n           \n           \"\n    \n    \n    aria-label=\"Show menu\"\n    data-testid=\"navMenuButton\"\n    \n    >\n    \n        \n\n        \n                <svg aria-hidden=\"true\"\n                     class=\"ncbi-hamburger-icon\"\n                     fill=\"none\"\n                     focusable=\"false\"\n                     height=\"21\"\n                     viewBox=\"0 0 31 21\"\n                     width=\"31\"\n                     xmlns=\"http://www.w3.org/2000/svg\">\n                    <path clip-rule=\"evenodd\"\n                          d=\"M0.125 20.75H30.875V17.3333H0.125V20.75ZM0.125 12.2083H30.875V8.79167H0.125V12.2083ZM0.125 0.25V3.66667H30.875V0.25H0.125Z\"\n                          fill=\"#F1F1F1\"\n                          fill-rule=\"evenodd\" />\n                </svg>\n            \n\n        \n    \n        \n            </button>\n        \n\n\n\n            \n                <!-- Desktop buttons-->\n                <div class=\"ncbi-header__desktop-buttons\">\n                    \n                        <!-- Desktop search button -->\n                        \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    \n        <button\n            type=\"button\"\n        \n    \n    class=\"usa-button\n           \n\n           \n               \n               \n               \n               \n            \n\n           \n           \n           usa-button--unstyled ncbi-header__desktop-button\n           \"\n    aria-expanded=\"false\"\n    aria-controls=\"search-field-desktop-navigation\"\n    aria-label=\"Show search overlay\"\n    data-testid=\"toggleSearchPanelButton\"\n    data-toggle-search-panel-button\n    >\n    \n        \n\n        \n                            \n\n\n\n    <img\n        src=\"https://cdn.ncbi.nlm.nih.gov/pmc/pd-medc-pmc-cloudpmc-viewer/production/9b1d9d87/var/data/static/img/usa-icons/search.svg\"\n        class=\"usa-icon \"\n        aria-hidden=\"true\"\n        \n        \n    />\n\n\n                            Search\n                        \n\n        \n    \n        \n            </button>\n        \n\n\n                    \n\n                    <!-- Desktop login dropdown -->\n                    \n                        <div class=\"ncbi-header__login-dropdown\">\n                            \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    \n        <button\n            type=\"button\"\n        \n    \n    class=\"usa-button\n           \n\n           \n               \n               \n               \n               \n            \n\n           \n           \n           usa-button--unstyled ncbi-header__desktop-button ncbi-header__login-dropdown-button\n           \"\n    aria-expanded=\"false\"\n    aria-controls=\"login-dropdown"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/pub/pmc/manuscript/",
+          "status": 404,
+          "text": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"en\" xml:lang=\"en\">\n<head>\n<title>Object not found!</title>\n<link rev=\"made\" href=\"mailto:webadmin@ncbi.nlm.nih.gov\" />\n<style type=\"text/css\"><!--/*--><![CDATA[/*><!--*/ \n    body { color: #000000; background-color: #FFFFFF; }\n    a:link { color: #0000CC; }\n    p, address {margin-left: 3em;}\n    span {font-size: smaller;}\n/*]]>*/--></style>\n</head>\n\n<body>\n<h1>Object not found!</h1>\n<p>\n\n\n    The requested URL was not found on this server.\n\n  \n\n    If you entered the URL manually please check your\n    spelling and try again.\n\n  \n\n</p>\n<p>\nIf you think this is a server error, please contact\nthe <a href=\"mailto:webadmin@ncbi.nlm.nih.gov\">webmaster</a>.\n\n</p>\n\n<h2>Error 404</h2>\n<address>\n  <a href=\"/\">ftp.ncbi.nlm.nih.gov</a><br />\n  <span>Apache</span>\n</address>\n</body>\n</html>\n\n"
+        },
+        {
+          "url": "https://pmc-oa-opendata.s3.amazonaws.com/?list-type=2&prefix=author_manuscript/PMC12310287&max-keys=40",
+          "status": 200,
+          "text": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<ListBucketResult xmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\"><Name>pmc-oa-opendata</Name><Prefix>author_manuscript/PMC12310287</Prefix><KeyCount>0</KeyCount><MaxKeys>40</MaxKeys><IsTruncated>false</IsTruncated></ListBucketResult>"
+        },
+        {
+          "url": "https://pmc-oa-opendata.s3.amazonaws.com/?list-type=2&prefix=author_manuscript/&max-keys=5",
+          "status": 200,
+          "text": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<ListBucketResult xmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\"><Name>pmc-oa-opendata</Name><Prefix>author_manuscript/</Prefix><KeyCount>0</KeyCount><MaxKeys>5</MaxKeys><IsTruncated>false</IsTruncated></ListBucketResult>"
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/pub/pmc/manuscript/filelist.csv",
+          "status": 404
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/pub/pmc/manuscript/author_manuscript_pdf.csv",
+          "status": 404
+        },
+        {
+          "url": "https://ftp.ncbi.nlm.nih.gov/pub/pmc/manuscript/pdf/filelist.csv",
+          "status": 404
+        }
+      ]
     },
     {
       "title": "TTT-Vnet: A 3D Vision Test-Time Training Model for Medical Image Analysis",
@@ -2784,5 +2809,5 @@
       }
     }
   ],
-  "phase": 3
+  "phase": 4
 }
