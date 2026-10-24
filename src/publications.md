@@ -3,10 +3,7 @@ layout: layouts/page.njk
 section: publications
 permalink: /publications/index.html
 title: Publications
-intro: Publications on trustworthy AI, multimodal learning, and reasoning.
 ---
-
-For the latest updates, see [Google Scholar](https://scholar.google.com/citations?hl=en&user=vL35nH4AAAAJ).
 
 <!-- Add papers under their year heading. Separate papers with blank lines; place --- only at the end of each year. -->
 
