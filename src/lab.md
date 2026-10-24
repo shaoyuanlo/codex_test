@@ -1,11 +1,9 @@
 ---
 layout: layouts/page.njk
-title: Lab
 section: lab
 permalink: /lab/index.html
-eyebrow: Research, together
+title: Lab
 intro: A space for curious minds and thoughtful collaboration.
-description: Research directions and student opportunities with Shao-Yuan Lo at National Taiwan University.
 ---
 ## Our research
 

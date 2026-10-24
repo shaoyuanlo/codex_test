@@ -1,11 +1,9 @@
 ---
 layout: layouts/page.njk
-title: Teaching
 section: teaching
 permalink: /teaching/index.html
-eyebrow: Learning & mentorship
+title: Teaching
 intro: Connecting foundational ideas with the questions shaping AI today.
-description: Courses and teaching resources from Shao-Yuan Lo at National Taiwan University.
 ---
 ## Courses
 

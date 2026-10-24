@@ -3,10 +3,7 @@
   "nameChinese": "羅紹元",
   "role": "Assistant Professor",
   "tagline": ["Building trustworthy AI.", "Understanding multimodal intelligence."],
-  "institution": "National Taiwan University",
-  "institutionUrl": "https://www.ntu.edu.tw/english/",
   "email": "sylo@csie.ntu.edu.tw",
-  "description": "Shao-Yuan Lo is an Assistant Professor at National Taiwan University, working on trustworthy AI, machine learning, and multimodal models.",
   "social": [
     { "label": "Google Scholar", "url": "https://scholar.google.com/citations?hl=en&user=vL35nH4AAAAJ" },
     { "label": "GitHub", "url": "https://github.com/shaoyuanlo" },

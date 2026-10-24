@@ -3,10 +3,9 @@ layout: layouts/base.njk
 ---
 <section class="hero" aria-labelledby="home-title">
   <div class="hero-copy">
-    <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> {{ site.institution }}</p>
     <h1 id="home-title">{{ site.name }}<span class="chinese-name" lang="zh-Hant">{{ site.nameChinese }}</span></h1>
     <p class="hero-role">{{ site.role }}</p>
-    <p class="hero-description">{% for line in site.tagline %}{{ line }}{% if not loop.last %}<br>{% endif %}{% endfor %}</p>
+    <p class="hero-tagline">{% for line in site.tagline %}{{ line }}{% if not loop.last %}<br>{% endif %}{% endfor %}</p>
     <div class="hero-actions">
       <a class="button" href="mailto:{{ site.email }}">Email me {% include 'partials/arrow.njk' %}</a>
       <a class="text-link" href="{{ '/files/SYLo_CV.pdf' | url }}">Curriculum vitae <span class="file-label">PDF</span></a>

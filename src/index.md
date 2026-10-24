@@ -1,7 +1,7 @@
 ---
 layout: layouts/home.njk
-title: Home
 section: home
+title: Home
 ---
 ## About
 

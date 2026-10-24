@@ -1,10 +1,9 @@
 ---
+published: true
+example: true
 title: A space for research notes
 date: 2026-10-23
-description: Notes on trustworthy AI, multimodal learning, and the questions behind our research.
 category: From the desk
-example: true
-published: true
 ---
 Research begins with a question. This space will bring together notes on trustworthy AI, multimodal learning, and the ideas that connect them.
 

@@ -4,11 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% if section != 'home' %}{{ title }} · {% endif %}{{ site.name }}</title>
-  <meta name="description" content="{{ description or site.description }}">
   <link rel="canonical" href="{{ siteOrigin }}{{ page.url | url }}">
   <meta property="og:type" content="{% if section == 'blog' and page.url != '/blog/' %}article{% else %}website{% endif %}">
   <meta property="og:title" content="{{ title }} · {{ site.name }}">
-  <meta property="og:description" content="{{ description or site.description }}">
   <meta property="og:url" content="{{ siteOrigin }}{{ page.url | url }}">
   <meta property="og:image" content="{{ siteOrigin }}{{ '/assets/portrait.jpg' | url }}">
   <link rel="icon" type="image/png" sizes="180x180" href="{{ '/assets/ntu-emblem.png' | url }}">

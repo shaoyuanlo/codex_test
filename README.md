@@ -61,7 +61,7 @@ https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/<提交版�
 | 論文清單 | [`src/publications.md`](src/publications.md) |
 | 課程與教材 | [`src/teaching.md`](src/teaching.md) |
 | 新增文章 | 在 [`src/posts/`](src/posts/) 新增 `.md` 檔案 |
-| 姓名、職稱、學校、Email、社群連結、首頁標語 | [`src/_data/site.json`](src/_data/site.json) |
+| 姓名、職稱、Email、社群連結、首頁標語 | [`src/_data/site.json`](src/_data/site.json) |
 | 首頁按鈕文字 | [`src/_includes/layouts/home.njk`](src/_includes/layouts/home.njk) |
 | 各頁標題下方的簡介 | 各頁頂端 `intro:` 欄位 |
 | 個人照片 | 替換 `src/assets/portrait.jpg`（建議 5:6 比例） |
@@ -102,7 +102,7 @@ Markdown 分隔線 `.prose hr` 的設定緊接在標題設定之後，上下外�
 
 所有非零固定 `margin` 均使用上述間距變數；`0` 保留給不需留白的元素，`auto` 用於容器置中。手機不再個別覆寫外距與行高。`padding`（內距）與 `gap`（排列間隔）也共用這六個變數，大區塊可用 `calc(var(--space-xl) * 2)` 取得 64px。容器左右內距也引用對應的間距變數；照片寬度、導覽列高度等具有明確用途的尺寸另行保留。
 
-其他共用樣式：矩形元件圓角統一 `3px`（狀態圓點保留圓形），連結底線距離統一 `4px`、粗細 `1px`，箭頭尺寸統一 `1em` 並隨字級縮放。這些共用規則直接集中設定，不另外增加變數。全站字距及單字間距使用預設 `normal`。
+其他共用樣式：矩形元件圓角統一 `3px`，連結底線距離統一 `4px`、粗細 `1px`，箭頭尺寸統一 `1em` 並隨字級縮放。這些共用規則直接集中設定，不另外增加變數。全站字距及單字間距使用預設 `normal`。
 
 整頁使用垂直 Flex 排版，`body` 最低高度 `100vh`，正文 `.site-main` 使用 `flex: 1` 撐滿剩餘空間，短頁面的頁尾自然位於視窗底部，不再用固定數字扣除導覽與頁尾高度。手機只保留字級、容器左右內距、導覽排列及照片欄位等必要調整。
 
@@ -144,7 +144,7 @@ Normal text, **bold text**, and *italic text*.
 - Another item
 ```
 
-頁面頂端兩條 `---` 之間是設定欄位（front matter）。請保留 `layout`、`section` 和 `permalink`；主要文字直接寫在第二條 `---` 下面。標題或簡介含冒號時請加雙引號，例如 `title: "Research: new directions"`。JSON 檔案請保留雙引號與逗號格式。
+頁面頂端兩條 `---` 之間是設定欄位（front matter）。保留欄位依「運作設定在前、可編輯內容在後」排列：`layout`、`section`、`permalink`，以及有使用的 `tags`、`eleventyExcludeFromCollections`、`published`、`example` 放在前面；`title`、`intro`、文章的 `date` 與 `category` 放在後面。Blog 文章的版型、section 與網址由 `src/posts/posts.11tydata.js` 繼承，不必在每篇重複填寫。請保留既有運作設定；主要文字直接寫在第二條 `---` 下面。標題或簡介含冒號時請加雙引號，例如 `title: "Research: new directions"`。JSON 檔案請保留雙引號與逗號格式。
 
 站內連結請使用下列格式，讓主網址與測試子路徑皆可運作：
 
@@ -162,7 +162,7 @@ Normal text, **bold text**, and *italic text*.
 
 First Author, **Shao-Yuan Lo**, Last Author
 
-*Conference or Journal (**ABC**), Year* · **Oral**
+*Conference or Journal (**ABC**)*, Year · **Oral**
 
 [Paper](https://arxiv.org/pdf/0000.00000) / [arXiv](https://arxiv.org/abs/0000.00000) / [Code](https://github.com/example/project)
 ```
@@ -171,7 +171,7 @@ PDF 連結的來源與實際查核結果保存在 [publication-pdf-check.json](d
 
 如需重新檢查資源網址，可在 GitHub Actions 手動執行 **Check publication resource links**；結果保存在 [publication-link-check.json](docs/publication-link-check.json)。檢查會辨識 PDF 檔頭及明顯的瀏覽器／存取限制頁面。HTTP 成功不代表一定免登入，工作流程完成也不代表每個連結均已通過，請查看報告中的個別結果。
 
-會議或期刊名稱括號內的簡稱用 Markdown 粗體，例如 `(**ICML**)`、`(**T-PAMI**)`；仍沿用整行斜體樣式。
+會議或期刊名稱括號內的簡稱用 Markdown 粗體，例如 `(**ICML**)`、`(**T-PAMI**)`；會議／期刊名稱保留斜體，年份放在斜體標記之外，以一般正體顯示。
 
 論文標記直接寫成 `· **Oral**`、`· **Highlight**`、`· **Spotlight**` 或 `· **Best Paper Award**`，建置時會只在粗體標記文字上套用 `--highlight` 的顏色，前方的 `·` 保持一般文字顏色，不需手動寫 HTML；沒有標記則省略。
 
@@ -185,11 +185,10 @@ PDF 連結的來源與實際查核結果保存在 [publication-pdf-check.json](d
 
 ```md
 ---
+published: true
 title: Your article title
 date: 2026-10-23
-description: A short summary shown in the Blog list.
 category: Research notes
-published: true
 ---
 
 Your article starts here.
