@@ -7,21 +7,41 @@ const checks = [];
 for (const [relative, marker] of [
   ['index.html', '<h1 id="home-title">'],
   ['lab/index.html', '<h1>Lab</h1>'],
+  ['publications/index.html', '<h1>Publications</h1>'],
   ['assets/style.css', '.site-header {'],
   ['assets/fonts/fonts.css', "font-family: 'Noto Sans TC';"],
   ['assets/fonts/inter/files/inter-latin-wght-normal.woff2', null],
   ['assets/fonts/noto-sans-tc/files/noto-sans-tc-0-wght-normal.woff2', null]
 ]) {
-  const url = new URL(relative, manifest.url).href;
+  const target = new URL(relative, manifest.url);
+  target.searchParams.set('v', manifest.sourceCommit.slice(0, 12));
+  const url = target.href;
   try {
     const response = await fetch(url, { signal: AbortSignal.timeout(20000) });
-    const matches = marker === null
-      ? Buffer.from(await response.arrayBuffer()).subarray(0, 4).toString('ascii') === 'wOF2'
-      : (await response.text()).includes(marker);
+    let matches;
+    if (marker === null) {
+      matches = Buffer.from(await response.arrayBuffer()).subarray(0, 4).toString('ascii') === 'wOF2';
+    } else {
+      const text = await response.text();
+      matches = text.includes(marker);
+      if (relative.endsWith('.html')) {
+        matches &&= text.includes(`name="preview-source" content="${manifest.sourceCommit}"`)
+          && text.includes(`/publications/index.html?v=${manifest.sourceCommit.slice(0, 12)}`)
+          && !text.includes('/publication/');
+      }
+    }
     checks.push({ url, status: response.status, passed: response.ok && matches });
   } catch (error) {
     checks.push({ url, passed: false, error: error.message });
   }
+}
+const removed = new URL('publication/index.html', manifest.url);
+removed.searchParams.set('v', manifest.sourceCommit.slice(0, 12));
+try {
+  const response = await fetch(removed, { signal: AbortSignal.timeout(20000) });
+  checks.push({ url: removed.href, status: response.status, passed: response.status === 404 });
+} catch (error) {
+  checks.push({ url: removed.href, passed: false, error: error.message });
 }
 const result = {
   sourceCommit: manifest.sourceCommit,

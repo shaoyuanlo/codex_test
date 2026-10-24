@@ -10,6 +10,8 @@ if (!/^[\w.-]+\/[\w.-]+$/.test(repository)) throw new Error('Invalid GitHub repo
 const prefix = `/${repository}/site-preview/`;
 const origin = 'https://raw.githack.com';
 const output = '_preview';
+const sourceCommit = process.env.GITHUB_SHA || execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim();
+const version = sourceCommit.slice(0, 12);
 process.env.PATH_PREFIX = prefix;
 process.env.SITE_URL = origin;
 process.env.ELEVENTY_OUTPUT = output;
@@ -26,11 +28,15 @@ async function rewrite(dir) {
       const html = await readFile(filename, 'utf8');
       // A raw-file proxy needs explicit filenames; it cannot resolve /lab/.
       const rewritten = html.replace(/(href|src|content)="([^"]*)"/g, (match, attr, value) => {
-        if ((value.startsWith(prefix) || value.startsWith(origin + prefix)) && value.endsWith('/')) {
-          return `${attr}="${value}index.html"`;
+        if (value.startsWith(prefix) || value.startsWith(origin + prefix)) {
+          const url = new URL(value, origin);
+          if (url.pathname.endsWith('/')) url.pathname += 'index.html';
+          // Version navigation and assets together, but keep canonical metadata clean.
+          if (attr === 'href' || attr === 'src') url.searchParams.set('v', version);
+          return `${attr}="${value.startsWith(origin) ? url.href : url.pathname + url.search + url.hash}"`;
         }
         return match;
-      }).replace('</head>', '  <meta name="robots" content="noindex, nofollow">\n</head>');
+      }).replace('</head>', `  <meta name="preview-source" content="${sourceCommit}">\n  <meta name="robots" content="noindex, nofollow">\n</head>`);
       await writeFile(filename, rewritten);
     }
   }
@@ -38,8 +44,8 @@ async function rewrite(dir) {
 await rewrite(output);
 await writeFile(path.join(output, '.nojekyll'), '');
 await writeFile(path.join(output, 'preview.json'), JSON.stringify({
-  sourceCommit: process.env.GITHUB_SHA || execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim(),
+  sourceCommit,
   generatedAt: new Date().toISOString(),
-  url: `${origin}${prefix}index.html`
+  url: `${origin}${prefix}index.html?v=${version}`
 }, null, 2) + '\n');
-console.log(`Interactive preview: ${origin}${prefix}index.html`);
+console.log(`Interactive preview: ${origin}${prefix}index.html?v=${version}`);
