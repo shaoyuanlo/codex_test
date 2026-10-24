@@ -57,6 +57,7 @@
 - Publications 的檔名、`section`、導覽 key、CSS 類別及網址統一使用 `publications`。舊 `/publication/` 只保留於失效路徑的檢查與說明。
 - 論文依年份由新到舊排列。同年份論文之間只留 Markdown 空行；每個年份最後一篇之後才加 `---`，最後一個年份亦同。
 - 論文資源連結用 ` / ` 分隔，不加入 BibTeX 連結或 `.bib` 檔案。
+- 論文資源以 `arXiv`、`PDF` 為前兩項，其他資源接在其後。PDF 優先使用可公開開啟的正式出版版本，找不到時使用對應的 arXiv PDF；新增或更換時核對論文標題及 PDF 內容，不把投影片當作論文 PDF。
 - Oral、Highlight、Spotlight、獎項等標記寫成 `[**Oral**]`，沿用共用轉換與標記顏色，不手寫個別顏色或 HTML。
 - 作者順序、標題、年份、會議／期刊、獎項與連結需有來源；不補造論文、學生、課程或成果。
 - 內容保持一般 Markdown 可編輯；站內資源連結依 README 使用 Eleventy 的 `url` filter，支援根網址、子路徑與預覽。

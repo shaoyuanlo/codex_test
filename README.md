@@ -87,7 +87,8 @@ https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/<提交版�
 | --- | --- | --- |
 | `--line-height-compact` | `1.3` | 全部標題、論文相關資訊（作者、會議、連結）、導覽列 |
 | `--line-height-body` | `1.7` | 一般內文、Blog、提示框 |
-| `--space-sm` | `8px` | 標題緊接內容、相關資訊、清單項目 |
+| `--space-xs` | `4px` | 論文作者、會議與資源連結段落下外距 |
+| `--space-sm` | `8px` | 標題緊接內容、清單項目 |
 | `--space-md` | `16px` | 段落之間、一般標題下方 |
 | `--space-lg` | `24px` | 全部標題上外距、分隔線上下外距、手機容器左右內距與頁尾上下內距 |
 | `--space-xl` | `32px` | 區塊之間、桌機頁尾上下內距 |
@@ -99,7 +100,7 @@ https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/<提交版�
 
 Markdown 分隔線 `.prose hr` 的設定緊接在標題設定之後，上下外距均引用 `var(--space-lg)`（24px），線條為 1px、顏色 `var(--accent-light)`。相鄰區塊的上下外距可能合併，實際距離不一定相加。
 
-所有非零固定 `margin` 均使用上述間距變數；`0` 保留給不需留白的元素，`auto` 用於容器置中。手機不再個別覆寫外距與行高。`padding`（內距）與 `gap`（排列間隔）也共用這五個變數，大區塊可用 `calc(var(--space-xl) * 2)` 取得 64px。容器左右內距也引用對應的間距變數；照片寬度、導覽列高度等具有明確用途的尺寸另行保留。
+所有非零固定 `margin` 均使用上述間距變數；`0` 保留給不需留白的元素，`auto` 用於容器置中。手機不再個別覆寫外距與行高。`padding`（內距）與 `gap`（排列間隔）也共用這六個變數，大區塊可用 `calc(var(--space-xl) * 2)` 取得 64px。容器左右內距也引用對應的間距變數；照片寬度、導覽列高度等具有明確用途的尺寸另行保留。
 
 其他共用樣式：矩形元件圓角統一 `3px`（狀態圓點保留圓形），連結底線距離統一 `4px`、粗細 `1px`，箭頭尺寸統一 `1em` 並隨字級縮放。這些共用規則直接集中設定，不另外增加變數。全站字距及單字間距使用預設 `normal`。
 
@@ -154,7 +155,7 @@ Normal text, **bold text**, and *italic text*.
 
 ### 新增論文
 
-在 `src/publications.md` 相應年份下方複製這個區塊，不需要修改 HTML。論文標題後的作者、會議與連結段落統一使用 `1.3` 行高、`8px` 下方外距；第一篇論文標題之前的頁面說明維持一般內文設定。同年份的論文只以 Markdown 空行分開，只有該年份最後一篇的連結下方才加 `---`（最後一個年份也一樣）。資源連結用 ` / ` 分隔：
+在 `src/publications.md` 相應年份下方複製這個區塊，不需要修改 HTML。論文標題後的作者、會議與連結段落統一使用 `1.3` 行高、`4px` 下方外距；第一篇論文標題之前的頁面說明維持一般內文設定。同年份的論文只以 Markdown 空行分開，只有該年份最後一篇的連結下方才加 `---`（最後一個年份也一樣）。資源連結用 ` / ` 分隔，前兩項固定為 `arXiv`、`PDF`。PDF 優先使用可公開開啟的正式出版版本，找不到時使用該篇的 arXiv PDF：
 
 ```md
 ### Paper title
@@ -163,8 +164,12 @@ First Author, **Shao-Yuan Lo**, Last Author
 
 *Conference or Journal, Year* [**Oral**]
 
-[Paper](https://example.com/paper) / [Code](https://github.com/example/project)
+[arXiv](https://arxiv.org/abs/0000.00000) / [PDF](https://arxiv.org/pdf/0000.00000) / [Code](https://github.com/example/project)
 ```
+
+PDF 連結的來源與實際查核結果保存在 [publication-pdf-check.json](docs/publication-pdf-check.json)。目前 26 篇已核對 PDF 檔頭與標題；兩篇 SPIE 使用出版社 PDF 並標示機構權限，CBCT 的 NIH 作者稿 PDF 標示可能需要瀏覽器驗證，這三篇未列為已驗證可直接下載。原有第一個資源只改標籤為 `arXiv`，網址保持不變；原本指向出版社的網址也保留。
+
+如需重新檢查資源網址，可在 GitHub Actions 手動執行 **Check publication resource links**；結果保存在 [publication-link-check.json](docs/publication-link-check.json)。檢查會辨識 PDF 檔頭及明顯的瀏覽器／存取限制頁面。HTTP 成功不代表一定免登入，工作流程完成也不代表每個連結均已通過，請查看報告中的個別結果。
 
 論文標記直接寫成 `[**Oral**]`、`[**Highlight**]`、`[**Spotlight**]` 或 `[**Best Paper Award**]`，建置時會自動套用 `--highlight` 的顏色，不需手動寫 HTML；沒有標記則省略。
 
