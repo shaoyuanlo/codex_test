@@ -1,0 +1,18 @@
+[
+  {
+    "package": "@fontsource-variable/inter",
+    "version": "5.3.0",
+    "integrity": "sha512-OupL48va4JNofb97w6NYeF9S7W/kHNKM0Er8Dem5nqi4jeOLrVJDoE8tZEpnMJmtkvNbB1EIPPwHcdkF6b1oUA==",
+    "source": "https://www.npmjs.com/package/@fontsource-variable/inter/v/5.3.0",
+    "license": "SIL Open Font License 1.1",
+    "files": 14
+  },
+  {
+    "package": "@fontsource-variable/noto-sans-tc",
+    "version": "5.3.1",
+    "integrity": "sha512-gueh+AySNkihE+HvizXLHltxt5/xVFSvw6ISnKTlpb/lG5QQm6u/KwuempTJ/jDYMST3xwiERYTTyseoJ/Kxew==",
+    "source": "https://www.npmjs.com/package/@fontsource-variable/noto-sans-tc/v/5.3.1",
+    "license": "SIL Open Font License 1.1",
+    "files": 108
+  }
+]
