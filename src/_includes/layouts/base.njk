@@ -20,7 +20,7 @@
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="header-inner">
-      <a class="wordmark" href="{{ '/' | url }}" aria-label="{{ site.name }} — Home">{{ site.name }}<span class="wordmark-dot" aria-hidden="true">.</span></a>
+      <a class="wordmark" href="{{ '/' | url }}" aria-label="{{ site.name }} — Home">{{ site.name }}<span aria-hidden="true">.</span></a>
       <nav aria-label="Main navigation">
         {% for item in site.navigation %}
         <a href="{{ item.url | url }}"{% if section == item.key %} aria-current="page"{% endif %}>{{ item.label }}</a>
