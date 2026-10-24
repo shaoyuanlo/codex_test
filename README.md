@@ -6,24 +6,23 @@ Built with [Eleventy](https://www.11ty.dev/) and deployed as static HTML to GitH
 
 ## Codex 長期維護
 
-採用 **一個 Codex Project + 自由開啟的 Threads + 一份根目錄 [AGENTS.md](AGENTS.md)**。Project 建議命名為 **Academic Website**，連結同一個儲存庫 `shaoyuanlo/codex_test`。
+使用 **Codex 網頁版 + 同一個 GitHub 儲存庫 + 自由開啟的聊天／雲端任務 + 一份根目錄 [AGENTS.md](AGENTS.md)**。共同來源是 `shaoyuanlo/codex_test`，日常維護分支是 `main`。
 
 Threads 就是聊天視窗：你可以依需要自行開新視窗，不預設分類、功能或命名；同一視窗也可以自由切換內容、設計、部署等話題。Thread 不等於 Git 分支，不需要為每個聊天建立永久分支。
 
-在 Codex 介面建立或選擇這個 Project，將儲存庫及之後的網站聊天放在同一個 Project。此儲存庫內的文件不會自行建立介面的 Project，也不會自動搬移既有聊天。
+每次開新聊天／雲端任務：
 
-若介面提供 Project 共用指示欄位，可貼上以下說明：
+1. 在 Codex 網頁版選擇 `shaoyuanlo/codex_test` 及對應的雲端環境。
+2. 以 `main` 為工作基準，確認前一次要保留的成果已推送或合併回 `main`。
+3. 直接描述這次需求；可用以下開場提醒讀取共用規則：
 
 ```text
-這是 Shao-Yuan Lo 的長期學術個人網站專案，儲存庫為 shaoyuanlo/codex_test。
-開始工作前，先讀取根目錄 AGENTS.md，並以最新原始碼與 README 為依據。
-變數與選項盡量精簡、統一管理；網站內容以英文為主，溝通使用繁體中文。
-Threads 是我自由開啟的聊天視窗，不預設用途、分類或命名，也不要自行建立。
-不要假設能讀取其他 Thread 的對話；長期規則請落實於 AGENTS.md。
-修改完成後顯示代表性 diff、完整改動連結與實際驗證結果。
+請先讀取根目錄 AGENTS.md，確認 main 的最新內容，再幫我……
 ```
 
-共用規則以 `AGENTS.md` 為準，README 負責人工操作說明，設計數值以 `src/assets/style.css` 為唯一設定來源。新聊天不必貼回整段歷史；若它未載入儲存庫，先連結或開啟同一份原始碼，再要求讀取 `AGENTS.md`。多個聊天同時修改同一檔案時，應依序整合或以必要的分支／worktree 隔離，保留你在 GitHub 的手動修改。
+這個流程不需要另外建立介面 Project、設定 Project 共用指示欄、搬移聊天、安裝電腦 App 或在本機 clone。既有雲端環境可持續使用，不必為每個聊天重建環境。
+
+共用規則以 `AGENTS.md` 為準，README 負責人工操作說明，設計數值以 `src/assets/style.css` 為唯一設定來源。新聊天不必貼回整段歷史，但不要假設它會讀到其他聊天或尚未提交的變更；程式碼與長期規則必須保存到 GitHub。多個雲端任務可能從不同版本開始，同時修改同一檔案時應依序整合，或由 Codex 在必要時使用獨立分支／worktree 隔離，保留你在 GitHub 的手動修改。
 
 ## 網站預覽
 
