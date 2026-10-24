@@ -21,8 +21,6 @@ Jike Zhong, Yuxiang Lai, Ming Li, Yuheng Li, Wuao Liu, Behzad Dariush, Konstanti
 
 [Paper](https://arxiv.org/abs/2606.09092) · [Code](https://github.com/jkz-338/Robust-ToM-RL)
 
----
-
 ### CSGaussian: Progressive Rate-Distortion Compression and Segmentation for 3D Gaussian Splatting
 
 Yu-Jen Tseng, Chia-Hao Kao, Jing-Zhong Chen, Alessandro Gnutti, **Shao-Yuan Lo**, Yen-Yu Lin, Wen-Hsiao Peng
@@ -30,6 +28,8 @@ Yu-Jen Tseng, Chia-Hao Kao, Jing-Zhong Chen, Alessandro Gnutti, **Shao-Yuan Lo**
 *IEEE/CVF Winter Conference on Applications of Computer Vision (WACV), 2026*
 
 [Paper](https://arxiv.org/abs/2601.12814)
+
+---
 
 ## 2025
 
