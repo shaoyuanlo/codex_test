@@ -145,7 +145,7 @@ Previously, I was a Research Scientist at [Honda Research Institute USA](https:/
   </figure>
   <figure>
     <img src="{{ '/files/sponsors/delta.webp' | url }}" alt="" width="1920" height="592" loading="lazy">
-    <figcaption>Delta Electronics（台達電）</figcaption>
+    <figcaption>Delta（台達電）</figcaption>
   </figure>
   <figure>
     <img src="{{ '/files/sponsors/itri.webp' | url }}" alt="" width="1920" height="444" loading="lazy">

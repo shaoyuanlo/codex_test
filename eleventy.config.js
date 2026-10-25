@@ -29,6 +29,25 @@ export default function (eleventyConfig) {
     );
     return columns === items ? list : `<ul class="dated-list">${columns}</ul>`;
   }));
+  // Balance sponsor rows at build time; CSS handles narrower screens without client-side scripts.
+  eleventyConfig.addFilter("balancedSponsors", html => html.replace(
+    /<div class="sponsors">([\s\S]*?)<\/div>/g,
+    (container, contents) => {
+      const figures = contents.match(/<figure>[\s\S]*?<\/figure>/g) || [];
+      if (!figures.length) return container;
+      const rowCount = Math.ceil(figures.length / 4);
+      const rowSize = Math.floor(figures.length / rowCount);
+      const extra = figures.length % rowCount;
+      let offset = 0;
+      const rows = Array.from({ length: rowCount }, (_, index) => {
+        const size = rowSize + (index < extra ? 1 : 0);
+        const row = figures.slice(offset, offset + size).join("\n");
+        offset += size;
+        return `<div class="sponsor-row">${row}</div>`;
+      });
+      return `<div class="sponsors">${rows.join("\n")}</div>`;
+    }
+  ));
   eleventyConfig.addGlobalData("siteOrigin", process.env.SITE_URL || "https://shaoyuanlo.github.io");
   return {
     pathPrefix: process.env.PATH_PREFIX || "/",
