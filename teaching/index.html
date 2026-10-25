@@ -1288,7 +1288,7 @@
   }
 }
 /* Shared rectangular corners. */
-a:focus-visible, .button:focus-visible, .news-switch input:focus-visible + label, .news-all:focus-visible, .skip-link, .portrait img, .prose pre, .callout { border-radius: 6px; }
+a:focus-visible, .button:focus-visible, .news-switch input:focus-visible + label, .news-all:focus-visible, .gallery-control, .gallery-track:focus-visible, .gallery-dialog, .skip-link, .portrait img, .prose pre, .callout { border-radius: 6px; }
 
 /* Shared headings: H1–H6 size, weight, line height and margins. */
 h1, h2, h3, h4, h5, h6 { font-size: var(--font-size-base); font-weight: 400; margin: var(--space-lg) 0 var(--space-md); line-height: var(--line-height-compact); }
@@ -1369,6 +1369,37 @@ nav a[aria-current] { font-weight: 600; }
   .hero-actions { grid-column: 1 / -1; }
 }
 
+/* Lab gallery: horizontal photos, shared captions, controls and a native image dialog. */
+.lab-gallery { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: var(--space-sm); margin: var(--space-lg) 0; }
+.gallery-track { display: flex; gap: var(--space-md); min-width: 0; overflow-x: auto; overscroll-behavior-x: contain; cursor: grab; }
+.gallery-item { flex: 0 0 min(240px, 85%); min-width: 0; margin: 0; }
+.gallery-item a { display: block; }
+.gallery-item img { width: 100%; aspect-ratio: 4 / 3; object-fit: contain; }
+.gallery-item figcaption { margin-top: var(--space-xs); }
+.gallery-track.is-dragging, .gallery-track.is-dragging a { cursor: grabbing; user-select: none; }
+.gallery-control { display: grid; place-items: center; width: 44px; height: 44px; padding: 0; border: 0; background: var(--accent-light); color: var(--black); font-size: var(--font-size-xl); cursor: pointer; }
+.gallery-control[hidden] { display: none; }
+.lab-gallery:has(.gallery-control[hidden]) { display: block; }
+.gallery-control:hover:enabled { background: var(--accent); color: var(--white); }
+.gallery-control:disabled { opacity: .4; cursor: default; }
+.gallery-dialog { width: min(1120px, calc(100% - var(--space-md) * 2)); max-width: none; max-height: calc(100dvh - var(--space-md) * 2); padding: var(--space-md); border: 1px solid var(--accent-light); background: var(--white); color: var(--black); }
+.gallery-dialog::backdrop { background: var(--black); opacity: .8; }
+.gallery-close { display: block; margin: 0 0 var(--space-sm) auto; padding: var(--space-xs); border: 0; background: var(--white); cursor: pointer; }
+.gallery-dialog img { width: auto; height: auto; max-height: calc(100dvh - 160px); margin: 0 auto; object-fit: contain; }
+.gallery-caption { margin: var(--space-sm) 0 0; text-align: center; }
+html:has(.gallery-dialog[open]) { overflow: hidden; scrollbar-gutter: stable; }
+@media (max-width: 767px) {
+  .lab-gallery { grid-template-columns: 1fr auto auto 1fr; }
+  .gallery-track { grid-column: 1 / -1; grid-row: 1; }
+  [data-gallery-previous] { grid-column: 2; grid-row: 2; }
+  [data-gallery-next] { grid-column: 3; grid-row: 2; }
+}
+@media print {
+  .lab-gallery { display: block; }
+  .gallery-track { overflow: visible; flex-wrap: wrap; }
+  .gallery-control, .gallery-dialog { display: none; }
+}
+
 /* Shared text-style buttons: bold black text; navy and underlined on hover. */
 .button {
   display: inline-block;
@@ -1435,7 +1466,7 @@ small, sub, sup { font-size: inherit; }
 strong, b, th { font-weight: 600; }
 ::selection { background: var(--selection-bg); color: var(--black); }
 a { color: var(--accent); text-underline-offset: 4px; text-decoration-thickness: 1px; }
-a:focus-visible, .button:focus-visible, .news-switch input:focus-visible + label, .news-all:focus-visible { outline: 2px solid var(--accent); outline-offset: var(--space-sm); }
+a:focus-visible, .button:focus-visible, .news-switch input:focus-visible + label, .news-all:focus-visible, .gallery-control:focus-visible, .gallery-track:focus-visible { outline: 2px solid var(--accent); outline-offset: var(--space-sm); }
 img { display: block; max-width: 100%; height: auto; }
 p { margin: 0 0 var(--space-md); }
 .skip-link { position: fixed; left: var(--space-md); top: -100px; padding: var(--space-sm) var(--space-md); z-index: 20; background: var(--white); border: 1px solid var(--accent-light); }
@@ -1462,7 +1493,7 @@ p { margin: 0 0 var(--space-md); }
   .callout { break-inside: avoid; }
 }
 </style>
-  <meta name="preview-source" content="36cf71c928a7a067260470467bf33b53f2cfd426">
+  <meta name="preview-source" content="c69828cb5c977f7d21c6829c7eda7b661981d726">
   <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="page-teaching">
@@ -1488,7 +1519,8 @@ p { margin: 0 0 var(--space-md); }
     </div>
   </header>
   <main id="main" class="site-main" tabindex="-1">
-    <header class="page-heading">
+    
+<header class="page-heading">
   <h1>Teaching</h1>
   
 </header>

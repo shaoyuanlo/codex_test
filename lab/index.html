@@ -1288,7 +1288,7 @@
   }
 }
 /* Shared rectangular corners. */
-a:focus-visible, .button:focus-visible, .news-switch input:focus-visible + label, .news-all:focus-visible, .skip-link, .portrait img, .prose pre, .callout { border-radius: 6px; }
+a:focus-visible, .button:focus-visible, .news-switch input:focus-visible + label, .news-all:focus-visible, .gallery-control, .gallery-track:focus-visible, .gallery-dialog, .skip-link, .portrait img, .prose pre, .callout { border-radius: 6px; }
 
 /* Shared headings: H1–H6 size, weight, line height and margins. */
 h1, h2, h3, h4, h5, h6 { font-size: var(--font-size-base); font-weight: 400; margin: var(--space-lg) 0 var(--space-md); line-height: var(--line-height-compact); }
@@ -1369,6 +1369,37 @@ nav a[aria-current] { font-weight: 600; }
   .hero-actions { grid-column: 1 / -1; }
 }
 
+/* Lab gallery: horizontal photos, shared captions, controls and a native image dialog. */
+.lab-gallery { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: var(--space-sm); margin: var(--space-lg) 0; }
+.gallery-track { display: flex; gap: var(--space-md); min-width: 0; overflow-x: auto; overscroll-behavior-x: contain; cursor: grab; }
+.gallery-item { flex: 0 0 min(240px, 85%); min-width: 0; margin: 0; }
+.gallery-item a { display: block; }
+.gallery-item img { width: 100%; aspect-ratio: 4 / 3; object-fit: contain; }
+.gallery-item figcaption { margin-top: var(--space-xs); }
+.gallery-track.is-dragging, .gallery-track.is-dragging a { cursor: grabbing; user-select: none; }
+.gallery-control { display: grid; place-items: center; width: 44px; height: 44px; padding: 0; border: 0; background: var(--accent-light); color: var(--black); font-size: var(--font-size-xl); cursor: pointer; }
+.gallery-control[hidden] { display: none; }
+.lab-gallery:has(.gallery-control[hidden]) { display: block; }
+.gallery-control:hover:enabled { background: var(--accent); color: var(--white); }
+.gallery-control:disabled { opacity: .4; cursor: default; }
+.gallery-dialog { width: min(1120px, calc(100% - var(--space-md) * 2)); max-width: none; max-height: calc(100dvh - var(--space-md) * 2); padding: var(--space-md); border: 1px solid var(--accent-light); background: var(--white); color: var(--black); }
+.gallery-dialog::backdrop { background: var(--black); opacity: .8; }
+.gallery-close { display: block; margin: 0 0 var(--space-sm) auto; padding: var(--space-xs); border: 0; background: var(--white); cursor: pointer; }
+.gallery-dialog img { width: auto; height: auto; max-height: calc(100dvh - 160px); margin: 0 auto; object-fit: contain; }
+.gallery-caption { margin: var(--space-sm) 0 0; text-align: center; }
+html:has(.gallery-dialog[open]) { overflow: hidden; scrollbar-gutter: stable; }
+@media (max-width: 767px) {
+  .lab-gallery { grid-template-columns: 1fr auto auto 1fr; }
+  .gallery-track { grid-column: 1 / -1; grid-row: 1; }
+  [data-gallery-previous] { grid-column: 2; grid-row: 2; }
+  [data-gallery-next] { grid-column: 3; grid-row: 2; }
+}
+@media print {
+  .lab-gallery { display: block; }
+  .gallery-track { overflow: visible; flex-wrap: wrap; }
+  .gallery-control, .gallery-dialog { display: none; }
+}
+
 /* Shared text-style buttons: bold black text; navy and underlined on hover. */
 .button {
   display: inline-block;
@@ -1435,7 +1466,7 @@ small, sub, sup { font-size: inherit; }
 strong, b, th { font-weight: 600; }
 ::selection { background: var(--selection-bg); color: var(--black); }
 a { color: var(--accent); text-underline-offset: 4px; text-decoration-thickness: 1px; }
-a:focus-visible, .button:focus-visible, .news-switch input:focus-visible + label, .news-all:focus-visible { outline: 2px solid var(--accent); outline-offset: var(--space-sm); }
+a:focus-visible, .button:focus-visible, .news-switch input:focus-visible + label, .news-all:focus-visible, .gallery-control:focus-visible, .gallery-track:focus-visible { outline: 2px solid var(--accent); outline-offset: var(--space-sm); }
 img { display: block; max-width: 100%; height: auto; }
 p { margin: 0 0 var(--space-md); }
 .skip-link { position: fixed; left: var(--space-md); top: -100px; padding: var(--space-sm) var(--space-md); z-index: 20; background: var(--white); border: 1px solid var(--accent-light); }
@@ -1462,7 +1493,7 @@ p { margin: 0 0 var(--space-md); }
   .callout { break-inside: avoid; }
 }
 </style>
-  <meta name="preview-source" content="36cf71c928a7a067260470467bf33b53f2cfd426">
+  <meta name="preview-source" content="c69828cb5c977f7d21c6829c7eda7b661981d726">
   <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="page-lab">
@@ -1488,7 +1519,159 @@ p { margin: 0 0 var(--space-md); }
     </div>
   </header>
   <main id="main" class="site-main" tabindex="-1">
-    <header class="page-heading">
+    <section class="lab-gallery" data-gallery aria-label="Lab photos">
+  <button class="gallery-control" type="button" data-gallery-previous aria-label="Previous photos" aria-controls="lab-photo-track" hidden><span aria-hidden="true">‹</span></button>
+  <div class="gallery-track" id="lab-photo-track" tabindex="0" aria-label="Photos: use arrow keys or swipe to browse">
+    
+    <figure class="gallery-item">
+      <a href="/shaoyuanlo/codex_test/site-preview/files/lab_photos/image_2F33A832.jpeg" data-gallery-photo aria-label="Enlarge photo: Group photo in an indoor gathering space">
+        <img src="/shaoyuanlo/codex_test/site-preview/files/lab_photos/image_2F33A832.jpeg" alt="Group photo in an indoor gathering space" width="240" height="180" loading="lazy" draggable="false">
+      </a>
+      <figcaption>Add a caption for this group photo.</figcaption>
+    </figure>
+    
+    <figure class="gallery-item">
+      <a href="/shaoyuanlo/codex_test/site-preview/files/lab_photos/demo-blueberries.jpg" data-gallery-photo aria-label="Enlarge photo: Blueberries">
+        <img src="/shaoyuanlo/codex_test/site-preview/files/lab_photos/demo-blueberries.jpg" alt="Blueberries" width="240" height="180" loading="lazy" draggable="false">
+      </a>
+      <figcaption>Demo photo: blueberries. Replace with a lab photo and caption.</figcaption>
+    </figure>
+    
+    <figure class="gallery-item">
+      <a href="/shaoyuanlo/codex_test/site-preview/files/lab_photos/demo-larch.jpg" data-gallery-photo aria-label="Enlarge photo: A larch tree">
+        <img src="/shaoyuanlo/codex_test/site-preview/files/lab_photos/demo-larch.jpg" alt="A larch tree" width="240" height="180" loading="lazy" draggable="false">
+      </a>
+      <figcaption>Demo photo: larch. Replace with a lab photo and caption.</figcaption>
+    </figure>
+    
+    <figure class="gallery-item">
+      <a href="/shaoyuanlo/codex_test/site-preview/files/lab_photos/demo-urban-bear.jpg" data-gallery-photo aria-label="Enlarge photo: A bear in an urban setting">
+        <img src="/shaoyuanlo/codex_test/site-preview/files/lab_photos/demo-urban-bear.jpg" alt="A bear in an urban setting" width="240" height="180" loading="lazy" draggable="false">
+      </a>
+      <figcaption>Demo photo: an urban bear. Replace with a lab photo and caption.</figcaption>
+    </figure>
+    
+    <figure class="gallery-item">
+      <a href="/shaoyuanlo/codex_test/site-preview/files/lab_photos/demo-wild-bear.jpg" data-gallery-photo aria-label="Enlarge photo: A bear in the wild">
+        <img src="/shaoyuanlo/codex_test/site-preview/files/lab_photos/demo-wild-bear.jpg" alt="A bear in the wild" width="240" height="180" loading="lazy" draggable="false">
+      </a>
+      <figcaption>Demo photo: a wild bear. Replace with a lab photo and caption.</figcaption>
+    </figure>
+    
+  </div>
+  <button class="gallery-control" type="button" data-gallery-next aria-label="Next photos" aria-controls="lab-photo-track" hidden><span aria-hidden="true">›</span></button>
+  <dialog class="gallery-dialog" aria-label="Enlarged photo">
+    <button class="button gallery-close" type="button" data-gallery-close aria-label="Close enlarged photo">Close <span aria-hidden="true">×</span></button>
+    <img data-gallery-full alt="">
+    <p class="gallery-caption" data-gallery-caption></p>
+  </dialog>
+</section>
+<script data-preview-script="gallery">// Enhance the Lab photo strip; links and native scrolling work without JavaScript.
+document.querySelectorAll('[data-gallery]').forEach(gallery => {
+  const track = gallery.querySelector('.gallery-track');
+  const previous = gallery.querySelector('[data-gallery-previous]');
+  const next = gallery.querySelector('[data-gallery-next]');
+  const dialog = gallery.querySelector('dialog');
+  const fullImage = dialog.querySelector('[data-gallery-full]');
+  const caption = dialog.querySelector('[data-gallery-caption]');
+  let drag = null;
+  let suppressClick = false;
+
+  const updateControls = () => {
+    previous.disabled = track.scrollLeft <= 1;
+    next.disabled = track.scrollLeft >= track.scrollWidth - track.clientWidth - 1;
+  };
+  const move = direction => {
+    const item = track.querySelector('.gallery-item');
+    const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+    track.scrollBy({
+      left: direction * (item.getBoundingClientRect().width + gap),
+      behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'
+    });
+  };
+  previous.addEventListener('click', () => move(-1));
+  next.addEventListener('click', () => move(1));
+  track.addEventListener('scroll', updateControls, { passive: true });
+  new ResizeObserver(updateControls).observe(track);
+  track.addEventListener('keydown', event => {
+    if (event.altKey || event.ctrlKey || event.metaKey) return;
+    if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+      event.preventDefault();
+      move(event.key === 'ArrowRight' ? 1 : -1);
+    }
+  });
+
+  // Translate a vertical mouse wheel only while the strip can scroll in that direction.
+  track.addEventListener('wheel', event => {
+    if (event.ctrlKey || Math.abs(event.deltaX) > Math.abs(event.deltaY)) return;
+    const unit = event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? track.clientWidth : 1;
+    const delta = event.deltaY * unit;
+    const maximum = track.scrollWidth - track.clientWidth;
+    if ((delta > 0 && track.scrollLeft < maximum - 1) || (delta < 0 && track.scrollLeft > 1)) {
+      event.preventDefault();
+      track.scrollLeft += delta;
+    }
+  }, { passive: false });
+
+  // Use pointer capture after a mouse drag starts; touch keeps native swipe and pinch behavior.
+  track.addEventListener('dragstart', event => event.preventDefault());
+  track.addEventListener('pointerdown', event => {
+    if (event.pointerType !== 'mouse' || event.button !== 0) return;
+    drag = { id: event.pointerId, x: event.clientX, scroll: track.scrollLeft, moved: false };
+  });
+  track.addEventListener('pointermove', event => {
+    if (!drag || event.pointerId !== drag.id) return;
+    const distance = event.clientX - drag.x;
+    if (!drag.moved && Math.abs(distance) < 6) return;
+    if (!drag.moved) {
+      drag.moved = true;
+      track.setPointerCapture(event.pointerId);
+      track.classList.add('is-dragging');
+    }
+    event.preventDefault();
+    track.scrollLeft = drag.scroll - distance;
+  });
+  const finishDrag = event => {
+    if (!drag || event.pointerId !== drag.id) return;
+    suppressClick = drag.moved;
+    if (track.hasPointerCapture(event.pointerId)) track.releasePointerCapture(event.pointerId);
+    track.classList.remove('is-dragging');
+    drag = null;
+    setTimeout(() => { suppressClick = false; }, 0);
+  };
+  track.addEventListener('pointerleave', () => { if (drag && !drag.moved) drag = null; });
+  track.addEventListener('pointerup', finishDrag);
+  track.addEventListener('lostpointercapture', finishDrag);
+  track.addEventListener('pointercancel', finishDrag);
+  track.addEventListener('click', event => {
+    if (suppressClick) {
+      event.preventDefault();
+      event.stopPropagation();
+      return;
+    }
+    const link = event.target.closest('[data-gallery-photo]');
+    if (!link || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey || !dialog.showModal) return;
+    event.preventDefault();
+    const thumbnail = link.querySelector('img');
+    fullImage.src = link.href;
+    fullImage.alt = thumbnail.alt;
+    caption.textContent = link.closest('figure').querySelector('figcaption')?.textContent || '';
+    caption.hidden = !caption.textContent;
+    dialog.showModal();
+  }, true);
+  dialog.querySelector('[data-gallery-close]').addEventListener('click', () => dialog.close());
+  dialog.addEventListener('click', event => {
+    if (event.target !== dialog) return;
+    const bounds = dialog.getBoundingClientRect();
+    if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) dialog.close();
+  });
+  previous.hidden = false;
+  next.hidden = false;
+  updateControls();
+});
+</script>
+
+<header class="page-heading">
   <h1>Trai Lab</h1>
   <p class="page-intro">A space for curious minds and thoughtful collaboration.</p>
 </header>
