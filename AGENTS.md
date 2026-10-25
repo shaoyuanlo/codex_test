@@ -47,7 +47,7 @@
 ### 一般分頁與首頁
 
 - 六個選單是獨立頁面，順序為 Home、Lab、Publications、Activities、Teaching、Blog；Home 來源為 `home.md`、網址為 `/`。導覽列桌機顯示姓名與選單，不在姓名後額外加句點；手機隱藏導覽列姓名，選單維持單列，放不下時左右捲動，不改成多列；保留可見鍵盤焦點及各項目可達性。導覽列容器不設最低高度、上下內距為 0，由選單項目與原生捲動區自然決定高度。保留 `publications` 在檔名、section、導覽 key、CSS 與網址的一致性；舊 `/publication/` 僅保留於失效路徑的檢查與說明。
-- 網頁文字使用英文半形括號 `()`，不使用中文全形括號 `（）`。
+- 網頁文字使用英文半形括號 `()`，左括號前保留一個空格，例如 `NTUH (臺大醫院)`；不修改 Markdown 連結語法或網址內的括號。
 - Front matter 先放運作欄位（layout、section、permalink 等），再放 title、intro 與內容資料。正文從 H2 開始；不重新加入 eyebrow、description 或首頁 tagline 欄位及其相關顯示設定。
 - 全站資料只在首頁 `website:` 維護，不重新建立 `site.json`。職稱使用 roles 清單，每組有 role 與一到多個 affiliations，各自成行。
 - Email、CV 與社群連結統一由 social 清單維護；其他聯絡文字沿用第一個 mailto 連結的信箱，不另外複製地址。內部檔案路徑支援根網址、子路徑及預覽。
@@ -56,7 +56,7 @@
 ### News 與共用日期清單
 
 - 使用 Markdown 清單，News 格式為 `- **Oct 2025** — Message text.`；Media Coverage 與 Invited Talks 使用完整日期，如 `- **Mar 03, 2026** — Message text.`。日期直接寫在內容，不新增日期轉換設定。
-- 共用版型用 datedLists 轉換分出日期與內文，CSS 維持兩欄及長文字換行位置，日期欄依內容自動加寬並維持各列對齊，日期使用黑色並在欄內兩端對齊；保留內文的連結、粗體及斜體。
+- 共用版型用 datedLists 轉換分出日期與內文，CSS 維持兩欄及長文字換行位置，日期欄依月份／年份或完整日期的實際文字寬度決定，不設共用最小寬度，與右側內容沿用相同間距並維持各列對齊，日期使用黑色並在欄內兩端對齊；保留內文的連結、粗體及斜體。
 - News、Media Coverage 與 Activities 的 Invited Talks 共用日期清單元件與樣式，不另建分頁樣式；一般 bullet 清單維持預設樣式。首頁 Honors & Awards 放在 News 後，接著 Media Coverage；Activities 沿用預設 page 版型。
 - 原生單選控制項與 CSS 提供標題旁的 Recent／All 切換，沿用共用 `.button`；All 合併所有消息，在 Recent 的自然高度內垂直捲動，切換不改變整頁捲動位置；不加入 JavaScript 或額外依賴。
 - Recent 顯示數量由 `news-archive` 前方的消息位置決定，舊消息置於 archive 內；`newsTabs` 在建置時產生兩種檢視，內容只維護一份。保留使用者手動調整，不擅自恢復某個固定筆數或建立數量選項。

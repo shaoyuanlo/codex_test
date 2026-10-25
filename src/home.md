@@ -103,23 +103,23 @@ Previously, I was a Research Scientist at [Honda Research Institute USA](https:/
 
 ## Honors & Awards
 
-- **[Yushan Young Fellow(玉山青年學者)](https://yushan.project.edu.tw/TopTalent/EN)**, Ministry of Education, Taiwan, 2025
+- **[Yushan Young Fellow (玉山青年學者)](https://yushan.project.edu.tw/TopTalent/EN)**, Ministry of Education, Taiwan, 2025
 - **[CVPR 2025 Outstanding Reviewer](https://cvpr.thecvf.com/Conferences/2025/ProgramCommittee)**, IEEE/CVF CVPR 2025
-- **[Government Scholarship to Study Abroad(教育部留學獎學金)](https://depart.moe.edu.tw/ED2500/cp.aspx?n=ECEA48027CA1AA4E&s=FDC3BA2C714CD75F)**, Ministry of Education, Taiwan, 2020
+- **[Government Scholarship to Study Abroad (教育部留學獎學金)](https://depart.moe.edu.tw/ED2500/cp.aspx?n=ECEA48027CA1AA4E&s=FDC3BA2C714CD75F)**, Ministry of Education, Taiwan, 2020
 - **[Best Paper Award](http://www.acmmmasia.org/2019/files/ACMMMASIA2019-Program.pdf)**, ACM Multimedia Asia 2019
 - **[Best Master Thesis Award](https://140.125.183.142/wp-content/uploads/2021/09/IPPR%E7%AC%AC%E5%8D%81%E4%BA%8C%E5%B1%86%E5%8D%9A%E7%A2%A9%E5%A3%AB%E8%AB%96%E6%96%87%E7%8D%8E%E5%BE%97%E7%8D%8E%E8%B3%87%E6%96%99.pdf)**, Chinese Image Processing and Pattern Recognition Society, 2019
-- **[Students’ Outstanding Contribution Award(學生傑出貢獻獎)](https://news.ltn.com.tw/news/life/breakingnews/2809162)**, National Chiao Tung University, 2019
+- **[Students’ Outstanding Contribution Award (學生傑出貢獻獎)](https://news.ltn.com.tw/news/life/breakingnews/2809162)**, National Chiao Tung University, 2019
 
 ---
 
 ## Media Coverage
 
-- **Apr 25, 2026** — Interviewed on [National Education Radio(教育廣播電台)](https://www.ner.gov.tw/Program/Episode/?id=26050318334498988&program=%E7%89%B9%E5%88%A5%E7%9A%84%E6%84%9B&programId=24102210171197065).
-- **Jan 30, 2026** — Interviewed on [Cheng Sheng Broadcasting Corp(正聲廣播公司)](https://www.facebook.com/photo/?fbid=1541793631289368&set=a.440615794740496).
-- **Oct 11, 2022** — Reported on [Formosa Television(民視新聞)](https://www.ftvnews.com.tw/news/detail/2022A11F04M1), [EBC News(東森新聞)](https://www.youtube.com/watch?v=4BCV3De5QuE), and [New Tang Dynasty Television(新唐人電視台)](https://www.ntdtv.com.tw/b5/20221022/video/345977.html) when I was seving as the Vice President of the Taiwanese Student Association at Johns Hopkins University.
-- **Jun 01, 2019** — Reported on [Liberty Times(自由時報)](https://news.ltn.com.tw/news/life/breakingnews/2809162), [United Daily News(聯合報)](https://udn.com/news/story/6928/3847789), and [Commercial Times(工商時報)](https://www.ctee.com.tw/news/20190601700219-431401) when I was graduating from National Chiao Tung University.
-- **Jul 19, 2013** — Reported on [China Times(中國時報)](https://www.chinatimes.com/newspapers/20130719000490-260107?chdtv) when I was graduating from senior high school (National Experimental High School at Hsinchu Science Park).
-- **Jun 04, 2010** — Reported on [Liberty Times(自由時報)](https://news.ltn.com.tw/news/local/paper/400837) when I was graduating from junior high school.
+- **Apr 25, 2026** — Interviewed on [National Education Radio (教育廣播電台)](https://www.ner.gov.tw/Program/Episode/?id=26050318334498988&program=%E7%89%B9%E5%88%A5%E7%9A%84%E6%84%9B&programId=24102210171197065).
+- **Jan 30, 2026** — Interviewed on [Cheng Sheng Broadcasting Corp (正聲廣播公司)](https://www.facebook.com/photo/?fbid=1541793631289368&set=a.440615794740496).
+- **Oct 11, 2022** — Reported on [Formosa Television (民視新聞)](https://www.ftvnews.com.tw/news/detail/2022A11F04M1), [EBC News (東森新聞)](https://www.youtube.com/watch?v=4BCV3De5QuE), and [New Tang Dynasty Television (新唐人電視台)](https://www.ntdtv.com.tw/b5/20221022/video/345977.html) when I was seving as the Vice President of the Taiwanese Student Association at Johns Hopkins University.
+- **Jun 01, 2019** — Reported on [Liberty Times (自由時報)](https://news.ltn.com.tw/news/life/breakingnews/2809162), [United Daily News (聯合報)](https://udn.com/news/story/6928/3847789), and [Commercial Times (工商時報)](https://www.ctee.com.tw/news/20190601700219-431401) when I was graduating from National Chiao Tung University.
+- **Jul 19, 2013** — Reported on [China Times (中國時報)](https://www.chinatimes.com/newspapers/20130719000490-260107?chdtv) when I was graduating from senior high school (National Experimental High School at Hsinchu Science Park).
+- **Jun 04, 2010** — Reported on [Liberty Times (自由時報)](https://news.ltn.com.tw/news/local/paper/400837) when I was graduating from junior high school.
 
 ---
 
@@ -128,26 +128,26 @@ Previously, I was a Research Scientist at [Honda Research Institute USA](https:/
 <div class="sponsors">
   <figure>
     <img src="{{ '/files/sponsors/moe.webp' | url }}" alt="" width="960" height="960" loading="lazy">
-    <figcaption>MOE(教育部)</figcaption>
+    <figcaption>MOE (教育部)</figcaption>
   </figure>
   <figure>
     <img src="{{ '/files/sponsors/nstc.webp' | url }}" alt="" width="1920" height="293" loading="lazy">
-    <figcaption>NSTC(國科會)</figcaption>
+    <figcaption>NSTC (國科會)</figcaption>
   </figure>
   <figure>
     <img src="{{ '/files/sponsors/ntuh.webp' | url }}" alt="" width="1920" height="977" loading="lazy">
-    <figcaption>NTUH(臺大醫院)</figcaption>
+    <figcaption>NTUH (臺大醫院)</figcaption>
   </figure>
   <figure>
     <img src="{{ '/files/sponsors/asus.webp' | url }}" alt="" width="1920" height="411" loading="lazy">
-    <figcaption>ASUS(華碩)</figcaption>
+    <figcaption>ASUS (華碩)</figcaption>
   </figure>
   <figure>
     <img src="{{ '/files/sponsors/delta.webp' | url }}" alt="" width="1920" height="592" loading="lazy">
-    <figcaption>Delta(台達電)</figcaption>
+    <figcaption>Delta (台達電)</figcaption>
   </figure>
   <figure>
     <img src="{{ '/files/sponsors/itri.webp' | url }}" alt="" width="1920" height="444" loading="lazy">
-    <figcaption>ITRI(工研院)</figcaption>
+    <figcaption>ITRI (工研院)</figcaption>
   </figure>
 </div>

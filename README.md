@@ -42,7 +42,7 @@
 
 `files/` 專門放置網站內容檔案：CV、照片、校徽，以及 `papers/`、`talks/` 子目錄中的論文與投影片。CSS 與字型保留在 `src/assets/`，建置腳本留在 `scripts/`，查核與來源紀錄留在 `docs/`，不混入 `files/`。
 
-首頁最下方的 Sponsors 在 `src/home.md` 編輯；每個 `<figure>` 包含 `files/sponsors/` 的 logo 路徑及 `Eng(中文)` 名稱。新增或刪除時複製或移除整個 `<figure>`；`eleventy.config.js` 的 `balancedSponsors` 在建置時依數量平均分列，桌機每列最多五組、各列數量相差最多一組，每列置中。手機由 CSS 改排每列兩組，最後一列亦置中；寬度不足兩欄時自然改排單欄。每組固定 160px，logo 不超出欄寬。名稱沿用一般內文樣式，外觀集中在 CSS 的 `Sponsors` 註解區塊；各 logo 依長寬比分別設定顯示寬度，以平衡視覺大小並保留原比例。
+首頁最下方的 Sponsors 在 `src/home.md` 編輯；每個 `<figure>` 包含 `files/sponsors/` 的 logo 路徑及 `Eng (中文)` 名稱。新增或刪除時複製或移除整個 `<figure>`；`eleventy.config.js` 的 `balancedSponsors` 在建置時依數量平均分列，桌機每列最多五組、各列數量相差最多一組，每列置中。手機由 CSS 改排每列兩組，最後一列亦置中；寬度不足兩欄時自然改排單欄。每組固定 160px，logo 不超出欄寬。名稱沿用一般內文樣式，外觀集中在 CSS 的 `Sponsors` 註解區塊；各 logo 依長寬比分別設定顯示寬度，以平衡視覺大小並保留原比例。
 
 ### Markdown 與頁面設定
 
@@ -125,7 +125,7 @@ News 標題旁的 **Recent／All** 使用原生單選控制項與 CSS 切換，�
 
 **近期顯示數量由消息放置的位置決定，沒有固定筆數或高度參數。** 新增消息時放在清單頂端，再視需要將較舊的項目移入 `news-archive`；只編輯一份消息內容，建置時由 `newsTabs` 自動產生兩種檢視。保留 archive 的開頭與結尾 `<div>` 標記。按鈕沿用 Email 的 `.button`，選中項目以主藍及底線標示；支援 Tab、方向鍵切換及鍵盤捲動 All 區域。
 
-News、Media Coverage 與 Invited Talks 共用 `.dated-list` 日期清單樣式，集中在 `Dated lists` 註解區塊；其後緊接共用 bullet／編號清單設定，再與其餘共用樣式保留三個空白行。日期文字使用黑色、在日期欄內兩端對齊；目前列間距為 8px、日期欄至少 6em，並依日期內容自動加寬、欄間距為桌機 16px／手機 12px。
+News、Media Coverage 與 Invited Talks 共用 `.dated-list` 日期清單樣式，集中在 `Dated lists` 註解區塊；其後緊接共用 bullet／編號清單設定，再與其餘共用樣式保留三個空白行。日期文字使用黑色、在日期欄內兩端對齊；目前列間距為 8px、日期欄以 `max-content` 依實際日期內容決定寬度，News 的月份／年份自然較窄、Media Coverage 與 Invited Talks 的完整日期較寬，不另設兩套寬度參數、欄間距為桌機 16px／手機 12px。
 
 ### Honors & Awards、Media Coverage 與 Activities
 
@@ -251,7 +251,7 @@ Markdown 分隔線 `.prose hr` 使用透明的 1px 線框，不顯示線條，�
 
 `.button` 是共用文字式連結外觀：黑色、600 字重，滑入時主藍加底線；沒有底色、邊框、內距或最低高度。Email、CV 與所有社群連結共用此樣式。News 控制也沿用它，另提供上下箭頭。聯絡連結可自動換行，水平間距 `--space-md`、換行間距 `--space-sm`。
 
-`Shared rectangular corners` 規則緊接間距設定，目前圓角 6px；連結底線距離 4px、粗細 1px。頁尾只有置中的 `© 2026 Shao-Yuan Lo(羅紹元)`；姓名取自首頁資料，年份文字在 `base.njk` 手動維護。
+`Shared rectangular corners` 規則緊接間距設定，目前圓角 6px；連結底線距離 4px、粗細 1px。頁尾只有置中的 `© 2026 Shao-Yuan Lo (羅紹元)`；姓名取自首頁資料，年份文字在 `base.njk` 手動維護。
 
 ## 預覽與發布
 
