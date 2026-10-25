@@ -35,7 +35,7 @@ export default function (eleventyConfig) {
     (container, contents) => {
       const figures = contents.match(/<figure>[\s\S]*?<\/figure>/g) || [];
       if (!figures.length) return container;
-      const rowCount = Math.ceil(figures.length / 4);
+      const rowCount = Math.ceil(figures.length / 5);
       const rowSize = Math.floor(figures.length / rowCount);
       const extra = figures.length % rowCount;
       let offset = 0;

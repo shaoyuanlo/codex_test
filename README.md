@@ -42,7 +42,7 @@
 
 `files/` 專門放置網站內容檔案：CV、照片、校徽，以及 `papers/`、`talks/` 子目錄中的論文與投影片。CSS 與字型保留在 `src/assets/`，建置腳本留在 `scripts/`，查核與來源紀錄留在 `docs/`，不混入 `files/`。
 
-首頁最下方的 Sponsors 在 `src/home.md` 編輯；每個 `<figure>` 包含 `files/sponsors/` 的 logo 路徑及 `Eng（中文）` 名稱。新增或刪除時複製或移除整個 `<figure>`；`eleventy.config.js` 的 `balancedSponsors` 在建置時依數量平均分列，桌機每列最多四組、各列數量相差最多一組，每列置中。手機由 CSS 改排每列兩組，最後一列亦置中；寬度不足兩欄時自然改排單欄。每組固定 160px，logo 不超出欄寬。名稱沿用一般內文樣式，外觀集中在 CSS 的 `Sponsors` 註解區塊；各 logo 依長寬比分別設定顯示寬度，以平衡視覺大小並保留原比例。
+首頁最下方的 Sponsors 在 `src/home.md` 編輯；每個 `<figure>` 包含 `files/sponsors/` 的 logo 路徑及 `Eng（中文）` 名稱。新增或刪除時複製或移除整個 `<figure>`；`eleventy.config.js` 的 `balancedSponsors` 在建置時依數量平均分列，桌機每列最多五組、各列數量相差最多一組，每列置中。手機由 CSS 改排每列兩組，最後一列亦置中；寬度不足兩欄時自然改排單欄。每組固定 160px，logo 不超出欄寬。名稱沿用一般內文樣式，外觀集中在 CSS 的 `Sponsors` 註解區塊；各 logo 依長寬比分別設定顯示寬度，以平衡視覺大小並保留原比例。
 
 ### Markdown 與頁面設定
 
