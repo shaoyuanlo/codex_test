@@ -2,9 +2,9 @@
 layout: layouts/page.njk
 section: activities
 permalink: /activities/index.html
-title: Activities
+title: Academic Activities
 ---
-## Academic Activities
+## Service
 
 <!-- Imported from the original website's Academic Activities section. -->
 
