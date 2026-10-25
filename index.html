@@ -1379,12 +1379,14 @@ nav a[aria-current] { font-weight: 600; }
 /* Dated lists: aligned date/body columns shared across pages. */
 .prose .dated-list { display: grid; grid-template-columns: minmax(6em, max-content) minmax(0, 1fr); gap: var(--space-sm) var(--space-md); list-style: none; padding: 0; margin: 0 0 var(--space-sm); }
 .prose .dated-list > li { display: grid; grid-column: 1 / -1; grid-template-columns: subgrid; column-gap: var(--space-md); padding: 0; margin: 0; }
-.prose .dated-list > li > strong { color: var(--accent); white-space: nowrap; }
+.prose .dated-list > li > strong { color: var(--black); white-space: nowrap; text-align: justify; text-align-last: justify; }
 /* Shared bullet and numbered lists: indentation, outer spacing and item margins. */
 .prose ul, .prose ol { margin: 0 0 var(--space-md); padding-left: var(--space-xl); }
 .prose li { margin: var(--space-sm) 0; }
 
 /* News: native view controls; the recent list sets the shared viewport height. */
+/* Keep native control focus from applying the page anchor offset while switching views. */
+html:has(.news-switch:hover, .news-switch:focus-within) { scroll-padding-top: 0; }
 .news-heading { display: flex; align-items: baseline; gap: var(--space-md); margin: var(--space-lg) 0 var(--space-md); }
 .news-heading h2 { margin: 0; }
 .news-switch { display: flex; gap: var(--space-md); min-width: 0; padding: 0; margin: 0; border: 0; }
@@ -1460,7 +1462,7 @@ p { margin: 0 0 var(--space-md); }
   .callout { break-inside: avoid; }
 }
 </style>
-  <meta name="preview-source" content="01ad62a090148858fd8eabac72eeab4192a8bc53">
+  <meta name="preview-source" content="2b83401ffe953c29d96f3a2f2d8f1006d2c29d63">
   <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="page-home">
@@ -1573,48 +1575,48 @@ p { margin: 0 0 var(--space-md); }
 <hr>
 <h2>Honors &amp; Awards</h2>
 <ul>
-<li><strong><a href="https://yushan.project.edu.tw/TopTalent/EN">Yushan Young Fellow（玉山青年學者）</a></strong>, Ministry of Education, Taiwan, 2025</li>
+<li><strong><a href="https://yushan.project.edu.tw/TopTalent/EN">Yushan Young Fellow(玉山青年學者)</a></strong>, Ministry of Education, Taiwan, 2025</li>
 <li><strong><a href="https://cvpr.thecvf.com/Conferences/2025/ProgramCommittee">CVPR 2025 Outstanding Reviewer</a></strong>, IEEE/CVF CVPR 2025</li>
-<li><strong><a href="https://depart.moe.edu.tw/ED2500/cp.aspx?n=ECEA48027CA1AA4E&amp;s=FDC3BA2C714CD75F">Government Scholarship to Study Abroad（教育部留學獎學金）</a></strong>, Ministry of Education, Taiwan, 2020</li>
+<li><strong><a href="https://depart.moe.edu.tw/ED2500/cp.aspx?n=ECEA48027CA1AA4E&amp;s=FDC3BA2C714CD75F">Government Scholarship to Study Abroad(教育部留學獎學金)</a></strong>, Ministry of Education, Taiwan, 2020</li>
 <li><strong><a href="http://www.acmmmasia.org/2019/files/ACMMMASIA2019-Program.pdf">Best Paper Award</a></strong>, ACM Multimedia Asia 2019</li>
 <li><strong><a href="https://140.125.183.142/wp-content/uploads/2021/09/IPPR%E7%AC%AC%E5%8D%81%E4%BA%8C%E5%B1%86%E5%8D%9A%E7%A2%A9%E5%A3%AB%E8%AB%96%E6%96%87%E7%8D%8E%E5%BE%97%E7%8D%8E%E8%B3%87%E6%96%99.pdf">Best Master Thesis Award</a></strong>, Chinese Image Processing and Pattern Recognition Society, 2019</li>
-<li><strong><a href="https://news.ltn.com.tw/news/life/breakingnews/2809162">Students’ Outstanding Contribution Award（學生傑出貢獻獎）</a></strong>, National Chiao Tung University, 2019</li>
+<li><strong><a href="https://news.ltn.com.tw/news/life/breakingnews/2809162">Students’ Outstanding Contribution Award(學生傑出貢獻獎)</a></strong>, National Chiao Tung University, 2019</li>
 </ul>
 <hr>
 <h2>Media Coverage</h2>
 <ul class="dated-list">
-<li><strong>Apr 25, 2026</strong><span>Interviewed on <a href="https://www.ner.gov.tw/Program/Episode/?id=26050318334498988&amp;program=%E7%89%B9%E5%88%A5%E7%9A%84%E6%84%9B&amp;programId=24102210171197065">National Education Radio（教育廣播電台）</a>.</span></li>
-<li><strong>Jan 30, 2026</strong><span>Interviewed on <a href="https://www.facebook.com/photo/?fbid=1541793631289368&amp;set=a.440615794740496">Cheng Sheng Broadcasting Corp（正聲廣播公司）</a>.</span></li>
-<li><strong>Oct 11, 2022</strong><span>Reported on <a href="https://www.ftvnews.com.tw/news/detail/2022A11F04M1">Formosa Television（民視新聞）</a>, <a href="https://www.youtube.com/watch?v=4BCV3De5QuE">EBC News（東森新聞）</a>, and <a href="https://www.ntdtv.com.tw/b5/20221022/video/345977.html">New Tang Dynasty Television（新唐人電視台）</a> when I was seving as the Vice President of the Taiwanese Student Association at Johns Hopkins University.</span></li>
-<li><strong>Jun 01, 2019</strong><span>Reported on <a href="https://news.ltn.com.tw/news/life/breakingnews/2809162">Liberty Times（自由時報）</a>, <a href="https://udn.com/news/story/6928/3847789">United Daily News（聯合報)</a>, and <a href="https://www.ctee.com.tw/news/20190601700219-431401">Commercial Times（工商時報）</a> when I was graduating from National Chiao Tung University.</span></li>
-<li><strong>Jul 19, 2013</strong><span>Reported on <a href="https://www.chinatimes.com/newspapers/20130719000490-260107?chdtv">China Times（中國時報）</a> when I was graduating from senior high school (National Experimental High School at Hsinchu Science Park).</span></li>
-<li><strong>Jun 04, 2010</strong><span>Reported on <a href="https://news.ltn.com.tw/news/local/paper/400837">Liberty Times（自由時報）</a> when I was graduating from junior high school.</span></li>
+<li><strong>Apr 25, 2026</strong><span>Interviewed on <a href="https://www.ner.gov.tw/Program/Episode/?id=26050318334498988&amp;program=%E7%89%B9%E5%88%A5%E7%9A%84%E6%84%9B&amp;programId=24102210171197065">National Education Radio(教育廣播電台)</a>.</span></li>
+<li><strong>Jan 30, 2026</strong><span>Interviewed on <a href="https://www.facebook.com/photo/?fbid=1541793631289368&amp;set=a.440615794740496">Cheng Sheng Broadcasting Corp(正聲廣播公司)</a>.</span></li>
+<li><strong>Oct 11, 2022</strong><span>Reported on <a href="https://www.ftvnews.com.tw/news/detail/2022A11F04M1">Formosa Television(民視新聞)</a>, <a href="https://www.youtube.com/watch?v=4BCV3De5QuE">EBC News(東森新聞)</a>, and <a href="https://www.ntdtv.com.tw/b5/20221022/video/345977.html">New Tang Dynasty Television(新唐人電視台)</a> when I was seving as the Vice President of the Taiwanese Student Association at Johns Hopkins University.</span></li>
+<li><strong>Jun 01, 2019</strong><span>Reported on <a href="https://news.ltn.com.tw/news/life/breakingnews/2809162">Liberty Times(自由時報)</a>, <a href="https://udn.com/news/story/6928/3847789">United Daily News(聯合報)</a>, and <a href="https://www.ctee.com.tw/news/20190601700219-431401">Commercial Times(工商時報)</a> when I was graduating from National Chiao Tung University.</span></li>
+<li><strong>Jul 19, 2013</strong><span>Reported on <a href="https://www.chinatimes.com/newspapers/20130719000490-260107?chdtv">China Times(中國時報)</a> when I was graduating from senior high school (National Experimental High School at Hsinchu Science Park).</span></li>
+<li><strong>Jun 04, 2010</strong><span>Reported on <a href="https://news.ltn.com.tw/news/local/paper/400837">Liberty Times(自由時報)</a> when I was graduating from junior high school.</span></li>
 </ul>
 <hr>
 <h2>Sponsors</h2>
 <div class="sponsors"><div class="sponsor-row"><figure>
     <img src="/shaoyuanlo/codex_test/site-preview/files/sponsors/moe.webp" alt="" width="960" height="960" loading="lazy">
-    <figcaption>MOE（教育部）</figcaption>
+    <figcaption>MOE(教育部)</figcaption>
   </figure>
 <figure>
     <img src="/shaoyuanlo/codex_test/site-preview/files/sponsors/nstc.webp" alt="" width="1920" height="293" loading="lazy">
-    <figcaption>NSTC（國科會）</figcaption>
+    <figcaption>NSTC(國科會)</figcaption>
   </figure>
 <figure>
     <img src="/shaoyuanlo/codex_test/site-preview/files/sponsors/ntuh.webp" alt="" width="1920" height="977" loading="lazy">
-    <figcaption>NTUH（臺大醫院）</figcaption>
+    <figcaption>NTUH(臺大醫院)</figcaption>
   </figure></div>
 <div class="sponsor-row"><figure>
     <img src="/shaoyuanlo/codex_test/site-preview/files/sponsors/asus.webp" alt="" width="1920" height="411" loading="lazy">
-    <figcaption>ASUS（華碩）</figcaption>
+    <figcaption>ASUS(華碩)</figcaption>
   </figure>
 <figure>
     <img src="/shaoyuanlo/codex_test/site-preview/files/sponsors/delta.webp" alt="" width="1920" height="592" loading="lazy">
-    <figcaption>Delta（台達電）</figcaption>
+    <figcaption>Delta(台達電)</figcaption>
   </figure>
 <figure>
     <img src="/shaoyuanlo/codex_test/site-preview/files/sponsors/itri.webp" alt="" width="1920" height="444" loading="lazy">
-    <figcaption>ITRI（工研院）</figcaption>
+    <figcaption>ITRI(工研院)</figcaption>
   </figure></div></div>
 
 </div>
@@ -1622,7 +1624,7 @@ p { margin: 0 0 var(--space-md); }
   </main>
   <footer class="site-footer">
     <div class="footer-inner">
-      <p>© 2026 Shao-Yuan Lo（羅紹元）</p>
+      <p>© 2026 Shao-Yuan Lo(羅紹元)</p>
     </div>
   </footer>
 </body>

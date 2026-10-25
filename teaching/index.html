@@ -1379,12 +1379,14 @@ nav a[aria-current] { font-weight: 600; }
 /* Dated lists: aligned date/body columns shared across pages. */
 .prose .dated-list { display: grid; grid-template-columns: minmax(6em, max-content) minmax(0, 1fr); gap: var(--space-sm) var(--space-md); list-style: none; padding: 0; margin: 0 0 var(--space-sm); }
 .prose .dated-list > li { display: grid; grid-column: 1 / -1; grid-template-columns: subgrid; column-gap: var(--space-md); padding: 0; margin: 0; }
-.prose .dated-list > li > strong { color: var(--accent); white-space: nowrap; }
+.prose .dated-list > li > strong { color: var(--black); white-space: nowrap; text-align: justify; text-align-last: justify; }
 /* Shared bullet and numbered lists: indentation, outer spacing and item margins. */
 .prose ul, .prose ol { margin: 0 0 var(--space-md); padding-left: var(--space-xl); }
 .prose li { margin: var(--space-sm) 0; }
 
 /* News: native view controls; the recent list sets the shared viewport height. */
+/* Keep native control focus from applying the page anchor offset while switching views. */
+html:has(.news-switch:hover, .news-switch:focus-within) { scroll-padding-top: 0; }
 .news-heading { display: flex; align-items: baseline; gap: var(--space-md); margin: var(--space-lg) 0 var(--space-md); }
 .news-heading h2 { margin: 0; }
 .news-switch { display: flex; gap: var(--space-md); min-width: 0; padding: 0; margin: 0; border: 0; }
@@ -1460,7 +1462,7 @@ p { margin: 0 0 var(--space-md); }
   .callout { break-inside: avoid; }
 }
 </style>
-  <meta name="preview-source" content="01ad62a090148858fd8eabac72eeab4192a8bc53">
+  <meta name="preview-source" content="2b83401ffe953c29d96f3a2f2d8f1006d2c29d63">
   <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="page-teaching">
@@ -1491,9 +1493,9 @@ p { margin: 0 0 var(--space-md); }
   
 </header>
 <div class="prose page-content">
-<h3>CSIE5412 - Multimodal Artificial Intelligence（多模態人工智慧）</h3>
+<h3>CSIE5412 - Multimodal Artificial Intelligence(多模態人工智慧)</h3>
 <p>Fall 2025 (114-1), Fall 2026 (115-1)</p>
-<h3>CSIE7411 - Generative Artificial Intelligence Safety（生成式人工智慧安全）</h3>
+<h3>CSIE7411 - Generative Artificial Intelligence Safety(生成式人工智慧安全)</h3>
 <p>Spring 2026 (114-2)</p>
 
 </div>
@@ -1501,7 +1503,7 @@ p { margin: 0 0 var(--space-md); }
   </main>
   <footer class="site-footer">
     <div class="footer-inner">
-      <p>© 2026 Shao-Yuan Lo（羅紹元）</p>
+      <p>© 2026 Shao-Yuan Lo(羅紹元)</p>
     </div>
   </footer>
 </body>
