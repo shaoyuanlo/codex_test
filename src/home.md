@@ -58,6 +58,8 @@ Previously, I was a Research Scientist at [Honda Research Institute USA](https:/
 </aside>
 -->
 
+---
+
 ## News
 
 <!-- Keep the latest items here; move older items into the details block below. -->
@@ -98,6 +100,8 @@ Previously, I was a Research Scientist at [Honda Research Institute USA](https:/
 
 </details>
 
+---
+
 ## Honors & Awards
 
 - **[Yushan Young Fellow](https://yushan.project.edu.tw/TopTalent/EN)**, Ministry of Education, Taiwan (2025)
@@ -115,6 +119,8 @@ Previously, I was a Research Scientist at [Honda Research Institute USA](https:/
 - **Scholarship to Overseas Exchange Program**, National Chiao Tung University (2016)
 - **[WINTEK Outstanding Freshman Scholarship](https://tw.news.yahoo.com/%25E4%25BA%25A4%25E5%25A4%25A7%25E6%25A0%25A1%25E5%258F%258B%25E5%258B%259D%25E8%258F%25AF%25E7%25A7%2591%25E6%258A%2580%25E8%2591%25A3%25E5%25BA%25A7%25E6%258F%2590%25E4%25BE%259B%25E5%258D%2583%25E8%2590%25AC%25E7%258D%258E%25E5%25AD%25B8%25E9%2587%2591%25E7%25B5%25A6%25E5%2584%25AA%25E7%25A7%2580%25E5%25AD%25B8%25E5%25BC%259F%25E5%25A6%25B9-215319757.html)**, WINTEK Corp. and National Chiao Tung University (2013)
 
+---
+
 ## Media Coverage
 
 - **Apr 2026** — I was interviewed on [National Education Radio (教育廣播電台)](https://www.ner.gov.tw/Program/Episode/?id=26050318334498988&program=%E7%89%B9%E5%88%A5%E7%9A%84%E6%84%9B&programId=24102210171197065).
@@ -123,3 +129,7 @@ Previously, I was a Research Scientist at [Honda Research Institute USA](https:/
 - **Jun 2019** — I was reported on [Liberty Times (自由時報)](https://news.ltn.com.tw/news/life/breakingnews/2809162), [United Daily News (聯合報)](https://udn.com/news/story/6928/3847789), and [Commercial Times (工商時報)](https://www.ctee.com.tw/news/20190601700219-431401) when I was graduating from National Chiao Tung University.
 - **Jul 2013** — I was reported on [China Times (中國時報)](https://www.chinatimes.com/newspapers/20130719000490-260107?chdtv) when I was graduating from senior high school (National Experimental High School at Hsinchu Science Park).
 - **Jun 2010** — I was reported on [Liberty Times (自由時報)](https://news.ltn.com.tw/news/local/paper/400837) when I was graduating from junior high school.
+
+---
+
+## Sponsors
