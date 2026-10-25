@@ -45,7 +45,7 @@ export default function (eleventyConfig) {
   // Share date/body columns across Markdown lists without changing ordinary bullet lists.
   eleventyConfig.addFilter("datedLists", html => html.replace(/<ul>([\s\S]*?)<\/ul>/g, (list, items) => {
     const columns = items.replace(
-      /<li><strong>([^<]+)<\/strong>\s*—\s*([\s\S]*?)<\/li>/g,
+      /<li><strong>([A-Z][a-z]{2} (?:\d{2}, )?\d{4})<\/strong>\s*—\s*([\s\S]*?)<\/li>/g,
       '<li><strong>$1</strong><span>$2</span></li>'
     );
     return columns === items ? list : `<ul class="dated-list">${columns}</ul>`;

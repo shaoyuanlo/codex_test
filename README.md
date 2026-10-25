@@ -131,7 +131,7 @@ News、Media Coverage 與 Invited Talks 共用 `.dated-list` 日期清單樣式�
 
 首頁 `News` 後依序為 `Honors & Awards`、`Media Coverage`。獎項使用一般 Markdown bullet 清單，保留獎項名稱、單位、年份及來源連結；媒體報導使用完整日期，例如 `- **Apr 25, 2026** — Message text.`，沿用共用兩欄清單。
 
-`src/activities.md` 使用預設 `layouts/page.njk`，導覽位於 Publications 與 Teaching 之間；受邀演講在 `## Invited Talks` 下方編輯，使用完整日期（例如 `Mar 03, 2026`），並沿用共用日期欄與間距，沒有 Activities 專用設計值。演講保留題目、場合、主持人及原連結；本地投影片放在 `files/talks/`，使用 `url` filter 連結。
+`src/activities.md` 使用預設 `layouts/page.njk`，導覽位於 Publications 與 Teaching 之間；最上方 `## Academic Activities` 以 H3 分組及一般 Markdown bullet 維護 Conference Organization、Area Chair、Associate Editor、Reviewer 與 Teaching Assistant，職務與年份依原網站匯入；受邀演講在 `## Invited Talks` 下方編輯，使用完整日期（例如 `Mar 03, 2026`），並沿用共用日期欄與間距，沒有 Activities 專用設計值。演講保留題目、場合、主持人及原連結；本地投影片放在 `files/talks/`，使用 `url` filter 連結。
 
 News 的日期維持三字母月份與年份；Media Coverage 與 Invited Talks 則直接在 Markdown 寫成 `Mon DD, YYYY` 完整日期，日數補足兩位。原網頁前兩場演講誤列為 2025，匯入時依投影片標題頁確認為 Mar 2026，註記保留在 `activities.md`。
 

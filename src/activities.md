@@ -4,6 +4,41 @@ section: activities
 permalink: /activities/index.html
 title: Activities
 ---
+## Academic Activities
+
+<!-- Imported from the original website's Academic Activities section. -->
+
+### Conference Organization
+
+- **CVPR** — AUTOPILOT Workshop Organizer (2026)
+- **ICCV** — 2COOOL Workshop Organizer (2025)
+- **AVSS** — Tutorial Chair (2025)
+
+### Area Chair
+
+- **NeurIPS** (2026)
+- **ICML** (2026)
+- **ICLR** (2026)
+- **ICASSP** (2026)
+- **WACV** (2027)
+- **BMVC** (2025)
+- **ACCV** (2026)
+
+### Associate Editor
+
+- **ICRA** (2025, 2026)
+
+### Reviewer
+
+- **Journals:** IEEE T-PAMI, IEEE T-IP, IEEE RA-L, IEEE T-CSVT, IEEE T-SMC, IEEE JETCAS, IJCV, TMLR, Pattern Recognition, Neurocomputing, Medical Physics
+- **Conferences:** CVPR, ICCV, ECCV, NeurIPS, ICLR, ICML, ACL Rolling Review, AAAI, IJCAI, ACM MM, ACM MM Asia, WACV, ACCV, ICIP, ICPR, AVSS, Interspeech
+
+### Teaching Assistant
+
+- **Deep Learning (EN.520.638)** — Johns Hopkins University, Spring (2021, 2022, 2023)
+
+---
+
 ## Invited Talks
 
 <!-- The first two March 2026 dates follow the slide title pages; the original HTML lists 2025. -->
