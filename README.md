@@ -21,15 +21,16 @@
 | Home | [src/home.md](src/home.md) | `/` | `layouts/home.njk` |
 | Lab | [src/lab.md](src/lab.md) | `/lab/` | `layouts/page.njk` |
 | Publications | [src/publications.md](src/publications.md) | `/publications/` | `layouts/page.njk` |
+| Activities | [src/activities.md](src/activities.md) | `/activities/` | `layouts/page.njk` |
 | Teaching | [src/teaching.md](src/teaching.md) | `/teaching/` | `layouts/page.njk` |
 | Blog | [src/blog.md](src/blog.md) | `/blog/` | `layouts/page.njk` |
 
-五個選單連至獨立頁面；Home 就是根網址。Blog 與其他一般分頁相同，直接編輯 Markdown，沒有文章集合、自動列表、日期排序、草稿旗標或獨立文章版型。
+六個選單連至獨立頁面，順序為 Home、Lab、Publications、Activities、Teaching、Blog；Home 就是根網址。Blog 與其他一般分頁相同，直接編輯 Markdown，沒有文章集合、自動列表、日期排序、草稿旗標或獨立文章版型。
 
 | 要更新的項目 | 編輯位置 |
 | --- | --- |
 | 姓名、職稱、所屬單位、聯絡／社群連結、導覽 | `src/home.md` 上方的 `website:` |
-| 首頁簡介、招募訊息與 News | `src/home.md` 正文 |
+| 首頁簡介、News、Honors & Awards、Media Coverage | `src/home.md` 正文 |
 | 各分頁標題與簡介 | 該 `.md` 的 `title`、可選的 `intro` |
 | 頭像原檔 | [src/assets/portrait.jpg](src/assets/portrait.jpg) |
 | 頭像路徑、圖片尺寸資訊與首頁結構 | [layouts/home.njk](src/_includes/layouts/home.njk) |
@@ -114,13 +115,21 @@ News 仍以普通 Markdown 清單編輯：
 - **Oct 2025** — Message text with **bold text** or [a link](https://example.com).
 ```
 
-月份直接寫三個英文字母，不另設月份轉換選項。首頁版型透過 `newsColumns` filter 將日期與內容分組，再由 CSS 排成兩欄；長文字換行留在右欄，連結、粗體與斜體仍可使用。
+月份直接寫三個英文字母，不另設月份轉換選項。共用版型透過 `datedLists` filter 將日期與內容分組，再由 CSS 排成兩欄；長文字換行留在右欄，連結、粗體與斜體仍可使用。
 
 `<details class="news-more">` 外面的消息一直顯示，裡面的消息可展開收起。**顯示數量由消息放置的位置決定，沒有自動截斷的數量參數。** 新增消息時放在清單頂端，再視需要將較舊的項目移入展開區。
 
 點選 **Show more ↓** 會展開並變為 **Show less ↑**，再次點選收起。這是原生 `details`／`summary` 功能，不需要 JavaScript；文字與箭頭在 `home.md` 的 `summary` 中，外觀沿用 Email 的 `.button`。編輯時保留 `summary` 與結尾 `</details>`。
 
-News 相關 CSS 集中在 `News` 註解區塊，與後續設定保留三個空白行。目前列間距為 8px、日期欄寬 6em、欄間距為桌機 16px／手機 12px。
+News、Media Coverage 與 Invited Talks 共用 `.dated-list` 日期清單樣式，集中在 `Dated lists` 註解區塊，與後續設定保留三個空白行。目前列間距為 8px、日期欄寬 6em、欄間距為桌機 16px／手機 12px。
+
+### Honors & Awards、Media Coverage 與 Activities
+
+首頁 `News` 後依序為 `Honors & Awards`、`Media Coverage`。獎項使用一般 Markdown bullet 清單，保留獎項名稱、單位、年份及來源連結；媒體報導沿用 `- **Apr 2026** — Message text.` 日期格式與共用兩欄清單。
+
+`src/activities.md` 使用預設 `layouts/page.njk`，導覽位於 Publications 與 Teaching 之間；受邀演講在 `## Invited Talks` 下方編輯，沿用相同日期格式、欄寬與間距，沒有 Activities 專用設計值。演講保留題目、場合、主持人及原連結；本地投影片放在 `talks/`，使用 `url` filter 連結。
+
+日期直接在 Markdown 寫成三字母月份與年份。原網頁前兩場演講誤列為 2025，匯入時依投影片標題頁確認為 Mar 2026，註記保留在 `activities.md`。
 
 ### Publications
 
@@ -143,13 +152,15 @@ First Author, **Shao-Yuan Lo**, Last Author
 - 沒有網址時寫純文字 `Paper / arXiv`，不建立空連結。不加入 BibTeX 欄位、連結或 `.bib` 檔案。
 - 新增或更換來源時核對標題、作者、年份與實際 PDF；不要把投影片當作論文 PDF。
 
+`publications.md` 最後的 `## Dissertations` 收錄學位論文，使用共用 H3、作者、學位／學校與年份，資源連結標為 `Thesis`；不加入 BibTeX 或額外圖卡樣式。
+
 [publication-pdf-check.json](docs/publication-pdf-check.json) 是首次匯入時的 PDF 來源與查核紀錄，包含公開 PDF、機構權限及瀏覽器驗證等結果，不能代表後續新增內容已查核。[publication-link-check.json](docs/publication-link-check.json) 是資源連結檢查報告；可在 Actions 手動執行 **Check publication resource links** 更新。此流程也會在相關檢查腳本／workflow 變更時觸發，並可能由 bot 回寫報告到 `main`；單改論文內容不會自動觸發它。
 
 ## 設計設定
 
 原則是**變數與選項盡量精簡、統一管理，優先共用及繼承**。內容放 Markdown、結構放版型、外觀放 CSS。新增元件先用既有選項，不為每個數字新增變數，也不為每個分頁複製樣式。
 
-用 CSS 的英文分類註解定位設定；行號會隨編輯移動。順序為色彩／字級、行高／間距與手機覆寫、共用圓角、標題與分隔線、容器、首頁、文字式按鈕、News，以及其餘共用樣式。
+用 CSS 的英文分類註解定位設定；行號會隨編輯移動。順序為色彩／字級、行高／間距與手機覆寫、共用圓角、標題與分隔線、容器、首頁、文字式按鈕、共用日期清單與 News 展開控制，以及其餘共用樣式。
 
 ### 色彩
 
@@ -157,7 +168,7 @@ First Author, **Shao-Yuan Lo**, Last Author
 | --- | --- | --- |
 | `--white` | `#FFFFFF` | 頁面背景、導覽白字 |
 | `--black` | `#000000` | 一般文字、標題、文字式按鈕 |
-| `--accent` | `#002D72` | 連結、導覽背景、職稱、News 日期、少量強調與互動 |
+| `--accent` | `#002D72` | 連結、導覽背景、職稱、日期清單的日期、少量強調與互動 |
 | `--accent-light` | `#EAF0F8` | 提示框、程式碼背景、分隔線與邊框 |
 | `--selection-bg` | `#AFC7E8` | 文字選取背景 |
 | `--highlight` | `#900C26` | 論文的 Oral、Highlight、Spotlight 等標記 |
@@ -185,9 +196,9 @@ First Author, **Shao-Yuan Lo**, Last Author
 | 變數 | 桌機 | 手機 | 用途 |
 | --- | --- | --- | --- |
 | `--line-height-compact` | 1.3 | 1.2 | 標題、職稱與所屬單位、論文相關資訊、導覽 |
-| `--line-height-body` | 1.7 | 1.5 | 一般內文、News、Blog、提示框 |
+| `--line-height-body` | 1.7 | 1.5 | 一般內文、日期清單、Blog、提示框 |
 | `--space-xs` | 4px | 4px | 論文標題與相關資訊的下外距 |
-| `--space-sm` | 8px | 8px | 職稱組間距、News 列間距、部分標題下外距 |
+| `--space-sm` | 8px | 8px | 職稱組間距、日期清單列間距、部分標題下外距 |
 | `--space-md` | 16px | 12px | 段落、欄間距、一般標題下方 |
 | `--space-lg` | 24px | 16px | 標題上方、分隔線、手機容器留白 |
 | `--space-xl` | 32px | 24px | 共用大間距 |
@@ -266,14 +277,14 @@ https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/<提交版�
 
 ### 快取與線上檢查
 
-發布後會透過 raw.githack 官方 `/purge` 介面清除五個固定分頁的快取。若固定首頁仍讀到舊版，流程會等待後再次清除、重試；遇到 429 或暫時性伺服器錯誤時也會間隔重試並參考 `Retry-After`。
+發布後會透過 raw.githack 官方 `/purge` 介面清除六個固定分頁的快取。若固定首頁仍讀到舊版，流程會等待後再次清除、重試；遇到 429 或暫時性伺服器錯誤時也會間隔重試並參考 `Retry-After`。
 
 結果見 [`preview-health.json`](https://github.com/shaoyuanlo/codex_test/blob/site-preview/preview-health.json)：
 
 | 欄位 | 意義 |
 | --- | --- |
 | `sourceCommit` | 本次檢查對應的來源提交，需與 `preview.json` 相符 |
-| `checks` | 固定首頁、快速版五個分頁、兩個字型檔及舊路徑的個別結果 |
+| `checks` | 固定首頁、快速版六個分頁、兩個字型檔及舊路徑的個別結果 |
 | 固定首頁的 `currentVersion` | 是否已讀到該次來源版本；200 仍可能是舊快取 |
 | `purges` | 固定分頁清除快取的請求結果 |
 | `passed` | 所有檢查通過，且固定首頁確實為本次版本 |

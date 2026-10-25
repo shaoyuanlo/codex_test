@@ -326,3 +326,21 @@ Ping-Rong Chen\*, **Shao-Yuan Lo**\*, Hsueh-Ming Hang, Sheng-Wei Chan, Jing-Jhih
 [Paper](https://arxiv.org/pdf/1809.03994) / [arXiv](https://arxiv.org/abs/1809.03994) / [Slides]({{ '/papers/LMD.pdf' | url }})
 
 ---
+
+## Dissertations
+
+### Robust Computer Vision Against Adversarial Examples and Domain Shifts
+
+**Shao-Yuan Lo**
+
+*Ph.D. Thesis, Johns Hopkins University*, 2023
+
+[Thesis](https://jscholarship.library.jhu.edu/items/497a35ef-81cc-44f3-b9a9-b01b182a1a96)
+
+### Real-Time Semantic Segmentation Networks for Autonomous Driving
+
+**Shao-Yuan Lo**
+
+*Master Thesis, National Chiao Tung University*, 2019
+
+[Thesis](https://hdl.handle.net/11296/7acbjd)

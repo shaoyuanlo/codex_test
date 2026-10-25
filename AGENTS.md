@@ -23,7 +23,7 @@
 - 維持既有精簡色盤：白色頁面背景、黑色一般文字、主藍及白色導覽文字，淺藍共用於提示框／程式碼／邊框，論文標記沿用既有強調色。不重新區分主要／次要灰字，不新增瀏覽器 `theme-color`。
 - 全站共用 Inter／Noto Sans TC 與系統備援，字級引用既有五個選項，字重只用 400／600；Markdown 粗體沿用 600。字距、單字間距用 `normal`，不新增相關選項。
 - 行高、margin、padding、gap 共用既有級距；功能尺寸可依用途直接設定。維持單一螢幕寬度 breakpoint，手機在共用變數區集中覆寫字級、行高與間距，避免元件各自重複設定數字。
-- CSS 依英文分類註解集中管理；共用圓角緊接間距設定。首頁、按鈕及 News 各自集中，News 與後續設定保留三個空白行。若使用者指定新的位置，依當次要求調整，不為維持歷史行號製造重複規則。
+- CSS 依英文分類註解集中管理；共用圓角緊接間距設定。首頁、按鈕及共用日期清單各自集中，日期清單與 News 控制區塊和後續設定保留三個空白行。若使用者指定新的位置，依當次要求調整，不為維持歷史行號製造重複規則。
 - 內容、導覽與頁尾共用容器寬度及左右內距；各分頁正文使用完整容器寬度，不另加窄版限制。
 - 首頁 `.hero` 與 `.page-heading` 共用內外距；首頁姓名沿用共用 H1 間距，照片頂端維持與姓名標題頂端對齊，呈現原圖色彩。手機維持兩欄：左欄為姓名與職稱資訊，右側照片跨越姓名、職稱兩列，聯絡連結在下方占滿整列。中文姓名固定另起一行、左外距為 0，與英文姓名靠左對齊。
 - 論文標題沿用 H3 的字級、字重、行高與上外距，只獨立覆寫下外距。標題、職稱資訊、論文相關資訊與導覽用 compact 行高，正文用 body 行高。
@@ -35,8 +35,8 @@
 
 | 用途 | 來源 |
 | --- | --- |
-| Home、共用個人資料、導覽、News | `src/home.md` |
-| Lab、Publications、Teaching、Blog | `src/lab.md`、`src/publications.md`、`src/teaching.md`、`src/blog.md` |
+| Home、共用個人資料、導覽、News、Honors & Awards、Media Coverage | `src/home.md` |
+| Lab、Publications、Activities、Teaching、Blog | `src/lab.md`、`src/publications.md`、`src/activities.md`、`src/teaching.md`、`src/blog.md` |
 | 全站結構、首頁、一般分頁版型 | `src/_includes/layouts/` 中的 `base.njk`、`home.njk`、`page.njk` |
 | 設計設定、照片、校徽、字型 | `src/assets/` |
 | CV、論文、演講資源 | `files/`、`papers/`、`talks/` |
@@ -45,16 +45,17 @@
 
 ### 一般分頁與首頁
 
-- 五個選單是獨立頁面；Home 來源為 `home.md`、網址為 `/`。導覽列桌機顯示姓名與選單，不在姓名後額外加句點；手機隱藏導覽列姓名，只保留選單。導覽列容器不設最低高度、上下內距為 0，由選單項目與換行自然決定高度。保留 `publications` 在檔名、section、導覽 key、CSS 與網址的一致性；舊 `/publication/` 僅保留於失效路徑的檢查與說明。
+- 六個選單是獨立頁面，順序為 Home、Lab、Publications、Activities、Teaching、Blog；Home 來源為 `home.md`、網址為 `/`。導覽列桌機顯示姓名與選單，不在姓名後額外加句點；手機隱藏導覽列姓名，只保留選單。導覽列容器不設最低高度、上下內距為 0，由選單項目與換行自然決定高度。保留 `publications` 在檔名、section、導覽 key、CSS 與網址的一致性；舊 `/publication/` 僅保留於失效路徑的檢查與說明。
 - Front matter 先放運作欄位（layout、section、permalink 等），再放 title、intro 與內容資料。正文從 H2 開始；不重新加入 eyebrow、description 或首頁 tagline 欄位及其相關顯示設定。
 - 全站資料只在首頁 `website:` 維護，不重新建立 `site.json`。職稱使用 roles 清單，每組有 role 與一到多個 affiliations，各自成行。
 - Email、CV 與社群連結統一由 social 清單維護；其他聯絡文字沿用第一個 mailto 連結的信箱，不另外複製地址。內部檔案路徑支援根網址、子路徑及預覽。
 - Blog 直接使用一般 page 版型與 Markdown；不新增自動文章集合、列表、日期排序、草稿旗標、獨立文章版型或 Blog 專用外觀。
 
-### News
+### News 與共用日期清單
 
 - 使用 Markdown 清單，格式為 `- **Oct 2025** — Message text.`；月份三字母縮寫直接寫在內容，不新增日期轉換設定。
-- 首頁版型用既有 newsColumns 轉換分出日期與內文，CSS 維持兩欄及長文字換行位置；保留內文的連結、粗體及斜體。
+- 共用版型用 datedLists 轉換分出日期與內文，CSS 維持兩欄及長文字換行位置；保留內文的連結、粗體及斜體。
+- News、Media Coverage 與 Activities 的 Invited Talks 共用日期清單元件與樣式，不另建分頁樣式；一般 bullet 清單維持預設樣式。首頁 Honors & Awards 放在 News 後，接著 Media Coverage；Activities 沿用預設 page 版型。
 - 原生 details／summary 控制 Show more／Show less 與箭頭，沿用共用 `.button`；不加入 JavaScript 或額外依賴。
 - 預設顯示數量由 details 內外的消息位置決定；保留使用者手動調整，不擅自恢復某個固定筆數或建立數量選項。
 
@@ -64,6 +65,7 @@
 - 使用 H3 論文標題；會議／期刊名稱斜體、括號內簡稱粗體、年份放在斜體之外。
 - 標記使用 `· **Oral**`、`· **Spotlight**` 等既有轉換，只有粗體文字套強調色，前方的 `·` 保持一般文字色。
 - 資源以 `Paper / arXiv` 為前兩項，再接其他資源；Paper 指向正式出版 PDF，找不到時用該篇 arXiv PDF；arXiv 保留原有論文頁面網址。無網址用純文字佔位，不建立空連結；不加入 BibTeX 欄位、連結或檔案。
+- Publications 末尾的 Dissertations 使用共用標題與內文規則，保留學位論文資料與 Thesis 連結，不加入 BibTeX 或獨立卡片外觀。
 - 作者順序、標題、年份、會議、獎項與網址需有來源，不補造學生、職稱、課程或研究成果。使用者要求測試內容時明確標示，不將範例寫成真實經歷。
 - 匯入時核對內容與筆數，避免重複或漏項；來源有疑義時保留依據，不自行猜測更正。新增或更換 PDF 應核對標題與內容，不以投影片代替。
 - `docs/publication-*.json` 與 `docs/preview/` 是查核／預覽歷史，不代表目前內容已驗證。保留歷史圖片，不在 README 重新嵌入或連結圖片作為目前預覽。

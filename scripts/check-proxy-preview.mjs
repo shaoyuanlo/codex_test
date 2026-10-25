@@ -34,7 +34,7 @@ async function purgeFixedPage(url) {
     purges.push({ url, passed: false, error: error.message });
   }
 }
-for (const relative of ['index.html', 'lab/index.html', 'publications/index.html', 'teaching/index.html', 'blog/index.html']) {
+for (const relative of ['index.html', 'lab/index.html', 'publications/index.html', 'activities/index.html', 'teaching/index.html', 'blog/index.html']) {
   await purgeFixedPage(new URL(relative, manifest.stableUrl).href);
 }
 // The origin may briefly serve old content while its background cache refreshes.
@@ -62,6 +62,7 @@ for (const [relative, marker] of [
   ['index.html', '<h1 id="home-title">'],
   ['lab/index.html', '<h1>Lab</h1>'],
   ['publications/index.html', '<h1>Publications</h1>'],
+  ['activities/index.html', '<h1>Activities</h1>'],
   ['teaching/index.html', '<h1>Teaching</h1>'],
   ['blog/index.html', '<h1>Blog</h1>'],
   ['assets/fonts/inter/files/inter-latin-wght-normal.woff2', null],

@@ -120,10 +120,10 @@ h4, h5, h6 { margin-bottom: var(--space-sm); }
 }
 .button:hover { color: var(--accent); text-decoration-line: underline; }
 
-/* News: shared date/content columns, 8px row spacing and native disclosure controls. */
-.home-content.prose > ul, .home-content .news-more > ul { display: grid; gap: var(--space-sm); list-style: none; padding: 0; margin: 0 0 var(--space-sm); }
-.home-content.prose > ul > li, .home-content .news-more > ul > li { display: grid; grid-template-columns: 6em minmax(0, 1fr); gap: var(--space-md); padding: 0; margin: 0; }
-.home-content.prose > ul > li > strong, .home-content .news-more > ul > li > strong { color: var(--accent); white-space: nowrap; }
+/* Dated lists: shared date/content columns and 8px row spacing; News disclosure controls below. */
+.prose .dated-list { display: grid; gap: var(--space-sm); list-style: none; padding: 0; margin: 0 0 var(--space-sm); }
+.prose .dated-list > li { display: grid; grid-template-columns: 6em minmax(0, 1fr); gap: var(--space-md); padding: 0; margin: 0; }
+.prose .dated-list > li > strong { color: var(--accent); white-space: nowrap; }
 .news-more > summary { list-style: none; cursor: pointer; }
 .news-more > summary::-webkit-details-marker { display: none; }
 .news-more .show-less, .news-more[open] .show-more { display: none; }

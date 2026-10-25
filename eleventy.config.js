@@ -23,11 +23,14 @@ export default function (eleventyConfig) {
     ? html.replace(/·\s*<strong>([^<]+)<\/strong>/g,
       '· <strong class="publication-note">$1</strong>')
     : html);
-  // Preserve ordinary Markdown editing while grouping each news date and body.
-  eleventyConfig.addFilter("newsColumns", html => html.replace(
-    /<li><strong>([^<]+)<\/strong>\s*—\s*([\s\S]*?)<\/li>/g,
-    '<li><strong>$1</strong><span>$2</span></li>'
-  ));
+  // Share date/body columns across Markdown lists without changing ordinary bullet lists.
+  eleventyConfig.addFilter("datedLists", html => html.replace(/<ul>([\s\S]*?)<\/ul>/g, (list, items) => {
+    const columns = items.replace(
+      /<li><strong>([^<]+)<\/strong>\s*—\s*([\s\S]*?)<\/li>/g,
+      '<li><strong>$1</strong><span>$2</span></li>'
+    );
+    return columns === items ? list : `<ul class="dated-list">${columns}</ul>`;
+  }));
   eleventyConfig.addGlobalData("siteOrigin", process.env.SITE_URL || "https://shaoyuanlo.github.io");
   return {
     pathPrefix: process.env.PATH_PREFIX || "/",
