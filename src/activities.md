@@ -8,34 +8,30 @@ title: Activities
 
 <!-- Imported from the original website's Academic Activities section. -->
 
-### Conference Organization
+### Organizing Committee
 
-- **CVPR** — AUTOPILOT Workshop Organizer (2026)
-- **ICCV** — 2COOOL Workshop Organizer (2025)
-- **AVSS** — Tutorial Chair (2025)
+- AVSS 2027 (Industrial Chair)
+- AVSS 2025 (Tutorial Chair)
+- [AUTOPILOT Workshop](https://www.autopilot-cvpr.net/) @ CVPR 2026
+- [2nd Workshop on the Challenge Of Out Of Label (2COOL)](https://2coool.net/) @ ICCV 2025
 
 ### Area Chair
 
-- **NeurIPS** (2026)
-- **ICML** (2026)
-- **ICLR** (2026)
-- **ICASSP** (2026)
-- **WACV** (2027)
-- **BMVC** (2025)
-- **ACCV** (2026)
-
-### Associate Editor
-
-- **ICRA** (2025, 2026)
+- IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) · 2027
+- Annual Conference on Neural Information Processing Systems (NeurIPS) · 2026
+- International Conference on Machine Learning (ICML) · 2026, 2027
+- International Conference on Learning Representations (ICLR) · 2026
+- IEEE International Conference on Acoustics, Speech, and Signal Processing (ICASSP) · 2026, 2027
+- IEEE International Conference on Robotics and Automation (ICRA) · 2025, 2026, 2027
+- AAAI Conference on Artificial Intelligence (AAAI) · 2027
+- IEEE/CVF Winter Conference on Applications of Computer Vision (WACV) · 2027
+- British Machine Vision Conference (BMVC) · 2025
+- Asian Conference on Computer Vision (ACCV) · 2026
 
 ### Reviewer
 
 - **Journals:** IEEE T-PAMI, IEEE T-IP, IEEE RA-L, IEEE T-CSVT, IEEE T-SMC, IEEE JETCAS, IJCV, TMLR, Pattern Recognition, Neurocomputing, Medical Physics
-- **Conferences:** CVPR, ICCV, ECCV, NeurIPS, ICLR, ICML, ACL Rolling Review, AAAI, IJCAI, ACM MM, ACM MM Asia, WACV, ACCV, ICIP, ICPR, AVSS, Interspeech
-
-### Teaching Assistant
-
-- **Deep Learning (EN.520.638)** — Johns Hopkins University, Spring (2021, 2022, 2023)
+- **Conferences:** CVPR, ICCV, ECCV, NeurIPS, ICML, ICLR, ACL Rolling Review, AAAI, IJCAI, ACM MM, ACM MM Asia, WACV, ACCV, ICIP, ICPR, Interspeech, AVSS
 
 ---
 
