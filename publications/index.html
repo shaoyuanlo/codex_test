@@ -1355,10 +1355,10 @@ h4, h5, h6 { margin-bottom: var(--space-sm); }
 }
 .button:hover { color: var(--accent); text-decoration-line: underline; }
 
-/* News: shared date/content columns, 8px row spacing and native disclosure controls. */
-.home-content.prose > ul, .home-content .news-more > ul { display: grid; gap: var(--space-sm); list-style: none; padding: 0; margin: 0 0 var(--space-sm); }
-.home-content.prose > ul > li, .home-content .news-more > ul > li { display: grid; grid-template-columns: 6em minmax(0, 1fr); gap: var(--space-md); padding: 0; margin: 0; }
-.home-content.prose > ul > li > strong, .home-content .news-more > ul > li > strong { color: var(--accent); white-space: nowrap; }
+/* Dated lists: shared date/content columns and 8px row spacing; News disclosure controls below. */
+.prose .dated-list { display: grid; gap: var(--space-sm); list-style: none; padding: 0; margin: 0 0 var(--space-sm); }
+.prose .dated-list > li { display: grid; grid-template-columns: 6em minmax(0, 1fr); gap: var(--space-md); padding: 0; margin: 0; }
+.prose .dated-list > li > strong { color: var(--accent); white-space: nowrap; }
 .news-more > summary { list-style: none; cursor: pointer; }
 .news-more > summary::-webkit-details-marker { display: none; }
 .news-more .show-less, .news-more[open] .show-more { display: none; }
@@ -1418,7 +1418,7 @@ nav a[aria-current] { font-weight: 600; }
   .callout { break-inside: avoid; }
 }
 </style>
-  <meta name="preview-source" content="1075217479a9e84dbaea991ac1c07f38635379c6">
+  <meta name="preview-source" content="4ad6b78eb4b1c27546cf72230758dcc3b8b07f65">
   <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="page-publications">
@@ -1433,6 +1433,8 @@ nav a[aria-current] { font-weight: 600; }
         <a href="/shaoyuanlo/codex_test/site-preview/lab/index.html">Lab</a>
         
         <a href="/shaoyuanlo/codex_test/site-preview/publications/index.html" aria-current="page">Publications</a>
+        
+        <a href="/shaoyuanlo/codex_test/site-preview/activities/index.html">Activities</a>
         
         <a href="/shaoyuanlo/codex_test/site-preview/teaching/index.html">Teaching</a>
         
@@ -1608,6 +1610,15 @@ nav a[aria-current] { font-weight: 600; }
 <p><em>IEEE International Conference on Digital Signal Processing (<strong>DSP</strong>)</em>, 2018</p>
 <p><a href="https://arxiv.org/pdf/1809.03994">Paper</a> / <a href="https://arxiv.org/abs/1809.03994">arXiv</a> / <a href="/shaoyuanlo/codex_test/site-preview/papers/LMD.pdf">Slides</a></p>
 <hr>
+<h2>Dissertations</h2>
+<h3>Robust Computer Vision Against Adversarial Examples and Domain Shifts</h3>
+<p><strong>Shao-Yuan Lo</strong></p>
+<p><em>Ph.D. Thesis, Johns Hopkins University</em>, 2023</p>
+<p><a href="https://jscholarship.library.jhu.edu/items/497a35ef-81cc-44f3-b9a9-b01b182a1a96">Thesis</a></p>
+<h3>Real-Time Semantic Segmentation Networks for Autonomous Driving</h3>
+<p><strong>Shao-Yuan Lo</strong></p>
+<p><em>Master Thesis, National Chiao Tung University</em>, 2019</p>
+<p><a href="https://hdl.handle.net/11296/7acbjd">Thesis</a></p>
 
 </div>
 

@@ -1355,10 +1355,10 @@ h4, h5, h6 { margin-bottom: var(--space-sm); }
 }
 .button:hover { color: var(--accent); text-decoration-line: underline; }
 
-/* News: shared date/content columns, 8px row spacing and native disclosure controls. */
-.home-content.prose > ul, .home-content .news-more > ul { display: grid; gap: var(--space-sm); list-style: none; padding: 0; margin: 0 0 var(--space-sm); }
-.home-content.prose > ul > li, .home-content .news-more > ul > li { display: grid; grid-template-columns: 6em minmax(0, 1fr); gap: var(--space-md); padding: 0; margin: 0; }
-.home-content.prose > ul > li > strong, .home-content .news-more > ul > li > strong { color: var(--accent); white-space: nowrap; }
+/* Dated lists: shared date/content columns and 8px row spacing; News disclosure controls below. */
+.prose .dated-list { display: grid; gap: var(--space-sm); list-style: none; padding: 0; margin: 0 0 var(--space-sm); }
+.prose .dated-list > li { display: grid; grid-template-columns: 6em minmax(0, 1fr); gap: var(--space-md); padding: 0; margin: 0; }
+.prose .dated-list > li > strong { color: var(--accent); white-space: nowrap; }
 .news-more > summary { list-style: none; cursor: pointer; }
 .news-more > summary::-webkit-details-marker { display: none; }
 .news-more .show-less, .news-more[open] .show-more { display: none; }
@@ -1418,7 +1418,7 @@ nav a[aria-current] { font-weight: 600; }
   .callout { break-inside: avoid; }
 }
 </style>
-  <meta name="preview-source" content="1075217479a9e84dbaea991ac1c07f38635379c6">
+  <meta name="preview-source" content="4ad6b78eb4b1c27546cf72230758dcc3b8b07f65">
   <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="page-home">
@@ -1433,6 +1433,8 @@ nav a[aria-current] { font-weight: 600; }
         <a href="/shaoyuanlo/codex_test/site-preview/lab/index.html">Lab</a>
         
         <a href="/shaoyuanlo/codex_test/site-preview/publications/index.html">Publications</a>
+        
+        <a href="/shaoyuanlo/codex_test/site-preview/activities/index.html">Activities</a>
         
         <a href="/shaoyuanlo/codex_test/site-preview/teaching/index.html">Teaching</a>
         
@@ -1473,7 +1475,7 @@ nav a[aria-current] { font-weight: 600; }
 -->
 <h2>News</h2>
 <!-- Keep the latest items here; move older items into the details block below. -->
-<ul>
+<ul class="dated-list">
 <li><strong>May 2026</strong><span>One paper accepted to ICML 2026. Serving as an Area Chair for NeurIPS 2026.</span></li>
 <li><strong>Mar 2026</strong><span>Serving as an Area Chair for ICML 2026. Invited talk at the Surgical Data Science Symposium, National Taiwan University Hospital.</span></li>
 <li><strong>Dec 2025</strong><span>Invited talk at the Advanced AI Safety Forum, Taiwan AI Center of Excellence.</span></li>
@@ -1484,7 +1486,7 @@ nav a[aria-current] { font-weight: 600; }
 <details class="news-more">
 <summary class="button"><span class="show-more">Show more <span aria-hidden="true">↓</span></span><span class="show-less">Show less <span aria-hidden="true">↑</span></span></summary>
 <!-- Older news: edit these Markdown bullets directly. Original source dates are preserved. -->
-<ul>
+<ul class="dated-list">
 <li><strong>Jun 2025</strong><span>1 paper accepted to IJCV. Serving as an Area Chair for BMVC 2025. Invited talk at ProtagoLabs (remote).</span></li>
 <li><strong>May 2025</strong><span>1 paper accepted to ICML 2025 (Spotlight!). Recognized as an Outstanding Reviewer for CVPR 2025!</span></li>
 <li><strong>Apr 2025</strong><span>1 paper accepted to CVIU. Invited talks at UC Santa Cruz and CSIG Wuhan Center (virtual).</span></li>
@@ -1510,6 +1512,32 @@ nav a[aria-current] { font-weight: 600; }
 <li><strong>Aug 2019</strong><span>Joined Johns Hopkins University as a PhD student. See you in Baltimore, MD!!</span></li>
 </ul>
 </details>
+<h2>Honors &amp; Awards</h2>
+<ul>
+<li><strong><a href="https://yushan.project.edu.tw/TopTalent/EN">Yushan Young Fellow</a></strong>, Ministry of Education, Taiwan (2025)</li>
+<li><strong><a href="https://cvpr.thecvf.com/Conferences/2025/ProgramCommittee">Outstanding Reviewer</a></strong>, IEEE/CVF CVPR 2025 (2025)</li>
+<li><strong><a href="https://spie.org/conferences-and-exhibitions/medical-imaging/program/conferences/awards#_=_">Robert F. Wagner All-Conference Best Student Paper Award</a></strong>, SPIE Medical Imaging 2024 (2024)</li>
+<li><strong><a href="https://cvpr2023.thecvf.com/Conferences/2023">CVPR Travel Award</a></strong>, IEEE/CVF CVPR 2023 (2023)</li>
+<li><strong><a href="https://research.google/outreach/csrmp">Google CS Research Mentorship Program</a></strong>, Google Research (2022)</li>
+<li><strong><a href="https://depart.moe.edu.tw/ED2500/cp.aspx?n=ECEA48027CA1AA4E&amp;s=FDC3BA2C714CD75F">Government Scholarship to Study Abroad</a></strong>, Ministry of Education, Taiwan (2020)</li>
+<li><strong>First-Year Doctoral Fellowship</strong>, Johns Hopkins University (2019)</li>
+<li><strong><a href="https://depart.moe.edu.tw/ED2500/News.aspx?n=92DC002FDE1CC633&amp;page=1&amp;PageSize=20">Government Scholarship to World Top 100 Universities</a></strong>, Ministry of Education, Taiwan (2019)</li>
+<li><strong><a href="http://www.acmmmasia.org/2019/files/ACMMMASIA2019-Program.pdf">Best Paper Award</a></strong>, ACM Multimedia Asia 2019 (2019)</li>
+<li><strong><a href="https://140.125.183.142/wp-content/uploads/2021/09/IPPR%E7%AC%AC%E5%8D%81%E4%BA%8C%E5%B1%86%E5%8D%9A%E7%A2%A9%E5%A3%AB%E8%AB%96%E6%96%87%E7%8D%8E%E5%BE%97%E7%8D%8E%E8%B3%87%E6%96%99.pdf">Best Master Thesis Award</a></strong>, Chinese Image Processing and Pattern Recognition Society (2019)</li>
+<li><strong><a href="https://infonews-fornthu.nctu.edu.tw/index.php?topflag=1&amp;SuperType=2&amp;SuperTypeNo=2&amp;type=%A6%E6%ACF&amp;id=20190500241&amp;action=detail">Students’ Outstanding Contribution Award</a></strong>, National Chiao Tung University (2019)</li>
+<li><strong>Dean's List</strong>, National Chiao Tung University (2017)</li>
+<li><strong>Scholarship to Overseas Exchange Program</strong>, National Chiao Tung University (2016)</li>
+<li><strong><a href="https://tw.news.yahoo.com/%25E4%25BA%25A4%25E5%25A4%25A7%25E6%25A0%25A1%25E5%258F%258B%25E5%258B%259D%25E8%258F%25AF%25E7%25A7%2591%25E6%258A%2580%25E8%2591%25A3%25E5%25BA%25A7%25E6%258F%2590%25E4%25BE%259B%25E5%258D%2583%25E8%2590%25AC%25E7%258D%258E%25E5%25AD%25B8%25E9%2587%2591%25E7%25B5%25A6%25E5%2584%25AA%25E7%25A7%2580%25E5%25AD%25B8%25E5%25BC%259F%25E5%25A6%25B9-215319757.html">WINTEK Outstanding Freshman Scholarship</a></strong>, WINTEK Corp. and National Chiao Tung University (2013)</li>
+</ul>
+<h2>Media Coverage</h2>
+<ul class="dated-list">
+<li><strong>Apr 2026</strong><span>I was interviewed on <a href="https://www.ner.gov.tw/Program/Episode/?id=26050318334498988&amp;program=%E7%89%B9%E5%88%A5%E7%9A%84%E6%84%9B&amp;programId=24102210171197065">National Education Radio (教育廣播電台)</a>.</span></li>
+<li><strong>Jan 2026</strong><span>I was interviewed on <a href="https://www.facebook.com/photo/?fbid=1541793631289368&amp;set=a.440615794740496">Cheng Sheng Broadcasting Corp (正聲廣播公司)</a>.</span></li>
+<li><strong>Oct 2022</strong><span>I was reported on <a href="https://www.ftvnews.com.tw/news/detail/2022A11F04M1">Formosa Television (民視新聞)</a>, <a href="https://www.youtube.com/watch?v=4BCV3De5QuE">EBC News (東森新聞)</a>, and <a href="https://www.ntdtv.com.tw/b5/20221022/video/345977.html">New Tang Dynasty Television (新唐人電視台)</a> when I was seving as the Vice President of the Taiwanese Student Association at Johns Hopkins University.</span></li>
+<li><strong>Jun 2019</strong><span>I was reported on <a href="https://news.ltn.com.tw/news/life/breakingnews/2809162">Liberty Times (自由時報)</a>, <a href="https://udn.com/news/story/6928/3847789">United Daily News (聯合報)</a>, and <a href="https://www.ctee.com.tw/news/20190601700219-431401">Commercial Times (工商時報)</a> when I was graduating from National Chiao Tung University.</span></li>
+<li><strong>Jul 2013</strong><span>I was reported on <a href="https://www.chinatimes.com/newspapers/20130719000490-260107?chdtv">China Times (中國時報)</a> when I was graduating from senior high school (National Experimental High School at Hsinchu Science Park).</span></li>
+<li><strong>Jun 2010</strong><span>I was reported on <a href="https://news.ltn.com.tw/news/local/paper/400837">Liberty Times (自由時報)</a> when I was graduating from junior high school.</span></li>
+</ul>
 
 </div>
 
