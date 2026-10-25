@@ -1288,7 +1288,7 @@
   }
 }
 /* Shared rectangular corners. */
-a:focus-visible, .button:focus-visible, .skip-link, .portrait img, .prose pre, .callout { border-radius: 6px; }
+a:focus-visible, .button:focus-visible, .news-switch input:focus-visible + label, .news-all:focus-visible, .skip-link, .portrait img, .prose pre, .callout { border-radius: 6px; }
 
 /* Shared headings: H1–H6 size, weight, line height and margins. */
 h1, h2, h3, h4, h5, h6 { font-size: var(--font-size-base); font-weight: 400; margin: var(--space-lg) 0 var(--space-md); line-height: var(--line-height-compact); }
@@ -1314,7 +1314,7 @@ h4, h5, h6 { margin-bottom: var(--space-sm); }
   padding-right: var(--space-2xl);
 }
 .site-main { padding-top: 0; padding-bottom: calc(var(--space-xl) * 2); flex: 1; min-width: 0; }
-.footer-inner { padding-top: var(--space-sm); padding-bottom: var(--space-xl); text-align: center; }
+.footer-inner { padding-top: var(--space-xs); padding-bottom: var(--space-xl); text-align: center; }
 @media (max-width: 767px) {
   .header-inner, .site-main, .footer-inner { padding-left: var(--space-lg); padding-right: var(--space-lg); }
   .site-main { padding-bottom: var(--space-2xl); }
@@ -1376,14 +1376,22 @@ nav a[aria-current] { font-weight: 600; }
   white-space: nowrap; text-decoration-line: none;
 }
 .button:hover { color: var(--accent); text-decoration-line: underline; }
-/* Dated lists: aligned columns grow to fit dates; News disclosure controls below. */
+/* Dated lists: aligned date/body columns shared across pages. */
 .prose .dated-list { display: grid; grid-template-columns: minmax(6em, max-content) minmax(0, 1fr); gap: var(--space-sm) var(--space-md); list-style: none; padding: 0; margin: 0 0 var(--space-sm); }
 .prose .dated-list > li { display: grid; grid-column: 1 / -1; grid-template-columns: subgrid; column-gap: var(--space-md); padding: 0; margin: 0; }
 .prose .dated-list > li > strong { color: var(--accent); white-space: nowrap; }
-.news-more > summary { list-style: none; cursor: pointer; }
-.news-more > summary::-webkit-details-marker { display: none; }
-.news-more .show-less, .news-more[open] .show-more { display: none; }
-.news-more[open] .show-less { display: inline; }
+/* News: native view controls; the recent list sets the shared viewport height. */
+.news-heading { display: flex; align-items: baseline; gap: var(--space-md); margin: var(--space-lg) 0 var(--space-md); }
+.news-heading h2 { margin: 0; }
+.news-switch { display: flex; gap: var(--space-md); min-width: 0; padding: 0; margin: 0; border: 0; }
+.news-switch input, .news-switch legend { position: absolute; width: 1px; height: 1px; padding: 0; margin: 0; border: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.news-switch label { cursor: pointer; }
+.news-switch input:checked + label { color: var(--accent); text-decoration-line: underline; }
+.news-viewport { position: relative; }
+.news-all { display: none; position: absolute; inset: 0; overflow-y: auto; overscroll-behavior-y: contain; }
+.news:has(#news-all:checked) .news-recent { visibility: hidden; }
+.news:has(#news-all:checked) .news-all { display: block; }
+
 /* Shared bullet and numbered lists: indentation, outer spacing and item margins. */
 .prose ul, .prose ol { margin: 0 0 var(--space-md); padding-left: var(--space-xl); }
 .prose li { margin: var(--space-sm) 0; }
@@ -1426,7 +1434,7 @@ small, sub, sup { font-size: inherit; }
 strong, b, th { font-weight: 600; }
 ::selection { background: var(--selection-bg); color: var(--black); }
 a { color: var(--accent); text-underline-offset: 4px; text-decoration-thickness: 1px; }
-a:focus-visible, .button:focus-visible { outline: 2px solid var(--accent); outline-offset: var(--space-sm); }
+a:focus-visible, .button:focus-visible, .news-switch input:focus-visible + label, .news-all:focus-visible { outline: 2px solid var(--accent); outline-offset: var(--space-sm); }
 img { display: block; max-width: 100%; height: auto; }
 p { margin: 0 0 var(--space-md); }
 .skip-link { position: fixed; left: var(--space-md); top: -100px; padding: var(--space-sm) var(--space-md); z-index: 20; background: var(--white); border: 1px solid var(--accent-light); }
@@ -1453,7 +1461,7 @@ p { margin: 0 0 var(--space-md); }
   .callout { break-inside: avoid; }
 }
 </style>
-  <meta name="preview-source" content="37bd24a7ae15f2b66172d23a52f0e949ae095300">
+  <meta name="preview-source" content="24e8691207a7c9522d4f71b6ab3ff6b0704c6a45">
   <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="page-activities">
