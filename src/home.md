@@ -104,31 +104,31 @@ Previously, I was a Research Scientist at [Honda Research Institute USA](https:/
 
 ## Honors & Awards
 
-- **[Yushan Young Fellow](https://yushan.project.edu.tw/TopTalent/EN)**, Ministry of Education, Taiwan (2025)
-- **[Outstanding Reviewer](https://cvpr.thecvf.com/Conferences/2025/ProgramCommittee)**, IEEE/CVF CVPR 2025 (2025)
-- **[Robert F. Wagner All-Conference Best Student Paper Award](https://spie.org/conferences-and-exhibitions/medical-imaging/program/conferences/awards#_=_)**, SPIE Medical Imaging 2024 (2024)
-- **[CVPR Travel Award](https://cvpr2023.thecvf.com/Conferences/2023)**, IEEE/CVF CVPR 2023 (2023)
-- **[Google CS Research Mentorship Program](https://research.google/outreach/csrmp)**, Google Research (2022)
-- **[Government Scholarship to Study Abroad](https://depart.moe.edu.tw/ED2500/cp.aspx?n=ECEA48027CA1AA4E&s=FDC3BA2C714CD75F)**, Ministry of Education, Taiwan (2020)
-- **First-Year Doctoral Fellowship**, Johns Hopkins University (2019)
-- **[Government Scholarship to World Top 100 Universities](https://depart.moe.edu.tw/ED2500/News.aspx?n=92DC002FDE1CC633&page=1&PageSize=20)**, Ministry of Education, Taiwan (2019)
-- **[Best Paper Award](http://www.acmmmasia.org/2019/files/ACMMMASIA2019-Program.pdf)**, ACM Multimedia Asia 2019 (2019)
-- **[Best Master Thesis Award](https://140.125.183.142/wp-content/uploads/2021/09/IPPR%E7%AC%AC%E5%8D%81%E4%BA%8C%E5%B1%86%E5%8D%9A%E7%A2%A9%E5%A3%AB%E8%AB%96%E6%96%87%E7%8D%8E%E5%BE%97%E7%8D%8E%E8%B3%87%E6%96%99.pdf)**, Chinese Image Processing and Pattern Recognition Society (2019)
-- **[Students’ Outstanding Contribution Award](https://infonews-fornthu.nctu.edu.tw/index.php?topflag=1&SuperType=2&SuperTypeNo=2&type=%A6%E6%ACF&id=20190500241&action=detail)**, National Chiao Tung University (2019)
-- **Dean's List**, National Chiao Tung University (2017)
-- **Scholarship to Overseas Exchange Program**, National Chiao Tung University (2016)
-- **[WINTEK Outstanding Freshman Scholarship](https://tw.news.yahoo.com/%25E4%25BA%25A4%25E5%25A4%25A7%25E6%25A0%25A1%25E5%258F%258B%25E5%258B%259D%25E8%258F%25AF%25E7%25A7%2591%25E6%258A%2580%25E8%2591%25A3%25E5%25BA%25A7%25E6%258F%2590%25E4%25BE%259B%25E5%258D%2583%25E8%2590%25AC%25E7%258D%258E%25E5%25AD%25B8%25E9%2587%2591%25E7%25B5%25A6%25E5%2584%25AA%25E7%25A7%2580%25E5%25AD%25B8%25E5%25BC%259F%25E5%25A6%25B9-215319757.html)**, WINTEK Corp. and National Chiao Tung University (2013)
+- **[Yushan Young Fellow（玉山青年學者）](https://yushan.project.edu.tw/TopTalent/EN)**, Ministry of Education, Taiwan, 2025
+- **[CVPR 2025 Outstanding Reviewer](https://cvpr.thecvf.com/Conferences/2025/ProgramCommittee)**, IEEE/CVF CVPR 2025
+- **[Robert F. Wagner All-Conference Best Student Paper Award](https://spie.org/conferences-and-exhibitions/medical-imaging/program/conferences/awards#_=_)**, SPIE Medical Imaging 2024
+- **[CVPR Travel Award](https://cvpr2023.thecvf.com/Conferences/2023)**, IEEE/CVF CVPR 2023
+- **[Google CS Research Mentorship Program](https://research.google/outreach/csrmp)**, Google Research, 2022
+- **[Government Scholarship to Study Abroad（教育部留學獎學金）](https://depart.moe.edu.tw/ED2500/cp.aspx?n=ECEA48027CA1AA4E&s=FDC3BA2C714CD75F)**, Ministry of Education, Taiwan, 2020
+- **First-Year Doctoral Fellowship**, Johns Hopkins University, 2019
+- **[Government Scholarship to World Top 100 Universities（教育部世界百大獎學金）](https://depart.moe.edu.tw/ED2500/News.aspx?n=92DC002FDE1CC633&page=1&PageSize=20)**, Ministry of Education, Taiwan, 2019
+- **[Best Paper Award](http://www.acmmmasia.org/2019/files/ACMMMASIA2019-Program.pdf)**, ACM Multimedia Asia 2019
+- **[Best Master Thesis Award](https://140.125.183.142/wp-content/uploads/2021/09/IPPR%E7%AC%AC%E5%8D%81%E4%BA%8C%E5%B1%86%E5%8D%9A%E7%A2%A9%E5%A3%AB%E8%AB%96%E6%96%87%E7%8D%8E%E5%BE%97%E7%8D%8E%E8%B3%87%E6%96%99.pdf)**, Chinese Image Processing and Pattern Recognition Society, 2019
+- **[Students’ Outstanding Contribution Award（學生傑出貢獻獎）](https://news.ltn.com.tw/news/life/breakingnews/2809162)**, National Chiao Tung University, 2019
+- **Dean's List**, National Chiao Tung University, 2017
+- **Scholarship to Overseas Exchange Program**, National Chiao Tung University, 2016
+- **[WINTEK Outstanding Freshman Scholarship](https://tw.news.yahoo.com/%25E4%25BA%25A4%25E5%25A4%25A7%25E6%25A0%25A1%25E5%258F%258B%25E5%258B%259D%25E8%258F%25AF%25E7%25A7%2591%25E6%258A%2580%25E8%2591%25A3%25E5%25BA%25A7%25E6%258F%2590%25E4%25BE%259B%25E5%258D%2583%25E8%2590%25AC%25E7%258D%258E%25E5%25AD%25B8%25E9%2587%2591%25E7%25B5%25A6%25E5%2584%25AA%25E7%25A7%2580%25E5%25AD%25B8%25E5%25BC%259F%25E5%25A6%25B9-215319757.html)**, WINTEK Corp. and National Chiao Tung University, 2013
 
 ---
 
 ## Media Coverage
 
-- **Apr 25, 2026** — I was interviewed on [National Education Radio (教育廣播電台)](https://www.ner.gov.tw/Program/Episode/?id=26050318334498988&program=%E7%89%B9%E5%88%A5%E7%9A%84%E6%84%9B&programId=24102210171197065).
-- **Jan 30, 2026** — I was interviewed on [Cheng Sheng Broadcasting Corp (正聲廣播公司)](https://www.facebook.com/photo/?fbid=1541793631289368&set=a.440615794740496).
-- **Oct 11, 2022** — I was reported on [Formosa Television (民視新聞)](https://www.ftvnews.com.tw/news/detail/2022A11F04M1), [EBC News (東森新聞)](https://www.youtube.com/watch?v=4BCV3De5QuE), and [New Tang Dynasty Television (新唐人電視台)](https://www.ntdtv.com.tw/b5/20221022/video/345977.html) when I was seving as the Vice President of the Taiwanese Student Association at Johns Hopkins University.
-- **Jun 01, 2019** — I was reported on [Liberty Times (自由時報)](https://news.ltn.com.tw/news/life/breakingnews/2809162), [United Daily News (聯合報)](https://udn.com/news/story/6928/3847789), and [Commercial Times (工商時報)](https://www.ctee.com.tw/news/20190601700219-431401) when I was graduating from National Chiao Tung University.
-- **Jul 19, 2013** — I was reported on [China Times (中國時報)](https://www.chinatimes.com/newspapers/20130719000490-260107?chdtv) when I was graduating from senior high school (National Experimental High School at Hsinchu Science Park).
-- **Jun 04, 2010** — I was reported on [Liberty Times (自由時報)](https://news.ltn.com.tw/news/local/paper/400837) when I was graduating from junior high school.
+- **Apr 25, 2026** — Interviewed on [National Education Radio（教育廣播電台）](https://www.ner.gov.tw/Program/Episode/?id=26050318334498988&program=%E7%89%B9%E5%88%A5%E7%9A%84%E6%84%9B&programId=24102210171197065).
+- **Jan 30, 2026** — Interviewed on [Cheng Sheng Broadcasting Corp（正聲廣播公司）](https://www.facebook.com/photo/?fbid=1541793631289368&set=a.440615794740496).
+- **Oct 11, 2022** — Reported on [Formosa Television（民視新聞）](https://www.ftvnews.com.tw/news/detail/2022A11F04M1), [EBC News（東森新聞）](https://www.youtube.com/watch?v=4BCV3De5QuE), and [New Tang Dynasty Television（新唐人電視台）](https://www.ntdtv.com.tw/b5/20221022/video/345977.html) when I was seving as the Vice President of the Taiwanese Student Association at Johns Hopkins University.
+- **Jun 01, 2019** — Reported on [Liberty Times（自由時報）](https://news.ltn.com.tw/news/life/breakingnews/2809162), [United Daily News（聯合報)](https://udn.com/news/story/6928/3847789), and [Commercial Times（工商時報）](https://www.ctee.com.tw/news/20190601700219-431401) when I was graduating from National Chiao Tung University.
+- **Jul 19, 2013** — Reported on [China Times（中國時報）](https://www.chinatimes.com/newspapers/20130719000490-260107?chdtv) when I was graduating from senior high school (National Experimental High School at Hsinchu Science Park).
+- **Jun 04, 2010** — Reported on [Liberty Times（自由時報）](https://news.ltn.com.tw/news/local/paper/400837) when I was graduating from junior high school.
 
 ---
 
