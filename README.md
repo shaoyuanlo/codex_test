@@ -137,7 +137,7 @@ News 的日期維持三字母月份與年份；Media Coverage 與 Invited Talks 
 
 ### Publications
 
-Publications 的編號由 `eleventy.config.js` 的 `publicationIndexes` 自動產生：年份區塊中的發表跨年份連續倒序編號，Preprints 獨立倒序使用 `[pN]` 至 `[p1]`；Dissertations 不編號。繼續在 `src/publications.md` 使用原有 H2 年份、H3 論文標題與一般段落，無須手動維護編號。編號與標題第一行基線對齊，標題及相關資訊的縮排為 `calc(var(--font-size-base) * 2 + var(--space-xs))`；設定集中於 CSS 的 `Publication indexes` 註解區塊，其他字級、顏色與間距沿用原設定。
+Publications 的編號由 `eleventy.config.js` 的 `publicationIndexes` 自動產生：年份區塊中的發表跨年份連續倒序編號，Preprints 獨立倒序使用 `[pN]` 至 `[p1]`；Dissertations 不編號。繼續在 `src/publications.md` 使用原有 H2 年份、H3 論文標題與一般段落，無須手動維護編號。編號與標題第一行基線對齊，標題及相關資訊的縮排為桌機 `calc(var(--font-size-base) * 2 + var(--space-sm))`、手機 `calc(var(--font-size-base) * 2 + var(--space-xs))`；設定集中於 CSS 的 `Publication indexes` 註解區塊，其他字級、顏色與間距沿用原設定。
 
 在 `src/publications.md` 對應年份下新增：
 
@@ -237,7 +237,8 @@ Markdown 分隔線 `.prose hr` 使用透明的 1px 線框，不顯示線條，�
 | 共用容器最大外寬 | 980px，含左右內距 | 相同上限 |
 | 容器左右內距 | 各 40px | 各 16px |
 | 正文下內距 | 64px | 32px |
-| 頁尾上下內距 | 各 32px | 各 16px |
+| 頁尾上內距 | 8px | 16px |
+| 頁尾下內距 | 32px | 16px |
 | 導覽列容器上下內距 | 0 | 0 |
 | 每個選單項目最低高度 | 48px | 48px |
 | 頭像顯示寬度 | 200px | 100px |
