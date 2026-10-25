@@ -123,12 +123,12 @@ Previously, I was a Research Scientist at [Honda Research Institute USA](https:/
 
 ## Media Coverage
 
-- **Apr 2026** — I was interviewed on [National Education Radio (教育廣播電台)](https://www.ner.gov.tw/Program/Episode/?id=26050318334498988&program=%E7%89%B9%E5%88%A5%E7%9A%84%E6%84%9B&programId=24102210171197065).
-- **Jan 2026** — I was interviewed on [Cheng Sheng Broadcasting Corp (正聲廣播公司)](https://www.facebook.com/photo/?fbid=1541793631289368&set=a.440615794740496).
-- **Oct 2022** — I was reported on [Formosa Television (民視新聞)](https://www.ftvnews.com.tw/news/detail/2022A11F04M1), [EBC News (東森新聞)](https://www.youtube.com/watch?v=4BCV3De5QuE), and [New Tang Dynasty Television (新唐人電視台)](https://www.ntdtv.com.tw/b5/20221022/video/345977.html) when I was seving as the Vice President of the Taiwanese Student Association at Johns Hopkins University.
-- **Jun 2019** — I was reported on [Liberty Times (自由時報)](https://news.ltn.com.tw/news/life/breakingnews/2809162), [United Daily News (聯合報)](https://udn.com/news/story/6928/3847789), and [Commercial Times (工商時報)](https://www.ctee.com.tw/news/20190601700219-431401) when I was graduating from National Chiao Tung University.
-- **Jul 2013** — I was reported on [China Times (中國時報)](https://www.chinatimes.com/newspapers/20130719000490-260107?chdtv) when I was graduating from senior high school (National Experimental High School at Hsinchu Science Park).
-- **Jun 2010** — I was reported on [Liberty Times (自由時報)](https://news.ltn.com.tw/news/local/paper/400837) when I was graduating from junior high school.
+- **Apr 25, 2026** — I was interviewed on [National Education Radio (教育廣播電台)](https://www.ner.gov.tw/Program/Episode/?id=26050318334498988&program=%E7%89%B9%E5%88%A5%E7%9A%84%E6%84%9B&programId=24102210171197065).
+- **Jan 30, 2026** — I was interviewed on [Cheng Sheng Broadcasting Corp (正聲廣播公司)](https://www.facebook.com/photo/?fbid=1541793631289368&set=a.440615794740496).
+- **Oct 11, 2022** — I was reported on [Formosa Television (民視新聞)](https://www.ftvnews.com.tw/news/detail/2022A11F04M1), [EBC News (東森新聞)](https://www.youtube.com/watch?v=4BCV3De5QuE), and [New Tang Dynasty Television (新唐人電視台)](https://www.ntdtv.com.tw/b5/20221022/video/345977.html) when I was seving as the Vice President of the Taiwanese Student Association at Johns Hopkins University.
+- **Jun 01, 2019** — I was reported on [Liberty Times (自由時報)](https://news.ltn.com.tw/news/life/breakingnews/2809162), [United Daily News (聯合報)](https://udn.com/news/story/6928/3847789), and [Commercial Times (工商時報)](https://www.ctee.com.tw/news/20190601700219-431401) when I was graduating from National Chiao Tung University.
+- **Jul 19, 2013** — I was reported on [China Times (中國時報)](https://www.chinatimes.com/newspapers/20130719000490-260107?chdtv) when I was graduating from senior high school (National Experimental High School at Hsinchu Science Park).
+- **Jun 04, 2010** — I was reported on [Liberty Times (自由時報)](https://news.ltn.com.tw/news/local/paper/400837) when I was graduating from junior high school.
 
 ---
 

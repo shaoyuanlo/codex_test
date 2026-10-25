@@ -121,15 +121,15 @@ News 仍以普通 Markdown 清單編輯：
 
 點選 **Show more ↓** 會展開並變為 **Show less ↑**，再次點選收起。這是原生 `details`／`summary` 功能，不需要 JavaScript；文字與箭頭在 `home.md` 的 `summary` 中，外觀沿用 Email 的 `.button`。編輯時保留 `summary` 與結尾 `</details>`。
 
-News、Media Coverage 與 Invited Talks 共用 `.dated-list` 日期清單樣式，集中在 `Dated lists` 註解區塊，與後續設定保留三個空白行。目前列間距為 8px、日期欄寬 6em、欄間距為桌機 16px／手機 12px。
+News、Media Coverage 與 Invited Talks 共用 `.dated-list` 日期清單樣式，集中在 `Dated lists` 註解區塊，與後續設定保留三個空白行。目前列間距為 8px、日期欄至少 6em，並依日期內容自動加寬、欄間距為桌機 16px／手機 12px。
 
 ### Honors & Awards、Media Coverage 與 Activities
 
-首頁 `News` 後依序為 `Honors & Awards`、`Media Coverage`。獎項使用一般 Markdown bullet 清單，保留獎項名稱、單位、年份及來源連結；媒體報導沿用 `- **Apr 2026** — Message text.` 日期格式與共用兩欄清單。
+首頁 `News` 後依序為 `Honors & Awards`、`Media Coverage`。獎項使用一般 Markdown bullet 清單，保留獎項名稱、單位、年份及來源連結；媒體報導使用完整日期，例如 `- **Apr 25, 2026** — Message text.`，沿用共用兩欄清單。
 
-`src/activities.md` 使用預設 `layouts/page.njk`，導覽位於 Publications 與 Teaching 之間；受邀演講在 `## Invited Talks` 下方編輯，沿用相同日期格式、欄寬與間距，沒有 Activities 專用設計值。演講保留題目、場合、主持人及原連結；本地投影片放在 `talks/`，使用 `url` filter 連結。
+`src/activities.md` 使用預設 `layouts/page.njk`，導覽位於 Publications 與 Teaching 之間；受邀演講在 `## Invited Talks` 下方編輯，使用完整日期（例如 `Mar 03, 2026`），並沿用共用日期欄與間距，沒有 Activities 專用設計值。演講保留題目、場合、主持人及原連結；本地投影片放在 `talks/`，使用 `url` filter 連結。
 
-日期直接在 Markdown 寫成三字母月份與年份。原網頁前兩場演講誤列為 2025，匯入時依投影片標題頁確認為 Mar 2026，註記保留在 `activities.md`。
+News 的日期維持三字母月份與年份；Media Coverage 與 Invited Talks 則直接在 Markdown 寫成 `Mon DD, YYYY` 完整日期，日數補足兩位。原網頁前兩場演講誤列為 2025，匯入時依投影片標題頁確認為 Mar 2026，註記保留在 `activities.md`。
 
 ### Publications
 

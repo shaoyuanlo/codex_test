@@ -53,8 +53,8 @@
 
 ### News 與共用日期清單
 
-- 使用 Markdown 清單，格式為 `- **Oct 2025** — Message text.`；月份三字母縮寫直接寫在內容，不新增日期轉換設定。
-- 共用版型用 datedLists 轉換分出日期與內文，CSS 維持兩欄及長文字換行位置；保留內文的連結、粗體及斜體。
+- 使用 Markdown 清單，News 格式為 `- **Oct 2025** — Message text.`；Media Coverage 與 Invited Talks 使用完整日期，如 `- **Mar 03, 2026** — Message text.`。日期直接寫在內容，不新增日期轉換設定。
+- 共用版型用 datedLists 轉換分出日期與內文，CSS 維持兩欄及長文字換行位置，日期欄依內容自動加寬並維持各列對齊；保留內文的連結、粗體及斜體。
 - News、Media Coverage 與 Activities 的 Invited Talks 共用日期清單元件與樣式，不另建分頁樣式；一般 bullet 清單維持預設樣式。首頁 Honors & Awards 放在 News 後，接著 Media Coverage；Activities 沿用預設 page 版型。
 - 原生 details／summary 控制 Show more／Show less 與箭頭，沿用共用 `.button`；不加入 JavaScript 或額外依賴。
 - 預設顯示數量由 details 內外的消息位置決定；保留使用者手動調整，不擅自恢復某個固定筆數或建立數量選項。
