@@ -1376,8 +1376,8 @@ nav a[aria-current] { font-weight: 600; }
   white-space: nowrap; text-decoration-line: none;
 }
 .button:hover { color: var(--accent); text-decoration-line: underline; }
-/* Dated lists: aligned date/body columns shared across pages. */
-.prose .dated-list { display: grid; grid-template-columns: minmax(6em, max-content) minmax(0, 1fr); gap: var(--space-sm) var(--space-md); list-style: none; padding: 0; margin: 0 0 var(--space-sm); }
+/* Dated lists: date width follows month/year or full dates; body gaps stay shared. */
+.prose .dated-list { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: var(--space-sm) var(--space-md); list-style: none; padding: 0; margin: 0 0 var(--space-sm); }
 .prose .dated-list > li { display: grid; grid-column: 1 / -1; grid-template-columns: subgrid; column-gap: var(--space-md); padding: 0; margin: 0; }
 .prose .dated-list > li > strong { color: var(--black); white-space: nowrap; text-align: justify; text-align-last: justify; }
 /* Shared bullet and numbered lists: indentation, outer spacing and item margins. */
@@ -1462,7 +1462,7 @@ p { margin: 0 0 var(--space-md); }
   .callout { break-inside: avoid; }
 }
 </style>
-  <meta name="preview-source" content="32436564e3fe7e64d0d7e3d62cb8e315cf00e02c">
+  <meta name="preview-source" content="61af76b2d2b4533d7c543adc37281959daf5f513">
   <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="page-blog">
@@ -1500,7 +1500,7 @@ p { margin: 0 0 var(--space-md); }
   </main>
   <footer class="site-footer">
     <div class="footer-inner">
-      <p>© 2026 Shao-Yuan Lo(羅紹元)</p>
+      <p>© 2026 Shao-Yuan Lo (羅紹元)</p>
     </div>
   </footer>
 </body>
