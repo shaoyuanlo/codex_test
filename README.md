@@ -365,3 +365,12 @@ npm run build
 原網站提供簡介、照片、CV、論文、News 與相關本地資源；後續內容持續由使用者手動更新，實際筆數與內容以來源檔為準。PDF／連結查核 JSON 與 `docs/preview/` 圖片是當時的紀錄，不能當作目前網站已完整驗證的證明。
 
 最初參考包含 [Shih-Hsin Wang](https://shihhsinwang0214.github.io/personal_website/)、[Yaoyao Liu](https://yaoyaoliu.web.illinois.edu/)、[Maria Antoniak](https://maria-antoniak.github.io/) 的學術網站；目前外觀依使用者後續決定的色彩、字型、留白與共用設計規則維護。
+
+後續參考的網站：
+
+- <https://viterbi-web.usc.edu/~yzhao010/index.html>
+- <https://limanling.github.io/>
+- <https://yulunalexliu.github.io/>
+- <https://shaohua0116.github.io/>
+- <https://www.csie.ntu.edu.tw/~yvchen/>
+- <https://learner.csie.ntu.edu.tw/>
