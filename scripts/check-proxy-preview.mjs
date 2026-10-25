@@ -60,11 +60,11 @@ try {
 }
 for (const [relative, marker] of [
   ['index.html', '<h1 id="home-title">'],
-  ['lab/index.html', '<h1>Lab</h1>'],
-  ['publications/index.html', '<h1>Publications</h1>'],
-  ['activities/index.html', '<h1>Activities</h1>'],
-  ['teaching/index.html', '<h1>Teaching</h1>'],
-  ['blog/index.html', '<h1>Blog</h1>'],
+  ['lab/index.html', '<h1>'],
+  ['publications/index.html', '<h1>'],
+  ['activities/index.html', '<h1>'],
+  ['teaching/index.html', '<h1>'],
+  ['blog/index.html', '<h1>'],
   ['assets/fonts/inter/files/inter-latin-wght-normal.woff2', null],
   ['assets/fonts/noto-sans-tc/files/noto-sans-tc-0-wght-normal.woff2', null]
 ]) {
@@ -81,6 +81,10 @@ for (const [relative, marker] of [
       const text = await response.text();
       matches = text.includes(marker);
       if (relative.endsWith('.html')) {
+        // Page titles are editable content; compare with this build instead of hardcoding labels.
+        const expectedHeading = (await readFile(`_preview/${relative}`, 'utf8'))
+          .match(/<h1\b[^>]*>[\s\S]*?<\/h1>/)?.[0];
+        matches &&= Boolean(expectedHeading && text.includes(expectedHeading));
         matches &&= text.includes(`name="preview-source" content="${manifest.sourceCommit}"`)
           && text.includes(`/revisions/${manifest.sourceCommit.slice(0, 12)}/publications/index.html`)
           && !text.includes('/publication/')
