@@ -174,7 +174,7 @@ First Author, **Shao-Yuan Lo**, Last Author
 | --- | --- | --- | --- |
 | `--font-size-sm` | 14px | 12px | 頁尾 |
 | `--font-size-base` | 16px | 15px | 內文、導覽選單及未另指定的項目 |
-| `--font-size-lg` | 18px | 16px | 導覽列姓名、H3／論文標題 |
+| `--font-size-lg` | 18px | 16px | 桌機導覽列姓名、H3／論文標題 |
 | `--font-size-xl` | 28px | 24px | 正文 H2、中文姓名 |
 | `--font-size-2xl` | 36px | 32px | 首頁英文姓名、分頁主標題 |
 
@@ -224,7 +224,7 @@ Markdown 分隔線 `.prose hr` 為 1px 淺藍線，上下外距 `--space-lg`。�
 | 導覽列最低高度 | 50px | 80px，內容可撐高 |
 | 頭像顯示寬度 | 200px | 100px |
 
-`.header-inner`、`.site-main`、`.footer-inner` 共用容器；各分頁正文使用完整寬度。頁面採垂直 Flex，短頁面頁尾自然位於視窗底部。導覽列使用 sticky，選取與滑入均使用連結底線，選取項目另用粗體。
+`.header-inner`、`.site-main`、`.footer-inner` 共用容器；各分頁正文使用完整寬度。頁面採垂直 Flex，短頁面頁尾自然位於視窗底部。導覽列使用 sticky；桌機顯示姓名與選單，姓名不額外加句點；手機（≤767px）隱藏導覽列姓名，只顯示可換行的選單。選取與滑入均使用連結底線，選取項目另用粗體。
 
 首頁桌機版為文字與照片兩欄；手機為姓名與照片並排，職稱與聯絡連結各自占滿整列。照片頂端與姓名標題頂端對齊，維持 5:6 比例、`object-fit: cover`，不套用飽和度濾鏡。修改頭像檔名時需核對首頁圖片與共用 metadata 的路徑。
 

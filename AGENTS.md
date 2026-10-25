@@ -45,7 +45,7 @@
 
 ### 一般分頁與首頁
 
-- 五個選單是獨立頁面；Home 來源為 `home.md`、網址為 `/`。保留 `publications` 在檔名、section、導覽 key、CSS 與網址的一致性；舊 `/publication/` 僅保留於失效路徑的檢查與說明。
+- 五個選單是獨立頁面；Home 來源為 `home.md`、網址為 `/`。導覽列桌機顯示姓名與選單，不在姓名後額外加句點；手機隱藏導覽列姓名，只保留選單。保留 `publications` 在檔名、section、導覽 key、CSS 與網址的一致性；舊 `/publication/` 僅保留於失效路徑的檢查與說明。
 - Front matter 先放運作欄位（layout、section、permalink 等），再放 title、intro 與內容資料。正文從 H2 開始；不重新加入 eyebrow、description 或首頁 tagline 欄位及其相關顯示設定。
 - 全站資料只在首頁 `website:` 維護，不重新建立 `site.json`。職稱使用 roles 清單，每組有 role 與一到多個 affiliations，各自成行。
 - Email、CV 與社群連結統一由 social 清單維護；其他聯絡文字沿用第一個 mailto 連結的信箱，不另外複製地址。內部檔案路徑支援根網址、子路徑及預覽。
