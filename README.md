@@ -121,7 +121,7 @@ News 仍以普通 Markdown 清單編輯：
 
 點選 **Show more ↓** 會展開並變為 **Show less ↑**，再次點選收起。這是原生 `details`／`summary` 功能，不需要 JavaScript；文字與箭頭在 `home.md` 的 `summary` 中，外觀沿用 Email 的 `.button`。編輯時保留 `summary` 與結尾 `</details>`。
 
-News、Media Coverage 與 Invited Talks 共用 `.dated-list` 日期清單樣式，集中在 `Dated lists` 註解區塊，與後續設定保留三個空白行。目前列間距為 8px、日期欄至少 6em，並依日期內容自動加寬、欄間距為桌機 16px／手機 12px。
+News、Media Coverage 與 Invited Talks 共用 `.dated-list` 日期清單樣式，集中在 `Dated lists` 註解區塊；其後緊接共用 bullet／編號清單設定，再與其餘共用樣式保留三個空白行。目前列間距為 8px、日期欄至少 6em，並依日期內容自動加寬、欄間距為桌機 16px／手機 12px。
 
 ### Honors & Awards、Media Coverage 與 Activities
 
@@ -160,7 +160,7 @@ First Author, **Shao-Yuan Lo**, Last Author
 
 原則是**變數與選項盡量精簡、統一管理，優先共用及繼承**。內容放 Markdown、結構放版型、外觀放 CSS。新增元件先用既有選項，不為每個數字新增變數，也不為每個分頁複製樣式。
 
-用 CSS 的英文分類註解定位設定；行號會隨編輯移動。順序為色彩／字級、行高／間距與手機覆寫、共用圓角、標題與分隔線、容器、首頁、文字式按鈕、共用日期清單與 News 展開控制，以及其餘共用樣式。
+用 CSS 的英文分類註解定位設定；行號會隨編輯移動。順序為色彩／字級、行高／間距與手機覆寫、共用圓角、標題與分隔線、共用容器、導覽列（桌機與手機）、首頁、文字式按鈕、共用日期清單與 News 展開控制、共用 bullet／編號清單，以及其餘共用樣式。
 
 ### 色彩
 
