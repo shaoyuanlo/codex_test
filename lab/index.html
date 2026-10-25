@@ -1303,8 +1303,8 @@ h4, h5, h6 { margin-bottom: var(--space-sm); }
 }
 /* Page heading and homepage profile: shared padding and outer spacing. */
 .page-heading, .hero { padding: var(--space-lg) 0 var(--space-md); margin: 0 0 var(--space-md); }
-/* Markdown dividers: add with ---; shared line color and vertical margins. */
-.prose hr { border: 0; border-top: 1px solid var(--accent-light); margin: var(--space-lg) 0; }
+/* Markdown dividers: add with ---; keep vertical spacing without a visible line. */
+.prose hr { border: 0; border-top: 1px solid transparent; margin: var(--space-lg) 0; }
 
 /* Shared containers: page, navigation and footer width, centering and spacing. */
 .header-inner, .site-main, .footer-inner {
@@ -1406,7 +1406,10 @@ nav a[aria-current] { font-weight: 600; }
 @media (max-width: 767px) {
   html { scroll-padding-top: 170px; }
   .wordmark { display: none; }
-  nav { flex-wrap: wrap; justify-content: space-between; }
+  /* Keep navigation on one row; overflow scrolls horizontally. */
+  nav { flex-wrap: nowrap; justify-content: space-between; overflow-x: auto; overflow-y: hidden; }
+  nav a { flex-shrink: 0; }
+  nav a:focus-visible { outline-offset: -2px; }
 
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; } }
@@ -1418,7 +1421,7 @@ nav a[aria-current] { font-weight: 600; }
   .callout { break-inside: avoid; }
 }
 </style>
-  <meta name="preview-source" content="d851622327611065fb6da4fc764fe0cba573af4b">
+  <meta name="preview-source" content="0e1d6b285bddaa858f37ca2687b3db456473948c">
   <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="page-lab">
