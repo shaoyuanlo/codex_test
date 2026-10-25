@@ -61,17 +61,17 @@ title: Activities
 
 ## Full Honors & Awards
 
-- **[Yushan Young Fellow（玉山青年學者）](https://yushan.project.edu.tw/TopTalent/EN)**, Ministry of Education, Taiwan, 2025
+- **[Yushan Young Fellow(玉山青年學者)](https://yushan.project.edu.tw/TopTalent/EN)**, Ministry of Education, Taiwan, 2025
 - **[CVPR 2025 Outstanding Reviewer](https://cvpr.thecvf.com/Conferences/2025/ProgramCommittee)**, IEEE/CVF CVPR 2025
 - **[Robert F. Wagner All-Conference Best Student Paper Award](https://spie.org/conferences-and-exhibitions/medical-imaging/program/conferences/awards#_=_)**, SPIE Medical Imaging 2024
 - **[CVPR Travel Award](https://cvpr2023.thecvf.com/Conferences/2023)**, IEEE/CVF CVPR 2023
 - **[Google CS Research Mentorship Program](https://research.google/outreach/csrmp)**, Google Research, 2022
-- **[Government Scholarship to Study Abroad（教育部留學獎學金）](https://depart.moe.edu.tw/ED2500/cp.aspx?n=ECEA48027CA1AA4E&s=FDC3BA2C714CD75F)**, Ministry of Education, Taiwan, 2020
+- **[Government Scholarship to Study Abroad(教育部留學獎學金)](https://depart.moe.edu.tw/ED2500/cp.aspx?n=ECEA48027CA1AA4E&s=FDC3BA2C714CD75F)**, Ministry of Education, Taiwan, 2020
 - **First-Year Doctoral Fellowship**, Johns Hopkins University, 2019
-- **[Government Scholarship to World Top 100 Universities（教育部世界百大獎學金）](https://depart.moe.edu.tw/ED2500/News.aspx?n=92DC002FDE1CC633&page=1&PageSize=20)**, Ministry of Education, Taiwan, 2019
+- **[Government Scholarship to World Top 100 Universities(教育部世界百大獎學金)](https://depart.moe.edu.tw/ED2500/News.aspx?n=92DC002FDE1CC633&page=1&PageSize=20)**, Ministry of Education, Taiwan, 2019
 - **[Best Paper Award](http://www.acmmmasia.org/2019/files/ACMMMASIA2019-Program.pdf)**, ACM Multimedia Asia 2019
 - **[Best Master Thesis Award](https://140.125.183.142/wp-content/uploads/2021/09/IPPR%E7%AC%AC%E5%8D%81%E4%BA%8C%E5%B1%86%E5%8D%9A%E7%A2%A9%E5%A3%AB%E8%AB%96%E6%96%87%E7%8D%8E%E5%BE%97%E7%8D%8E%E8%B3%87%E6%96%99.pdf)**, Chinese Image Processing and Pattern Recognition Society, 2019
-- **[Students’ Outstanding Contribution Award（學生傑出貢獻獎）](https://news.ltn.com.tw/news/life/breakingnews/2809162)**, National Chiao Tung University, 2019
+- **[Students’ Outstanding Contribution Award(學生傑出貢獻獎)](https://news.ltn.com.tw/news/life/breakingnews/2809162)**, National Chiao Tung University, 2019
 - **Dean's List**, National Chiao Tung University, 2017
 - **Scholarship to Overseas Exchange Program**, National Chiao Tung University, 2016
 - **[WINTEK Outstanding Freshman Scholarship](https://tw.news.yahoo.com/%25E4%25BA%25A4%25E5%25A4%25A7%25E6%25A0%25A1%25E5%258F%258B%25E5%258B%259D%25E8%258F%25AF%25E7%25A7%2591%25E6%258A%2580%25E8%2591%25A3%25E5%25BA%25A7%25E6%258F%2590%25E4%25BE%259B%25E5%258D%2583%25E8%2590%25AC%25E7%258D%258E%25E5%25AD%25B8%25E9%2587%2591%25E7%25B5%25A6%25E5%2584%25AA%25E7%25A7%2580%25E5%25AD%25B8%25E5%25BC%259F%25E5%25A6%25B9-215319757.html)**, WINTEK Corp. and National Chiao Tung University, 2013
