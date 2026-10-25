@@ -8,23 +8,47 @@ document.querySelectorAll('[data-gallery]').forEach(gallery => {
   const caption = dialog.querySelector('[data-gallery-caption]');
   let drag = null;
   let suppressClick = false;
+  let animation = 0;
+  let target = track.scrollLeft;
+  let wheelDirection = 0;
+  let wheelTimer;
 
   const updateControls = () => {
     previous.disabled = track.scrollLeft <= 1;
     next.disabled = track.scrollLeft >= track.scrollWidth - track.clientWidth - 1;
   };
+  const stopMotion = () => {
+    cancelAnimationFrame(animation);
+    animation = 0;
+    target = track.scrollLeft;
+  };
   const move = direction => {
     const item = track.querySelector('.gallery-item');
     const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
-    track.scrollBy({
-      left: direction * (item.getBoundingClientRect().width + gap),
-      behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'
-    });
+    const maximum = track.scrollWidth - track.clientWidth;
+    const start = track.scrollLeft;
+    target = Math.max(0, Math.min(maximum,
+      (animation ? target : start) + direction * (item.getBoundingClientRect().width + gap)));
+    cancelAnimationFrame(animation);
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      track.scrollLeft = target;
+      animation = 0;
+      return;
+    }
+    const destination = target;
+    const started = performance.now();
+    const tick = now => {
+      const progress = Math.min(1, (now - started) / 500);
+      const eased = progress * progress * (3 - 2 * progress);
+      track.scrollLeft = start + (destination - start) * eased;
+      animation = progress < 1 ? requestAnimationFrame(tick) : 0;
+    };
+    animation = requestAnimationFrame(tick);
   };
   previous.addEventListener('click', () => move(-1));
   next.addEventListener('click', () => move(1));
   track.addEventListener('scroll', updateControls, { passive: true });
-  new ResizeObserver(updateControls).observe(track);
+  new ResizeObserver(() => { stopMotion(); updateControls(); }).observe(track);
   track.addEventListener('keydown', event => {
     if (event.altKey || event.ctrlKey || event.metaKey) return;
     if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
@@ -33,21 +57,29 @@ document.querySelectorAll('[data-gallery]').forEach(gallery => {
     }
   });
 
-  // Translate a vertical mouse wheel only while the strip can scroll in that direction.
+  // Treat a wheel burst as one photo step; horizontal trackpad gestures remain native.
   track.addEventListener('wheel', event => {
-    if (event.ctrlKey || Math.abs(event.deltaX) > Math.abs(event.deltaY)) return;
-    const unit = event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? track.clientWidth : 1;
-    const delta = event.deltaY * unit;
-    const maximum = track.scrollWidth - track.clientWidth;
-    if ((delta > 0 && track.scrollLeft < maximum - 1) || (delta < 0 && track.scrollLeft > 1)) {
-      event.preventDefault();
-      track.scrollLeft += delta;
+    if (event.ctrlKey) return;
+    if (Math.abs(event.deltaX) > Math.abs(event.deltaY)) {
+      stopMotion();
+      return;
     }
+    const direction = Math.sign(event.deltaY);
+    const maximum = track.scrollWidth - track.clientWidth;
+    const position = animation ? target : track.scrollLeft;
+    const canMove = direction > 0 ? position < maximum - 1 : position > 1;
+    if (!direction || (!canMove && !animation && !wheelDirection)) return;
+    event.preventDefault();
+    if (direction !== wheelDirection && canMove) move(direction);
+    wheelDirection = direction;
+    clearTimeout(wheelTimer);
+    wheelTimer = setTimeout(() => { wheelDirection = 0; }, 160);
   }, { passive: false });
 
   // Use pointer capture after a mouse drag starts; touch keeps native swipe and pinch behavior.
   track.addEventListener('dragstart', event => event.preventDefault());
   track.addEventListener('pointerdown', event => {
+    stopMotion();
     if (event.pointerType !== 'mouse' || event.button !== 0) return;
     drag = { id: event.pointerId, x: event.clientX, scroll: track.scrollLeft, moved: false };
   });

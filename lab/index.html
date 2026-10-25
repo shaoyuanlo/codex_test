@@ -1371,10 +1371,11 @@ nav a[aria-current] { font-weight: 600; }
 
 /* Lab gallery: horizontal photos, shared captions, controls and a native image dialog. */
 .lab-gallery { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: var(--space-sm); margin: var(--space-lg) 0; }
-.gallery-track { display: flex; gap: var(--space-md); min-width: 0; overflow-x: auto; overscroll-behavior-x: contain; cursor: grab; }
+.gallery-track { display: flex; gap: var(--space-md); min-width: 0; overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: none; cursor: grab; }
+.gallery-track::-webkit-scrollbar { display: none; }
 .gallery-item { flex: 0 0 min(240px, 85%); min-width: 0; margin: 0; }
 .gallery-item a { display: block; }
-.gallery-item img { width: 100%; aspect-ratio: 4 / 3; object-fit: contain; }
+.gallery-item img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
 .gallery-item figcaption { margin-top: var(--space-xs); }
 .gallery-track.is-dragging, .gallery-track.is-dragging a { cursor: grabbing; user-select: none; }
 .gallery-control { display: grid; place-items: center; width: 44px; height: 44px; padding: 0; border: 0; background: var(--accent-light); color: var(--black); font-size: var(--font-size-xl); cursor: pointer; }
@@ -1389,10 +1390,10 @@ nav a[aria-current] { font-weight: 600; }
 .gallery-caption { margin: var(--space-sm) 0 0; text-align: center; }
 html:has(.gallery-dialog[open]) { overflow: hidden; scrollbar-gutter: stable; }
 @media (max-width: 767px) {
-  .lab-gallery { grid-template-columns: 1fr auto auto 1fr; }
-  .gallery-track { grid-column: 1 / -1; grid-row: 1; }
-  [data-gallery-previous] { grid-column: 2; grid-row: 2; }
-  [data-gallery-next] { grid-column: 3; grid-row: 2; }
+  .lab-gallery { display: block; }
+  .gallery-control { display: none; }
+  .gallery-track { scrollbar-width: auto; }
+  .gallery-track::-webkit-scrollbar { display: block; }
 }
 @media print {
   .lab-gallery { display: block; }
@@ -1493,7 +1494,7 @@ p { margin: 0 0 var(--space-md); }
   .callout { break-inside: avoid; }
 }
 </style>
-  <meta name="preview-source" content="cc0789092c65d18e93daae661783b9f89488f31b">
+  <meta name="preview-source" content="0958ee0f57db7c2a723f25d71a461ffb4a29981b">
   <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="page-lab">
@@ -1519,7 +1520,11 @@ p { margin: 0 0 var(--space-md); }
     </div>
   </header>
   <main id="main" class="site-main" tabindex="-1">
-    <section class="lab-gallery" data-gallery aria-label="Lab photos">
+    <header class="page-heading">
+  <h1>Trai Lab</h1>
+  <p class="page-intro">A space for curious minds and thoughtful collaboration.</p>
+</header>
+<section class="lab-gallery" data-gallery aria-label="Lab photos">
   <button class="gallery-control" type="button" data-gallery-previous aria-label="Previous photos" aria-controls="lab-photo-track" hidden><span aria-hidden="true">‹</span></button>
   <div class="gallery-track" id="lab-photo-track" tabindex="0" aria-label="Photos: use arrow keys or swipe to browse">
     
@@ -1576,23 +1581,47 @@ document.querySelectorAll('[data-gallery]').forEach(gallery => {
   const caption = dialog.querySelector('[data-gallery-caption]');
   let drag = null;
   let suppressClick = false;
+  let animation = 0;
+  let target = track.scrollLeft;
+  let wheelDirection = 0;
+  let wheelTimer;
 
   const updateControls = () => {
     previous.disabled = track.scrollLeft <= 1;
     next.disabled = track.scrollLeft >= track.scrollWidth - track.clientWidth - 1;
   };
+  const stopMotion = () => {
+    cancelAnimationFrame(animation);
+    animation = 0;
+    target = track.scrollLeft;
+  };
   const move = direction => {
     const item = track.querySelector('.gallery-item');
     const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
-    track.scrollBy({
-      left: direction * (item.getBoundingClientRect().width + gap),
-      behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'
-    });
+    const maximum = track.scrollWidth - track.clientWidth;
+    const start = track.scrollLeft;
+    target = Math.max(0, Math.min(maximum,
+      (animation ? target : start) + direction * (item.getBoundingClientRect().width + gap)));
+    cancelAnimationFrame(animation);
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      track.scrollLeft = target;
+      animation = 0;
+      return;
+    }
+    const destination = target;
+    const started = performance.now();
+    const tick = now => {
+      const progress = Math.min(1, (now - started) / 500);
+      const eased = progress * progress * (3 - 2 * progress);
+      track.scrollLeft = start + (destination - start) * eased;
+      animation = progress < 1 ? requestAnimationFrame(tick) : 0;
+    };
+    animation = requestAnimationFrame(tick);
   };
   previous.addEventListener('click', () => move(-1));
   next.addEventListener('click', () => move(1));
   track.addEventListener('scroll', updateControls, { passive: true });
-  new ResizeObserver(updateControls).observe(track);
+  new ResizeObserver(() => { stopMotion(); updateControls(); }).observe(track);
   track.addEventListener('keydown', event => {
     if (event.altKey || event.ctrlKey || event.metaKey) return;
     if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
@@ -1601,21 +1630,29 @@ document.querySelectorAll('[data-gallery]').forEach(gallery => {
     }
   });
 
-  // Translate a vertical mouse wheel only while the strip can scroll in that direction.
+  // Treat a wheel burst as one photo step; horizontal trackpad gestures remain native.
   track.addEventListener('wheel', event => {
-    if (event.ctrlKey || Math.abs(event.deltaX) > Math.abs(event.deltaY)) return;
-    const unit = event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? track.clientWidth : 1;
-    const delta = event.deltaY * unit;
-    const maximum = track.scrollWidth - track.clientWidth;
-    if ((delta > 0 && track.scrollLeft < maximum - 1) || (delta < 0 && track.scrollLeft > 1)) {
-      event.preventDefault();
-      track.scrollLeft += delta;
+    if (event.ctrlKey) return;
+    if (Math.abs(event.deltaX) > Math.abs(event.deltaY)) {
+      stopMotion();
+      return;
     }
+    const direction = Math.sign(event.deltaY);
+    const maximum = track.scrollWidth - track.clientWidth;
+    const position = animation ? target : track.scrollLeft;
+    const canMove = direction > 0 ? position < maximum - 1 : position > 1;
+    if (!direction || (!canMove && !animation && !wheelDirection)) return;
+    event.preventDefault();
+    if (direction !== wheelDirection && canMove) move(direction);
+    wheelDirection = direction;
+    clearTimeout(wheelTimer);
+    wheelTimer = setTimeout(() => { wheelDirection = 0; }, 160);
   }, { passive: false });
 
   // Use pointer capture after a mouse drag starts; touch keeps native swipe and pinch behavior.
   track.addEventListener('dragstart', event => event.preventDefault());
   track.addEventListener('pointerdown', event => {
+    stopMotion();
     if (event.pointerType !== 'mouse' || event.button !== 0) return;
     drag = { id: event.pointerId, x: event.clientX, scroll: track.scrollLeft, moved: false };
   });
@@ -1671,10 +1708,6 @@ document.querySelectorAll('[data-gallery]').forEach(gallery => {
 });
 </script>
 
-<header class="page-heading">
-  <h1>Trai Lab</h1>
-  <p class="page-intro">A space for curious minds and thoughtful collaboration.</p>
-</header>
 <div class="prose page-content">
 <h2>Our research</h2>
 <p>We are interested in trustworthy AI, machine learning, and multimodal models. Our work explores how learning systems can become more reliable and how multimodal models can reason about the world.</p>
