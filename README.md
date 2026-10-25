@@ -30,7 +30,7 @@
 | 要更新的項目 | 編輯位置 |
 | --- | --- |
 | 姓名、職稱、所屬單位、聯絡／社群連結、導覽 | `src/home.md` 上方的 `website:` |
-| 首頁簡介、News、Honors & Awards、Media Coverage | `src/home.md` 正文 |
+| 首頁簡介、News、Honors & Awards、Media Coverage、Sponsors | `src/home.md` 正文 |
 | 各分頁標題與簡介 | 該 `.md` 的 `title`、可選的 `intro` |
 | 頭像原檔 | [files/portrait.jpg](files/portrait.jpg) |
 | 頭像路徑、圖片尺寸資訊與首頁結構 | [layouts/home.njk](src/_includes/layouts/home.njk) |
@@ -41,6 +41,8 @@
 | 資料讀取、Markdown 顯示轉換與資源複製 | [eleventy.config.js](eleventy.config.js) |
 
 `files/` 專門放置網站內容檔案：CV、照片、校徽，以及 `papers/`、`talks/` 子目錄中的論文與投影片。CSS 與字型保留在 `src/assets/`，建置腳本留在 `scripts/`，查核與來源紀錄留在 `docs/`，不混入 `files/`。
+
+首頁最下方的 Sponsors 在 `src/home.md` 編輯；每個 `<figure>` 包含 `files/sponsors/` 的 logo 路徑及 `Eng（中文）` 名稱。新增或刪除時複製或移除整個 `<figure>`，排列會依容器寬度自動換列。名稱沿用一般內文樣式，外觀集中在 CSS 的 `Sponsors` 註解區塊。
 
 ### Markdown 與頁面設定
 
