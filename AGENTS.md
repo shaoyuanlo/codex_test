@@ -51,7 +51,7 @@
 - Front matter 先放運作欄位（layout、section、permalink 等），再放 title、intro 與內容資料。正文從 H2 開始；不重新加入 eyebrow、description 或首頁 tagline 欄位及其相關顯示設定。
 - 全站資料只在首頁 `website:` 維護，不重新建立 `site.json`。職稱使用 roles 清單，每組有 role 與一到多個 affiliations，各自成行。
 - Email、CV 與社群連結統一由 social 清單維護；其他聯絡文字沿用第一個 mailto 連結的信箱，不另外複製地址。內部檔案路徑支援根網址、子路徑及預覽。
-- Lab 相片與可選說明集中在 `src/lab.md` 的 `photos` 清單，檔案在 `files/lab_photos/`；維持滑鼠、鍵盤與手機操作，以及停用 JavaScript 時的原生捲動與圖片連結。保留使用者照片，測試下載圖明確標示 Demo，來源紀錄放在 `docs/`。
+- Lab 相片集放在頁面標題及簡介下方；桌機隱藏捲軸、按鈕與一次滾輪手勢平滑移動一張，手機隱藏按鈕並保留原生滑動；縮圖等大裁切，放大顯示完整原圖。相片與可選說明集中在 `src/lab.md` 的 `photos` 清單，檔案在 `files/lab_photos/`；維持滑鼠、鍵盤與手機操作，以及停用 JavaScript 時的原生捲動與圖片連結。保留使用者照片，測試下載圖明確標示 Demo，來源紀錄放在 `docs/`。
 - Blog 直接使用一般 page 版型與 Markdown；不新增自動文章集合、列表、日期排序、草稿旗標、獨立文章版型或 Blog 專用外觀。
 
 ### News 與共用日期清單

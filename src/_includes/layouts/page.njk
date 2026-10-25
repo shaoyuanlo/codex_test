@@ -1,11 +1,11 @@
 ---
 layout: layouts/base.njk
 ---
-{% if section == 'lab' and photos.length %}{% include "components/gallery.njk" %}{% endif %}
 <header class="page-heading">
   <h1>{{ title }}</h1>
   {% if intro %}<p class="page-intro">{{ intro }}</p>{% endif %}
 </header>
+{% if section == 'lab' and photos.length %}{% include "components/gallery.njk" %}{% endif %}
 <div class="prose page-content">
 {{ content | datedLists | publicationNotes(section) | publicationIndexes(section) | safe }}
 </div>
