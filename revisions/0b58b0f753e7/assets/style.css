@@ -170,7 +170,7 @@ nav a[aria-current] { font-weight: 600; }
 .footer-inner p { margin: 0; }
 @media (max-width: 767px) {
   html { scroll-padding-top: 170px; }
-  .wordmark { display: inline-block; }
+  .wordmark { display: none; }
   nav { flex-wrap: wrap; justify-content: space-between; }
 
 }
