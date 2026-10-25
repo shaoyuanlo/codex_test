@@ -1431,10 +1431,10 @@ p { margin: 0 0 var(--space-md); }
 .callout p { margin-bottom: 0; }
 .page-intro { margin-bottom: 0; }
 .page-publications .page-content h3 ~ p { line-height: var(--line-height-compact); margin-bottom: var(--space-xs); }
-/* Publication indexes: shared left gutter for numbered titles and their information. */
-.page-publications h3[data-publication-index], .publication-info { padding-inline-start: calc(var(--font-size-base) * 2 + var(--space-md)); }
-.page-publications h3[data-publication-index] { position: relative; }
-.publication-index { position: absolute; inset-inline-start: 0; font-size: var(--font-size-base); font-weight: 400; }
+/* Publication indexes: align first-line baselines and share the title/information indent. */
+.publication-info { padding-inline-start: calc(var(--font-size-base) * 2 + var(--space-xs)); }
+.page-publications h3[data-publication-index] { display: grid; grid-template-columns: calc(var(--font-size-base) * 2 + var(--space-xs)) minmax(0, 1fr); align-items: baseline; }
+.publication-index { font-size: var(--font-size-base); font-weight: 400; }
 .publication-note { color: var(--highlight); }
 .site-footer { font-size: var(--font-size-sm); }
 .footer-inner p { margin: 0; }
@@ -1447,7 +1447,7 @@ p { margin: 0 0 var(--space-md); }
   .callout { break-inside: avoid; }
 }
 </style>
-  <meta name="preview-source" content="7203fafde8ad63dad7fe9425fad224d84ca083df">
+  <meta name="preview-source" content="4cb4255f4f7ad5122558b6fcf77f3baa702fbb8b">
   <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="page-lab">
