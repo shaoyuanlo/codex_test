@@ -50,6 +50,32 @@ export default function (eleventyConfig) {
     );
     return columns === items ? list : `<ul class="dated-list">${columns}</ul>`;
   }));
+  // Reuse the recent list's natural height for the scrollable archive; native radios switch views.
+  eleventyConfig.addFilter("newsTabs", html => html.replace(
+    /<h2\b[^>]*>News<\/h2>([\s\S]*?)<div class="news-archive">([\s\S]*?)<\/div>/,
+    (original, recent, archive) => {
+      const items = fragment => [...fragment.matchAll(/<ul class="dated-list">([\s\S]*?)<\/ul>/g)]
+        .map(match => match[1]).join("");
+      const recentItems = items(recent);
+      if (!recentItems) return original;
+      return `<section class="news" aria-labelledby="news-heading">
+  <div class="news-heading">
+    <h2 id="news-heading">News</h2>
+    <fieldset class="news-switch">
+      <legend>News view</legend>
+      <input type="radio" name="news-view" id="news-recent" checked>
+      <label class="button" for="news-recent">Recent</label>
+      <input type="radio" name="news-view" id="news-all">
+      <label class="button" for="news-all">All</label>
+    </fieldset>
+  </div>
+  <div class="news-viewport">
+    <div class="news-recent"><ul class="dated-list">${recentItems}</ul></div>
+    <div class="news-all" tabindex="0" role="region" aria-label="All news"><ul class="dated-list">${recentItems}${items(archive)}</ul></div>
+  </div>
+</section>`;
+    }
+  ));
   // Balance sponsor rows at build time; CSS handles narrower screens without client-side scripts.
   eleventyConfig.addFilter("balancedSponsors", html => html.replace(
     /<div class="sponsors">([\s\S]*?)<\/div>/g,

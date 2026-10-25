@@ -57,8 +57,8 @@
 - 使用 Markdown 清單，News 格式為 `- **Oct 2025** — Message text.`；Media Coverage 與 Invited Talks 使用完整日期，如 `- **Mar 03, 2026** — Message text.`。日期直接寫在內容，不新增日期轉換設定。
 - 共用版型用 datedLists 轉換分出日期與內文，CSS 維持兩欄及長文字換行位置，日期欄依內容自動加寬並維持各列對齊；保留內文的連結、粗體及斜體。
 - News、Media Coverage 與 Activities 的 Invited Talks 共用日期清單元件與樣式，不另建分頁樣式；一般 bullet 清單維持預設樣式。首頁 Honors & Awards 放在 News 後，接著 Media Coverage；Activities 沿用預設 page 版型。
-- 原生 details／summary 控制 Show more／Show less 與箭頭，沿用共用 `.button`；不加入 JavaScript 或額外依賴。
-- 預設顯示數量由 details 內外的消息位置決定；保留使用者手動調整，不擅自恢復某個固定筆數或建立數量選項。
+- 原生單選控制項與 CSS 提供標題旁的 Recent／All 切換，沿用共用 `.button`；All 合併所有消息，在 Recent 的自然高度內垂直捲動，不加入 JavaScript 或額外依賴。
+- Recent 顯示數量由 `news-archive` 前方的消息位置決定，舊消息置於 archive 內；`newsTabs` 在建置時產生兩種檢視，內容只維護一份。保留使用者手動調整，不擅自恢復某個固定筆數或建立數量選項。
 
 ### Publications 與資料來源
 
@@ -89,7 +89,7 @@
 
 - 純 README／規則修改：核對來源、相對連結、文件一致性與 `git diff --check`；不為此新增網站測試或等待無關部署。
 - 修改網站內容、CSS、版型或建置：執行 `npm run build`、`npm run check`；涉及預覽或路徑時另執行 `npm run build:preview`、`node scripts/check-site.mjs _preview`。
-- 按變更範圍檢查桌機、手機、breakpoint 邊界、橫向溢出、導覽、短頁面頁尾及相關互動。News 包含鍵盤、收合標籤與不啟用 JavaScript 的操作；避免反覆執行無關測試。
+- 按變更範圍檢查桌機、手機、breakpoint 邊界、橫向溢出、導覽、短頁面頁尾及相關互動。News 包含鍵盤、Recent／All 狀態、兩種模式等高、All 區域捲動與不啟用 JavaScript 的操作；避免反覆執行無關測試。
 - 外部連結未實際查核不宣稱已全部通過；本地連結檢查不代表外部服務可用，HTTP 成功不等於 PDF 免登入。
 - 每次修改回覆說明結果，**顯示代表性程式碼／文件 diff，提供完整提交或比較連結**，附實際檢查結果及尚未確認事項。網站部署已驗證時提供固定與當次快速預覽；未驗證不猜網址、不宣稱完成。
 - 新的長期原則更新在本檔；使用方式與目前設定說明更新在 README，實際數值仍只在 CSS 設定。使用者手動修改後，以最新程式碼重新核對文件，避免只累積追加說明或保留過時範例。

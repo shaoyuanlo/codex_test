@@ -62,7 +62,7 @@ Previously, I was a Research Scientist at [Honda Research Institute USA](https:/
 
 ## News
 
-<!-- Keep the latest items here; move older items into the details block below. -->
+<!-- Recent news: move older items into news-archive below. -->
 - **May 2026** — One paper accepted to ICML 2026. Serving as an Area Chair for NeurIPS 2026.
 - **Mar 2026** — Serving as an Area Chair for ICML 2026. Invited talk at the Surgical Data Science Symposium, National Taiwan University Hospital.
 - **Dec 2025** — Invited talk at the Advanced AI Safety Forum, Taiwan AI Center of Excellence.
@@ -70,8 +70,7 @@ Previously, I was a Research Scientist at [Honda Research Institute USA](https:/
 - **Oct 2025** — Serving as an Area Chair for ICLR 2026 and ICASSP 2026. Invited talk at Australian National University (remote).
 - **Aug 2025** — Joined National Taiwan University as an Assistant Professor. Awarded a Yushan Young Fellowship.
 
-<details class="news-more">
-<summary class="button"><span class="show-more">Show more <span aria-hidden="true">↓</span></span><span class="show-less">Show less <span aria-hidden="true">↑</span></span></summary>
+<div class="news-archive">
 
 <!-- Older news: edit these Markdown bullets directly. Original source dates are preserved. -->
 - **Jun 2025** — 1 paper accepted to IJCV. Serving as an Area Chair for BMVC 2025. Invited talk at ProtagoLabs (remote).
@@ -98,7 +97,7 @@ Previously, I was a Research Scientist at [Honda Research Institute USA](https:/
 - **Dec 2019** — Won the Best Paper Award at ACM Multimedia Asia 2019!!
 - **Aug 2019** — Joined Johns Hopkins University as a PhD student. See you in Baltimore, MD!!
 
-</details>
+</div>
 
 ---
 
