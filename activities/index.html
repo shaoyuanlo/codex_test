@@ -1315,7 +1315,7 @@ h4, h5, h6 { margin-bottom: var(--space-sm); }
   padding-right: var(--space-2xl);
 }
 .site-main { padding-top: 0; padding-bottom: calc(var(--space-xl) * 2); flex: 1; min-width: 0; }
-.footer-inner { padding-top: var(--space-xl); padding-bottom: var(--space-xl); text-align: center; }
+.footer-inner { padding-top: var(--space-sm); padding-bottom: var(--space-xl); text-align: center; }
 @media (max-width: 767px) {
   .header-inner, .site-main, .footer-inner { padding-left: var(--space-lg); padding-right: var(--space-lg); }
   .site-main { padding-bottom: var(--space-2xl); }
@@ -1432,9 +1432,13 @@ p { margin: 0 0 var(--space-md); }
 .page-intro { margin-bottom: 0; }
 .page-publications .page-content h3 ~ p { line-height: var(--line-height-compact); margin-bottom: var(--space-xs); }
 /* Publication indexes: align first-line baselines and share the title/information indent. */
-.publication-info { padding-inline-start: calc(var(--font-size-base) * 2 + var(--space-xs)); }
-.page-publications h3[data-publication-index] { display: grid; grid-template-columns: calc(var(--font-size-base) * 2 + var(--space-xs)) minmax(0, 1fr); align-items: baseline; }
+.publication-info { padding-inline-start: calc(var(--font-size-base) * 2 + var(--space-sm)); }
+.page-publications h3[data-publication-index] { display: grid; grid-template-columns: calc(var(--font-size-base) * 2 + var(--space-sm)) minmax(0, 1fr); align-items: baseline; }
 .publication-index { font-size: var(--font-size-base); font-weight: 400; }
+@media (max-width: 767px) {
+  .publication-info { padding-inline-start: calc(var(--font-size-base) * 2 + var(--space-xs)); }
+  .page-publications h3[data-publication-index] { grid-template-columns: calc(var(--font-size-base) * 2 + var(--space-xs)) minmax(0, 1fr); }
+}
 .publication-note { color: var(--highlight); }
 .site-footer { font-size: var(--font-size-sm); }
 .footer-inner p { margin: 0; }
@@ -1447,7 +1451,7 @@ p { margin: 0 0 var(--space-md); }
   .callout { break-inside: avoid; }
 }
 </style>
-  <meta name="preview-source" content="4cb4255f4f7ad5122558b6fcf77f3baa702fbb8b">
+  <meta name="preview-source" content="c58aef25c26a6893882ab27d8c0b7cf99bb7ab44">
   <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="page-activities">
