@@ -63,6 +63,7 @@
 ### Publications 與資料來源
 
 - 依年份由新到舊；同年份論文間只留 Markdown 空行，年份區塊最後一篇下方才加 `---`，最後一個年份亦同。
+- 編號由 `publicationIndexes` 在建置時產生：年份區塊跨年份連續倒序，Preprints 獨立使用 p1、p2 等編號；Dissertations 不編號，不在 Markdown 手動加序號。
 - 使用 H3 論文標題；會議／期刊名稱斜體、括號內簡稱粗體、年份放在斜體之外。
 - 標記使用 `· **Oral**`、`· **Spotlight**` 等既有轉換，只有粗體文字套強調色，前方的 `·` 保持一般文字色。
 - 資源以 `Paper / arXiv` 為前兩項，再接其他資源；Paper 指向正式出版 PDF，找不到時用該篇 arXiv PDF；arXiv 保留原有論文頁面網址。無網址用純文字佔位，不建立空連結；不加入 BibTeX 欄位、連結或檔案。

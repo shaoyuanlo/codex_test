@@ -137,6 +137,8 @@ News 的日期維持三字母月份與年份；Media Coverage 與 Invited Talks 
 
 ### Publications
 
+Publications 的編號由 `eleventy.config.js` 的 `publicationIndexes` 自動產生：年份區塊中的發表跨年份連續倒序編號，Preprints 另依顯示順序使用 `[p1]`、`[p2]`；Dissertations 不編號。繼續在 `src/publications.md` 使用原有 H2 年份、H3 論文標題與一般段落，無須手動維護編號。編號及內文縮排集中於 CSS 的 `Publication indexes` 註解區塊，其他字級、顏色與間距沿用原設定。
+
 在 `src/publications.md` 對應年份下新增：
 
 ```md
