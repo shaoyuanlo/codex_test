@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Lab · Shao-Yuan Lo</title>
-  <link rel="canonical" href="https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/c1cb48ae5116/lab/index.html">
+  <title>Blog · Shao-Yuan Lo</title>
+  <link rel="canonical" href="https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/dfc68f7e7812/blog/index.html">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Lab · Shao-Yuan Lo">
-  <meta property="og:url" content="https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/c1cb48ae5116/lab/index.html">
-  <meta property="og:image" content="https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/c1cb48ae5116/files/portrait.jpg">
-  <link rel="icon" type="image/png" sizes="180x180" href="/shaoyuanlo/codex_test/site-preview/revisions/c1cb48ae5116/files/ntu-emblem.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/shaoyuanlo/codex_test/site-preview/revisions/c1cb48ae5116/files/ntu-emblem.png">
+  <meta property="og:title" content="Blog · Shao-Yuan Lo">
+  <meta property="og:url" content="https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/dfc68f7e7812/blog/index.html">
+  <meta property="og:image" content="https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/dfc68f7e7812/files/portrait.jpg">
+  <link rel="icon" type="image/png" sizes="180x180" href="/shaoyuanlo/codex_test/site-preview/revisions/dfc68f7e7812/files/ntu-emblem.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/shaoyuanlo/codex_test/site-preview/revisions/dfc68f7e7812/files/ntu-emblem.png">
   <style data-preview-style="fonts">/* Self-hosted font faces. Original font binaries are unchanged; licenses are alongside each family. */
 
 /* @fontsource-variable/inter@5.3.0 — index.css */
@@ -1369,10 +1369,16 @@ nav a[aria-current] { font-weight: 600; }
   .portrait { grid-column: 2; grid-row: 1 / 3; }
   .hero-actions { grid-column: 1 / -1; }
 }
-/* Sponsors: compact responsive logo grid with regular, single-line bilingual captions. */
-.sponsors { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: var(--space-lg) var(--space-md); margin-bottom: var(--space-md); }
-.sponsors figure { margin: 0; min-width: 0; text-align: center; }
-.sponsors img { width: 100%; height: calc(var(--space-xl) * 2); object-fit: contain; margin-bottom: var(--space-xs); }
+/* Sponsors: compact layout with individually balanced logo widths and regular captions. */
+.sponsors { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: var(--space-md); margin-bottom: var(--space-md); }
+.sponsors figure { display: grid; grid-template-rows: 48px auto; justify-items: center; align-items: center; gap: var(--space-xs); margin: 0; min-width: 0; text-align: center; }
+.sponsors img { height: auto; max-height: 48px; width: auto; object-fit: contain; }
+.sponsors img[src$="/moe.webp"] { width: 48px; }
+.sponsors img[src$="/nstc.webp"] { width: 152px; }
+.sponsors img[src$="/ntuh.webp"] { width: 88px; }
+.sponsors img[src$="/asus.webp"] { width: 112px; }
+.sponsors img[src$="/delta.webp"] { width: 112px; }
+.sponsors img[src$="/itri.webp"] { width: 136px; }
 .sponsors figcaption { white-space: nowrap; }
 
 /* Shared text-style buttons: bold black text; navy and underlined on hover. */
@@ -1434,54 +1440,38 @@ p { margin: 0 0 var(--space-md); }
   .callout { break-inside: avoid; }
 }
 </style>
-  <meta name="preview-source" content="c1cb48ae5116e6eb8ec920858c4cd6cbf690ab63">
+  <meta name="preview-source" content="dfc68f7e7812a89a16687ad682df88c9bd0be5d8">
   <meta name="robots" content="noindex, nofollow">
 </head>
-<body class="page-lab">
+<body class="page-blog">
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="header-inner">
-      <a class="wordmark" href="/shaoyuanlo/codex_test/site-preview/revisions/c1cb48ae5116/index.html" aria-label="Shao-Yuan Lo — Home">Shao-Yuan Lo</a>
+      <a class="wordmark" href="/shaoyuanlo/codex_test/site-preview/revisions/dfc68f7e7812/index.html" aria-label="Shao-Yuan Lo — Home">Shao-Yuan Lo</a>
       <nav aria-label="Main navigation">
         
-        <a href="/shaoyuanlo/codex_test/site-preview/revisions/c1cb48ae5116/index.html">Home</a>
+        <a href="/shaoyuanlo/codex_test/site-preview/revisions/dfc68f7e7812/index.html">Home</a>
         
-        <a href="/shaoyuanlo/codex_test/site-preview/revisions/c1cb48ae5116/lab/index.html" aria-current="page">Lab</a>
+        <a href="/shaoyuanlo/codex_test/site-preview/revisions/dfc68f7e7812/lab/index.html">Lab</a>
         
-        <a href="/shaoyuanlo/codex_test/site-preview/revisions/c1cb48ae5116/publications/index.html">Publications</a>
+        <a href="/shaoyuanlo/codex_test/site-preview/revisions/dfc68f7e7812/publications/index.html">Publications</a>
         
-        <a href="/shaoyuanlo/codex_test/site-preview/revisions/c1cb48ae5116/activities/index.html">Activities</a>
+        <a href="/shaoyuanlo/codex_test/site-preview/revisions/dfc68f7e7812/activities/index.html">Activities</a>
         
-        <a href="/shaoyuanlo/codex_test/site-preview/revisions/c1cb48ae5116/teaching/index.html">Teaching</a>
+        <a href="/shaoyuanlo/codex_test/site-preview/revisions/dfc68f7e7812/teaching/index.html">Teaching</a>
         
-        <a href="/shaoyuanlo/codex_test/site-preview/revisions/c1cb48ae5116/blog/index.html">Blog</a>
+        <a href="/shaoyuanlo/codex_test/site-preview/revisions/dfc68f7e7812/blog/index.html" aria-current="page">Blog</a>
         
       </nav>
     </div>
   </header>
   <main id="main" class="site-main" tabindex="-1">
     <header class="page-heading">
-  <h1>Lab</h1>
-  <p class="page-intro">A space for curious minds and thoughtful collaboration.</p>
+  <h1>Blog</h1>
+  <p class="page-intro">Stay tuned.</p>
 </header>
 <div class="prose page-content">
-<h2>Our research</h2>
-<p>We are interested in trustworthy AI, machine learning, and multimodal models. Our work explores how learning systems can become more reliable and how multimodal models can reason about the world.</p>
-<!-- Replace this section with your lab name, mission, and ongoing projects. -->
-<h2>People</h2>
-<p><strong>Principal investigator</strong><br>
-<a href="/shaoyuanlo/codex_test/site-preview/revisions/c1cb48ae5116/index.html">Shao-Yuan Lo</a> · Assistant Professor, National Taiwan University</p>
-<p><strong>Students &amp; collaborators</strong><br>
-Our group page is taking shape. Member profiles and current projects will be added here.</p>
-<!-- To add a person, copy:
-### Full Name
-Ph.D. student · Research interests
-[Website](https://example.com)
--->
-<aside class="callout">
-<p class="callout-label">Open opportunities</p>
-<p>I welcome inquiries from undergraduate, master's, and Ph.D. students interested in our research. Please <a href="mailto:sylo@csie.ntu.edu.tw">email me</a> with your research interests, résumé, and transcripts.</p>
-</aside>
+<!-- Edit this page directly in Markdown, just like the other pages. -->
 
 </div>
 

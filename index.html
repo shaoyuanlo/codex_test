@@ -1369,10 +1369,16 @@ nav a[aria-current] { font-weight: 600; }
   .portrait { grid-column: 2; grid-row: 1 / 3; }
   .hero-actions { grid-column: 1 / -1; }
 }
-/* Sponsors: compact responsive logo grid with regular, single-line bilingual captions. */
-.sponsors { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: var(--space-lg) var(--space-md); margin-bottom: var(--space-md); }
-.sponsors figure { margin: 0; min-width: 0; text-align: center; }
-.sponsors img { width: 100%; height: calc(var(--space-xl) * 2); object-fit: contain; margin-bottom: var(--space-xs); }
+/* Sponsors: compact layout with individually balanced logo widths and regular captions. */
+.sponsors { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: var(--space-md); margin-bottom: var(--space-md); }
+.sponsors figure { display: grid; grid-template-rows: 48px auto; justify-items: center; align-items: center; gap: var(--space-xs); margin: 0; min-width: 0; text-align: center; }
+.sponsors img { height: auto; max-height: 48px; width: auto; object-fit: contain; }
+.sponsors img[src$="/moe.webp"] { width: 48px; }
+.sponsors img[src$="/nstc.webp"] { width: 152px; }
+.sponsors img[src$="/ntuh.webp"] { width: 88px; }
+.sponsors img[src$="/asus.webp"] { width: 112px; }
+.sponsors img[src$="/delta.webp"] { width: 112px; }
+.sponsors img[src$="/itri.webp"] { width: 136px; }
 .sponsors figcaption { white-space: nowrap; }
 
 /* Shared text-style buttons: bold black text; navy and underlined on hover. */
@@ -1434,7 +1440,7 @@ p { margin: 0 0 var(--space-md); }
   .callout { break-inside: avoid; }
 }
 </style>
-  <meta name="preview-source" content="c1cb48ae5116e6eb8ec920858c4cd6cbf690ab63">
+  <meta name="preview-source" content="dfc68f7e7812a89a16687ad682df88c9bd0be5d8">
   <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="page-home">
@@ -1553,12 +1559,12 @@ p { margin: 0 0 var(--space-md); }
 <h2>Sponsors</h2>
 <div class="sponsors">
   <figure>
-    <img src="/shaoyuanlo/codex_test/site-preview/files/sponsors/nstc.webp" alt="" width="1920" height="293" loading="lazy">
-    <figcaption>NSTC（國科會）</figcaption>
-  </figure>
-  <figure>
     <img src="/shaoyuanlo/codex_test/site-preview/files/sponsors/moe.webp" alt="" width="960" height="960" loading="lazy">
     <figcaption>MOE（教育部）</figcaption>
+  </figure>
+  <figure>
+    <img src="/shaoyuanlo/codex_test/site-preview/files/sponsors/nstc.webp" alt="" width="1920" height="293" loading="lazy">
+    <figcaption>NSTC（國科會）</figcaption>
   </figure>
   <figure>
     <img src="/shaoyuanlo/codex_test/site-preview/files/sponsors/ntuh.webp" alt="" width="1920" height="977" loading="lazy">
@@ -1569,12 +1575,12 @@ p { margin: 0 0 var(--space-md); }
     <figcaption>ASUS（華碩）</figcaption>
   </figure>
   <figure>
-    <img src="/shaoyuanlo/codex_test/site-preview/files/sponsors/itri.webp" alt="" width="1920" height="444" loading="lazy">
-    <figcaption>ITRI（工研院）</figcaption>
-  </figure>
-  <figure>
     <img src="/shaoyuanlo/codex_test/site-preview/files/sponsors/delta.webp" alt="" width="1920" height="592" loading="lazy">
     <figcaption>Delta Electronics（台達電）</figcaption>
+  </figure>
+  <figure>
+    <img src="/shaoyuanlo/codex_test/site-preview/files/sponsors/itri.webp" alt="" width="1920" height="444" loading="lazy">
+    <figcaption>ITRI（工研院）</figcaption>
   </figure>
 </div>
 
