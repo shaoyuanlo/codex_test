@@ -29,7 +29,7 @@ website:
   - label: Home
     url: /
     key: home
-  - label: Lab
+  - label: Trai Lab
     url: /lab/
     key: lab
   - label: Publications
