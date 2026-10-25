@@ -128,12 +128,12 @@ Previously, I was a Research Scientist at [Honda Research Institute USA](https:/
 
 <div class="sponsors">
   <figure>
-    <img src="{{ '/files/sponsors/nstc.webp' | url }}" alt="" width="1920" height="293" loading="lazy">
-    <figcaption>NSTC（國科會）</figcaption>
-  </figure>
-  <figure>
     <img src="{{ '/files/sponsors/moe.webp' | url }}" alt="" width="960" height="960" loading="lazy">
     <figcaption>MOE（教育部）</figcaption>
+  </figure>
+  <figure>
+    <img src="{{ '/files/sponsors/nstc.webp' | url }}" alt="" width="1920" height="293" loading="lazy">
+    <figcaption>NSTC（國科會）</figcaption>
   </figure>
   <figure>
     <img src="{{ '/files/sponsors/ntuh.webp' | url }}" alt="" width="1920" height="977" loading="lazy">
@@ -144,11 +144,11 @@ Previously, I was a Research Scientist at [Honda Research Institute USA](https:/
     <figcaption>ASUS（華碩）</figcaption>
   </figure>
   <figure>
-    <img src="{{ '/files/sponsors/itri.webp' | url }}" alt="" width="1920" height="444" loading="lazy">
-    <figcaption>ITRI（工研院）</figcaption>
-  </figure>
-  <figure>
     <img src="{{ '/files/sponsors/delta.webp' | url }}" alt="" width="1920" height="592" loading="lazy">
     <figcaption>Delta Electronics（台達電）</figcaption>
+  </figure>
+  <figure>
+    <img src="{{ '/files/sponsors/itri.webp' | url }}" alt="" width="1920" height="444" loading="lazy">
+    <figcaption>ITRI（工研院）</figcaption>
   </figure>
 </div>
