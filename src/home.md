@@ -48,10 +48,12 @@ I am an Assistant Professor at [National Taiwan University](https://www.ntu.edu.
 
 Previously, I was a Research Scientist at [Honda Research Institute USA](https://usa.honda-ri.com/). I received my Ph.D. from [Johns Hopkins University](https://www.jhu.edu/) in 2023, and my M.S. and B.S. from National Chiao Tung University in 2019 and 2017. I also spent two wonderful summers with Amazon's Just Walk Out and Astro teams.
 
+<!--
 <aside class="callout">
 <p class="callout-label">Join the group</p>
 <p>I am looking for motivated undergraduate, master's, and Ph.D. students. Interested in working together? <a href="mailto:{{ site.email }}">Send me an email</a> with your résumé and transcripts.</p>
 </aside>
+-->
 
 ## News
 
