@@ -2,7 +2,7 @@
 layout: layouts/page.njk
 section: lab
 permalink: /lab/index.html
-title: Lab
+title: Trai Lab
 intro: A space for curious minds and thoughtful collaboration.
 ---
 ## Our research
