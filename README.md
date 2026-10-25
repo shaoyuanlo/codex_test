@@ -32,13 +32,15 @@
 | 姓名、職稱、所屬單位、聯絡／社群連結、導覽 | `src/home.md` 上方的 `website:` |
 | 首頁簡介、News、Honors & Awards、Media Coverage | `src/home.md` 正文 |
 | 各分頁標題與簡介 | 該 `.md` 的 `title`、可選的 `intro` |
-| 頭像原檔 | [src/assets/portrait.jpg](src/assets/portrait.jpg) |
+| 頭像原檔 | [files/portrait.jpg](files/portrait.jpg) |
 | 頭像路徑、圖片尺寸資訊與首頁結構 | [layouts/home.njk](src/_includes/layouts/home.njk) |
 | 頁尾文字、網頁 metadata、校徽路徑與共用導覽結構 | [layouts/base.njk](src/_includes/layouts/base.njk) |
-| 校徽原檔 | [src/assets/ntu-emblem.png](src/assets/ntu-emblem.png) |
+| 校徽原檔 | [files/ntu-emblem.png](files/ntu-emblem.png) |
 | CV | [files/SYLo_CV.pdf](files/SYLo_CV.pdf) |
 | 配色、字體、間距、容器與元件外觀 | [src/assets/style.css](src/assets/style.css) |
 | 資料讀取、Markdown 顯示轉換與資源複製 | [eleventy.config.js](eleventy.config.js) |
+
+`files/` 專門放置網站內容檔案：CV、照片、校徽，以及 `papers/`、`talks/` 子目錄中的論文與投影片。CSS 與字型保留在 `src/assets/`，建置腳本留在 `scripts/`，查核與來源紀錄留在 `docs/`，不混入 `files/`。
 
 ### Markdown 與頁面設定
 
@@ -127,7 +129,7 @@ News、Media Coverage 與 Invited Talks 共用 `.dated-list` 日期清單樣式�
 
 首頁 `News` 後依序為 `Honors & Awards`、`Media Coverage`。獎項使用一般 Markdown bullet 清單，保留獎項名稱、單位、年份及來源連結；媒體報導使用完整日期，例如 `- **Apr 25, 2026** — Message text.`，沿用共用兩欄清單。
 
-`src/activities.md` 使用預設 `layouts/page.njk`，導覽位於 Publications 與 Teaching 之間；受邀演講在 `## Invited Talks` 下方編輯，使用完整日期（例如 `Mar 03, 2026`），並沿用共用日期欄與間距，沒有 Activities 專用設計值。演講保留題目、場合、主持人及原連結；本地投影片放在 `talks/`，使用 `url` filter 連結。
+`src/activities.md` 使用預設 `layouts/page.njk`，導覽位於 Publications 與 Teaching 之間；受邀演講在 `## Invited Talks` 下方編輯，使用完整日期（例如 `Mar 03, 2026`），並沿用共用日期欄與間距，沒有 Activities 專用設計值。演講保留題目、場合、主持人及原連結；本地投影片放在 `files/talks/`，使用 `url` filter 連結。
 
 News 的日期維持三字母月份與年份；Media Coverage 與 Invited Talks 則直接在 Markdown 寫成 `Mon DD, YYYY` 完整日期，日數補足兩位。原網頁前兩場演講誤列為 2025，匯入時依投影片標題頁確認為 Mar 2026，註記保留在 `activities.md`。
 
@@ -297,7 +299,7 @@ https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/<提交版�
 
 正式發布需另行在 `shaoyuanlo/shaoyuanlo.github.io` 執行：
 
-1. 保留原網站 Git 歷史與既有 `files/`、`papers/`、`talks/` 及 `CNAME`。將本專案的來源、設定、腳本、依賴鎖檔及 Pages workflow 合併到正式儲存庫，避免覆寫既有資源或重複部署流程。
+1. 保留原網站 Git 歷史、既有內容檔案及 `CNAME`；本專案將論文與投影片集中於 `files/papers/`、`files/talks/`，遷移時同步調整相關連結。將本專案的來源、設定、腳本、依賴鎖檔及 Pages workflow 合併到正式儲存庫，避免覆寫既有資源或重複部署流程。
 2. 核對所有舊連結、資源目錄、主分支名稱與自訂網域；建置設定只會複製已列出的資源目錄及存在的 `CNAME`。
 3. 在正式儲存庫 **Settings → Pages → Source** 選擇 **GitHub Actions**，確認 **Deploy website to GitHub Pages** 成功。
 

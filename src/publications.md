@@ -63,7 +63,7 @@ Jike Zhong, Yuxiang Lai, Ming Li, Yuheng Li, Wuao Liu, Behzad Dariush, Konstanti
 
 *International Conference on Machine Learning (**ICML**)*, 2026
 
-[Paper](https://arxiv.org/pdf/2606.09092) / [arXiv](https://arxiv.org/abs/2606.09092) / [Code](https://github.com/jkz-338/Robust-ToM-RL) / [Poster]({{ '/papers/ToM-SC_poster.png' | url }}) / [Slides]({{ '/papers/ToM-SC.pdf' | url }})
+[Paper](https://arxiv.org/pdf/2606.09092) / [arXiv](https://arxiv.org/abs/2606.09092) / [Code](https://github.com/jkz-338/Robust-ToM-RL) / [Poster]({{ '/files/papers/ToM-SC_poster.png' | url }}) / [Slides]({{ '/files/papers/ToM-SC.pdf' | url }})
 
 ### ProSGNeRF: Progressive Dynamic Neural Scene Graph with Frequency Modulated Foundation Model in Urban Scenes
 
@@ -91,7 +91,7 @@ Chunhui Zhang, Zhongyu Ouyang, Kwonjoon Lee, Nakul Agarwal, Sean Dae Houlihan, S
 
 *International Conference on Machine Learning (**ICML**)*, 2025 · **Spotlight**
 
-[Paper](https://raw.githubusercontent.com/mlresearch/v267/main/assets/zhang25bk/zhang25bk.pdf) / [arXiv](https://arxiv.org/abs/2506.01301) / [Code](https://github.com/chunhuizng/scale-bayesian-planner) / [Poster]({{ '/papers/MMToM_poster.png' | url }})
+[Paper](https://raw.githubusercontent.com/mlresearch/v267/main/assets/zhang25bk/zhang25bk.pdf) / [arXiv](https://arxiv.org/abs/2506.01301) / [Code](https://github.com/chunhuizng/scale-bayesian-planner) / [Poster]({{ '/files/papers/MMToM_poster.png' | url }})
 
 ### Filter Images First, Generate Instructions Later: Pre-Instruction Data Selection for Visual Instruction Tuning
 
@@ -107,7 +107,7 @@ Jiacong Xu, **Shao-Yuan Lo**, Bardia Safaei, Vishal M. Patel, Isht Dwivedi
 
 *IEEE/CVF Conference on Computer Vision and Pattern Recognition (**CVPR**)*, 2025 · **Highlight**
 
-[Paper](https://openaccess.thecvf.com/content/CVPR2025/papers/Xu_Towards_Zero-Shot_Anomaly_Detection_and_Reasoning_with_Multimodal_Large_Language_CVPR_2025_paper.pdf) / [arXiv](https://arxiv.org/abs/2502.07601) / [Project](https://xujiacong.github.io/Anomaly-OV/) / [Code](https://github.com/honda-research-institute/Anomaly-OneVision) / [Slides]({{ '/talks/CSIG_2025_04_12.pdf' | url }})
+[Paper](https://openaccess.thecvf.com/content/CVPR2025/papers/Xu_Towards_Zero-Shot_Anomaly_Detection_and_Reasoning_with_Multimodal_Large_Language_CVPR_2025_paper.pdf) / [arXiv](https://arxiv.org/abs/2502.07601) / [Project](https://xujiacong.github.io/Anomaly-OV/) / [Code](https://github.com/honda-research-institute/Anomaly-OneVision) / [Slides]({{ '/files/talks/CSIG_2025_04_12.pdf' | url }})
 
 ### Bridging Compressed Image Latents and Multimodal Large Language Models
 
@@ -115,7 +115,7 @@ Chia-Hao Kao, Cheng Chien, Yu-Jen Tseng, Yi-Hsin Chen, Alessandro Gnutti, **Shao
 
 *International Conference on Learning Representations (**ICLR**)*, 2025
 
-[Paper](https://arxiv.org/pdf/2407.19651) / [arXiv](https://arxiv.org/abs/2407.19651) / [Project](https://nycu-mapl.github.io/BridgingCompressionMLLM_page/) / [Code](https://github.com/NYCU-MAPL/BridgingCompressionMLLM) / [Poster]({{ '/papers/ComNeck_poster.pdf' | url }})
+[Paper](https://arxiv.org/pdf/2407.19651) / [arXiv](https://arxiv.org/abs/2407.19651) / [Project](https://nycu-mapl.github.io/BridgingCompressionMLLM_page/) / [Code](https://github.com/NYCU-MAPL/BridgingCompressionMLLM) / [Poster]({{ '/files/papers/ComNeck_poster.pdf' | url }})
 
 ### StimuVAR: Spatiotemporal Stimuli-aware Video Affective Reasoning with Multimodal Large Language Models
 
@@ -191,7 +191,7 @@ Shaoyan Pan, **Shao-Yuan Lo**, Chih-Wei Chang, Ella Salari, Tonghe Wang, Justin 
 
 *IEEE International Conference on Advanced Video and Signal-based Surveillance (**AVSS**)*, 2024 · **Oral**
 
-[Paper](https://arxiv.org/pdf/2405.11708) / [arXiv](https://arxiv.org/abs/2405.11708) / [Slides]({{ '/papers/ABNN.pdf' | url }}) / [Poster]({{ '/papers/ABNN_poster.pdf' | url }})
+[Paper](https://arxiv.org/pdf/2405.11708) / [arXiv](https://arxiv.org/abs/2405.11708) / [Slides]({{ '/files/papers/ABNN.pdf' | url }}) / [Poster]({{ '/files/papers/ABNN_poster.pdf' | url }})
 
 ---
 
@@ -203,7 +203,7 @@ Shaoyan Pan, **Shao-Yuan Lo**, Chih-Wei Chang, Ella Salari, Tonghe Wang, Justin 
 
 *IEEE/CVF Conference on Computer Vision and Pattern Recognition (**CVPR**)*, 2023
 
-[Paper](https://openaccess.thecvf.com/content/CVPR2023/papers/Lo_Spatio-Temporal_Pixel-Level_Contrastive_Learning-Based_Source-Free_Domain_Adaptation_for_Video_Semantic_CVPR_2023_paper.pdf) / [arXiv](https://arxiv.org/abs/2303.14361) / [Slides]({{ '/papers/STPL.pdf' | url }}) / [Poster]({{ '/papers/STPL_poster.pdf' | url }})
+[Paper](https://openaccess.thecvf.com/content/CVPR2023/papers/Lo_Spatio-Temporal_Pixel-Level_Contrastive_Learning-Based_Source-Free_Domain_Adaptation_for_Video_Semantic_CVPR_2023_paper.pdf) / [arXiv](https://arxiv.org/abs/2303.14361) / [Slides]({{ '/files/papers/STPL.pdf' | url }}) / [Poster]({{ '/files/papers/STPL_poster.pdf' | url }})
 
 ### Deep Learning-based Multi-Organ CT Segmentation with Adversarial Data Augmentation
 
@@ -223,7 +223,7 @@ Shaoyan Pan, **Shao-Yuan Lo**, Min Huang, Chaoqiong Ma, Jacob Wynne, Tonghe Wang
 
 *IEEE Transactions on Pattern Analysis and Machine Intelligence (**T-PAMI**)*, 2022 · **Featured in IEEE CTSoc News on Consumer Technology, April 2024**
 
-[Paper](https://arxiv.org/pdf/2108.11168) / [arXiv](https://arxiv.org/abs/2108.11168) / [Slides]({{ '/papers/PrincipaLS.pdf' | url }}) / [IEEE CTSoc News](https://ctsoc.ieee.org/images/CTSOC-NCT-2024-04.pdf)
+[Paper](https://arxiv.org/pdf/2108.11168) / [arXiv](https://arxiv.org/abs/2108.11168) / [Slides]({{ '/files/papers/PrincipaLS.pdf' | url }}) / [IEEE CTSoc News](https://ctsoc.ieee.org/images/CTSOC-NCT-2024-04.pdf)
 
 ### Learning Feature Decomposition for Domain Adaptive Monocular Depth Estimation
 
@@ -239,7 +239,7 @@ Shaoyan Pan, **Shao-Yuan Lo**, Min Huang, Chaoqiong Ma, Jacob Wynne, Tonghe Wang
 
 *Asian Conference on Computer Vision (**ACCV**)*, 2022
 
-[Paper](https://openaccess.thecvf.com/content/ACCV2022/papers/Lo_Exploring_Adversarially_Robust_Training_for_Unsupervised_Domain_Adaptation_ACCV_2022_paper.pdf) / [arXiv](https://arxiv.org/abs/2202.09300) / [Slides]({{ '/papers/ARTUDA.pdf' | url }})
+[Paper](https://openaccess.thecvf.com/content/ACCV2022/papers/Lo_Exploring_Adversarially_Robust_Training_for_Unsupervised_Domain_Adaptation_ACCV_2022_paper.pdf) / [arXiv](https://arxiv.org/abs/2202.09300) / [Slides]({{ '/files/papers/ARTUDA.pdf' | url }})
 
 ---
 
@@ -251,7 +251,7 @@ Shaoyan Pan, **Shao-Yuan Lo**, Min Huang, Chaoqiong Ma, Jacob Wynne, Tonghe Wang
 
 *IEEE Transactions on Image Processing (**T-IP**)*, 2021 · **Journal presentation at ICIP 2022**
 
-[Paper](https://arxiv.org/pdf/2009.05244) / [arXiv](https://arxiv.org/abs/2009.05244) / [Slides]({{ '/papers/MultiBN.pdf' | url }})
+[Paper](https://arxiv.org/pdf/2009.05244) / [arXiv](https://arxiv.org/abs/2009.05244) / [Slides]({{ '/files/papers/MultiBN.pdf' | url }})
 
 ### Error Diffusion Halftoning Against Adversarial Examples
 
@@ -259,7 +259,7 @@ Shaoyan Pan, **Shao-Yuan Lo**, Min Huang, Chaoqiong Ma, Jacob Wynne, Tonghe Wang
 
 *IEEE International Conference on Image Processing (**ICIP**)*, 2021
 
-[Paper](https://arxiv.org/pdf/2101.09451) / [arXiv](https://arxiv.org/abs/2101.09451) / [Slides]({{ '/papers/Halftone.pdf' | url }})
+[Paper](https://arxiv.org/pdf/2101.09451) / [arXiv](https://arxiv.org/abs/2101.09451) / [Slides]({{ '/files/papers/Halftone.pdf' | url }})
 
 ### Overcomplete Representations Against Adversarial Videos
 
@@ -267,7 +267,7 @@ Shaoyan Pan, **Shao-Yuan Lo**, Min Huang, Chaoqiong Ma, Jacob Wynne, Tonghe Wang
 
 *IEEE International Conference on Image Processing (**ICIP**)*, 2021
 
-[Paper](https://arxiv.org/pdf/2012.04262) / [arXiv](https://arxiv.org/abs/2012.04262) / [Slides]({{ '/papers/OUDefend.pdf' | url }})
+[Paper](https://arxiv.org/pdf/2012.04262) / [arXiv](https://arxiv.org/abs/2012.04262) / [Slides]({{ '/files/papers/OUDefend.pdf' | url }})
 
 ### MultAV: Multiplicative Adversarial Videos
 
@@ -275,7 +275,7 @@ Shaoyan Pan, **Shao-Yuan Lo**, Min Huang, Chaoqiong Ma, Jacob Wynne, Tonghe Wang
 
 *IEEE International Conference on Advanced Video and Signal-based Surveillance (**AVSS**)*, 2021
 
-[Paper](https://arxiv.org/pdf/2009.08058) / [arXiv](https://arxiv.org/abs/2009.08058) / [Slides]({{ '/papers/MultAV.pdf' | url }})
+[Paper](https://arxiv.org/pdf/2009.08058) / [arXiv](https://arxiv.org/abs/2009.08058) / [Slides]({{ '/files/papers/MultAV.pdf' | url }})
 
 ---
 
@@ -287,7 +287,7 @@ Shaoyan Pan, **Shao-Yuan Lo**, Min Huang, Chaoqiong Ma, Jacob Wynne, Tonghe Wang
 
 *ACM International Conference on Multimedia in Asia (**ACM MM Asia**)*, 2019 · **Best Paper Award**
 
-[Paper](https://arxiv.org/pdf/1809.06323) / [arXiv](https://arxiv.org/abs/1809.06323) / [Project](https://github.com/shaoyuanlo/EDANet) / [Slides]({{ '/papers/EDANet.pdf' | url }})
+[Paper](https://arxiv.org/pdf/1809.06323) / [arXiv](https://arxiv.org/abs/1809.06323) / [Project](https://github.com/shaoyuanlo/EDANet) / [Slides]({{ '/files/papers/EDANet.pdf' | url }})
 
 ### Exploring Semantic Segmentation on the DCT Representation
 
@@ -295,7 +295,7 @@ Shaoyan Pan, **Shao-Yuan Lo**, Min Huang, Chaoqiong Ma, Jacob Wynne, Tonghe Wang
 
 *ACM International Conference on Multimedia in Asia (**ACM MM Asia**)*, 2019 · **Oral**
 
-[Paper](https://arxiv.org/pdf/1907.10015) / [arXiv](https://arxiv.org/abs/1907.10015) / [Slides]({{ '/papers/DCT.pdf' | url }})
+[Paper](https://arxiv.org/pdf/1907.10015) / [arXiv](https://arxiv.org/abs/1907.10015) / [Slides]({{ '/files/papers/DCT.pdf' | url }})
 
 ### Multi-Class Lane Semantic Segmentation using Efficient Convolutional Networks
 
@@ -303,7 +303,7 @@ Shaoyan Pan, **Shao-Yuan Lo**, Min Huang, Chaoqiong Ma, Jacob Wynne, Tonghe Wang
 
 *IEEE International Workshop on Multimedia Signal Processing (**MMSP**)*, 2019
 
-[Paper](https://arxiv.org/pdf/1907.09438) / [arXiv](https://arxiv.org/abs/1907.09438) / [Slides]({{ '/papers/MultiClass.pdf' | url }})
+[Paper](https://arxiv.org/pdf/1907.09438) / [arXiv](https://arxiv.org/abs/1907.09438) / [Slides]({{ '/files/papers/MultiClass.pdf' | url }})
 
 ### Incorporating Luminance, Depth and Color Information by a Fusion-based Network for Semantic Segmentation
 
@@ -311,7 +311,7 @@ Shang-Wei Hung, **Shao-Yuan Lo**, Hsueh-Ming Hang
 
 *IEEE International Conference on Image Processing (**ICIP**)*, 2019 · **Oral**
 
-[Paper](https://arxiv.org/pdf/1809.09077) / [arXiv](https://arxiv.org/abs/1809.09077) / [Code](https://github.com/shangweihung/LDFNet) / [Slides]({{ '/papers/LDFNet.pdf' | url }})
+[Paper](https://arxiv.org/pdf/1809.09077) / [arXiv](https://arxiv.org/abs/1809.09077) / [Code](https://github.com/shangweihung/LDFNet) / [Slides]({{ '/files/papers/LDFNet.pdf' | url }})
 
 ---
 
@@ -323,7 +323,7 @@ Ping-Rong Chen\*, **Shao-Yuan Lo**\*, Hsueh-Ming Hang, Sheng-Wei Chan, Jing-Jhih
 
 *IEEE International Conference on Digital Signal Processing (**DSP**)*, 2018
 
-[Paper](https://arxiv.org/pdf/1809.03994) / [arXiv](https://arxiv.org/abs/1809.03994) / [Slides]({{ '/papers/LMD.pdf' | url }})
+[Paper](https://arxiv.org/pdf/1809.03994) / [arXiv](https://arxiv.org/abs/1809.03994) / [Slides]({{ '/files/papers/LMD.pdf' | url }})
 
 ---
 

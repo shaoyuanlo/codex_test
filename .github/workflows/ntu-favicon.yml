@@ -22,7 +22,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add src/assets/ntu-emblem.* src/assets/ntu-emblem-source.json
+          git add files/ntu-emblem.* docs/ntu-emblem-source.json
           if ! git diff --cached --quiet; then
             git commit -m "Add original NTU favicon from the university website"
             git push origin HEAD:main

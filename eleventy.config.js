@@ -12,10 +12,8 @@ export default function (eleventyConfig) {
     return { ...website, email };
   });
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
-  // Keep existing paper, slide, and file URLs when migrating the old website.
-  for (const directory of ["files", "papers", "talks"]) {
-    if (existsSync(directory)) eleventyConfig.addPassthroughCopy({ [directory]: directory });
-  }
+  // Publish content files separately from site styles and fonts.
+  eleventyConfig.addPassthroughCopy({ "files": "files" });
   if (existsSync("CNAME")) eleventyConfig.addPassthroughCopy("CNAME");
   eleventyConfig.addFilter("year", () => new Date().getUTCFullYear());
   // Keep publication notes editable as · **Oral** in ordinary Markdown.

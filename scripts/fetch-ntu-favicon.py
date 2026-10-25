@@ -47,9 +47,9 @@ for url in dict.fromkeys([*parser.urls, urljoin(HOME, "favicon.ico")]):
             extension = "svg"
         else:
             raise ValueError("Response is not an ICO, PNG, or SVG image")
-        target = Path("src/assets") / f"ntu-emblem.{extension}"
+        target = Path("files") / f"ntu-emblem.{extension}"
         target.write_bytes(data)
-        Path("src/assets/ntu-emblem-source.json").write_text(json.dumps({
+        Path("docs/ntu-emblem-source.json").write_text(json.dumps({
             "institution": "National Taiwan University",
             "source": resolved,
             "file": target.name

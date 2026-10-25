@@ -39,8 +39,8 @@
 | Home、共用個人資料、導覽、News、Honors & Awards、Media Coverage | `src/home.md` |
 | Lab、Publications、Activities、Teaching、Blog | `src/lab.md`、`src/publications.md`、`src/activities.md`、`src/teaching.md`、`src/blog.md` |
 | 全站結構、首頁、一般分頁版型 | `src/_includes/layouts/` 中的 `base.njk`、`home.njk`、`page.njk` |
-| 設計設定、照片、校徽、字型 | `src/assets/` |
-| CV、論文、演講資源 | `files/`、`papers/`、`talks/` |
+| 設計設定、字型 | `src/assets/` |
+| CV、照片、校徽、論文、演講資源 | `files/`（論文及演講資源分置 `files/papers/`、`files/talks/`） |
 | 共用資料讀取與顯示轉換 | `eleventy.config.js` |
 | 建置、檢查與發布 | `scripts/`、`.github/workflows/` |
 
@@ -70,6 +70,7 @@
 - 作者順序、標題、年份、會議、獎項與網址需有來源，不補造學生、職稱、課程或研究成果。使用者要求測試內容時明確標示，不將範例寫成真實經歷。
 - 匯入時核對內容與筆數，避免重複或漏項；來源有疑義時保留依據，不自行猜測更正。新增或更換 PDF 應核對標題與內容，不以投影片代替。
 - `docs/publication-*.json` 與 `docs/preview/` 是查核／預覽歷史，不代表目前內容已驗證。保留歷史圖片，不在 README 重新嵌入或連結圖片作為目前預覽。
+- `files/` 專屬網站內容檔案；CSS、字型、建置腳本與查核紀錄維持各自目錄，不混放於 `files/`。
 - 已發布檔案或識別改名時，檢查版型、導覽、front matter、CSS、站內連結、腳本與文件，移除失效依賴。無關修改保留現有照片與台大校徽。
 
 ## 建置、預覽與正式發布
