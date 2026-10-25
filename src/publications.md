@@ -222,7 +222,7 @@ Shaoyan Pan, **Shao-Yuan Lo**, Min Huang, Chaoqiong Ma, Jacob Wynne, Tonghe Wang
 **Shao-Yuan Lo**, Poojan Oza, Vishal M. Patel
 
 *IEEE Transactions on Pattern Analysis and Machine Intelligence (**T-PAMI**)*, 2022<br>
-· **Featured in IEEE CTSoc News on Consumer Technology, April 2024**
+**Featured in IEEE CTSoc News on Consumer Technology, April 2024**
 
 [Paper](https://arxiv.org/pdf/2108.11168) / [arXiv](https://arxiv.org/abs/2108.11168) / [Slides]({{ '/files/papers/PrincipaLS.pdf' | url }}) / [IEEE CTSoc News](https://ctsoc.ieee.org/images/CTSOC-NCT-2024-04.pdf)
 
