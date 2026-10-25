@@ -1,0 +1,20 @@
+<section class="lab-gallery" data-gallery aria-label="Lab photos">
+  <button class="gallery-control" type="button" data-gallery-previous aria-label="Previous photos" aria-controls="lab-photo-track" hidden><span aria-hidden="true">‹</span></button>
+  <div class="gallery-track" id="lab-photo-track" tabindex="0" aria-label="Photos: use arrow keys or swipe to browse">
+    {% for photo in photos %}
+    <figure class="gallery-item">
+      <a href="{{ photo.src | url }}" data-gallery-photo aria-label="Enlarge photo: {{ photo.alt | escape }}">
+        <img src="{{ photo.src | url }}" alt="{{ photo.alt | escape }}" width="240" height="180" loading="lazy" draggable="false">
+      </a>
+      {% if photo.caption %}<figcaption>{{ photo.caption | escape }}</figcaption>{% endif %}
+    </figure>
+    {% endfor %}
+  </div>
+  <button class="gallery-control" type="button" data-gallery-next aria-label="Next photos" aria-controls="lab-photo-track" hidden><span aria-hidden="true">›</span></button>
+  <dialog class="gallery-dialog" aria-label="Enlarged photo">
+    <button class="button gallery-close" type="button" data-gallery-close aria-label="Close enlarged photo">Close <span aria-hidden="true">×</span></button>
+    <img data-gallery-full alt="">
+    <p class="gallery-caption" data-gallery-caption></p>
+  </dialog>
+</section>
+<script src="{{ '/assets/gallery.js' | url }}" defer></script>

@@ -19,7 +19,7 @@
 
 - 目標是簡潔專業、手機閱讀良好，並方便使用者長期自行手動維護。
 - **變數與選項盡量精簡、統一管理；優先共用及繼承，不為每個數字、頁面或元件新增選項。** 新樣式先用既有變數；確有用途才增加例外，同步清理失效或未使用的設定。
-- 維持 Eleventy、Markdown、Nunjucks 與原生 CSS。一般內容編輯不導入 CMS、前端框架、額外依賴或客戶端 JavaScript；原生 HTML 能完成的互動優先使用原生功能。
+- 維持 Eleventy、Markdown、Nunjucks 與原生 CSS。一般內容編輯不導入 CMS、前端框架或額外依賴；原生 HTML 能完成的互動優先使用原生功能。Lab 相片集依使用者要求，僅在該頁以原生 JavaScript 提供滾輪、拖曳與原生 dialog 放大，不擴及其他頁面或改寫 News。
 - 內容在 Markdown、結構在共用版型、外觀在 CSS；建置時必要的顯示轉換集中在既有設定，不把資料與樣式散落到多個檔案。
 - 維持既有精簡色盤：白色頁面背景、黑色一般文字、主藍及白色導覽文字，淺藍共用於提示框／程式碼／邊框，論文標記沿用既有強調色。不重新區分主要／次要灰字，不新增瀏覽器 `theme-color`。
 - 全站共用 Inter／Noto Sans TC 與系統備援，字級引用既有五個選項，字重只用 400／600；Markdown 粗體沿用 600。字距、單字間距用 `normal`，不新增相關選項。
@@ -51,6 +51,7 @@
 - Front matter 先放運作欄位（layout、section、permalink 等），再放 title、intro 與內容資料。正文從 H2 開始；不重新加入 eyebrow、description 或首頁 tagline 欄位及其相關顯示設定。
 - 全站資料只在首頁 `website:` 維護，不重新建立 `site.json`。職稱使用 roles 清單，每組有 role 與一到多個 affiliations，各自成行。
 - Email、CV 與社群連結統一由 social 清單維護；其他聯絡文字沿用第一個 mailto 連結的信箱，不另外複製地址。內部檔案路徑支援根網址、子路徑及預覽。
+- Lab 相片與可選說明集中在 `src/lab.md` 的 `photos` 清單，檔案在 `files/lab_photos/`；維持滑鼠、鍵盤與手機操作，以及停用 JavaScript 時的原生捲動與圖片連結。保留使用者照片，測試下載圖明確標示 Demo，來源紀錄放在 `docs/`。
 - Blog 直接使用一般 page 版型與 Markdown；不新增自動文章集合、列表、日期排序、草稿旗標、獨立文章版型或 Blog 專用外觀。
 
 ### News 與共用日期清單
@@ -80,7 +81,7 @@
 - `main` 是來源，`site-preview` 是 Actions 產物；不手動編輯產物分支、不從它開發、不合併回 main。兩分支提交數不同不代表需同步合併。
 - `node_modules/`、`_site/`、`_preview/`、`artifacts/` 是依賴或產物，不編輯、不提交。
 - 固定入口為 `https://raw.githack.com/shaoyuanlo/codex_test/site-preview/index.html`，持續更新；固定版導覽指向固定路徑。
-- 快速版使用 `revisions/<來源提交前綴>/`，頁面、導覽與圖片指向同一版本；只保留當次版本。預覽內嵌 CSS、字型共用固定路徑；一般建置仍使用外部 CSS。
+- 快速版使用 `revisions/<來源提交前綴>/`，頁面、導覽與圖片指向同一版本；只保留當次版本。預覽內嵌 CSS 與 Lab 相片集腳本、字型共用固定路徑；一般建置仍使用外部 CSS。
 - 沿用發布後官方 purge、限流重試及版本核對流程；不要將清除快取成功、首頁 200 或檔案已發布等同於整體檢查成功。
 - 從 preview.json 取得實際 stableUrl、url、sourceCommit；核對同版本 preview-health.json 的個別結果。固定首頁 currentVersion 為 true 才能宣稱固定入口已更新；整體通過需對應 passed 為 true。
 - 代理可能限流或快取舊內容。準確說明已驗證與未確認的範圍，提供已驗證入口；不能保證舊網址、第三方快取或歷史立即消失。

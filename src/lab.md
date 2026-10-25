@@ -4,6 +4,22 @@ section: lab
 permalink: /lab/index.html
 title: Trai Lab
 intro: A space for curious minds and thoughtful collaboration.
+photos:
+  - src: /files/lab_photos/image_2F33A832.jpeg
+    alt: Group photo in an indoor gathering space
+    caption: Add a caption for this group photo.
+  - src: /files/lab_photos/demo-blueberries.jpg
+    alt: Blueberries
+    caption: "Demo photo: blueberries. Replace with a lab photo and caption."
+  - src: /files/lab_photos/demo-larch.jpg
+    alt: A larch tree
+    caption: "Demo photo: larch. Replace with a lab photo and caption."
+  - src: /files/lab_photos/demo-urban-bear.jpg
+    alt: A bear in an urban setting
+    caption: "Demo photo: an urban bear. Replace with a lab photo and caption."
+  - src: /files/lab_photos/demo-wild-bear.jpg
+    alt: A bear in the wild
+    caption: "Demo photo: a wild bear. Replace with a lab photo and caption."
 ---
 ## Our research
 

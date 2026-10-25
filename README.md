@@ -1,6 +1,6 @@
 # Shao-Yuan Lo · 學術個人網站
 
-以英文為主、簡潔專業、手機閱讀良好，並方便長期自行手動更新的學術網站。採用 Eleventy、Markdown、Nunjucks 與原生 CSS；沒有 CMS、資料庫、前端框架或客戶端 JavaScript。
+以英文為主、簡潔專業、手機閱讀良好，並方便長期自行手動更新的學術網站。採用 Eleventy、Markdown、Nunjucks 與原生 CSS；沒有 CMS、資料庫或前端框架；只有 Lab 相片集載入少量原生 JavaScript，其他互動沿用原生 HTML／CSS。
 
 目前開發與代理預覽位於 `shaoyuanlo/codex_test`。正式網站為 https://shaoyuanlo.github.io/ ，對應另一個儲存庫 `shaoyuanlo/shaoyuanlo.github.io`；本專案尚未取代原網站。
 
@@ -110,6 +110,23 @@ website:
 Email、CV、Google Scholar 等都由 `social` 清單控制，依清單順序顯示。`label` 是文字，`url` 是網址；內部檔案寫 `/files/...`，版型會自動處理路徑。其他頁面的聯絡信箱取自第一個 `mailto:` 連結，因此修改信箱只需改這一處，並保留此連結供聯絡文字使用。
 
 `navigation` 中的 `label` 是選單文字；`url`、`key` 分別對應頁面路徑與 `section`，更改頁面識別時需一起核對。
+
+### Lab 相片集
+
+Lab 頁面最上方的相片集在 `src/lab.md` 的 `photos:` 清單維護，每張照片只需填檔案路徑、替代文字及可選的說明：
+
+```yaml
+photos:
+  - src: /files/lab_photos/your-photo.jpg
+    alt: A short description of the photo
+    caption: A caption you can edit or leave empty.
+```
+
+新增、刪除或移動整組項目即可調整照片與順序；刪除 `caption` 或留空即可不顯示說明，清空或移除 `photos` 則不顯示相片集。圖片放在 `files/lab_photos/`，不把檔案放進 CSS／腳本目錄。現有使用者合照保留原檔，四張下載範例皆標為 Demo；[測試照片來源](docs/lab-photo-sources.md) 保留來源及授權紀錄，範例不是實驗室活動紀錄。
+
+桌機可用兩側按鈕、滾輪、觸控板或滑鼠拖曳瀏覽；手機以手指滑動為主，44px 按鈕置於下方。點擊或以 Enter 開啟照片，可在原生 dialog 放大檢視，使用 Close、Esc 或點擊背景關閉。說明沿用一般內文字型與間距，縮圖保留完整圖片，放大不改原圖。
+
+結構在 `src/_includes/components/gallery.njk`，外觀集中於 CSS 的 `Lab gallery` 區塊，操作在 `src/assets/gallery.js`。此腳本只在有相片集的 Lab 頁載入，代理預覽內嵌同一份腳本以減少請求；沒有 JavaScript 時仍可原生橫向捲動並點開圖片。尊重減少動態效果偏好，不自動播放照片、不新增第三方套件或設定參數。
 
 ### News
 

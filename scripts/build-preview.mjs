@@ -22,6 +22,7 @@ await new Eleventy('src', output).write();
 
 // Keep the page styled even when the proxy throttles separate CSS requests.
 const stylesheet = await readFile('src/assets/style.css', 'utf8');
+const galleryScript = await readFile('src/assets/gallery.js', 'utf8');
 const fontStylesheet = (await readFile('src/assets/fonts/fonts.css', 'utf8'))
   .replaceAll('url(./', `url(${stablePrefix}assets/fonts/`);
 
@@ -34,6 +35,8 @@ async function rewrite(dir) {
       const html = await readFile(filename, 'utf8');
       // A raw-file proxy needs explicit filenames; it cannot resolve /lab/.
       const rewritten = html
+        .replace(`<script src="${prefix}assets/gallery.js" defer></script>`,
+          `<script data-preview-script="gallery">${galleryScript}</script>`)
         .replace(`<link rel="stylesheet" href="${prefix}assets/style.css">`,
           `<style data-preview-style="site">${stylesheet}</style>`)
         .replace(`<link rel="stylesheet" href="${prefix}assets/fonts/fonts.css">`,
