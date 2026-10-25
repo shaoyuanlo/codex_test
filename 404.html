@@ -1369,10 +1369,11 @@ nav a[aria-current] { font-weight: 600; }
   .portrait { grid-column: 2; grid-row: 1 / 3; }
   .hero-actions { grid-column: 1 / -1; }
 }
-/* Sponsors: compact layout with individually balanced logo widths and regular captions. */
-.sponsors { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 160px), 1fr)); gap: var(--space-md); margin-bottom: var(--space-md); }
-.sponsors figure { display: grid; grid-template-rows: 48px auto; justify-items: center; align-items: center; gap: var(--space-xs); margin: 0; min-width: 0; text-align: center; }
-.sponsors img { height: auto; max-height: 48px; width: auto; object-fit: contain; }
+/* Sponsors: balanced centered rows, fixed-width items and individually sized logos. */
+.sponsors { display: grid; gap: var(--space-md); margin: 0 auto var(--space-md); }
+.sponsor-row { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-md); }
+.sponsors figure { width: 160px; flex: 0 0 160px; display: grid; grid-template-rows: 48px auto; justify-items: center; align-items: center; gap: var(--space-xs); margin: 0; min-width: 0; text-align: center; }
+.sponsors img { max-width: 100%; height: auto; max-height: 48px; width: auto; object-fit: contain; }
 .sponsors img[src$="/moe.webp"] { width: 48px; }
 .sponsors img[src$="/nstc.webp"] { width: 152px; }
 .sponsors img[src$="/ntuh.webp"] { width: 88px; }
@@ -1380,6 +1381,10 @@ nav a[aria-current] { font-weight: 600; }
 .sponsors img[src$="/delta.webp"] { width: 112px; }
 .sponsors img[src$="/itri.webp"] { width: 136px; }
 .sponsors figcaption { white-space: nowrap; }
+@media (max-width: 767px) {
+  .sponsors { display: flex; flex-wrap: wrap; justify-content: center; max-width: calc(320px + var(--space-md)); }
+  .sponsor-row { display: contents; }
+}
 
 /* Shared text-style buttons: bold black text; navy and underlined on hover. */
 .button {
@@ -1440,7 +1445,7 @@ p { margin: 0 0 var(--space-md); }
   .callout { break-inside: avoid; }
 }
 </style>
-  <meta name="preview-source" content="c2d5ed394bd9209b3951a8c2e1635389f6dc0b2c">
+  <meta name="preview-source" content="89d17e0d9264ab0b0ce09d8cd0a8dba0c63750dc">
   <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
