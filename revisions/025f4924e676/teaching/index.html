@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Lab · Shao-Yuan Lo</title>
-  <link rel="canonical" href="https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/0e1d6b285bdd/lab/index.html">
+  <title>Teaching · Shao-Yuan Lo</title>
+  <link rel="canonical" href="https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/025f4924e676/teaching/index.html">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Lab · Shao-Yuan Lo">
-  <meta property="og:url" content="https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/0e1d6b285bdd/lab/index.html">
-  <meta property="og:image" content="https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/0e1d6b285bdd/assets/portrait.jpg">
-  <link rel="icon" type="image/png" sizes="180x180" href="/shaoyuanlo/codex_test/site-preview/revisions/0e1d6b285bdd/assets/ntu-emblem.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/shaoyuanlo/codex_test/site-preview/revisions/0e1d6b285bdd/assets/ntu-emblem.png">
+  <meta property="og:title" content="Teaching · Shao-Yuan Lo">
+  <meta property="og:url" content="https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/025f4924e676/teaching/index.html">
+  <meta property="og:image" content="https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/025f4924e676/assets/portrait.jpg">
+  <link rel="icon" type="image/png" sizes="180x180" href="/shaoyuanlo/codex_test/site-preview/revisions/025f4924e676/assets/ntu-emblem.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/shaoyuanlo/codex_test/site-preview/revisions/025f4924e676/assets/ntu-emblem.png">
   <style data-preview-style="fonts">/* Self-hosted font faces. Original font binaries are unchanged; licenses are alongside each family. */
 
 /* @fontsource-variable/inter@5.3.0 — index.css */
@@ -1314,14 +1314,36 @@ h4, h5, h6 { margin-bottom: var(--space-sm); }
   padding-left: var(--space-2xl);
   padding-right: var(--space-2xl);
 }
-.header-inner { padding-top: 0; padding-bottom: 0; display: flex; align-items: center; justify-content: space-between; gap: var(--space-xl); }
 .site-main { padding-top: 0; padding-bottom: calc(var(--space-xl) * 2); flex: 1; min-width: 0; }
 .footer-inner { padding-top: var(--space-xl); padding-bottom: var(--space-xl); text-align: center; }
 @media (max-width: 767px) {
   .header-inner, .site-main, .footer-inner { padding-left: var(--space-lg); padding-right: var(--space-lg); }
-  .header-inner { display: block; }
   .site-main { padding-bottom: var(--space-2xl); }
   .footer-inner { padding-top: var(--space-lg); padding-bottom: var(--space-lg); }
+}
+
+/* Navigation: desktop layout, link states and mobile horizontal scrolling. */
+html { scroll-padding-top: 110px; }
+.site-header { flex-shrink: 0; }
+.header-inner { padding-top: 0; padding-bottom: 0; display: flex; align-items: center; justify-content: space-between; gap: var(--space-xl); }
+.site-header { position: sticky; top: 0; z-index: 10; background: var(--accent); }
+.site-header a:focus-visible { outline-color: var(--white); }
+.wordmark { font-size: var(--font-size-lg); color: var(--white); white-space: nowrap; text-decoration-line: none; line-height: var(--line-height-compact); }
+nav { display: flex; gap: var(--space-sm) var(--space-md); align-self: stretch; }
+nav a { line-height: var(--line-height-compact); min-height: 48px; display: flex; align-items: center; color: var(--white); text-decoration-line: none; white-space: nowrap; }
+nav a:hover, nav a[aria-current] { text-decoration-line: underline; }
+nav a[aria-current] { font-weight: 600; }
+@media (max-width: 767px) {
+  .header-inner { display: block; }
+  html { scroll-padding-top: 170px; }
+  .wordmark { display: none; }
+  /* Keep navigation on one row; overflow scrolls horizontally. */
+  nav { flex-wrap: nowrap; justify-content: space-between; overflow-x: auto; overflow-y: hidden; }
+  nav a { flex-shrink: 0; }
+  nav a:focus-visible { outline-offset: -2px; }
+}
+@media print {
+  .site-header { display: none; }
 }
 
 /* Homepage profile: layout for names, roles, affiliations, contact links and portrait. */
@@ -1364,10 +1386,13 @@ h4, h5, h6 { margin-bottom: var(--space-sm); }
 .news-more .show-less, .news-more[open] .show-more { display: none; }
 .news-more[open] .show-less { display: inline; }
 
+/* Shared bullet and numbered lists: indentation, outer spacing and item margins. */
+.prose ul, .prose ol { margin: 0 0 var(--space-md); padding-left: var(--space-xl); }
+.prose li { margin: var(--space-sm) 0; }
+
 
 
 * { box-sizing: border-box; }
-html { scroll-padding-top: 110px; }
 body { min-height: 100vh; display: flex; flex-direction: column; margin: 0; background: var(--white); color: var(--black); font-family: var(--font); font-size: var(--font-size-base); font-weight: 400; line-height: var(--line-height-body); -webkit-font-smoothing: antialiased; }
 button, input, select, textarea, pre, code, kbd, samp { font: inherit; }
 small, sub, sup { font-size: inherit; }
@@ -1379,18 +1404,9 @@ img { display: block; max-width: 100%; height: auto; }
 p { margin: 0 0 var(--space-md); }
 .skip-link { position: fixed; left: var(--space-md); top: -100px; padding: var(--space-sm) var(--space-md); z-index: 20; background: var(--white); border: 1px solid var(--accent-light); }
 .skip-link:focus { top: var(--space-sm); }
-.site-header, .site-footer { flex-shrink: 0; }
-.site-header { position: sticky; top: 0; z-index: 10; background: var(--accent); }
-.site-header a:focus-visible { outline-color: var(--white); }
-.wordmark { font-size: var(--font-size-lg); color: var(--white); white-space: nowrap; text-decoration-line: none; line-height: var(--line-height-compact); }
-nav { display: flex; gap: var(--space-sm) var(--space-md); align-self: stretch; }
-nav a { line-height: var(--line-height-compact); min-height: 48px; display: flex; align-items: center; color: var(--white); text-decoration-line: none; white-space: nowrap; }
-nav a:hover, nav a[aria-current] { text-decoration-line: underline; }
-nav a[aria-current] { font-weight: 600; }
+.site-footer { flex-shrink: 0; }
 .site-main:focus { outline: none; }
 .prose { overflow-wrap: break-word; }
-.prose ul, .prose ol { margin: 0 0 var(--space-md); padding-left: var(--space-xl); }
-.prose li { margin: var(--space-sm) 0; }
 .prose blockquote { border-left: 2px solid var(--accent-light); padding-left: var(--space-md); margin: var(--space-xl) 0; }
 .prose pre { margin: 0 0 var(--space-md); background: var(--accent-light); padding: var(--space-md); overflow-x: auto; }
 .prose table { display: block; max-width: 100%; overflow-x: auto; border-collapse: collapse; }
@@ -1403,72 +1419,50 @@ nav a[aria-current] { font-weight: 600; }
 .publication-note { color: var(--highlight); }
 .site-footer { font-size: var(--font-size-sm); }
 .footer-inner p { margin: 0; }
-@media (max-width: 767px) {
-  html { scroll-padding-top: 170px; }
-  .wordmark { display: none; }
-  /* Keep navigation on one row; overflow scrolls horizontally. */
-  nav { flex-wrap: nowrap; justify-content: space-between; overflow-x: auto; overflow-y: hidden; }
-  nav a { flex-shrink: 0; }
-  nav a:focus-visible { outline-offset: -2px; }
-
-}
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; } }
 @media print {
   body { display: block; min-height: 0; }
-  .site-header, .site-footer, .skip-link, .hero-actions { display: none; }
+  .site-footer, .skip-link, .hero-actions { display: none; }
   .site-main { padding: 0; }
   .page-heading, .hero { padding-top: 0; }
   .callout { break-inside: avoid; }
 }
 </style>
-  <meta name="preview-source" content="0e1d6b285bddaa858f37ca2687b3db456473948c">
+  <meta name="preview-source" content="025f4924e676e9067cf49cccc32c0bb7a41fe873">
   <meta name="robots" content="noindex, nofollow">
 </head>
-<body class="page-lab">
+<body class="page-teaching">
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="header-inner">
-      <a class="wordmark" href="/shaoyuanlo/codex_test/site-preview/revisions/0e1d6b285bdd/index.html" aria-label="Shao-Yuan Lo — Home">Shao-Yuan Lo</a>
+      <a class="wordmark" href="/shaoyuanlo/codex_test/site-preview/revisions/025f4924e676/index.html" aria-label="Shao-Yuan Lo — Home">Shao-Yuan Lo</a>
       <nav aria-label="Main navigation">
         
-        <a href="/shaoyuanlo/codex_test/site-preview/revisions/0e1d6b285bdd/index.html">Home</a>
+        <a href="/shaoyuanlo/codex_test/site-preview/revisions/025f4924e676/index.html">Home</a>
         
-        <a href="/shaoyuanlo/codex_test/site-preview/revisions/0e1d6b285bdd/lab/index.html" aria-current="page">Lab</a>
+        <a href="/shaoyuanlo/codex_test/site-preview/revisions/025f4924e676/lab/index.html">Lab</a>
         
-        <a href="/shaoyuanlo/codex_test/site-preview/revisions/0e1d6b285bdd/publications/index.html">Publications</a>
+        <a href="/shaoyuanlo/codex_test/site-preview/revisions/025f4924e676/publications/index.html">Publications</a>
         
-        <a href="/shaoyuanlo/codex_test/site-preview/revisions/0e1d6b285bdd/activities/index.html">Activities</a>
+        <a href="/shaoyuanlo/codex_test/site-preview/revisions/025f4924e676/activities/index.html">Activities</a>
         
-        <a href="/shaoyuanlo/codex_test/site-preview/revisions/0e1d6b285bdd/teaching/index.html">Teaching</a>
+        <a href="/shaoyuanlo/codex_test/site-preview/revisions/025f4924e676/teaching/index.html" aria-current="page">Teaching</a>
         
-        <a href="/shaoyuanlo/codex_test/site-preview/revisions/0e1d6b285bdd/blog/index.html">Blog</a>
+        <a href="/shaoyuanlo/codex_test/site-preview/revisions/025f4924e676/blog/index.html">Blog</a>
         
       </nav>
     </div>
   </header>
   <main id="main" class="site-main" tabindex="-1">
     <header class="page-heading">
-  <h1>Lab</h1>
-  <p class="page-intro">A space for curious minds and thoughtful collaboration.</p>
+  <h1>Teaching</h1>
+  
 </header>
 <div class="prose page-content">
-<h2>Our research</h2>
-<p>We are interested in trustworthy AI, machine learning, and multimodal models. Our work explores how learning systems can become more reliable and how multimodal models can reason about the world.</p>
-<!-- Replace this section with your lab name, mission, and ongoing projects. -->
-<h2>People</h2>
-<p><strong>Principal investigator</strong><br>
-<a href="/shaoyuanlo/codex_test/site-preview/revisions/0e1d6b285bdd/index.html">Shao-Yuan Lo</a> · Assistant Professor, National Taiwan University</p>
-<p><strong>Students &amp; collaborators</strong><br>
-Our group page is taking shape. Member profiles and current projects will be added here.</p>
-<!-- To add a person, copy:
-### Full Name
-Ph.D. student · Research interests
-[Website](https://example.com)
--->
-<aside class="callout">
-<p class="callout-label">Open opportunities</p>
-<p>I welcome inquiries from undergraduate, master's, and Ph.D. students interested in our research. Please <a href="mailto:sylo@csie.ntu.edu.tw">email me</a> with your research interests, résumé, and transcripts.</p>
-</aside>
+<h3>CSIE5412 - Multimodal Artificial Intelligence（多模態人工智慧）</h3>
+<p>Fall 2025 (114-1), Fall 2026 (115-1)</p>
+<h3>CSIE7411 - Generative Artificial Intelligence Safety（生成式人工智慧安全）</h3>
+<p>Spring 2026 (114-2)</p>
 
 </div>
 
