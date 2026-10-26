@@ -1345,7 +1345,7 @@ nav a[aria-current] { font-weight: 600; }
   .site-header { display: none; }
 }
 
-/* Homepage profile: layout for names, roles, affiliations, contact links and portrait. */
+/* Shared Home/Lab profile: names, introduction, roles, contact links and image. */
 .hero { display: grid; grid-template-columns: minmax(0, 1fr) 200px; gap: var(--space-md); align-items: start; }
 .chinese-name { font-size: var(--font-size-xl); display: inline-block; margin-left: var(--space-md); vertical-align: middle; }
 /* Role information: group spacing, paragraph margins and role color. */
@@ -1358,6 +1358,7 @@ nav a[aria-current] { font-weight: 600; }
 /* Portrait: fill the column, keep a 5:6 aspect ratio and preserve original colors. */
 .portrait { margin: var(--space-lg) 0 0; padding: 0; }
 .portrait img { width: 100%; aspect-ratio: 5 / 6; object-fit: cover; }
+.page-lab .portrait img { object-fit: contain; }
 /* Mobile profile: names and roles on the left, portrait spanning both rows, contacts below. */
 @media (max-width: 767px) {
   .hero h1 { grid-column: 1; }
@@ -1371,18 +1372,17 @@ nav a[aria-current] { font-weight: 600; }
 
 /* Lab gallery: horizontal photos, shared captions, controls and a native image dialog. */
 .lab-gallery { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: var(--space-sm); margin: var(--space-lg) 0; }
-.gallery-track { display: flex; gap: var(--space-md); min-width: 0; overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: none; cursor: grab; }
-.gallery-track::-webkit-scrollbar { display: none; }
+.gallery-track { display: flex; gap: var(--space-md); min-width: 0; overflow-x: auto; overscroll-behavior-x: contain; cursor: grab; }
 .gallery-item { flex: 0 0 min(240px, 85%); min-width: 0; margin: 0; }
-.gallery-item a { display: block; }
+.gallery-item a { display: block; overflow: hidden; cursor: zoom-in; }
 .gallery-item img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
 .gallery-item figcaption { margin-top: var(--space-xs); }
 .gallery-track.is-dragging, .gallery-track.is-dragging a { cursor: grabbing; user-select: none; }
-.gallery-control { display: grid; place-items: center; width: 44px; height: 44px; padding: 0; border: 0; background: var(--accent-light); color: var(--black); font-size: var(--font-size-xl); cursor: pointer; }
+.gallery-control { display: grid; place-items: center; width: 44px; height: 44px; padding: 0; border: 0; background: var(--accent-light); color: inherit; font-size: var(--font-size-xl); cursor: pointer; }
 .gallery-control[hidden] { display: none; }
 .lab-gallery:has(.gallery-control[hidden]) { display: block; }
 .gallery-control:hover:enabled { background: var(--accent); color: var(--white); }
-.gallery-control:disabled { opacity: .4; cursor: default; }
+.gallery-control:disabled { cursor: default; }
 .gallery-dialog { width: min(1120px, calc(100% - var(--space-md) * 2)); max-width: none; max-height: calc(100dvh - var(--space-md) * 2); padding: var(--space-md); border: 1px solid var(--accent-light); background: var(--white); color: var(--black); }
 .gallery-dialog::backdrop { background: var(--black); opacity: .8; }
 .gallery-close { display: block; margin: 0 0 var(--space-sm) auto; padding: var(--space-xs); border: 0; background: var(--white); cursor: pointer; }
@@ -1392,8 +1392,16 @@ html:has(.gallery-dialog[open]) { overflow: hidden; scrollbar-gutter: stable; }
 @media (max-width: 767px) {
   .lab-gallery { display: block; }
   .gallery-control { display: none; }
-  .gallery-track { scrollbar-width: auto; }
-  .gallery-track::-webkit-scrollbar { display: block; }
+}
+@media (min-width: 768px) {
+  .gallery-track { scrollbar-width: none; }
+  .gallery-track::-webkit-scrollbar { display: none; }
+  .gallery-item img { transition: transform .2s ease, opacity .2s ease; }
+  .gallery-track:not(.is-dragging) .gallery-item a:hover img,
+  .gallery-item a:focus-visible img { transform: scale(1.03); opacity: .85; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .gallery-item img { transition: none; }
 }
 @media print {
   .lab-gallery { display: block; }
@@ -1494,7 +1502,7 @@ p { margin: 0 0 var(--space-md); }
   .callout { break-inside: avoid; }
 }
 </style>
-  <meta name="preview-source" content="0958ee0f57db7c2a723f25d71a461ffb4a29981b">
+  <meta name="preview-source" content="a6e650d53776a5476603bd67d0cfcaf59985804c">
   <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="page-blog">
@@ -1520,10 +1528,12 @@ p { margin: 0 0 var(--space-md); }
     </div>
   </header>
   <main id="main" class="site-main" tabindex="-1">
-    <header class="page-heading">
+    
+<header class="page-heading">
   <h1>Blog</h1>
   <p class="page-intro">Stay tuned.</p>
 </header>
+
 
 <div class="prose page-content">
 <!-- Edit this page directly in Markdown, just like the other pages. -->
