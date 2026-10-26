@@ -1371,19 +1371,19 @@ nav a[aria-current] { font-weight: 600; }
 }
 
 /* Lab gallery: horizontal photos, shared captions, controls and a native image dialog. */
-.lab-gallery { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: var(--space-sm); margin: var(--space-lg) 0; }
+.lab-gallery { cursor: grab; display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: var(--space-sm); margin: var(--space-lg) 0; }
 .gallery-track { display: flex; gap: var(--space-md); min-width: 0; overflow-x: auto; overscroll-behavior-x: contain; }
 .gallery-item { flex: 0 0 min(240px, 85%); min-width: 0; margin: 0; }
-.gallery-item a { display: block; overflow: hidden; cursor: default; }
+.gallery-item a { display: block; overflow: hidden; cursor: inherit; }
 .gallery-item img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
 .gallery-item figcaption { margin-top: var(--space-xs); }
-.gallery-track.is-dragging { user-select: none; }
+.gallery-track.is-dragging, .gallery-track.is-dragging a { cursor: grabbing; user-select: none; }
 .gallery-control { display: grid; place-items: center; width: 44px; height: 44px; padding: 0; border: 0; background: var(--accent-light); color: inherit; font-size: var(--font-size-xl); cursor: pointer; }
 .gallery-control[hidden] { display: none; }
 .lab-gallery:has(.gallery-control[hidden]) { display: block; }
 .gallery-control:hover:enabled { background: var(--accent); color: var(--white); }
 .gallery-control:disabled { cursor: default; }
-.gallery-dialog { width: min(1120px, calc(100% - var(--space-md) * 2)); max-width: none; max-height: calc(100dvh - var(--space-md) * 2); padding: var(--space-md); border: 1px solid var(--accent-light); background: var(--white); color: var(--black); }
+.gallery-dialog { cursor: auto; width: min(1120px, calc(100% - var(--space-md) * 2)); max-width: none; max-height: calc(100dvh - var(--space-md) * 2); padding: var(--space-md); border: 1px solid var(--accent-light); background: var(--white); color: var(--black); }
 .gallery-dialog::backdrop { background: var(--black); opacity: .8; }
 .gallery-close { display: block; margin: 0 0 var(--space-sm) auto; padding: var(--space-xs); border: 0; background: var(--white); cursor: pointer; }
 .gallery-dialog img { width: auto; height: auto; max-height: calc(100dvh - 160px); margin: 0 auto; object-fit: contain; }
@@ -1510,7 +1510,7 @@ p { margin: 0 0 var(--space-md); }
   .callout { break-inside: avoid; }
 }
 </style>
-  <meta name="preview-source" content="ec4f824625eb6e2f8dad000cb85fba9a5add3fcc">
+  <meta name="preview-source" content="5da016e7221c619acf621731b2b6bdce17fb44a1">
   <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="page-activities">
