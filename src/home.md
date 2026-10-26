@@ -3,9 +3,11 @@ layout: layouts/home.njk
 section: home
 permalink: /index.html
 title: Home
-website:
+profile:
   name: Shao-Yuan Lo
   nameChinese: 羅紹元
+  image: /files/portrait.jpg
+  imageAlt: Portrait of Shao-Yuan Lo
   roles:
   - role: Assistant Professor
     affiliations:
@@ -25,6 +27,7 @@ website:
     url: https://www.linkedin.com/in/shaoyuanlo/
   - label: X / Twitter
     url: https://x.com/shaoyuanlo
+website:
   navigation:
   - label: Home
     url: /

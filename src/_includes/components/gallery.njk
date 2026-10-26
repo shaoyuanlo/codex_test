@@ -11,6 +11,7 @@
     {% endfor %}
   </div>
   <button class="gallery-control" type="button" data-gallery-next aria-label="Next photos" aria-controls="lab-photo-track" hidden><span aria-hidden="true">›</span></button>
+  <input class="gallery-scrollbar" data-gallery-scrollbar type="range" min="0" max="100" step="1" value="0" aria-label="Photo scroll position" hidden>
   <dialog class="gallery-dialog" aria-label="Enlarged photo">
     <button class="button gallery-close" type="button" data-gallery-close aria-label="Close enlarged photo">Close <span aria-hidden="true">×</span></button>
     <img data-gallery-full alt="">

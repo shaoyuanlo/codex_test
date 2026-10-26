@@ -1,7 +1,6 @@
 ---
 layout: layouts/base.njk
 ---
-{% set profile = site %}
 {% include "components/profile.njk" %}
 <div class="home-content prose">
   {{ content | datedLists | newsTabs | balancedSponsors | safe }}

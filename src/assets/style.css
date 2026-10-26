@@ -53,7 +53,7 @@
   }
 }
 /* Shared rectangular corners. */
-a:focus-visible, .button:focus-visible, .news-switch input:focus-visible + label, .news-all:focus-visible, .gallery-control, .gallery-track:focus-visible, .gallery-dialog, .skip-link, .portrait img, .prose pre, .callout { border-radius: 6px; }
+a:focus-visible, .button:focus-visible, .news-switch input:focus-visible + label, .news-all:focus-visible, .gallery-control, .gallery-scrollbar, .gallery-track:focus-visible, .gallery-dialog, .skip-link, .portrait img, .prose pre, .callout { border-radius: 6px; }
 
 /* Shared headings: H1–H6 size, weight, line height and margins. */
 h1, h2, h3, h4, h5, h6 { font-size: var(--font-size-base); font-weight: 400; margin: var(--space-lg) 0 var(--space-md); line-height: var(--line-height-compact); }
@@ -137,12 +137,12 @@ nav a[aria-current] { font-weight: 600; }
 
 /* Lab gallery: horizontal photos, shared captions, controls and a native image dialog. */
 .lab-gallery { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: var(--space-sm); margin: var(--space-lg) 0; }
-.gallery-track { display: flex; gap: var(--space-md); min-width: 0; overflow-x: auto; overscroll-behavior-x: contain; cursor: grab; }
+.gallery-track { display: flex; gap: var(--space-md); min-width: 0; overflow-x: auto; overscroll-behavior-x: contain; }
 .gallery-item { flex: 0 0 min(240px, 85%); min-width: 0; margin: 0; }
-.gallery-item a { display: block; overflow: hidden; cursor: zoom-in; }
+.gallery-item a { display: block; overflow: hidden; cursor: default; }
 .gallery-item img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
 .gallery-item figcaption { margin-top: var(--space-xs); }
-.gallery-track.is-dragging, .gallery-track.is-dragging a { cursor: grabbing; user-select: none; }
+.gallery-track.is-dragging { user-select: none; }
 .gallery-control { display: grid; place-items: center; width: 44px; height: 44px; padding: 0; border: 0; background: var(--accent-light); color: inherit; font-size: var(--font-size-xl); cursor: pointer; }
 .gallery-control[hidden] { display: none; }
 .lab-gallery:has(.gallery-control[hidden]) { display: block; }
@@ -154,9 +154,17 @@ nav a[aria-current] { font-weight: 600; }
 .gallery-dialog img { width: auto; height: auto; max-height: calc(100dvh - 160px); margin: 0 auto; object-fit: contain; }
 .gallery-caption { margin: var(--space-sm) 0 0; text-align: center; }
 html:has(.gallery-dialog[open]) { overflow: hidden; scrollbar-gutter: stable; }
+.gallery-scrollbar { display: none; width: 100%; height: 24px; padding: 0; margin: var(--space-xs) 0 0; border: 0; appearance: none; background: transparent; }
+.gallery-scrollbar::-webkit-slider-runnable-track { height: var(--space-xs); border-radius: inherit; background: var(--accent-light); }
+.gallery-scrollbar::-webkit-slider-thumb { appearance: none; width: 44px; height: var(--space-sm); margin-top: calc((var(--space-xs) - var(--space-sm)) / 2); border-radius: inherit; background: var(--accent); }
+.gallery-scrollbar::-moz-range-track { height: var(--space-xs); border-radius: inherit; background: var(--accent-light); }
+.gallery-scrollbar::-moz-range-thumb { width: 44px; height: var(--space-sm); border: 0; border-radius: inherit; background: var(--accent); }
 @media (max-width: 767px) {
   .lab-gallery { display: block; }
   .gallery-control { display: none; }
+  .gallery-scrollbar:not([hidden]) { display: block; }
+  .lab-gallery:has(.gallery-scrollbar:not([hidden])) .gallery-track { scrollbar-width: none; }
+  .lab-gallery:has(.gallery-scrollbar:not([hidden])) .gallery-track::-webkit-scrollbar { display: none; }
 }
 @media (min-width: 768px) {
   .gallery-track { scrollbar-width: none; }
@@ -171,7 +179,7 @@ html:has(.gallery-dialog[open]) { overflow: hidden; scrollbar-gutter: stable; }
 @media print {
   .lab-gallery { display: block; }
   .gallery-track { overflow: visible; flex-wrap: wrap; }
-  .gallery-control, .gallery-dialog { display: none; }
+  .gallery-control, .gallery-dialog, .gallery-scrollbar { display: none; }
 }
 
 /* Shared text-style buttons: bold black text; navy and underlined on hover. */
@@ -240,7 +248,7 @@ small, sub, sup { font-size: inherit; }
 strong, b, th { font-weight: 600; }
 ::selection { background: var(--selection-bg); color: var(--black); }
 a { color: var(--accent); text-underline-offset: 4px; text-decoration-thickness: 1px; }
-a:focus-visible, .button:focus-visible, .news-switch input:focus-visible + label, .news-all:focus-visible, .gallery-control:focus-visible, .gallery-track:focus-visible { outline: 2px solid var(--accent); outline-offset: var(--space-sm); }
+a:focus-visible, .button:focus-visible, .news-switch input:focus-visible + label, .news-all:focus-visible, .gallery-control:focus-visible, .gallery-track:focus-visible, .gallery-scrollbar:focus-visible { outline: 2px solid var(--accent); outline-offset: var(--space-sm); }
 img { display: block; max-width: 100%; height: auto; }
 p { margin: 0 0 var(--space-md); }
 .skip-link { position: fixed; left: var(--space-md); top: -100px; padding: var(--space-sm) var(--space-md); z-index: 20; background: var(--white); border: 1px solid var(--accent-light); }

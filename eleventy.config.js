@@ -6,10 +6,10 @@ export default function (eleventyConfig) {
   // Share the homepage front matter across all pages; read again on each build.
   eleventyConfig.addGlobalData("site", async () => {
     const source = await readFile(new URL("./src/home.md", import.meta.url), "utf8");
-    const website = matter(source).data.website;
+    const { website, profile } = matter(source).data;
     // Reuse the social Email address in contact links elsewhere on the site.
-    const email = website.social.find(link => link.url.startsWith("mailto:"))?.url.slice(7);
-    return { ...website, email };
+    const email = profile.social.find(link => link.url.startsWith("mailto:"))?.url.slice(7);
+    return { ...website, profile, email };
   });
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
   // Publish content files separately from site styles and fonts.

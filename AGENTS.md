@@ -49,9 +49,9 @@
 - 六個選單是獨立頁面，順序為 Home、Lab、Publications、Activities、Teaching、Blog；Home 來源為 `home.md`、網址為 `/`。導覽列桌機顯示姓名與選單，不在姓名後額外加句點；手機隱藏導覽列姓名，選單維持單列，放不下時左右捲動，不改成多列；保留可見鍵盤焦點及各項目可達性。導覽列容器不設最低高度、上下內距為 0，由選單項目與原生捲動區自然決定高度。保留 `publications` 在檔名、section、導覽 key、CSS 與網址的一致性；舊 `/publication/` 僅保留於失效路徑的檢查與說明。
 - 網頁文字使用英文半形括號 `()`，左括號前保留一個空格，例如 `NTUH (臺大醫院)`；不修改 Markdown 連結語法或網址內的括號。
 - Front matter 先放運作欄位（layout、section、permalink 等），再放 title、intro 與內容資料。正文從 H2 開始；不重新加入 eyebrow、description 或首頁 tagline 欄位及其相關顯示設定。
-- 全站資料只在首頁 `website:` 維護，不重新建立 `site.json`。職稱使用 roles 清單，每組有 role 與一到多個 affiliations，各自成行。
+- Home 與 Lab 的頁首內容統一在各自的 `profile:` 維護；首頁 `website:` 只保留導覽等全站設定，`site.profile` 讀取首頁 profile 作為全站姓名、頁尾及 metadata 的唯一來源，不重新建立 `site.json`。職稱使用 roles 清單，每組有 role 與一到多個 affiliations，各自成行。
 - Email、CV 與社群連結統一由 social 清單維護；其他聯絡文字沿用第一個 mailto 連結的信箱，不另外複製地址。內部檔案路徑支援根網址、子路徑及預覽。
-- Lab 頁首與首頁共用 profile 元件及 `.hero` 設定，Lab 的圖片在 `src/lab.md` 的 `profile` 編輯，首頁仍沿用 `website`。相片集放在介紹區塊下方；桌機隱藏捲軸、按鈕與一次滾輪手勢平滑移動一張，手機隱藏按鈕並保留與導覽列相同的原生捲軸及滑動；桌機游標位於整個相片集時，滾輪不得帶動全頁（包括兩端）；縮圖等大裁切，放大顯示完整原圖。相片與可選說明集中在 `src/lab.md` 的 `photos` 清單，檔案在 `files/lab_photos/`；維持滑鼠、鍵盤與手機操作，以及停用 JavaScript 時的原生捲動與圖片連結。保留使用者照片，測試下載圖明確標示 Demo，來源紀錄放在 `docs/`。
+- Lab 頁首與首頁共用 profile 元件及 `.hero` 設定，兩頁的名稱、簡介、圖片等皆在各自的 `profile` 編輯，不保留根層的 Lab 名稱／簡介作為另一套頁首欄位。相片集放在介紹區塊下方；桌機隱藏捲軸、按鈕與一次滾輪手勢平滑移動一張，手機隱藏按鈕、使用常駐捲動條並保留原生滑動，照片滑動與捲動條拖曳須同步；滑入與拖曳照片時維持一般箭頭游標；桌機游標位於整個相片集時，滾輪不得帶動全頁（包括兩端）；縮圖等大裁切，放大顯示完整原圖。相片與可選說明集中在 `src/lab.md` 的 `photos` 清單，檔案在 `files/lab_photos/`；維持滑鼠、鍵盤與手機操作，以及停用 JavaScript 時的原生捲動與圖片連結。保留使用者照片，測試下載圖明確標示 Demo，來源紀錄放在 `docs/`。
 - Blog 直接使用一般 page 版型與 Markdown；不新增自動文章集合、列表、日期排序、草稿旗標、獨立文章版型或 Blog 專用外觀。
 
 ### News 與共用日期清單

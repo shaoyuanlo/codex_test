@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{% if section != 'home' %}{{ title }} · {% endif %}{{ site.name }}</title>
+  <title>{% if section != 'home' %}{{ title or profile.name }} · {% endif %}{{ site.profile.name }}</title>
   <link rel="canonical" href="{{ siteOrigin }}{{ page.url | url }}">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="{{ title }} · {{ site.name }}">
+  <meta property="og:title" content="{{ title or profile.name }} · {{ site.profile.name }}">
   <meta property="og:url" content="{{ siteOrigin }}{{ page.url | url }}">
-  <meta property="og:image" content="{{ siteOrigin }}{{ '/files/portrait.jpg' | url }}">
+  <meta property="og:image" content="{{ siteOrigin }}{{ site.profile.image | url }}">
   <link rel="icon" type="image/png" sizes="180x180" href="{{ '/files/ntu-emblem.png' | url }}">
   <link rel="apple-touch-icon" sizes="180x180" href="{{ '/files/ntu-emblem.png' | url }}">
   <link rel="stylesheet" href="{{ '/assets/fonts/fonts.css' | url }}">
@@ -18,7 +18,7 @@
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="header-inner">
-      <a class="wordmark" href="{{ '/' | url }}" aria-label="{{ site.name }} — Home">{{ site.name }}</a>
+      <a class="wordmark" href="{{ '/' | url }}" aria-label="{{ site.profile.name }} — Home">{{ site.profile.name }}</a>
       <nav aria-label="Main navigation">
         {% for item in site.navigation %}
         <a href="{{ item.url | url }}"{% if section == item.key %} aria-current="page"{% endif %}>{{ item.label }}</a>
@@ -31,7 +31,7 @@
   </main>
   <footer class="site-footer">
     <div class="footer-inner">
-      <p>© 2026 {{ site.name }} ({{ site.nameChinese }})</p>
+      <p>© 2026 {{ site.profile.name }} ({{ site.profile.nameChinese }})</p>
     </div>
   </footer>
 </body>

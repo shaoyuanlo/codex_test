@@ -2,9 +2,9 @@
 layout: layouts/page.njk
 section: lab
 permalink: /lab/index.html
-title: Trai Lab
-intro: A space for curious minds and thoughtful collaboration.
 profile:
+  name: Trai Lab
+  intro: A space for curious minds and thoughtful collaboration.
   image: /files/sponsors/moe.webp
   imageAlt: Ministry of Education logo (temporary placeholder)
 photos:

@@ -29,11 +29,12 @@
 
 | 要更新的項目 | 編輯位置 |
 | --- | --- |
-| 姓名、職稱、所屬單位、聯絡／社群連結、導覽 | `src/home.md` 上方的 `website:` |
+| 姓名、職稱、所屬單位、聯絡／社群連結、首頁圖片 | `src/home.md` 上方的 `profile:` |
+| 全站導覽 | `src/home.md` 上方的 `website.navigation` |
 | 首頁簡介、News、Honors & Awards、Media Coverage、Sponsors | `src/home.md` 正文 |
-| 各分頁標題與簡介 | 該 `.md` 的 `title`、可選的 `intro` |
+| 一般分頁標題與簡介 | 該 `.md` 的 `title`、可選的 `intro`；Lab 改用 `profile.name`、`profile.intro` |
 | 頭像原檔 | [files/portrait.jpg](files/portrait.jpg) |
-| 頭像路徑、圖片尺寸資訊與首頁結構 | [layouts/home.njk](src/_includes/layouts/home.njk) |
+| Home／Lab 頁首結構與圖片顯示 | [components/profile.njk](src/_includes/components/profile.njk) |
 | 頁尾文字、網頁 metadata、校徽路徑與共用導覽結構 | [layouts/base.njk](src/_includes/layouts/base.njk) |
 | 校徽原檔 | [files/ntu-emblem.png](files/ntu-emblem.png) |
 | CV | [files/SYLo_CV.pdf](files/SYLo_CV.pdf) |
@@ -51,9 +52,9 @@
 ```yaml
 ---
 layout: layouts/page.njk
-section: lab
-permalink: /lab/index.html
-title: Lab
+section: teaching
+permalink: /teaching/index.html
+title: Teaching
 intro: A short introduction.
 ---
 ```
@@ -86,12 +87,14 @@ Normal text, **bold text**, and *italic text*.
 
 ### 首頁資料與職稱
 
-全站共用資料集中在 `src/home.md` 的 `website:`。建置設定會讀取它，提供版型使用的 `site` 資料；沒有獨立 `site.json`。以下為部分欄位範例，編輯時保留原有其他項目。
+Home 與 Lab 的頁首資料統一放在各自 Markdown 的 `profile:`；全站導覽只在首頁的 `website.navigation` 維護。建置設定從首頁讀取這兩組資料，提供 `site.profile`、`site.navigation` 及由首頁社群信箱衍生的 `site.email`，導覽列姓名、頁尾及 metadata 共用首頁資料，不需重複維護；沒有獨立 `site.json`。以下為部分欄位範例，編輯時保留原有其他項目。
 
 ```yaml
-website:
+profile:
   name: Shao-Yuan Lo
   nameChinese: 羅紹元
+  image: /files/portrait.jpg
+  imageAlt: Portrait of Shao-Yuan Lo
   roles:
   - role: Assistant Professor
     affiliations:
@@ -109,11 +112,11 @@ website:
 
 Email、CV、Google Scholar 等都由 `social` 清單控制，依清單順序顯示。`label` 是文字，`url` 是網址；內部檔案寫 `/files/...`，版型會自動處理路徑。其他頁面的聯絡信箱取自第一個 `mailto:` 連結，因此修改信箱只需改這一處，並保留此連結供聯絡文字使用。
 
-`navigation` 中的 `label` 是選單文字；`url`、`key` 分別對應頁面路徑與 `section`，更改頁面識別時需一起核對。
+首頁 `website.navigation` 中的 `label` 是選單文字；`url`、`key` 分別對應頁面路徑與 `section`，更改頁面識別時需一起核對。
 
 ### Lab 相片集
 
-Lab 與 Home 共用 `src/_includes/components/profile.njk` 及 `.hero` 版型。Lab 的英文名稱與簡介編輯 `src/lab.md` 的 `title`、`intro`，右側圖片編輯 `profile.image`、`profile.imageAlt`；目前以 `/files/sponsors/moe.webp` 的教育部 logo 暫代。首頁仍沿用 `website` 的個人資料與原頭像。
+Lab 與 Home 共用 `src/_includes/components/profile.njk` 及 `.hero` 版型。兩頁皆使用 `profile.name`、可選的 `profile.nameChinese`、`profile.intro`、`profile.roles`、`profile.social`、`profile.image` 與 `profile.imageAlt`；只填需要的項目。Lab 目前以 `/files/sponsors/moe.webp` 的教育部 logo 暫代，名稱與簡介也在同一個 `profile:` 編輯，不另外放在根層。其他分頁仍使用原有的 `title`、`intro`。
 
 Lab 頁面在與首頁共用的介紹區塊下方顯示相片集在 `src/lab.md` 的 `photos:` 清單維護，每張照片只需填檔案路徑、替代文字及可選的說明：
 
@@ -126,7 +129,7 @@ photos:
 
 新增、刪除或移動整組項目即可調整照片與順序；刪除 `caption` 或留空即可不顯示說明，清空或移除 `photos` 則不顯示相片集。圖片放在 `files/lab_photos/`，不把檔案放進 CSS／腳本目錄。現有使用者合照保留原檔，下載範例皆標為 Demo；[測試照片來源](docs/lab-photo-sources.md) 保留來源及授權紀錄，範例不是實驗室活動紀錄。
 
-桌機可用兩側按鈕、滾輪、觸控板或滑鼠拖曳瀏覽，隱藏水平捲軸；游標位於整個相片集區域內時，滾輪只操作相片，到兩端仍不帶動全頁，移出後才捲動頁面。相片滑入時輕微放大及淡化，提示可點擊。按鈕底色統一用 `--accent-light`，可用按鈕滑入時變主色，停用按鈕維持原色、不淡化。每次按鈕或一次垂直滾輪手勢，以 500ms 平滑移動一張照片的寬度加間距，連續滾輪事件合併為同一次手勢，至兩端時停止；手機隱藏按鈕，以手指滑動瀏覽；使用與導覽列相同的原生水平捲軸，由手機瀏覽器在捲動時顯示並自動隱藏。點擊或以 Enter 開啟照片，可在原生 dialog 放大檢視，使用 Close、Esc 或點擊背景關閉。說明沿用一般內文字型與間距，縮圖自動置中裁切為一致的 4:3 尺寸，放大顯示完整原圖，不修改圖片檔案。
+桌機可用兩側按鈕、滾輪、觸控板或滑鼠拖曳瀏覽，隱藏水平捲軸；游標位於整個相片集區域內時，滾輪只操作相片，到兩端仍不帶動全頁，移出後才捲動頁面。相片滑入時輕微放大及淡化，提示可點擊，但滑入與拖曳皆維持一般箭頭游標。按鈕底色統一用 `--accent-light`，可用按鈕滑入時變主色，停用按鈕維持原色、不淡化。每次按鈕或一次垂直滾輪手勢，以 500ms 平滑移動一張照片的寬度加間距，連續滾輪事件合併為同一次手勢，至兩端時停止；手機隱藏按鈕，以手指滑動瀏覽；下方提供常駐的捲動條，不受手機系統自動隱藏捲軸影響，可拖曳捲動條或直接滑動照片，位置會同步更新。點擊或以 Enter 開啟照片，可在原生 dialog 放大檢視，使用 Close、Esc 或點擊背景關閉。說明沿用一般內文字型與間距，縮圖自動置中裁切為一致的 4:3 尺寸，放大顯示完整原圖，不修改圖片檔案。
 
 結構在 `src/_includes/components/gallery.njk`，外觀集中於 CSS 的 `Lab gallery` 區塊，操作在 `src/assets/gallery.js`。此腳本只在有相片集的 Lab 頁載入，代理預覽內嵌同一份腳本以減少請求；沒有 JavaScript 時仍可原生橫向捲動並點開圖片。尊重減少動態效果偏好，不自動播放照片、不新增第三方套件或設定參數。
 
