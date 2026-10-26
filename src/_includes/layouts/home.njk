@@ -1,25 +1,8 @@
 ---
 layout: layouts/base.njk
 ---
-<section class="hero" aria-labelledby="home-title">
-  <div class="hero-copy">
-    <h1 id="home-title">{{ site.name }}<span class="chinese-name" lang="zh-Hant">{{ site.nameChinese }}</span></h1>
-    <div class="hero-roles">
-      {% for position in site.roles %}
-      <div class="hero-position">
-        <p class="hero-role">{{ position.role }}</p>
-        {% for affiliation in position.affiliations %}<p>{{ affiliation }}</p>{% endfor %}
-      </div>
-      {% endfor %}
-    </div>
-    <div class="hero-actions" aria-label="Contact and professional profiles">
-      {% for link in site.social %}<a class="button" href="{{ link.url | url }}">{{ link.label }}</a>{% endfor %}
-    </div>
-  </div>
-  <figure class="portrait">
-    <img src="{{ '/files/portrait.jpg' | url }}" alt="Portrait of {{ site.name }}" width="1340" height="1608" fetchpriority="high">
-  </figure>
-</section>
+{% set profile = site %}
+{% include "components/profile.njk" %}
 <div class="home-content prose">
   {{ content | datedLists | newsTabs | balancedSponsors | safe }}
 </div>

@@ -4,6 +4,9 @@ section: lab
 permalink: /lab/index.html
 title: Trai Lab
 intro: A space for curious minds and thoughtful collaboration.
+profile:
+  image: /files/sponsors/moe.webp
+  imageAlt: Ministry of Education logo (temporary placeholder)
 photos:
   - src: /files/lab_photos/image_2F33A832.jpeg
     alt: Group photo in an indoor gathering space
@@ -20,6 +23,15 @@ photos:
   - src: /files/lab_photos/demo-wild-bear.jpg
     alt: A bear in the wild
     caption: "Demo photo: a wild bear. Replace with a lab photo and caption."
+  - src: /files/lab_photos/demo-landscape.jpg
+    alt: MDN landscape sample image
+    caption: "Demo photo: landscape. Replace with a lab photo and caption."
+  - src: /files/lab_photos/demo-pattern.jpg
+    alt: MDN patterned surface sample image
+    caption: "Demo photo: patterned surface. Replace with a lab photo and caption."
+  - src: /files/lab_photos/demo-postcard.jpg
+    alt: MDN postcard background sample image
+    caption: "Demo photo: postcard background. Replace with a lab photo and caption."
 ---
 ## Our research
 

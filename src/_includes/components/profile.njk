@@ -1,0 +1,20 @@
+<section class="hero" aria-labelledby="{{ section }}-title">
+  <div class="hero-copy">
+    <h1 id="{{ section }}-title">{{ profile.name or title }}{% if profile.nameChinese %}<span class="chinese-name" lang="zh-Hant">{{ profile.nameChinese }}</span>{% endif %}</h1>
+    {% if profile.roles.length %}<div class="hero-roles">
+      {% for position in profile.roles %}
+      <div class="hero-position">
+        <p class="hero-role">{{ position.role }}</p>
+        {% for affiliation in position.affiliations %}<p>{{ affiliation }}</p>{% endfor %}
+      </div>
+      {% endfor %}
+    </div>
+    {% elif intro %}<div class="hero-roles"><p>{{ intro }}</p></div>{% endif %}
+    {% if profile.social.length %}<div class="hero-actions" aria-label="Contact and professional profiles">
+      {% for link in profile.social %}<a class="button" href="{{ link.url | url }}">{{ link.label }}</a>{% endfor %}
+    </div>{% endif %}
+  </div>
+  <figure class="portrait">
+    <img src="{{ (profile.image or '/files/portrait.jpg') | url }}" alt="{{ profile.imageAlt or ('Portrait of ' + (profile.name or title)) }}" width="1340" height="1608" fetchpriority="high">
+  </figure>
+</section>

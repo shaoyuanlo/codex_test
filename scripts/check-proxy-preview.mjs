@@ -60,11 +60,11 @@ try {
 }
 for (const [relative, marker] of [
   ['index.html', '<h1 id="home-title">'],
-  ['lab/index.html', '<h1>'],
-  ['publications/index.html', '<h1>'],
-  ['activities/index.html', '<h1>'],
-  ['teaching/index.html', '<h1>'],
-  ['blog/index.html', '<h1>'],
+  ['lab/index.html', '<h1'],
+  ['publications/index.html', '<h1'],
+  ['activities/index.html', '<h1'],
+  ['teaching/index.html', '<h1'],
+  ['blog/index.html', '<h1'],
   ['assets/fonts/inter/files/inter-latin-wght-normal.woff2', null],
   ['assets/fonts/noto-sans-tc/files/noto-sans-tc-0-wght-normal.woff2', null]
 ]) {

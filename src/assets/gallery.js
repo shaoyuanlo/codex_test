@@ -57,19 +57,22 @@ document.querySelectorAll('[data-gallery]').forEach(gallery => {
     }
   });
 
-  // Treat a wheel burst as one photo step; horizontal trackpad gestures remain native.
-  track.addEventListener('wheel', event => {
-    if (event.ctrlKey) return;
+  // Treat a vertical wheel burst as one photo step; preserve horizontal trackpad deltas.
+  gallery.addEventListener('wheel', event => {
+    if (dialog.open || event.ctrlKey || !matchMedia('(min-width: 768px)').matches) return;
+    // Contain every desktop wheel event, including at the first and last photo.
+    event.preventDefault();
     if (Math.abs(event.deltaX) > Math.abs(event.deltaY)) {
       stopMotion();
+      const unit = event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? track.clientWidth : 1;
+      track.scrollLeft += event.deltaX * unit;
       return;
     }
     const direction = Math.sign(event.deltaY);
     const maximum = track.scrollWidth - track.clientWidth;
     const position = animation ? target : track.scrollLeft;
     const canMove = direction > 0 ? position < maximum - 1 : position > 1;
-    if (!direction || (!canMove && !animation && !wheelDirection)) return;
-    event.preventDefault();
+    if (!direction) return;
     if (direction !== wheelDirection && canMove) move(direction);
     wheelDirection = direction;
     clearTimeout(wheelTimer);
