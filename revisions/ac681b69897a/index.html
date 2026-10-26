@@ -4,13 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Shao-Yuan Lo</title>
-  <link rel="canonical" href="https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/a6e650d53776/index.html">
+  <link rel="canonical" href="https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/ac681b69897a/index.html">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Home · Shao-Yuan Lo">
-  <meta property="og:url" content="https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/a6e650d53776/index.html">
-  <meta property="og:image" content="https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/a6e650d53776/files/portrait.jpg">
-  <link rel="icon" type="image/png" sizes="180x180" href="/shaoyuanlo/codex_test/site-preview/revisions/a6e650d53776/files/ntu-emblem.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/shaoyuanlo/codex_test/site-preview/revisions/a6e650d53776/files/ntu-emblem.png">
+  <meta property="og:url" content="https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/ac681b69897a/index.html">
+  <meta property="og:image" content="https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/ac681b69897a/files/portrait.jpg">
+  <link rel="icon" type="image/png" sizes="180x180" href="/shaoyuanlo/codex_test/site-preview/revisions/ac681b69897a/files/ntu-emblem.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/shaoyuanlo/codex_test/site-preview/revisions/ac681b69897a/files/ntu-emblem.png">
   <style data-preview-style="fonts">/* Self-hosted font faces. Original font binaries are unchanged; licenses are alongside each family. */
 
 /* @fontsource-variable/inter@5.3.0 — index.css */
@@ -1288,7 +1288,7 @@
   }
 }
 /* Shared rectangular corners. */
-a:focus-visible, .button:focus-visible, .news-switch input:focus-visible + label, .news-all:focus-visible, .gallery-control, .gallery-track:focus-visible, .gallery-dialog, .skip-link, .portrait img, .prose pre, .callout { border-radius: 6px; }
+a:focus-visible, .button:focus-visible, .news-switch input:focus-visible + label, .news-all:focus-visible, .gallery-control, .gallery-scrollbar, .gallery-track:focus-visible, .gallery-dialog, .skip-link, .portrait img, .prose pre, .callout { border-radius: 6px; }
 
 /* Shared headings: H1–H6 size, weight, line height and margins. */
 h1, h2, h3, h4, h5, h6 { font-size: var(--font-size-base); font-weight: 400; margin: var(--space-lg) 0 var(--space-md); line-height: var(--line-height-compact); }
@@ -1372,12 +1372,12 @@ nav a[aria-current] { font-weight: 600; }
 
 /* Lab gallery: horizontal photos, shared captions, controls and a native image dialog. */
 .lab-gallery { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: var(--space-sm); margin: var(--space-lg) 0; }
-.gallery-track { display: flex; gap: var(--space-md); min-width: 0; overflow-x: auto; overscroll-behavior-x: contain; cursor: grab; }
+.gallery-track { display: flex; gap: var(--space-md); min-width: 0; overflow-x: auto; overscroll-behavior-x: contain; }
 .gallery-item { flex: 0 0 min(240px, 85%); min-width: 0; margin: 0; }
-.gallery-item a { display: block; overflow: hidden; cursor: zoom-in; }
+.gallery-item a { display: block; overflow: hidden; cursor: default; }
 .gallery-item img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
 .gallery-item figcaption { margin-top: var(--space-xs); }
-.gallery-track.is-dragging, .gallery-track.is-dragging a { cursor: grabbing; user-select: none; }
+.gallery-track.is-dragging { user-select: none; }
 .gallery-control { display: grid; place-items: center; width: 44px; height: 44px; padding: 0; border: 0; background: var(--accent-light); color: inherit; font-size: var(--font-size-xl); cursor: pointer; }
 .gallery-control[hidden] { display: none; }
 .lab-gallery:has(.gallery-control[hidden]) { display: block; }
@@ -1389,9 +1389,17 @@ nav a[aria-current] { font-weight: 600; }
 .gallery-dialog img { width: auto; height: auto; max-height: calc(100dvh - 160px); margin: 0 auto; object-fit: contain; }
 .gallery-caption { margin: var(--space-sm) 0 0; text-align: center; }
 html:has(.gallery-dialog[open]) { overflow: hidden; scrollbar-gutter: stable; }
+.gallery-scrollbar { display: none; width: 100%; height: 24px; padding: 0; margin: var(--space-xs) 0 0; border: 0; appearance: none; background: transparent; }
+.gallery-scrollbar::-webkit-slider-runnable-track { height: var(--space-xs); border-radius: inherit; background: var(--accent-light); }
+.gallery-scrollbar::-webkit-slider-thumb { appearance: none; width: 44px; height: var(--space-sm); margin-top: calc((var(--space-xs) - var(--space-sm)) / 2); border-radius: inherit; background: var(--accent); }
+.gallery-scrollbar::-moz-range-track { height: var(--space-xs); border-radius: inherit; background: var(--accent-light); }
+.gallery-scrollbar::-moz-range-thumb { width: 44px; height: var(--space-sm); border: 0; border-radius: inherit; background: var(--accent); }
 @media (max-width: 767px) {
   .lab-gallery { display: block; }
   .gallery-control { display: none; }
+  .gallery-scrollbar:not([hidden]) { display: block; }
+  .lab-gallery:has(.gallery-scrollbar:not([hidden])) .gallery-track { scrollbar-width: none; }
+  .lab-gallery:has(.gallery-scrollbar:not([hidden])) .gallery-track::-webkit-scrollbar { display: none; }
 }
 @media (min-width: 768px) {
   .gallery-track { scrollbar-width: none; }
@@ -1406,7 +1414,7 @@ html:has(.gallery-dialog[open]) { overflow: hidden; scrollbar-gutter: stable; }
 @media print {
   .lab-gallery { display: block; }
   .gallery-track { overflow: visible; flex-wrap: wrap; }
-  .gallery-control, .gallery-dialog { display: none; }
+  .gallery-control, .gallery-dialog, .gallery-scrollbar { display: none; }
 }
 
 /* Shared text-style buttons: bold black text; navy and underlined on hover. */
@@ -1475,7 +1483,7 @@ small, sub, sup { font-size: inherit; }
 strong, b, th { font-weight: 600; }
 ::selection { background: var(--selection-bg); color: var(--black); }
 a { color: var(--accent); text-underline-offset: 4px; text-decoration-thickness: 1px; }
-a:focus-visible, .button:focus-visible, .news-switch input:focus-visible + label, .news-all:focus-visible, .gallery-control:focus-visible, .gallery-track:focus-visible { outline: 2px solid var(--accent); outline-offset: var(--space-sm); }
+a:focus-visible, .button:focus-visible, .news-switch input:focus-visible + label, .news-all:focus-visible, .gallery-control:focus-visible, .gallery-track:focus-visible, .gallery-scrollbar:focus-visible { outline: 2px solid var(--accent); outline-offset: var(--space-sm); }
 img { display: block; max-width: 100%; height: auto; }
 p { margin: 0 0 var(--space-md); }
 .skip-link { position: fixed; left: var(--space-md); top: -100px; padding: var(--space-sm) var(--space-md); z-index: 20; background: var(--white); border: 1px solid var(--accent-light); }
@@ -1502,34 +1510,33 @@ p { margin: 0 0 var(--space-md); }
   .callout { break-inside: avoid; }
 }
 </style>
-  <meta name="preview-source" content="a6e650d53776a5476603bd67d0cfcaf59985804c">
+  <meta name="preview-source" content="ac681b69897a17fc4cd624ea8b7554017c7e8239">
   <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="page-home">
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="header-inner">
-      <a class="wordmark" href="/shaoyuanlo/codex_test/site-preview/revisions/a6e650d53776/index.html" aria-label="Shao-Yuan Lo — Home">Shao-Yuan Lo</a>
+      <a class="wordmark" href="/shaoyuanlo/codex_test/site-preview/revisions/ac681b69897a/index.html" aria-label="Shao-Yuan Lo — Home">Shao-Yuan Lo</a>
       <nav aria-label="Main navigation">
         
-        <a href="/shaoyuanlo/codex_test/site-preview/revisions/a6e650d53776/index.html" aria-current="page">Home</a>
+        <a href="/shaoyuanlo/codex_test/site-preview/revisions/ac681b69897a/index.html" aria-current="page">Home</a>
         
-        <a href="/shaoyuanlo/codex_test/site-preview/revisions/a6e650d53776/lab/index.html">Trai Lab</a>
+        <a href="/shaoyuanlo/codex_test/site-preview/revisions/ac681b69897a/lab/index.html">Trai Lab</a>
         
-        <a href="/shaoyuanlo/codex_test/site-preview/revisions/a6e650d53776/publications/index.html">Publications</a>
+        <a href="/shaoyuanlo/codex_test/site-preview/revisions/ac681b69897a/publications/index.html">Publications</a>
         
-        <a href="/shaoyuanlo/codex_test/site-preview/revisions/a6e650d53776/activities/index.html">Activities</a>
+        <a href="/shaoyuanlo/codex_test/site-preview/revisions/ac681b69897a/activities/index.html">Activities</a>
         
-        <a href="/shaoyuanlo/codex_test/site-preview/revisions/a6e650d53776/teaching/index.html">Teaching</a>
+        <a href="/shaoyuanlo/codex_test/site-preview/revisions/ac681b69897a/teaching/index.html">Teaching</a>
         
-        <a href="/shaoyuanlo/codex_test/site-preview/revisions/a6e650d53776/blog/index.html">Blog</a>
+        <a href="/shaoyuanlo/codex_test/site-preview/revisions/ac681b69897a/blog/index.html">Blog</a>
         
       </nav>
     </div>
   </header>
   <main id="main" class="site-main" tabindex="-1">
-    
-<section class="hero" aria-labelledby="home-title">
+    <section class="hero" aria-labelledby="home-title">
   <div class="hero-copy">
     <h1 id="home-title">Shao-Yuan Lo<span class="chinese-name" lang="zh-Hant">羅紹元</span></h1>
     <div class="hero-roles">
@@ -1542,11 +1549,11 @@ p { margin: 0 0 var(--space-md); }
     </div>
     
     <div class="hero-actions" aria-label="Contact and professional profiles">
-      <a class="button" href="mailto:sylo@csie.ntu.edu.tw">Email</a><a class="button" href="/shaoyuanlo/codex_test/site-preview/revisions/a6e650d53776/files/SYLo_CV.pdf">CV</a><a class="button" href="https://scholar.google.com/citations?hl=en&amp;user=vL35nH4AAAAJ">Google Scholar</a><a class="button" href="https://github.com/shaoyuanlo">GitHub</a><a class="button" href="https://www.linkedin.com/in/shaoyuanlo/">LinkedIn</a><a class="button" href="https://x.com/shaoyuanlo">X / Twitter</a>
+      <a class="button" href="mailto:sylo@csie.ntu.edu.tw">Email</a><a class="button" href="/shaoyuanlo/codex_test/site-preview/revisions/ac681b69897a/files/SYLo_CV.pdf">CV</a><a class="button" href="https://scholar.google.com/citations?hl=en&amp;user=vL35nH4AAAAJ">Google Scholar</a><a class="button" href="https://github.com/shaoyuanlo">GitHub</a><a class="button" href="https://www.linkedin.com/in/shaoyuanlo/">LinkedIn</a><a class="button" href="https://x.com/shaoyuanlo">X / Twitter</a>
     </div>
   </div>
   <figure class="portrait">
-    <img src="/shaoyuanlo/codex_test/site-preview/revisions/a6e650d53776/files/portrait.jpg" alt="Portrait of Shao-Yuan Lo" width="1340" height="1608" fetchpriority="high">
+    <img src="/shaoyuanlo/codex_test/site-preview/revisions/ac681b69897a/files/portrait.jpg" alt="Portrait of Shao-Yuan Lo" width="1340" height="1608" fetchpriority="high">
   </figure>
 </section>
 
@@ -1638,27 +1645,27 @@ p { margin: 0 0 var(--space-md); }
 <hr>
 <h2>Sponsors</h2>
 <div class="sponsors"><div class="sponsor-row"><figure>
-    <img src="/shaoyuanlo/codex_test/site-preview/revisions/a6e650d53776/files/sponsors/moe.webp" alt="" width="960" height="960" loading="lazy">
+    <img src="/shaoyuanlo/codex_test/site-preview/revisions/ac681b69897a/files/sponsors/moe.webp" alt="" width="960" height="960" loading="lazy">
     <figcaption>MOE (教育部)</figcaption>
   </figure>
 <figure>
-    <img src="/shaoyuanlo/codex_test/site-preview/revisions/a6e650d53776/files/sponsors/nstc.webp" alt="" width="1920" height="293" loading="lazy">
+    <img src="/shaoyuanlo/codex_test/site-preview/revisions/ac681b69897a/files/sponsors/nstc.webp" alt="" width="1920" height="293" loading="lazy">
     <figcaption>NSTC (國科會)</figcaption>
   </figure>
 <figure>
-    <img src="/shaoyuanlo/codex_test/site-preview/revisions/a6e650d53776/files/sponsors/ntuh.webp" alt="" width="1920" height="977" loading="lazy">
+    <img src="/shaoyuanlo/codex_test/site-preview/revisions/ac681b69897a/files/sponsors/ntuh.webp" alt="" width="1920" height="977" loading="lazy">
     <figcaption>NTUH (臺大醫院)</figcaption>
   </figure></div>
 <div class="sponsor-row"><figure>
-    <img src="/shaoyuanlo/codex_test/site-preview/revisions/a6e650d53776/files/sponsors/asus.webp" alt="" width="1920" height="411" loading="lazy">
+    <img src="/shaoyuanlo/codex_test/site-preview/revisions/ac681b69897a/files/sponsors/asus.webp" alt="" width="1920" height="411" loading="lazy">
     <figcaption>ASUS (華碩)</figcaption>
   </figure>
 <figure>
-    <img src="/shaoyuanlo/codex_test/site-preview/revisions/a6e650d53776/files/sponsors/delta.webp" alt="" width="1920" height="592" loading="lazy">
+    <img src="/shaoyuanlo/codex_test/site-preview/revisions/ac681b69897a/files/sponsors/delta.webp" alt="" width="1920" height="592" loading="lazy">
     <figcaption>Delta (台達電)</figcaption>
   </figure>
 <figure>
-    <img src="/shaoyuanlo/codex_test/site-preview/revisions/a6e650d53776/files/sponsors/itri.webp" alt="" width="1920" height="444" loading="lazy">
+    <img src="/shaoyuanlo/codex_test/site-preview/revisions/ac681b69897a/files/sponsors/itri.webp" alt="" width="1920" height="444" loading="lazy">
     <figcaption>ITRI (工研院)</figcaption>
   </figure></div></div>
 

@@ -3,6 +3,7 @@ document.querySelectorAll('[data-gallery]').forEach(gallery => {
   const track = gallery.querySelector('.gallery-track');
   const previous = gallery.querySelector('[data-gallery-previous]');
   const next = gallery.querySelector('[data-gallery-next]');
+  const scrollbar = gallery.querySelector('[data-gallery-scrollbar]');
   const dialog = gallery.querySelector('dialog');
   const fullImage = dialog.querySelector('[data-gallery-full]');
   const caption = dialog.querySelector('[data-gallery-caption]');
@@ -16,6 +17,9 @@ document.querySelectorAll('[data-gallery]').forEach(gallery => {
   const updateControls = () => {
     previous.disabled = track.scrollLeft <= 1;
     next.disabled = track.scrollLeft >= track.scrollWidth - track.clientWidth - 1;
+    scrollbar.max = Math.max(0, track.scrollWidth - track.clientWidth);
+    scrollbar.value = track.scrollLeft;
+    scrollbar.disabled = Number(scrollbar.max) <= 1;
   };
   const stopMotion = () => {
     cancelAnimationFrame(animation);
@@ -45,6 +49,10 @@ document.querySelectorAll('[data-gallery]').forEach(gallery => {
     };
     animation = requestAnimationFrame(tick);
   };
+  scrollbar.addEventListener('input', () => {
+    stopMotion();
+    track.scrollLeft = Number(scrollbar.value);
+  });
   previous.addEventListener('click', () => move(-1));
   next.addEventListener('click', () => move(1));
   track.addEventListener('scroll', updateControls, { passive: true });
@@ -134,5 +142,6 @@ document.querySelectorAll('[data-gallery]').forEach(gallery => {
   });
   previous.hidden = false;
   next.hidden = false;
+  scrollbar.hidden = false;
   updateControls();
 });
