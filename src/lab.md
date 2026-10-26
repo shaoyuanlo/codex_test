@@ -4,7 +4,8 @@ section: lab
 permalink: /lab/index.html
 profile:
   name: Trai Lab
-  intro: A space for curious minds and thoughtful collaboration.
+  nameChinese: 踹實驗室
+  intro: Trustworthy Artificial Intelligence Lab <br> 信韌智慧實驗室
   image: /files/sponsors/moe.webp
   imageAlt: Ministry of Education logo (temporary placeholder)
 photos:
