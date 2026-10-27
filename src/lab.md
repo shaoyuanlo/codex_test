@@ -34,27 +34,21 @@ photos:
     alt: MDN postcard background sample image
     caption: "Demo photo: postcard background. Replace with a lab photo and caption."
 ---
-## Our research
 
-We are interested in trustworthy AI, machine learning, and multimodal models. Our work explores how learning systems can become more reliable and how multimodal models can reason about the world.
+## Members
 
-<!-- Replace this section with your lab name, mission, and ongoing projects. -->
+### Principal Investigator
 
-## People
+- Shao-Yuan Lo 羅紹元
 
-**Principal investigator**  
-[Shao-Yuan Lo]({{ '/' | url }}) · Assistant Professor, National Taiwan University
+### MS Students
 
-**Students & collaborators**  
-Our group page is taking shape. Member profiles and current projects will be added here.
+- Shao-Yuan Lo 羅紹元
 
-<!-- To add a person, copy:
-### Full Name
-Ph.D. student · Research interests
-[Website](https://example.com)
--->
+### Undergrad Students
 
-<aside class="callout">
-<p class="callout-label">Open opportunities</p>
-<p>I welcome inquiries from undergraduate, master's, and Ph.D. students interested in our research. Please <a href="mailto:{{ site.email }}">email me</a> with your research interests, résumé, and transcripts.</p>
-</aside>
+- Shao-Yuan Lo 羅紹元
+
+### Alumni
+
+- Shao-Yuan Lo 羅紹元
