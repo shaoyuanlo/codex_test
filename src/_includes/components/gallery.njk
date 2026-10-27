@@ -1,5 +1,4 @@
 <section class="lab-gallery" data-gallery aria-label="Lab photos">
-  <button class="gallery-control" type="button" data-gallery-previous aria-label="Previous photos" aria-controls="lab-photo-track" hidden><span aria-hidden="true">‹</span></button>
   <div class="gallery-track" id="lab-photo-track" tabindex="0" aria-label="Photos: use arrow keys or swipe to browse">
     {% for photo in photos %}
     <figure class="gallery-item">
@@ -10,7 +9,6 @@
     </figure>
     {% endfor %}
   </div>
-  <button class="gallery-control" type="button" data-gallery-next aria-label="Next photos" aria-controls="lab-photo-track" hidden><span aria-hidden="true">›</span></button>
   <input class="gallery-scrollbar" data-gallery-scrollbar type="range" min="0" max="100" step="1" value="0" aria-label="Photo scroll position" hidden>
   <dialog class="gallery-dialog" aria-label="Enlarged photo">
     <button class="button gallery-close" type="button" data-gallery-close aria-label="Close enlarged photo">Close <span aria-hidden="true">×</span></button>

@@ -46,7 +46,11 @@ export default function (eleventyConfig) {
   eleventyConfig.addFilter("datedLists", html => html.replace(/<ul>([\s\S]*?)<\/ul>/g, (list, items) => {
     const columns = items.replace(
       /<li><strong>([A-Z][a-z]{2} (?:\d{2}, )?\d{4})<\/strong>\s*—\s*([\s\S]*?)<\/li>/g,
-      '<li><strong>$1</strong><span>$2</span></li>'
+      (_, date, body) => {
+        const formatted = date.replace(/^([A-Z][a-z]{2} \d{2}), (\d{4})$/,
+          '<span class="date-day">$1<span class="date-comma">,</span></span> <span class="date-year">$2</span>');
+        return `<li><strong>${formatted}</strong><span>${body}</span></li>`;
+      }
     );
     return columns === items ? list : `<ul class="dated-list">${columns}</ul>`;
   }));
