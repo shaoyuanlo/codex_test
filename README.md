@@ -118,6 +118,8 @@ Email、CV、Google Scholar 等都由 `social` 清單控制，依清單順序顯
 
 Lab 與 Home 共用 `src/_includes/components/profile.njk` 及 `.hero` 版型。兩頁皆使用 `profile.name`、可選的 `profile.nameChinese`、`profile.intro`、`profile.roles`、`profile.social`、`profile.image` 與 `profile.imageAlt`；只填需要的項目。Lab 目前以 `/files/sponsors/moe.webp` 的教育部 logo 暫代，名稱與簡介也在同一個 `profile:` 編輯，不另外放在根層。其他分頁仍使用原有的 `title`、`intro`。
 
+`profile.intro` 支援 HTML；需要換行時加入 `<br>`，例如 `intro: Trustworthy Artificial Intelligence Lab<br>信韌智慧實驗室`。只在 YAML 原始碼換行不會產生網頁換行。
+
 Lab 頁面在與首頁共用的介紹區塊下方顯示相片集在 `src/lab.md` 的 `photos:` 清單維護，每張照片只需填檔案路徑、替代文字及可選的說明：
 
 ```yaml

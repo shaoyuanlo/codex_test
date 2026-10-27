@@ -9,7 +9,7 @@
       </div>
       {% endfor %}
     </div>
-    {% elif profile.intro %}<div class="hero-roles"><p>{{ profile.intro }}</p></div>{% endif %}
+    {% elif profile.intro %}<div class="hero-roles"><p>{{ profile.intro | safe }}</p></div>{% endif %}
     {% if profile.social.length %}<div class="hero-actions" aria-label="Contact and professional profiles">
       {% for link in profile.social %}<a class="button" href="{{ link.url | url }}">{{ link.label }}</a>{% endfor %}
     </div>{% endif %}
