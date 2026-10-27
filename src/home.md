@@ -48,7 +48,6 @@ website:
     url: /blog/
     key: blog
 ---
-## About
 
 I am an Assistant Professor at [National Taiwan University](https://www.ntu.edu.tw/english/). My research spans **trustworthy AI, machine learning, and multimodal models**, with a recent focus on multimodal large language models and reasoning.
 
@@ -60,6 +59,12 @@ Previously, I was a Research Scientist at [Honda Research Institute USA](https:/
 <p>I am looking for motivated undergraduate, master's, and Ph.D. students. Interested in working together? <a href="mailto:{{ site.email }}">Send me an email</a> with your résumé and transcripts.</p>
 </aside>
 -->
+
+---
+
+## Research
+
+abcde
 
 ---
 
