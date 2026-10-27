@@ -53,3 +53,9 @@ photos:
 ### Alumni
 
 - Shao-Yuan Lo 羅紹元
+
+---
+
+## Why NTU?
+
+abcde
