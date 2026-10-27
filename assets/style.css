@@ -118,6 +118,7 @@ nav a[aria-current] { font-weight: 600; }
 .hero-roles { margin-bottom: var(--space-md); line-height: var(--line-height-compact); }
 .hero-position + .hero-position { margin-top: var(--space-sm); }
 .hero-position p { margin: 0; }
+.hero-position p + p { margin-top: var(--space-xs); }
 .hero-role { color: var(--accent); }
 /* Contact links: horizontal layout, spacing and wrapping. */
 .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-sm) var(--space-md); }
