@@ -5,7 +5,8 @@ permalink: /lab/index.html
 profile:
   name: Trai Lab
   nameChinese: 踹實驗室
-  intro: Trustworthy Artificial Intelligence Lab <br> 信韌智慧實驗室
+  intro: Trustworthy AI Lab 信韌智慧實驗室
+  intro: Room 442-2, CSIE Building, NTU 台大德田館442-2室
   image: /files/sponsors/moe.webp
   imageAlt: Ministry of Education logo (temporary placeholder)
 photos:
