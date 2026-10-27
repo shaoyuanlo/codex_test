@@ -7,7 +7,7 @@ profile:
   nameChinese: 踹實驗室
   intro: |
     Trustworthy AI Lab 信韌智慧實驗室<br>
-    Room 442-2, CSIE Building, NTU 台大德田館442-2室
+    Room 442-2, CSIE Building, NTU<br> 台大德田館442-2室
   image: /files/sponsors/moe.webp
   imageAlt: Ministry of Education logo (temporary placeholder)
 photos:
@@ -37,7 +37,7 @@ photos:
     caption: "Demo photo: postcard background. Replace with a lab photo and caption."
 ---
 
-## Members
+## People
 
 ### Principal Investigator
 
