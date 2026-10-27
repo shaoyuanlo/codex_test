@@ -4,13 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Blog · Shao-Yuan Lo</title>
-  <link rel="canonical" href="https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/d19591916fba/blog/index.html">
+  <link rel="canonical" href="https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/b6cf98e45858/blog/index.html">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Blog · Shao-Yuan Lo">
-  <meta property="og:url" content="https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/d19591916fba/blog/index.html">
-  <meta property="og:image" content="https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/d19591916fba/files/portrait.jpg">
-  <link rel="icon" type="image/png" sizes="180x180" href="/shaoyuanlo/codex_test/site-preview/revisions/d19591916fba/files/ntu-emblem.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/shaoyuanlo/codex_test/site-preview/revisions/d19591916fba/files/ntu-emblem.png">
+  <meta property="og:url" content="https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/b6cf98e45858/blog/index.html">
+  <meta property="og:image" content="https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/b6cf98e45858/files/portrait.jpg">
+  <link rel="icon" type="image/png" sizes="180x180" href="/shaoyuanlo/codex_test/site-preview/revisions/b6cf98e45858/files/ntu-emblem.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/shaoyuanlo/codex_test/site-preview/revisions/b6cf98e45858/files/ntu-emblem.png">
   <style data-preview-style="fonts">/* Self-hosted font faces. Original font binaries are unchanged; licenses are alongside each family. */
 
 /* @fontsource-variable/inter@5.3.0 — index.css */
@@ -1288,7 +1288,7 @@
   }
 }
 /* Shared rectangular corners. */
-a:focus-visible, .button:focus-visible, .news-switch input:focus-visible + label, .news-all:focus-visible, .gallery-control, .gallery-scrollbar, .gallery-track:focus-visible, .gallery-dialog, .skip-link, .portrait img, .prose pre, .callout { border-radius: 6px; }
+a:focus-visible, .button:focus-visible, .news-switch input:focus-visible + label, .news-all:focus-visible, .gallery-scrollbar, .gallery-track:focus-visible, .gallery-dialog, .skip-link, .portrait img, .prose pre, .callout { border-radius: 6px; }
 
 /* Shared headings: H1–H6 size, weight, line height and margins. */
 h1, h2, h3, h4, h5, h6 { font-size: var(--font-size-base); font-weight: 400; margin: var(--space-lg) 0 var(--space-md); line-height: var(--line-height-compact); }
@@ -1301,6 +1301,7 @@ h4, h5, h6 { margin-bottom: var(--space-sm); }
   h2, h3 { break-after: avoid; }
 }
 /* Page heading and homepage profile: shared padding and outer spacing. */
+.page-intro, .hero-roles { font-size: var(--font-size-lg); }
 .page-heading, .hero { padding: var(--space-lg) 0 var(--space-md); margin: 0 0 var(--space-md); }
 /* Markdown dividers: add with ---; keep vertical spacing without a visible line. */
 .prose hr { border: 0; border-top: 1px solid transparent; margin: var(--space-lg) 0; }
@@ -1370,40 +1371,29 @@ nav a[aria-current] { font-weight: 600; }
   .hero-actions { grid-column: 1 / -1; }
 }
 
-/* Lab gallery: horizontal photos, shared captions, controls and a native image dialog. */
-.lab-gallery { cursor: grab; display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: var(--space-sm); margin: var(--space-lg) 0; }
+/* Lab gallery: horizontal photos, shared scrollbar and a native image dialog. */
+.lab-gallery { cursor: grab; margin: var(--space-lg) 0; }
 .gallery-track { display: flex; gap: var(--space-md); min-width: 0; overflow-x: auto; overscroll-behavior-x: contain; }
 .gallery-item { flex: 0 0 min(240px, 85%); min-width: 0; margin: 0; }
 .gallery-item a { display: block; overflow: hidden; cursor: inherit; }
 .gallery-item img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
 .gallery-item figcaption { margin-top: var(--space-xs); }
 .gallery-track.is-dragging, .gallery-track.is-dragging a { cursor: grabbing; user-select: none; }
-.gallery-control { display: grid; place-items: center; width: 44px; height: 44px; padding: 0; border: 0; background: var(--accent-light); color: inherit; font-size: var(--font-size-xl); cursor: pointer; }
-.gallery-control[hidden] { display: none; }
-.lab-gallery:has(.gallery-control[hidden]) { display: block; }
-.gallery-control:hover:enabled { background: var(--accent); color: var(--white); }
-.gallery-control:disabled { cursor: default; }
 .gallery-dialog { cursor: auto; width: min(1120px, calc(100% - var(--space-md) * 2)); max-width: none; max-height: calc(100dvh - var(--space-md) * 2); padding: var(--space-md); border: 1px solid var(--accent-light); background: var(--white); color: var(--black); }
 .gallery-dialog::backdrop { background: var(--black); opacity: .8; }
 .gallery-close { display: block; margin: 0 0 var(--space-sm) auto; padding: var(--space-xs); border: 0; background: var(--white); cursor: pointer; }
 .gallery-dialog img { width: auto; height: auto; max-height: calc(100dvh - 160px); margin: 0 auto; object-fit: contain; }
 .gallery-caption { margin: var(--space-sm) 0 0; text-align: center; }
 html:has(.gallery-dialog[open]) { overflow: hidden; scrollbar-gutter: stable; }
-.gallery-scrollbar { display: none; width: 100%; height: 24px; padding: 0; margin: var(--space-xs) 0 0; border: 0; appearance: none; background: transparent; }
+.gallery-scrollbar { display: block; width: 100%; height: 24px; padding: 0; margin: var(--space-xs) 0 0; border: 0; appearance: none; background: transparent; }
 .gallery-scrollbar::-webkit-slider-runnable-track { height: var(--space-xs); border-radius: inherit; background: var(--accent-light); }
 .gallery-scrollbar::-webkit-slider-thumb { appearance: none; width: 44px; height: var(--space-sm); margin-top: calc((var(--space-xs) - var(--space-sm)) / 2); border-radius: inherit; background: var(--accent); }
 .gallery-scrollbar::-moz-range-track { height: var(--space-xs); border-radius: inherit; background: var(--accent-light); }
 .gallery-scrollbar::-moz-range-thumb { width: 44px; height: var(--space-sm); border: 0; border-radius: inherit; background: var(--accent); }
-@media (max-width: 767px) {
-  .lab-gallery { display: block; }
-  .gallery-control { display: none; }
-  .gallery-scrollbar:not([hidden]) { display: block; }
-  .lab-gallery:has(.gallery-scrollbar:not([hidden])) .gallery-track { scrollbar-width: none; }
-  .lab-gallery:has(.gallery-scrollbar:not([hidden])) .gallery-track::-webkit-scrollbar { display: none; }
-}
+.gallery-scrollbar[hidden] { display: none; }
+.lab-gallery:has(.gallery-scrollbar:not([hidden])) .gallery-track { scrollbar-width: none; }
+.lab-gallery:has(.gallery-scrollbar:not([hidden])) .gallery-track::-webkit-scrollbar { display: none; }
 @media (min-width: 768px) {
-  .gallery-track { scrollbar-width: none; }
-  .gallery-track::-webkit-scrollbar { display: none; }
   .gallery-item img { transition: transform .2s ease, opacity .2s ease; }
   .gallery-track:not(.is-dragging) .gallery-item a:hover img,
   .gallery-item a:focus-visible img { transform: scale(1.03); opacity: .85; }
@@ -1414,7 +1404,7 @@ html:has(.gallery-dialog[open]) { overflow: hidden; scrollbar-gutter: stable; }
 @media print {
   .lab-gallery { display: block; }
   .gallery-track { overflow: visible; flex-wrap: wrap; }
-  .gallery-control, .gallery-dialog, .gallery-scrollbar { display: none; }
+  .gallery-dialog, .gallery-scrollbar { display: none; }
 }
 
 /* Shared text-style buttons: bold black text; navy and underlined on hover. */
@@ -1428,6 +1418,12 @@ html:has(.gallery-dialog[open]) { overflow: hidden; scrollbar-gutter: stable; }
 .prose .dated-list { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: var(--space-sm) var(--space-md); list-style: none; padding: 0; margin: 0 0 var(--space-sm); }
 .prose .dated-list > li { display: grid; grid-column: 1 / -1; grid-template-columns: subgrid; column-gap: var(--space-md); padding: 0; margin: 0; }
 .prose .dated-list > li > strong { color: var(--black); white-space: nowrap; text-align: justify; text-align-last: justify; }
+/* Full dates stack on mobile; month/year-only dates keep their existing layout. */
+@media (max-width: 767px) {
+  .prose .dated-list > li > strong:has(.date-day) { display: grid; align-content: start; }
+  .date-comma { display: none; }
+  .date-year { text-align: right; text-align-last: right; }
+}
 /* Shared bullet and numbered lists: indentation, outer spacing and item margins. */
 .prose ul, .prose ol { margin: 0 0 var(--space-md); padding-left: var(--space-xl); }
 .prose li { margin: var(--space-sm) 0; }
@@ -1483,7 +1479,7 @@ small, sub, sup { font-size: inherit; }
 strong, b, th { font-weight: 600; }
 ::selection { background: var(--selection-bg); color: var(--black); }
 a { color: var(--accent); text-underline-offset: 4px; text-decoration-thickness: 1px; }
-a:focus-visible, .button:focus-visible, .news-switch input:focus-visible + label, .news-all:focus-visible, .gallery-control:focus-visible, .gallery-track:focus-visible, .gallery-scrollbar:focus-visible { outline: 2px solid var(--accent); outline-offset: var(--space-sm); }
+a:focus-visible, .button:focus-visible, .news-switch input:focus-visible + label, .news-all:focus-visible, .gallery-track:focus-visible, .gallery-scrollbar:focus-visible { outline: 2px solid var(--accent); outline-offset: var(--space-sm); }
 img { display: block; max-width: 100%; height: auto; }
 p { margin: 0 0 var(--space-md); }
 .skip-link { position: fixed; left: var(--space-md); top: -100px; padding: var(--space-sm) var(--space-md); z-index: 20; background: var(--white); border: 1px solid var(--accent-light); }
@@ -1510,27 +1506,27 @@ p { margin: 0 0 var(--space-md); }
   .callout { break-inside: avoid; }
 }
 </style>
-  <meta name="preview-source" content="d19591916fba01675d68e8daf2c632edb47da1c9">
+  <meta name="preview-source" content="b6cf98e4585859defe22f346d6073bafc279c693">
   <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="page-blog">
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="header-inner">
-      <a class="wordmark" href="/shaoyuanlo/codex_test/site-preview/revisions/d19591916fba/index.html" aria-label="Shao-Yuan Lo — Home">Shao-Yuan Lo</a>
+      <a class="wordmark" href="/shaoyuanlo/codex_test/site-preview/revisions/b6cf98e45858/index.html" aria-label="Shao-Yuan Lo — Home">Shao-Yuan Lo</a>
       <nav aria-label="Main navigation">
         
-        <a href="/shaoyuanlo/codex_test/site-preview/revisions/d19591916fba/index.html">Home</a>
+        <a href="/shaoyuanlo/codex_test/site-preview/revisions/b6cf98e45858/index.html">Home</a>
         
-        <a href="/shaoyuanlo/codex_test/site-preview/revisions/d19591916fba/lab/index.html">Trai Lab</a>
+        <a href="/shaoyuanlo/codex_test/site-preview/revisions/b6cf98e45858/lab/index.html">Trai Lab</a>
         
-        <a href="/shaoyuanlo/codex_test/site-preview/revisions/d19591916fba/publications/index.html">Publications</a>
+        <a href="/shaoyuanlo/codex_test/site-preview/revisions/b6cf98e45858/publications/index.html">Publications</a>
         
-        <a href="/shaoyuanlo/codex_test/site-preview/revisions/d19591916fba/activities/index.html">Activities</a>
+        <a href="/shaoyuanlo/codex_test/site-preview/revisions/b6cf98e45858/activities/index.html">Activities</a>
         
-        <a href="/shaoyuanlo/codex_test/site-preview/revisions/d19591916fba/teaching/index.html">Teaching</a>
+        <a href="/shaoyuanlo/codex_test/site-preview/revisions/b6cf98e45858/teaching/index.html">Teaching</a>
         
-        <a href="/shaoyuanlo/codex_test/site-preview/revisions/d19591916fba/blog/index.html" aria-current="page">Blog</a>
+        <a href="/shaoyuanlo/codex_test/site-preview/revisions/b6cf98e45858/blog/index.html" aria-current="page">Blog</a>
         
       </nav>
     </div>

@@ -1,8 +1,6 @@
 // Enhance the Lab photo strip; links and native scrolling work without JavaScript.
 document.querySelectorAll('[data-gallery]').forEach(gallery => {
   const track = gallery.querySelector('.gallery-track');
-  const previous = gallery.querySelector('[data-gallery-previous]');
-  const next = gallery.querySelector('[data-gallery-next]');
   const scrollbar = gallery.querySelector('[data-gallery-scrollbar]');
   const dialog = gallery.querySelector('dialog');
   const fullImage = dialog.querySelector('[data-gallery-full]');
@@ -15,8 +13,6 @@ document.querySelectorAll('[data-gallery]').forEach(gallery => {
   let wheelTimer;
 
   const updateControls = () => {
-    previous.disabled = track.scrollLeft <= 1;
-    next.disabled = track.scrollLeft >= track.scrollWidth - track.clientWidth - 1;
     scrollbar.max = Math.max(0, track.scrollWidth - track.clientWidth);
     scrollbar.value = track.scrollLeft;
     scrollbar.disabled = Number(scrollbar.max) <= 1;
@@ -53,8 +49,6 @@ document.querySelectorAll('[data-gallery]').forEach(gallery => {
     stopMotion();
     track.scrollLeft = Number(scrollbar.value);
   });
-  previous.addEventListener('click', () => move(-1));
-  next.addEventListener('click', () => move(1));
   track.addEventListener('scroll', updateControls, { passive: true });
   new ResizeObserver(() => { stopMotion(); updateControls(); }).observe(track);
   track.addEventListener('keydown', event => {
@@ -140,8 +134,6 @@ document.querySelectorAll('[data-gallery]').forEach(gallery => {
     const bounds = dialog.getBoundingClientRect();
     if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) dialog.close();
   });
-  previous.hidden = false;
-  next.hidden = false;
   scrollbar.hidden = false;
   updateControls();
 });

@@ -1288,7 +1288,7 @@
   }
 }
 /* Shared rectangular corners. */
-a:focus-visible, .button:focus-visible, .news-switch input:focus-visible + label, .news-all:focus-visible, .gallery-control, .gallery-scrollbar, .gallery-track:focus-visible, .gallery-dialog, .skip-link, .portrait img, .prose pre, .callout { border-radius: 6px; }
+a:focus-visible, .button:focus-visible, .news-switch input:focus-visible + label, .news-all:focus-visible, .gallery-scrollbar, .gallery-track:focus-visible, .gallery-dialog, .skip-link, .portrait img, .prose pre, .callout { border-radius: 6px; }
 
 /* Shared headings: H1–H6 size, weight, line height and margins. */
 h1, h2, h3, h4, h5, h6 { font-size: var(--font-size-base); font-weight: 400; margin: var(--space-lg) 0 var(--space-md); line-height: var(--line-height-compact); }
@@ -1301,6 +1301,7 @@ h4, h5, h6 { margin-bottom: var(--space-sm); }
   h2, h3 { break-after: avoid; }
 }
 /* Page heading and homepage profile: shared padding and outer spacing. */
+.page-intro, .hero-roles { font-size: var(--font-size-lg); }
 .page-heading, .hero { padding: var(--space-lg) 0 var(--space-md); margin: 0 0 var(--space-md); }
 /* Markdown dividers: add with ---; keep vertical spacing without a visible line. */
 .prose hr { border: 0; border-top: 1px solid transparent; margin: var(--space-lg) 0; }
@@ -1370,40 +1371,29 @@ nav a[aria-current] { font-weight: 600; }
   .hero-actions { grid-column: 1 / -1; }
 }
 
-/* Lab gallery: horizontal photos, shared captions, controls and a native image dialog. */
-.lab-gallery { cursor: grab; display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: var(--space-sm); margin: var(--space-lg) 0; }
+/* Lab gallery: horizontal photos, shared scrollbar and a native image dialog. */
+.lab-gallery { cursor: grab; margin: var(--space-lg) 0; }
 .gallery-track { display: flex; gap: var(--space-md); min-width: 0; overflow-x: auto; overscroll-behavior-x: contain; }
 .gallery-item { flex: 0 0 min(240px, 85%); min-width: 0; margin: 0; }
 .gallery-item a { display: block; overflow: hidden; cursor: inherit; }
 .gallery-item img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
 .gallery-item figcaption { margin-top: var(--space-xs); }
 .gallery-track.is-dragging, .gallery-track.is-dragging a { cursor: grabbing; user-select: none; }
-.gallery-control { display: grid; place-items: center; width: 44px; height: 44px; padding: 0; border: 0; background: var(--accent-light); color: inherit; font-size: var(--font-size-xl); cursor: pointer; }
-.gallery-control[hidden] { display: none; }
-.lab-gallery:has(.gallery-control[hidden]) { display: block; }
-.gallery-control:hover:enabled { background: var(--accent); color: var(--white); }
-.gallery-control:disabled { cursor: default; }
 .gallery-dialog { cursor: auto; width: min(1120px, calc(100% - var(--space-md) * 2)); max-width: none; max-height: calc(100dvh - var(--space-md) * 2); padding: var(--space-md); border: 1px solid var(--accent-light); background: var(--white); color: var(--black); }
 .gallery-dialog::backdrop { background: var(--black); opacity: .8; }
 .gallery-close { display: block; margin: 0 0 var(--space-sm) auto; padding: var(--space-xs); border: 0; background: var(--white); cursor: pointer; }
 .gallery-dialog img { width: auto; height: auto; max-height: calc(100dvh - 160px); margin: 0 auto; object-fit: contain; }
 .gallery-caption { margin: var(--space-sm) 0 0; text-align: center; }
 html:has(.gallery-dialog[open]) { overflow: hidden; scrollbar-gutter: stable; }
-.gallery-scrollbar { display: none; width: 100%; height: 24px; padding: 0; margin: var(--space-xs) 0 0; border: 0; appearance: none; background: transparent; }
+.gallery-scrollbar { display: block; width: 100%; height: 24px; padding: 0; margin: var(--space-xs) 0 0; border: 0; appearance: none; background: transparent; }
 .gallery-scrollbar::-webkit-slider-runnable-track { height: var(--space-xs); border-radius: inherit; background: var(--accent-light); }
 .gallery-scrollbar::-webkit-slider-thumb { appearance: none; width: 44px; height: var(--space-sm); margin-top: calc((var(--space-xs) - var(--space-sm)) / 2); border-radius: inherit; background: var(--accent); }
 .gallery-scrollbar::-moz-range-track { height: var(--space-xs); border-radius: inherit; background: var(--accent-light); }
 .gallery-scrollbar::-moz-range-thumb { width: 44px; height: var(--space-sm); border: 0; border-radius: inherit; background: var(--accent); }
-@media (max-width: 767px) {
-  .lab-gallery { display: block; }
-  .gallery-control { display: none; }
-  .gallery-scrollbar:not([hidden]) { display: block; }
-  .lab-gallery:has(.gallery-scrollbar:not([hidden])) .gallery-track { scrollbar-width: none; }
-  .lab-gallery:has(.gallery-scrollbar:not([hidden])) .gallery-track::-webkit-scrollbar { display: none; }
-}
+.gallery-scrollbar[hidden] { display: none; }
+.lab-gallery:has(.gallery-scrollbar:not([hidden])) .gallery-track { scrollbar-width: none; }
+.lab-gallery:has(.gallery-scrollbar:not([hidden])) .gallery-track::-webkit-scrollbar { display: none; }
 @media (min-width: 768px) {
-  .gallery-track { scrollbar-width: none; }
-  .gallery-track::-webkit-scrollbar { display: none; }
   .gallery-item img { transition: transform .2s ease, opacity .2s ease; }
   .gallery-track:not(.is-dragging) .gallery-item a:hover img,
   .gallery-item a:focus-visible img { transform: scale(1.03); opacity: .85; }
@@ -1414,7 +1404,7 @@ html:has(.gallery-dialog[open]) { overflow: hidden; scrollbar-gutter: stable; }
 @media print {
   .lab-gallery { display: block; }
   .gallery-track { overflow: visible; flex-wrap: wrap; }
-  .gallery-control, .gallery-dialog, .gallery-scrollbar { display: none; }
+  .gallery-dialog, .gallery-scrollbar { display: none; }
 }
 
 /* Shared text-style buttons: bold black text; navy and underlined on hover. */
@@ -1428,6 +1418,12 @@ html:has(.gallery-dialog[open]) { overflow: hidden; scrollbar-gutter: stable; }
 .prose .dated-list { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: var(--space-sm) var(--space-md); list-style: none; padding: 0; margin: 0 0 var(--space-sm); }
 .prose .dated-list > li { display: grid; grid-column: 1 / -1; grid-template-columns: subgrid; column-gap: var(--space-md); padding: 0; margin: 0; }
 .prose .dated-list > li > strong { color: var(--black); white-space: nowrap; text-align: justify; text-align-last: justify; }
+/* Full dates stack on mobile; month/year-only dates keep their existing layout. */
+@media (max-width: 767px) {
+  .prose .dated-list > li > strong:has(.date-day) { display: grid; align-content: start; }
+  .date-comma { display: none; }
+  .date-year { text-align: right; text-align-last: right; }
+}
 /* Shared bullet and numbered lists: indentation, outer spacing and item margins. */
 .prose ul, .prose ol { margin: 0 0 var(--space-md); padding-left: var(--space-xl); }
 .prose li { margin: var(--space-sm) 0; }
@@ -1483,7 +1479,7 @@ small, sub, sup { font-size: inherit; }
 strong, b, th { font-weight: 600; }
 ::selection { background: var(--selection-bg); color: var(--black); }
 a { color: var(--accent); text-underline-offset: 4px; text-decoration-thickness: 1px; }
-a:focus-visible, .button:focus-visible, .news-switch input:focus-visible + label, .news-all:focus-visible, .gallery-control:focus-visible, .gallery-track:focus-visible, .gallery-scrollbar:focus-visible { outline: 2px solid var(--accent); outline-offset: var(--space-sm); }
+a:focus-visible, .button:focus-visible, .news-switch input:focus-visible + label, .news-all:focus-visible, .gallery-track:focus-visible, .gallery-scrollbar:focus-visible { outline: 2px solid var(--accent); outline-offset: var(--space-sm); }
 img { display: block; max-width: 100%; height: auto; }
 p { margin: 0 0 var(--space-md); }
 .skip-link { position: fixed; left: var(--space-md); top: -100px; padding: var(--space-sm) var(--space-md); z-index: 20; background: var(--white); border: 1px solid var(--accent-light); }
@@ -1510,7 +1506,7 @@ p { margin: 0 0 var(--space-md); }
   .callout { break-inside: avoid; }
 }
 </style>
-  <meta name="preview-source" content="d19591916fba01675d68e8daf2c632edb47da1c9">
+  <meta name="preview-source" content="b6cf98e4585859defe22f346d6073bafc279c693">
   <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="page-home">
@@ -1637,12 +1633,12 @@ p { margin: 0 0 var(--space-md); }
 <hr>
 <h2>Media Coverage</h2>
 <ul class="dated-list">
-<li><strong>Apr 25, 2026</strong><span>Interviewed on <a href="https://www.ner.gov.tw/Program/Episode/?id=26050318334498988&amp;program=%E7%89%B9%E5%88%A5%E7%9A%84%E6%84%9B&amp;programId=24102210171197065">National Education Radio (教育廣播電台)</a>.</span></li>
-<li><strong>Jan 30, 2026</strong><span>Interviewed on <a href="https://www.facebook.com/photo/?fbid=1541793631289368&amp;set=a.440615794740496">Cheng Sheng Broadcasting Corp (正聲廣播公司)</a>.</span></li>
-<li><strong>Oct 11, 2022</strong><span>Reported on <a href="https://www.ftvnews.com.tw/news/detail/2022A11F04M1">Formosa Television (民視新聞)</a>, <a href="https://www.youtube.com/watch?v=4BCV3De5QuE">EBC News (東森新聞)</a>, and <a href="https://www.ntdtv.com.tw/b5/20221022/video/345977.html">New Tang Dynasty Television (新唐人電視台)</a> when I was seving as the Vice President of the Taiwanese Student Association at Johns Hopkins University.</span></li>
-<li><strong>Jun 01, 2019</strong><span>Reported on <a href="https://news.ltn.com.tw/news/life/breakingnews/2809162">Liberty Times (自由時報)</a>, <a href="https://udn.com/news/story/6928/3847789">United Daily News (聯合報)</a>, and <a href="https://www.ctee.com.tw/news/20190601700219-431401">Commercial Times (工商時報)</a> when I was graduating from National Chiao Tung University.</span></li>
-<li><strong>Jul 19, 2013</strong><span>Reported on <a href="https://www.chinatimes.com/newspapers/20130719000490-260107?chdtv">China Times (中國時報)</a> when I was graduating from senior high school (National Experimental High School at Hsinchu Science Park).</span></li>
-<li><strong>Jun 04, 2010</strong><span>Reported on <a href="https://news.ltn.com.tw/news/local/paper/400837">Liberty Times (自由時報)</a> when I was graduating from junior high school.</span></li>
+<li><strong><span class="date-day">Apr 25<span class="date-comma">,</span></span> <span class="date-year">2026</span></strong><span>Interviewed on <a href="https://www.ner.gov.tw/Program/Episode/?id=26050318334498988&amp;program=%E7%89%B9%E5%88%A5%E7%9A%84%E6%84%9B&amp;programId=24102210171197065">National Education Radio (教育廣播電台)</a>.</span></li>
+<li><strong><span class="date-day">Jan 30<span class="date-comma">,</span></span> <span class="date-year">2026</span></strong><span>Interviewed on <a href="https://www.facebook.com/photo/?fbid=1541793631289368&amp;set=a.440615794740496">Cheng Sheng Broadcasting Corp (正聲廣播公司)</a>.</span></li>
+<li><strong><span class="date-day">Oct 11<span class="date-comma">,</span></span> <span class="date-year">2022</span></strong><span>Reported on <a href="https://www.ftvnews.com.tw/news/detail/2022A11F04M1">Formosa Television (民視新聞)</a>, <a href="https://www.youtube.com/watch?v=4BCV3De5QuE">EBC News (東森新聞)</a>, and <a href="https://www.ntdtv.com.tw/b5/20221022/video/345977.html">New Tang Dynasty Television (新唐人電視台)</a> when I was seving as the Vice President of the Taiwanese Student Association at Johns Hopkins University.</span></li>
+<li><strong><span class="date-day">Jun 01<span class="date-comma">,</span></span> <span class="date-year">2019</span></strong><span>Reported on <a href="https://news.ltn.com.tw/news/life/breakingnews/2809162">Liberty Times (自由時報)</a>, <a href="https://udn.com/news/story/6928/3847789">United Daily News (聯合報)</a>, and <a href="https://www.ctee.com.tw/news/20190601700219-431401">Commercial Times (工商時報)</a> when I was graduating from National Chiao Tung University.</span></li>
+<li><strong><span class="date-day">Jul 19<span class="date-comma">,</span></span> <span class="date-year">2013</span></strong><span>Reported on <a href="https://www.chinatimes.com/newspapers/20130719000490-260107?chdtv">China Times (中國時報)</a> when I was graduating from senior high school (National Experimental High School at Hsinchu Science Park).</span></li>
+<li><strong><span class="date-day">Jun 04<span class="date-comma">,</span></span> <span class="date-year">2010</span></strong><span>Reported on <a href="https://news.ltn.com.tw/news/local/paper/400837">Liberty Times (自由時報)</a> when I was graduating from junior high school.</span></li>
 </ul>
 <hr>
 <h2>Sponsors</h2>
