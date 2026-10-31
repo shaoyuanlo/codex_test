@@ -158,12 +158,13 @@ nav a[aria-current] { font-weight: 600; }
 .page-activities ul:has(> li > .dated-list) {
   display: grid;
   grid-template-columns: calc(var(--space-xl) - var(--space-md)) max-content minmax(0, 1fr);
-  column-gap: var(--space-md);
+  gap: var(--space-sm) var(--space-md);
 }
 .page-activities ul:has(> li > .dated-list) > li {
   display: grid;
   grid-column: 1 / -1;
   grid-template-columns: subgrid;
+  margin: 0;
 }
 .page-activities ul:has(> li > .dated-list) > li > strong {
   display: list-item;
@@ -172,7 +173,8 @@ nav a[aria-current] { font-weight: 600; }
 .page-activities .page-content li > .dated-list {
   grid-column: 2 / -1;
   grid-template-columns: subgrid;
-  margin-top: var(--space-sm);
+  row-gap: var(--space-xs);
+  margin: var(--space-xs) 0 0;
 }
 /* Shared bullet and numbered lists: indentation, outer spacing and item margins. */
 .prose ul, .prose ol { margin: 0 0 var(--space-md); padding-left: var(--space-xl); }
