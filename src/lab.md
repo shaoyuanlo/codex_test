@@ -18,15 +18,9 @@ profile:
     url: https://www.threads.com/share/HHqu-o4Ky/
 photos:
   - /files/lab_photos/image_2F33A832.jpeg
-  - /files/lab_photos/IMG_6450.jpg
-  - /files/lab_photos/PXL_20260710_095915324.jpg
   - /files/lab_photos/PXL_20260710_103414851.jpg
-  - /files/lab_photos/PXL_20260715_124218569.jpg
-  - /files/lab_photos/image_71B54162.jpeg
-  - /files/lab_photos/image_72910324.jpg
-  - /files/lab_photos/image_91BCE6A7-CCF4-4B8F-A206-9052B3216005_1787755176.jpg
+  - /files/lab_photos/PXL_20260716_122006292.jpg
   - /files/lab_photos/image_97AC1C93-C944-4D05-9540-DD65427855B0_1784498830.jpg
-  - /files/lab_photos/image_A0B626D0.jpeg
   - /files/lab_photos/Trai_lab3.mp4
 ---
 
@@ -76,4 +70,4 @@ National Taiwan University (NTU) is Taiwan's leading comprehensive research univ
 
 Taipei, home to NTU, is a vibrant, safe, and welcoming city known for its rich culture, delicious food, convenient transportation, and excellent quality of life. At the heart of Taiwan's world-leading technology ecosystem, Taipei hosts major operations of global technology leaders such as NVIDIA, Google, Microsoft, Amazon, AMD, MediaTek, and ASUS, offering exciting opportunities for industry connections and career development.
 
-![NTU campus and university rankings]({{ '/files/HMguHhmbYAATG8B.jfif' | url }})
+<img class="ntu-image" src="{{ '/files/HMguHhmbYAATG8B.jfif' | url }}" alt="NTU campus and university rankings" width="1667" height="1250">
