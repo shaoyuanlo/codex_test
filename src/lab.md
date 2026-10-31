@@ -43,9 +43,6 @@ photos:
   - src: /files/lab_photos/image_A0B626D0.jpeg
     alt: Lab photo 10
     caption: Add a caption for this photo.
-  - src: /files/lab_photos/image_F696088D-F8E9-4D6E-8EE5-A312E38744E4_1784498830.jpg
-    alt: Lab photo 11
-    caption: Add a caption for this photo.
   - src: /files/lab_photos/Trai_lab3.mp4
     type: video
     poster: /files/lab_photos/Trai_lab3-poster.jpg
@@ -85,7 +82,7 @@ photos:
 
 ### Alumni
 
-- Po-Feng Liu 劉柏鋒
+- Po-Feng Liu 劉柏鋒 (BS'26)
 - S-Wei Chen 陳思瑋 (BS'26)
 - Yi-Chen Jan 詹挹辰 (BS'26)
 - Julian Mosig von Aehrenfeld (Visiting Student, May 2026 - Jul 2026; Undergrad at Universität Leipzig) → MS Student at ETH Zurich
