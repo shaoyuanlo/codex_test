@@ -70,7 +70,7 @@ photos:
 
 ---
 
-## About NTU
+## Why NTU?
 
 National Taiwan University (NTU) is Taiwan's leading comprehensive research university, renowned for its academic excellence, outstanding students, and vibrant research community. NTU is ranked 54th worldwide in the 2027 QS World University Rankings and 51st–100th globally in Data Science and Artificial Intelligence in the 2026 QS World University Rankings by Subject.
 
