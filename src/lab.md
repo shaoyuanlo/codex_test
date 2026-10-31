@@ -71,6 +71,7 @@ photos:
 
 ### Alumni
 
+- Po-Feng Liu 劉柏鋒
 - S-Wei Chen 陳思瑋 (BS'26)
 - Yi-Chen Jan 詹挹辰 (BS'26)
 - Julian Mosig von Aehrenfeld (Visiting Student, May 2026 - Jul 2026; Undergrad at Universität Leipzig) → MS Student at ETH Zurich
