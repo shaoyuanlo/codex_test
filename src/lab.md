@@ -61,7 +61,7 @@ photos:
 - Po-Feng Liu 劉柏鋒 (BS'26)
 - S-Wei Chen 陳思瑋 (BS'26)
 - Yi-Chen Jan 詹挹辰 (BS'26)
-- Julian Mosig von Aehrenfeld (Visiting Student, May 2026 - Jul 2026; Undergrad at Universität Leipzig) → MS Student at ETH Zurich
+- Julian Mosig von Aehrenfeld (Visiting Student, Jun 2026 - Aug 2026; Undergrad at Universität Leipzig) → MS Student at ETH Zurich
 - Rishabh Sain (Visiting Student, May 2026 - Jul 2026; Undergrad at IIT Delhi)
 
 ---
