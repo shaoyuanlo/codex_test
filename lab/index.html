@@ -1462,13 +1462,16 @@ html:has(.news-switch:hover, .news-switch:focus-within) { scroll-padding-top: 0;
 .gallery-track { display: flex; gap: var(--space-md); min-width: 0; overflow-x: auto; overscroll-behavior-x: contain; }
 .gallery-item { flex: 0 0 min(240px, 85%); min-width: 0; margin: 0; }
 .gallery-item a { display: block; overflow: hidden; cursor: inherit; }
+.gallery-item a[data-gallery-video] { position: relative; }
+.gallery-item a[data-gallery-video]::after { content: "▶"; position: absolute; inset: 0; display: grid; place-items: center; color: var(--white); font-size: var(--font-size-2xl); text-shadow: 0 1px 4px var(--black); pointer-events: none; }
 .gallery-item img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
 .gallery-item figcaption { margin-top: var(--space-xs); }
 .gallery-track.is-dragging, .gallery-track.is-dragging a { cursor: grabbing; user-select: none; }
 .gallery-dialog { cursor: auto; width: min(1120px, calc(100% - var(--space-md) * 2)); max-width: none; max-height: calc(100dvh - var(--space-md) * 2); padding: var(--space-md); border: 1px solid var(--accent-light); background: var(--white); color: var(--black); }
 .gallery-dialog::backdrop { background: var(--black); opacity: .8; }
 .gallery-close { display: block; margin: 0 0 var(--space-sm) auto; padding: var(--space-xs); border: 0; background: var(--white); cursor: pointer; }
-.gallery-dialog img { width: auto; height: auto; max-height: calc(100dvh - 160px); margin: 0 auto; object-fit: contain; }
+.gallery-dialog img, .gallery-dialog video { display: block; width: auto; max-width: 100%; height: auto; max-height: calc(100dvh - 160px); margin: 0 auto; object-fit: contain; }
+.gallery-dialog [hidden] { display: none; }
 .gallery-caption { margin: var(--space-sm) 0 0; text-align: center; }
 html:has(.gallery-dialog[open]) { overflow: hidden; scrollbar-gutter: stable; }
 .gallery-scrollbar { display: block; width: 100%; height: 24px; padding: 0; margin: var(--space-xs) 0 0; border: 0; appearance: none; background: transparent; }
@@ -1529,7 +1532,7 @@ p { margin: 0 0 var(--space-md); }
   .callout { break-inside: avoid; }
 }
 </style>
-  <meta name="preview-source" content="5b2d056708bf0320de56fc0d9f3dd01aa42f1e52">
+  <meta name="preview-source" content="037bb29c2ef9d5bad3eba39e17e9af92d1a6850d">
   <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="page-lab">
@@ -1576,70 +1579,99 @@ p { margin: 0 0 var(--space-md); }
 </section>
 
 
-<section class="lab-gallery" data-gallery aria-label="Lab photos">
-  <div class="gallery-track" id="lab-photo-track" tabindex="0" aria-label="Photos: use arrow keys or swipe to browse">
+<section class="lab-gallery" data-gallery aria-label="Lab photos and videos">
+  <div class="gallery-track" id="lab-photo-track" tabindex="0" aria-label="Photos and videos: use arrow keys or swipe to browse">
     
     <figure class="gallery-item">
-      <a href="/shaoyuanlo/codex_test/site-preview/files/lab_photos/image_2F33A832.jpeg" data-gallery-photo aria-label="Enlarge photo: Group photo in an indoor gathering space">
-        <img src="/shaoyuanlo/codex_test/site-preview/files/lab_photos/image_2F33A832.jpeg" alt="Group photo in an indoor gathering space" width="240" height="180" loading="lazy" draggable="false">
+      <a href="/shaoyuanlo/codex_test/site-preview/files/lab_photos/image_2F33A832.jpeg" data-gallery-photo aria-label="Enlarge photo: Lab photo 1">
+        <img src="/shaoyuanlo/codex_test/site-preview/files/lab_photos/image_2F33A832.jpeg" alt="Lab photo 1" width="240" height="180" loading="lazy" draggable="false">
       </a>
-      <figcaption>Add a caption for this group photo.</figcaption>
+      <figcaption>Add a caption for this photo.</figcaption>
     </figure>
     
     <figure class="gallery-item">
-      <a href="/shaoyuanlo/codex_test/site-preview/files/lab_photos/demo-blueberries.jpg" data-gallery-photo aria-label="Enlarge photo: Blueberries">
-        <img src="/shaoyuanlo/codex_test/site-preview/files/lab_photos/demo-blueberries.jpg" alt="Blueberries" width="240" height="180" loading="lazy" draggable="false">
+      <a href="/shaoyuanlo/codex_test/site-preview/files/lab_photos/IMG_6450.jpg" data-gallery-photo aria-label="Enlarge photo: Lab photo 2">
+        <img src="/shaoyuanlo/codex_test/site-preview/files/lab_photos/IMG_6450.jpg" alt="Lab photo 2" width="240" height="180" loading="lazy" draggable="false">
       </a>
-      <figcaption>Demo photo: blueberries. Replace with a lab photo and caption.</figcaption>
+      <figcaption>Add a caption for this photo.</figcaption>
     </figure>
     
     <figure class="gallery-item">
-      <a href="/shaoyuanlo/codex_test/site-preview/files/lab_photos/demo-larch.jpg" data-gallery-photo aria-label="Enlarge photo: A larch tree">
-        <img src="/shaoyuanlo/codex_test/site-preview/files/lab_photos/demo-larch.jpg" alt="A larch tree" width="240" height="180" loading="lazy" draggable="false">
+      <a href="/shaoyuanlo/codex_test/site-preview/files/lab_photos/PXL_20260710_095915324.jpg" data-gallery-photo aria-label="Enlarge photo: Lab photo 3">
+        <img src="/shaoyuanlo/codex_test/site-preview/files/lab_photos/PXL_20260710_095915324.jpg" alt="Lab photo 3" width="240" height="180" loading="lazy" draggable="false">
       </a>
-      <figcaption>Demo photo: larch. Replace with a lab photo and caption.</figcaption>
+      <figcaption>Add a caption for this photo.</figcaption>
     </figure>
     
     <figure class="gallery-item">
-      <a href="/shaoyuanlo/codex_test/site-preview/files/lab_photos/demo-urban-bear.jpg" data-gallery-photo aria-label="Enlarge photo: A bear in an urban setting">
-        <img src="/shaoyuanlo/codex_test/site-preview/files/lab_photos/demo-urban-bear.jpg" alt="A bear in an urban setting" width="240" height="180" loading="lazy" draggable="false">
+      <a href="/shaoyuanlo/codex_test/site-preview/files/lab_photos/PXL_20260710_103414851.jpg" data-gallery-photo aria-label="Enlarge photo: Lab photo 4">
+        <img src="/shaoyuanlo/codex_test/site-preview/files/lab_photos/PXL_20260710_103414851.jpg" alt="Lab photo 4" width="240" height="180" loading="lazy" draggable="false">
       </a>
-      <figcaption>Demo photo: an urban bear. Replace with a lab photo and caption.</figcaption>
+      <figcaption>Add a caption for this photo.</figcaption>
     </figure>
     
     <figure class="gallery-item">
-      <a href="/shaoyuanlo/codex_test/site-preview/files/lab_photos/demo-wild-bear.jpg" data-gallery-photo aria-label="Enlarge photo: A bear in the wild">
-        <img src="/shaoyuanlo/codex_test/site-preview/files/lab_photos/demo-wild-bear.jpg" alt="A bear in the wild" width="240" height="180" loading="lazy" draggable="false">
+      <a href="/shaoyuanlo/codex_test/site-preview/files/lab_photos/PXL_20260715_124218569.jpg" data-gallery-photo aria-label="Enlarge photo: Lab photo 5">
+        <img src="/shaoyuanlo/codex_test/site-preview/files/lab_photos/PXL_20260715_124218569.jpg" alt="Lab photo 5" width="240" height="180" loading="lazy" draggable="false">
       </a>
-      <figcaption>Demo photo: a wild bear. Replace with a lab photo and caption.</figcaption>
+      <figcaption>Add a caption for this photo.</figcaption>
     </figure>
     
     <figure class="gallery-item">
-      <a href="/shaoyuanlo/codex_test/site-preview/files/lab_photos/demo-landscape.jpg" data-gallery-photo aria-label="Enlarge photo: MDN landscape sample image">
-        <img src="/shaoyuanlo/codex_test/site-preview/files/lab_photos/demo-landscape.jpg" alt="MDN landscape sample image" width="240" height="180" loading="lazy" draggable="false">
+      <a href="/shaoyuanlo/codex_test/site-preview/files/lab_photos/image_71B54162.jpeg" data-gallery-photo aria-label="Enlarge photo: Lab photo 6">
+        <img src="/shaoyuanlo/codex_test/site-preview/files/lab_photos/image_71B54162.jpeg" alt="Lab photo 6" width="240" height="180" loading="lazy" draggable="false">
       </a>
-      <figcaption>Demo photo: landscape. Replace with a lab photo and caption.</figcaption>
+      <figcaption>Add a caption for this photo.</figcaption>
     </figure>
     
     <figure class="gallery-item">
-      <a href="/shaoyuanlo/codex_test/site-preview/files/lab_photos/demo-pattern.jpg" data-gallery-photo aria-label="Enlarge photo: MDN patterned surface sample image">
-        <img src="/shaoyuanlo/codex_test/site-preview/files/lab_photos/demo-pattern.jpg" alt="MDN patterned surface sample image" width="240" height="180" loading="lazy" draggable="false">
+      <a href="/shaoyuanlo/codex_test/site-preview/files/lab_photos/image_72910324.jpg" data-gallery-photo aria-label="Enlarge photo: Lab photo 7">
+        <img src="/shaoyuanlo/codex_test/site-preview/files/lab_photos/image_72910324.jpg" alt="Lab photo 7" width="240" height="180" loading="lazy" draggable="false">
       </a>
-      <figcaption>Demo photo: patterned surface. Replace with a lab photo and caption.</figcaption>
+      <figcaption>Add a caption for this photo.</figcaption>
     </figure>
     
     <figure class="gallery-item">
-      <a href="/shaoyuanlo/codex_test/site-preview/files/lab_photos/demo-postcard.jpg" data-gallery-photo aria-label="Enlarge photo: MDN postcard background sample image">
-        <img src="/shaoyuanlo/codex_test/site-preview/files/lab_photos/demo-postcard.jpg" alt="MDN postcard background sample image" width="240" height="180" loading="lazy" draggable="false">
+      <a href="/shaoyuanlo/codex_test/site-preview/files/lab_photos/image_91BCE6A7-CCF4-4B8F-A206-9052B3216005_1787755176.jpg" data-gallery-photo aria-label="Enlarge photo: Lab photo 8">
+        <img src="/shaoyuanlo/codex_test/site-preview/files/lab_photos/image_91BCE6A7-CCF4-4B8F-A206-9052B3216005_1787755176.jpg" alt="Lab photo 8" width="240" height="180" loading="lazy" draggable="false">
       </a>
-      <figcaption>Demo photo: postcard background. Replace with a lab photo and caption.</figcaption>
+      <figcaption>Add a caption for this photo.</figcaption>
+    </figure>
+    
+    <figure class="gallery-item">
+      <a href="/shaoyuanlo/codex_test/site-preview/files/lab_photos/image_97AC1C93-C944-4D05-9540-DD65427855B0_1784498830.jpg" data-gallery-photo aria-label="Enlarge photo: Lab photo 9">
+        <img src="/shaoyuanlo/codex_test/site-preview/files/lab_photos/image_97AC1C93-C944-4D05-9540-DD65427855B0_1784498830.jpg" alt="Lab photo 9" width="240" height="180" loading="lazy" draggable="false">
+      </a>
+      <figcaption>Add a caption for this photo.</figcaption>
+    </figure>
+    
+    <figure class="gallery-item">
+      <a href="/shaoyuanlo/codex_test/site-preview/files/lab_photos/image_A0B626D0.jpeg" data-gallery-photo aria-label="Enlarge photo: Lab photo 10">
+        <img src="/shaoyuanlo/codex_test/site-preview/files/lab_photos/image_A0B626D0.jpeg" alt="Lab photo 10" width="240" height="180" loading="lazy" draggable="false">
+      </a>
+      <figcaption>Add a caption for this photo.</figcaption>
+    </figure>
+    
+    <figure class="gallery-item">
+      <a href="/shaoyuanlo/codex_test/site-preview/files/lab_photos/image_F696088D-F8E9-4D6E-8EE5-A312E38744E4_1784498830.jpg" data-gallery-photo aria-label="Enlarge photo: Lab photo 11">
+        <img src="/shaoyuanlo/codex_test/site-preview/files/lab_photos/image_F696088D-F8E9-4D6E-8EE5-A312E38744E4_1784498830.jpg" alt="Lab photo 11" width="240" height="180" loading="lazy" draggable="false">
+      </a>
+      <figcaption>Add a caption for this photo.</figcaption>
+    </figure>
+    
+    <figure class="gallery-item">
+      <a href="/shaoyuanlo/codex_test/site-preview/files/lab_photos/Trai_lab3.mp4" data-gallery-photo data-gallery-video aria-label="Play video: Lab video">
+        <img src="/shaoyuanlo/codex_test/site-preview/files/lab_photos/Trai_lab3-poster.jpg" alt="Lab video" width="240" height="180" loading="lazy" draggable="false">
+      </a>
+      <figcaption>Add a caption for this video.</figcaption>
     </figure>
     
   </div>
   <input class="gallery-scrollbar" data-gallery-scrollbar type="range" min="0" max="100" step="1" value="0" aria-label="Photo scroll position" hidden>
-  <dialog class="gallery-dialog" aria-label="Enlarged photo">
-    <button class="button gallery-close" type="button" data-gallery-close aria-label="Close enlarged photo">Close <span aria-hidden="true">×</span></button>
+  <dialog class="gallery-dialog" aria-label="Photo and video viewer">
+    <button class="button gallery-close" type="button" data-gallery-close aria-label="Close viewer">Close <span aria-hidden="true">×</span></button>
     <img data-gallery-full alt="">
+    <video data-gallery-player controls playsinline preload="none" hidden></video>
     <p class="gallery-caption" data-gallery-caption></p>
   </dialog>
 </section>
@@ -1649,6 +1681,7 @@ document.querySelectorAll('[data-gallery]').forEach(gallery => {
   const scrollbar = gallery.querySelector('[data-gallery-scrollbar]');
   const dialog = gallery.querySelector('dialog');
   const fullImage = dialog.querySelector('[data-gallery-full]');
+  const player = dialog.querySelector('[data-gallery-player]');
   const caption = dialog.querySelector('[data-gallery-caption]');
   let drag = null;
   let suppressClick = false;
@@ -1767,13 +1800,28 @@ document.querySelectorAll('[data-gallery]').forEach(gallery => {
     if (!link || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey || !dialog.showModal) return;
     event.preventDefault();
     const thumbnail = link.querySelector('img');
-    fullImage.src = link.href;
-    fullImage.alt = thumbnail.alt;
+    const isVideo = link.hasAttribute('data-gallery-video');
+    fullImage.hidden = isVideo;
+    player.hidden = !isVideo;
+    if (isVideo) {
+      player.src = link.href;
+      player.poster = thumbnail.src;
+      player.setAttribute('aria-label', thumbnail.alt);
+    } else {
+      fullImage.src = link.href;
+      fullImage.alt = thumbnail.alt;
+    }
     caption.textContent = link.closest('figure').querySelector('figcaption')?.textContent || '';
     caption.hidden = !caption.textContent;
     dialog.showModal();
   }, true);
   dialog.querySelector('[data-gallery-close]').addEventListener('click', () => dialog.close());
+  // Stop playback and release the video when the viewer closes, including Escape.
+  dialog.addEventListener('close', () => {
+    player.pause();
+    player.removeAttribute('src');
+    player.load();
+  });
   dialog.addEventListener('click', event => {
     if (event.target !== dialog) return;
     const bounds = dialog.getBoundingClientRect();
