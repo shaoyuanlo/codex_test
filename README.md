@@ -155,7 +155,7 @@ News、Media Coverage 與 Invited Talks 共用 `.dated-list` 日期清單樣式�
 
 首頁 `News` 後依序為 `Honors & Awards`、`Media Coverage`。獎項使用一般 Markdown bullet 清單，保留獎項名稱、單位、年份及來源連結；媒體報導使用完整日期，例如 `- **Apr 25, 2026** — Message text.`，沿用共用兩欄清單。
 
-`src/activities.md` 使用預設 `layouts/page.njk`，導覽位於 Publications 與 Teaching 之間；最上方 `## Academic Activities` 以 H3 分組及一般 Markdown bullet 維護 Conference Organization、Area Chair、Associate Editor、Reviewer 與 Teaching Assistant，職務與年份依原網站匯入；受邀演講在 `## Invited Talks` 下方以 `### 演講題目` 分組，同題演講合併一組；標題下使用 `- **Mar 03, 2026** — ...` 清單，保留粗體單位、斜體場合、主持人及各場 Slides 連結。日期沿用共用兩欄清單與手機完整日期兩行顯示，不呈現 bullet；群組依最近一場日期排序，組內由新到舊，沒有 Activities 專用設計值。演講保留題目、場合、主持人及原連結；本地投影片放在 `files/talks/`，使用 `url` filter 連結。
+`src/activities.md` 使用預設 `layouts/page.njk`，導覽位於 Publications 與 Teaching 之間；最上方 `## Academic Activities` 以 H3 分組及一般 Markdown bullet 維護 Conference Organization、Area Chair、Associate Editor、Reviewer 與 Teaching Assistant，職務與年份依原網站匯入；受邀演講在 `## Invited Talks` 下方以 `### 演講題目` 分組，同題演講合併一組；標題下使用 `- Mar 03, 2026 — **單位**, *場合*. Host: [姓名](網址). ( [Slides](連結))` 清單，演講列表以 `--space-xl` 內縮、日期使用一般字重，主持人不加 Prof.／Dr.；保留原有單位、場合、主持人及各場投影片連結。日期沿用共用兩欄清單與手機完整日期兩行顯示，不呈現 bullet；群組依最近一場日期排序，組內由新到舊，僅列表內縮另行指定，仍引用共用間距級距。演講保留題目、場合、主持人及原連結；本地投影片放在 `files/talks/`，使用 `url` filter 連結。
 
 News 的日期維持三字母月份與年份；Media Coverage 與 Invited Talks 的日期直接在 Markdown 寫成 `Mon DD, YYYY` 完整日期，日數補足兩位。原網頁前兩場演講誤列為 2025，匯入時依投影片標題頁確認為 Mar 2026，註記保留在 `activities.md`。
 

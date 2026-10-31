@@ -41,48 +41,48 @@ title: Academic Activities
 
 ### From Shortcuts to Reasoning: Robust Post-Training of Theory of Mind
 
-- **Mar 27, 2026** — **National Taiwan University**, hosted by Prof. [Lung-Pan Cheng](https://www.lungpancheng.tw/). [Slides]({{ '/files/talks/NTUCSIE_2026_03_27.pdf' | url }})
-- **Dec 07, 2025** — **Taiwan AI Center of Excellence**, *[Advanced AI Safety Forum](https://iox.ntu.edu.tw/event/EB5Zm4cui6rMBqXd)*, hosted by Prof. [Hsin-Mu Tsai](https://www.csie.ntu.edu.tw/~hsinmu/site/). [Slides]({{ '/files/talks/NTUIoX_2025_12_07.pdf' | url }})
-- **Nov 20, 2025** — **NVIDIA Research Taiwan**, hosted by Prof. [Yu-Chiang Frank Wang](https://vllab.ee.ntu.edu.tw/ycwang.html) and Dr. [Min-Hung Chen](https://research.nvidia.com/labs/twn/author/min-hung-chen/). [Slides]({{ '/files/talks/NVIDIA_2025_11_20.pdf' | url }})
+- Mar 27, 2026 — **National Taiwan University**. Host: [Lung-Pan Cheng](https://www.lungpancheng.tw/). ( [Slides]({{ '/files/talks/NTUCSIE_2026_03_27.pdf' | url }}))
+- Dec 07, 2025 — **Taiwan AI Center of Excellence**, *[Advanced AI Safety Forum](https://iox.ntu.edu.tw/event/EB5Zm4cui6rMBqXd)*. Host: [Hsin-Mu Tsai](https://www.csie.ntu.edu.tw/~hsinmu/site/). ( [Slides]({{ '/files/talks/NTUIoX_2025_12_07.pdf' | url }}))
+- Nov 20, 2025 — **NVIDIA Research Taiwan**. Host: [Yu-Chiang Frank Wang](https://vllab.ee.ntu.edu.tw/ycwang.html) and [Min-Hung Chen](https://research.nvidia.com/labs/twn/author/min-hung-chen/). ( [Slides]({{ '/files/talks/NVIDIA_2025_11_20.pdf' | url }}))
 
 ### Three Training Stages of Large Reasoning Language Models
 
-- **Mar 14, 2026** — **National Taiwan University Hospital**, *Surgical Data Science Symposium*, hosted by Dr. [Chi-Chuan Yeh](https://www.ntuh.gov.tw/surg/Vcard.action?q_type=-1&q_itemCode=386) and Dr. [Hung-Hsuan Yen](https://scholar.google.com/citations?user=xojqAqoAAAAJ&hl=en). [Slides]({{ '/files/talks/NTUH_2026_03_14.pdf' | url }})
+- Mar 14, 2026 — **National Taiwan University Hospital**, *Surgical Data Science Symposium*. Host: [Chi-Chuan Yeh](https://www.ntuh.gov.tw/surg/Vcard.action?q_type=-1&q_itemCode=386) and [Hung-Hsuan Yen](https://scholar.google.com/citations?user=xojqAqoAAAAJ&hl=en). ( [Slides]({{ '/files/talks/NTUH_2026_03_14.pdf' | url }}))
 
 ### Anomaly Detection in the Era of Multimodal Large Language Models
 
-- **Oct 20, 2025** — **Australian National University** (Remote), hosted by Prof. [Liang Zheng](https://zheng-lab-anu.github.io/). [Slides]({{ '/files/talks/ANU_2025_10_20.pdf' | url }})
-- **Jun 30, 2025** — **ProtagoLabs** (Remote), hosted by Dr. [Xing Di](https://scholar.google.com/citations?user=2KNy5XIAAAAJ). [Slides]({{ '/files/talks/ProtagoLabs_2025_06_30.pdf' | url }})
-- **Apr 15, 2025** — **UC Santa Cruz**, hosted by Prof. [Cihang Xie](https://cihangxie.github.io/) and Prof. [Yuyin Zhou](https://yuyinzhou.github.io/). [Slides]({{ '/files/talks/UCSC_2025_04_15.pdf' | url }})
-- **Mar 10, 2025** — **UC Riverside**, hosted by Prof. [Amit K. Roy-Chowdhury](https://vcg.ece.ucr.edu/amit). [Slides]({{ '/files/talks/UCR_2025_03_10.pdf' | url }})
-- **Mar 04, 2025** — *[WACV 2025 Workshop on Out-of-Label Hazards in Autonomous Driving](https://sites.google.com/ucr.edu/cooolsworkshop/home)*, hosted by Dr. [Abhishek Aich](https://abhishekaich27.github.io/) and Dr. [Ali AlShami](https://www.alialshami87.com/). [Slides]({{ '/files/talks/WACV25_COOOL_2025_03_04.pdf' | url }})
+- Oct 20, 2025 — **Australian National University** (Remote). Host: [Liang Zheng](https://zheng-lab-anu.github.io/). ( [Slides]({{ '/files/talks/ANU_2025_10_20.pdf' | url }}))
+- Jun 30, 2025 — **ProtagoLabs** (Remote). Host: [Xing Di](https://scholar.google.com/citations?user=2KNy5XIAAAAJ). ( [Slides]({{ '/files/talks/ProtagoLabs_2025_06_30.pdf' | url }}))
+- Apr 15, 2025 — **UC Santa Cruz**. Host: [Cihang Xie](https://cihangxie.github.io/) and [Yuyin Zhou](https://yuyinzhou.github.io/). ( [Slides]({{ '/files/talks/UCSC_2025_04_15.pdf' | url }}))
+- Mar 10, 2025 — **UC Riverside**. Host: [Amit K. Roy-Chowdhury](https://vcg.ece.ucr.edu/amit). ( [Slides]({{ '/files/talks/UCR_2025_03_10.pdf' | url }}))
+- Mar 04, 2025 — *[WACV 2025 Workshop on Out-of-Label Hazards in Autonomous Driving](https://sites.google.com/ucr.edu/cooolsworkshop/home)*. Host: [Abhishek Aich](https://abhishekaich27.github.io/) and [Ali AlShami](https://www.alialshami87.com/). ( [Slides]({{ '/files/talks/WACV25_COOOL_2025_03_04.pdf' | url }}))
 
 ### Towards Zero-Shot Anomaly Detection and Reasoning with Multimodal Large Language Models
 
-- **Apr 12, 2025** — **[China Society of Image and Graphics (CSIG) Wuhan Center](https://mp.weixin.qq.com/s/opOMTAN2s7kLVwVaNfwAfg)** (Virtual), hosted by Prof. [Yunkang Cao](https://caoyunkang.github.io/). [Slides]({{ '/files/talks/CSIG_2025_04_12.pdf' | url }})
+- Apr 12, 2025 — **[China Society of Image and Graphics (CSIG) Wuhan Center](https://mp.weixin.qq.com/s/opOMTAN2s7kLVwVaNfwAfg)** (Virtual). Host: [Yunkang Cao](https://caoyunkang.github.io/). ( [Slides]({{ '/files/talks/CSIG_2025_04_12.pdf' | url }}))
 
 ### AI Safety and Beyond: Robustness, Monitoring, and Alignment
 
-- **Nov 04, 2024** — **National Taiwan University**, hosted by Prof. [I-Hsiang Wang](https://cc.ee.ntu.edu.tw/~ihsiangw/). [Slides]({{ '/files/talks/NTUEE_2024_11_04_web.pdf' | url }})
+- Nov 04, 2024 — **National Taiwan University**. Host: [I-Hsiang Wang](https://cc.ee.ntu.edu.tw/~ihsiangw/). ( [Slides]({{ '/files/talks/NTUEE_2024_11_04_web.pdf' | url }}))
 
 ### Multimodal Large Language Models for Driving Safety Applications
 
-- **Sep 19, 2024** — **Jilin University** (Remote), hosted by Prof. [Hongxia Xie](https://ccst.jlu.edu.cn/info/1359/18959.htm). [Slides]({{ '/files/talks/JLU_2024_09_19_web.pdf' | url }})
+- Sep 19, 2024 — **Jilin University** (Remote). Host: [Hongxia Xie](https://ccst.jlu.edu.cn/info/1359/18959.htm). ( [Slides]({{ '/files/talks/JLU_2024_09_19_web.pdf' | url }}))
 
 ### Robust Computer Vision Against Adversarial Examples and Domain Shifts
 
-- **Jan 09, 2024** — **National Yang Ming Chiao Tung University**, hosted by Prof. [Wen-Hsiao Peng](https://sites.google.com/g2.nctu.edu.tw/wpeng/cv). [Slides]({{ '/files/talks/CCVL_2023_04_14.pdf' | url }})
-- **Dec 14, 2023** — **Academia Sinica**, hosted by Prof. [Jun-Cheng Chen](https://www.citi.sinica.edu.tw/pages/pullpull/index_en.html). [Slides]({{ '/files/talks/CCVL_2023_04_14.pdf' | url }})
-- **Apr 14, 2023** — **Johns Hopkins University**, *Computational Cognition, Vision, and Learning (CCVL) Lab*, hosted by Prof. [Alan Yuille](https://www.cs.jhu.edu/~ayuille/). [Slides]({{ '/files/talks/CCVL_2023_04_14.pdf' | url }})
+- Jan 09, 2024 — **National Yang Ming Chiao Tung University**. Host: [Wen-Hsiao Peng](https://sites.google.com/g2.nctu.edu.tw/wpeng/cv). ( [Slides]({{ '/files/talks/CCVL_2023_04_14.pdf' | url }}))
+- Dec 14, 2023 — **Academia Sinica**. Host: [Jun-Cheng Chen](https://www.citi.sinica.edu.tw/pages/pullpull/index_en.html). ( [Slides]({{ '/files/talks/CCVL_2023_04_14.pdf' | url }}))
+- Apr 14, 2023 — **Johns Hopkins University**, *Computational Cognition, Vision, and Learning (CCVL) Lab*. Host: [Alan Yuille](https://www.cs.jhu.edu/~ayuille/). ( [Slides]({{ '/files/talks/CCVL_2023_04_14.pdf' | url }}))
 
 ### Defending Against Multiple and Unforeseen Adversarial Videos
 
-- **Jan 10, 2022** — **National Yang Ming Chiao Tung University**, hosted by Prof. [Wen-Hsiao Peng](https://sites.google.com/g2.nctu.edu.tw/wpeng/cv). [Slides]({{ '/files/talks/Sinica_2022_01_10_NCTU.pdf' | url }})
-- **Jan 05, 2022** — **Academia Sinica**, hosted by Prof. [Jun-Cheng Chen](https://www.citi.sinica.edu.tw/pages/pullpull/index_en.html). [Slides]({{ '/files/talks/Sinica_2022_01_05.pdf' | url }})
+- Jan 10, 2022 — **National Yang Ming Chiao Tung University**. Host: [Wen-Hsiao Peng](https://sites.google.com/g2.nctu.edu.tw/wpeng/cv). ( [Slides]({{ '/files/talks/Sinica_2022_01_10_NCTU.pdf' | url }}))
+- Jan 05, 2022 — **Academia Sinica**. Host: [Jun-Cheng Chen](https://www.citi.sinica.edu.tw/pages/pullpull/index_en.html). ( [Slides]({{ '/files/talks/Sinica_2022_01_05.pdf' | url }}))
 
 ### Adversarial Attacks and Defenses in Videos
 
-- **Jun 19, 2021** — *[CVPR 2021 Tutorial on Adversarial Machine Learning in Computer Vision](https://advmlincv.github.io/cvpr21-tutorial/)* (Virtual), hosted by Prof. [Cihang Xie](https://cihangxie.github.io/). [Slides]({{ '/files/talks/CVPR21_tutorial.pdf' | url }})
+- Jun 19, 2021 — *[CVPR 2021 Tutorial on Adversarial Machine Learning in Computer Vision](https://advmlincv.github.io/cvpr21-tutorial/)* (Virtual). Host: [Cihang Xie](https://cihangxie.github.io/). ( [Slides]({{ '/files/talks/CVPR21_tutorial.pdf' | url }}))
 
 ---
 
