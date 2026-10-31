@@ -18,6 +18,7 @@ profile:
     url: https://www.threads.com/share/HHqu-o4Ky/
 photos:
   - /files/lab_photos/image_2F33A832.jpeg
+  - /files/lab_photos/IMG_6450.jpg
   - /files/lab_photos/PXL_20260710_103414851.jpg
   - /files/lab_photos/PXL_20260716_122006292.jpg
   - /files/lab_photos/image_97AC1C93-C944-4D05-9540-DD65427855B0_1784498830.jpg
