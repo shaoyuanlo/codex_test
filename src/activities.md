@@ -75,9 +75,9 @@ title: Academic Activities
 ## Public Talks
 
 - **生成式AI禁不起的誘惑**
-  - Dec 20, 2025 — **[教育部公費學人俱樂部](https://advmlincv.github.io/cvpr21-tutorial)**. Host: 教育部國際及兩岸教育司. [[Slides]({{ '/files/talks/生成式AI禁不起的誘惑.pdf' | url }})]
+  - Dec 20, 2025 — **[教育部公費學人俱樂部](https://twgps.moe.edu.tw/Post/21610)**. Host: 教育部國際及兩岸教育司. [[Slides]({{ '/files/talks/生成式AI禁不起的誘惑.pdf' | url }})]
 - **在美國最危險的城市進化**
-  - Dec 20, 2025 — **[教育部鼓勵出國留遊學宣導說明會](https://www.youtube.com/watch?v=KNsbakx08w8)**. Host: 教育部國際及兩岸教育司. [[Slides]({{ '/files/talks/在美國最危險的城市進化.pdf' | url }})]
+  - Nov 15, 2025 — **[教育部鼓勵出國留遊學宣導說明會](https://www.youtube.com/watch?v=KNsbakx08w8)**. Host: 教育部國際及兩岸教育司. [[Slides]({{ '/files/talks/在美國最危險的城市進化.pdf' | url }})]
  
 ---
 
@@ -86,7 +86,7 @@ title: Academic Activities
 - [Jike Zhong](https://jike338.github.io/) (USC, May 2025 – Aug 2025)
 - [Chunhui Zhang](https://chunhuizng.github.io/) (Dartmouth, Jun 2024 – Aug 2024) → Member of Technical Staff at Microsoft AI
 - [Jiacong Xu](https://xujiacong.github.io/) (JHU, May 2024 – Aug 2024)
-- [Bardia Safaei](https://sites.google.com/view/bardiasafaeic) (JHU, May 2024 – Aug 2024) → Research Scientist at Nuro
+- [Bardia Safaei](https://sites.google.com/view/bardiasafaei) (JHU, May 2024 – Aug 2024) → Research Scientist at Nuro
 - [Yuxiang Guo](https://scholar.google.com/citations?user=Tj7zYpEAAAAJ&hl) (JHU, Jan 2023 – May 2024) → Software Engineer at Google
 - [Yuchen Yang](https://yuchenyang.org/index.html) (JHU, Oct 2023 – Feb 2024) → Assistant Professor at Penn State
 
