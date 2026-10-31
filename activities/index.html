@@ -1457,8 +1457,11 @@ html:has(.news-switch:hover, .news-switch:focus-within) { scroll-padding-top: 0;
   .sponsor-row { display: contents; }
 }
 
-/* Lab gallery: horizontal photos, shared scrollbar and a native image dialog. */
+/* Media: Lab carousel, two-column Photos library and shared viewer. */
 .lab-gallery { cursor: grab; margin: var(--space-lg) 0; }
+.gallery-actions { margin-top: var(--space-sm); text-align: right; }
+.photo-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-md); margin-bottom: var(--space-lg); }
+.photo-grid .gallery-item a { cursor: pointer; }
 .gallery-track { display: flex; gap: var(--space-md); min-width: 0; overflow-x: auto; overscroll-behavior-x: contain; }
 .gallery-item { flex: 0 0 min(240px, 85%); min-width: 0; margin: 0; }
 .gallery-item a { display: block; overflow: hidden; cursor: inherit; }
@@ -1485,6 +1488,7 @@ html:has(.gallery-dialog[open]) { overflow: hidden; scrollbar-gutter: stable; }
 @media (min-width: 768px) {
   .gallery-item img { transition: transform .2s ease, opacity .2s ease; }
   .gallery-track:not(.is-dragging) .gallery-item a:hover img,
+  .photo-grid .gallery-item a:hover img,
   .gallery-item a:focus-visible img { transform: scale(1.03); opacity: .85; }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -1532,7 +1536,7 @@ p { margin: 0 0 var(--space-md); }
   .callout { break-inside: avoid; }
 }
 </style>
-  <meta name="preview-source" content="aa131d1beff811920fbc52d4f1e0f6c2e056fdc2">
+  <meta name="preview-source" content="0b6ad00bdba0b11f93ed693c4bc3c48344804984">
   <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="page-activities">
