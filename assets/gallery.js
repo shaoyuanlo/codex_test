@@ -8,6 +8,21 @@ document.querySelectorAll('[data-gallery], [data-photo-library]').forEach(galler
   const caption = dialog.querySelector('[data-gallery-caption]');
   let suppressClick = false;
 
+  // Center the first rendered line and align the remaining lines to its left edge.
+  const alignCaption = element => {
+    element.style.width = '';
+    if (!element.textContent.trim() || !element.getClientRects().length) return;
+    const range = document.createRange();
+    range.selectNodeContents(element);
+    const lines = [...range.getClientRects()].filter(rect => rect.width > 0);
+    if (lines.length > 1) element.style.width = `${Math.ceil(lines[0].width)}px`;
+  };
+  const alignCaptions = () => gallery.querySelectorAll('.gallery-item figcaption, .gallery-caption')
+    .forEach(alignCaption);
+  document.fonts.ready.then(alignCaptions);
+  document.fonts.addEventListener('loadingdone', alignCaptions);
+  window.addEventListener('resize', alignCaptions);
+
   if (track) {
     let drag = null;
     let animation = 0;
@@ -143,6 +158,7 @@ document.querySelectorAll('[data-gallery], [data-photo-library]').forEach(galler
     caption.textContent = link.closest('figure').querySelector('figcaption')?.textContent || '';
     caption.hidden = !caption.textContent;
     dialog.showModal();
+    alignCaption(caption);
   }, true);
   dialog.querySelector('[data-gallery-close]').addEventListener('click', () => dialog.close());
   // Stop playback and release the video when the viewer closes, including Escape.

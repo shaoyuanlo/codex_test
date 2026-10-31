@@ -126,6 +126,8 @@ nav a[aria-current] { font-weight: 600; }
 .portrait { margin: var(--space-lg) 0 0; padding: 0; }
 .portrait img { width: 100%; aspect-ratio: 5 / 6; object-fit: cover; }
 .page-lab .portrait img { object-fit: contain; }
+/* Campus image: centered and sized relative to the content container. */
+.ntu-image { width: 80%; margin-inline: auto; }
 /* Mobile profile: names and roles on the left, portrait spanning both rows, contacts below. */
 @media (max-width: 767px) {
   .hero h1 { grid-column: 1; }
@@ -135,6 +137,7 @@ nav a[aria-current] { font-weight: 600; }
   .hero-roles { grid-column: 1; }
   .portrait { grid-column: 2; grid-row: 1 / 3; }
   .hero-actions { grid-column: 1 / -1; }
+  .ntu-image { width: 90%; }
 }
 
 /* Shared text-style buttons: bold black text; navy and underlined on hover. */
@@ -242,7 +245,7 @@ html:has(.news-switch:hover, .news-switch:focus-within) { scroll-padding-top: 0;
 .gallery-dialog img, .gallery-dialog video { display: block; width: auto; max-width: 100%; height: auto; max-height: calc(100dvh - 160px); margin: 0 auto; object-fit: contain; }
 .gallery-dialog [hidden] { display: none; }
 .gallery-caption { margin: var(--space-sm) 0 0; }
-/* Center a short caption block; wrapped lines fill the available width and align left. */
+/* Center captions as a block; the media script fits wrapped captions to their first line. */
 .gallery-item figcaption, .gallery-caption { width: fit-content; max-width: 100%; margin-inline: auto; line-height: var(--line-height-compact); text-align: left; }
 html:has(.gallery-dialog[open]) { overflow: hidden; scrollbar-gutter: stable; }
 .gallery-scrollbar { display: block; width: 100%; height: 24px; padding: 0; margin: var(--space-xs) 0 0; border: 0; appearance: none; background: transparent; }
@@ -279,7 +282,7 @@ strong, b, th { font-weight: 600; }
 a { color: var(--accent); text-underline-offset: 4px; text-decoration-thickness: 1px; }
 a:focus-visible, .button:focus-visible, .news-switch input:focus-visible + label, .news-all:focus-visible, .gallery-track:focus-visible, .gallery-scrollbar:focus-visible { outline: 2px solid var(--accent); outline-offset: var(--space-sm); }
 img { display: block; max-width: 100%; height: auto; }
-p { margin: 0 0 var(--space-md); }
+p { margin: 0 0 var(--space-sm); }
 .skip-link { position: fixed; left: var(--space-md); top: -100px; padding: var(--space-sm) var(--space-md); z-index: 20; background: var(--white); border: 1px solid var(--accent-light); }
 .skip-link:focus { top: var(--space-sm); }
 .site-footer { flex-shrink: 0; }
