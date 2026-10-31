@@ -1382,13 +1382,15 @@ nav a[aria-current] { font-weight: 600; }
 /* Dated lists: date width follows month/year or full dates; body gaps stay shared. */
 .prose .dated-list { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: var(--space-sm) var(--space-md); list-style: none; padding: 0; margin: 0 0 var(--space-sm); }
 .prose .dated-list > li { display: grid; grid-column: 1 / -1; grid-template-columns: subgrid; column-gap: var(--space-md); padding: 0; margin: 0; }
-.prose .dated-list > li > strong { color: var(--black); white-space: nowrap; text-align: justify; text-align-last: justify; }
+.prose .dated-list > li > :first-child { color: var(--black); white-space: nowrap; text-align: justify; text-align-last: justify; }
 /* Full dates stack on mobile; month/year-only dates keep their existing layout. */
 @media (max-width: 767px) {
-  .prose .dated-list > li > strong:has(.date-day) { display: grid; align-content: start; }
+  .prose .dated-list > li > :first-child:has(.date-day) { display: grid; align-content: start; }
   .date-comma { display: none; }
   .date-year { text-align: right; text-align-last: right; }
 }
+/* Indent grouped talk events beneath their shared headings. */
+.page-activities .page-content h3 + .dated-list { margin-left: var(--space-xl); }
 /* Shared bullet and numbered lists: indentation, outer spacing and item margins. */
 .prose ul, .prose ol { margin: 0 0 var(--space-md); padding-left: var(--space-xl); }
 .prose li { margin: var(--space-sm) 0; }
@@ -1507,7 +1509,7 @@ p { margin: 0 0 var(--space-md); }
   .callout { break-inside: avoid; }
 }
 </style>
-  <meta name="preview-source" content="a61af2e0d200e90f1c1a1169bd720b3a8b6997c1">
+  <meta name="preview-source" content="1a7514021e4143b3a3867c04f164e562d01148a5">
   <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
