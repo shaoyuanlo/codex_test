@@ -1389,14 +1389,10 @@ nav a[aria-current] { font-weight: 600; }
   .date-comma { display: none; }
   .date-year { text-align: right; text-align-last: right; }
 }
-/* Grouped talks: shared date-column width, title gap and an additional indent. */
+/* Grouped talks: title gap and an additional indent. */
 .page-activities .page-content li > .dated-list {
-  grid-template-columns: 12ch minmax(0, 1fr);
   margin-top: var(--space-sm);
   margin-left: var(--space-xl);
-}
-@media (max-width: 767px) {
-  .page-activities .page-content li > .dated-list { grid-template-columns: 6ch minmax(0, 1fr); }
 }
 /* Shared bullet and numbered lists: indentation, outer spacing and item margins. */
 .prose ul, .prose ol { margin: 0 0 var(--space-md); padding-left: var(--space-xl); }
@@ -1516,7 +1512,7 @@ p { margin: 0 0 var(--space-md); }
   .callout { break-inside: avoid; }
 }
 </style>
-  <meta name="preview-source" content="9df91f8facd684de97d2116acf0a0339400560d0">
+  <meta name="preview-source" content="7fa9f3c4e505b3ee011abb02aeb772542c42db1d">
   <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="page-activities">
