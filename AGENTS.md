@@ -57,7 +57,7 @@
 ### News 與共用日期清單
 
 - 使用 Markdown 清單，News 格式為 `- **Oct 2025** — Message text.`；Media Coverage 使用完整日期，如 `- **Mar 03, 2026** — Message text.`。日期直接寫在內容，不新增日期轉換設定。
-- 共用版型用 datedLists 轉換分出日期與內文，CSS 維持兩欄及長文字換行位置，News、Media Coverage 與 Invited Talks 日期欄共用 max-content，依各清單的實際日期文字寬度決定，不另設固定寬度，與右側內容沿用相同間距並維持各列對齊，日期使用黑色並在欄內兩端對齊；手機完整日期分成月日、年份兩行，月日兩端對齊且不顯示逗號，年份靠右，與內容的欄間距不變；保留內文的連結、粗體及斜體。
+- 共用版型用 datedLists 轉換分出日期與內文，CSS 維持兩欄及長文字換行位置，日期欄使用 max-content；News 與 Media Coverage 依各清單內容決定，Invited Talks 透過 Grid／subgrid 讓所有題目群組共用整個區塊中最寬的日期欄，不另設固定寬度，與右側內容沿用相同間距並維持各列對齊，日期使用黑色並在欄內兩端對齊；手機完整日期分成月日、年份兩行，月日兩端對齊且不顯示逗號，年份靠右，與內容的欄間距不變；保留內文的連結、粗體及斜體。
 - News、Media Coverage 與 Invited Talks 共用日期清單元件與樣式，不另建分頁樣式；一般 bullet 清單維持預設樣式。Invited Talks 使用粗體題目 bullet 分組，同題合併；其下使用共用完整日期清單，保留粗體單位、一般字體場合、主持人及每場 Slides，場次不呈現 bullet；依最近場次排序，組內由新到舊，沿用共用清單及日期兩欄／手機兩行設定；演講列表相對題目文字再以共用 space-xl 內縮，日期在 Markdown 不加粗體，內容格式為粗體單位、一般字體場合、Host: 姓名及中括號內 Slides，主持人姓名不加連結；題目與演講列表以共用 space-sm 間隔，移除姓名前的 Prof.／Dr.。首頁 Honors & Awards 放在 News 後，接著 Media Coverage；Activities 沿用預設 page 版型。
 - 原生單選控制項與 CSS 提供標題旁的 Recent／All 切換，沿用共用 `.button`；All 合併所有消息，在 Recent 的自然高度內垂直捲動，切換不改變整頁捲動位置；不加入 JavaScript 或額外依賴。
 - Recent 顯示數量由 `news-archive` 前方的消息位置決定，舊消息置於 archive 內；`newsTabs` 在建置時產生兩種檢視，內容只維護一份。保留使用者手動調整，不擅自恢復某個固定筆數或建立數量選項。
