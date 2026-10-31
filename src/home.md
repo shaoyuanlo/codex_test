@@ -27,6 +27,10 @@ profile:
     url: https://www.linkedin.com/in/shaoyuanlo/
   - label: X / Twitter
     url: https://x.com/shaoyuanlo
+  - label: Facebook
+    url: https://www.facebook.com/shaoyuanlo/
+  - label: Threads
+    url: https://www.threads.com/@shaoyuanlo
 website:
   navigation:
   - label: Home
