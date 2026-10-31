@@ -1389,10 +1389,25 @@ nav a[aria-current] { font-weight: 600; }
   .date-comma { display: none; }
   .date-year { text-align: right; text-align-last: right; }
 }
-/* Grouped talks: title gap and an additional indent. */
+/* Grouped talks: one intrinsic date column shared across every title group. */
+.page-activities ul:has(> li > .dated-list) {
+  display: grid;
+  grid-template-columns: calc(var(--space-xl) - var(--space-md)) max-content minmax(0, 1fr);
+  column-gap: var(--space-md);
+}
+.page-activities ul:has(> li > .dated-list) > li {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: subgrid;
+}
+.page-activities ul:has(> li > .dated-list) > li > strong {
+  display: list-item;
+  grid-column: 1 / -1;
+}
 .page-activities .page-content li > .dated-list {
+  grid-column: 2 / -1;
+  grid-template-columns: subgrid;
   margin-top: var(--space-sm);
-  margin-left: var(--space-xl);
 }
 /* Shared bullet and numbered lists: indentation, outer spacing and item margins. */
 .prose ul, .prose ol { margin: 0 0 var(--space-md); padding-left: var(--space-xl); }
@@ -1512,7 +1527,7 @@ p { margin: 0 0 var(--space-md); }
   .callout { break-inside: avoid; }
 }
 </style>
-  <meta name="preview-source" content="7fa9f3c4e505b3ee011abb02aeb772542c42db1d">
+  <meta name="preview-source" content="b5fbb561e4e426da75295c487dca15c0c52e63c4">
   <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="page-teaching">

@@ -4,13 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Teaching · Shao-Yuan Lo</title>
-  <link rel="canonical" href="https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/7fa9f3c4e505/teaching/index.html">
+  <link rel="canonical" href="https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/b5fbb561e4e4/teaching/index.html">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Teaching · Shao-Yuan Lo">
-  <meta property="og:url" content="https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/7fa9f3c4e505/teaching/index.html">
-  <meta property="og:image" content="https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/7fa9f3c4e505/files/portrait.jpg">
-  <link rel="icon" type="image/png" sizes="180x180" href="/shaoyuanlo/codex_test/site-preview/revisions/7fa9f3c4e505/files/ntu-emblem.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/shaoyuanlo/codex_test/site-preview/revisions/7fa9f3c4e505/files/ntu-emblem.png">
+  <meta property="og:url" content="https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/b5fbb561e4e4/teaching/index.html">
+  <meta property="og:image" content="https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/b5fbb561e4e4/files/portrait.jpg">
+  <link rel="icon" type="image/png" sizes="180x180" href="/shaoyuanlo/codex_test/site-preview/revisions/b5fbb561e4e4/files/ntu-emblem.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/shaoyuanlo/codex_test/site-preview/revisions/b5fbb561e4e4/files/ntu-emblem.png">
   <style data-preview-style="fonts">/* Self-hosted font faces. Original font binaries are unchanged; licenses are alongside each family. */
 
 /* @fontsource-variable/inter@5.3.0 — index.css */
@@ -1389,10 +1389,25 @@ nav a[aria-current] { font-weight: 600; }
   .date-comma { display: none; }
   .date-year { text-align: right; text-align-last: right; }
 }
-/* Grouped talks: title gap and an additional indent. */
+/* Grouped talks: one intrinsic date column shared across every title group. */
+.page-activities ul:has(> li > .dated-list) {
+  display: grid;
+  grid-template-columns: calc(var(--space-xl) - var(--space-md)) max-content minmax(0, 1fr);
+  column-gap: var(--space-md);
+}
+.page-activities ul:has(> li > .dated-list) > li {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: subgrid;
+}
+.page-activities ul:has(> li > .dated-list) > li > strong {
+  display: list-item;
+  grid-column: 1 / -1;
+}
 .page-activities .page-content li > .dated-list {
+  grid-column: 2 / -1;
+  grid-template-columns: subgrid;
   margin-top: var(--space-sm);
-  margin-left: var(--space-xl);
 }
 /* Shared bullet and numbered lists: indentation, outer spacing and item margins. */
 .prose ul, .prose ol { margin: 0 0 var(--space-md); padding-left: var(--space-xl); }
@@ -1512,27 +1527,27 @@ p { margin: 0 0 var(--space-md); }
   .callout { break-inside: avoid; }
 }
 </style>
-  <meta name="preview-source" content="7fa9f3c4e505b3ee011abb02aeb772542c42db1d">
+  <meta name="preview-source" content="b5fbb561e4e426da75295c487dca15c0c52e63c4">
   <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="page-teaching">
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="header-inner">
-      <a class="wordmark" href="/shaoyuanlo/codex_test/site-preview/revisions/7fa9f3c4e505/index.html" aria-label="Shao-Yuan Lo — Home">Shao-Yuan Lo</a>
+      <a class="wordmark" href="/shaoyuanlo/codex_test/site-preview/revisions/b5fbb561e4e4/index.html" aria-label="Shao-Yuan Lo — Home">Shao-Yuan Lo</a>
       <nav aria-label="Main navigation">
         
-        <a href="/shaoyuanlo/codex_test/site-preview/revisions/7fa9f3c4e505/index.html">Home</a>
+        <a href="/shaoyuanlo/codex_test/site-preview/revisions/b5fbb561e4e4/index.html">Home</a>
         
-        <a href="/shaoyuanlo/codex_test/site-preview/revisions/7fa9f3c4e505/lab/index.html">Trai Lab</a>
+        <a href="/shaoyuanlo/codex_test/site-preview/revisions/b5fbb561e4e4/lab/index.html">Trai Lab</a>
         
-        <a href="/shaoyuanlo/codex_test/site-preview/revisions/7fa9f3c4e505/publications/index.html">Publications</a>
+        <a href="/shaoyuanlo/codex_test/site-preview/revisions/b5fbb561e4e4/publications/index.html">Publications</a>
         
-        <a href="/shaoyuanlo/codex_test/site-preview/revisions/7fa9f3c4e505/activities/index.html">Activities</a>
+        <a href="/shaoyuanlo/codex_test/site-preview/revisions/b5fbb561e4e4/activities/index.html">Activities</a>
         
-        <a href="/shaoyuanlo/codex_test/site-preview/revisions/7fa9f3c4e505/teaching/index.html" aria-current="page">Teaching</a>
+        <a href="/shaoyuanlo/codex_test/site-preview/revisions/b5fbb561e4e4/teaching/index.html" aria-current="page">Teaching</a>
         
-        <a href="/shaoyuanlo/codex_test/site-preview/revisions/7fa9f3c4e505/blog/index.html">Blog</a>
+        <a href="/shaoyuanlo/codex_test/site-preview/revisions/b5fbb561e4e4/blog/index.html">Blog</a>
         
       </nav>
     </div>
