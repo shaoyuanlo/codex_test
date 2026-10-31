@@ -149,15 +149,15 @@ News 標題旁的 **Recent／All** 使用原生單選控制項與 CSS 切換，�
 
 **近期顯示數量由消息放置的位置決定，沒有固定筆數或高度參數。** 新增消息時放在清單頂端，再視需要將較舊的項目移入 `news-archive`；只編輯一份消息內容，建置時由 `newsTabs` 自動產生兩種檢視。保留 archive 的開頭與結尾 `<div>` 標記。按鈕沿用 Email 的 `.button`，選中項目以主藍及底線標示；支援 Tab、方向鍵切換及鍵盤捲動 All 區域。
 
-News、Media Coverage 與 Invited Talks 共用 `.dated-list` 日期清單樣式，集中在 `Dated lists` 註解區塊；其後緊接共用 bullet／編號清單設定，再與其餘共用樣式保留三個空白行。日期文字使用黑色、在日期欄內兩端對齊；目前列間距為 8px、日期欄以 `max-content` 依實際日期內容決定寬度，News 的月份／年份自然較窄、Media Coverage 與 Invited Talks 的完整日期較寬，不另設兩套寬度參數、欄間距為桌機 16px／手機 12px。完整日期在手機分為兩行：月日兩端對齊並隱藏逗號，年份另行靠右；Markdown 仍維持 `Mar 03, 2026`，僅由共用顯示轉換與 CSS 處理，日期與內容間距不變。
+News 與 Media Coverage 共用 `.dated-list` 日期清單樣式，集中在 `Dated lists` 註解區塊；其後緊接共用 bullet／編號清單設定，再與其餘共用樣式保留三個空白行。日期文字使用黑色、在日期欄內兩端對齊；目前列間距為 8px、日期欄以 `max-content` 依實際日期內容決定寬度，News 的月份／年份自然較窄、Media Coverage 的完整日期較寬，不另設兩套寬度參數、欄間距為桌機 16px／手機 12px。完整日期在手機分為兩行：月日兩端對齊並隱藏逗號，年份另行靠右；Markdown 仍維持 `Mar 03, 2026`，僅由共用顯示轉換與 CSS 處理，日期與內容間距不變。
 
 ### Honors & Awards、Media Coverage 與 Activities
 
 首頁 `News` 後依序為 `Honors & Awards`、`Media Coverage`。獎項使用一般 Markdown bullet 清單，保留獎項名稱、單位、年份及來源連結；媒體報導使用完整日期，例如 `- **Apr 25, 2026** — Message text.`，沿用共用兩欄清單。
 
-`src/activities.md` 使用預設 `layouts/page.njk`，導覽位於 Publications 與 Teaching 之間；最上方 `## Academic Activities` 以 H3 分組及一般 Markdown bullet 維護 Conference Organization、Area Chair、Associate Editor、Reviewer 與 Teaching Assistant，職務與年份依原網站匯入；受邀演講在 `## Invited Talks` 下方編輯，使用完整日期（例如 `Mar 03, 2026`），並沿用共用日期欄與間距，沒有 Activities 專用設計值。演講保留題目、場合、主持人及原連結；本地投影片放在 `files/talks/`，使用 `url` filter 連結。
+`src/activities.md` 使用預設 `layouts/page.njk`，導覽位於 Publications 與 Teaching 之間；最上方 `## Academic Activities` 以 H3 分組及一般 Markdown bullet 維護 Conference Organization、Area Chair、Associate Editor、Reviewer 與 Teaching Assistant，職務與年份依原網站匯入；受邀演講在 `## Invited Talks` 下方以一般 Markdown 巢狀清單編輯：外層為粗體連結題目，同題演講合併一組；內層列 `[Mar 03, 2026]` 完整日期、粗體單位、斜體場合、主持人及各場 Slides 連結。群組依最近一場日期排序，組內由新到舊；不套用日期兩欄，沿用共用清單樣式，沒有 Activities 專用設計值。演講保留題目、場合、主持人及原連結；本地投影片放在 `files/talks/`，使用 `url` filter 連結。
 
-News 的日期維持三字母月份與年份；Media Coverage 與 Invited Talks 則直接在 Markdown 寫成 `Mon DD, YYYY` 完整日期，日數補足兩位。原網頁前兩場演講誤列為 2025，匯入時依投影片標題頁確認為 Mar 2026，註記保留在 `activities.md`。
+News 的日期維持三字母月份與年份；Media Coverage 與 Invited Talks 的日期直接在 Markdown 寫成 `Mon DD, YYYY` 完整日期，日數補足兩位。原網頁前兩場演講誤列為 2025，匯入時依投影片標題頁確認為 Mar 2026，註記保留在 `activities.md`。
 
 ### Publications
 
