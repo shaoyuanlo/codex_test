@@ -13,41 +13,17 @@ profile:
   image: /files/sponsors/moe.webp
   imageAlt: Ministry of Education logo (temporary placeholder)
 photos:
-  - src: /files/lab_photos/image_2F33A832.jpeg
-    alt: Lab photo 1
-    caption: Add a caption for this photo.
-  - src: /files/lab_photos/IMG_6450.jpg
-    alt: Lab photo 2
-    caption: Add a caption for this photo.
-  - src: /files/lab_photos/PXL_20260710_095915324.jpg
-    alt: Lab photo 3
-    caption: Add a caption for this photo.
-  - src: /files/lab_photos/PXL_20260710_103414851.jpg
-    alt: Lab photo 4
-    caption: Add a caption for this photo.
-  - src: /files/lab_photos/PXL_20260715_124218569.jpg
-    alt: Lab photo 5
-    caption: Add a caption for this photo.
-  - src: /files/lab_photos/image_71B54162.jpeg
-    alt: Lab photo 6
-    caption: Add a caption for this photo.
-  - src: /files/lab_photos/image_72910324.jpg
-    alt: Lab photo 7
-    caption: Add a caption for this photo.
-  - src: /files/lab_photos/image_91BCE6A7-CCF4-4B8F-A206-9052B3216005_1787755176.jpg
-    alt: Lab photo 8
-    caption: Add a caption for this photo.
-  - src: /files/lab_photos/image_97AC1C93-C944-4D05-9540-DD65427855B0_1784498830.jpg
-    alt: Lab photo 9
-    caption: Add a caption for this photo.
-  - src: /files/lab_photos/image_A0B626D0.jpeg
-    alt: Lab photo 10
-    caption: Add a caption for this photo.
-  - src: /files/lab_photos/Trai_lab3.mp4
-    type: video
-    poster: /files/lab_photos/Trai_lab3-poster.jpg
-    alt: Lab video
-    caption: Add a caption for this video.
+  - /files/lab_photos/image_2F33A832.jpeg
+  - /files/lab_photos/IMG_6450.jpg
+  - /files/lab_photos/PXL_20260710_095915324.jpg
+  - /files/lab_photos/PXL_20260710_103414851.jpg
+  - /files/lab_photos/PXL_20260715_124218569.jpg
+  - /files/lab_photos/image_71B54162.jpeg
+  - /files/lab_photos/image_72910324.jpg
+  - /files/lab_photos/image_91BCE6A7-CCF4-4B8F-A206-9052B3216005_1787755176.jpg
+  - /files/lab_photos/image_97AC1C93-C944-4D05-9540-DD65427855B0_1784498830.jpg
+  - /files/lab_photos/image_A0B626D0.jpeg
+  - /files/lab_photos/Trai_lab3.mp4
 ---
 
 ## People

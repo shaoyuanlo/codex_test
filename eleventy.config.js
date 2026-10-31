@@ -11,6 +11,20 @@ export default function (eleventyConfig) {
     const email = profile.social.find(link => link.url.startsWith("mailto:"))?.url.slice(7);
     return { ...website, profile, email };
   });
+  // Keep media captions in the Photos page; Lab only selects file paths.
+  eleventyConfig.addGlobalData("photoLibrary", async () => {
+    const source = await readFile(new URL("./src/photos.md", import.meta.url), "utf8");
+    const photos = matter(source).data.albums.flatMap(album => album.photos);
+    if (new Set(photos.map(photo => photo.src)).size !== photos.length) {
+      throw new Error("Duplicate media path in src/photos.md");
+    }
+    return photos;
+  });
+  eleventyConfig.addFilter("selectPhotos", (sources, library) => sources.map(src => {
+    const photo = library.find(item => item.src === src);
+    if (!photo) throw new Error(`Lab selection missing from src/photos.md: ${src}`);
+    return photo;
+  }));
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
   // Publish content files separately from site styles and fonts.
   eleventyConfig.addPassthroughCopy({ "files": "files" });

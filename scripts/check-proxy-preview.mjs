@@ -34,7 +34,7 @@ async function purgeFixedPage(url) {
     purges.push({ url, passed: false, error: error.message });
   }
 }
-for (const relative of ['index.html', 'lab/index.html', 'publications/index.html', 'activities/index.html', 'teaching/index.html', 'blog/index.html']) {
+for (const relative of ['index.html', 'lab/index.html', 'photos/index.html', 'publications/index.html', 'activities/index.html', 'teaching/index.html', 'blog/index.html']) {
   await purgeFixedPage(new URL(relative, manifest.stableUrl).href);
 }
 // The origin may briefly serve old content while its background cache refreshes.
@@ -61,6 +61,7 @@ try {
 for (const [relative, marker] of [
   ['index.html', '<h1 id="home-title">'],
   ['lab/index.html', '<h1'],
+  ['photos/index.html', '<h1'],
   ['publications/index.html', '<h1'],
   ['activities/index.html', '<h1'],
   ['teaching/index.html', '<h1'],

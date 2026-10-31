@@ -22,7 +22,11 @@ for (const file of files) {
   assert.match(html, /<main id="main"/, `${file}: main landmark`);
   assert.equal((html.match(/<h1\b/g) || []).length, 1, `${file}: one page heading`);
   if (!file.endsWith('404.html')) {
-    assert.equal((html.match(/aria-current="page"/g) || []).length, 1, `${file}: active navigation`);
+    const navigation = html.match(/<nav\b[\s\S]*?<\/nav>/)[0];
+    const ownPath = new URL(html.match(/rel="canonical" href="([^"]+)"/)[1]).pathname.replace(/index\.html$/, '');
+    const listed = [...navigation.matchAll(/href="([^"]+)"/g)]
+      .some(([, href]) => new URL(href, base).pathname.replace(/index\.html$/, '') === ownPath);
+    assert.equal((html.match(/aria-current="page"/g) || []).length, Number(listed), `${file}: active navigation`);
   }
   for (const match of html.matchAll(/(?:href|src)="([^"]+)"/g)) {
     const href = match[1].replaceAll('&amp;', '&');
@@ -35,7 +39,7 @@ for (const file of files) {
     links++;
   }
 }
-for (const page of ['index.html', 'lab/index.html', 'publications/index.html', 'activities/index.html', 'teaching/index.html', 'blog/index.html', '404.html']) {
+for (const page of ['index.html', 'lab/index.html', 'photos/index.html', 'publications/index.html', 'activities/index.html', 'teaching/index.html', 'blog/index.html', '404.html']) {
   await stat(path.join(output, page));
 }
 console.log(`Validated ${files.length} pages and ${links} local links/assets at ${prefix}`);

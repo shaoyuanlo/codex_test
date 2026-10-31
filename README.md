@@ -24,6 +24,7 @@
 | Activities | [src/activities.md](src/activities.md) | `/activities/` | `layouts/page.njk` |
 | Teaching | [src/teaching.md](src/teaching.md) | `/teaching/` | `layouts/page.njk` |
 | Blog | [src/blog.md](src/blog.md) | `/blog/` | `layouts/page.njk` |
+| Photos (不放導覽列) | [src/photos.md](src/photos.md) | `/photos/` | `layouts/page.njk` |
 
 六個選單連至獨立頁面，順序為 Home、Lab、Publications、Activities、Teaching、Blog；Home 就是根網址。Blog 與其他一般分頁相同，直接編輯 Markdown，沒有文章集合、自動列表、日期排序、草稿旗標或獨立文章版型。
 
@@ -120,25 +121,42 @@ Lab 與 Home 共用 `src/_includes/components/profile.njk` 及 `.hero` 版型。
 
 `profile.intro` 支援 HTML；需要換行時加入 `<br>`，例如 `intro: Trustworthy Artificial Intelligence Lab<br>信韌智慧實驗室`。只在 YAML 原始碼換行不會產生網頁換行。
 
-Lab 頁面在與首頁共用的介紹區塊下方顯示照片／影片集，在 `src/lab.md` 的 `photos:` 清單維護，每個項目填檔案路徑、替代文字及可選說明：
+所有照片／影片、替代文字與 caption 集中在 [src/photos.md](src/photos.md) 的 `albums:`，照片檔案放在 `files/lab_photos/`。Photos 使用一般 page 版型、網址 `/photos/`，不加入導覽列；Lab 相片集右下角的 **View All Photos** 沿用共用 `.button`，連到完整頁面。
+
+```yaml
+albums:
+  - title: "2026"
+    photos:
+      - src: /files/lab_photos/your-photo.jpg
+        alt: A short description of the photo
+        caption: A caption you can edit or leave empty.
+      - src: /files/lab_photos/your-video.mp4
+        type: video
+        poster: /files/lab_photos/your-video-poster.jpg
+        alt: A short description of the video
+        caption: A caption you can edit or leave empty.
+  - title: "More Photos"
+    photos:
+      - src: /files/lab_photos/another-photo.jpg
+        alt: Another photo
+        caption: Add a caption.
+```
+
+每個 `title` 顯示為共用 H2，其下桌機、手機皆固定兩欄，照片／影片封面共用 4:3 裁切、caption 在下方；奇數個項目的最後一列保留一個空位。若要在某列之後插入標題，將後續項目移到新的 album，前一組保留偶數個項目即可；目前兩個分組標題是版面示範，可自行改名。`src/photos.md` 下方的模板迴圈負責呈現，不用為每張照片複製 HTML。
+
+Lab 僅在 `src/lab.md` 的 `photos:` 選取檔案與順序，不重複填 caption、alt 或影片資訊；建置時透過 `photoLibrary`／`selectPhotos` 匯入 Photos 的資料，修改一處即同步兩頁。檔案路徑不可重複，刪除完整頁面的項目時也要移除 Lab 對應選取，建置會提示失效路徑。
 
 ```yaml
 photos:
-  - src: /files/lab_photos/your-photo.jpg
-    alt: A short description of the photo
-    caption: A caption you can edit or leave empty.
-  - src: /files/lab_photos/your-video.mp4
-    type: video
-    poster: /files/lab_photos/your-video-poster.jpg
-    alt: A short description of the video
-    caption: A caption you can edit or leave empty.
+  - /files/lab_photos/your-photo.jpg
+  - /files/lab_photos/your-video.mp4
 ```
 
-新增、刪除或移動整組項目即可調整照片與順序；刪除 `caption` 或留空即可不顯示說明，清空或移除 `photos` 則不顯示相片集。照片、影片及影片封面放在 `files/lab_photos/`，不把檔案放進 CSS／腳本目錄。影片加上 `type: video` 與 `poster`；照片不需加 type。使用者原檔保留，HEIC 另轉 JPEG 供瀏覽器顯示，MOV 另提供 H.264／AAC MP4 網頁版本；目前 MOV 已直接重新封裝為 MP4，未重新壓縮影音。Demo 圖片及其來源紀錄已移除。
+新增內容先放檔案，再加入 Photos 的 album；要列為精選時，另把相同 `src` 路徑加入 Lab 清單。刪除 `caption` 或留空即可隱藏說明，清空 Lab 的 `photos` 則不顯示精選集。影片加 `type: video` 與 `poster`，照片不需 type；HEIC 及 MOV 原檔保留，網頁使用對應 JPEG、H.264／AAC MP4，避免重複列出轉檔前後版本或將影片封面當成獨立照片。Demo 圖片與來源紀錄已移除。
 
 桌機與手機共用相片排列及下方常駐捲動條，不設左右按鈕；捲動條可拖曳，位置與照片滑動同步。桌機可用滾輪、觸控板或滑鼠拖曳瀏覽；游標位於整個相片集區域內時，滾輪只操作相片，到兩端仍不帶動全頁，移出後才捲動頁面。一次垂直滾輪手勢以 500ms 平滑移動一張照片的寬度加間距，連續滾輪事件合併為同一次手勢；手機保留原生手指滑動。兩版共用外觀，僅依操作需求保留桌機滾輪／拖曳及滑入回饋；滑入照片時輕微放大及淡化，游標在相片集顯示可拖曳手掌，拖曳時顯示抓握手掌。點擊或以 Enter 開啟照片／影片，可在原生 dialog 放大檢視；影片縮圖以封面及播放符號區分，點開後使用原生控制列播放，不自動播放。使用 Close、Esc 或點擊背景關閉，關閉時停止影片並釋放載入。說明沿用一般內文字型與間距，縮圖自動置中裁切為一致的 4:3 尺寸，放大顯示完整原圖，影片亦保留原比例。
 
-結構在 `src/_includes/components/gallery.njk`，外觀集中於 CSS 的 `Lab gallery` 區塊，操作在 `src/assets/gallery.js`。此腳本只在有相片集的 Lab 頁載入，代理預覽內嵌同一份腳本以減少請求；沒有 JavaScript 時仍可原生橫向捲動並直接開啟照片或 MP4。尊重減少動態效果偏好，不自動播放照片、不新增第三方套件或設定參數。
+Lab 結構在 `src/_includes/components/gallery.njk`，兩頁共用 `media-item.njk` 與 `media-viewer.njk`，外觀集中於 CSS 的 `Lab gallery` 區塊，操作在 `src/assets/gallery.js`。此腳本只在 Lab 與 Photos 的相片區載入，僅 Lab 攔截滾輪及滑動瀏覽，Photos 保留一般整頁捲動；代理預覽內嵌同一份腳本以減少請求；沒有 JavaScript 時仍可原生橫向捲動並直接開啟照片或 MP4。尊重減少動態效果偏好，不自動播放照片、不新增第三方套件或設定參數。
 
 ### News
 
@@ -313,14 +331,14 @@ https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/<提交版�
 
 ### 快取與線上檢查
 
-發布後會透過 raw.githack 官方 `/purge` 介面清除六個固定分頁的快取。若固定首頁仍讀到舊版，流程會等待後再次清除、重試；遇到 429 或暫時性伺服器錯誤時也會間隔重試並參考 `Retry-After`。
+發布後會透過 raw.githack 官方 `/purge` 介面清除固定分頁（含 Photos）的快取。若固定首頁仍讀到舊版，流程會等待後再次清除、重試；遇到 429 或暫時性伺服器錯誤時也會間隔重試並參考 `Retry-After`。
 
 結果見 [`preview-health.json`](https://github.com/shaoyuanlo/codex_test/blob/site-preview/preview-health.json)：
 
 | 欄位 | 意義 |
 | --- | --- |
 | `sourceCommit` | 本次檢查對應的來源提交，需與 `preview.json` 相符 |
-| `checks` | 固定首頁、快速版六個分頁、兩個字型檔及舊路徑的個別結果 |
+| `checks` | 固定首頁、快速版各分頁（含 Photos）、兩個字型檔及舊路徑的個別結果 |
 | 固定首頁的 `currentVersion` | 是否已讀到該次來源版本；200 仍可能是舊快取 |
 | `purges` | 固定分頁清除快取的請求結果 |
 | `passed` | 所有檢查通過，且固定首頁確實為本次版本 |

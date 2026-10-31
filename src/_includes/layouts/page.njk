@@ -9,7 +9,10 @@ layout: layouts/base.njk
   {% if intro %}<p class="page-intro">{{ intro }}</p>{% endif %}
 </header>
 {% endif %}
-{% if section == 'lab' and photos.length %}{% include "components/gallery.njk" %}{% endif %}
+{% if section == 'lab' and photos.length %}
+{% set galleryPhotos = photos | selectPhotos(photoLibrary) %}
+{% include "components/gallery.njk" %}
+{% endif %}
 <div class="prose page-content">
 {{ content | datedLists | publicationNotes(section) | publicationIndexes(section) | safe }}
 </div>
