@@ -1462,6 +1462,7 @@ html:has(.news-switch:hover, .news-switch:focus-within) { scroll-padding-top: 0;
 .gallery-actions { margin-top: var(--space-xs); text-align: left; }
 .photo-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-md) var(--space-lg); margin-bottom: var(--space-lg); }
 .photo-grid .gallery-item a { cursor: pointer; }
+.photo-grid .gallery-item img { aspect-ratio: 16 / 9; }
 .gallery-track { display: flex; gap: var(--space-md); min-width: 0; overflow-x: auto; overscroll-behavior-x: contain; }
 .gallery-item { flex: 0 0 min(240px, 85%); min-width: 0; margin: 0; }
 .gallery-item a { display: block; overflow: hidden; cursor: inherit; }
@@ -1538,7 +1539,7 @@ p { margin: 0 0 var(--space-md); }
   .callout { break-inside: avoid; }
 }
 </style>
-  <meta name="preview-source" content="a76a5989a777b77fa16c4adb202cc8151033a6cc">
+  <meta name="preview-source" content="6747e84a71a11d657018a1584efabb35dafbfbc6">
   <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="page-lab">
@@ -1898,7 +1899,7 @@ document.querySelectorAll('[data-gallery], [data-photo-library]').forEach(galler
   </main>
   <footer class="site-footer">
     <div class="footer-inner">
-      <p>© 2026 Shao-Yuan Lo (羅紹元)</p>
+      <p>© 2026 Shao-Yuan Lo 羅紹元</p>
     </div>
   </footer>
 </body>
