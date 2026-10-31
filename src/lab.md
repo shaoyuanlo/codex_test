@@ -47,15 +47,34 @@ photos:
 
 ### MS Students
 
-- Shao-Yuan Lo 羅紹元
+- Yi-Hsin Hung 洪亦歆
+- Po-Hsi Lin 林伯禧
+- Tzu- Huan Lin 林子歡
+- Shuan-Shaw Chen陳璿修
+- Te-Kai Yen 嚴得愷
+- Guan-Yi Lin 林冠儀
+- Jui-Ming Yao 姚睿銘
 
 ### Undergrad Students
 
-- Shao-Yuan Lo 羅紹元
+- Siangyu Yang 楊翔宇
+- Yen-Wei Chang 張彥崴
+- Jaron Yeh 葉哲綸
+- Meng-Heng Tsai 蔡孟衡
+- Chih-Fan Wang 王之凡
+- Sheng-Yuan Chang 張聲元
+- Peng-Chan Chiang 蔣朋展
+- Pin-Yu Wu 吳品諭
+- Yu-Syuan Lee 李育烜
+- Tzu-Chin Chiu 邱子芹
+- Chi-Lei Tsai 蔡琦磊
 
 ### Alumni
 
-- Shao-Yuan Lo 羅紹元
+- S-Wei Chen 陳思瑋 (BS'26)
+- Yi-Chen Jan 詹挹辰 (BS'26)
+- Julian Mosig von Aehrenfeld (Visiting Student, May 2026 - Jul 2026; Undergrad at Universität Leipzig) → MS Student at ETH Zurich
+- Rishabh Sain (Visiting Student, May 2026 - Jul 2026; Undergrad at IIT Delhi)
 
 ---
 
