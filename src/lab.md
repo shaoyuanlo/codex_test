@@ -70,4 +70,6 @@ National Taiwan University (NTU) is Taiwan's leading comprehensive research univ
 
 Taipei, home to NTU, is a vibrant, safe, and welcoming city known for its rich culture, delicious food, convenient transportation, and excellent quality of life. At the heart of Taiwan's world-leading technology ecosystem, Taipei hosts major operations of global technology leaders such as NVIDIA, Google, Microsoft, Amazon, AMD, MediaTek, and ASUS, offering exciting opportunities for industry connections and career development.
 
+---
+
 <img class="ntu-image" src="{{ '/files/HMguHhmbYAATG8B.jfif' | url }}" alt="NTU campus and university rankings" width="1667" height="1250">
