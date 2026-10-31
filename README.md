@@ -120,20 +120,25 @@ Lab 與 Home 共用 `src/_includes/components/profile.njk` 及 `.hero` 版型。
 
 `profile.intro` 支援 HTML；需要換行時加入 `<br>`，例如 `intro: Trustworthy Artificial Intelligence Lab<br>信韌智慧實驗室`。只在 YAML 原始碼換行不會產生網頁換行。
 
-Lab 頁面在與首頁共用的介紹區塊下方顯示相片集在 `src/lab.md` 的 `photos:` 清單維護，每張照片只需填檔案路徑、替代文字及可選的說明：
+Lab 頁面在與首頁共用的介紹區塊下方顯示照片／影片集，在 `src/lab.md` 的 `photos:` 清單維護，每個項目填檔案路徑、替代文字及可選說明：
 
 ```yaml
 photos:
   - src: /files/lab_photos/your-photo.jpg
     alt: A short description of the photo
     caption: A caption you can edit or leave empty.
+  - src: /files/lab_photos/your-video.mp4
+    type: video
+    poster: /files/lab_photos/your-video-poster.jpg
+    alt: A short description of the video
+    caption: A caption you can edit or leave empty.
 ```
 
-新增、刪除或移動整組項目即可調整照片與順序；刪除 `caption` 或留空即可不顯示說明，清空或移除 `photos` 則不顯示相片集。圖片放在 `files/lab_photos/`，不把檔案放進 CSS／腳本目錄。現有使用者合照保留原檔，下載範例皆標為 Demo；[測試照片來源](docs/lab-photo-sources.md) 保留來源及授權紀錄，範例不是實驗室活動紀錄。
+新增、刪除或移動整組項目即可調整照片與順序；刪除 `caption` 或留空即可不顯示說明，清空或移除 `photos` 則不顯示相片集。照片、影片及影片封面放在 `files/lab_photos/`，不把檔案放進 CSS／腳本目錄。影片加上 `type: video` 與 `poster`；照片不需加 type。使用者原檔保留，HEIC 另轉 JPEG 供瀏覽器顯示，MOV 另提供 H.264／AAC MP4 網頁版本；目前 MOV 已直接重新封裝為 MP4，未重新壓縮影音。Demo 圖片及其來源紀錄已移除。
 
-桌機與手機共用相片排列及下方常駐捲動條，不設左右按鈕；捲動條可拖曳，位置與照片滑動同步。桌機可用滾輪、觸控板或滑鼠拖曳瀏覽；游標位於整個相片集區域內時，滾輪只操作相片，到兩端仍不帶動全頁，移出後才捲動頁面。一次垂直滾輪手勢以 500ms 平滑移動一張照片的寬度加間距，連續滾輪事件合併為同一次手勢；手機保留原生手指滑動。兩版共用外觀，僅依操作需求保留桌機滾輪／拖曳及滑入回饋；滑入照片時輕微放大及淡化，游標在相片集顯示可拖曳手掌，拖曳時顯示抓握手掌。點擊或以 Enter 開啟照片，可在原生 dialog 放大檢視，使用 Close、Esc 或點擊背景關閉。說明沿用一般內文字型與間距，縮圖自動置中裁切為一致的 4:3 尺寸，放大顯示完整原圖，不修改圖片檔案。
+桌機與手機共用相片排列及下方常駐捲動條，不設左右按鈕；捲動條可拖曳，位置與照片滑動同步。桌機可用滾輪、觸控板或滑鼠拖曳瀏覽；游標位於整個相片集區域內時，滾輪只操作相片，到兩端仍不帶動全頁，移出後才捲動頁面。一次垂直滾輪手勢以 500ms 平滑移動一張照片的寬度加間距，連續滾輪事件合併為同一次手勢；手機保留原生手指滑動。兩版共用外觀，僅依操作需求保留桌機滾輪／拖曳及滑入回饋；滑入照片時輕微放大及淡化，游標在相片集顯示可拖曳手掌，拖曳時顯示抓握手掌。點擊或以 Enter 開啟照片／影片，可在原生 dialog 放大檢視；影片縮圖以封面及播放符號區分，點開後使用原生控制列播放，不自動播放。使用 Close、Esc 或點擊背景關閉，關閉時停止影片並釋放載入。說明沿用一般內文字型與間距，縮圖自動置中裁切為一致的 4:3 尺寸，放大顯示完整原圖，影片亦保留原比例。
 
-結構在 `src/_includes/components/gallery.njk`，外觀集中於 CSS 的 `Lab gallery` 區塊，操作在 `src/assets/gallery.js`。此腳本只在有相片集的 Lab 頁載入，代理預覽內嵌同一份腳本以減少請求；沒有 JavaScript 時仍可原生橫向捲動並點開圖片。尊重減少動態效果偏好，不自動播放照片、不新增第三方套件或設定參數。
+結構在 `src/_includes/components/gallery.njk`，外觀集中於 CSS 的 `Lab gallery` 區塊，操作在 `src/assets/gallery.js`。此腳本只在有相片集的 Lab 頁載入，代理預覽內嵌同一份腳本以減少請求；沒有 JavaScript 時仍可原生橫向捲動並直接開啟照片或 MP4。尊重減少動態效果偏好，不自動播放照片、不新增第三方套件或設定參數。
 
 ### News
 

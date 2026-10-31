@@ -4,6 +4,7 @@ document.querySelectorAll('[data-gallery]').forEach(gallery => {
   const scrollbar = gallery.querySelector('[data-gallery-scrollbar]');
   const dialog = gallery.querySelector('dialog');
   const fullImage = dialog.querySelector('[data-gallery-full]');
+  const player = dialog.querySelector('[data-gallery-player]');
   const caption = dialog.querySelector('[data-gallery-caption]');
   let drag = null;
   let suppressClick = false;
@@ -122,13 +123,28 @@ document.querySelectorAll('[data-gallery]').forEach(gallery => {
     if (!link || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey || !dialog.showModal) return;
     event.preventDefault();
     const thumbnail = link.querySelector('img');
-    fullImage.src = link.href;
-    fullImage.alt = thumbnail.alt;
+    const isVideo = link.hasAttribute('data-gallery-video');
+    fullImage.hidden = isVideo;
+    player.hidden = !isVideo;
+    if (isVideo) {
+      player.src = link.href;
+      player.poster = thumbnail.src;
+      player.setAttribute('aria-label', thumbnail.alt);
+    } else {
+      fullImage.src = link.href;
+      fullImage.alt = thumbnail.alt;
+    }
     caption.textContent = link.closest('figure').querySelector('figcaption')?.textContent || '';
     caption.hidden = !caption.textContent;
     dialog.showModal();
   }, true);
   dialog.querySelector('[data-gallery-close]').addEventListener('click', () => dialog.close());
+  // Stop playback and release the video when the viewer closes, including Escape.
+  dialog.addEventListener('close', () => {
+    player.pause();
+    player.removeAttribute('src');
+    player.load();
+  });
   dialog.addEventListener('click', event => {
     if (event.target !== dialog) return;
     const bounds = dialog.getBoundingClientRect();

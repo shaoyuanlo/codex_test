@@ -1,18 +1,19 @@
-<section class="lab-gallery" data-gallery aria-label="Lab photos">
-  <div class="gallery-track" id="lab-photo-track" tabindex="0" aria-label="Photos: use arrow keys or swipe to browse">
+<section class="lab-gallery" data-gallery aria-label="Lab photos and videos">
+  <div class="gallery-track" id="lab-photo-track" tabindex="0" aria-label="Photos and videos: use arrow keys or swipe to browse">
     {% for photo in photos %}
     <figure class="gallery-item">
-      <a href="{{ photo.src | url }}" data-gallery-photo aria-label="Enlarge photo: {{ photo.alt | escape }}">
-        <img src="{{ photo.src | url }}" alt="{{ photo.alt | escape }}" width="240" height="180" loading="lazy" draggable="false">
+      <a href="{{ photo.src | url }}" data-gallery-photo{% if photo.type == 'video' %} data-gallery-video{% endif %} aria-label="{{ 'Play video' if photo.type == 'video' else 'Enlarge photo' }}: {{ photo.alt | escape }}">
+        <img src="{{ (photo.poster if photo.type == 'video' else photo.src) | url }}" alt="{{ photo.alt | escape }}" width="240" height="180" loading="lazy" draggable="false">
       </a>
       {% if photo.caption %}<figcaption>{{ photo.caption | escape }}</figcaption>{% endif %}
     </figure>
     {% endfor %}
   </div>
   <input class="gallery-scrollbar" data-gallery-scrollbar type="range" min="0" max="100" step="1" value="0" aria-label="Photo scroll position" hidden>
-  <dialog class="gallery-dialog" aria-label="Enlarged photo">
-    <button class="button gallery-close" type="button" data-gallery-close aria-label="Close enlarged photo">Close <span aria-hidden="true">×</span></button>
+  <dialog class="gallery-dialog" aria-label="Photo and video viewer">
+    <button class="button gallery-close" type="button" data-gallery-close aria-label="Close viewer">Close <span aria-hidden="true">×</span></button>
     <img data-gallery-full alt="">
+    <video data-gallery-player controls playsinline preload="none" hidden></video>
     <p class="gallery-caption" data-gallery-caption></p>
   </dialog>
 </section>
