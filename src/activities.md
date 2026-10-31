@@ -84,11 +84,11 @@ title: Academic Activities
 ## Former Mentees at Honda Research Institute USA
 
 - [Jike Zhong](https://jike338.github.io/) (USC, May 2025 – Aug 2025)
-- [Chunhui Zhang](https://chunhuizng.github.io/) (Dartmouth, Jun 2024 – Aug 2024) — Member of Technical Staff at Microsoft AI
+- [Chunhui Zhang](https://chunhuizng.github.io/) (Dartmouth, Jun 2024 – Aug 2024) → Member of Technical Staff at Microsoft AI
 - [Jiacong Xu](https://xujiacong.github.io/) (JHU, May 2024 – Aug 2024)
-- [Bardia Safaei](https://sites.google.com/view/bardiasafaeic) (JHU, May 2024 – Aug 2024) — Research Scientist at Nuro
-- [Yuxiang Guo](https://scholar.google.com/citations?user=Tj7zYpEAAAAJ&hl) (JHU, Jan 2023 – May 2024) — Software Engineer at Google
-- [Yuchen Yang](https://yuchenyang.org/index.html) (JHU, Oct 2023 – Feb 2024) — Assistant Professor at Penn State
+- [Bardia Safaei](https://sites.google.com/view/bardiasafaeic) (JHU, May 2024 – Aug 2024) → Research Scientist at Nuro
+- [Yuxiang Guo](https://scholar.google.com/citations?user=Tj7zYpEAAAAJ&hl) (JHU, Jan 2023 – May 2024) → Software Engineer at Google
+- [Yuchen Yang](https://yuchenyang.org/index.html) (JHU, Oct 2023 – Feb 2024) → Assistant Professor at Penn State
 
 ---
 
