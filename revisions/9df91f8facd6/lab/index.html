@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Shao-Yuan Lo</title>
-  <link rel="canonical" href="https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/436bc040d303/index.html">
+  <title>Trai Lab · Shao-Yuan Lo</title>
+  <link rel="canonical" href="https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/9df91f8facd6/lab/index.html">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Home · Shao-Yuan Lo">
-  <meta property="og:url" content="https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/436bc040d303/index.html">
-  <meta property="og:image" content="https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/436bc040d303/files/portrait.jpg">
-  <link rel="icon" type="image/png" sizes="180x180" href="/shaoyuanlo/codex_test/site-preview/revisions/436bc040d303/files/ntu-emblem.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/shaoyuanlo/codex_test/site-preview/revisions/436bc040d303/files/ntu-emblem.png">
+  <meta property="og:title" content="Trai Lab · Shao-Yuan Lo">
+  <meta property="og:url" content="https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/9df91f8facd6/lab/index.html">
+  <meta property="og:image" content="https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/9df91f8facd6/files/portrait.jpg">
+  <link rel="icon" type="image/png" sizes="180x180" href="/shaoyuanlo/codex_test/site-preview/revisions/9df91f8facd6/files/ntu-emblem.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/shaoyuanlo/codex_test/site-preview/revisions/9df91f8facd6/files/ntu-emblem.png">
   <style data-preview-style="fonts">/* Self-hosted font faces. Original font binaries are unchanged; licenses are alongside each family. */
 
 /* @fontsource-variable/inter@5.3.0 — index.css */
@@ -1389,8 +1389,15 @@ nav a[aria-current] { font-weight: 600; }
   .date-comma { display: none; }
   .date-year { text-align: right; text-align-last: right; }
 }
-/* Indent talk events one additional level beneath their title bullets. */
-.page-activities .page-content li > .dated-list { margin-left: var(--space-xl); }
+/* Grouped talks: shared date-column width, title gap and an additional indent. */
+.page-activities .page-content li > .dated-list {
+  grid-template-columns: 12ch minmax(0, 1fr);
+  margin-top: var(--space-sm);
+  margin-left: var(--space-xl);
+}
+@media (max-width: 767px) {
+  .page-activities .page-content li > .dated-list { grid-template-columns: 6ch minmax(0, 1fr); }
+}
 /* Shared bullet and numbered lists: indentation, outer spacing and item margins. */
 .prose ul, .prose ol { margin: 0 0 var(--space-md); padding-left: var(--space-xl); }
 .prose li { margin: var(--space-sm) 0; }
@@ -1509,166 +1516,282 @@ p { margin: 0 0 var(--space-md); }
   .callout { break-inside: avoid; }
 }
 </style>
-  <meta name="preview-source" content="436bc040d30301161b3de48ee9ad999012bb2938">
+  <meta name="preview-source" content="9df91f8facd684de97d2116acf0a0339400560d0">
   <meta name="robots" content="noindex, nofollow">
 </head>
-<body class="page-home">
+<body class="page-lab">
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="header-inner">
-      <a class="wordmark" href="/shaoyuanlo/codex_test/site-preview/revisions/436bc040d303/index.html" aria-label="Shao-Yuan Lo — Home">Shao-Yuan Lo</a>
+      <a class="wordmark" href="/shaoyuanlo/codex_test/site-preview/revisions/9df91f8facd6/index.html" aria-label="Shao-Yuan Lo — Home">Shao-Yuan Lo</a>
       <nav aria-label="Main navigation">
         
-        <a href="/shaoyuanlo/codex_test/site-preview/revisions/436bc040d303/index.html" aria-current="page">Home</a>
+        <a href="/shaoyuanlo/codex_test/site-preview/revisions/9df91f8facd6/index.html">Home</a>
         
-        <a href="/shaoyuanlo/codex_test/site-preview/revisions/436bc040d303/lab/index.html">Trai Lab</a>
+        <a href="/shaoyuanlo/codex_test/site-preview/revisions/9df91f8facd6/lab/index.html" aria-current="page">Trai Lab</a>
         
-        <a href="/shaoyuanlo/codex_test/site-preview/revisions/436bc040d303/publications/index.html">Publications</a>
+        <a href="/shaoyuanlo/codex_test/site-preview/revisions/9df91f8facd6/publications/index.html">Publications</a>
         
-        <a href="/shaoyuanlo/codex_test/site-preview/revisions/436bc040d303/activities/index.html">Activities</a>
+        <a href="/shaoyuanlo/codex_test/site-preview/revisions/9df91f8facd6/activities/index.html">Activities</a>
         
-        <a href="/shaoyuanlo/codex_test/site-preview/revisions/436bc040d303/teaching/index.html">Teaching</a>
+        <a href="/shaoyuanlo/codex_test/site-preview/revisions/9df91f8facd6/teaching/index.html">Teaching</a>
         
-        <a href="/shaoyuanlo/codex_test/site-preview/revisions/436bc040d303/blog/index.html">Blog</a>
+        <a href="/shaoyuanlo/codex_test/site-preview/revisions/9df91f8facd6/blog/index.html">Blog</a>
         
       </nav>
     </div>
   </header>
   <main id="main" class="site-main" tabindex="-1">
-    <section class="hero" aria-labelledby="home-title">
+    
+<section class="hero" aria-labelledby="lab-title">
   <div class="hero-copy">
-    <h1 id="home-title">Shao-Yuan Lo<span class="chinese-name" lang="zh-Hant">羅紹元</span></h1>
+    <h1 id="lab-title">Trai Lab<span class="chinese-name" lang="zh-Hant">踹實驗室</span></h1>
     <div class="hero-roles">
       
       <div class="hero-position">
-        <p class="hero-role">Assistant Professor</p>
-        <p>Department of Computer Science and Information Engineering</p><p>AI Center of Research Excellence</p><p>National Taiwan University</p>
+        <p class="hero-role">Trustworthy AI Lab 信韌智慧實驗室</p>
+        <p>Room 442-2, CSIE Building, NTU</p><p>台大德田館442-2室</p>
       </div>
       
     </div>
     
-    <div class="hero-actions" aria-label="Contact and professional profiles">
-      <a class="button" href="mailto:sylo@csie.ntu.edu.tw">Email</a><a class="button" href="/shaoyuanlo/codex_test/site-preview/revisions/436bc040d303/files/SYLo_CV.pdf">CV</a><a class="button" href="https://scholar.google.com/citations?hl=en&amp;user=vL35nH4AAAAJ">Google Scholar</a><a class="button" href="https://github.com/shaoyuanlo">GitHub</a><a class="button" href="https://www.linkedin.com/in/shaoyuanlo/">LinkedIn</a><a class="button" href="https://x.com/shaoyuanlo">X / Twitter</a>
-    </div>
+    
   </div>
   <figure class="portrait">
-    <img src="/shaoyuanlo/codex_test/site-preview/revisions/436bc040d303/files/portrait.jpg" alt="Portrait of Shao-Yuan Lo" width="1340" height="1608" fetchpriority="high">
+    <img src="/shaoyuanlo/codex_test/site-preview/revisions/9df91f8facd6/files/sponsors/moe.webp" alt="Ministry of Education logo (temporary placeholder)" width="1340" height="1608" fetchpriority="high">
   </figure>
 </section>
 
-<div class="home-content prose">
-  <p>I am an Assistant Professor at <a href="https://www.ntu.edu.tw/english/">National Taiwan University</a>. My research spans <strong>trustworthy AI, machine learning, and multimodal models</strong>, with a recent focus on multimodal large language models and reasoning.</p>
-<p>Previously, I was a Research Scientist at <a href="https://usa.honda-ri.com/">Honda Research Institute USA</a>. I received my Ph.D. from <a href="https://www.jhu.edu/">Johns Hopkins University</a> in 2023, and my M.S. and B.S. from National Chiao Tung University in 2019 and 2017. I also spent two wonderful summers with Amazon's Just Walk Out and Astro teams.</p>
-<!--
-<aside class="callout">
-<p class="callout-label">Join the group</p>
-<p>I am looking for motivated undergraduate, master's, and Ph.D. students. Interested in working together? <a href="mailto:sylo@csie.ntu.edu.tw">Send me an email</a> with your résumé and transcripts.</p>
-</aside>
--->
-<hr>
-<h2>Research</h2>
-<p>abcde</p>
-<hr>
-<section class="news" aria-labelledby="news-heading">
-  <div class="news-heading">
-    <h2 id="news-heading">News</h2>
-    <fieldset class="news-switch">
-      <legend>News view</legend>
-      <input type="radio" name="news-view" id="news-recent" checked>
-      <label class="button" for="news-recent">Recent</label>
-      <input type="radio" name="news-view" id="news-all">
-      <label class="button" for="news-all">All</label>
-    </fieldset>
-  </div>
-  <div class="news-viewport">
-    <div class="news-recent"><ul class="dated-list">
-<li><strong>May 2026</strong><span>One paper accepted to ICML 2026. Serving as an Area Chair for NeurIPS 2026.</span></li>
-<li><strong>Mar 2026</strong><span>Serving as an Area Chair for ICML 2026. Invited talk at the Surgical Data Science Symposium, National Taiwan University Hospital.</span></li>
-<li><strong>Dec 2025</strong><span>Invited talk at the Advanced AI Safety Forum, Taiwan AI Center of Excellence.</span></li>
-<li><strong>Nov 2025</strong><span>1 paper accepted to WACV 2026. Serving as an Associate Editor for ICRA 2026. Invited talk at NVIDIA Research Taiwan.</span></li>
-<li><strong>Oct 2025</strong><span>Serving as an Area Chair for ICLR 2026 and ICASSP 2026. Invited talk at Australian National University (remote).</span></li>
-<li><strong>Aug 2025</strong><span>Joined National Taiwan University as an Assistant Professor. Awarded a Yushan Young Fellowship.</span></li>
-</ul></div>
-    <div class="news-all" tabindex="0" role="region" aria-label="All news"><ul class="dated-list">
-<li><strong>May 2026</strong><span>One paper accepted to ICML 2026. Serving as an Area Chair for NeurIPS 2026.</span></li>
-<li><strong>Mar 2026</strong><span>Serving as an Area Chair for ICML 2026. Invited talk at the Surgical Data Science Symposium, National Taiwan University Hospital.</span></li>
-<li><strong>Dec 2025</strong><span>Invited talk at the Advanced AI Safety Forum, Taiwan AI Center of Excellence.</span></li>
-<li><strong>Nov 2025</strong><span>1 paper accepted to WACV 2026. Serving as an Associate Editor for ICRA 2026. Invited talk at NVIDIA Research Taiwan.</span></li>
-<li><strong>Oct 2025</strong><span>Serving as an Area Chair for ICLR 2026 and ICASSP 2026. Invited talk at Australian National University (remote).</span></li>
-<li><strong>Aug 2025</strong><span>Joined National Taiwan University as an Assistant Professor. Awarded a Yushan Young Fellowship.</span></li>
 
-<li><strong>Jun 2025</strong><span>1 paper accepted to IJCV. Serving as an Area Chair for BMVC 2025. Invited talk at ProtagoLabs (remote).</span></li>
-<li><strong>May 2025</strong><span>1 paper accepted to ICML 2025 (Spotlight!). Recognized as an Outstanding Reviewer for CVPR 2025!</span></li>
-<li><strong>Apr 2025</strong><span>1 paper accepted to CVIU. Invited talks at UC Santa Cruz and CSIG Wuhan Center (virtual).</span></li>
-<li><strong>Mar 2025</strong><span>1 paper accepted to IEEE T-MI. Invited talks at UC Riverside and WACV 2025 COOOL Workshop.</span></li>
-<li><strong>Feb 2025</strong><span>2 papers accepted to CVPR 2025 (both are Highlight!). Serving as a Tutorial Chair for AVSS 2025.</span></li>
-<li><strong>Jan 2025</strong><span>1 paper accepted to ICLR 2025.</span></li>
-<li><strong>Nov 2024</strong><span>Invited talk at National Taiwan University. Serving as an Associate Editor for ICRA 2025.</span></li>
-<li><strong>Sep 2024</strong><span>Invited talk at Jilin University (remote).</span></li>
-<li><strong>Jul 2023</strong><span>1 paper accepted to ECCV 2024.</span></li>
-<li><strong>Feb 2024</strong><span>2 papers accepted to CVPR 2024. Won the Best Student Paper Award at SPIE Medical Imaging 2024!!</span></li>
-<li><strong>Jan 2024</strong><span>Invited talks at Academia Sinica and National Yang Ming Chiao Tung University.</span></li>
-<li><strong>Jul 2023</strong><span>Joined Honda Research Institute USA as a Research Scientist. See you in San Jose, CA!!</span></li>
-<li><strong>Mar 2023</strong><span>Defended my PhD dissertation!!</span></li>
-<li><strong>Feb 2023</strong><span>1 paper accepted to CVPR 2023.</span></li>
-<li><strong>Sep 2022</strong><span>Accepted to the Google CS Research Mentorship Program.</span></li>
-<li><strong>Jul 2022</strong><span>1 paper accepted to IEEE T-PAMI, and 1 paper accepted to IROS 2022.</span></li>
-<li><strong>May 2022</strong><span>Joined Amazon (Just Walk Out team) as an Applied Scientist Intern. See you in Seattle, WA!!</span></li>
-<li><strong>Jan 2022</strong><span>Invited talks at Academia Sinica and National Yang Ming Chiao Tung University.</span></li>
-<li><strong>Dec 2021</strong><span>1 paper accepted to IEEE T-IP.</span></li>
-<li><strong>Jun 2021</strong><span>Invited talk at CVPR 2021 Tutorial on Adversarial Machine Learning in Computer Vision.</span></li>
-<li><strong>May 2021</strong><span>Joined Amazon (Astro team) as an Applied Scientist Intern. See you in Bellevue, WA!!</span></li>
-<li><strong>Dec 2019</strong><span>Won the Best Paper Award at ACM Multimedia Asia 2019!!</span></li>
-<li><strong>Aug 2019</strong><span>Joined Johns Hopkins University as a PhD student. See you in Baltimore, MD!!</span></li>
-</ul></div>
+<section class="lab-gallery" data-gallery aria-label="Lab photos">
+  <div class="gallery-track" id="lab-photo-track" tabindex="0" aria-label="Photos: use arrow keys or swipe to browse">
+    
+    <figure class="gallery-item">
+      <a href="/shaoyuanlo/codex_test/site-preview/revisions/9df91f8facd6/files/lab_photos/image_2F33A832.jpeg" data-gallery-photo aria-label="Enlarge photo: Group photo in an indoor gathering space">
+        <img src="/shaoyuanlo/codex_test/site-preview/revisions/9df91f8facd6/files/lab_photos/image_2F33A832.jpeg" alt="Group photo in an indoor gathering space" width="240" height="180" loading="lazy" draggable="false">
+      </a>
+      <figcaption>Add a caption for this group photo.</figcaption>
+    </figure>
+    
+    <figure class="gallery-item">
+      <a href="/shaoyuanlo/codex_test/site-preview/revisions/9df91f8facd6/files/lab_photos/demo-blueberries.jpg" data-gallery-photo aria-label="Enlarge photo: Blueberries">
+        <img src="/shaoyuanlo/codex_test/site-preview/revisions/9df91f8facd6/files/lab_photos/demo-blueberries.jpg" alt="Blueberries" width="240" height="180" loading="lazy" draggable="false">
+      </a>
+      <figcaption>Demo photo: blueberries. Replace with a lab photo and caption.</figcaption>
+    </figure>
+    
+    <figure class="gallery-item">
+      <a href="/shaoyuanlo/codex_test/site-preview/revisions/9df91f8facd6/files/lab_photos/demo-larch.jpg" data-gallery-photo aria-label="Enlarge photo: A larch tree">
+        <img src="/shaoyuanlo/codex_test/site-preview/revisions/9df91f8facd6/files/lab_photos/demo-larch.jpg" alt="A larch tree" width="240" height="180" loading="lazy" draggable="false">
+      </a>
+      <figcaption>Demo photo: larch. Replace with a lab photo and caption.</figcaption>
+    </figure>
+    
+    <figure class="gallery-item">
+      <a href="/shaoyuanlo/codex_test/site-preview/revisions/9df91f8facd6/files/lab_photos/demo-urban-bear.jpg" data-gallery-photo aria-label="Enlarge photo: A bear in an urban setting">
+        <img src="/shaoyuanlo/codex_test/site-preview/revisions/9df91f8facd6/files/lab_photos/demo-urban-bear.jpg" alt="A bear in an urban setting" width="240" height="180" loading="lazy" draggable="false">
+      </a>
+      <figcaption>Demo photo: an urban bear. Replace with a lab photo and caption.</figcaption>
+    </figure>
+    
+    <figure class="gallery-item">
+      <a href="/shaoyuanlo/codex_test/site-preview/revisions/9df91f8facd6/files/lab_photos/demo-wild-bear.jpg" data-gallery-photo aria-label="Enlarge photo: A bear in the wild">
+        <img src="/shaoyuanlo/codex_test/site-preview/revisions/9df91f8facd6/files/lab_photos/demo-wild-bear.jpg" alt="A bear in the wild" width="240" height="180" loading="lazy" draggable="false">
+      </a>
+      <figcaption>Demo photo: a wild bear. Replace with a lab photo and caption.</figcaption>
+    </figure>
+    
+    <figure class="gallery-item">
+      <a href="/shaoyuanlo/codex_test/site-preview/revisions/9df91f8facd6/files/lab_photos/demo-landscape.jpg" data-gallery-photo aria-label="Enlarge photo: MDN landscape sample image">
+        <img src="/shaoyuanlo/codex_test/site-preview/revisions/9df91f8facd6/files/lab_photos/demo-landscape.jpg" alt="MDN landscape sample image" width="240" height="180" loading="lazy" draggable="false">
+      </a>
+      <figcaption>Demo photo: landscape. Replace with a lab photo and caption.</figcaption>
+    </figure>
+    
+    <figure class="gallery-item">
+      <a href="/shaoyuanlo/codex_test/site-preview/revisions/9df91f8facd6/files/lab_photos/demo-pattern.jpg" data-gallery-photo aria-label="Enlarge photo: MDN patterned surface sample image">
+        <img src="/shaoyuanlo/codex_test/site-preview/revisions/9df91f8facd6/files/lab_photos/demo-pattern.jpg" alt="MDN patterned surface sample image" width="240" height="180" loading="lazy" draggable="false">
+      </a>
+      <figcaption>Demo photo: patterned surface. Replace with a lab photo and caption.</figcaption>
+    </figure>
+    
+    <figure class="gallery-item">
+      <a href="/shaoyuanlo/codex_test/site-preview/revisions/9df91f8facd6/files/lab_photos/demo-postcard.jpg" data-gallery-photo aria-label="Enlarge photo: MDN postcard background sample image">
+        <img src="/shaoyuanlo/codex_test/site-preview/revisions/9df91f8facd6/files/lab_photos/demo-postcard.jpg" alt="MDN postcard background sample image" width="240" height="180" loading="lazy" draggable="false">
+      </a>
+      <figcaption>Demo photo: postcard background. Replace with a lab photo and caption.</figcaption>
+    </figure>
+    
   </div>
+  <input class="gallery-scrollbar" data-gallery-scrollbar type="range" min="0" max="100" step="1" value="0" aria-label="Photo scroll position" hidden>
+  <dialog class="gallery-dialog" aria-label="Enlarged photo">
+    <button class="button gallery-close" type="button" data-gallery-close aria-label="Close enlarged photo">Close <span aria-hidden="true">×</span></button>
+    <img data-gallery-full alt="">
+    <p class="gallery-caption" data-gallery-caption></p>
+  </dialog>
 </section>
-<hr>
-<h2>Honors &amp; Awards</h2>
+<script data-preview-script="gallery">// Enhance the Lab photo strip; links and native scrolling work without JavaScript.
+document.querySelectorAll('[data-gallery]').forEach(gallery => {
+  const track = gallery.querySelector('.gallery-track');
+  const scrollbar = gallery.querySelector('[data-gallery-scrollbar]');
+  const dialog = gallery.querySelector('dialog');
+  const fullImage = dialog.querySelector('[data-gallery-full]');
+  const caption = dialog.querySelector('[data-gallery-caption]');
+  let drag = null;
+  let suppressClick = false;
+  let animation = 0;
+  let target = track.scrollLeft;
+  let wheelDirection = 0;
+  let wheelTimer;
+
+  const updateControls = () => {
+    scrollbar.max = Math.max(0, track.scrollWidth - track.clientWidth);
+    scrollbar.value = track.scrollLeft;
+    scrollbar.disabled = Number(scrollbar.max) <= 1;
+  };
+  const stopMotion = () => {
+    cancelAnimationFrame(animation);
+    animation = 0;
+    target = track.scrollLeft;
+  };
+  const move = direction => {
+    const item = track.querySelector('.gallery-item');
+    const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+    const maximum = track.scrollWidth - track.clientWidth;
+    const start = track.scrollLeft;
+    target = Math.max(0, Math.min(maximum,
+      (animation ? target : start) + direction * (item.getBoundingClientRect().width + gap)));
+    cancelAnimationFrame(animation);
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      track.scrollLeft = target;
+      animation = 0;
+      return;
+    }
+    const destination = target;
+    const started = performance.now();
+    const tick = now => {
+      const progress = Math.min(1, (now - started) / 500);
+      const eased = progress * progress * (3 - 2 * progress);
+      track.scrollLeft = start + (destination - start) * eased;
+      animation = progress < 1 ? requestAnimationFrame(tick) : 0;
+    };
+    animation = requestAnimationFrame(tick);
+  };
+  scrollbar.addEventListener('input', () => {
+    stopMotion();
+    track.scrollLeft = Number(scrollbar.value);
+  });
+  track.addEventListener('scroll', updateControls, { passive: true });
+  new ResizeObserver(() => { stopMotion(); updateControls(); }).observe(track);
+  track.addEventListener('keydown', event => {
+    if (event.altKey || event.ctrlKey || event.metaKey) return;
+    if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+      event.preventDefault();
+      move(event.key === 'ArrowRight' ? 1 : -1);
+    }
+  });
+
+  // Treat a vertical wheel burst as one photo step; preserve horizontal trackpad deltas.
+  gallery.addEventListener('wheel', event => {
+    if (dialog.open || event.ctrlKey || !matchMedia('(min-width: 768px)').matches) return;
+    // Contain every desktop wheel event, including at the first and last photo.
+    event.preventDefault();
+    if (Math.abs(event.deltaX) > Math.abs(event.deltaY)) {
+      stopMotion();
+      const unit = event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? track.clientWidth : 1;
+      track.scrollLeft += event.deltaX * unit;
+      return;
+    }
+    const direction = Math.sign(event.deltaY);
+    const maximum = track.scrollWidth - track.clientWidth;
+    const position = animation ? target : track.scrollLeft;
+    const canMove = direction > 0 ? position < maximum - 1 : position > 1;
+    if (!direction) return;
+    if (direction !== wheelDirection && canMove) move(direction);
+    wheelDirection = direction;
+    clearTimeout(wheelTimer);
+    wheelTimer = setTimeout(() => { wheelDirection = 0; }, 160);
+  }, { passive: false });
+
+  // Use pointer capture after a mouse drag starts; touch keeps native swipe and pinch behavior.
+  track.addEventListener('dragstart', event => event.preventDefault());
+  track.addEventListener('pointerdown', event => {
+    stopMotion();
+    if (event.pointerType !== 'mouse' || event.button !== 0) return;
+    drag = { id: event.pointerId, x: event.clientX, scroll: track.scrollLeft, moved: false };
+  });
+  track.addEventListener('pointermove', event => {
+    if (!drag || event.pointerId !== drag.id) return;
+    const distance = event.clientX - drag.x;
+    if (!drag.moved && Math.abs(distance) < 6) return;
+    if (!drag.moved) {
+      drag.moved = true;
+      track.setPointerCapture(event.pointerId);
+      track.classList.add('is-dragging');
+    }
+    event.preventDefault();
+    track.scrollLeft = drag.scroll - distance;
+  });
+  const finishDrag = event => {
+    if (!drag || event.pointerId !== drag.id) return;
+    suppressClick = drag.moved;
+    if (track.hasPointerCapture(event.pointerId)) track.releasePointerCapture(event.pointerId);
+    track.classList.remove('is-dragging');
+    drag = null;
+    setTimeout(() => { suppressClick = false; }, 0);
+  };
+  track.addEventListener('pointerleave', () => { if (drag && !drag.moved) drag = null; });
+  track.addEventListener('pointerup', finishDrag);
+  track.addEventListener('lostpointercapture', finishDrag);
+  track.addEventListener('pointercancel', finishDrag);
+  track.addEventListener('click', event => {
+    if (suppressClick) {
+      event.preventDefault();
+      event.stopPropagation();
+      return;
+    }
+    const link = event.target.closest('[data-gallery-photo]');
+    if (!link || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey || !dialog.showModal) return;
+    event.preventDefault();
+    const thumbnail = link.querySelector('img');
+    fullImage.src = link.href;
+    fullImage.alt = thumbnail.alt;
+    caption.textContent = link.closest('figure').querySelector('figcaption')?.textContent || '';
+    caption.hidden = !caption.textContent;
+    dialog.showModal();
+  }, true);
+  dialog.querySelector('[data-gallery-close]').addEventListener('click', () => dialog.close());
+  dialog.addEventListener('click', event => {
+    if (event.target !== dialog) return;
+    const bounds = dialog.getBoundingClientRect();
+    if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) dialog.close();
+  });
+  scrollbar.hidden = false;
+  updateControls();
+});
+</script>
+
+<div class="prose page-content">
+<h2>People</h2>
+<h3>Principal Investigator</h3>
 <ul>
-<li><strong><a href="https://yushan.project.edu.tw/TopTalent/EN">Yushan Young Fellow (玉山青年學者)</a></strong>, Ministry of Education, Taiwan, 2025</li>
-<li><strong><a href="https://cvpr.thecvf.com/Conferences/2025/ProgramCommittee">CVPR 2025 Outstanding Reviewer</a></strong>, IEEE/CVF CVPR 2025</li>
-<li><strong><a href="https://depart.moe.edu.tw/ED2500/cp.aspx?n=ECEA48027CA1AA4E&amp;s=FDC3BA2C714CD75F">Government Scholarship to Study Abroad (教育部留學獎學金)</a></strong>, Ministry of Education, Taiwan, 2020</li>
-<li><strong><a href="http://www.acmmmasia.org/2019/files/ACMMMASIA2019-Program.pdf">Best Paper Award</a></strong>, ACM Multimedia Asia 2019</li>
-<li><strong><a href="https://140.125.183.142/wp-content/uploads/2021/09/IPPR%E7%AC%AC%E5%8D%81%E4%BA%8C%E5%B1%86%E5%8D%9A%E7%A2%A9%E5%A3%AB%E8%AB%96%E6%96%87%E7%8D%8E%E5%BE%97%E7%8D%8E%E8%B3%87%E6%96%99.pdf">Best Master Thesis Award</a></strong>, Chinese Image Processing and Pattern Recognition Society, 2019</li>
-<li><strong><a href="https://news.ltn.com.tw/news/life/breakingnews/2809162">Students’ Outstanding Contribution Award (學生傑出貢獻獎)</a></strong>, National Chiao Tung University, 2019</li>
+<li>Shao-Yuan Lo 羅紹元</li>
+</ul>
+<h3>MS Students</h3>
+<ul>
+<li>Shao-Yuan Lo 羅紹元</li>
+</ul>
+<h3>Undergrad Students</h3>
+<ul>
+<li>Shao-Yuan Lo 羅紹元</li>
+</ul>
+<h3>Alumni</h3>
+<ul>
+<li>Shao-Yuan Lo 羅紹元</li>
 </ul>
 <hr>
-<h2>Media Coverage</h2>
-<ul class="dated-list">
-<li><strong><span class="date-day">Apr 25<span class="date-comma">,</span></span> <span class="date-year">2026</span></strong><span>Interviewed on <a href="https://www.ner.gov.tw/Program/Episode/?id=26050318334498988&amp;program=%E7%89%B9%E5%88%A5%E7%9A%84%E6%84%9B&amp;programId=24102210171197065">National Education Radio (教育廣播電台)</a>.</span></li>
-<li><strong><span class="date-day">Jan 30<span class="date-comma">,</span></span> <span class="date-year">2026</span></strong><span>Interviewed on <a href="https://www.facebook.com/photo/?fbid=1541793631289368&amp;set=a.440615794740496">Cheng Sheng Broadcasting Corp (正聲廣播公司)</a>.</span></li>
-<li><strong><span class="date-day">Oct 11<span class="date-comma">,</span></span> <span class="date-year">2022</span></strong><span>Reported on <a href="https://www.ftvnews.com.tw/news/detail/2022A11F04M1">Formosa Television (民視新聞)</a>, <a href="https://www.youtube.com/watch?v=4BCV3De5QuE">EBC News (東森新聞)</a>, and <a href="https://www.ntdtv.com.tw/b5/20221022/video/345977.html">New Tang Dynasty Television (新唐人電視台)</a> when I was seving as the Vice President of the Taiwanese Student Association at Johns Hopkins University.</span></li>
-<li><strong><span class="date-day">Jun 01<span class="date-comma">,</span></span> <span class="date-year">2019</span></strong><span>Reported on <a href="https://news.ltn.com.tw/news/life/breakingnews/2809162">Liberty Times (自由時報)</a>, <a href="https://udn.com/news/story/6928/3847789">United Daily News (聯合報)</a>, and <a href="https://www.ctee.com.tw/news/20190601700219-431401">Commercial Times (工商時報)</a> when I was graduating from National Chiao Tung University.</span></li>
-<li><strong><span class="date-day">Jul 19<span class="date-comma">,</span></span> <span class="date-year">2013</span></strong><span>Reported on <a href="https://www.chinatimes.com/newspapers/20130719000490-260107?chdtv">China Times (中國時報)</a> when I was graduating from senior high school (National Experimental High School at Hsinchu Science Park).</span></li>
-<li><strong><span class="date-day">Jun 04<span class="date-comma">,</span></span> <span class="date-year">2010</span></strong><span>Reported on <a href="https://news.ltn.com.tw/news/local/paper/400837">Liberty Times (自由時報)</a> when I was graduating from junior high school.</span></li>
-</ul>
-<hr>
-<h2>Sponsors</h2>
-<div class="sponsors"><div class="sponsor-row"><figure>
-    <img src="/shaoyuanlo/codex_test/site-preview/revisions/436bc040d303/files/sponsors/moe.webp" alt="" width="960" height="960" loading="lazy">
-    <figcaption>MOE (教育部)</figcaption>
-  </figure>
-<figure>
-    <img src="/shaoyuanlo/codex_test/site-preview/revisions/436bc040d303/files/sponsors/nstc.webp" alt="" width="1920" height="293" loading="lazy">
-    <figcaption>NSTC (國科會)</figcaption>
-  </figure>
-<figure>
-    <img src="/shaoyuanlo/codex_test/site-preview/revisions/436bc040d303/files/sponsors/ntuh.webp" alt="" width="1920" height="977" loading="lazy">
-    <figcaption>NTUH (臺大醫院)</figcaption>
-  </figure></div>
-<div class="sponsor-row"><figure>
-    <img src="/shaoyuanlo/codex_test/site-preview/revisions/436bc040d303/files/sponsors/asus.webp" alt="" width="1920" height="411" loading="lazy">
-    <figcaption>ASUS (華碩)</figcaption>
-  </figure>
-<figure>
-    <img src="/shaoyuanlo/codex_test/site-preview/revisions/436bc040d303/files/sponsors/delta.webp" alt="" width="1920" height="592" loading="lazy">
-    <figcaption>Delta (台達電)</figcaption>
-  </figure>
-<figure>
-    <img src="/shaoyuanlo/codex_test/site-preview/revisions/436bc040d303/files/sponsors/itri.webp" alt="" width="1920" height="444" loading="lazy">
-    <figcaption>ITRI (工研院)</figcaption>
-  </figure></div></div>
+<h2>Why NTU?</h2>
+<p>abcde</p>
 
 </div>
 
