@@ -12,6 +12,11 @@ profile:
         - 台大德田館442-2室
   image: /files/sponsors/moe.webp
   imageAlt: Ministry of Education logo (temporary placeholder)
+  social:
+  - label: Dcard
+    url: https://www.dcard.tw/f/graduate_school/p/260285531
+  - label: Threads
+    url: https://www.threads.com/share/HHqu-o4Ky/
 photos:
   - /files/lab_photos/image_2F33A832.jpeg
   - /files/lab_photos/IMG_6450.jpg
