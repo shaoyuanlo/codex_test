@@ -8,8 +8,7 @@ profile:
   roles:
     - role: Trustworthy AI Lab 信韌智慧實驗室
       affiliations:
-        - Room 442-2, CSIE Building, NTU
-        - 台大德田館442-2室
+        - National Taiwan University 國立臺灣大學
   image: /files/sponsors/moe.webp
   imageAlt: Ministry of Education logo (temporary placeholder)
   social:
@@ -71,6 +70,8 @@ photos:
 
 ---
 
-## Why NTU?
+## About NTU
 
-abcde
+National Taiwan University (NTU) is Taiwan's most comprehensive and prestigious university, renowned for its academic excellence, outstanding students, and vibrant research community. NTU is ranked 54th worldwide in the 2027 QS World University Rankings.
+
+Located in Taipei, NTU offers an outstanding environment for both academic and personal growth. Taipei is a vibrant, safe, and welcoming city, known for its rich culture, delicious food, convenient transportation, and excellent quality of life. Taipei is at the heart of Taiwan's world-leading technology ecosystem, home to major operations of global technology leaders such as NVIDIA, Google, Microsoft, Amazon, AMD, MediaTek, and ASUS, offering exciting opportunities for industry connections and career development.
