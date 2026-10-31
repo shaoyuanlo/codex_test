@@ -154,8 +154,15 @@ nav a[aria-current] { font-weight: 600; }
   .date-comma { display: none; }
   .date-year { text-align: right; text-align-last: right; }
 }
-/* Indent talk events one additional level beneath their title bullets. */
-.page-activities .page-content li > .dated-list { margin-left: var(--space-xl); }
+/* Grouped talks: shared date-column width, title gap and an additional indent. */
+.page-activities .page-content li > .dated-list {
+  grid-template-columns: 12ch minmax(0, 1fr);
+  margin-top: var(--space-sm);
+  margin-left: var(--space-xl);
+}
+@media (max-width: 767px) {
+  .page-activities .page-content li > .dated-list { grid-template-columns: 6ch minmax(0, 1fr); }
+}
 /* Shared bullet and numbered lists: indentation, outer spacing and item margins. */
 .prose ul, .prose ol { margin: 0 0 var(--space-md); padding-left: var(--space-xl); }
 .prose li { margin: var(--space-sm) 0; }
