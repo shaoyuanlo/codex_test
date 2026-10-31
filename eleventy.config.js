@@ -42,8 +42,8 @@ export default function (eleventyConfig) {
         });
     }).join("");
   });
-  // Share date/body columns across Markdown lists without changing ordinary bullet lists.
-  eleventyConfig.addFilter("datedLists", html => html.replace(/<ul>([\s\S]*?)<\/ul>/g, (list, items) => {
+  // Format innermost dated lists while preserving their parent bullets.
+  eleventyConfig.addFilter("datedLists", html => html.replace(/<ul>((?:(?!<ul>)[\s\S])*?)<\/ul>/g, (list, items) => {
     const columns = items.replace(
       /<li>(?:<strong>)?([A-Z][a-z]{2} (?:\d{2}, )?\d{4})(?:<\/strong>)?\s*—\s*([\s\S]*?)<\/li>/g,
       (item, date, body) => {
