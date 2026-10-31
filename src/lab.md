@@ -67,7 +67,7 @@ photos:
 
 ## Why NTU?
 
-National Taiwan University (NTU) is Taiwan's leading comprehensive research university, renowned for its academic excellence, outstanding students, and vibrant research community. NTU is ranked 54th worldwide in the 2027 QS World University Rankings and 51st–100th globally in Data Science and Artificial Intelligence in the 2026 QS World University Rankings by Subject.
+National Taiwan University (NTU) is Taiwan's most comprehensive and prestigious university, renowned for its academic excellence, outstanding students, and vibrant research community. NTU is ranked 54th worldwide in the 2027 QS World University Rankings and 51st–100th globally in Data Science and Artificial Intelligence in the 2026 QS World University Rankings by Subject.
 
 Taipei, home to NTU, is a vibrant, safe, and welcoming city known for its rich culture, delicious food, convenient transportation, and excellent quality of life. At the heart of Taiwan's world-leading technology ecosystem, Taipei hosts major operations of global technology leaders such as NVIDIA, Google, Microsoft, Amazon, AMD, MediaTek, and ASUS, offering exciting opportunities for industry connections and career development.
 
