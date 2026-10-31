@@ -21,8 +21,6 @@ profile:
     url: /files/SYLo_CV.pdf
   - label: Google Scholar
     url: https://scholar.google.com/citations?hl=en&user=vL35nH4AAAAJ
-  - label: GitHub
-    url: https://github.com/shaoyuanlo
   - label: LinkedIn
     url: https://www.linkedin.com/in/shaoyuanlo/
   - label: X / Twitter
