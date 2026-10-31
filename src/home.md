@@ -71,16 +71,21 @@ abcde
 ## News
 
 <!-- Recent news: move older items into news-archive below. -->
-- **May 2026** — One paper accepted to ICML 2026. Serving as an Area Chair for NeurIPS 2026.
-- **Mar 2026** — Serving as an Area Chair for ICML 2026. Invited talk at the Surgical Data Science Symposium, National Taiwan University Hospital.
-- **Dec 2025** — Invited talk at the Advanced AI Safety Forum, Taiwan AI Center of Excellence.
-- **Nov 2025** — 1 paper accepted to WACV 2026. Serving as an Associate Editor for ICRA 2026. Invited talk at NVIDIA Research Taiwan.
-- **Oct 2025** — Serving as an Area Chair for ICLR 2026 and ICASSP 2026. Invited talk at Australian National University (remote).
-- **Aug 2025** — Joined National Taiwan University as an Assistant Professor. Awarded a Yushan Young Fellowship.
+- **Sep 2026** — One paper accepted to NeurIPS 2026.
+- **Sep 2026** — Invited talk at ASUS Future Fest.
+- **Sep 2026** — Serving as an Area Chair for ICRA 2027 and ICASSP 2027.
+- **May 2026** — One paper accepted to ICML 2026.
+- **May 2026** — Serving as an Area Chair for NeurIPS 2026.
+- **Mar 2026** — Invited talk at National Taiwan University Hospital.
+- **Jan 2026** — Serving as an Area Chair for ICML 2026.
 
 <div class="news-archive">
 
 <!-- Older news: edit these Markdown bullets directly. Original source dates are preserved. -->
+- **Dec 2025** — Invited talk at the Advanced AI Safety Forum, Taiwan AI Center of Excellence.
+- **Nov 2025** — 1 paper accepted to WACV 2026. Serving as an Associate Editor for ICRA 2026. Invited talk at NVIDIA Research Taiwan.
+- **Oct 2025** — Serving as an Area Chair for ICLR 2026 and ICASSP 2026. Invited talk at Australian National University (remote).
+- **Aug 2025** — Joined National Taiwan University as an Assistant Professor. Awarded a Yushan Young Fellowship.
 - **Jun 2025** — 1 paper accepted to IJCV. Serving as an Area Chair for BMVC 2025. Invited talk at ProtagoLabs (remote).
 - **May 2025** — 1 paper accepted to ICML 2025 (Spotlight!). Recognized as an Outstanding Reviewer for CVPR 2025!
 - **Apr 2025** — 1 paper accepted to CVIU. Invited talks at UC Santa Cruz and CSIG Wuhan Center (virtual).
