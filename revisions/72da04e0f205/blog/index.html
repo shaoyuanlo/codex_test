@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Trai Lab · Shao-Yuan Lo</title>
-  <link rel="canonical" href="https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/43936a0e6dd5/lab/index.html">
+  <title>Blog · Shao-Yuan Lo</title>
+  <link rel="canonical" href="https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/72da04e0f205/blog/index.html">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Trai Lab · Shao-Yuan Lo">
-  <meta property="og:url" content="https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/43936a0e6dd5/lab/index.html">
-  <meta property="og:image" content="https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/43936a0e6dd5/files/portrait.jpg">
-  <link rel="icon" type="image/png" sizes="180x180" href="/shaoyuanlo/codex_test/site-preview/revisions/43936a0e6dd5/files/ntu-emblem.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/shaoyuanlo/codex_test/site-preview/revisions/43936a0e6dd5/files/ntu-emblem.png">
+  <meta property="og:title" content="Blog · Shao-Yuan Lo">
+  <meta property="og:url" content="https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/72da04e0f205/blog/index.html">
+  <meta property="og:image" content="https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/72da04e0f205/files/portrait.jpg">
+  <link rel="icon" type="image/png" sizes="180x180" href="/shaoyuanlo/codex_test/site-preview/revisions/72da04e0f205/files/ntu-emblem.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/shaoyuanlo/codex_test/site-preview/revisions/72da04e0f205/files/ntu-emblem.png">
   <style data-preview-style="fonts">/* Self-hosted font faces. Original font binaries are unchanged; licenses are alongside each family. */
 
 /* @fontsource-variable/inter@5.3.0 — index.css */
@@ -1372,6 +1372,69 @@ nav a[aria-current] { font-weight: 600; }
   .hero-actions { grid-column: 1 / -1; }
 }
 
+/* Shared text-style buttons: bold black text; navy and underlined on hover. */
+.button {
+  display: inline-block;
+  color: var(--black); font-weight: 600;
+  white-space: nowrap; text-decoration-line: none;
+}
+.button:hover { color: var(--accent); text-decoration-line: underline; }
+/* Dated lists: date width follows month/year or full dates; body gaps stay shared. */
+.prose .dated-list { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: var(--space-sm) var(--space-md); list-style: none; padding: 0; margin: 0 0 var(--space-sm); }
+.prose .dated-list > li { display: grid; grid-column: 1 / -1; grid-template-columns: subgrid; column-gap: var(--space-md); padding: 0; margin: 0; }
+.prose .dated-list > li > strong { color: var(--black); white-space: nowrap; text-align: justify; text-align-last: justify; }
+/* Full dates stack on mobile; month/year-only dates keep their existing layout. */
+@media (max-width: 767px) {
+  .prose .dated-list > li > strong:has(.date-day) { display: grid; align-content: start; }
+  .date-comma { display: none; }
+  .date-year { text-align: right; text-align-last: right; }
+}
+/* Shared bullet and numbered lists: indentation, outer spacing and item margins. */
+.prose ul, .prose ol { margin: 0 0 var(--space-md); padding-left: var(--space-xl); }
+.prose li { margin: var(--space-sm) 0; }
+/* Publications: title and information spacing, indexes and note color. */
+.page-publications .page-content h3 { margin-bottom: var(--space-xs); }
+.page-publications .page-content h3 ~ p { line-height: var(--line-height-compact); margin-bottom: var(--space-xs); }
+/* Publication indexes: align first-line baselines and share the title/information indent. */
+.publication-info { padding-inline-start: calc(var(--font-size-base) * 2 + var(--space-sm)); }
+.page-publications h3[data-publication-index] { display: grid; grid-template-columns: calc(var(--font-size-base) * 2 + var(--space-sm)) minmax(0, 1fr); align-items: baseline; }
+.publication-index { font-size: var(--font-size-base); font-weight: 400; }
+@media (max-width: 767px) {
+  .publication-info { padding-inline-start: calc(var(--font-size-base) * 2 + var(--space-xs)); }
+  .page-publications h3[data-publication-index] { grid-template-columns: calc(var(--font-size-base) * 2 + var(--space-xs)) minmax(0, 1fr); }
+}
+.publication-note { color: var(--highlight); }
+
+/* News: native view controls; the recent list sets the shared viewport height. */
+/* Keep native control focus from applying the page anchor offset while switching views. */
+html:has(.news-switch:hover, .news-switch:focus-within) { scroll-padding-top: 0; }
+.news-heading { display: flex; align-items: baseline; gap: var(--space-md); margin: var(--space-lg) 0 var(--space-md); }
+.news-heading h2 { margin: 0; }
+.news-switch { display: flex; gap: var(--space-md); min-width: 0; padding: 0; margin: 0; border: 0; }
+.news-switch input, .news-switch legend { position: absolute; width: 1px; height: 1px; padding: 0; margin: 0; border: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.news-switch label { cursor: pointer; }
+.news-switch input:checked + label { color: var(--accent); text-decoration-line: underline; }
+.news-viewport { position: relative; }
+.news-all { display: none; position: absolute; inset: 0; overflow-y: auto; overscroll-behavior-y: contain; }
+.news:has(#news-all:checked) .news-recent { visibility: hidden; }
+.news:has(#news-all:checked) .news-all { display: block; }
+/* Sponsors: balanced centered rows, fixed-width items and individually sized logos. */
+.sponsors { display: grid; gap: var(--space-md); margin: 0 auto var(--space-md); }
+.sponsor-row { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-md); }
+.sponsors figure { width: 160px; flex: 0 0 160px; display: grid; grid-template-rows: 48px auto; justify-items: center; align-items: center; gap: var(--space-xs); margin: 0; min-width: 0; text-align: center; }
+.sponsors img { max-width: 100%; height: auto; max-height: 48px; width: auto; object-fit: contain; }
+.sponsors img[src$="/moe.webp"] { width: 48px; }
+.sponsors img[src$="/nstc.webp"] { width: 152px; }
+.sponsors img[src$="/ntuh.webp"] { width: 88px; }
+.sponsors img[src$="/asus.webp"] { width: 112px; }
+.sponsors img[src$="/delta.webp"] { width: 112px; }
+.sponsors img[src$="/itri.webp"] { width: 136px; }
+.sponsors figcaption { white-space: nowrap; }
+@media (max-width: 767px) {
+  .sponsors { display: flex; flex-wrap: wrap; justify-content: center; max-width: calc(320px + var(--space-md)); }
+  .sponsor-row { display: contents; }
+}
+
 /* Lab gallery: horizontal photos, shared scrollbar and a native image dialog. */
 .lab-gallery { cursor: grab; margin: var(--space-lg) 0; }
 .gallery-track { display: flex; gap: var(--space-md); min-width: 0; overflow-x: auto; overscroll-behavior-x: contain; }
@@ -1407,69 +1470,6 @@ html:has(.gallery-dialog[open]) { overflow: hidden; scrollbar-gutter: stable; }
   .gallery-track { overflow: visible; flex-wrap: wrap; }
   .gallery-dialog, .gallery-scrollbar { display: none; }
 }
-
-/* Shared text-style buttons: bold black text; navy and underlined on hover. */
-.button {
-  display: inline-block;
-  color: var(--black); font-weight: 600;
-  white-space: nowrap; text-decoration-line: none;
-}
-.button:hover { color: var(--accent); text-decoration-line: underline; }
-/* Dated lists: date width follows month/year or full dates; body gaps stay shared. */
-.prose .dated-list { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: var(--space-sm) var(--space-md); list-style: none; padding: 0; margin: 0 0 var(--space-sm); }
-.prose .dated-list > li { display: grid; grid-column: 1 / -1; grid-template-columns: subgrid; column-gap: var(--space-md); padding: 0; margin: 0; }
-.prose .dated-list > li > strong { color: var(--black); white-space: nowrap; text-align: justify; text-align-last: justify; }
-/* Full dates stack on mobile; month/year-only dates keep their existing layout. */
-@media (max-width: 767px) {
-  .prose .dated-list > li > strong:has(.date-day) { display: grid; align-content: start; }
-  .date-comma { display: none; }
-  .date-year { text-align: right; text-align-last: right; }
-}
-/* Shared bullet and numbered lists: indentation, outer spacing and item margins. */
-.prose ul, .prose ol { margin: 0 0 var(--space-md); padding-left: var(--space-xl); }
-.prose li { margin: var(--space-sm) 0; }
-
-/* News: native view controls; the recent list sets the shared viewport height. */
-/* Keep native control focus from applying the page anchor offset while switching views. */
-html:has(.news-switch:hover, .news-switch:focus-within) { scroll-padding-top: 0; }
-.news-heading { display: flex; align-items: baseline; gap: var(--space-md); margin: var(--space-lg) 0 var(--space-md); }
-.news-heading h2 { margin: 0; }
-.news-switch { display: flex; gap: var(--space-md); min-width: 0; padding: 0; margin: 0; border: 0; }
-.news-switch input, .news-switch legend { position: absolute; width: 1px; height: 1px; padding: 0; margin: 0; border: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
-.news-switch label { cursor: pointer; }
-.news-switch input:checked + label { color: var(--accent); text-decoration-line: underline; }
-.news-viewport { position: relative; }
-.news-all { display: none; position: absolute; inset: 0; overflow-y: auto; overscroll-behavior-y: contain; }
-.news:has(#news-all:checked) .news-recent { visibility: hidden; }
-.news:has(#news-all:checked) .news-all { display: block; }
-/* Sponsors: balanced centered rows, fixed-width items and individually sized logos. */
-.sponsors { display: grid; gap: var(--space-md); margin: 0 auto var(--space-md); }
-.sponsor-row { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-md); }
-.sponsors figure { width: 160px; flex: 0 0 160px; display: grid; grid-template-rows: 48px auto; justify-items: center; align-items: center; gap: var(--space-xs); margin: 0; min-width: 0; text-align: center; }
-.sponsors img { max-width: 100%; height: auto; max-height: 48px; width: auto; object-fit: contain; }
-.sponsors img[src$="/moe.webp"] { width: 48px; }
-.sponsors img[src$="/nstc.webp"] { width: 152px; }
-.sponsors img[src$="/ntuh.webp"] { width: 88px; }
-.sponsors img[src$="/asus.webp"] { width: 112px; }
-.sponsors img[src$="/delta.webp"] { width: 112px; }
-.sponsors img[src$="/itri.webp"] { width: 136px; }
-.sponsors figcaption { white-space: nowrap; }
-@media (max-width: 767px) {
-  .sponsors { display: flex; flex-wrap: wrap; justify-content: center; max-width: calc(320px + var(--space-md)); }
-  .sponsor-row { display: contents; }
-}
-/* Publications: title and information spacing, indexes and note color. */
-.page-publications .page-content h3 { margin-bottom: var(--space-xs); }
-.page-publications .page-content h3 ~ p { line-height: var(--line-height-compact); margin-bottom: var(--space-xs); }
-/* Publication indexes: align first-line baselines and share the title/information indent. */
-.publication-info { padding-inline-start: calc(var(--font-size-base) * 2 + var(--space-sm)); }
-.page-publications h3[data-publication-index] { display: grid; grid-template-columns: calc(var(--font-size-base) * 2 + var(--space-sm)) minmax(0, 1fr); align-items: baseline; }
-.publication-index { font-size: var(--font-size-base); font-weight: 400; }
-@media (max-width: 767px) {
-  .publication-info { padding-inline-start: calc(var(--font-size-base) * 2 + var(--space-xs)); }
-  .page-publications h3[data-publication-index] { grid-template-columns: calc(var(--font-size-base) * 2 + var(--space-xs)) minmax(0, 1fr); }
-}
-.publication-note { color: var(--highlight); }
 
 
 
@@ -1507,282 +1507,41 @@ p { margin: 0 0 var(--space-md); }
   .callout { break-inside: avoid; }
 }
 </style>
-  <meta name="preview-source" content="43936a0e6dd51c6a7b5829f6c168a279fe67c572">
+  <meta name="preview-source" content="72da04e0f205ff0eec5e3b77b8053f829a96631c">
   <meta name="robots" content="noindex, nofollow">
 </head>
-<body class="page-lab">
+<body class="page-blog">
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="header-inner">
-      <a class="wordmark" href="/shaoyuanlo/codex_test/site-preview/revisions/43936a0e6dd5/index.html" aria-label="Shao-Yuan Lo — Home">Shao-Yuan Lo</a>
+      <a class="wordmark" href="/shaoyuanlo/codex_test/site-preview/revisions/72da04e0f205/index.html" aria-label="Shao-Yuan Lo — Home">Shao-Yuan Lo</a>
       <nav aria-label="Main navigation">
         
-        <a href="/shaoyuanlo/codex_test/site-preview/revisions/43936a0e6dd5/index.html">Home</a>
+        <a href="/shaoyuanlo/codex_test/site-preview/revisions/72da04e0f205/index.html">Home</a>
         
-        <a href="/shaoyuanlo/codex_test/site-preview/revisions/43936a0e6dd5/lab/index.html" aria-current="page">Trai Lab</a>
+        <a href="/shaoyuanlo/codex_test/site-preview/revisions/72da04e0f205/lab/index.html">Trai Lab</a>
         
-        <a href="/shaoyuanlo/codex_test/site-preview/revisions/43936a0e6dd5/publications/index.html">Publications</a>
+        <a href="/shaoyuanlo/codex_test/site-preview/revisions/72da04e0f205/publications/index.html">Publications</a>
         
-        <a href="/shaoyuanlo/codex_test/site-preview/revisions/43936a0e6dd5/activities/index.html">Activities</a>
+        <a href="/shaoyuanlo/codex_test/site-preview/revisions/72da04e0f205/activities/index.html">Activities</a>
         
-        <a href="/shaoyuanlo/codex_test/site-preview/revisions/43936a0e6dd5/teaching/index.html">Teaching</a>
+        <a href="/shaoyuanlo/codex_test/site-preview/revisions/72da04e0f205/teaching/index.html">Teaching</a>
         
-        <a href="/shaoyuanlo/codex_test/site-preview/revisions/43936a0e6dd5/blog/index.html">Blog</a>
+        <a href="/shaoyuanlo/codex_test/site-preview/revisions/72da04e0f205/blog/index.html" aria-current="page">Blog</a>
         
       </nav>
     </div>
   </header>
   <main id="main" class="site-main" tabindex="-1">
     
-<section class="hero" aria-labelledby="lab-title">
-  <div class="hero-copy">
-    <h1 id="lab-title">Trai Lab<span class="chinese-name" lang="zh-Hant">踹實驗室</span></h1>
-    <div class="hero-roles">
-      
-      <div class="hero-position">
-        <p class="hero-role">Trustworthy AI Lab 信韌智慧實驗室</p>
-        <p>Room 442-2, CSIE Building, NTU</p><p>台大德田館442-2室</p>
-      </div>
-      
-    </div>
-    
-    
-  </div>
-  <figure class="portrait">
-    <img src="/shaoyuanlo/codex_test/site-preview/revisions/43936a0e6dd5/files/sponsors/moe.webp" alt="Ministry of Education logo (temporary placeholder)" width="1340" height="1608" fetchpriority="high">
-  </figure>
-</section>
+<header class="page-heading">
+  <h1>Blog</h1>
+  <p class="page-intro">Stay tuned.</p>
+</header>
 
-
-<section class="lab-gallery" data-gallery aria-label="Lab photos">
-  <div class="gallery-track" id="lab-photo-track" tabindex="0" aria-label="Photos: use arrow keys or swipe to browse">
-    
-    <figure class="gallery-item">
-      <a href="/shaoyuanlo/codex_test/site-preview/revisions/43936a0e6dd5/files/lab_photos/image_2F33A832.jpeg" data-gallery-photo aria-label="Enlarge photo: Group photo in an indoor gathering space">
-        <img src="/shaoyuanlo/codex_test/site-preview/revisions/43936a0e6dd5/files/lab_photos/image_2F33A832.jpeg" alt="Group photo in an indoor gathering space" width="240" height="180" loading="lazy" draggable="false">
-      </a>
-      <figcaption>Add a caption for this group photo.</figcaption>
-    </figure>
-    
-    <figure class="gallery-item">
-      <a href="/shaoyuanlo/codex_test/site-preview/revisions/43936a0e6dd5/files/lab_photos/demo-blueberries.jpg" data-gallery-photo aria-label="Enlarge photo: Blueberries">
-        <img src="/shaoyuanlo/codex_test/site-preview/revisions/43936a0e6dd5/files/lab_photos/demo-blueberries.jpg" alt="Blueberries" width="240" height="180" loading="lazy" draggable="false">
-      </a>
-      <figcaption>Demo photo: blueberries. Replace with a lab photo and caption.</figcaption>
-    </figure>
-    
-    <figure class="gallery-item">
-      <a href="/shaoyuanlo/codex_test/site-preview/revisions/43936a0e6dd5/files/lab_photos/demo-larch.jpg" data-gallery-photo aria-label="Enlarge photo: A larch tree">
-        <img src="/shaoyuanlo/codex_test/site-preview/revisions/43936a0e6dd5/files/lab_photos/demo-larch.jpg" alt="A larch tree" width="240" height="180" loading="lazy" draggable="false">
-      </a>
-      <figcaption>Demo photo: larch. Replace with a lab photo and caption.</figcaption>
-    </figure>
-    
-    <figure class="gallery-item">
-      <a href="/shaoyuanlo/codex_test/site-preview/revisions/43936a0e6dd5/files/lab_photos/demo-urban-bear.jpg" data-gallery-photo aria-label="Enlarge photo: A bear in an urban setting">
-        <img src="/shaoyuanlo/codex_test/site-preview/revisions/43936a0e6dd5/files/lab_photos/demo-urban-bear.jpg" alt="A bear in an urban setting" width="240" height="180" loading="lazy" draggable="false">
-      </a>
-      <figcaption>Demo photo: an urban bear. Replace with a lab photo and caption.</figcaption>
-    </figure>
-    
-    <figure class="gallery-item">
-      <a href="/shaoyuanlo/codex_test/site-preview/revisions/43936a0e6dd5/files/lab_photos/demo-wild-bear.jpg" data-gallery-photo aria-label="Enlarge photo: A bear in the wild">
-        <img src="/shaoyuanlo/codex_test/site-preview/revisions/43936a0e6dd5/files/lab_photos/demo-wild-bear.jpg" alt="A bear in the wild" width="240" height="180" loading="lazy" draggable="false">
-      </a>
-      <figcaption>Demo photo: a wild bear. Replace with a lab photo and caption.</figcaption>
-    </figure>
-    
-    <figure class="gallery-item">
-      <a href="/shaoyuanlo/codex_test/site-preview/revisions/43936a0e6dd5/files/lab_photos/demo-landscape.jpg" data-gallery-photo aria-label="Enlarge photo: MDN landscape sample image">
-        <img src="/shaoyuanlo/codex_test/site-preview/revisions/43936a0e6dd5/files/lab_photos/demo-landscape.jpg" alt="MDN landscape sample image" width="240" height="180" loading="lazy" draggable="false">
-      </a>
-      <figcaption>Demo photo: landscape. Replace with a lab photo and caption.</figcaption>
-    </figure>
-    
-    <figure class="gallery-item">
-      <a href="/shaoyuanlo/codex_test/site-preview/revisions/43936a0e6dd5/files/lab_photos/demo-pattern.jpg" data-gallery-photo aria-label="Enlarge photo: MDN patterned surface sample image">
-        <img src="/shaoyuanlo/codex_test/site-preview/revisions/43936a0e6dd5/files/lab_photos/demo-pattern.jpg" alt="MDN patterned surface sample image" width="240" height="180" loading="lazy" draggable="false">
-      </a>
-      <figcaption>Demo photo: patterned surface. Replace with a lab photo and caption.</figcaption>
-    </figure>
-    
-    <figure class="gallery-item">
-      <a href="/shaoyuanlo/codex_test/site-preview/revisions/43936a0e6dd5/files/lab_photos/demo-postcard.jpg" data-gallery-photo aria-label="Enlarge photo: MDN postcard background sample image">
-        <img src="/shaoyuanlo/codex_test/site-preview/revisions/43936a0e6dd5/files/lab_photos/demo-postcard.jpg" alt="MDN postcard background sample image" width="240" height="180" loading="lazy" draggable="false">
-      </a>
-      <figcaption>Demo photo: postcard background. Replace with a lab photo and caption.</figcaption>
-    </figure>
-    
-  </div>
-  <input class="gallery-scrollbar" data-gallery-scrollbar type="range" min="0" max="100" step="1" value="0" aria-label="Photo scroll position" hidden>
-  <dialog class="gallery-dialog" aria-label="Enlarged photo">
-    <button class="button gallery-close" type="button" data-gallery-close aria-label="Close enlarged photo">Close <span aria-hidden="true">×</span></button>
-    <img data-gallery-full alt="">
-    <p class="gallery-caption" data-gallery-caption></p>
-  </dialog>
-</section>
-<script data-preview-script="gallery">// Enhance the Lab photo strip; links and native scrolling work without JavaScript.
-document.querySelectorAll('[data-gallery]').forEach(gallery => {
-  const track = gallery.querySelector('.gallery-track');
-  const scrollbar = gallery.querySelector('[data-gallery-scrollbar]');
-  const dialog = gallery.querySelector('dialog');
-  const fullImage = dialog.querySelector('[data-gallery-full]');
-  const caption = dialog.querySelector('[data-gallery-caption]');
-  let drag = null;
-  let suppressClick = false;
-  let animation = 0;
-  let target = track.scrollLeft;
-  let wheelDirection = 0;
-  let wheelTimer;
-
-  const updateControls = () => {
-    scrollbar.max = Math.max(0, track.scrollWidth - track.clientWidth);
-    scrollbar.value = track.scrollLeft;
-    scrollbar.disabled = Number(scrollbar.max) <= 1;
-  };
-  const stopMotion = () => {
-    cancelAnimationFrame(animation);
-    animation = 0;
-    target = track.scrollLeft;
-  };
-  const move = direction => {
-    const item = track.querySelector('.gallery-item');
-    const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
-    const maximum = track.scrollWidth - track.clientWidth;
-    const start = track.scrollLeft;
-    target = Math.max(0, Math.min(maximum,
-      (animation ? target : start) + direction * (item.getBoundingClientRect().width + gap)));
-    cancelAnimationFrame(animation);
-    if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      track.scrollLeft = target;
-      animation = 0;
-      return;
-    }
-    const destination = target;
-    const started = performance.now();
-    const tick = now => {
-      const progress = Math.min(1, (now - started) / 500);
-      const eased = progress * progress * (3 - 2 * progress);
-      track.scrollLeft = start + (destination - start) * eased;
-      animation = progress < 1 ? requestAnimationFrame(tick) : 0;
-    };
-    animation = requestAnimationFrame(tick);
-  };
-  scrollbar.addEventListener('input', () => {
-    stopMotion();
-    track.scrollLeft = Number(scrollbar.value);
-  });
-  track.addEventListener('scroll', updateControls, { passive: true });
-  new ResizeObserver(() => { stopMotion(); updateControls(); }).observe(track);
-  track.addEventListener('keydown', event => {
-    if (event.altKey || event.ctrlKey || event.metaKey) return;
-    if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
-      event.preventDefault();
-      move(event.key === 'ArrowRight' ? 1 : -1);
-    }
-  });
-
-  // Treat a vertical wheel burst as one photo step; preserve horizontal trackpad deltas.
-  gallery.addEventListener('wheel', event => {
-    if (dialog.open || event.ctrlKey || !matchMedia('(min-width: 768px)').matches) return;
-    // Contain every desktop wheel event, including at the first and last photo.
-    event.preventDefault();
-    if (Math.abs(event.deltaX) > Math.abs(event.deltaY)) {
-      stopMotion();
-      const unit = event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? track.clientWidth : 1;
-      track.scrollLeft += event.deltaX * unit;
-      return;
-    }
-    const direction = Math.sign(event.deltaY);
-    const maximum = track.scrollWidth - track.clientWidth;
-    const position = animation ? target : track.scrollLeft;
-    const canMove = direction > 0 ? position < maximum - 1 : position > 1;
-    if (!direction) return;
-    if (direction !== wheelDirection && canMove) move(direction);
-    wheelDirection = direction;
-    clearTimeout(wheelTimer);
-    wheelTimer = setTimeout(() => { wheelDirection = 0; }, 160);
-  }, { passive: false });
-
-  // Use pointer capture after a mouse drag starts; touch keeps native swipe and pinch behavior.
-  track.addEventListener('dragstart', event => event.preventDefault());
-  track.addEventListener('pointerdown', event => {
-    stopMotion();
-    if (event.pointerType !== 'mouse' || event.button !== 0) return;
-    drag = { id: event.pointerId, x: event.clientX, scroll: track.scrollLeft, moved: false };
-  });
-  track.addEventListener('pointermove', event => {
-    if (!drag || event.pointerId !== drag.id) return;
-    const distance = event.clientX - drag.x;
-    if (!drag.moved && Math.abs(distance) < 6) return;
-    if (!drag.moved) {
-      drag.moved = true;
-      track.setPointerCapture(event.pointerId);
-      track.classList.add('is-dragging');
-    }
-    event.preventDefault();
-    track.scrollLeft = drag.scroll - distance;
-  });
-  const finishDrag = event => {
-    if (!drag || event.pointerId !== drag.id) return;
-    suppressClick = drag.moved;
-    if (track.hasPointerCapture(event.pointerId)) track.releasePointerCapture(event.pointerId);
-    track.classList.remove('is-dragging');
-    drag = null;
-    setTimeout(() => { suppressClick = false; }, 0);
-  };
-  track.addEventListener('pointerleave', () => { if (drag && !drag.moved) drag = null; });
-  track.addEventListener('pointerup', finishDrag);
-  track.addEventListener('lostpointercapture', finishDrag);
-  track.addEventListener('pointercancel', finishDrag);
-  track.addEventListener('click', event => {
-    if (suppressClick) {
-      event.preventDefault();
-      event.stopPropagation();
-      return;
-    }
-    const link = event.target.closest('[data-gallery-photo]');
-    if (!link || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey || !dialog.showModal) return;
-    event.preventDefault();
-    const thumbnail = link.querySelector('img');
-    fullImage.src = link.href;
-    fullImage.alt = thumbnail.alt;
-    caption.textContent = link.closest('figure').querySelector('figcaption')?.textContent || '';
-    caption.hidden = !caption.textContent;
-    dialog.showModal();
-  }, true);
-  dialog.querySelector('[data-gallery-close]').addEventListener('click', () => dialog.close());
-  dialog.addEventListener('click', event => {
-    if (event.target !== dialog) return;
-    const bounds = dialog.getBoundingClientRect();
-    if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) dialog.close();
-  });
-  scrollbar.hidden = false;
-  updateControls();
-});
-</script>
 
 <div class="prose page-content">
-<h2>People</h2>
-<h3>Principal Investigator</h3>
-<ul>
-<li>Shao-Yuan Lo 羅紹元</li>
-</ul>
-<h3>MS Students</h3>
-<ul>
-<li>Shao-Yuan Lo 羅紹元</li>
-</ul>
-<h3>Undergrad Students</h3>
-<ul>
-<li>Shao-Yuan Lo 羅紹元</li>
-</ul>
-<h3>Alumni</h3>
-<ul>
-<li>Shao-Yuan Lo 羅紹元</li>
-</ul>
-<hr>
-<h2>Why NTU?</h2>
-<p>abcde</p>
+<!-- Edit this page directly in Markdown, just like the other pages. -->
 
 </div>
 

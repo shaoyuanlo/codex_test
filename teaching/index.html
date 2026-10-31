@@ -1372,6 +1372,69 @@ nav a[aria-current] { font-weight: 600; }
   .hero-actions { grid-column: 1 / -1; }
 }
 
+/* Shared text-style buttons: bold black text; navy and underlined on hover. */
+.button {
+  display: inline-block;
+  color: var(--black); font-weight: 600;
+  white-space: nowrap; text-decoration-line: none;
+}
+.button:hover { color: var(--accent); text-decoration-line: underline; }
+/* Dated lists: date width follows month/year or full dates; body gaps stay shared. */
+.prose .dated-list { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: var(--space-sm) var(--space-md); list-style: none; padding: 0; margin: 0 0 var(--space-sm); }
+.prose .dated-list > li { display: grid; grid-column: 1 / -1; grid-template-columns: subgrid; column-gap: var(--space-md); padding: 0; margin: 0; }
+.prose .dated-list > li > strong { color: var(--black); white-space: nowrap; text-align: justify; text-align-last: justify; }
+/* Full dates stack on mobile; month/year-only dates keep their existing layout. */
+@media (max-width: 767px) {
+  .prose .dated-list > li > strong:has(.date-day) { display: grid; align-content: start; }
+  .date-comma { display: none; }
+  .date-year { text-align: right; text-align-last: right; }
+}
+/* Shared bullet and numbered lists: indentation, outer spacing and item margins. */
+.prose ul, .prose ol { margin: 0 0 var(--space-md); padding-left: var(--space-xl); }
+.prose li { margin: var(--space-sm) 0; }
+/* Publications: title and information spacing, indexes and note color. */
+.page-publications .page-content h3 { margin-bottom: var(--space-xs); }
+.page-publications .page-content h3 ~ p { line-height: var(--line-height-compact); margin-bottom: var(--space-xs); }
+/* Publication indexes: align first-line baselines and share the title/information indent. */
+.publication-info { padding-inline-start: calc(var(--font-size-base) * 2 + var(--space-sm)); }
+.page-publications h3[data-publication-index] { display: grid; grid-template-columns: calc(var(--font-size-base) * 2 + var(--space-sm)) minmax(0, 1fr); align-items: baseline; }
+.publication-index { font-size: var(--font-size-base); font-weight: 400; }
+@media (max-width: 767px) {
+  .publication-info { padding-inline-start: calc(var(--font-size-base) * 2 + var(--space-xs)); }
+  .page-publications h3[data-publication-index] { grid-template-columns: calc(var(--font-size-base) * 2 + var(--space-xs)) minmax(0, 1fr); }
+}
+.publication-note { color: var(--highlight); }
+
+/* News: native view controls; the recent list sets the shared viewport height. */
+/* Keep native control focus from applying the page anchor offset while switching views. */
+html:has(.news-switch:hover, .news-switch:focus-within) { scroll-padding-top: 0; }
+.news-heading { display: flex; align-items: baseline; gap: var(--space-md); margin: var(--space-lg) 0 var(--space-md); }
+.news-heading h2 { margin: 0; }
+.news-switch { display: flex; gap: var(--space-md); min-width: 0; padding: 0; margin: 0; border: 0; }
+.news-switch input, .news-switch legend { position: absolute; width: 1px; height: 1px; padding: 0; margin: 0; border: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.news-switch label { cursor: pointer; }
+.news-switch input:checked + label { color: var(--accent); text-decoration-line: underline; }
+.news-viewport { position: relative; }
+.news-all { display: none; position: absolute; inset: 0; overflow-y: auto; overscroll-behavior-y: contain; }
+.news:has(#news-all:checked) .news-recent { visibility: hidden; }
+.news:has(#news-all:checked) .news-all { display: block; }
+/* Sponsors: balanced centered rows, fixed-width items and individually sized logos. */
+.sponsors { display: grid; gap: var(--space-md); margin: 0 auto var(--space-md); }
+.sponsor-row { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-md); }
+.sponsors figure { width: 160px; flex: 0 0 160px; display: grid; grid-template-rows: 48px auto; justify-items: center; align-items: center; gap: var(--space-xs); margin: 0; min-width: 0; text-align: center; }
+.sponsors img { max-width: 100%; height: auto; max-height: 48px; width: auto; object-fit: contain; }
+.sponsors img[src$="/moe.webp"] { width: 48px; }
+.sponsors img[src$="/nstc.webp"] { width: 152px; }
+.sponsors img[src$="/ntuh.webp"] { width: 88px; }
+.sponsors img[src$="/asus.webp"] { width: 112px; }
+.sponsors img[src$="/delta.webp"] { width: 112px; }
+.sponsors img[src$="/itri.webp"] { width: 136px; }
+.sponsors figcaption { white-space: nowrap; }
+@media (max-width: 767px) {
+  .sponsors { display: flex; flex-wrap: wrap; justify-content: center; max-width: calc(320px + var(--space-md)); }
+  .sponsor-row { display: contents; }
+}
+
 /* Lab gallery: horizontal photos, shared scrollbar and a native image dialog. */
 .lab-gallery { cursor: grab; margin: var(--space-lg) 0; }
 .gallery-track { display: flex; gap: var(--space-md); min-width: 0; overflow-x: auto; overscroll-behavior-x: contain; }
@@ -1407,69 +1470,6 @@ html:has(.gallery-dialog[open]) { overflow: hidden; scrollbar-gutter: stable; }
   .gallery-track { overflow: visible; flex-wrap: wrap; }
   .gallery-dialog, .gallery-scrollbar { display: none; }
 }
-
-/* Shared text-style buttons: bold black text; navy and underlined on hover. */
-.button {
-  display: inline-block;
-  color: var(--black); font-weight: 600;
-  white-space: nowrap; text-decoration-line: none;
-}
-.button:hover { color: var(--accent); text-decoration-line: underline; }
-/* Dated lists: date width follows month/year or full dates; body gaps stay shared. */
-.prose .dated-list { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: var(--space-sm) var(--space-md); list-style: none; padding: 0; margin: 0 0 var(--space-sm); }
-.prose .dated-list > li { display: grid; grid-column: 1 / -1; grid-template-columns: subgrid; column-gap: var(--space-md); padding: 0; margin: 0; }
-.prose .dated-list > li > strong { color: var(--black); white-space: nowrap; text-align: justify; text-align-last: justify; }
-/* Full dates stack on mobile; month/year-only dates keep their existing layout. */
-@media (max-width: 767px) {
-  .prose .dated-list > li > strong:has(.date-day) { display: grid; align-content: start; }
-  .date-comma { display: none; }
-  .date-year { text-align: right; text-align-last: right; }
-}
-/* Shared bullet and numbered lists: indentation, outer spacing and item margins. */
-.prose ul, .prose ol { margin: 0 0 var(--space-md); padding-left: var(--space-xl); }
-.prose li { margin: var(--space-sm) 0; }
-
-/* News: native view controls; the recent list sets the shared viewport height. */
-/* Keep native control focus from applying the page anchor offset while switching views. */
-html:has(.news-switch:hover, .news-switch:focus-within) { scroll-padding-top: 0; }
-.news-heading { display: flex; align-items: baseline; gap: var(--space-md); margin: var(--space-lg) 0 var(--space-md); }
-.news-heading h2 { margin: 0; }
-.news-switch { display: flex; gap: var(--space-md); min-width: 0; padding: 0; margin: 0; border: 0; }
-.news-switch input, .news-switch legend { position: absolute; width: 1px; height: 1px; padding: 0; margin: 0; border: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
-.news-switch label { cursor: pointer; }
-.news-switch input:checked + label { color: var(--accent); text-decoration-line: underline; }
-.news-viewport { position: relative; }
-.news-all { display: none; position: absolute; inset: 0; overflow-y: auto; overscroll-behavior-y: contain; }
-.news:has(#news-all:checked) .news-recent { visibility: hidden; }
-.news:has(#news-all:checked) .news-all { display: block; }
-/* Sponsors: balanced centered rows, fixed-width items and individually sized logos. */
-.sponsors { display: grid; gap: var(--space-md); margin: 0 auto var(--space-md); }
-.sponsor-row { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-md); }
-.sponsors figure { width: 160px; flex: 0 0 160px; display: grid; grid-template-rows: 48px auto; justify-items: center; align-items: center; gap: var(--space-xs); margin: 0; min-width: 0; text-align: center; }
-.sponsors img { max-width: 100%; height: auto; max-height: 48px; width: auto; object-fit: contain; }
-.sponsors img[src$="/moe.webp"] { width: 48px; }
-.sponsors img[src$="/nstc.webp"] { width: 152px; }
-.sponsors img[src$="/ntuh.webp"] { width: 88px; }
-.sponsors img[src$="/asus.webp"] { width: 112px; }
-.sponsors img[src$="/delta.webp"] { width: 112px; }
-.sponsors img[src$="/itri.webp"] { width: 136px; }
-.sponsors figcaption { white-space: nowrap; }
-@media (max-width: 767px) {
-  .sponsors { display: flex; flex-wrap: wrap; justify-content: center; max-width: calc(320px + var(--space-md)); }
-  .sponsor-row { display: contents; }
-}
-/* Publications: title and information spacing, indexes and note color. */
-.page-publications .page-content h3 { margin-bottom: var(--space-xs); }
-.page-publications .page-content h3 ~ p { line-height: var(--line-height-compact); margin-bottom: var(--space-xs); }
-/* Publication indexes: align first-line baselines and share the title/information indent. */
-.publication-info { padding-inline-start: calc(var(--font-size-base) * 2 + var(--space-sm)); }
-.page-publications h3[data-publication-index] { display: grid; grid-template-columns: calc(var(--font-size-base) * 2 + var(--space-sm)) minmax(0, 1fr); align-items: baseline; }
-.publication-index { font-size: var(--font-size-base); font-weight: 400; }
-@media (max-width: 767px) {
-  .publication-info { padding-inline-start: calc(var(--font-size-base) * 2 + var(--space-xs)); }
-  .page-publications h3[data-publication-index] { grid-template-columns: calc(var(--font-size-base) * 2 + var(--space-xs)) minmax(0, 1fr); }
-}
-.publication-note { color: var(--highlight); }
 
 
 
@@ -1507,7 +1507,7 @@ p { margin: 0 0 var(--space-md); }
   .callout { break-inside: avoid; }
 }
 </style>
-  <meta name="preview-source" content="43936a0e6dd51c6a7b5829f6c168a279fe67c572">
+  <meta name="preview-source" content="72da04e0f205ff0eec5e3b77b8053f829a96631c">
   <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="page-teaching">
