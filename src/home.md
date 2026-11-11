@@ -73,9 +73,13 @@ abcde
 ## News
 
 <!-- Recent news: move older items into news-archive below. -->
+- **Nov 2026** — Serving as an Area Chair for CVPR 2027.
+- **Oct 2026** — One paper accepted to WACV 2027.
+- **Oct 2026** — Invited talks at Academia Sinica, NTHU, and CGU.
 - **Sep 2026** — One paper accepted to NeurIPS 2026.
 - **Sep 2026** — Invited talk at ASUS Future Fest.
 - **Sep 2026** — Serving as an Area Chair for ICRA 2027 and ICASSP 2027.
+- **Jul 2026** — One paper accepted to IJCV.
 - **May 2026** — One paper accepted to ICML 2026.
 - **May 2026** — Serving as an Area Chair for NeurIPS 2026.
 - **Mar 2026** — Invited talk at National Taiwan University Hospital.
