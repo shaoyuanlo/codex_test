@@ -30,14 +30,15 @@ title: Academic Activities
 
 ### Reviewer
 
-- **Journals:** IEEE T-PAMI, IEEE T-IP, IEEE RA-L, IEEE T-CSVT, IEEE T-SMC, IEEE JETCAS, IJCV, TMLR, Pattern Recognition, Neurocomputing, Medical Physics
-- **Conferences:** CVPR, ICCV, ECCV, NeurIPS, ICML, ICLR, ACL Rolling Review, AAAI, IJCAI, ACM MM, ACM MM Asia, WACV, ACCV, ICIP, ICPR, Interspeech, AVSS
+- **Journals:** IEEE T-PAMI, IEEE T-IP, IEEE RA-L, IEEE T-CSVT, IEEE T-SMC, IEEE T-ETCI, IEEE SPL, IEEE JETCAS, IJCV, TMLR, Pattern Recognition, Neurocomputing, Medical Physics
+- **Conferences:** CVPR, ICCV, ECCV, NeurIPS, ICML, ICLR, ACL Rolling Review, ICASSP, AAAI, IJCAI, ACM MM, ACM MM Asia, WACV, ACCV, ICIP, ICPR, Interspeech, AVSS
 
 ---
 
 ## Invited Talks
 
 - **Machine Theory of Mind Reasoning: Training, Evaluation, and Applications**
+  - Nov 06, 2026 — **Chang Gung University**, AI Dept. Host: Hsu-Chao Lai. [[Slides]({{ '/files/talks/CGU_2026_11_06.pdf' | url }})]
   - Oct 02, 2026 — **Academia Sinica**, CITI Center. Host: Jun-Cheng Chen. [[Slides]({{ '/files/talks/AS_2026_10_02.pdf' | url }})]
   - Sep 30, 2026 — **National Taiwan Normal University**, CSIE Dept. Host: Chun-Han Lin. [[Slides]({{ '/files/talks/NTNU_2026_09_30.pdf' | url }})]
   - Sep 18, 2026 — **ASUS Headquarter**, ASUS Future Fest. Host: S.Y. Hsu, CEO and Alan Hsieh, CTO.
