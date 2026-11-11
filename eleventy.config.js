@@ -115,6 +115,28 @@ export default function (eleventyConfig) {
     }
   ));
   eleventyConfig.addGlobalData("siteOrigin", process.env.SITE_URL || "https://shaoyuanlo.github.io");
+  // Apply external-link behavior to Markdown and shared templates at build time.
+  eleventyConfig.addTransform("externalLinks", function (html) {
+    if (!this.page.outputPath?.endsWith(".html")) return html;
+    const origin = new URL(process.env.SITE_URL || "https://shaoyuanlo.github.io").origin;
+    // Skip comments and raw-text elements so examples and scripts stay unchanged.
+    return html.replace(/<!--[\s\S]*?-->|<(script|style|textarea|title)\b[^>]*>[\s\S]*?<\/\1\s*>|<a\b(?:[^"'<>]|"[^"]*"|'[^']*')*>/gi, tag => {
+      if (!/^<a\b/i.test(tag)) return tag;
+      const attribute = name => new RegExp(`\\s${name}\\s*=\\s*(?:"([^"]*)"|'([^']*)'|([^\\s"'=<>\x60]+))`, "i");
+      const value = name => {
+        const match = tag.match(attribute(name));
+        return match && (match[1] ?? match[2] ?? match[3]);
+      };
+      const href = value("href");
+      if (!href || !/^(?:https?:)?\/\//i.test(href)) return tag;
+      if (new URL(href.replaceAll("&amp;", "&"), origin).origin === origin) return tag;
+      const rel = new Set((value("rel") || "").split(/\s+/).filter(Boolean));
+      rel.add("noopener");
+      rel.add("noreferrer");
+      return tag.replace(attribute("target"), "").replace(attribute("rel"), "")
+        .replace(/>$/, ` target="_blank" rel="${[...rel].join(" ").replaceAll('"', "&quot;")}">`);
+    });
+  });
   return {
     pathPrefix: process.env.PATH_PREFIX || "/",
     dir: { input: "src", output: process.env.ELEVENTY_OUTPUT || "_site" },

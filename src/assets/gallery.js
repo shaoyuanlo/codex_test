@@ -141,7 +141,7 @@ document.querySelectorAll('[data-gallery], [data-photo-library]').forEach(galler
       return;
     }
     const link = event.target.closest('[data-gallery-photo]');
-    if (!link || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey || !dialog.showModal) return;
+    if (!link || link.target === '_blank' || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey || !dialog.showModal) return;
     event.preventDefault();
     const thumbnail = link.querySelector('img');
     const isVideo = link.hasAttribute('data-gallery-video');
