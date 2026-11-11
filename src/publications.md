@@ -15,7 +15,7 @@ Jaron Yeh, Yen-Wei Chang, Jiang Liu, **Shao-Yuan Lo**
 
 *arXiv preprint arXiv:2609.29457*
 
-[Paper](https://arxiv.org/pdf/2609.29457) / [arXiv](https://arxiv.org/abs/2609.29457)
+[Paper](https://arxiv.org/pdf/2609.29457) / [arXiv](https://arxiv.org/abs/2609.29457) / [Code](https://github.com/Yen666/Anomaly-LR)
 
 ### AEGIS: Audio Endogenous Guarding via Internal Signals Against Large Audio-Language Model Jailbreaks
 
@@ -23,7 +23,7 @@ Yu-Ling Liao, Tzu-Chin Chiu, Zong-You Chen, Chi-Lei Tsai, **Shao-Yuan Lo**
 
 *arXiv preprint arXiv:2609.29287*
 
-[Paper](https://arxiv.org/pdf/2609.29287) / [arXiv](https://arxiv.org/abs/2609.29287)
+[Paper](https://arxiv.org/pdf/2609.29287) / [arXiv](https://arxiv.org/abs/2609.29287) / [Code](https://github.com/azzzzliao/aegis-audio-defense)
 
 ---
 
@@ -35,7 +35,7 @@ S-Wei Chen, Siangyu Yang, Yi-Chen Jan, Chun-Yi Lee, **Shao-Yuan Lo**
 
 *IEEE/CVF Winter Conference on Applications of Computer Vision (**WACV**)*, 2027
 
-Paper / arXiv
+[Paper](https://arxiv.org/pdf/2611.08080) / [arXiv](https://arxiv.org/abs/2611.08080) / [Code](https://github.com/racercode/Mustard)
 
 ---
 
@@ -47,7 +47,7 @@ Yi-Hsin Hung, Fangfu Liu, **Shao-Yuan Lo**, Chu-song Chen
 
 *Annual Conference on Neural Information Processing Systems (**NeurIPS**)*, 2026
 
-Paper / arXiv
+[Paper](https://openreview.net/pdf?id=nAlvbSXW7z) / arXiv / [Code](https://github.com/CindyHung20/DRAMA)
 
 ### When Demonstrations Fail: Diagnosing the Limits of In-Context Learning in Large Audio-Language Models with Progressive Cue Removal
 
