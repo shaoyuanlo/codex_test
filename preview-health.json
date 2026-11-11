@@ -1,0 +1,115 @@
+{
+  "sourceCommit": "e4bec1db374fd2ddb9a36fcb92e7cc15194318ab",
+  "checkedAt": "2026-11-11T09:52:55.225Z",
+  "passed": false,
+  "purges": [
+    {
+      "url": "https://raw.githack.com/shaoyuanlo/codex_test/site-preview/index.html",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "url": "https://raw.githack.com/shaoyuanlo/codex_test/site-preview/lab/index.html",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "url": "https://raw.githack.com/shaoyuanlo/codex_test/site-preview/photos/index.html",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "url": "https://raw.githack.com/shaoyuanlo/codex_test/site-preview/publications/index.html",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "url": "https://raw.githack.com/shaoyuanlo/codex_test/site-preview/activities/index.html",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "url": "https://raw.githack.com/shaoyuanlo/codex_test/site-preview/teaching/index.html",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "url": "https://raw.githack.com/shaoyuanlo/codex_test/site-preview/blog/index.html",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "url": "https://raw.githack.com/shaoyuanlo/codex_test/site-preview/index.html",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "url": "https://raw.githack.com/shaoyuanlo/codex_test/site-preview/index.html",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "url": "https://raw.githack.com/shaoyuanlo/codex_test/site-preview/index.html",
+      "status": 200,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "url": "https://raw.githack.com/shaoyuanlo/codex_test/site-preview/index.html",
+      "status": 200,
+      "passed": true,
+      "currentVersion": false
+    },
+    {
+      "url": "https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/e4bec1db374f/index.html",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "url": "https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/e4bec1db374f/lab/index.html",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "url": "https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/e4bec1db374f/photos/index.html",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "url": "https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/e4bec1db374f/publications/index.html",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "url": "https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/e4bec1db374f/activities/index.html",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "url": "https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/e4bec1db374f/teaching/index.html",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "url": "https://raw.githack.com/shaoyuanlo/codex_test/site-preview/revisions/e4bec1db374f/blog/index.html",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "url": "https://raw.githack.com/shaoyuanlo/codex_test/site-preview/assets/fonts/inter/files/inter-latin-wght-normal.woff2",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "url": "https://raw.githack.com/shaoyuanlo/codex_test/site-preview/assets/fonts/noto-sans-tc/files/noto-sans-tc-0-wght-normal.woff2",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "url": "https://raw.githack.com/shaoyuanlo/codex_test/site-preview/publication/index.html?v=e4bec1db374f",
+      "status": 404,
+      "passed": true
+    }
+  ]
+}
