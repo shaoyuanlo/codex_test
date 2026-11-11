@@ -43,7 +43,7 @@ S-Wei Chen, Siangyu Yang, Yi-Chen Jan, Chun-Yi Lee, **Shao-Yuan Lo**
 
 ### DRAMA: Dissecting Attention Redundancy for Accelerating Multimodal Diffusion Large Language Models
 
-Yi-Hsin Hung, Fangfu Liu, **Shao-Yuan Lo**, Chu-song Chen
+Yi-Hsin Hung, Fangfu Liu, **Shao-Yuan Lo**, Chu-Song Chen
 
 *Annual Conference on Neural Information Processing Systems (**NeurIPS**)*, 2026
 
@@ -63,7 +63,7 @@ Jike Zhong, Yuxiang Lai, Ming Li, Yuheng Li, Wuao Liu, Behzad Dariush, Konstanti
 
 *International Conference on Machine Learning (**ICML**)*, 2026
 
-[Paper](https://arxiv.org/pdf/2606.09092) / [arXiv](https://arxiv.org/abs/2606.09092) / [Code](https://github.com/jkz-338/Robust-ToM-RL) / [Poster]({{ '/files/papers/ToM-SC_poster.png' | url }}) / [Slides]({{ '/files/papers/ToM-SC.pdf' | url }})
+[Paper](https://openreview.net/pdf?id=L3fJXwaFdx) / [arXiv](https://arxiv.org/abs/2606.09092) / [Code](https://github.com/jkz-338/Robust-ToM-RL) / [Poster]({{ '/files/papers/ToM-SC_poster.png' | url }}) / [Slides]({{ '/files/papers/ToM-SC.pdf' | url }})
 
 ### ProSGNeRF: Progressive Dynamic Neural Scene Graph with Frequency Modulated Foundation Model in Urban Scenes
 
