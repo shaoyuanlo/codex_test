@@ -300,7 +300,7 @@ Markdown 分隔線 `.prose hr` 使用透明的 1px 線框，不顯示線條，�
 
 Lab 的 NTU 圖片使用 `.ntu-image`：桌機寬度為內容容器的 80%、手機為 90%，置中並保留原比例。一般段落使用 `--space-sm` 下外距，專用元件仍沿用其各自設定。
 
-全站文字連結預設不加底線，滑鼠移入時才顯示；鍵盤焦點保留共用外框。外部 HTTP／HTTPS 連結由 `eleventy.config.js` 的 `externalLinks` transform 在建置時統一加入 `target="_blank"` 與 `rel="noopener noreferrer"`，涵蓋 Markdown、手寫 HTML 與共用版型，不需逐筆加設定或新增瀏覽器腳本；原有 rel 值會保留。是否為外部連結以建置的網站 origin 判斷，站內頁面／檔案、頁內錨點及 mailto 不套用此規則。
+全站文字連結預設不加底線，滑鼠移入時才顯示；鍵盤焦點保留共用外框。外部 HTTP／HTTPS 連結及 `files/talks/` 下的投影片 PDF，由 `eleventy.config.js` 的 `newTabLinks` transform 在建置時統一加入 `target="_blank"` 與 `rel="noopener noreferrer"`，涵蓋 Markdown、手寫 HTML 與共用版型，不需逐筆加設定或新增瀏覽器腳本；原有 rel 值會保留。是否為外部連結以建置的網站 origin 判斷；所有投影片連結（包含站內 Slides）亦套用新分頁規則，其餘站內頁面／檔案、頁內錨點及 mailto 不套用。
 
 `Shared rectangular corners` 規則緊接間距設定，目前圓角 6px；連結底線距離 4px、粗細 1px。頁尾只有置中的 `© 2026 Shao-Yuan Lo 羅紹元`；姓名取自首頁資料，年份文字在 `base.njk` 手動維護。
 

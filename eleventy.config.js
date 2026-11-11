@@ -115,8 +115,8 @@ export default function (eleventyConfig) {
     }
   ));
   eleventyConfig.addGlobalData("siteOrigin", process.env.SITE_URL || "https://shaoyuanlo.github.io");
-  // Apply external-link behavior to Markdown and shared templates at build time.
-  eleventyConfig.addTransform("externalLinks", function (html) {
+  // Open external URLs and talk PDFs in new tabs across Markdown and shared templates.
+  eleventyConfig.addTransform("newTabLinks", function (html) {
     if (!this.page.outputPath?.endsWith(".html")) return html;
     const origin = new URL(process.env.SITE_URL || "https://shaoyuanlo.github.io").origin;
     // Skip comments and raw-text elements so examples and scripts stay unchanged.
@@ -128,8 +128,12 @@ export default function (eleventyConfig) {
         return match && (match[1] ?? match[2] ?? match[3]);
       };
       const href = value("href");
-      if (!href || !/^(?:https?:)?\/\//i.test(href)) return tag;
-      if (new URL(href.replaceAll("&amp;", "&"), origin).origin === origin) return tag;
+      if (!href) return tag;
+      const url = new URL(href.replaceAll("&amp;", "&"), origin);
+      const isWebLink = /^https?:$/.test(url.protocol);
+      const isExternal = isWebLink && url.origin !== origin;
+      const isSlides = isWebLink && /\/files\/talks\/[^/]+\.pdf$/i.test(url.pathname);
+      if (!isExternal && !isSlides) return tag;
       const rel = new Set((value("rel") || "").split(/\s+/).filter(Boolean));
       rel.add("noopener");
       rel.add("noreferrer");
