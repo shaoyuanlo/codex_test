@@ -1328,10 +1328,9 @@ html { scroll-padding-top: 110px; }
 .header-inner { padding-top: 0; padding-bottom: 0; display: flex; align-items: center; justify-content: space-between; gap: var(--space-xl); }
 .site-header { position: sticky; top: 0; z-index: 10; background: var(--accent); }
 .site-header a:focus-visible { outline-color: var(--white); }
-.wordmark { font-size: var(--font-size-lg); color: var(--white); white-space: nowrap; text-decoration-line: none; line-height: var(--line-height-compact); }
+.wordmark { font-size: var(--font-size-lg); color: var(--white); white-space: nowrap; line-height: var(--line-height-compact); }
 nav { display: flex; gap: var(--space-sm) var(--space-md); align-self: stretch; }
-nav a { line-height: var(--line-height-compact); min-height: 48px; display: flex; align-items: center; color: var(--white); text-decoration-line: none; white-space: nowrap; }
-nav a:hover, nav a[aria-current] { text-decoration-line: underline; }
+nav a { line-height: var(--line-height-compact); min-height: 48px; display: flex; align-items: center; color: var(--white); white-space: nowrap; }
 nav a[aria-current] { font-weight: 600; }
 @media (max-width: 767px) {
   .header-inner { display: block; }
@@ -1379,7 +1378,7 @@ nav a[aria-current] { font-weight: 600; }
 .button {
   display: inline-block;
   color: var(--black); font-weight: 600;
-  white-space: nowrap; text-decoration-line: none;
+  white-space: nowrap;
 }
 .button:hover { color: var(--accent); text-decoration-line: underline; }
 /* Dated lists: date width follows month/year or full dates; body gaps stay shared. */
@@ -1438,7 +1437,7 @@ html:has(.news-switch:hover, .news-switch:focus-within) { scroll-padding-top: 0;
 .news-switch { display: flex; gap: var(--space-md); min-width: 0; padding: 0; margin: 0; border: 0; }
 .news-switch input, .news-switch legend { position: absolute; width: 1px; height: 1px; padding: 0; margin: 0; border: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .news-switch label { cursor: pointer; }
-.news-switch input:checked + label { color: var(--accent); text-decoration-line: underline; }
+.news-switch input:checked + label { color: var(--accent); }
 .news-viewport { position: relative; }
 .news-all { display: none; position: absolute; inset: 0; overflow-y: auto; overscroll-behavior-y: contain; }
 .news:has(#news-all:checked) .news-recent { visibility: hidden; }
@@ -1514,7 +1513,8 @@ button, input, select, textarea, pre, code, kbd, samp { font: inherit; }
 small, sub, sup { font-size: inherit; }
 strong, b, th { font-weight: 600; }
 ::selection { background: var(--selection-bg); color: var(--black); }
-a { color: var(--accent); text-underline-offset: 4px; text-decoration-thickness: 1px; }
+a { color: var(--accent); text-decoration-line: none; text-underline-offset: 4px; text-decoration-thickness: 1px; }
+a:hover { text-decoration-line: underline; }
 a:focus-visible, .button:focus-visible, .news-switch input:focus-visible + label, .news-all:focus-visible, .gallery-track:focus-visible, .gallery-scrollbar:focus-visible { outline: 2px solid var(--accent); outline-offset: var(--space-sm); }
 img { display: block; max-width: 100%; height: auto; }
 p { margin: 0 0 var(--space-sm); }
@@ -1542,7 +1542,7 @@ p { margin: 0 0 var(--space-sm); }
   .callout { break-inside: avoid; }
 }
 </style>
-  <meta name="preview-source" content="e982b4fbf5bf75007020b03313b26f2384575fdd">
+  <meta name="preview-source" content="329f1e01ce0301fff556434f24f3d9e6fb421187">
   <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="page-photos">
@@ -1816,7 +1816,7 @@ document.querySelectorAll('[data-gallery], [data-photo-library]').forEach(galler
       return;
     }
     const link = event.target.closest('[data-gallery-photo]');
-    if (!link || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey || !dialog.showModal) return;
+    if (!link || link.target === '_blank' || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey || !dialog.showModal) return;
     event.preventDefault();
     const thumbnail = link.querySelector('img');
     const isVideo = link.hasAttribute('data-gallery-video');
