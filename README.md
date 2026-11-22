@@ -37,7 +37,8 @@
 | 頭像原檔 | [files/portrait.jpg](files/portrait.jpg) |
 | Home／Lab 頁首結構與圖片顯示 | [components/profile.njk](src/_includes/components/profile.njk) |
 | 頁尾文字、網頁 metadata、校徽路徑與共用導覽結構 | [layouts/base.njk](src/_includes/layouts/base.njk) |
-| 校徽原檔 | [files/ntu-emblem.png](files/ntu-emblem.png) |
+| 瀏覽器分頁圖示 | [files/trai_logo_13.png](files/trai_logo_13.png) |
+| 台大校徽原檔 | [files/ntu-emblem.png](files/ntu-emblem.png) |
 | CV | [files/SYLo_CV.pdf](files/SYLo_CV.pdf) |
 | 配色、字體、間距、容器與元件外觀 | [src/assets/style.css](src/assets/style.css) |
 | 資料讀取、Markdown 顯示轉換與資源複製 | [eleventy.config.js](eleventy.config.js) |
@@ -117,7 +118,7 @@ Email、CV、Google Scholar 等都由 `social` 清單控制，依清單順序顯
 
 ### Lab 相片集
 
-Lab 與 Home 共用 `src/_includes/components/profile.njk` 及 `.hero` 版型。兩頁皆使用 `profile.name`、可選的 `profile.nameChinese`、`profile.intro`、`profile.roles`、`profile.social`、`profile.image` 與 `profile.imageAlt`；只填需要的項目。Lab 目前以 `/files/sponsors/moe.webp` 的教育部 logo 暫代，名稱與簡介也在同一個 `profile:` 編輯，不另外放在根層。其他分頁仍使用原有的 `title`、`intro`。
+Lab 與 Home 共用 `src/_includes/components/profile.njk` 及 `.hero` 版型。兩頁皆使用 `profile.name`、可選的 `profile.nameChinese`、`profile.intro`、`profile.roles`、`profile.social`、`profile.image` 與 `profile.imageAlt`；只填需要的項目。Lab 頁首使用 `/files/trai_logo_11.png`，名稱與簡介也在同一個 `profile:` 編輯，不另外放在根層。其他分頁仍使用原有的 `title`、`intro`。
 
 `profile.intro` 支援 HTML；需要換行時加入 `<br>`，例如 `intro: Trustworthy Artificial Intelligence Lab<br>信韌智慧實驗室`。只在 YAML 原始碼換行不會產生網頁換行。
 

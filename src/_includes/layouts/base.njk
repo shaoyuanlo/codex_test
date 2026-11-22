@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{% if section != 'home' %}{{ title or profile.name }} · {% endif %}{{ site.profile.name }}</title>
+  <title>{% if section == 'home' %}{{ site.profile.name }}{% elif section == 'lab' %}Trai Lab @ National Taiwan University{% else %}{{ title or profile.name }} | {{ site.profile.name }}{% endif %}</title>
   <link rel="canonical" href="{{ siteOrigin }}{{ page.url | url }}">
   <meta property="og:type" content="website">
   <meta property="og:title" content="{{ title or profile.name }} · {{ site.profile.name }}">
   <meta property="og:url" content="{{ siteOrigin }}{{ page.url | url }}">
   <meta property="og:image" content="{{ siteOrigin }}{{ site.profile.image | url }}">
-  <link rel="icon" type="image/png" sizes="180x180" href="{{ '/files/ntu-emblem.png' | url }}">
-  <link rel="apple-touch-icon" sizes="180x180" href="{{ '/files/ntu-emblem.png' | url }}">
+  <link rel="icon" type="image/png" sizes="620x620" href="{{ '/files/trai_logo_13.png' | url }}">
+  <link rel="apple-touch-icon" sizes="620x620" href="{{ '/files/trai_logo_13.png' | url }}">
   <link rel="stylesheet" href="{{ '/assets/fonts/fonts.css' | url }}">
   <link rel="stylesheet" href="{{ '/assets/style.css' | url }}">
 </head>

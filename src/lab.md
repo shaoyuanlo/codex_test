@@ -9,8 +9,8 @@ profile:
     - role: Trustworthy AI Lab 信韌智慧實驗室
       affiliations:
         - National Taiwan University 國立臺灣大學
-  image: /files/sponsors/moe.webp
-  imageAlt: Ministry of Education logo (temporary placeholder)
+  image: /files/trai_logo_11.png
+  imageAlt: Trai Lab logo
   social:
   - label: Dcard
     url: https://www.dcard.tw/f/graduate_school/p/260285531
