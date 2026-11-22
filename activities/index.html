@@ -1359,13 +1359,16 @@ nav a[aria-current] { font-weight: 600; }
 /* Portrait: fill the column, keep a 5:6 aspect ratio and preserve original colors. */
 .portrait { margin: var(--space-lg) 0 0; padding: 0; }
 .portrait img { width: 100%; aspect-ratio: 5 / 6; object-fit: cover; }
-.page-lab .portrait img { object-fit: contain; }
+/* Let the Lab logo set its own column width without using the portrait crop. */
+.page-lab .hero { grid-template-columns: minmax(0, 1fr) auto; overflow-wrap: anywhere; }
+.page-lab .portrait img { width: auto; height: 120px; aspect-ratio: auto; object-fit: contain; }
 /* Campus image: centered and sized relative to the content container. */
 .ntu-image { width: 80%; margin-inline: auto; }
 /* Mobile profile: names and roles on the left, portrait spanning both rows, contacts below. */
 @media (max-width: 767px) {
   .hero h1 { grid-column: 1; }
   .hero { grid-template-columns: minmax(0, 1fr) 100px; }
+  .page-lab .portrait img { height: 60px; }
   .hero-copy { display: contents; }
   .chinese-name { display: block; margin-left: 0; }
   .hero-roles { grid-column: 1; }
@@ -1542,7 +1545,7 @@ p { margin: 0 0 var(--space-sm); }
   .callout { break-inside: avoid; }
 }
 </style>
-  <meta name="preview-source" content="45ebf7de3e5cf23b01fb672ba1706b0509256b53">
+  <meta name="preview-source" content="3a82f4199d1e9946b7fcb71cfe403d3d50f8405f">
   <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="page-activities">
