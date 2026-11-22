@@ -47,7 +47,7 @@ Yi-Hsin Hung, Fangfu Liu, **Shao-Yuan Lo**, Chu-Song Chen
 
 *Annual Conference on Neural Information Processing Systems (**NeurIPS**)*, 2026
 
-[Paper](https://openreview.net/pdf?id=nAlvbSXW7z) / arXiv / [Code](https://github.com/CindyHung20/DRAMA)
+[Paper](https://openreview.net/pdf?id=nAlvbSXW7z) / [arXiv](https://arxiv.org/abs/2611.16345) / [Code](https://github.com/CindyHung20/DRAMA)
 
 ### When Demonstrations Fail: Diagnosing the Limits of In-Context Learning in Large Audio-Language Models with Progressive Cue Removal
 
