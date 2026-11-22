@@ -15,6 +15,6 @@
     </div>{% endif %}
   </div>
   <figure class="portrait">
-    <img src="{{ profile.image | url }}" alt="{{ profile.imageAlt or ('Portrait of ' + profile.name) }}" width="1340" height="1608" fetchpriority="high">
+    <img src="{{ profile.image | url }}" alt="{{ profile.imageAlt or ('Portrait of ' + profile.name) }}"{% if section == 'home' %} width="1340" height="1608"{% endif %} fetchpriority="high">
   </figure>
 </section>

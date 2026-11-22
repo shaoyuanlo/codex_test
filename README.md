@@ -118,7 +118,7 @@ Email、CV、Google Scholar 等都由 `social` 清單控制，依清單順序顯
 
 ### Lab 相片集
 
-Lab 與 Home 共用 `src/_includes/components/profile.njk` 及 `.hero` 版型。兩頁皆使用 `profile.name`、可選的 `profile.nameChinese`、`profile.intro`、`profile.roles`、`profile.social`、`profile.image` 與 `profile.imageAlt`；只填需要的項目。Lab 頁首使用 `/files/trai_logo_11.png`，名稱與簡介也在同一個 `profile:` 編輯，不另外放在根層。其他分頁仍使用原有的 `title`、`intro`。
+Lab 與 Home 共用 `src/_includes/components/profile.njk` 及 `.hero` 版型。兩頁皆使用 `profile.name`、可選的 `profile.nameChinese`、`profile.intro`、`profile.roles`、`profile.social`、`profile.image` 與 `profile.imageAlt`；只填需要的項目。Lab 頁首使用 `/files/trai_logo_11.png`，欄寬由 Logo 決定，尺寸見 CSS 的 `Shared Home/Lab profile` 區塊，名稱與簡介也在同一個 `profile:` 編輯，不另外放在根層。其他分頁仍使用原有的 `title`、`intro`。
 
 `profile.intro` 支援 HTML；需要換行時加入 `<br>`，例如 `intro: Trustworthy Artificial Intelligence Lab<br>信韌智慧實驗室`。只在 YAML 原始碼換行不會產生網頁換行。
 
