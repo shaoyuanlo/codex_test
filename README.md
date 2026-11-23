@@ -118,7 +118,7 @@ Email、CV、Google Scholar 等都由 `social` 清單控制，依清單順序顯
 
 ### Lab 相片集
 
-Lab 與 Home 共用 `src/_includes/components/profile.njk` 及 `.hero` 版型。兩頁皆使用 `profile.name`、可選的 `profile.nameChinese`、`profile.intro`、`profile.roles`、`profile.social`、`profile.image` 與 `profile.imageAlt`；只填需要的項目。Lab 頁首使用 `/files/trai_logo_11.png`，標題、Logo 與職稱資訊依序單欄排列。Logo 等比顯示，桌機高 100px、手機高 50px，尺寸見 CSS 的 `Shared Home/Lab profile` 區塊，名稱與簡介也在同一個 `profile:` 編輯，不另外放在根層。其他分頁仍使用原有的 `title`、`intro`。
+Lab 與 Home 共用 `src/_includes/components/profile.njk` 及 `.hero` 版型。兩頁皆使用 `profile.name`、可選的 `profile.nameChinese`、`profile.intro`、`profile.roles`、`profile.social`、`profile.image` 與 `profile.imageAlt`；只填需要的項目。Lab 頁首使用 `/files/trai_logo_11.png`，桌機左側顯示標題及職稱資訊，右側顯示 Logo。手機依序單欄顯示標題、Logo、職稱資訊。Logo 等比顯示，桌機高 100px、手機高 50px，尺寸見 CSS 的 `Shared Home/Lab profile` 區塊，名稱與簡介也在同一個 `profile:` 編輯，不另外放在根層。其他分頁仍使用原有的 `title`、`intro`。
 
 `profile.intro` 支援 HTML；需要換行時加入 `<br>`，例如 `intro: Trustworthy Artificial Intelligence Lab<br>信韌智慧實驗室`。只在 YAML 原始碼換行不會產生網頁換行。
 
@@ -222,7 +222,7 @@ First Author, **Shao-Yuan Lo**, Last Author
 | --- | --- | --- |
 | `--white` | `#FFFFFF` | 頁面背景、導覽白字 |
 | `--black` | `#000000` | 一般文字、標題、職稱、導覽背景 |
-| `--accent` | `#715A23` | 連結、文字式按鈕、少量強調與互動 |
+| `--accent` | `#634E1E` | 連結、文字式按鈕、少量強調與互動 |
 | `--accent-light` | `#F6F0E2` | 提示框、程式碼背景與邊框 |
 | `--selection-bg` | `#E6D4A6` | 文字選取背景 |
 | `--highlight` | `#900C26` | 論文的 Oral、Highlight、Spotlight 等標記 |
@@ -291,7 +291,7 @@ Markdown 分隔線 `.prose hr` 使用透明的 1px 線框，不顯示線條，�
 | 每個選單項目最低高度 | 48px | 48px |
 | 頭像顯示寬度 | 200px | 100px |
 
-`.header-inner`、`.site-main`、`.footer-inner` 共用容器；各分頁正文使用完整寬度。頁面採垂直 Flex，短頁面頁尾自然位於視窗底部。導覽列容器不設最低高度、上下內距為 0，由 48px 高的選單項目與原生捲動區自然決定高度。導覽列使用 sticky；桌機顯示姓名與選單，姓名不額外加句點；手機（≤767px）隱藏導覽列姓名，選單維持單列，空間不足時可左右滑動，項目不縮小或拆行；支援 Tab 移至選單項目及方向鍵水平捲動，焦點框收在項目內避免被裁切。選取項目使用粗體，滑鼠移入導覽項目時使用粗體及底線。
+`.header-inner`、`.site-main`、`.footer-inner` 共用容器；各分頁正文使用完整寬度。頁面採垂直 Flex，短頁面頁尾自然位於視窗底部。導覽列容器不設最低高度、上下內距為 0，由 48px 高的選單項目與原生捲動區自然決定高度。導覽列使用 sticky；桌機顯示姓名與選單，姓名不額外加句點；手機（≤767px）隱藏導覽列姓名，選單維持單列，空間不足時可左右滑動，項目不縮小或拆行；支援 Tab 移至選單項目及方向鍵水平捲動，焦點框收在項目內避免被裁切。選取項目使用粗體，滑鼠移入導覽項目時，白字加深為淺灰並顯示粗體及底線。
 
 首頁桌機版為文字與照片兩欄；手機維持兩欄：左欄依序為姓名、職稱與所屬單位，右欄照片跨越這兩列；聯絡連結放在下方並占滿整列。照片頂端與姓名標題頂端對齊，維持 5:6 比例、`object-fit: cover`，不套用飽和度濾鏡。修改頭像檔名時需核對首頁圖片與共用 metadata 的路徑。
 
@@ -301,7 +301,7 @@ Markdown 分隔線 `.prose hr` 使用透明的 1px 線框，不顯示線條，�
 
 Lab 的 NTU 圖片使用 `.ntu-image`：桌機寬度為內容容器的 80%、手機為 90%，置中並保留原比例。一般段落使用 `--space-sm` 下外距，專用元件仍沿用其各自設定。
 
-全站文字連結預設不加底線，滑鼠移入時才顯示；鍵盤焦點保留共用外框。外部 HTTP／HTTPS 連結及 `files/talks/` 下的投影片 PDF，由 `eleventy.config.js` 的 `newTabLinks` transform 在建置時統一加入 `target="_blank"` 與 `rel="noopener noreferrer"`，涵蓋 Markdown、手寫 HTML 與共用版型，不需逐筆加設定或新增瀏覽器腳本；原有 rel 值會保留。是否為外部連結以建置的網站 origin 判斷；所有投影片連結（包含站內 Slides）亦套用新分頁規則，其餘站內頁面／檔案、頁內錨點及 mailto 不套用。
+全站文字連結預設不加底線，滑鼠移入時加深文字顏色並顯示底線；鍵盤焦點保留共用外框。外部 HTTP／HTTPS 連結及 `files/talks/` 下的投影片 PDF，由 `eleventy.config.js` 的 `newTabLinks` transform 在建置時統一加入 `target="_blank"` 與 `rel="noopener noreferrer"`，涵蓋 Markdown、手寫 HTML 與共用版型，不需逐筆加設定或新增瀏覽器腳本；原有 rel 值會保留。是否為外部連結以建置的網站 origin 判斷；所有投影片連結（包含站內 Slides）亦套用新分頁規則，其餘站內頁面／檔案、頁內錨點及 mailto 不套用。
 
 `Shared rectangular corners` 規則緊接間距設定，目前圓角 6px；連結底線距離 4px、粗細 1px。頁尾只有置中的 `© 2026 Shao-Yuan Lo 羅紹元`；姓名取自首頁資料，年份文字在 `base.njk` 手動維護。
 
