@@ -5,7 +5,7 @@
   color-scheme: light;
   --white: #ffffff;
   --black: #000000;
-  --accent: #715a23;
+  --accent: #634e1e;
   --accent-light: #f6f0e2;
   --selection-bg: #e6d4a6;
   --highlight: #900c26;
@@ -97,6 +97,7 @@ html { scroll-padding-top: 110px; }
 nav { display: flex; gap: var(--space-sm) var(--space-md); align-self: stretch; }
 nav a { line-height: var(--line-height-compact); min-height: 48px; display: flex; align-items: center; color: var(--white); white-space: nowrap; }
 nav a:hover, nav a[aria-current] { font-weight: 600; }
+.site-header a:hover { color: color-mix(in srgb, var(--white) 75%, var(--black)); }
 @media (max-width: 767px) {
   .header-inner { display: block; }
   html { scroll-padding-top: 170px; }
@@ -123,16 +124,19 @@ nav a:hover, nav a[aria-current] { font-weight: 600; }
 /* Portrait: fill the column, keep a 5:6 aspect ratio and preserve original colors. */
 .portrait { margin: var(--space-lg) 0 0; padding: 0; }
 .portrait img { width: 100%; aspect-ratio: 5 / 6; object-fit: cover; }
-/* Lab profile: stack the title, logo and role information in reading order. */
-.page-lab .hero { display: block; }
-.lab-logo { width: auto; height: 100px; object-fit: contain; margin-bottom: var(--space-md); }
+/* Lab profile: keep the logo beside the text on desktop and below the title on mobile. */
+.page-lab .hero { grid-template-columns: minmax(0, 1fr) auto; row-gap: 0; }
+.page-lab .hero-copy { display: contents; }
+.page-lab .hero-copy > :not(.lab-logo) { grid-column: 1; }
+.lab-logo { grid-column: 2; grid-row: 1 / span 3; width: auto; height: 100px; object-fit: contain; margin-top: var(--space-lg); }
 /* Campus image: centered and sized relative to the content container. */
 .ntu-image { width: 80%; margin-inline: auto; }
 /* Mobile profile: names and roles on the left, portrait spanning both rows, contacts below. */
 @media (max-width: 767px) {
   .hero h1 { grid-column: 1; }
   .hero { grid-template-columns: minmax(0, 1fr) 100px; }
-  .lab-logo { height: 50px; }
+  .page-lab .hero { display: block; }
+  .lab-logo { height: 50px; margin: 0 0 var(--space-md); }
   .hero-copy { display: contents; }
   .chinese-name { display: block; margin-left: 0; }
   .hero-roles { grid-column: 1; }
@@ -147,8 +151,6 @@ nav a:hover, nav a[aria-current] { font-weight: 600; }
   color: var(--accent); font-weight: 600;
   white-space: nowrap;
 }
-.button:hover, .news-switch input:checked + label { color: color-mix(in srgb, var(--accent) 75%, var(--black)); }
-.button:hover { text-decoration-line: underline; }
 /* Dated lists: date width follows month/year or full dates; body gaps stay shared. */
 .prose .dated-list { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: var(--space-sm) var(--space-md); list-style: none; padding: 0; margin: 0 0 var(--space-sm); }
 .prose .dated-list > li { display: grid; grid-column: 1 / -1; grid-template-columns: subgrid; column-gap: var(--space-md); padding: 0; margin: 0; }
@@ -281,7 +283,8 @@ small, sub, sup { font-size: inherit; }
 strong, b, th { font-weight: 600; }
 ::selection { background: var(--selection-bg); color: var(--black); }
 a { color: var(--accent); text-decoration-line: none; text-underline-offset: 4px; text-decoration-thickness: 1px; }
-a:hover { text-decoration-line: underline; }
+a:hover, .button:hover, .news-switch input:checked + label { color: color-mix(in srgb, var(--accent) 75%, var(--black)); }
+a:hover, .button:hover { text-decoration-line: underline; }
 a:focus-visible, .button:focus-visible, .news-switch input:focus-visible + label, .news-all:focus-visible, .gallery-track:focus-visible, .gallery-scrollbar:focus-visible { outline: 2px solid var(--accent); outline-offset: var(--space-sm); }
 img { display: block; max-width: 100%; height: auto; }
 p { margin: 0 0 var(--space-sm); }
