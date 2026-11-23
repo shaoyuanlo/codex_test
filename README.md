@@ -224,7 +224,7 @@ First Author, **Shao-Yuan Lo**, Last Author
 | `--black` | `#000000` | 一般文字、標題、職稱、導覽背景 |
 | `--accent` | `#634E1E` | 連結、文字式按鈕、少量強調與互動 |
 | 加深的金色（計算色） | 約 `#4A3B17` | 連結與按鈕滑入、News 選取。由 75% `--accent` 與 25% `--black` 混合 |
-| `--accent-light` | `#F6F0E2` | 提示框、程式碼背景與邊框 |
+| `--accent-light` | `#EEE4CB` | 提示框、程式碼背景與邊框 |
 | `--selection-bg` | `#E6D4A6` | 文字選取背景 |
 | `--highlight` | `#900C26` | 論文的 Oral、Highlight、Spotlight 等標記 |
 
