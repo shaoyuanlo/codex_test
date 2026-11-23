@@ -1240,7 +1240,7 @@
   color-scheme: light;
   --white: #ffffff;
   --black: #000000;
-  --accent: #7c6327;
+  --accent: #715a23;
   --accent-light: #f6f0e2;
   --selection-bg: #e6d4a6;
   --highlight: #900c26;
@@ -1331,7 +1331,7 @@ html { scroll-padding-top: 110px; }
 .wordmark { font-size: var(--font-size-lg); color: var(--white); white-space: nowrap; line-height: var(--line-height-compact); }
 nav { display: flex; gap: var(--space-sm) var(--space-md); align-self: stretch; }
 nav a { line-height: var(--line-height-compact); min-height: 48px; display: flex; align-items: center; color: var(--white); white-space: nowrap; }
-nav a[aria-current] { font-weight: 600; }
+nav a:hover, nav a[aria-current] { font-weight: 600; }
 @media (max-width: 767px) {
   .header-inner { display: block; }
   html { scroll-padding-top: 170px; }
@@ -1348,27 +1348,26 @@ nav a[aria-current] { font-weight: 600; }
 /* Shared Home/Lab profile: names, introduction, roles, contact links and image. */
 .hero { display: grid; grid-template-columns: minmax(0, 1fr) 200px; gap: var(--space-md); align-items: start; }
 .chinese-name { font-size: var(--font-size-xl); display: inline-block; margin-left: var(--space-md); vertical-align: middle; }
-/* Role information: group spacing, paragraph margins and role color. */
+/* Role information: group spacing and paragraph margins. */
 .hero-roles { margin-bottom: var(--space-md); line-height: var(--line-height-compact); }
 .hero-position + .hero-position { margin-top: var(--space-sm); }
 .hero-position p { margin: 0; }
 .hero-position p + p { margin-top: var(--space-xs); }
-.hero-role { color: var(--accent); }
 /* Contact links: horizontal layout, spacing and wrapping. */
 .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-sm) var(--space-md); }
 /* Portrait: fill the column, keep a 5:6 aspect ratio and preserve original colors. */
 .portrait { margin: var(--space-lg) 0 0; padding: 0; }
 .portrait img { width: 100%; aspect-ratio: 5 / 6; object-fit: cover; }
-/* Let the Lab logo set its own column width without using the portrait crop. */
-.page-lab .hero { grid-template-columns: minmax(0, 1fr) auto; overflow-wrap: anywhere; }
-.page-lab .portrait img { width: auto; height: 120px; aspect-ratio: auto; object-fit: contain; }
+/* Lab profile: stack the title, logo and role information in reading order. */
+.page-lab .hero { display: block; }
+.lab-logo { width: auto; height: 100px; object-fit: contain; margin-bottom: var(--space-md); }
 /* Campus image: centered and sized relative to the content container. */
 .ntu-image { width: 80%; margin-inline: auto; }
 /* Mobile profile: names and roles on the left, portrait spanning both rows, contacts below. */
 @media (max-width: 767px) {
   .hero h1 { grid-column: 1; }
   .hero { grid-template-columns: minmax(0, 1fr) 100px; }
-  .page-lab .portrait img { height: 60px; }
+  .lab-logo { height: 50px; }
   .hero-copy { display: contents; }
   .chinese-name { display: block; margin-left: 0; }
   .hero-roles { grid-column: 1; }
@@ -1377,13 +1376,14 @@ nav a[aria-current] { font-weight: 600; }
   .ntu-image { width: 90%; }
 }
 
-/* Shared text-style buttons: bold black text; gold and underlined on hover. */
+/* Shared text-style buttons: gold text, darkened on hover or when selected. */
 .button {
   display: inline-block;
-  color: var(--black); font-weight: 600;
+  color: var(--accent); font-weight: 600;
   white-space: nowrap;
 }
-.button:hover { color: var(--accent); text-decoration-line: underline; }
+.button:hover, .news-switch input:checked + label { color: color-mix(in srgb, var(--accent) 75%, var(--black)); }
+.button:hover { text-decoration-line: underline; }
 /* Dated lists: date width follows month/year or full dates; body gaps stay shared. */
 .prose .dated-list { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: var(--space-sm) var(--space-md); list-style: none; padding: 0; margin: 0 0 var(--space-sm); }
 .prose .dated-list > li { display: grid; grid-column: 1 / -1; grid-template-columns: subgrid; column-gap: var(--space-md); padding: 0; margin: 0; }
@@ -1440,7 +1440,6 @@ html:has(.news-switch:hover, .news-switch:focus-within) { scroll-padding-top: 0;
 .news-switch { display: flex; gap: var(--space-md); min-width: 0; padding: 0; margin: 0; border: 0; }
 .news-switch input, .news-switch legend { position: absolute; width: 1px; height: 1px; padding: 0; margin: 0; border: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .news-switch label { cursor: pointer; }
-.news-switch input:checked + label { color: var(--accent); }
 .news-viewport { position: relative; }
 .news-all { display: none; position: absolute; inset: 0; overflow-y: auto; overscroll-behavior-y: contain; }
 .news:has(#news-all:checked) .news-recent { visibility: hidden; }
@@ -1545,7 +1544,7 @@ p { margin: 0 0 var(--space-sm); }
   .callout { break-inside: avoid; }
 }
 </style>
-  <meta name="preview-source" content="3705f9430c86024b60fea9be96593f23c2a559af">
+  <meta name="preview-source" content="863776735a63fc862f2c3e15c6ea08db37ca1ede">
   <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="page-photos">
