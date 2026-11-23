@@ -1331,8 +1331,8 @@ html { scroll-padding-top: 110px; }
 .wordmark { font-size: var(--font-size-lg); color: var(--white); white-space: nowrap; line-height: var(--line-height-compact); }
 nav { display: flex; gap: var(--space-sm) var(--space-md); align-self: stretch; }
 nav a { line-height: var(--line-height-compact); min-height: 48px; display: flex; align-items: center; color: var(--white); white-space: nowrap; }
-nav a:hover, nav a[aria-current] { font-weight: 600; }
-.site-header a:hover { color: color-mix(in srgb, var(--white) 75%, var(--black)); }
+nav a[aria-current] { font-weight: 600; }
+.site-header a:hover { color: var(--white); font-weight: 600; }
 @media (max-width: 767px) {
   .header-inner { display: block; }
   html { scroll-padding-top: 170px; }
@@ -1374,6 +1374,8 @@ nav a:hover, nav a[aria-current] { font-weight: 600; }
   .lab-logo { height: 50px; margin: 0 0 var(--space-md); }
   .hero-copy { display: contents; }
   .chinese-name { display: block; margin-left: 0; }
+  .page-lab .hero h1 { white-space: nowrap; }
+  .page-lab .chinese-name { display: inline-block; margin-left: var(--space-md); }
   .hero-roles { grid-column: 1; }
   .portrait { grid-column: 2; grid-row: 1 / 3; }
   .hero-actions { grid-column: 1 / -1; }
@@ -1547,7 +1549,7 @@ p { margin: 0 0 var(--space-sm); }
   .callout { break-inside: avoid; }
 }
 </style>
-  <meta name="preview-source" content="8ae1f61b900f0b121f0f94e86012f0165a30cbf1">
+  <meta name="preview-source" content="bc8011a939842713086b701b206add3f9488487f">
   <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="page-lab">
