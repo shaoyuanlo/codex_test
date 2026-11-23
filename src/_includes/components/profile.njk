@@ -1,10 +1,13 @@
 <section class="hero" aria-labelledby="{{ section }}-title">
   <div class="hero-copy">
     <h1 id="{{ section }}-title">{{ profile.name }}{% if profile.nameChinese %}<span class="chinese-name" lang="zh-Hant">{{ profile.nameChinese }}</span>{% endif %}</h1>
+    {% if section == 'lab' %}
+    <img class="lab-logo" src="{{ profile.image | url }}" alt="{{ profile.imageAlt }}" fetchpriority="high">
+    {% endif %}
     {% if profile.roles.length %}<div class="hero-roles">
       {% for position in profile.roles %}
       <div class="hero-position">
-        <p class="hero-role">{{ position.role }}</p>
+        <p>{{ position.role }}</p>
         {% for affiliation in position.affiliations %}<p>{{ affiliation }}</p>{% endfor %}
       </div>
       {% endfor %}
@@ -14,7 +17,7 @@
       {% for link in profile.social %}<a class="button" href="{{ link.url | url }}">{{ link.label }}</a>{% endfor %}
     </div>{% endif %}
   </div>
-  <figure class="portrait">
-    <img src="{{ profile.image | url }}" alt="{{ profile.imageAlt or ('Portrait of ' + profile.name) }}"{% if section == 'home' %} width="1340" height="1608"{% endif %} fetchpriority="high">
-  </figure>
+  {% if section == 'home' %}<figure class="portrait">
+    <img src="{{ profile.image | url }}" alt="{{ profile.imageAlt or ('Portrait of ' + profile.name) }}" width="1340" height="1608" fetchpriority="high">
+  </figure>{% endif %}
 </section>

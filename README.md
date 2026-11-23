@@ -118,7 +118,7 @@ Email、CV、Google Scholar 等都由 `social` 清單控制，依清單順序顯
 
 ### Lab 相片集
 
-Lab 與 Home 共用 `src/_includes/components/profile.njk` 及 `.hero` 版型。兩頁皆使用 `profile.name`、可選的 `profile.nameChinese`、`profile.intro`、`profile.roles`、`profile.social`、`profile.image` 與 `profile.imageAlt`；只填需要的項目。Lab 頁首使用 `/files/trai_logo_11.png`，欄寬由 Logo 決定，尺寸見 CSS 的 `Shared Home/Lab profile` 區塊，名稱與簡介也在同一個 `profile:` 編輯，不另外放在根層。其他分頁仍使用原有的 `title`、`intro`。
+Lab 與 Home 共用 `src/_includes/components/profile.njk` 及 `.hero` 版型。兩頁皆使用 `profile.name`、可選的 `profile.nameChinese`、`profile.intro`、`profile.roles`、`profile.social`、`profile.image` 與 `profile.imageAlt`；只填需要的項目。Lab 頁首使用 `/files/trai_logo_11.png`，標題、Logo 與職稱資訊依序單欄排列。Logo 等比顯示，桌機高 100px、手機高 50px，尺寸見 CSS 的 `Shared Home/Lab profile` 區塊，名稱與簡介也在同一個 `profile:` 編輯，不另外放在根層。其他分頁仍使用原有的 `title`、`intro`。
 
 `profile.intro` 支援 HTML；需要換行時加入 `<br>`，例如 `intro: Trustworthy Artificial Intelligence Lab<br>信韌智慧實驗室`。只在 YAML 原始碼換行不會產生網頁換行。
 
@@ -171,7 +171,7 @@ News 仍以普通 Markdown 清單編輯：
 
 News 標題旁的 **Recent／All** 使用原生單選控制項與 CSS 切換，不需要 JavaScript。Recent 顯示 `<div class="news-archive">` 前的消息；All 合併近期與 archive 內的全部消息，以內部垂直捲軸瀏覽。兩種模式高度相同，由 Recent 的實際內容自動決定，切換不推動下方區塊，也不改變整頁捲動位置。
 
-**近期顯示數量由消息放置的位置決定，沒有固定筆數或高度參數。** 新增消息時放在清單頂端，再視需要將較舊的項目移入 `news-archive`；只編輯一份消息內容，建置時由 `newsTabs` 自動產生兩種檢視。保留 archive 的開頭與結尾 `<div>` 標記。按鈕沿用 Email 的 `.button`，選中項目以深金色標示，滑鼠移入時顯示底線；支援 Tab、方向鍵切換及鍵盤捲動 All 區域。
+**近期顯示數量由消息放置的位置決定，沒有固定筆數或高度參數。** 新增消息時放在清單頂端，再視需要將較舊的項目移入 `news-archive`；只編輯一份消息內容，建置時由 `newsTabs` 自動產生兩種檢視。保留 archive 的開頭與結尾 `<div>` 標記。按鈕沿用 Email 的 `.button`，選中項目使用加深的金色，滑鼠移入時顯示底線；支援 Tab、方向鍵切換及鍵盤捲動 All 區域。
 
 News、Media Coverage 與 Invited Talks 共用 `.dated-list` 日期清單樣式，集中在 `Dated lists` 註解區塊；其後緊接共用 bullet／編號清單設定，再與其餘共用樣式保留三個空白行。日期文字使用黑色、在日期欄內兩端對齊；目前列間距為 8px、日期欄以 `max-content` 依實際日期內容決定寬度，News 的月份／年份自然較窄、Media Coverage 與 Invited Talks 的完整日期較寬；欄間距為桌機 16px／手機 12px。完整日期在手機分為兩行：月日兩端對齊並隱藏逗號，年份另行靠右；Markdown 仍維持 `Mar 03, 2026`，僅由共用顯示轉換與 CSS 處理，日期與內容間距不變。
 
@@ -221,8 +221,8 @@ First Author, **Shao-Yuan Lo**, Last Author
 | 變數 | 色碼 | 用途 |
 | --- | --- | --- |
 | `--white` | `#FFFFFF` | 頁面背景、導覽白字 |
-| `--black` | `#000000` | 一般文字、標題、文字式按鈕、導覽背景 |
-| `--accent` | `#7C6327` | 連結、職稱、少量強調與互動 |
+| `--black` | `#000000` | 一般文字、標題、職稱、導覽背景 |
+| `--accent` | `#715A23` | 連結、文字式按鈕、少量強調與互動 |
 | `--accent-light` | `#F6F0E2` | 提示框、程式碼背景與邊框 |
 | `--selection-bg` | `#E6D4A6` | 文字選取背景 |
 | `--highlight` | `#900C26` | 論文的 Oral、Highlight、Spotlight 等標記 |
@@ -291,13 +291,13 @@ Markdown 分隔線 `.prose hr` 使用透明的 1px 線框，不顯示線條，�
 | 每個選單項目最低高度 | 48px | 48px |
 | 頭像顯示寬度 | 200px | 100px |
 
-`.header-inner`、`.site-main`、`.footer-inner` 共用容器；各分頁正文使用完整寬度。頁面採垂直 Flex，短頁面頁尾自然位於視窗底部。導覽列容器不設最低高度、上下內距為 0，由 48px 高的選單項目與原生捲動區自然決定高度。導覽列使用 sticky；桌機顯示姓名與選單，姓名不額外加句點；手機（≤767px）隱藏導覽列姓名，選單維持單列，空間不足時可左右滑動，項目不縮小或拆行；支援 Tab 移至選單項目及方向鍵水平捲動，焦點框收在項目內避免被裁切。選取項目使用粗體，連結平時不加底線，滑鼠移入時才顯示底線。
+`.header-inner`、`.site-main`、`.footer-inner` 共用容器；各分頁正文使用完整寬度。頁面採垂直 Flex，短頁面頁尾自然位於視窗底部。導覽列容器不設最低高度、上下內距為 0，由 48px 高的選單項目與原生捲動區自然決定高度。導覽列使用 sticky；桌機顯示姓名與選單，姓名不額外加句點；手機（≤767px）隱藏導覽列姓名，選單維持單列，空間不足時可左右滑動，項目不縮小或拆行；支援 Tab 移至選單項目及方向鍵水平捲動，焦點框收在項目內避免被裁切。選取項目使用粗體，滑鼠移入導覽項目時使用粗體及底線。
 
 首頁桌機版為文字與照片兩欄；手機維持兩欄：左欄依序為姓名、職稱與所屬單位，右欄照片跨越這兩列；聯絡連結放在下方並占滿整列。照片頂端與姓名標題頂端對齊，維持 5:6 比例、`object-fit: cover`，不套用飽和度濾鏡。修改頭像檔名時需核對首頁圖片與共用 metadata 的路徑。
 
 職稱組內使用 compact 行高，相鄰段落的上外距為 `--space-xs`，其餘段落外距為 0；組間距為 `--space-sm`。中文姓名使用 xl 字級；桌機同行，左外距 `--space-md`；手機固定另起一行，左外距為 0，與英文姓名靠左對齊。
 
-`.button` 是共用文字式連結外觀：黑色、600 字重，滑入時深金色加底線；沒有底色、邊框、內距或最低高度。Email、CV 與所有社群連結共用此樣式。News 控制也沿用它，另提供上下箭頭。聯絡連結可自動換行，水平間距 `--space-md`、換行間距 `--space-sm`。
+`.button` 是共用文字式連結外觀：`--accent`、600 字重，滑入時加深金色並顯示底線；沒有底色、邊框、內距或最低高度。Email、CV 與所有社群連結共用此樣式。News 控制也沿用它，另提供上下箭頭。聯絡連結可自動換行，水平間距 `--space-md`、換行間距 `--space-sm`。
 
 Lab 的 NTU 圖片使用 `.ntu-image`：桌機寬度為內容容器的 80%、手機為 90%，置中並保留原比例。一般段落使用 `--space-sm` 下外距，專用元件仍沿用其各自設定。
 
