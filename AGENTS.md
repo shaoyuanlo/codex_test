@@ -28,7 +28,7 @@
 - 內容、導覽與頁尾共用容器寬度及左右內距；各分頁正文使用完整容器寬度，不另加窄版限制。
 - 首頁 `.hero` 與 `.page-heading` 共用內外距；首頁姓名沿用共用 H1 間距，照片頂端維持與姓名標題頂端對齊，呈現原圖色彩。手機維持兩欄：左欄為姓名與職稱資訊，右側照片跨越姓名、職稱兩列，聯絡連結在下方占滿整列。中文姓名固定另起一行、左外距為 0，與英文姓名靠左對齊。
 - 論文標題沿用 H3 的字級、字重、行高與上外距，只獨立覆寫下外距。標題、職稱資訊、論文相關資訊與導覽用 compact 行高，正文用 body 行高。
-- `.button` 沿用共用文字式外觀；全站文字連結平時無底線、滑入時加深原有文字色並顯示底線，導覽選取時加粗、滑入時加粗並顯示底線，文字式按鈕用 accent，滑入及 News 選取時用加深的 accent，鍵盤焦點保留共用外框。不為個別連結複製設計。外部 HTTP／HTTPS 連結及 files/talks/ 下的投影片 PDF，在 Eleventy newTabLinks transform 統一以新分頁開啟並加入 noopener／noreferrer，保留既有 rel；外部連結以建置 origin 判斷，Slides 依投影片檔案路徑判斷；其餘站內、錨點及 mailto 不套用，不新增瀏覽器連結處理腳本。
+- `.button` 沿用共用文字式外觀；文字連結平時無底線、滑入時顯示底線，金色連結滑入時加深，導覽列維持白字並於選取或滑入時加粗，文字式按鈕用 accent，滑入及 News 選取時用加深的 accent，鍵盤焦點保留共用外框。不為個別連結複製設計。外部 HTTP／HTTPS 連結及 files/talks/ 下的投影片 PDF，在 Eleventy newTabLinks transform 統一以新分頁開啟並加入 noopener／noreferrer，保留既有 rel；外部連結以建置 origin 判斷，Slides 依投影片檔案路徑判斷；其餘站內、錨點及 mailto 不套用，不新增瀏覽器連結處理腳本。
 - 標題、正文清單及頁尾不自帶內容分隔線；以 Markdown `---` 控制區塊留白，目前以透明線框隱藏線條，保留共用上下外距及既有留白結構。保留提示框、程式碼、表格等既有功能樣式。
 - 保留語意標題、每頁單一主標題、鍵盤操作、可見焦點、跳至內容、sticky 導覽、手機導覽水平捲動、內文換行、列印與本地字型等功能。
 
@@ -51,7 +51,7 @@
 - Front matter 先放運作欄位（layout、section、permalink 等），再放 title、intro 與內容資料。正文從 H2 開始；不重新加入 eyebrow、description 或首頁 tagline 欄位及其相關顯示設定。
 - Home 與 Lab 的頁首內容統一在各自的 `profile:` 維護；首頁 `website:` 只保留導覽等全站設定，`site.profile` 讀取首頁 profile 作為全站姓名、頁尾及 metadata 的唯一來源，不重新建立 `site.json`；頁尾中文姓名不加括號。職稱使用 roles 清單，每組有 role 與一到多個 affiliations，各自成行；分頁頁首 intro 與首頁職稱／所屬單位共用 lg 字級。
 - Email、CV 與社群連結統一由 social 清單維護；其他聯絡文字沿用第一個 mailto 連結的信箱，不另外複製地址。內部檔案路徑支援根網址、子路徑及預覽。
-- Lab 頁首與首頁共用 profile 元件及 `.hero` 設定，兩頁的名稱、簡介、圖片等皆在各自的 `profile` 編輯，不保留根層的 Lab 名稱／簡介作為另一套頁首欄位。Lab 頁首桌機雙欄，Logo 位於文字右側，手機單欄且 Logo 位於標題與職稱資訊之間，首頁與 Lab 職稱使用一般文字色。相片集放在介紹區塊下方；桌機與手機共用排列及下方常駐捲動條，移除左右按鈕；桌機一次滾輪手勢平滑移動一張，手機保留原生滑動，照片滑動與捲動條拖曳須同步；滑入相片集區域時顯示可拖曳手掌，拖曳時顯示抓握手掌；桌機游標位於整個相片集時，滾輪不得帶動全頁（包括兩端）；縮圖等大裁切，放大顯示完整原圖。照片、影片、alt 與 caption 集中在 `src/photos.md` 的 albums 清單；每組 title 顯示共用 H2，兩版皆固定兩欄並以 16:9 裁切，Lab 精選維持 4:3，row／column 間隔分別使用共用 space-md／space-lg；Lab 的 photos 只列精選 src，透過 photoLibrary／selectPhotos 共用內容、不重複維護說明，檔案在 `files/lab_photos/`；維持滑鼠、鍵盤與手機操作，以及停用 JavaScript 時的原生捲動與圖片連結。保留使用者原檔；HEIC 提供 JPEG 網頁版本、MOV 提供 H.264／AAC MP4 與封面，影片項目使用 type: video 及 poster。影片在原生 dialog 中以原生控制列播放、不自動播放，關閉時停止並釋放載入；圖片與影片共用瀏覽操作。Photos 使用一般 page 版型及 /photos/，不放導覽列，入口為 Lab 精選集下方靠左的共用 View All Photos 按鈕，與捲動條操作區以 space-xs 間隔；完整相片集、Lab 精選與放大視窗的 caption 共用 compact 行高，單行置中；多行時由既有共用相片腳本量測首行，讓首行相對圖片置中、後續行對齊首行左緣，字型載入、縮放及開啟視窗時更新，不新增套件；Photos 共用媒體檢視器但不攔截整頁捲動。Demo 圖片及其來源紀錄已依使用者要求移除，不重新加入。
+- Lab 頁首與首頁共用 profile 元件及 `.hero` 設定，兩頁的名稱、簡介、圖片等皆在各自的 `profile` 編輯，不保留根層的 Lab 名稱／簡介作為另一套頁首欄位。Lab 頁首桌機雙欄，Logo 位於文字右側，手機單欄且 Logo 位於標題與職稱資訊之間，Lab 中英文名稱維持同行，首頁與 Lab 職稱使用一般文字色。相片集放在介紹區塊下方；桌機與手機共用排列及下方常駐捲動條，移除左右按鈕；桌機一次滾輪手勢平滑移動一張，手機保留原生滑動，照片滑動與捲動條拖曳須同步；滑入相片集區域時顯示可拖曳手掌，拖曳時顯示抓握手掌；桌機游標位於整個相片集時，滾輪不得帶動全頁（包括兩端）；縮圖等大裁切，放大顯示完整原圖。照片、影片、alt 與 caption 集中在 `src/photos.md` 的 albums 清單；每組 title 顯示共用 H2，兩版皆固定兩欄並以 16:9 裁切，Lab 精選維持 4:3，row／column 間隔分別使用共用 space-md／space-lg；Lab 的 photos 只列精選 src，透過 photoLibrary／selectPhotos 共用內容、不重複維護說明，檔案在 `files/lab_photos/`；維持滑鼠、鍵盤與手機操作，以及停用 JavaScript 時的原生捲動與圖片連結。保留使用者原檔；HEIC 提供 JPEG 網頁版本、MOV 提供 H.264／AAC MP4 與封面，影片項目使用 type: video 及 poster。影片在原生 dialog 中以原生控制列播放、不自動播放，關閉時停止並釋放載入；圖片與影片共用瀏覽操作。Photos 使用一般 page 版型及 /photos/，不放導覽列，入口為 Lab 精選集下方靠左的共用 View All Photos 按鈕，與捲動條操作區以 space-xs 間隔；完整相片集、Lab 精選與放大視窗的 caption 共用 compact 行高，單行置中；多行時由既有共用相片腳本量測首行，讓首行相對圖片置中、後續行對齊首行左緣，字型載入、縮放及開啟視窗時更新，不新增套件；Photos 共用媒體檢視器但不攔截整頁捲動。Demo 圖片及其來源紀錄已依使用者要求移除，不重新加入。
 - Blog 直接使用一般 page 版型與 Markdown；不新增自動文章集合、列表、日期排序、草稿旗標、獨立文章版型或 Blog 專用外觀。
 
 ### News 與共用日期清單
